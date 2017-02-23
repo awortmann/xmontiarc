@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ur1.diverse.cd:ClassDiagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ur1.diverse.cd="http://ur1/diverse/cd">
   <classes name="Integer">
-    <attributes name="MAX_INT" type="//@classes.0"/>
+    <attributes name="length" type="//@classes.0"/>
   </classes>
   <classes name="Boolean"/>
   <classes xsi:type="ur1.diverse.cd:CDEnumeration" name="MotorCommand">
     <constants name="STOP"/>
     <constants name="FORDWARD" value="1"/>
-    <constants name="BACKWARD" value="1"/>
+    <constants name="BACKWARD" value="2"/>
   </classes>
 </ur1.diverse.cd:ClassDiagram>
