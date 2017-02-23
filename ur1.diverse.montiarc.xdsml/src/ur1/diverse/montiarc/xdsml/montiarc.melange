@@ -1,0 +1,16 @@
+package ur1.diverse.montiarc.xdsml
+
+language XMontiArc {
+	syntax "platform:/resource/ur1.diverse.montiarc.model/ur1.diverse.montiarc.model/montiarc.ecore" 
+//		withGenmodel "platform:/resource/ur1.diverse.montiarc.model/ur1.diverse.montiarc.model/montiarc.genmodel"
+	syntax "platform:/resource/ur1.diverse.cd.model/model/cd.ecore"
+//		withGenmodel "platform:/resource/ur1.diverse.cd.model/model/cd.genmodel"
+	syntax "platform:/resource/ur1.diverse.montiarc.runtime.model/model/montiarcruntime.ecore"
+//		withGenmodel "platform:/resource/ur1.diverse.montiarc.runtime.model/model/montiarcruntime.genmodel"
+	
+	with ur1.diverse.montiarc.xdsml.montiarc.aspects.ComponentTypeAspect
+	with ur1.diverse.montiarc.xdsml.montiarc.aspects.PortAspect
+	with ur1.diverse.montiarc.xdsml.montiarc.aspects.ConnectorAspect
+	with ur1.diverse.montiarc.xdsml.montiarc.aspects.SubcomponentDeclarationAspect
+
+}

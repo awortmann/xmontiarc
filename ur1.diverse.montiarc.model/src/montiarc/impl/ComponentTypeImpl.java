@@ -1,0 +1,410 @@
+/**
+ */
+package montiarc.impl;
+
+import java.util.Collection;
+
+import montiarc.ComponentType;
+import montiarc.Connector;
+import montiarc.MontiarcPackage;
+import montiarc.Port;
+
+import montiarc.SubcomponentDeclaration;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
+
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+/**
+ * <!-- begin-user-doc -->
+ * An implementation of the model object '<em><b>Component Type</b></em>'.
+ * <!-- end-user-doc -->
+ * <p>
+ * The following features are implemented:
+ * </p>
+ * <ul>
+ *   <li>{@link montiarc.impl.ComponentTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link montiarc.impl.ComponentTypeImpl#getSuperComponentType <em>Super Component Type</em>}</li>
+ *   <li>{@link montiarc.impl.ComponentTypeImpl#getPorts <em>Ports</em>}</li>
+ *   <li>{@link montiarc.impl.ComponentTypeImpl#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link montiarc.impl.ComponentTypeImpl#getSubcomponents <em>Subcomponents</em>}</li>
+ *   <li>{@link montiarc.impl.ComponentTypeImpl#getGroovyBehavior <em>Groovy Behavior</em>}</li>
+ * </ul>
+ *
+ * @generated
+ */
+public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements ComponentType {
+	/**
+	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String name = NAME_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSuperComponentType() <em>Super Component Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSuperComponentType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentType superComponentType;
+
+	/**
+	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Port> ports;
+
+	/**
+	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getConnectors()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Connector> connectors;
+
+	/**
+	 * The cached value of the '{@link #getSubcomponents() <em>Subcomponents</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSubcomponents()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<SubcomponentDeclaration> subcomponents;
+
+	/**
+	 * The default value of the '{@link #getGroovyBehavior() <em>Groovy Behavior</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroovyBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String GROOVY_BEHAVIOR_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getGroovyBehavior() <em>Groovy Behavior</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getGroovyBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected String groovyBehavior = GROOVY_BEHAVIOR_EDEFAULT;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ComponentTypeImpl() {
+		super();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return MontiarcPackage.Literals.COMPONENT_TYPE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getName() {
+		return name;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setName(String newName) {
+		String oldName = name;
+		name = newName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_TYPE__NAME, oldName, name));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentType getSuperComponentType() {
+		if (superComponentType != null && superComponentType.eIsProxy()) {
+			InternalEObject oldSuperComponentType = (InternalEObject)superComponentType;
+			superComponentType = (ComponentType)eResolveProxy(oldSuperComponentType);
+			if (superComponentType != oldSuperComponentType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.COMPONENT_TYPE__SUPER_COMPONENT_TYPE, oldSuperComponentType, superComponentType));
+			}
+		}
+		return superComponentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ComponentType basicGetSuperComponentType() {
+		return superComponentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSuperComponentType(ComponentType newSuperComponentType) {
+		ComponentType oldSuperComponentType = superComponentType;
+		superComponentType = newSuperComponentType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_TYPE__SUPER_COMPONENT_TYPE, oldSuperComponentType, superComponentType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Port> getPorts() {
+		if (ports == null) {
+			ports = new EObjectContainmentEList<Port>(Port.class, this, MontiarcPackage.COMPONENT_TYPE__PORTS);
+		}
+		return ports;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Connector> getConnectors() {
+		if (connectors == null) {
+			connectors = new EObjectContainmentEList<Connector>(Connector.class, this, MontiarcPackage.COMPONENT_TYPE__CONNECTORS);
+		}
+		return connectors;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<SubcomponentDeclaration> getSubcomponents() {
+		if (subcomponents == null) {
+			subcomponents = new EObjectContainmentEList<SubcomponentDeclaration>(SubcomponentDeclaration.class, this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS);
+		}
+		return subcomponents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getGroovyBehavior() {
+		return groovyBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setGroovyBehavior(String newGroovyBehavior) {
+		String oldGroovyBehavior = groovyBehavior;
+		groovyBehavior = newGroovyBehavior;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR, oldGroovyBehavior, groovyBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MontiarcPackage.COMPONENT_TYPE__PORTS:
+				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
+				return ((InternalEList<?>)getConnectors()).basicRemove(otherEnd, msgs);
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+				return ((InternalEList<?>)getSubcomponents()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case MontiarcPackage.COMPONENT_TYPE__NAME:
+				return getName();
+			case MontiarcPackage.COMPONENT_TYPE__SUPER_COMPONENT_TYPE:
+				if (resolve) return getSuperComponentType();
+				return basicGetSuperComponentType();
+			case MontiarcPackage.COMPONENT_TYPE__PORTS:
+				return getPorts();
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
+				return getConnectors();
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+				return getSubcomponents();
+			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
+				return getGroovyBehavior();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case MontiarcPackage.COMPONENT_TYPE__NAME:
+				setName((String)newValue);
+				return;
+			case MontiarcPackage.COMPONENT_TYPE__SUPER_COMPONENT_TYPE:
+				setSuperComponentType((ComponentType)newValue);
+				return;
+			case MontiarcPackage.COMPONENT_TYPE__PORTS:
+				getPorts().clear();
+				getPorts().addAll((Collection<? extends Port>)newValue);
+				return;
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
+				getConnectors().clear();
+				getConnectors().addAll((Collection<? extends Connector>)newValue);
+				return;
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+				getSubcomponents().clear();
+				getSubcomponents().addAll((Collection<? extends SubcomponentDeclaration>)newValue);
+				return;
+			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
+				setGroovyBehavior((String)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case MontiarcPackage.COMPONENT_TYPE__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case MontiarcPackage.COMPONENT_TYPE__SUPER_COMPONENT_TYPE:
+				setSuperComponentType((ComponentType)null);
+				return;
+			case MontiarcPackage.COMPONENT_TYPE__PORTS:
+				getPorts().clear();
+				return;
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
+				getConnectors().clear();
+				return;
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+				getSubcomponents().clear();
+				return;
+			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
+				setGroovyBehavior(GROOVY_BEHAVIOR_EDEFAULT);
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case MontiarcPackage.COMPONENT_TYPE__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case MontiarcPackage.COMPONENT_TYPE__SUPER_COMPONENT_TYPE:
+				return superComponentType != null;
+			case MontiarcPackage.COMPONENT_TYPE__PORTS:
+				return ports != null && !ports.isEmpty();
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
+				return connectors != null && !connectors.isEmpty();
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+				return subcomponents != null && !subcomponents.isEmpty();
+			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
+				return GROOVY_BEHAVIOR_EDEFAULT == null ? groovyBehavior != null : !GROOVY_BEHAVIOR_EDEFAULT.equals(groovyBehavior);
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (name: ");
+		result.append(name);
+		result.append(", groovyBehavior: ");
+		result.append(groovyBehavior);
+		result.append(')');
+		return result.toString();
+	}
+
+} //ComponentTypeImpl
