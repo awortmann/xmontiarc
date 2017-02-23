@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated cd -->
+      <package
+            uri="http://ur1/diverse/cd"
+            class="cd.CdPackage"
+            genModel="model/cd.genmodel"/>
+   </extension>
+
+</plugin>

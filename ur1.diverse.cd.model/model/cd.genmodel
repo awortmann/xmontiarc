@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ur1.diverse.cd.model/src" modelPluginID="ur1.diverse.cd.model"
+    modelName="Cd" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>cd.ecore</foreignModel>
+  <genPackages prefix="Cd" disposableProviderFactory="true" ecorePackage="cd.ecore#/">
+    <genClasses ecoreClass="cd.ecore#//CDClass">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cd.ecore#//CDClass/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cd.ecore#//CDClass/attributes"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cd.ecore#//CDClass/superType"/>
+    </genClasses>
+    <genClasses ecoreClass="cd.ecore#//CDAttribute">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cd.ecore#//CDAttribute/name"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference cd.ecore#//CDAttribute/type"/>
+    </genClasses>
+    <genClasses ecoreClass="cd.ecore#//ClassDiagram">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cd.ecore#//ClassDiagram/classes"/>
+    </genClasses>
+    <genClasses ecoreClass="cd.ecore#//CDEnumeration">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference cd.ecore#//CDEnumeration/constants"/>
+    </genClasses>
+    <genClasses ecoreClass="cd.ecore#//CDConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cd.ecore#//CDConstant/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute cd.ecore#//CDConstant/value"/>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>
