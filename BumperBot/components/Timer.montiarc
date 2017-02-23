@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ur1.diverse.montiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ur1.diverse.montiarc.model="http://u1/diverse/montiarc/model" name="Timer">
+  <ports isIncoming="true" name="delay">
+    <type href="../datatypes/datatypes.cd#//@classes.0"/>
+  </ports>
+  <ports name="signal">
+    <type href="../datatypes/datatypes.cd#//@classes.1"/>
+  </ports>
+</ur1.diverse.montiarc.model:ComponentType>

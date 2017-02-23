@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.gemoc.execution.sequential.javaengine.ui.launcher">
+<intAttribute key="GEMOC_ANIMATE_DELAY" value="0"/>
+<stringAttribute key="GEMOC_DEBUG_MODEL_ID" value="org.gemoc.execution.sequential.javaengine.ui.debugModel"/>
+<booleanAttribute key="GEMOC_LAUNCH_BREAK_START" value="true"/>
+<stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_ARGUMENTS" value=""/>
+<stringAttribute key="GEMOC_LAUNCH_INITIALIZATION_METHOD" value=""/>
+<stringAttribute key="GEMOC_LAUNCH_MELANGE_QUERY" value=""/>
+<stringAttribute key="GEMOC_LAUNCH_SELECTED_LANGUAGE" value="ur1.diverse.montiarc.xdsml.XMontiArc"/>
+<stringAttribute key="LAUNCH_METHOD_ENTRY_POINT" value="public static void ur1.diverse.montiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.compute(ur1.diverse.montiarc.xdsml.xmontiarc.montiarc.ComponentType)"/>
+<stringAttribute key="LAUNCH_MODEL_ENTRY_POINT" value="/"/>
+<stringAttribute key="Resource" value="/BumperBot/BumperBot.montiarc"/>
+<stringAttribute key="airdResource" value=""/>
+<booleanAttribute key="montiarc MultiDimensional Trace" value="false"/>
+</launchConfiguration>
