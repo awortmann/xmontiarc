@@ -1,2 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<viewpoint:DAnalysis xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xmi:id="_tNj10PpkEeajwJV61f4Fzg" version="11.1.0.201608251200"/>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:ur1.diverse.montiarc.model="http://u1/diverse/montiarc/model" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description">
+  <viewpoint:DAnalysis xmi:id="_DoCpYPpmEea84e0thqXFWw" selectedViews="_EjMqEPpmEea84e0thqXFWw" version="11.1.0.201608251200">
+    <semanticResources>BumperBot.montiarc</semanticResources>
+    <semanticResources>components/UltrasonicSensor.montiarc</semanticResources>
+    <semanticResources>components/Controller.montiarc</semanticResources>
+    <semanticResources>components/Timer.montiarc</semanticResources>
+    <semanticResources>components/Motor.montiarc</semanticResources>
+    <semanticResources>datatypes/datatypes.cd</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_EjMqEPpmEea84e0thqXFWw">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_OufZYPpmEea84e0thqXFWw" name="BumperBot Diagram" representation="_OufZYfpmEea84e0thqXFWw">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']"/>
+        <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="BumperBot.montiarc#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_OufZYfpmEea84e0thqXFWw" name="BumperBot Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_OufZYvpmEea84e0thqXFWw" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_OufZY_pmEea84e0thqXFWw"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_Ou5CAPpmEea84e0thqXFWw" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_Ou5CAfpmEea84e0thqXFWw" type="Sirius" element="_OufZYfpmEea84e0thqXFWw" measurementUnit="Pixel">
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_Ou5CAvpmEea84e0thqXFWw"/>
+      </data>
+    </ownedAnnotationEntries>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_OufZZPpmEea84e0thqXFWw"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer"/>
+    <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="BumperBot.montiarc#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>
