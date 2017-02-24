@@ -19,9 +19,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Port</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Port</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -35,11 +34,10 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * @generated
  */
 public class PortImpl extends MinimalEObjectImpl.Container implements Port {
-	
+
 	/**
 	 * The default value of the '{@link #isIsIncoming() <em>Is Incoming</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isIsIncoming()
 	 * @generated
 	 * @ordered
@@ -48,8 +46,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 
 	/**
 	 * The cached value of the '{@link #isIsIncoming() <em>Is Incoming</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #isIsIncoming()
 	 * @generated
 	 * @ordered
@@ -58,8 +55,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -68,8 +64,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -78,8 +73,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -87,8 +81,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	protected CDClass type;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected PortImpl() {
@@ -96,8 +89,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -106,8 +98,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public boolean isIsIncoming() {
@@ -115,8 +106,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setIsIncoming(boolean newIsIncoming) {
@@ -127,8 +117,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getName() {
@@ -136,8 +125,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -148,8 +136,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public CDClass getType() {
@@ -165,8 +152,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public CDClass basicGetType() {
@@ -174,8 +160,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setType(CDClass newType) {
@@ -186,8 +171,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ComponentType getParent() {
@@ -196,8 +180,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetParent(ComponentType newParent, NotificationChain msgs) {
@@ -206,8 +189,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setParent(ComponentType newParent) {
@@ -227,8 +209,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -243,8 +224,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -257,8 +237,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -271,8 +250,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -292,8 +270,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -316,8 +293,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -340,8 +316,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -360,8 +335,7 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -377,4 +351,4 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 		return result.toString();
 	}
 
-} //PortImpl
+} // PortImpl

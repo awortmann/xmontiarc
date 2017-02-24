@@ -7,6 +7,7 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 
 import montiarc.ComponentType;
+import montiarc.Connector;
 import montiarc.Port;
 import montiarc.SubcomponentDeclaration;
 
@@ -77,6 +78,23 @@ public class Services {
 	public Collection<EObject> getSubcomponentTypesOutgoingPorts(EObject self) {
 		SubcomponentDeclaration s = (SubcomponentDeclaration)self;
 		return getOutgoingPorts(s.getComponentType());
+	}
+	
+	public String getConnectorLabel(Connector c) {
+		return c.getSourceSubcomponent().getInstanceName() + "." + c.getSourcePort().getName()  + " -> " + c.getTargetSubcomponent().getInstanceName()  + "."
+				+ c.getTargetPort().getName() ;
+	}
+	
+	public EObject getConnectorSourcePort(EObject self) {
+		Connector c = (Connector)self;
+		System.out.println("Drawing source port for connector '" + getConnectorLabel(c) + "'.");
+		return c.getSourcePort();
+	}
+	
+	public EObject getConnectorTargetPort(EObject self) {
+		Connector c = (Connector)self;
+		System.out.println("Drawing target port for connector '" + getConnectorLabel(c) + "'.");
+		return c.getTargetPort();
 	}
 	
 	/**

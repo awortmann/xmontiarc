@@ -19,9 +19,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Connector</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Connector</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -38,8 +37,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 public class ConnectorImpl extends MinimalEObjectImpl.Container implements Connector {
 	/**
 	 * The cached value of the '{@link #getSourcePort() <em>Source Port</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getSourcePort()
 	 * @generated
 	 * @ordered
@@ -48,8 +46,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 
 	/**
 	 * The cached value of the '{@link #getTargetPort() <em>Target Port</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getTargetPort()
 	 * @generated
 	 * @ordered
@@ -57,9 +54,10 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	protected Port targetPort;
 
 	/**
-	 * The cached value of the '{@link #getSourceSubcomponent() <em>Source Subcomponent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getSourceSubcomponent() <em>Source
+	 * Subcomponent</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
 	 * @see #getSourceSubcomponent()
 	 * @generated
 	 * @ordered
@@ -67,9 +65,10 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	protected SubcomponentDeclaration sourceSubcomponent;
 
 	/**
-	 * The cached value of the '{@link #getTargetSubcomponent() <em>Target Subcomponent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * The cached value of the '{@link #getTargetSubcomponent() <em>Target
+	 * Subcomponent</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
 	 * @see #getTargetSubcomponent()
 	 * @generated
 	 * @ordered
@@ -77,8 +76,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	protected SubcomponentDeclaration targetSubcomponent;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ConnectorImpl() {
@@ -86,8 +84,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -96,8 +93,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Port getSourcePort() {
@@ -113,8 +109,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Port basicGetSourcePort() {
@@ -122,8 +117,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setSourcePort(Port newSourcePort) {
@@ -134,8 +128,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Port getTargetPort() {
@@ -151,8 +144,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public Port basicGetTargetPort() {
@@ -160,8 +152,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setTargetPort(Port newTargetPort) {
@@ -172,8 +163,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SubcomponentDeclaration getSourceSubcomponent() {
@@ -189,8 +179,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SubcomponentDeclaration basicGetSourceSubcomponent() {
@@ -198,8 +187,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setSourceSubcomponent(SubcomponentDeclaration newSourceSubcomponent) {
@@ -210,8 +198,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SubcomponentDeclaration getTargetSubcomponent() {
@@ -227,8 +214,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public SubcomponentDeclaration basicGetTargetSubcomponent() {
@@ -236,8 +222,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setTargetSubcomponent(SubcomponentDeclaration newTargetSubcomponent) {
@@ -248,8 +233,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ComponentType getParent() {
@@ -258,8 +242,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetParent(ComponentType newParent, NotificationChain msgs) {
@@ -268,8 +251,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setParent(ComponentType newParent) {
@@ -289,8 +271,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -305,8 +286,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -319,8 +299,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -333,8 +312,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -359,8 +337,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -386,8 +363,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -413,8 +389,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -434,5 +409,12 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 		return super.eIsSet(featureID);
 	}
 
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+		
+		return this.getSourceSubcomponent().toString() + "." + this.getSourcePort().toString()  + " -> " + this.getTargetSubcomponent().toString()  + "."
+				+ this.basicGetTargetPort().toString() ;
+	}
 
-} //ConnectorImpl
+} // ConnectorImpl
