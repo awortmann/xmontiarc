@@ -1,37 +1,45 @@
-Manifest-Version: 1.0
 Bundle-SymbolicName: ur1.diverse.montiarc.xdsml;singleton:=true
-Export-Package: ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarc,
- ur1.diverse.montiarc.xdsml.xmontiarcmt.cd.util,
- ur1.diverse.montiarc.xdsml.xmontiarcmt.cd.impl,
- ur1.diverse.montiarc.xdsml.xmontiarcmt.cd,
- ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarcruntime.impl,
- ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarc.impl,
- ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarcruntime.util,
- ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarcruntime,
- ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarc.util,
- ur1.diverse.montiarc.xdsml
+Export-Package: ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarc,ur1.diverse.montiarc.xdsml.xmontiarcmt.cd.util,ur1.diverse.montiarc.xdsml.xmontiarcmt.cd.impl,ur1.diverse.montiarc.xdsml.xmontiarcmt.cd,ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarcruntime.impl,ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarc.impl,ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarcruntime.util,ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarcruntime,ur1.diverse.montiarc.xdsml.xmontiarcmt.montiarc.util,ur1.diverse.montiarc.xdsml
 Bundle-Name: ur1.diverse.montiarc.xdsml2
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:="private",
+ 
  org.eclipse.xtext.xbase.lib;bundle-version="2.7.0";visibility:="private",
+ 
  com.google.guava;bundle-version="0.0.0";visibility:="private",
+ 
  org.eclipse.emf.ecore.xmi;bundle-version="2.8.0";visibility:="reexport",
+ 
  org.eclipse.emf.ecore;bundle-version="2.8.0";visibility:="reexport",
+ 
  org.eclipse.emf.common;bundle-version="2.8.0";visibility:="reexport",
+ 
  fr.inria.diverse.melange.lib;bundle-version="0.1.0";visibility:="reexport",
+ 
  fr.inria.diverse.melange.resource;bundle-version="0.1.0";visibility:="reexport",
+ 
  fr.inria.diverse.melange.adapters;bundle-version="0.1.0";visibility:="reexport",
+ 
  fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="0.0.0";visibility:="reexport",
+ 
  org.gemoc.xdsmlframework.api;bundle-version="0.0.0";visibility:="reexport",
+ 
  org.gemoc.execution.sequential.javaxdsml.api;bundle-version="0.0.0";visibility:="reexport",
+ 
  org.gemoc.executionframework.engine;bundle-version="0.0.0";visibility:="reexport",
+ 
  ur1.diverse.montiarc.model;bundle-version="0.0.0";visibility:="private",
+ 
  ur1.diverse.montiarc.xdsml.k3dsa;bundle-version="0.0.0";visibility:="private",
+ 
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
+ 
  ur1.diverse.cd.model;bundle-version="0.0.0";visibility:="reexport",
+ 
  ur1.diverse.montiarc.runtime.model;bundle-version="0.0.0";visibility:="reexport",
+ 
  ur1.diverse.montiarc.xdsml.xmontiarc
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-
+Manifest-Version: 1.0
