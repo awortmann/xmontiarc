@@ -86,14 +86,16 @@ public class MontiarcValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case MontiarcPackage.COMPONENT_TYPE:
-				return validateComponentType((ComponentType)value, diagnostics, context);
 			case MontiarcPackage.PORT:
 				return validatePort((Port)value, diagnostics, context);
+			case MontiarcPackage.COMPONENT_TYPE:
+				return validateComponentType((ComponentType)value, diagnostics, context);
+			case MontiarcPackage.PORT_TYPE:
+				return validatePortType((PortType)value, diagnostics, context);
 			case MontiarcPackage.CONNECTOR:
 				return validateConnector((Connector)value, diagnostics, context);
-			case MontiarcPackage.SUBCOMPONENT_DECLARATION:
-				return validateSubcomponentDeclaration((SubcomponentDeclaration)value, diagnostics, context);
+			case MontiarcPackage.COMPONENT:
+				return validateComponent((Component)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -188,27 +190,27 @@ public class MontiarcValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePort(Port port, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(port, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(port, diagnostics, context);
-		if (result || diagnostics != null) result &= validatePort_NameIsLeadingUpperCase(port, diagnostics, context);
+	public boolean validatePortType(PortType portType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(portType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(portType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(portType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(portType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(portType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(portType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(portType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(portType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(portType, diagnostics, context);
+		if (result || diagnostics != null) result &= validatePortType_NameIsLeadingUpperCase(portType, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the NameIsLeadingUpperCase constraint of '<em>Port</em>'.
+	 * The cached validation expression for the NameIsLeadingUpperCase constraint of '<em>Port Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String PORT__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
+	protected static final String PORT_TYPE__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
 		"\tmessage : String = 'The name of port \"' + name + '\" must begin lowercase.',\n" +
 		"\tstatus : Boolean = let firstLetter : String =\n" +
 		"\t\t\t(name).substring(1, 1)\n" +
@@ -216,24 +218,33 @@ public class MontiarcValidator extends EObjectValidator {
 		"}.status";
 
 	/**
-	 * Validates the NameIsLeadingUpperCase constraint of '<em>Port</em>'.
+	 * Validates the NameIsLeadingUpperCase constraint of '<em>Port Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePort_NameIsLeadingUpperCase(Port port, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validatePortType_NameIsLeadingUpperCase(PortType portType, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(MontiarcPackage.Literals.PORT,
-				 port,
+				(MontiarcPackage.Literals.PORT_TYPE,
+				 portType,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "NameIsLeadingUpperCase",
-				 PORT__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION,
+				 PORT_TYPE__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePort(Port port, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(port, diagnostics, context);
 	}
 
 	/**
@@ -327,27 +338,27 @@ public class MontiarcValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSubcomponentDeclaration(SubcomponentDeclaration subcomponentDeclaration, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(subcomponentDeclaration, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(subcomponentDeclaration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(subcomponentDeclaration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(subcomponentDeclaration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(subcomponentDeclaration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(subcomponentDeclaration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(subcomponentDeclaration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(subcomponentDeclaration, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(subcomponentDeclaration, diagnostics, context);
-		if (result || diagnostics != null) result &= validateSubcomponentDeclaration_NameIsLeadingUpperCase(subcomponentDeclaration, diagnostics, context);
+	public boolean validateComponent(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(component, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponent_NameIsLeadingUpperCase(component, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the NameIsLeadingUpperCase constraint of '<em>Subcomponent Declaration</em>'.
+	 * The cached validation expression for the NameIsLeadingUpperCase constraint of '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String SUBCOMPONENT_DECLARATION__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
+	protected static final String COMPONENT__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
 		"\tmessage : String = 'The name of instance name of subcomponent \"' + instanceName +\n" +
 		"\t\t\t'\" must begin lowercase.',\n" +
 		"\tstatus : Boolean = let firstLetter : String = (instanceName).substring(1, 1)\n" +
@@ -355,21 +366,21 @@ public class MontiarcValidator extends EObjectValidator {
 		"}.status";
 
 	/**
-	 * Validates the NameIsLeadingUpperCase constraint of '<em>Subcomponent Declaration</em>'.
+	 * Validates the NameIsLeadingUpperCase constraint of '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateSubcomponentDeclaration_NameIsLeadingUpperCase(SubcomponentDeclaration subcomponentDeclaration, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComponent_NameIsLeadingUpperCase(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(MontiarcPackage.Literals.SUBCOMPONENT_DECLARATION,
-				 subcomponentDeclaration,
+				(MontiarcPackage.Literals.COMPONENT,
+				 component,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "NameIsLeadingUpperCase",
-				 SUBCOMPONENT_DECLARATION__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION,
+				 COMPONENT__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

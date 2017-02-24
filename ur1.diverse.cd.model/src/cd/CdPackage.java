@@ -40,7 +40,7 @@ public interface CdPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_URI = "http://ur1/diverse/cd";
+	String eNS_URI = "http://ur1/diverse/cd/model";
 
 	/**
 	 * The package namespace name.
@@ -48,7 +48,7 @@ public interface CdPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "ur1.diverse.cd";
+	String eNS_PREFIX = "ur1.diverse.cd.model";
 
 	/**
 	 * The singleton instance of the package.

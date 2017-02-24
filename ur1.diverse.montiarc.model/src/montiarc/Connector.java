@@ -35,12 +35,12 @@ public interface Connector extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Port</em>' reference.
-	 * @see #setSourcePort(Port)
+	 * @see #setSourcePort(PortType)
 	 * @see montiarc.MontiarcPackage#getConnector_SourcePort()
 	 * @model required="true"
 	 * @generated
 	 */
-	Port getSourcePort();
+	PortType getSourcePort();
 
 	/**
 	 * Sets the value of the '{@link montiarc.Connector#getSourcePort <em>Source Port</em>}' reference.
@@ -50,7 +50,7 @@ public interface Connector extends EObject {
 	 * @see #getSourcePort()
 	 * @generated
 	 */
-	void setSourcePort(Port value);
+	void setSourcePort(PortType value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Port</b></em>' reference.
@@ -61,12 +61,12 @@ public interface Connector extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Port</em>' reference.
-	 * @see #setTargetPort(Port)
+	 * @see #setTargetPort(PortType)
 	 * @see montiarc.MontiarcPackage#getConnector_TargetPort()
 	 * @model required="true"
 	 * @generated
 	 */
-	Port getTargetPort();
+	PortType getTargetPort();
 
 	/**
 	 * Sets the value of the '{@link montiarc.Connector#getTargetPort <em>Target Port</em>}' reference.
@@ -76,7 +76,7 @@ public interface Connector extends EObject {
 	 * @see #getTargetPort()
 	 * @generated
 	 */
-	void setTargetPort(Port value);
+	void setTargetPort(PortType value);
 
 	/**
 	 * Returns the value of the '<em><b>Source Subcomponent</b></em>' reference.
@@ -87,12 +87,12 @@ public interface Connector extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Subcomponent</em>' reference.
-	 * @see #setSourceSubcomponent(SubcomponentDeclaration)
+	 * @see #setSourceSubcomponent(Component)
 	 * @see montiarc.MontiarcPackage#getConnector_SourceSubcomponent()
 	 * @model required="true"
 	 * @generated
 	 */
-	SubcomponentDeclaration getSourceSubcomponent();
+	Component getSourceSubcomponent();
 
 	/**
 	 * Sets the value of the '{@link montiarc.Connector#getSourceSubcomponent <em>Source Subcomponent</em>}' reference.
@@ -102,7 +102,7 @@ public interface Connector extends EObject {
 	 * @see #getSourceSubcomponent()
 	 * @generated
 	 */
-	void setSourceSubcomponent(SubcomponentDeclaration value);
+	void setSourceSubcomponent(Component value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Subcomponent</b></em>' reference.
@@ -113,12 +113,12 @@ public interface Connector extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Subcomponent</em>' reference.
-	 * @see #setTargetSubcomponent(SubcomponentDeclaration)
+	 * @see #setTargetSubcomponent(Component)
 	 * @see montiarc.MontiarcPackage#getConnector_TargetSubcomponent()
 	 * @model required="true"
 	 * @generated
 	 */
-	SubcomponentDeclaration getTargetSubcomponent();
+	Component getTargetSubcomponent();
 
 	/**
 	 * Sets the value of the '{@link montiarc.Connector#getTargetSubcomponent <em>Target Subcomponent</em>}' reference.
@@ -128,7 +128,7 @@ public interface Connector extends EObject {
 	 * @see #getTargetSubcomponent()
 	 * @generated
 	 */
-	void setTargetSubcomponent(SubcomponentDeclaration value);
+	void setTargetSubcomponent(Component value);
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.

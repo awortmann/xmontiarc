@@ -66,7 +66,54 @@ public interface MontiarcPackage extends EPackage {
 	 * @see montiarc.impl.MontiarcPackageImpl#getComponentType()
 	 * @generated
 	 */
-	int COMPONENT_TYPE = 0;
+	int COMPONENT_TYPE = 1;
+
+	/**
+	 * The meta object id for the '{@link montiarc.impl.PortTypeImpl <em>Port Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see montiarc.impl.PortTypeImpl
+	 * @see montiarc.impl.MontiarcPackageImpl#getPortType()
+	 * @generated
+	 */
+	int PORT_TYPE = 2;
+
+	/**
+	 * The meta object id for the '{@link montiarc.impl.PortImpl <em>Port</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see montiarc.impl.PortImpl
+	 * @see montiarc.impl.MontiarcPackageImpl#getPort()
+	 * @generated
+	 */
+	int PORT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__TYPE = 0;
+
+	/**
+	 * The number of structural features of the '<em>Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_FEATURE_COUNT = 1;
+
+	/**
+	 * The number of operations of the '<em>Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -141,23 +188,13 @@ public interface MontiarcPackage extends EPackage {
 	int COMPONENT_TYPE_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link montiarc.impl.PortImpl <em>Port</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see montiarc.impl.PortImpl
-	 * @see montiarc.impl.MontiarcPackageImpl#getPort()
-	 * @generated
-	 */
-	int PORT = 1;
-
-	/**
 	 * The feature id for the '<em><b>Is Incoming</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__IS_INCOMING = 0;
+	int PORT_TYPE__IS_INCOMING = 0;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -166,7 +203,7 @@ public interface MontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__NAME = 1;
+	int PORT_TYPE__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Type</b></em>' reference.
@@ -175,7 +212,7 @@ public interface MontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__TYPE = 2;
+	int PORT_TYPE__TYPE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -184,25 +221,25 @@ public interface MontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__PARENT = 3;
+	int PORT_TYPE__PARENT = 3;
 
 	/**
-	 * The number of structural features of the '<em>Port</em>' class.
+	 * The number of structural features of the '<em>Port Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 4;
+	int PORT_TYPE_FEATURE_COUNT = 4;
 
 	/**
-	 * The number of operations of the '<em>Port</em>' class.
+	 * The number of operations of the '<em>Port Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_OPERATION_COUNT = 0;
+	int PORT_TYPE_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link montiarc.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -212,7 +249,7 @@ public interface MontiarcPackage extends EPackage {
 	 * @see montiarc.impl.MontiarcPackageImpl#getConnector()
 	 * @generated
 	 */
-	int CONNECTOR = 2;
+	int CONNECTOR = 3;
 
 	/**
 	 * The feature id for the '<em><b>Source Port</b></em>' reference.
@@ -278,14 +315,14 @@ public interface MontiarcPackage extends EPackage {
 	int CONNECTOR_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link montiarc.impl.SubcomponentDeclarationImpl <em>Subcomponent Declaration</em>}' class.
+	 * The meta object id for the '{@link montiarc.impl.ComponentImpl <em>Component</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see montiarc.impl.SubcomponentDeclarationImpl
-	 * @see montiarc.impl.MontiarcPackageImpl#getSubcomponentDeclaration()
+	 * @see montiarc.impl.ComponentImpl
+	 * @see montiarc.impl.MontiarcPackageImpl#getComponent()
 	 * @generated
 	 */
-	int SUBCOMPONENT_DECLARATION = 3;
+	int COMPONENT = 4;
 
 	/**
 	 * The feature id for the '<em><b>Instance Name</b></em>' attribute.
@@ -294,44 +331,43 @@ public interface MontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_DECLARATION__INSTANCE_NAME = 0;
+	int COMPONENT__INSTANCE_NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Component Type</b></em>' reference.
+	 * The feature id for the '<em><b>Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_DECLARATION__COMPONENT_TYPE = 1;
+	int COMPONENT__TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * The feature id for the '<em><b>Ports</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_DECLARATION__PARENT = 2;
+	int COMPONENT__PORTS = 2;
 
 	/**
-	 * The number of structural features of the '<em>Subcomponent Declaration</em>' class.
+	 * The number of structural features of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_DECLARATION_FEATURE_COUNT = 3;
+	int COMPONENT_FEATURE_COUNT = 3;
 
 	/**
-	 * The number of operations of the '<em>Subcomponent Declaration</em>' class.
+	 * The number of operations of the '<em>Component</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_DECLARATION_OPERATION_COUNT = 0;
-
+	int COMPONENT_OPERATION_COUNT = 0;
 
 	/**
 	 * Returns the meta object for class '{@link montiarc.ComponentType <em>Component Type</em>}'.
@@ -410,6 +446,60 @@ public interface MontiarcPackage extends EPackage {
 	EAttribute getComponentType_GroovyBehavior();
 
 	/**
+	 * Returns the meta object for class '{@link montiarc.PortType <em>Port Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Port Type</em>'.
+	 * @see montiarc.PortType
+	 * @generated
+	 */
+	EClass getPortType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link montiarc.PortType#isIsIncoming <em>Is Incoming</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Incoming</em>'.
+	 * @see montiarc.PortType#isIsIncoming()
+	 * @see #getPortType()
+	 * @generated
+	 */
+	EAttribute getPortType_IsIncoming();
+
+	/**
+	 * Returns the meta object for the attribute '{@link montiarc.PortType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see montiarc.PortType#getName()
+	 * @see #getPortType()
+	 * @generated
+	 */
+	EAttribute getPortType_Name();
+
+	/**
+	 * Returns the meta object for the reference '{@link montiarc.PortType#getType <em>Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see montiarc.PortType#getType()
+	 * @see #getPortType()
+	 * @generated
+	 */
+	EReference getPortType_Type();
+
+	/**
+	 * Returns the meta object for the container reference '{@link montiarc.PortType#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see montiarc.PortType#getParent()
+	 * @see #getPortType()
+	 * @generated
+	 */
+	EReference getPortType_Parent();
+
+	/**
 	 * Returns the meta object for class '{@link montiarc.Port <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -418,28 +508,6 @@ public interface MontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getPort();
-
-	/**
-	 * Returns the meta object for the attribute '{@link montiarc.Port#isIsIncoming <em>Is Incoming</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Incoming</em>'.
-	 * @see montiarc.Port#isIsIncoming()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EAttribute getPort_IsIncoming();
-
-	/**
-	 * Returns the meta object for the attribute '{@link montiarc.Port#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see montiarc.Port#getName()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EAttribute getPort_Name();
 
 	/**
 	 * Returns the meta object for the reference '{@link montiarc.Port#getType <em>Type</em>}'.
@@ -451,17 +519,6 @@ public interface MontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getPort_Type();
-
-	/**
-	 * Returns the meta object for the container reference '{@link montiarc.Port#getParent <em>Parent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Parent</em>'.
-	 * @see montiarc.Port#getParent()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_Parent();
 
 	/**
 	 * Returns the meta object for class '{@link montiarc.Connector <em>Connector</em>}'.
@@ -529,47 +586,47 @@ public interface MontiarcPackage extends EPackage {
 	EReference getConnector_Parent();
 
 	/**
-	 * Returns the meta object for class '{@link montiarc.SubcomponentDeclaration <em>Subcomponent Declaration</em>}'.
+	 * Returns the meta object for class '{@link montiarc.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Subcomponent Declaration</em>'.
-	 * @see montiarc.SubcomponentDeclaration
+	 * @return the meta object for class '<em>Component</em>'.
+	 * @see montiarc.Component
 	 * @generated
 	 */
-	EClass getSubcomponentDeclaration();
+	EClass getComponent();
 
 	/**
-	 * Returns the meta object for the attribute '{@link montiarc.SubcomponentDeclaration#getInstanceName <em>Instance Name</em>}'.
+	 * Returns the meta object for the attribute '{@link montiarc.Component#getInstanceName <em>Instance Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Instance Name</em>'.
-	 * @see montiarc.SubcomponentDeclaration#getInstanceName()
-	 * @see #getSubcomponentDeclaration()
+	 * @see montiarc.Component#getInstanceName()
+	 * @see #getComponent()
 	 * @generated
 	 */
-	EAttribute getSubcomponentDeclaration_InstanceName();
+	EAttribute getComponent_InstanceName();
 
 	/**
-	 * Returns the meta object for the reference '{@link montiarc.SubcomponentDeclaration#getComponentType <em>Component Type</em>}'.
+	 * Returns the meta object for the reference '{@link montiarc.Component#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Component Type</em>'.
-	 * @see montiarc.SubcomponentDeclaration#getComponentType()
-	 * @see #getSubcomponentDeclaration()
+	 * @return the meta object for the reference '<em>Type</em>'.
+	 * @see montiarc.Component#getType()
+	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getSubcomponentDeclaration_ComponentType();
+	EReference getComponent_Type();
 
 	/**
-	 * Returns the meta object for the container reference '{@link montiarc.SubcomponentDeclaration#getParent <em>Parent</em>}'.
+	 * Returns the meta object for the reference list '{@link montiarc.Component#getPorts <em>Ports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the container reference '<em>Parent</em>'.
-	 * @see montiarc.SubcomponentDeclaration#getParent()
-	 * @see #getSubcomponentDeclaration()
+	 * @return the meta object for the reference list '<em>Ports</em>'.
+	 * @see montiarc.Component#getPorts()
+	 * @see #getComponent()
 	 * @generated
 	 */
-	EReference getSubcomponentDeclaration_Parent();
+	EReference getComponent_Ports();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -653,6 +710,48 @@ public interface MontiarcPackage extends EPackage {
 		EAttribute COMPONENT_TYPE__GROOVY_BEHAVIOR = eINSTANCE.getComponentType_GroovyBehavior();
 
 		/**
+		 * The meta object literal for the '{@link montiarc.impl.PortTypeImpl <em>Port Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see montiarc.impl.PortTypeImpl
+		 * @see montiarc.impl.MontiarcPackageImpl#getPortType()
+		 * @generated
+		 */
+		EClass PORT_TYPE = eINSTANCE.getPortType();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Incoming</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_TYPE__IS_INCOMING = eINSTANCE.getPortType_IsIncoming();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT_TYPE__NAME = eINSTANCE.getPortType_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_TYPE__TYPE = eINSTANCE.getPortType_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT_TYPE__PARENT = eINSTANCE.getPortType_Parent();
+
+		/**
 		 * The meta object literal for the '{@link montiarc.impl.PortImpl <em>Port</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -663,36 +762,12 @@ public interface MontiarcPackage extends EPackage {
 		EClass PORT = eINSTANCE.getPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Incoming</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PORT__IS_INCOMING = eINSTANCE.getPort_IsIncoming();
-
-		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PORT__NAME = eINSTANCE.getPort_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference PORT__TYPE = eINSTANCE.getPort_Type();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__PARENT = eINSTANCE.getPort_Parent();
 
 		/**
 		 * The meta object literal for the '{@link montiarc.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -745,14 +820,14 @@ public interface MontiarcPackage extends EPackage {
 		EReference CONNECTOR__PARENT = eINSTANCE.getConnector_Parent();
 
 		/**
-		 * The meta object literal for the '{@link montiarc.impl.SubcomponentDeclarationImpl <em>Subcomponent Declaration</em>}' class.
+		 * The meta object literal for the '{@link montiarc.impl.ComponentImpl <em>Component</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see montiarc.impl.SubcomponentDeclarationImpl
-		 * @see montiarc.impl.MontiarcPackageImpl#getSubcomponentDeclaration()
+		 * @see montiarc.impl.ComponentImpl
+		 * @see montiarc.impl.MontiarcPackageImpl#getComponent()
 		 * @generated
 		 */
-		EClass SUBCOMPONENT_DECLARATION = eINSTANCE.getSubcomponentDeclaration();
+		EClass COMPONENT = eINSTANCE.getComponent();
 
 		/**
 		 * The meta object literal for the '<em><b>Instance Name</b></em>' attribute feature.
@@ -760,23 +835,23 @@ public interface MontiarcPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SUBCOMPONENT_DECLARATION__INSTANCE_NAME = eINSTANCE.getSubcomponentDeclaration_InstanceName();
+		EAttribute COMPONENT__INSTANCE_NAME = eINSTANCE.getComponent_InstanceName();
 
 		/**
-		 * The meta object literal for the '<em><b>Component Type</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Type</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SUBCOMPONENT_DECLARATION__COMPONENT_TYPE = eINSTANCE.getSubcomponentDeclaration_ComponentType();
+		EReference COMPONENT__TYPE = eINSTANCE.getComponent_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * The meta object literal for the '<em><b>Ports</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SUBCOMPONENT_DECLARATION__PARENT = eINSTANCE.getSubcomponentDeclaration_Parent();
+		EReference COMPONENT__PORTS = eINSTANCE.getComponent_Ports();
 
 	}
 

@@ -95,6 +95,29 @@ public class MontiarcItemProviderAdapterFactory extends MontiarcAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link montiarc.PortType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected PortTypeItemProvider portTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link montiarc.PortType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createPortTypeAdapter() {
+		if (portTypeItemProvider == null) {
+			portTypeItemProvider = new PortTypeItemProvider(this);
+		}
+
+		return portTypeItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link montiarc.Port} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -141,26 +164,26 @@ public class MontiarcItemProviderAdapterFactory extends MontiarcAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link montiarc.SubcomponentDeclaration} instances.
+	 * This keeps track of the one adapter used for all {@link montiarc.Component} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected SubcomponentDeclarationItemProvider subcomponentDeclarationItemProvider;
+	protected ComponentItemProvider componentItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link montiarc.SubcomponentDeclaration}.
+	 * This creates an adapter for a {@link montiarc.Component}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createSubcomponentDeclarationAdapter() {
-		if (subcomponentDeclarationItemProvider == null) {
-			subcomponentDeclarationItemProvider = new SubcomponentDeclarationItemProvider(this);
+	public Adapter createComponentAdapter() {
+		if (componentItemProvider == null) {
+			componentItemProvider = new ComponentItemProvider(this);
 		}
 
-		return subcomponentDeclarationItemProvider;
+		return componentItemProvider;
 	}
 
 	/**
@@ -262,10 +285,11 @@ public class MontiarcItemProviderAdapterFactory extends MontiarcAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
-		if (componentTypeItemProvider != null) componentTypeItemProvider.dispose();
 		if (portItemProvider != null) portItemProvider.dispose();
+		if (componentTypeItemProvider != null) componentTypeItemProvider.dispose();
+		if (portTypeItemProvider != null) portTypeItemProvider.dispose();
 		if (connectorItemProvider != null) connectorItemProvider.dispose();
-		if (subcomponentDeclarationItemProvider != null) subcomponentDeclarationItemProvider.dispose();
+		if (componentItemProvider != null) componentItemProvider.dispose();
 	}
 
 }

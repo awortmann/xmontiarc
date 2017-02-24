@@ -31,6 +31,15 @@ public interface MontiarcFactory extends EFactory {
 	ComponentType createComponentType();
 
 	/**
+	 * Returns a new object of class '<em>Port Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Port Type</em>'.
+	 * @generated
+	 */
+	PortType createPortType();
+
+	/**
 	 * Returns a new object of class '<em>Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -49,13 +58,13 @@ public interface MontiarcFactory extends EFactory {
 	Connector createConnector();
 
 	/**
-	 * Returns a new object of class '<em>Subcomponent Declaration</em>'.
+	 * Returns a new object of class '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Subcomponent Declaration</em>'.
+	 * @return a new object of class '<em>Component</em>'.
 	 * @generated
 	 */
-	SubcomponentDeclaration createSubcomponentDeclaration();
+	Component createComponent();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -66,15 +66,21 @@ public class MontiarcSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
+			case MontiarcPackage.PORT: {
+				Port port = (Port)theEObject;
+				T result = casePort(port);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case MontiarcPackage.COMPONENT_TYPE: {
 				ComponentType componentType = (ComponentType)theEObject;
 				T result = caseComponentType(componentType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MontiarcPackage.PORT: {
-				Port port = (Port)theEObject;
-				T result = casePort(port);
+			case MontiarcPackage.PORT_TYPE: {
+				PortType portType = (PortType)theEObject;
+				T result = casePortType(portType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -84,9 +90,9 @@ public class MontiarcSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MontiarcPackage.SUBCOMPONENT_DECLARATION: {
-				SubcomponentDeclaration subcomponentDeclaration = (SubcomponentDeclaration)theEObject;
-				T result = caseSubcomponentDeclaration(subcomponentDeclaration);
+			case MontiarcPackage.COMPONENT: {
+				Component component = (Component)theEObject;
+				T result = caseComponent(component);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -106,6 +112,21 @@ public class MontiarcSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseComponentType(ComponentType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Port Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Port Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T casePortType(PortType object) {
 		return null;
 	}
 
@@ -140,17 +161,17 @@ public class MontiarcSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Subcomponent Declaration</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Subcomponent Declaration</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseSubcomponentDeclaration(SubcomponentDeclaration object) {
+	public T caseComponent(Component object) {
 		return null;
 	}
 

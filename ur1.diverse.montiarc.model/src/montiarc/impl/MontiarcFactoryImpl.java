@@ -56,10 +56,11 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case MontiarcPackage.COMPONENT_TYPE: return createComponentType();
 			case MontiarcPackage.PORT: return createPort();
+			case MontiarcPackage.COMPONENT_TYPE: return createComponentType();
+			case MontiarcPackage.PORT_TYPE: return createPortType();
 			case MontiarcPackage.CONNECTOR: return createConnector();
-			case MontiarcPackage.SUBCOMPONENT_DECLARATION: return createSubcomponentDeclaration();
+			case MontiarcPackage.COMPONENT: return createComponent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -73,6 +74,16 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	public ComponentType createComponentType() {
 		ComponentTypeImpl componentType = new ComponentTypeImpl();
 		return componentType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public PortType createPortType() {
+		PortTypeImpl portType = new PortTypeImpl();
+		return portType;
 	}
 
 	/**
@@ -100,9 +111,9 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SubcomponentDeclaration createSubcomponentDeclaration() {
-		SubcomponentDeclarationImpl subcomponentDeclaration = new SubcomponentDeclarationImpl();
-		return subcomponentDeclaration;
+	public Component createComponent() {
+		ComponentImpl component = new ComponentImpl();
+		return component;
 	}
 
 	/**

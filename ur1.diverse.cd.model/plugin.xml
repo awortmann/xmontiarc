@@ -9,9 +9,9 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated cd -->
       <package
-            uri="http://ur1/diverse/cd"
+            uri="http://ur1/diverse/cd/model"
             class="cd.CdPackage"
-            genModel="model/cd.genmodel"/>
+            genModel="ur1.diverse.cd.model/cd.genmodel"/>
    </extension>
 
 </plugin>

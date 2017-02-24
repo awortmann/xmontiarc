@@ -4,12 +4,11 @@ package montiarc.impl;
 
 import java.util.Collection;
 
+import montiarc.Component;
 import montiarc.ComponentType;
 import montiarc.Connector;
 import montiarc.MontiarcPackage;
-import montiarc.Port;
-
-import montiarc.SubcomponentDeclaration;
+import montiarc.PortType;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -20,6 +19,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -80,7 +80,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Port> ports;
+	protected EList<PortType> ports;
 
 	/**
 	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' containment reference list.
@@ -100,7 +100,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SubcomponentDeclaration> subcomponents;
+	protected EList<Component> subcomponents;
 
 	/**
 	 * The default value of the '{@link #getGroovyBehavior() <em>Groovy Behavior</em>}' attribute.
@@ -205,9 +205,9 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Port> getPorts() {
+	public EList<PortType> getPorts() {
 		if (ports == null) {
-			ports = new EObjectContainmentWithInverseEList<Port>(Port.class, this, MontiarcPackage.COMPONENT_TYPE__PORTS, MontiarcPackage.PORT__PARENT);
+			ports = new EObjectContainmentWithInverseEList<PortType>(PortType.class, this, MontiarcPackage.COMPONENT_TYPE__PORTS, MontiarcPackage.PORT_TYPE__PARENT);
 		}
 		return ports;
 	}
@@ -229,9 +229,9 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SubcomponentDeclaration> getSubcomponents() {
+	public EList<Component> getSubcomponents() {
 		if (subcomponents == null) {
-			subcomponents = new EObjectContainmentWithInverseEList<SubcomponentDeclaration>(SubcomponentDeclaration.class, this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS, MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT);
+			subcomponents = new EObjectContainmentEList<Component>(Component.class, this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS);
 		}
 		return subcomponents;
 	}
@@ -270,8 +270,6 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectors()).basicAdd(otherEnd, msgs);
-			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubcomponents()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -336,7 +334,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__PORTS:
 				getPorts().clear();
-				getPorts().addAll((Collection<? extends Port>)newValue);
+				getPorts().addAll((Collection<? extends PortType>)newValue);
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				getConnectors().clear();
@@ -344,7 +342,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				getSubcomponents().clear();
-				getSubcomponents().addAll((Collection<? extends SubcomponentDeclaration>)newValue);
+				getSubcomponents().addAll((Collection<? extends Component>)newValue);
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
 				setGroovyBehavior((String)newValue);

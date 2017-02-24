@@ -68,20 +68,24 @@ public class MontiarcAdapterFactory extends AdapterFactoryImpl {
 	protected MontiarcSwitch<Adapter> modelSwitch =
 		new MontiarcSwitch<Adapter>() {
 			@Override
+			public Adapter casePort(Port object) {
+				return createPortAdapter();
+			}
+			@Override
 			public Adapter caseComponentType(ComponentType object) {
 				return createComponentTypeAdapter();
 			}
 			@Override
-			public Adapter casePort(Port object) {
-				return createPortAdapter();
+			public Adapter casePortType(PortType object) {
+				return createPortTypeAdapter();
 			}
 			@Override
 			public Adapter caseConnector(Connector object) {
 				return createConnectorAdapter();
 			}
 			@Override
-			public Adapter caseSubcomponentDeclaration(SubcomponentDeclaration object) {
-				return createSubcomponentDeclarationAdapter();
+			public Adapter caseComponent(Component object) {
+				return createComponentAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -118,6 +122,20 @@ public class MontiarcAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link montiarc.PortType <em>Port Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see montiarc.PortType
+	 * @generated
+	 */
+	public Adapter createPortTypeAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link montiarc.Port <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -146,16 +164,16 @@ public class MontiarcAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link montiarc.SubcomponentDeclaration <em>Subcomponent Declaration</em>}'.
+	 * Creates a new adapter for an object of class '{@link montiarc.Component <em>Component</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see montiarc.SubcomponentDeclaration
+	 * @see montiarc.Component
 	 * @generated
 	 */
-	public Adapter createSubcomponentDeclarationAdapter() {
+	public Adapter createComponentAdapter() {
 		return null;
 	}
 

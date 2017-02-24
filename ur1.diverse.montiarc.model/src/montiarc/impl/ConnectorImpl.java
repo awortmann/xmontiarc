@@ -2,12 +2,11 @@
  */
 package montiarc.impl;
 
+import montiarc.Component;
 import montiarc.ComponentType;
 import montiarc.Connector;
 import montiarc.MontiarcPackage;
-import montiarc.Port;
-
-import montiarc.SubcomponentDeclaration;
+import montiarc.PortType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -42,7 +41,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * @generated
 	 * @ordered
 	 */
-	protected Port sourcePort;
+	protected PortType sourcePort;
 
 	/**
 	 * The cached value of the '{@link #getTargetPort() <em>Target Port</em>}' reference.
@@ -51,7 +50,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * @generated
 	 * @ordered
 	 */
-	protected Port targetPort;
+	protected PortType targetPort;
 
 	/**
 	 * The cached value of the '{@link #getSourceSubcomponent() <em>Source
@@ -62,7 +61,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * @generated
 	 * @ordered
 	 */
-	protected SubcomponentDeclaration sourceSubcomponent;
+	protected Component sourceSubcomponent;
 
 	/**
 	 * The cached value of the '{@link #getTargetSubcomponent() <em>Target
@@ -73,7 +72,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * @generated
 	 * @ordered
 	 */
-	protected SubcomponentDeclaration targetSubcomponent;
+	protected Component targetSubcomponent;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -96,10 +95,10 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port getSourcePort() {
+	public PortType getSourcePort() {
 		if (sourcePort != null && sourcePort.eIsProxy()) {
 			InternalEObject oldSourcePort = (InternalEObject)sourcePort;
-			sourcePort = (Port)eResolveProxy(oldSourcePort);
+			sourcePort = (PortType)eResolveProxy(oldSourcePort);
 			if (sourcePort != oldSourcePort) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.CONNECTOR__SOURCE_PORT, oldSourcePort, sourcePort));
@@ -112,16 +111,17 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port basicGetSourcePort() {
+	public PortType basicGetSourcePort() {
 		return sourcePort;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSourcePort(Port newSourcePort) {
-		Port oldSourcePort = sourcePort;
+	public void setSourcePort(PortType newSourcePort) {
+		PortType oldSourcePort = sourcePort;
 		sourcePort = newSourcePort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.CONNECTOR__SOURCE_PORT, oldSourcePort, sourcePort));
@@ -131,10 +131,10 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port getTargetPort() {
+	public PortType getTargetPort() {
 		if (targetPort != null && targetPort.eIsProxy()) {
 			InternalEObject oldTargetPort = (InternalEObject)targetPort;
-			targetPort = (Port)eResolveProxy(oldTargetPort);
+			targetPort = (PortType)eResolveProxy(oldTargetPort);
 			if (targetPort != oldTargetPort) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.CONNECTOR__TARGET_PORT, oldTargetPort, targetPort));
@@ -147,16 +147,17 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port basicGetTargetPort() {
+	public PortType basicGetTargetPort() {
 		return targetPort;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTargetPort(Port newTargetPort) {
-		Port oldTargetPort = targetPort;
+	public void setTargetPort(PortType newTargetPort) {
+		PortType oldTargetPort = targetPort;
 		targetPort = newTargetPort;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.CONNECTOR__TARGET_PORT, oldTargetPort, targetPort));
@@ -166,10 +167,10 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SubcomponentDeclaration getSourceSubcomponent() {
+	public Component getSourceSubcomponent() {
 		if (sourceSubcomponent != null && sourceSubcomponent.eIsProxy()) {
 			InternalEObject oldSourceSubcomponent = (InternalEObject)sourceSubcomponent;
-			sourceSubcomponent = (SubcomponentDeclaration)eResolveProxy(oldSourceSubcomponent);
+			sourceSubcomponent = (Component)eResolveProxy(oldSourceSubcomponent);
 			if (sourceSubcomponent != oldSourceSubcomponent) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.CONNECTOR__SOURCE_SUBCOMPONENT, oldSourceSubcomponent, sourceSubcomponent));
@@ -182,16 +183,17 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SubcomponentDeclaration basicGetSourceSubcomponent() {
+	public Component basicGetSourceSubcomponent() {
 		return sourceSubcomponent;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSourceSubcomponent(SubcomponentDeclaration newSourceSubcomponent) {
-		SubcomponentDeclaration oldSourceSubcomponent = sourceSubcomponent;
+	public void setSourceSubcomponent(Component newSourceSubcomponent) {
+		Component oldSourceSubcomponent = sourceSubcomponent;
 		sourceSubcomponent = newSourceSubcomponent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.CONNECTOR__SOURCE_SUBCOMPONENT, oldSourceSubcomponent, sourceSubcomponent));
@@ -201,10 +203,10 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SubcomponentDeclaration getTargetSubcomponent() {
+	public Component getTargetSubcomponent() {
 		if (targetSubcomponent != null && targetSubcomponent.eIsProxy()) {
 			InternalEObject oldTargetSubcomponent = (InternalEObject)targetSubcomponent;
-			targetSubcomponent = (SubcomponentDeclaration)eResolveProxy(oldTargetSubcomponent);
+			targetSubcomponent = (Component)eResolveProxy(oldTargetSubcomponent);
 			if (targetSubcomponent != oldTargetSubcomponent) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.CONNECTOR__TARGET_SUBCOMPONENT, oldTargetSubcomponent, targetSubcomponent));
@@ -217,16 +219,17 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
-	public SubcomponentDeclaration basicGetTargetSubcomponent() {
+	public Component basicGetTargetSubcomponent() {
 		return targetSubcomponent;
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTargetSubcomponent(SubcomponentDeclaration newTargetSubcomponent) {
-		SubcomponentDeclaration oldTargetSubcomponent = targetSubcomponent;
+	public void setTargetSubcomponent(Component newTargetSubcomponent) {
+		Component oldTargetSubcomponent = targetSubcomponent;
 		targetSubcomponent = newTargetSubcomponent;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.CONNECTOR__TARGET_SUBCOMPONENT, oldTargetSubcomponent, targetSubcomponent));
@@ -344,16 +347,16 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case MontiarcPackage.CONNECTOR__SOURCE_PORT:
-				setSourcePort((Port)newValue);
+				setSourcePort((PortType)newValue);
 				return;
 			case MontiarcPackage.CONNECTOR__TARGET_PORT:
-				setTargetPort((Port)newValue);
+				setTargetPort((PortType)newValue);
 				return;
 			case MontiarcPackage.CONNECTOR__SOURCE_SUBCOMPONENT:
-				setSourceSubcomponent((SubcomponentDeclaration)newValue);
+				setSourceSubcomponent((Component)newValue);
 				return;
 			case MontiarcPackage.CONNECTOR__TARGET_SUBCOMPONENT:
-				setTargetSubcomponent((SubcomponentDeclaration)newValue);
+				setTargetSubcomponent((Component)newValue);
 				return;
 			case MontiarcPackage.CONNECTOR__PARENT:
 				setParent((ComponentType)newValue);
@@ -370,16 +373,16 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case MontiarcPackage.CONNECTOR__SOURCE_PORT:
-				setSourcePort((Port)null);
+				setSourcePort((PortType)null);
 				return;
 			case MontiarcPackage.CONNECTOR__TARGET_PORT:
-				setTargetPort((Port)null);
+				setTargetPort((PortType)null);
 				return;
 			case MontiarcPackage.CONNECTOR__SOURCE_SUBCOMPONENT:
-				setSourceSubcomponent((SubcomponentDeclaration)null);
+				setSourceSubcomponent((Component)null);
 				return;
 			case MontiarcPackage.CONNECTOR__TARGET_SUBCOMPONENT:
-				setTargetSubcomponent((SubcomponentDeclaration)null);
+				setTargetSubcomponent((Component)null);
 				return;
 			case MontiarcPackage.CONNECTOR__PARENT:
 				setParent((ComponentType)null);

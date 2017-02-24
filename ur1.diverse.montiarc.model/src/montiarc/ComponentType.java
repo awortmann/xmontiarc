@@ -83,8 +83,8 @@ public interface ComponentType extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
-	 * The list contents are of type {@link montiarc.Port}.
-	 * It is bidirectional and its opposite is '{@link montiarc.Port#getParent <em>Parent</em>}'.
+	 * The list contents are of type {@link montiarc.PortType}.
+	 * It is bidirectional and its opposite is '{@link montiarc.PortType#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
@@ -93,11 +93,11 @@ public interface ComponentType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports</em>' containment reference list.
 	 * @see montiarc.MontiarcPackage#getComponentType_Ports()
-	 * @see montiarc.Port#getParent
+	 * @see montiarc.PortType#getParent
 	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
-	EList<Port> getPorts();
+	EList<PortType> getPorts();
 
 	/**
 	 * Returns the value of the '<em><b>Connectors</b></em>' containment reference list.
@@ -119,8 +119,7 @@ public interface ComponentType extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Subcomponents</b></em>' containment reference list.
-	 * The list contents are of type {@link montiarc.SubcomponentDeclaration}.
-	 * It is bidirectional and its opposite is '{@link montiarc.SubcomponentDeclaration#getParent <em>Parent</em>}'.
+	 * The list contents are of type {@link montiarc.Component}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subcomponents</em>' containment reference list isn't clear,
@@ -129,11 +128,10 @@ public interface ComponentType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subcomponents</em>' containment reference list.
 	 * @see montiarc.MontiarcPackage#getComponentType_Subcomponents()
-	 * @see montiarc.SubcomponentDeclaration#getParent
-	 * @model opposite="parent" containment="true"
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<SubcomponentDeclaration> getSubcomponents();
+	EList<Component> getSubcomponents();
 
 	/**
 	 * Returns the value of the '<em><b>Groovy Behavior</b></em>' attribute.
