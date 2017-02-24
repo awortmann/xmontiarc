@@ -84,6 +84,7 @@ public interface ComponentType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link montiarc.Port}.
+	 * It is bidirectional and its opposite is '{@link montiarc.Port#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
@@ -92,7 +93,8 @@ public interface ComponentType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports</em>' containment reference list.
 	 * @see montiarc.MontiarcPackage#getComponentType_Ports()
-	 * @model containment="true"
+	 * @see montiarc.Port#getParent
+	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
 	EList<Port> getPorts();
@@ -100,6 +102,7 @@ public interface ComponentType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Connectors</b></em>' containment reference list.
 	 * The list contents are of type {@link montiarc.Connector}.
+	 * It is bidirectional and its opposite is '{@link montiarc.Connector#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Connectors</em>' containment reference isn't clear,
@@ -108,7 +111,8 @@ public interface ComponentType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connectors</em>' containment reference list.
 	 * @see montiarc.MontiarcPackage#getComponentType_Connectors()
-	 * @model containment="true"
+	 * @see montiarc.Connector#getParent
+	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
 	EList<Connector> getConnectors();
@@ -116,6 +120,7 @@ public interface ComponentType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Subcomponents</b></em>' containment reference list.
 	 * The list contents are of type {@link montiarc.SubcomponentDeclaration}.
+	 * It is bidirectional and its opposite is '{@link montiarc.SubcomponentDeclaration#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subcomponents</em>' containment reference list isn't clear,
@@ -124,7 +129,8 @@ public interface ComponentType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subcomponents</em>' containment reference list.
 	 * @see montiarc.MontiarcPackage#getComponentType_Subcomponents()
-	 * @model containment="true"
+	 * @see montiarc.SubcomponentDeclaration#getParent
+	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
 	EList<SubcomponentDeclaration> getSubcomponents();

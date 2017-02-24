@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link montiarc.SubcomponentDeclaration#getInstanceName <em>Instance Name</em>}</li>
  *   <li>{@link montiarc.SubcomponentDeclaration#getComponentType <em>Component Type</em>}</li>
+ *   <li>{@link montiarc.SubcomponentDeclaration#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @see montiarc.MontiarcPackage#getSubcomponentDeclaration()
@@ -74,5 +75,33 @@ public interface SubcomponentDeclaration extends EObject {
 	 * @generated
 	 */
 	void setComponentType(ComponentType value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link montiarc.ComponentType#getSubcomponents <em>Subcomponents</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent</em>' container reference.
+	 * @see #setParent(ComponentType)
+	 * @see montiarc.MontiarcPackage#getSubcomponentDeclaration_Parent()
+	 * @see montiarc.ComponentType#getSubcomponents
+	 * @model opposite="subcomponents" required="true" transient="false"
+	 * @generated
+	 */
+	ComponentType getParent();
+
+	/**
+	 * Sets the value of the '{@link montiarc.SubcomponentDeclaration#getParent <em>Parent</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent</em>' container reference.
+	 * @see #getParent()
+	 * @generated
+	 */
+	void setParent(ComponentType value);
 
 } // SubcomponentDeclaration

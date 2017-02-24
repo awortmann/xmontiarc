@@ -178,13 +178,22 @@ public interface MontiarcPackage extends EPackage {
 	int PORT__TYPE = 2;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__PARENT = 3;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 3;
+	int PORT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
@@ -242,13 +251,22 @@ public interface MontiarcPackage extends EPackage {
 	int CONNECTOR__TARGET_SUBCOMPONENT = 3;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__PARENT = 4;
+
+	/**
 	 * The number of structural features of the '<em>Connector</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_FEATURE_COUNT = 4;
+	int CONNECTOR_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Connector</em>' class.
@@ -288,13 +306,22 @@ public interface MontiarcPackage extends EPackage {
 	int SUBCOMPONENT_DECLARATION__COMPONENT_TYPE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBCOMPONENT_DECLARATION__PARENT = 2;
+
+	/**
 	 * The number of structural features of the '<em>Subcomponent Declaration</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_DECLARATION_FEATURE_COUNT = 2;
+	int SUBCOMPONENT_DECLARATION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Subcomponent Declaration</em>' class.
@@ -426,6 +453,17 @@ public interface MontiarcPackage extends EPackage {
 	EReference getPort_Type();
 
 	/**
+	 * Returns the meta object for the container reference '{@link montiarc.Port#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see montiarc.Port#getParent()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EReference getPort_Parent();
+
+	/**
 	 * Returns the meta object for class '{@link montiarc.Connector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -480,6 +518,17 @@ public interface MontiarcPackage extends EPackage {
 	EReference getConnector_TargetSubcomponent();
 
 	/**
+	 * Returns the meta object for the container reference '{@link montiarc.Connector#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see montiarc.Connector#getParent()
+	 * @see #getConnector()
+	 * @generated
+	 */
+	EReference getConnector_Parent();
+
+	/**
 	 * Returns the meta object for class '{@link montiarc.SubcomponentDeclaration <em>Subcomponent Declaration</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -510,6 +559,17 @@ public interface MontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSubcomponentDeclaration_ComponentType();
+
+	/**
+	 * Returns the meta object for the container reference '{@link montiarc.SubcomponentDeclaration#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see montiarc.SubcomponentDeclaration#getParent()
+	 * @see #getSubcomponentDeclaration()
+	 * @generated
+	 */
+	EReference getSubcomponentDeclaration_Parent();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -627,6 +687,14 @@ public interface MontiarcPackage extends EPackage {
 		EReference PORT__TYPE = eINSTANCE.getPort_Type();
 
 		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference PORT__PARENT = eINSTANCE.getPort_Parent();
+
+		/**
 		 * The meta object literal for the '{@link montiarc.impl.ConnectorImpl <em>Connector</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -669,6 +737,14 @@ public interface MontiarcPackage extends EPackage {
 		EReference CONNECTOR__TARGET_SUBCOMPONENT = eINSTANCE.getConnector_TargetSubcomponent();
 
 		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTOR__PARENT = eINSTANCE.getConnector_Parent();
+
+		/**
 		 * The meta object literal for the '{@link montiarc.impl.SubcomponentDeclarationImpl <em>Subcomponent Declaration</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -693,6 +769,14 @@ public interface MontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SUBCOMPONENT_DECLARATION__COMPONENT_TYPE = eINSTANCE.getSubcomponentDeclaration_ComponentType();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBCOMPONENT_DECLARATION__PARENT = eINSTANCE.getSubcomponentDeclaration_Parent();
 
 	}
 

@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link montiarc.Connector#getTargetPort <em>Target Port</em>}</li>
  *   <li>{@link montiarc.Connector#getSourceSubcomponent <em>Source Subcomponent</em>}</li>
  *   <li>{@link montiarc.Connector#getTargetSubcomponent <em>Target Subcomponent</em>}</li>
+ *   <li>{@link montiarc.Connector#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @see montiarc.MontiarcPackage#getConnector()
@@ -128,5 +129,33 @@ public interface Connector extends EObject {
 	 * @generated
 	 */
 	void setTargetSubcomponent(SubcomponentDeclaration value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link montiarc.ComponentType#getConnectors <em>Connectors</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent</em>' container reference.
+	 * @see #setParent(ComponentType)
+	 * @see montiarc.MontiarcPackage#getConnector_Parent()
+	 * @see montiarc.ComponentType#getConnectors
+	 * @model opposite="connectors" required="true" transient="false"
+	 * @generated
+	 */
+	ComponentType getParent();
+
+	/**
+	 * Sets the value of the '{@link montiarc.Connector#getParent <em>Parent</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent</em>' container reference.
+	 * @see #getParent()
+	 * @generated
+	 */
+	void setParent(ComponentType value);
 
 } // Connector

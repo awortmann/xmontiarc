@@ -231,6 +231,15 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getPort_Parent() {
+		return (EReference)portEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getConnector() {
 		return connectorEClass;
 	}
@@ -276,6 +285,15 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getConnector_Parent() {
+		return (EReference)connectorEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSubcomponentDeclaration() {
 		return subcomponentDeclarationEClass;
 	}
@@ -296,6 +314,15 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 */
 	public EReference getSubcomponentDeclaration_ComponentType() {
 		return (EReference)subcomponentDeclarationEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSubcomponentDeclaration_Parent() {
+		return (EReference)subcomponentDeclarationEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -338,16 +365,19 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		createEAttribute(portEClass, PORT__IS_INCOMING);
 		createEAttribute(portEClass, PORT__NAME);
 		createEReference(portEClass, PORT__TYPE);
+		createEReference(portEClass, PORT__PARENT);
 
 		connectorEClass = createEClass(CONNECTOR);
 		createEReference(connectorEClass, CONNECTOR__SOURCE_PORT);
 		createEReference(connectorEClass, CONNECTOR__TARGET_PORT);
 		createEReference(connectorEClass, CONNECTOR__SOURCE_SUBCOMPONENT);
 		createEReference(connectorEClass, CONNECTOR__TARGET_SUBCOMPONENT);
+		createEReference(connectorEClass, CONNECTOR__PARENT);
 
 		subcomponentDeclarationEClass = createEClass(SUBCOMPONENT_DECLARATION);
 		createEAttribute(subcomponentDeclarationEClass, SUBCOMPONENT_DECLARATION__INSTANCE_NAME);
 		createEReference(subcomponentDeclarationEClass, SUBCOMPONENT_DECLARATION__COMPONENT_TYPE);
+		createEReference(subcomponentDeclarationEClass, SUBCOMPONENT_DECLARATION__PARENT);
 	}
 
 	/**
@@ -386,25 +416,28 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		initEClass(componentTypeEClass, ComponentType.class, "ComponentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponentType_Name(), ecorePackage.getEString(), "name", null, 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_SuperComponentType(), this.getComponentType(), null, "superComponentType", null, 0, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentType_Ports(), this.getPort(), null, "ports", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentType_Connectors(), this.getConnector(), null, "connectors", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentType_Subcomponents(), this.getSubcomponentDeclaration(), null, "subcomponents", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentType_Ports(), this.getPort(), this.getPort_Parent(), "ports", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentType_Connectors(), this.getConnector(), this.getConnector_Parent(), "connectors", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentType_Subcomponents(), this.getSubcomponentDeclaration(), this.getSubcomponentDeclaration_Parent(), "subcomponents", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentType_GroovyBehavior(), ecorePackage.getEString(), "groovyBehavior", null, 0, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_IsIncoming(), ecorePackage.getEBoolean(), "isIncoming", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getPort_Type(), theCdPackage.getCDClass(), null, "type", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getPort_Parent(), this.getComponentType(), this.getComponentType_Ports(), "parent", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnector_SourcePort(), this.getPort(), null, "sourcePort", null, 1, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnector_TargetPort(), this.getPort(), null, "targetPort", null, 1, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnector_SourceSubcomponent(), this.getSubcomponentDeclaration(), null, "sourceSubcomponent", null, 1, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getConnector_TargetSubcomponent(), this.getSubcomponentDeclaration(), null, "targetSubcomponent", null, 1, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnector_Parent(), this.getComponentType(), this.getComponentType_Connectors(), "parent", null, 1, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(subcomponentDeclarationEClass, SubcomponentDeclaration.class, "SubcomponentDeclaration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSubcomponentDeclaration_InstanceName(), ecorePackage.getEString(), "instanceName", null, 1, 1, SubcomponentDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponentDeclaration_ComponentType(), this.getComponentType(), null, "componentType", null, 1, 1, SubcomponentDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubcomponentDeclaration_Parent(), this.getComponentType(), this.getComponentType_Subcomponents(), "parent", null, 1, 1, SubcomponentDeclaration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

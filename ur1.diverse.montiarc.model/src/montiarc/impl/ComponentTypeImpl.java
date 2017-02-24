@@ -20,8 +20,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
@@ -208,7 +207,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 */
 	public EList<Port> getPorts() {
 		if (ports == null) {
-			ports = new EObjectContainmentEList<Port>(Port.class, this, MontiarcPackage.COMPONENT_TYPE__PORTS);
+			ports = new EObjectContainmentWithInverseEList<Port>(Port.class, this, MontiarcPackage.COMPONENT_TYPE__PORTS, MontiarcPackage.PORT__PARENT);
 		}
 		return ports;
 	}
@@ -220,7 +219,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 */
 	public EList<Connector> getConnectors() {
 		if (connectors == null) {
-			connectors = new EObjectContainmentEList<Connector>(Connector.class, this, MontiarcPackage.COMPONENT_TYPE__CONNECTORS);
+			connectors = new EObjectContainmentWithInverseEList<Connector>(Connector.class, this, MontiarcPackage.COMPONENT_TYPE__CONNECTORS, MontiarcPackage.CONNECTOR__PARENT);
 		}
 		return connectors;
 	}
@@ -232,7 +231,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 */
 	public EList<SubcomponentDeclaration> getSubcomponents() {
 		if (subcomponents == null) {
-			subcomponents = new EObjectContainmentEList<SubcomponentDeclaration>(SubcomponentDeclaration.class, this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS);
+			subcomponents = new EObjectContainmentWithInverseEList<SubcomponentDeclaration>(SubcomponentDeclaration.class, this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS, MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT);
 		}
 		return subcomponents;
 	}
@@ -256,6 +255,25 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 		groovyBehavior = newGroovyBehavior;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR, oldGroovyBehavior, groovyBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MontiarcPackage.COMPONENT_TYPE__PORTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectors()).basicAdd(otherEnd, msgs);
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubcomponents()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**

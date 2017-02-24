@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link montiarc.Port#isIsIncoming <em>Is Incoming</em>}</li>
  *   <li>{@link montiarc.Port#getName <em>Name</em>}</li>
  *   <li>{@link montiarc.Port#getType <em>Type</em>}</li>
+ *   <li>{@link montiarc.Port#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @see montiarc.MontiarcPackage#getPort()
@@ -103,5 +104,33 @@ public interface Port extends EObject {
 	 * @generated
 	 */
 	void setType(CDClass value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
+	 * It is bidirectional and its opposite is '{@link montiarc.ComponentType#getPorts <em>Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent</em>' container reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent</em>' container reference.
+	 * @see #setParent(ComponentType)
+	 * @see montiarc.MontiarcPackage#getPort_Parent()
+	 * @see montiarc.ComponentType#getPorts
+	 * @model opposite="ports" required="true" transient="false"
+	 * @generated
+	 */
+	ComponentType getParent();
+
+	/**
+	 * Sets the value of the '{@link montiarc.Port#getParent <em>Parent</em>}' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent</em>' container reference.
+	 * @see #getParent()
+	 * @generated
+	 */
+	void setParent(ComponentType value);
 
 } // Port

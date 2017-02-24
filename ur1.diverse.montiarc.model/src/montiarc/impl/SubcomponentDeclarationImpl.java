@@ -8,11 +8,13 @@ import montiarc.SubcomponentDeclaration;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -24,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link montiarc.impl.SubcomponentDeclarationImpl#getInstanceName <em>Instance Name</em>}</li>
  *   <li>{@link montiarc.impl.SubcomponentDeclarationImpl#getComponentType <em>Component Type</em>}</li>
+ *   <li>{@link montiarc.impl.SubcomponentDeclarationImpl#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @generated
@@ -142,6 +145,91 @@ public class SubcomponentDeclarationImpl extends MinimalEObjectImpl.Container im
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComponentType getParent() {
+		if (eContainerFeatureID() != MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT) return null;
+		return (ComponentType)eInternalContainer();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetParent(ComponentType newParent, NotificationChain msgs) {
+		msgs = eBasicSetContainer((InternalEObject)newParent, MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT, msgs);
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setParent(ComponentType newParent) {
+		if (newParent != eInternalContainer() || (eContainerFeatureID() != MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT && newParent != null)) {
+			if (EcoreUtil.isAncestor(this, newParent))
+				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
+			NotificationChain msgs = null;
+			if (eInternalContainer() != null)
+				msgs = eBasicRemoveFromContainer(msgs);
+			if (newParent != null)
+				msgs = ((InternalEObject)newParent).eInverseAdd(this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS, ComponentType.class, msgs);
+			msgs = basicSetParent(newParent, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT, newParent, newParent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT:
+				if (eInternalContainer() != null)
+					msgs = eBasicRemoveFromContainer(msgs);
+				return basicSetParent((ComponentType)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT:
+				return basicSetParent(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
+		switch (eContainerFeatureID()) {
+			case MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT:
+				return eInternalContainer().eInverseRemove(this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS, ComponentType.class, msgs);
+		}
+		return super.eBasicRemoveFromContainerFeature(msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -150,6 +238,8 @@ public class SubcomponentDeclarationImpl extends MinimalEObjectImpl.Container im
 			case MontiarcPackage.SUBCOMPONENT_DECLARATION__COMPONENT_TYPE:
 				if (resolve) return getComponentType();
 				return basicGetComponentType();
+			case MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT:
+				return getParent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -167,6 +257,9 @@ public class SubcomponentDeclarationImpl extends MinimalEObjectImpl.Container im
 				return;
 			case MontiarcPackage.SUBCOMPONENT_DECLARATION__COMPONENT_TYPE:
 				setComponentType((ComponentType)newValue);
+				return;
+			case MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT:
+				setParent((ComponentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -186,6 +279,9 @@ public class SubcomponentDeclarationImpl extends MinimalEObjectImpl.Container im
 			case MontiarcPackage.SUBCOMPONENT_DECLARATION__COMPONENT_TYPE:
 				setComponentType((ComponentType)null);
 				return;
+			case MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT:
+				setParent((ComponentType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -202,6 +298,8 @@ public class SubcomponentDeclarationImpl extends MinimalEObjectImpl.Container im
 				return INSTANCE_NAME_EDEFAULT == null ? instanceName != null : !INSTANCE_NAME_EDEFAULT.equals(instanceName);
 			case MontiarcPackage.SUBCOMPONENT_DECLARATION__COMPONENT_TYPE:
 				return componentType != null;
+			case MontiarcPackage.SUBCOMPONENT_DECLARATION__PARENT:
+				return getParent() != null;
 		}
 		return super.eIsSet(featureID);
 	}
