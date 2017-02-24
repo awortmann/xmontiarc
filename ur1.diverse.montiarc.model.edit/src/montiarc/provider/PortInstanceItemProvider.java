@@ -2,6 +2,7 @@
  */
 package montiarc.provider;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -17,17 +18,19 @@ import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import montiarc.ComponentInstance;
+import montiarc.ComponentType;
 import montiarc.MontiarcPackage;
+import montiarc.PortInstance;
 import montiarc.PortType;
 
 /**
- * This is the item provider adapter for a {@link montiarc.PortType} object.
+ * This is the item provider adapter for a {@link montiarc.PortInstance} object.
  * <!-- begin-user-doc --> <!-- end-user-doc -->
  * @generated
  */
-public class PortTypeItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
+public class PortInstanceItemProvider extends ItemProviderAdapter implements IEditingDomainItemProvider,
 		IStructuredItemContentProvider, ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
@@ -35,7 +38,7 @@ public class PortTypeItemProvider extends ItemProviderAdapter implements IEditin
 	 * 
 	 * @generated
 	 */
-	public PortTypeItemProvider(AdapterFactory adapterFactory) {
+	public PortInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -50,81 +53,58 @@ public class PortTypeItemProvider extends ItemProviderAdapter implements IEditin
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addIsIncomingPropertyDescriptor(object);
-			addNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Is Incoming feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addIsIncomingPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PortType_isIncoming_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortType_isIncoming_feature", "_UI_PortType_type"),
-				 MontiarcPackage.Literals.PORT_TYPE__IS_INCOMING,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Name feature.
-	 * <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addNamePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_PortType_name_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortType_name_feature", "_UI_PortType_type"),
-				 MontiarcPackage.Literals.PORT_TYPE__NAME,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	protected void addTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PortType_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortType_type_feature", "_UI_PortType_type"),
-				 MontiarcPackage.Literals.PORT_TYPE__TYPE,
+				 getString("_UI_PortInstance_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortInstance_type_feature", "_UI_PortInstance_type"),
+				 MontiarcPackage.Literals.PORT_INSTANCE__TYPE,
 				 true,
 				 false,
 				 true,
 				 null,
 				 null,
-				 null));
+				 null){
+		        @Override
+		        public Collection<?> getChoiceOfValues(Object object)
+		        {
+		        	List<Object> choiceOfValues = new ArrayList<Object>(super.getChoiceOfValues(object));
+		        	List<Object> filteredValues = new ArrayList<Object>();
+		        	
+		        	PortInstance self = (PortInstance)object;
+		        	ComponentInstance parentInstance = self.getParent();
+		        	
+		        	if (parentInstance != null && parentInstance.getType() != null) {
+		        		ComponentType parentType = parentInstance.getType();
+			            for (Object value : choiceOfValues) {
+			            	if (value !=null) {
+			            		PortType pt = (PortType) value;
+			            		if (pt.getParent().equals(parentType)) {
+			            			filteredValues.add(pt);
+			            		}
+			            	}
+			            }
+		        	}
+		            return filteredValues;
+		        }
+		      });
 	}
 
 	/**
-	 * This returns PortType.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * This returns Port.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
 	 */
@@ -141,11 +121,11 @@ public class PortTypeItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public String getText(Object object) {
-//		PortType pt = (PortType) object;
+//		PortType pt = ((PortInstance) object).getType();
 //		String direction = null;
 //		String typeName = null;
 //		String label = null;
-//		if (pt.getType() != null && pt.getType().getName() != null) {
+//		if (pt != null && pt.getType() != null && pt.getType().getName() != null) {
 //
 //			if (pt.isIsIncoming()) {
 //				direction = "in";
@@ -156,12 +136,12 @@ public class PortTypeItemProvider extends ItemProviderAdapter implements IEditin
 //			if (pt.getType() != null) {
 //				typeName = pt.getType().getName();
 //			}
-//			label = direction + " " + typeName + " " + pt.getName(); 
+//			label = direction + " " + typeName + " " + pt.getName();
 //		}
-//
-//		return label == null || label.length() == 0 ? getString("_UI_PortType_type")
-//				: getString("_UI_PortType_type") + " " + label;
-		return ((PortType)object).toString();
+//		return label == null || label.length() == 0 ? getString("_UI_PortInstance_type")
+//				: label;
+		return ((PortInstance)object).toString();
+
 	}
 
 	/**
@@ -174,13 +154,6 @@ public class PortTypeItemProvider extends ItemProviderAdapter implements IEditin
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(PortType.class)) {
-			case MontiarcPackage.PORT_TYPE__IS_INCOMING:
-			case MontiarcPackage.PORT_TYPE__NAME:
-				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-				return;
-		}
 		super.notifyChanged(notification);
 	}
 

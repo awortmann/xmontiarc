@@ -56,11 +56,13 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-			case MontiarcPackage.PORT: return createPort();
 			case MontiarcPackage.COMPONENT_TYPE: return createComponentType();
 			case MontiarcPackage.PORT_TYPE: return createPortType();
-			case MontiarcPackage.CONNECTOR: return createConnector();
-			case MontiarcPackage.COMPONENT: return createComponent();
+			case MontiarcPackage.COMPONENT_INSTANCE: return createComponentInstance();
+			case MontiarcPackage.PORT_INSTANCE: return createPortInstance();
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE: return createIntermediateConnectorType();
+			case MontiarcPackage.INCOMING_CONNECTOR_TYPE: return createIncomingConnectorType();
+			case MontiarcPackage.OUTGOING_CONNECTOR_TYPE: return createOutgoingConnectorType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -91,9 +93,9 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port createPort() {
-		PortImpl port = new PortImpl();
-		return port;
+	public ComponentInstance createComponentInstance() {
+		ComponentInstanceImpl componentInstance = new ComponentInstanceImpl();
+		return componentInstance;
 	}
 
 	/**
@@ -101,9 +103,9 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Connector createConnector() {
-		ConnectorImpl connector = new ConnectorImpl();
-		return connector;
+	public PortInstance createPortInstance() {
+		PortInstanceImpl portInstance = new PortInstanceImpl();
+		return portInstance;
 	}
 
 	/**
@@ -111,9 +113,29 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Component createComponent() {
-		ComponentImpl component = new ComponentImpl();
-		return component;
+	public IntermediateConnectorType createIntermediateConnectorType() {
+		IntermediateConnectorTypeImpl intermediateConnectorType = new IntermediateConnectorTypeImpl();
+		return intermediateConnectorType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IncomingConnectorType createIncomingConnectorType() {
+		IncomingConnectorTypeImpl incomingConnectorType = new IncomingConnectorTypeImpl();
+		return incomingConnectorType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OutgoingConnectorType createOutgoingConnectorType() {
+		OutgoingConnectorTypeImpl outgoingConnectorType = new OutgoingConnectorTypeImpl();
+		return outgoingConnectorType;
 	}
 
 	/**

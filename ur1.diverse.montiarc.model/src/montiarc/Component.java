@@ -89,7 +89,7 @@ public interface Component extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Ports</em>' reference list.
 	 * @see montiarc.MontiarcPackage#getComponent_Ports()
-	 * @model derived="true"
+	 * @model
 	 * @generated
 	 */
 	EList<Port> getPorts();

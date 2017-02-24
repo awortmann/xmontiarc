@@ -6,14 +6,10 @@ package montiarc.provider;
 import java.util.Collection;
 import java.util.List;
 
-import montiarc.Component;
-import montiarc.MontiarcPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
+import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -25,13 +21,17 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
+import montiarc.ComponentInstance;
+import montiarc.MontiarcFactory;
+import montiarc.MontiarcPackage;
+
 /**
- * This is the item provider adapter for a {@link montiarc.Component} object.
+ * This is the item provider adapter for a {@link montiarc.ComponentInstance} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class ComponentItemProvider 
+public class ComponentInstanceItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -45,7 +45,7 @@ public class ComponentItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentItemProvider(AdapterFactory adapterFactory) {
+	public ComponentInstanceItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -62,7 +62,6 @@ public class ComponentItemProvider
 
 			addInstanceNamePropertyDescriptor(object);
 			addTypePropertyDescriptor(object);
-			addPortsPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -78,9 +77,9 @@ public class ComponentItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Component_instanceName_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_instanceName_feature", "_UI_Component_type"),
-				 MontiarcPackage.Literals.COMPONENT__INSTANCE_NAME,
+				 getString("_UI_ComponentInstance_instanceName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_instanceName_feature", "_UI_ComponentInstance_type"),
+				 MontiarcPackage.Literals.COMPONENT_INSTANCE__INSTANCE_NAME,
 				 true,
 				 false,
 				 false,
@@ -100,9 +99,9 @@ public class ComponentItemProvider
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_Component_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_type_feature", "_UI_Component_type"),
-				 MontiarcPackage.Literals.COMPONENT__TYPE,
+				 getString("_UI_ComponentInstance_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_type_feature", "_UI_ComponentInstance_type"),
+				 MontiarcPackage.Literals.COMPONENT_INSTANCE__TYPE,
 				 true,
 				 false,
 				 true,
@@ -112,52 +111,63 @@ public class ComponentItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Ports feature.
+	 * This specifies how to implement {@link #getChildren} and is used to deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand}, {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in {@link #createCommand}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addPortsPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Component_ports_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Component_ports_feature", "_UI_Component_type"),
-				 MontiarcPackage.Literals.COMPONENT__PORTS,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_INSTANCE__PORTS);
+		}
+		return childrenFeatures;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(Object object, Object child) {
+		// Check the type of the specified child object and return the proper feature to use for
+		// adding (see {@link AddCommand}) it as a child.
+
+		return super.getChildFeature(object, child);
 	}
 
 	/**
 	 * This returns Component.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/Component"));
+		return overlayImage(object, getResourceLocator().getImage("full/component"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Component)object).getInstanceName();
+		String label = null;
+		ComponentInstance c = (ComponentInstance)object;
+		if (c.getType() != null) {
+			label = c.getType().getName() + " " + c.getInstanceName();
+		}
 		return label == null || label.length() == 0 ?
-			getString("_UI_Component_type") :
-			getString("_UI_Component_type") + " " + label;
+			getString("_UI_ComponentInstance_type") :
+			label;
 	}
-	
 
 	/**
 	 * This handles model notifications by calling {@link #updateChildren} to update any cached
@@ -170,9 +180,12 @@ public class ComponentItemProvider
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Component.class)) {
-			case MontiarcPackage.COMPONENT__INSTANCE_NAME:
+		switch (notification.getFeatureID(ComponentInstance.class)) {
+			case MontiarcPackage.COMPONENT_INSTANCE__INSTANCE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
+				return;
+			case MontiarcPackage.COMPONENT_INSTANCE__PORTS:
+				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
 		super.notifyChanged(notification);
@@ -188,6 +201,11 @@ public class ComponentItemProvider
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MontiarcPackage.Literals.COMPONENT_INSTANCE__PORTS,
+				 MontiarcFactory.eINSTANCE.createPortInstance()));
 	}
 
 	/**

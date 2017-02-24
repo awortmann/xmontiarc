@@ -2,10 +2,10 @@
  */
 package montiarc.provider;
 
-import cd.provider.CdEditPlugin;
 import org.eclipse.emf.common.EMFPlugin;
-
 import org.eclipse.emf.common.util.ResourceLocator;
+
+import cd.provider.CdEditPlugin;
 
 /**
  * This is the central singleton for the Montiarc edit plugin.

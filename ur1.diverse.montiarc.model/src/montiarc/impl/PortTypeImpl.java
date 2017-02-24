@@ -44,7 +44,7 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean IS_INCOMING_EDEFAULT = false;
+	protected static final boolean IS_INCOMING_EDEFAULT = true;
 
 	/**
 	 * The cached value of the '{@link #isIsIncoming() <em>Is Incoming</em>}' attribute.
@@ -362,19 +362,16 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (isIncoming: ");
-		result.append(isIncoming);
-		result.append(", name: ");
-		result.append(name);
-		result.append(')');
-		return result.toString();
+		String result = "";
+		result += (this.getType()!=null) ? this.getType().getName() + " " : "";
+		result += this.getName();
+		return result;
 	}
 
 } //PortTypeImpl

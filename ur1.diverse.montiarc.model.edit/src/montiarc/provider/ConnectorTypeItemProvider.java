@@ -6,15 +6,9 @@ package montiarc.provider;
 import java.util.Collection;
 import java.util.List;
 
-import montiarc.MontiarcPackage;
-import montiarc.Port;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
@@ -24,12 +18,12 @@ import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 
 /**
- * This is the item provider adapter for a {@link montiarc.Port} object.
+ * This is the item provider adapter for a {@link montiarc.ConnectorType} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class PortItemProvider 
+public class ConnectorTypeItemProvider 
 	extends ItemProviderAdapter
 	implements
 		IEditingDomainItemProvider,
@@ -43,7 +37,7 @@ public class PortItemProvider
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortItemProvider(AdapterFactory adapterFactory) {
+	public ConnectorTypeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -58,67 +52,30 @@ public class PortItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This returns ConnectorType.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_type_feature", "_UI_Port_type"),
-				 MontiarcPackage.Literals.PORT__TYPE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This returns Port.gif.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/port"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ConnectorType"));
 	}
 
 	/**
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	@Override
 	public String getText(Object object) {
-		Port p = (Port)object;
-		String label = p.getName();
-		String direction = "";
-		if (p.isIsIncoming()) {
-			direction = "in ";
-		} else {
-			direction = "out ";
-		}
-		String typeName = "";
-		if (p.getType() != null) {
-			typeName = p.getType().getName() + " ";
-		}
-		return label == null || label.length() == 0 ?
-			getString("_UI_Port_type") :
-			getString("_UI_Port_type") + " " + direction + typeName + label;
+		return getString("_UI_ConnectorType_type");
 	}
 	
 

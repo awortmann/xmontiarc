@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link montiarc.Port#getType <em>Type</em>}</li>
+ *   <li>{@link montiarc.Port#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @see montiarc.MontiarcPackage#getPort()
@@ -46,5 +47,31 @@ public interface Port extends EObject {
 	 * @generated
 	 */
 	void setType(PortType value);
+
+	/**
+	 * Returns the value of the '<em><b>Parent</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Parent</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Parent</em>' reference.
+	 * @see #setParent(Component)
+	 * @see montiarc.MontiarcPackage#getPort_Parent()
+	 * @model
+	 * @generated
+	 */
+	Component getParent();
+
+	/**
+	 * Sets the value of the '{@link montiarc.Port#getParent <em>Parent</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Parent</em>' reference.
+	 * @see #getParent()
+	 * @generated
+	 */
+	void setParent(Component value);
 
 } // Port

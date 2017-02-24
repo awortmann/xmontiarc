@@ -40,31 +40,49 @@ public interface MontiarcFactory extends EFactory {
 	PortType createPortType();
 
 	/**
-	 * Returns a new object of class '<em>Port</em>'.
+	 * Returns a new object of class '<em>Component Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Port</em>'.
+	 * @return a new object of class '<em>Component Instance</em>'.
 	 * @generated
 	 */
-	Port createPort();
+	ComponentInstance createComponentInstance();
 
 	/**
-	 * Returns a new object of class '<em>Connector</em>'.
+	 * Returns a new object of class '<em>Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Connector</em>'.
+	 * @return a new object of class '<em>Port Instance</em>'.
 	 * @generated
 	 */
-	Connector createConnector();
+	PortInstance createPortInstance();
 
 	/**
-	 * Returns a new object of class '<em>Component</em>'.
+	 * Returns a new object of class '<em>Intermediate Connector Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Component</em>'.
+	 * @return a new object of class '<em>Intermediate Connector Type</em>'.
 	 * @generated
 	 */
-	Component createComponent();
+	IntermediateConnectorType createIntermediateConnectorType();
+
+	/**
+	 * Returns a new object of class '<em>Incoming Connector Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Incoming Connector Type</em>'.
+	 * @generated
+	 */
+	IncomingConnectorType createIncomingConnectorType();
+
+	/**
+	 * Returns a new object of class '<em>Outgoing Connector Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Outgoing Connector Type</em>'.
+	 * @generated
+	 */
+	OutgoingConnectorType createOutgoingConnectorType();
 
 	/**
 	 * Returns the package supported by this factory.

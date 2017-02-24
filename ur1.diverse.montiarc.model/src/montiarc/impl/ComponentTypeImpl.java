@@ -3,10 +3,9 @@
 package montiarc.impl;
 
 import java.util.Collection;
-
-import montiarc.Component;
+import montiarc.ComponentInstance;
 import montiarc.ComponentType;
-import montiarc.Connector;
+import montiarc.ConnectorType;
 import montiarc.MontiarcPackage;
 import montiarc.PortType;
 import org.eclipse.emf.common.notify.Notification;
@@ -19,7 +18,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -90,7 +88,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Connector> connectors;
+	protected EList<ConnectorType> connectors;
 
 	/**
 	 * The cached value of the '{@link #getSubcomponents() <em>Subcomponents</em>}' containment reference list.
@@ -100,7 +98,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Component> subcomponents;
+	protected EList<ComponentInstance> subcomponents;
 
 	/**
 	 * The default value of the '{@link #getGroovyBehavior() <em>Groovy Behavior</em>}' attribute.
@@ -217,9 +215,9 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Connector> getConnectors() {
+	public EList<ConnectorType> getConnectors() {
 		if (connectors == null) {
-			connectors = new EObjectContainmentWithInverseEList<Connector>(Connector.class, this, MontiarcPackage.COMPONENT_TYPE__CONNECTORS, MontiarcPackage.CONNECTOR__PARENT);
+			connectors = new EObjectContainmentWithInverseEList<ConnectorType>(ConnectorType.class, this, MontiarcPackage.COMPONENT_TYPE__CONNECTORS, MontiarcPackage.CONNECTOR_TYPE__PARENT);
 		}
 		return connectors;
 	}
@@ -229,9 +227,9 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Component> getSubcomponents() {
+	public EList<ComponentInstance> getSubcomponents() {
 		if (subcomponents == null) {
-			subcomponents = new EObjectContainmentEList<Component>(Component.class, this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS);
+			subcomponents = new EObjectContainmentWithInverseEList<ComponentInstance>(ComponentInstance.class, this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS, MontiarcPackage.COMPONENT_INSTANCE__PARENT);
 		}
 		return subcomponents;
 	}
@@ -270,6 +268,8 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectors()).basicAdd(otherEnd, msgs);
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubcomponents()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -338,11 +338,11 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				getConnectors().clear();
-				getConnectors().addAll((Collection<? extends Connector>)newValue);
+				getConnectors().addAll((Collection<? extends ConnectorType>)newValue);
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				getSubcomponents().clear();
-				getSubcomponents().addAll((Collection<? extends Component>)newValue);
+				getSubcomponents().addAll((Collection<? extends ComponentInstance>)newValue);
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
 				setGroovyBehavior((String)newValue);

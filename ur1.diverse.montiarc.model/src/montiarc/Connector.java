@@ -15,9 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link montiarc.Connector#getSourcePort <em>Source Port</em>}</li>
  *   <li>{@link montiarc.Connector#getTargetPort <em>Target Port</em>}</li>
- *   <li>{@link montiarc.Connector#getSourceSubcomponent <em>Source Subcomponent</em>}</li>
- *   <li>{@link montiarc.Connector#getTargetSubcomponent <em>Target Subcomponent</em>}</li>
- *   <li>{@link montiarc.Connector#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @see montiarc.MontiarcPackage#getConnector()
@@ -35,12 +32,12 @@ public interface Connector extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source Port</em>' reference.
-	 * @see #setSourcePort(PortType)
+	 * @see #setSourcePort(Port)
 	 * @see montiarc.MontiarcPackage#getConnector_SourcePort()
 	 * @model required="true"
 	 * @generated
 	 */
-	PortType getSourcePort();
+	Port getSourcePort();
 
 	/**
 	 * Sets the value of the '{@link montiarc.Connector#getSourcePort <em>Source Port</em>}' reference.
@@ -50,7 +47,7 @@ public interface Connector extends EObject {
 	 * @see #getSourcePort()
 	 * @generated
 	 */
-	void setSourcePort(PortType value);
+	void setSourcePort(Port value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Port</b></em>' reference.
@@ -61,12 +58,12 @@ public interface Connector extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target Port</em>' reference.
-	 * @see #setTargetPort(PortType)
+	 * @see #setTargetPort(Port)
 	 * @see montiarc.MontiarcPackage#getConnector_TargetPort()
 	 * @model required="true"
 	 * @generated
 	 */
-	PortType getTargetPort();
+	Port getTargetPort();
 
 	/**
 	 * Sets the value of the '{@link montiarc.Connector#getTargetPort <em>Target Port</em>}' reference.
@@ -76,86 +73,6 @@ public interface Connector extends EObject {
 	 * @see #getTargetPort()
 	 * @generated
 	 */
-	void setTargetPort(PortType value);
-
-	/**
-	 * Returns the value of the '<em><b>Source Subcomponent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Source Subcomponent</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Subcomponent</em>' reference.
-	 * @see #setSourceSubcomponent(Component)
-	 * @see montiarc.MontiarcPackage#getConnector_SourceSubcomponent()
-	 * @model required="true"
-	 * @generated
-	 */
-	Component getSourceSubcomponent();
-
-	/**
-	 * Sets the value of the '{@link montiarc.Connector#getSourceSubcomponent <em>Source Subcomponent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Subcomponent</em>' reference.
-	 * @see #getSourceSubcomponent()
-	 * @generated
-	 */
-	void setSourceSubcomponent(Component value);
-
-	/**
-	 * Returns the value of the '<em><b>Target Subcomponent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Target Subcomponent</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Subcomponent</em>' reference.
-	 * @see #setTargetSubcomponent(Component)
-	 * @see montiarc.MontiarcPackage#getConnector_TargetSubcomponent()
-	 * @model required="true"
-	 * @generated
-	 */
-	Component getTargetSubcomponent();
-
-	/**
-	 * Sets the value of the '{@link montiarc.Connector#getTargetSubcomponent <em>Target Subcomponent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Subcomponent</em>' reference.
-	 * @see #getTargetSubcomponent()
-	 * @generated
-	 */
-	void setTargetSubcomponent(Component value);
-
-	/**
-	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link montiarc.ComponentType#getConnectors <em>Connectors</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Parent</em>' container reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Parent</em>' container reference.
-	 * @see #setParent(ComponentType)
-	 * @see montiarc.MontiarcPackage#getConnector_Parent()
-	 * @see montiarc.ComponentType#getConnectors
-	 * @model opposite="connectors" required="true" transient="false"
-	 * @generated
-	 */
-	ComponentType getParent();
-
-	/**
-	 * Sets the value of the '{@link montiarc.Connector#getParent <em>Parent</em>}' container reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Parent</em>' container reference.
-	 * @see #getParent()
-	 * @generated
-	 */
-	void setParent(ComponentType value);
+	void setTargetPort(Port value);
 
 } // Connector

@@ -101,8 +101,8 @@ public interface ComponentType extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Connectors</b></em>' containment reference list.
-	 * The list contents are of type {@link montiarc.Connector}.
-	 * It is bidirectional and its opposite is '{@link montiarc.Connector#getParent <em>Parent</em>}'.
+	 * The list contents are of type {@link montiarc.ConnectorType}.
+	 * It is bidirectional and its opposite is '{@link montiarc.ConnectorType#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Connectors</em>' containment reference isn't clear,
@@ -111,15 +111,16 @@ public interface ComponentType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connectors</em>' containment reference list.
 	 * @see montiarc.MontiarcPackage#getComponentType_Connectors()
-	 * @see montiarc.Connector#getParent
+	 * @see montiarc.ConnectorType#getParent
 	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
-	EList<Connector> getConnectors();
+	EList<ConnectorType> getConnectors();
 
 	/**
 	 * Returns the value of the '<em><b>Subcomponents</b></em>' containment reference list.
-	 * The list contents are of type {@link montiarc.Component}.
+	 * The list contents are of type {@link montiarc.ComponentInstance}.
+	 * It is bidirectional and its opposite is '{@link montiarc.ComponentInstance#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subcomponents</em>' containment reference list isn't clear,
@@ -128,10 +129,11 @@ public interface ComponentType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subcomponents</em>' containment reference list.
 	 * @see montiarc.MontiarcPackage#getComponentType_Subcomponents()
-	 * @model containment="true"
+	 * @see montiarc.ComponentInstance#getParent
+	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
-	EList<Component> getSubcomponents();
+	EList<ComponentInstance> getSubcomponents();
 
 	/**
 	 * Returns the value of the '<em><b>Groovy Behavior</b></em>' attribute.

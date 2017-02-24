@@ -86,16 +86,22 @@ public class MontiarcValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
-			case MontiarcPackage.PORT:
-				return validatePort((Port)value, diagnostics, context);
 			case MontiarcPackage.COMPONENT_TYPE:
 				return validateComponentType((ComponentType)value, diagnostics, context);
 			case MontiarcPackage.PORT_TYPE:
 				return validatePortType((PortType)value, diagnostics, context);
-			case MontiarcPackage.CONNECTOR:
-				return validateConnector((Connector)value, diagnostics, context);
-			case MontiarcPackage.COMPONENT:
-				return validateComponent((Component)value, diagnostics, context);
+			case MontiarcPackage.COMPONENT_INSTANCE:
+				return validateComponentInstance((ComponentInstance)value, diagnostics, context);
+			case MontiarcPackage.PORT_INSTANCE:
+				return validatePortInstance((PortInstance)value, diagnostics, context);
+			case MontiarcPackage.CONNECTOR_TYPE:
+				return validateConnectorType((ConnectorType)value, diagnostics, context);
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE:
+				return validateIntermediateConnectorType((IntermediateConnectorType)value, diagnostics, context);
+			case MontiarcPackage.INCOMING_CONNECTOR_TYPE:
+				return validateIncomingConnectorType((IncomingConnectorType)value, diagnostics, context);
+			case MontiarcPackage.OUTGOING_CONNECTOR_TYPE:
+				return validateOutgoingConnectorType((OutgoingConnectorType)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -243,122 +249,27 @@ public class MontiarcValidator extends EObjectValidator {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validatePort(Port port, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(port, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConnector(Connector connector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(connector, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(connector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(connector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(connector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(connector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(connector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(connector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(connector, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(connector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnector_ConnectsDifferentComponents(connector, diagnostics, context);
-		if (result || diagnostics != null) result &= validateConnector_PortTypeMatch(connector, diagnostics, context);
+	public boolean validateComponentInstance(ComponentInstance componentInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(componentInstance, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(componentInstance, diagnostics, context);
+		if (result || diagnostics != null) result &= validateComponentInstance_NameIsLeadingUpperCase(componentInstance, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the ConnectsDifferentComponents constraint of '<em>Connector</em>'.
+	 * The cached validation expression for the NameIsLeadingUpperCase constraint of '<em>Component Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CONNECTOR__CONNECTS_DIFFERENT_COMPONENTS__EEXPRESSION = "Tuple {\n" +
-		"\tmessage : String = 'The connector must connect two different subcomponents.',\n" +
-		"\tstatus : Boolean = \n" +
-		"\t\t\tself.sourceSubcomponent <> self.targetSubcomponent\n" +
-		"}.status";
-
-	/**
-	 * Validates the ConnectsDifferentComponents constraint of '<em>Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConnector_ConnectsDifferentComponents(Connector connector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(MontiarcPackage.Literals.CONNECTOR,
-				 connector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "ConnectsDifferentComponents",
-				 CONNECTOR__CONNECTS_DIFFERENT_COMPONENTS__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * The cached validation expression for the PortTypeMatch constraint of '<em>Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String CONNECTOR__PORT_TYPE_MATCH__EEXPRESSION = "Tuple {\n" +
-		"\tmessage : String = 'Both ports of a connector must have the same type',\n" +
-		"\tstatus : Boolean = \n" +
-		"\t\t\tself.sourcePort.type = self.targetPort.type\n" +
-		"}.status";
-
-	/**
-	 * Validates the PortTypeMatch constraint of '<em>Connector</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateConnector_PortTypeMatch(Connector connector, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return
-			validate
-				(MontiarcPackage.Literals.CONNECTOR,
-				 connector,
-				 diagnostics,
-				 context,
-				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "PortTypeMatch",
-				 CONNECTOR__PORT_TYPE_MATCH__EEXPRESSION,
-				 Diagnostic.ERROR,
-				 DIAGNOSTIC_SOURCE,
-				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateComponent(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		if (!validate_NoCircularContainment(component, diagnostics, context)) return false;
-		boolean result = validate_EveryMultiplicityConforms(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryProxyResolves(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_UniqueID(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryKeyUnique(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(component, diagnostics, context);
-		if (result || diagnostics != null) result &= validateComponent_NameIsLeadingUpperCase(component, diagnostics, context);
-		return result;
-	}
-
-	/**
-	 * The cached validation expression for the NameIsLeadingUpperCase constraint of '<em>Component</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected static final String COMPONENT__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
+	protected static final String COMPONENT_INSTANCE__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
 		"\tmessage : String = 'The name of instance name of subcomponent \"' + instanceName +\n" +
 		"\t\t\t'\" must begin lowercase.',\n" +
 		"\tstatus : Boolean = let firstLetter : String = (instanceName).substring(1, 1)\n" +
@@ -366,24 +277,179 @@ public class MontiarcValidator extends EObjectValidator {
 		"}.status";
 
 	/**
-	 * Validates the NameIsLeadingUpperCase constraint of '<em>Component</em>'.
+	 * Validates the NameIsLeadingUpperCase constraint of '<em>Component Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateComponent_NameIsLeadingUpperCase(Component component, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateComponentInstance_NameIsLeadingUpperCase(ComponentInstance componentInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
-				(MontiarcPackage.Literals.COMPONENT,
-				 component,
+				(MontiarcPackage.Literals.COMPONENT_INSTANCE,
+				 componentInstance,
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
 				 "NameIsLeadingUpperCase",
-				 COMPONENT__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION,
+				 COMPONENT_INSTANCE__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validatePortInstance(PortInstance portInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(portInstance, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConnectorType(ConnectorType connectorType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(connectorType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(connectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(connectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(connectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(connectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(connectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(connectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(connectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(connectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectorType_ConnectsDifferentComponents(connectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectorType_PortTypeMatch(connectorType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * The cached validation expression for the ConnectsDifferentComponents constraint of '<em>Connector Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CONNECTOR_TYPE__CONNECTS_DIFFERENT_COMPONENTS__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'The connector must connect two different subcomponents.',\n" +
+		"\tstatus : Boolean = \n" +
+		"\t\t\tself.sourceSubcomponent <> self.targetSubcomponent\n" +
+		"}.status";
+
+	/**
+	 * Validates the ConnectsDifferentComponents constraint of '<em>Connector Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConnectorType_ConnectsDifferentComponents(ConnectorType connectorType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(MontiarcPackage.Literals.CONNECTOR_TYPE,
+				 connectorType,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "ConnectsDifferentComponents",
+				 CONNECTOR_TYPE__CONNECTS_DIFFERENT_COMPONENTS__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the PortTypeMatch constraint of '<em>Connector Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CONNECTOR_TYPE__PORT_TYPE_MATCH__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'Both ports of a connector must have the same type',\n" +
+		"\tstatus : Boolean = \n" +
+		"\t\t\tself.sourcePort.type = self.targetPort.type\n" +
+		"}.status";
+
+	/**
+	 * Validates the PortTypeMatch constraint of '<em>Connector Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConnectorType_PortTypeMatch(ConnectorType connectorType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(MontiarcPackage.Literals.CONNECTOR_TYPE,
+				 connectorType,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "PortTypeMatch",
+				 CONNECTOR_TYPE__PORT_TYPE_MATCH__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIntermediateConnectorType(IntermediateConnectorType intermediateConnectorType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(intermediateConnectorType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(intermediateConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(intermediateConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(intermediateConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(intermediateConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(intermediateConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(intermediateConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(intermediateConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(intermediateConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectorType_ConnectsDifferentComponents(intermediateConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectorType_PortTypeMatch(intermediateConnectorType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateIncomingConnectorType(IncomingConnectorType incomingConnectorType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(incomingConnectorType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(incomingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(incomingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(incomingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(incomingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(incomingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(incomingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(incomingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(incomingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectorType_ConnectsDifferentComponents(incomingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectorType_PortTypeMatch(incomingConnectorType, diagnostics, context);
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateOutgoingConnectorType(OutgoingConnectorType outgoingConnectorType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		if (!validate_NoCircularContainment(outgoingConnectorType, diagnostics, context)) return false;
+		boolean result = validate_EveryMultiplicityConforms(outgoingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryDataValueConforms(outgoingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryReferenceIsContained(outgoingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryBidirectionalReferenceIsPaired(outgoingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryProxyResolves(outgoingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_UniqueID(outgoingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryKeyUnique(outgoingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(outgoingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectorType_ConnectsDifferentComponents(outgoingConnectorType, diagnostics, context);
+		if (result || diagnostics != null) result &= validateConnectorType_PortTypeMatch(outgoingConnectorType, diagnostics, context);
+		return result;
 	}
 
 	/**

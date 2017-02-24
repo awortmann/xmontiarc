@@ -5,12 +5,9 @@ package montiarc.provider;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import montiarc.util.MontiarcAdapterFactory;
-
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.edit.provider.ChangeNotifier;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.ComposedAdapterFactory;
@@ -22,6 +19,8 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.INotifyChangedListener;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
+
+import montiarc.util.MontiarcAdapterFactory;
 
 /**
  * This is the factory that is used to provide the interfaces needed to support Viewers.
@@ -118,72 +117,118 @@ public class MontiarcItemProviderAdapterFactory extends MontiarcAdapterFactory i
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link montiarc.Port} instances.
+	 * This keeps track of the one adapter used for all {@link montiarc.ComponentInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PortItemProvider portItemProvider;
+	protected ComponentInstanceItemProvider componentInstanceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link montiarc.Port}.
+	 * This creates an adapter for a {@link montiarc.ComponentInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPortAdapter() {
-		if (portItemProvider == null) {
-			portItemProvider = new PortItemProvider(this);
+	public Adapter createComponentInstanceAdapter() {
+		if (componentInstanceItemProvider == null) {
+			componentInstanceItemProvider = new ComponentInstanceItemProvider(this);
 		}
 
-		return portItemProvider;
+		return componentInstanceItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link montiarc.Connector} instances.
+	 * This keeps track of the one adapter used for all {@link montiarc.PortInstance} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConnectorItemProvider connectorItemProvider;
+	protected PortInstanceItemProvider portInstanceItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link montiarc.Connector}.
+	 * This creates an adapter for a {@link montiarc.PortInstance}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createConnectorAdapter() {
-		if (connectorItemProvider == null) {
-			connectorItemProvider = new ConnectorItemProvider(this);
+	public Adapter createPortInstanceAdapter() {
+		if (portInstanceItemProvider == null) {
+			portInstanceItemProvider = new PortInstanceItemProvider(this);
 		}
 
-		return connectorItemProvider;
+		return portInstanceItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link montiarc.Component} instances.
+	 * This keeps track of the one adapter used for all {@link montiarc.IntermediateConnectorType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ComponentItemProvider componentItemProvider;
+	protected IntermediateConnectorTypeItemProvider intermediateConnectorTypeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link montiarc.Component}.
+	 * This creates an adapter for a {@link montiarc.IntermediateConnectorType}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createComponentAdapter() {
-		if (componentItemProvider == null) {
-			componentItemProvider = new ComponentItemProvider(this);
+	public Adapter createIntermediateConnectorTypeAdapter() {
+		if (intermediateConnectorTypeItemProvider == null) {
+			intermediateConnectorTypeItemProvider = new IntermediateConnectorTypeItemProvider(this);
 		}
 
-		return componentItemProvider;
+		return intermediateConnectorTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link montiarc.IncomingConnectorType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IncomingConnectorTypeItemProvider incomingConnectorTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link montiarc.IncomingConnectorType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIncomingConnectorTypeAdapter() {
+		if (incomingConnectorTypeItemProvider == null) {
+			incomingConnectorTypeItemProvider = new IncomingConnectorTypeItemProvider(this);
+		}
+
+		return incomingConnectorTypeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link montiarc.OutgoingConnectorType} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OutgoingConnectorTypeItemProvider outgoingConnectorTypeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link montiarc.OutgoingConnectorType}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOutgoingConnectorTypeAdapter() {
+		if (outgoingConnectorTypeItemProvider == null) {
+			outgoingConnectorTypeItemProvider = new OutgoingConnectorTypeItemProvider(this);
+		}
+
+		return outgoingConnectorTypeItemProvider;
 	}
 
 	/**
@@ -285,11 +330,13 @@ public class MontiarcItemProviderAdapterFactory extends MontiarcAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
-		if (portItemProvider != null) portItemProvider.dispose();
 		if (componentTypeItemProvider != null) componentTypeItemProvider.dispose();
 		if (portTypeItemProvider != null) portTypeItemProvider.dispose();
-		if (connectorItemProvider != null) connectorItemProvider.dispose();
-		if (componentItemProvider != null) componentItemProvider.dispose();
+		if (componentInstanceItemProvider != null) componentInstanceItemProvider.dispose();
+		if (portInstanceItemProvider != null) portInstanceItemProvider.dispose();
+		if (intermediateConnectorTypeItemProvider != null) intermediateConnectorTypeItemProvider.dispose();
+		if (incomingConnectorTypeItemProvider != null) incomingConnectorTypeItemProvider.dispose();
+		if (outgoingConnectorTypeItemProvider != null) outgoingConnectorTypeItemProvider.dispose();
 	}
 
 }

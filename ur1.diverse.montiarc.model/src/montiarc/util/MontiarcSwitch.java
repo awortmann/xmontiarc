@@ -66,12 +66,6 @@ public class MontiarcSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-			case MontiarcPackage.PORT: {
-				Port port = (Port)theEObject;
-				T result = casePort(port);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case MontiarcPackage.COMPONENT_TYPE: {
 				ComponentType componentType = (ComponentType)theEObject;
 				T result = caseComponentType(componentType);
@@ -84,15 +78,42 @@ public class MontiarcSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MontiarcPackage.CONNECTOR: {
-				Connector connector = (Connector)theEObject;
-				T result = caseConnector(connector);
+			case MontiarcPackage.COMPONENT_INSTANCE: {
+				ComponentInstance componentInstance = (ComponentInstance)theEObject;
+				T result = caseComponentInstance(componentInstance);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case MontiarcPackage.COMPONENT: {
-				Component component = (Component)theEObject;
-				T result = caseComponent(component);
+			case MontiarcPackage.PORT_INSTANCE: {
+				PortInstance portInstance = (PortInstance)theEObject;
+				T result = casePortInstance(portInstance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MontiarcPackage.CONNECTOR_TYPE: {
+				ConnectorType connectorType = (ConnectorType)theEObject;
+				T result = caseConnectorType(connectorType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE: {
+				IntermediateConnectorType intermediateConnectorType = (IntermediateConnectorType)theEObject;
+				T result = caseIntermediateConnectorType(intermediateConnectorType);
+				if (result == null) result = caseConnectorType(intermediateConnectorType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MontiarcPackage.INCOMING_CONNECTOR_TYPE: {
+				IncomingConnectorType incomingConnectorType = (IncomingConnectorType)theEObject;
+				T result = caseIncomingConnectorType(incomingConnectorType);
+				if (result == null) result = caseConnectorType(incomingConnectorType);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case MontiarcPackage.OUTGOING_CONNECTOR_TYPE: {
+				OutgoingConnectorType outgoingConnectorType = (OutgoingConnectorType)theEObject;
+				T result = caseOutgoingConnectorType(outgoingConnectorType);
+				if (result == null) result = caseConnectorType(outgoingConnectorType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -131,47 +152,92 @@ public class MontiarcSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Port</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Component Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Port</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Component Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T casePort(Port object) {
+	public T caseComponentInstance(ComponentInstance object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Port Instance</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Connector</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Port Instance</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseConnector(Connector object) {
+	public T casePortInstance(PortInstance object) {
 		return null;
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Connector Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Component</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Connector Type</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseComponent(Component object) {
+	public T caseConnectorType(ConnectorType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Intermediate Connector Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Intermediate Connector Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntermediateConnectorType(IntermediateConnectorType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Incoming Connector Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Incoming Connector Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIncomingConnectorType(IncomingConnectorType object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Outgoing Connector Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Outgoing Connector Type</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOutgoingConnectorType(OutgoingConnectorType object) {
 		return null;
 	}
 

@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface PortType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Is Incoming</b></em>' attribute.
+	 * The default value is <code>"true"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Is Incoming</em>' attribute isn't clear,
@@ -38,7 +39,7 @@ public interface PortType extends EObject {
 	 * @return the value of the '<em>Is Incoming</em>' attribute.
 	 * @see #setIsIncoming(boolean)
 	 * @see montiarc.MontiarcPackage#getPortType_IsIncoming()
-	 * @model required="true"
+	 * @model default="true" required="true"
 	 * @generated
 	 */
 	boolean isIsIncoming();
@@ -90,7 +91,7 @@ public interface PortType extends EObject {
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(CDClass)
 	 * @see montiarc.MontiarcPackage#getPortType_Type()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	CDClass getType();

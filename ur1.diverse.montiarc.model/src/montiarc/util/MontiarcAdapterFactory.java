@@ -68,10 +68,6 @@ public class MontiarcAdapterFactory extends AdapterFactoryImpl {
 	protected MontiarcSwitch<Adapter> modelSwitch =
 		new MontiarcSwitch<Adapter>() {
 			@Override
-			public Adapter casePort(Port object) {
-				return createPortAdapter();
-			}
-			@Override
 			public Adapter caseComponentType(ComponentType object) {
 				return createComponentTypeAdapter();
 			}
@@ -80,12 +76,28 @@ public class MontiarcAdapterFactory extends AdapterFactoryImpl {
 				return createPortTypeAdapter();
 			}
 			@Override
-			public Adapter caseConnector(Connector object) {
-				return createConnectorAdapter();
+			public Adapter caseComponentInstance(ComponentInstance object) {
+				return createComponentInstanceAdapter();
 			}
 			@Override
-			public Adapter caseComponent(Component object) {
-				return createComponentAdapter();
+			public Adapter casePortInstance(PortInstance object) {
+				return createPortInstanceAdapter();
+			}
+			@Override
+			public Adapter caseConnectorType(ConnectorType object) {
+				return createConnectorTypeAdapter();
+			}
+			@Override
+			public Adapter caseIntermediateConnectorType(IntermediateConnectorType object) {
+				return createIntermediateConnectorTypeAdapter();
+			}
+			@Override
+			public Adapter caseIncomingConnectorType(IncomingConnectorType object) {
+				return createIncomingConnectorTypeAdapter();
+			}
+			@Override
+			public Adapter caseOutgoingConnectorType(OutgoingConnectorType object) {
+				return createOutgoingConnectorTypeAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -136,44 +148,86 @@ public class MontiarcAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link montiarc.Port <em>Port</em>}'.
+	 * Creates a new adapter for an object of class '{@link montiarc.ComponentInstance <em>Component Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see montiarc.Port
+	 * @see montiarc.ComponentInstance
 	 * @generated
 	 */
-	public Adapter createPortAdapter() {
+	public Adapter createComponentInstanceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link montiarc.Connector <em>Connector</em>}'.
+	 * Creates a new adapter for an object of class '{@link montiarc.PortInstance <em>Port Instance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see montiarc.Connector
+	 * @see montiarc.PortInstance
 	 * @generated
 	 */
-	public Adapter createConnectorAdapter() {
+	public Adapter createPortInstanceAdapter() {
 		return null;
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link montiarc.Component <em>Component</em>}'.
+	 * Creates a new adapter for an object of class '{@link montiarc.ConnectorType <em>Connector Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see montiarc.Component
+	 * @see montiarc.ConnectorType
 	 * @generated
 	 */
-	public Adapter createComponentAdapter() {
+	public Adapter createConnectorTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link montiarc.IntermediateConnectorType <em>Intermediate Connector Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see montiarc.IntermediateConnectorType
+	 * @generated
+	 */
+	public Adapter createIntermediateConnectorTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link montiarc.IncomingConnectorType <em>Incoming Connector Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see montiarc.IncomingConnectorType
+	 * @generated
+	 */
+	public Adapter createIncomingConnectorTypeAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link montiarc.OutgoingConnectorType <em>Outgoing Connector Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see montiarc.OutgoingConnectorType
+	 * @generated
+	 */
+	public Adapter createOutgoingConnectorTypeAdapter() {
 		return null;
 	}
 

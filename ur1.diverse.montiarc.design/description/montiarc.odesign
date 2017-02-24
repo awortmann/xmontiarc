@@ -4,7 +4,7 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Components Diagram" domainClass="montiarc.ComponentType" enablePopupBars="true">
       <metamodel href="../../ur1.diverse.montiarc.model/ur1.diverse.montiarc.model/montiarc.ecore#/"/>
       <defaultLayer name="Default">
-        <edgeMappings name="IntermediateConnectorEdge" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubComponentDeclarationNode']/@borderedNodeMappings[name='SubComponentDeclarationOutgoingPortsNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubComponentDeclarationNode']/@borderedNodeMappings[name='SubComponentDeclarationIncomingPortNode']" targetFinderExpression="service:getConnectorTargetPort()" sourceFinderExpression="service:getConnectorSourcePort()" domainClass="montiarc.Connector" useDomainElement="true">
+        <edgeMappings name="IntermediateConnectorEdge" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']" targetFinderExpression="service:getConnectorTargetPort()" sourceFinderExpression="service:getConnectorSourcePort()" domainClass="montiarc.Connector" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
             <centerLabelStyleDescription>
@@ -13,7 +13,7 @@
           </style>
         </edgeMappings>
         <containerMappings name="ComponentTypeContainer" semanticCandidatesExpression="var:self" domainClass="montiarc.ComponentType">
-          <borderedNodeMappings name="ComponentTypeIncomingPortNode" semanticCandidatesExpression="service:getIncomingPorts()" domainClass="montiarc.Port">
+          <borderedNodeMappings name="ComponentTypeIncomingPortNode" semanticCandidatesExpression="service:getComponentTypeIncomingPorts()" domainClass="montiarc.PortType">
             <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -23,7 +23,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="ComponentTypeOutgoingPortNode" semanticCandidatesExpression="service:getOutgoingPorts()" domainClass="montiarc.Port">
+          <borderedNodeMappings name="ComponentTypeOutgoingPortNode" semanticCandidatesExpression="service:getComponentTypeOutgoingPorts()" domainClass="montiarc.PortType">
             <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -33,8 +33,8 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
             </style>
           </borderedNodeMappings>
-          <subNodeMappings name="SubComponentDeclarationNode" semanticCandidatesExpression="feature:subcomponents" domainClass="montiarc.SubcomponentDeclaration">
-            <borderedNodeMappings name="SubComponentDeclarationIncomingPortNode" semanticCandidatesExpression="service:getSubcomponentTypesIncomingPorts()" domainClass="montiarc.Port">
+          <subNodeMappings name="ComponentInstanceNode" semanticCandidatesExpression="feature:subcomponents" domainClass="montiarc.ComponentInstance">
+            <borderedNodeMappings name="ComponentIncomingPortNode" semanticCandidatesExpression="service:getComponentIncomingPorts()" domainClass="montiarc.Port">
               <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -44,7 +44,7 @@
                 <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_gray']"/>
               </style>
             </borderedNodeMappings>
-            <borderedNodeMappings name="SubComponentDeclarationOutgoingPortsNode" semanticCandidatesExpression="service:getSubcomponentTypesOutgoingPorts()" domainClass="montiarc.Port">
+            <borderedNodeMappings name="ComponentOutgoingPortNode" semanticCandidatesExpression="service:getComponentOutgoingPorts()" domainClass="montiarc.Port">
               <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -70,6 +70,7 @@
         </containerMappings>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="ur1.diverse.montiarc.design.Services"/>
+    <ownedJavaExtensions qualifiedClassName="ur1.diverse.montiarc.design.ComponentInstanceServices"/>
+    <ownedJavaExtensions qualifiedClassName="ur1.diverse.montiarc.design.ComponentTypeServices"/>
   </ownedViewpoints>
 </description:Group>
