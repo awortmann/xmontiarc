@@ -6,7 +6,7 @@
       <defaultLayer name="Default">
         <containerMappings name="ComponentTypeContainer" semanticCandidatesExpression="var:self" domainClass="montiarc.ComponentType">
           <borderedNodeMappings name="ComponentTypeIncomingPortNode" semanticCandidatesExpression="service:getIncomingPorts()" domainClass="montiarc.Port">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:getPortLabel()" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>SOUTH</forbiddenSides>
@@ -16,7 +16,7 @@
             </style>
           </borderedNodeMappings>
           <borderedNodeMappings name="ComponentTypeOutgoingPortNode" semanticCandidatesExpression="service:getOutgoingPorts()" domainClass="montiarc.Port">
-            <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:getPortLabel()" labelPosition="node" resizeKind="NSEW">
+            <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <forbiddenSides>WEST</forbiddenSides>
@@ -27,23 +27,23 @@
           </borderedNodeMappings>
           <subNodeMappings name="SubComponentDeclarationNode" semanticCandidatesExpression="feature:subcomponents" domainClass="montiarc.SubcomponentDeclaration">
             <borderedNodeMappings name="SubComponentDeclarationIncomingPortNode" semanticCandidatesExpression="service:getSubcomponentTypesIncomingPorts()" domainClass="montiarc.Port">
-              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:getPortLabel()" labelPosition="node" resizeKind="NSEW">
+              <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <forbiddenSides>SOUTH</forbiddenSides>
                 <forbiddenSides>EAST</forbiddenSides>
                 <forbiddenSides>NORTH</forbiddenSides>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
               </style>
             </borderedNodeMappings>
             <borderedNodeMappings name="SubComponentDeclarationOutgoingPortsNode" semanticCandidatesExpression="service:getSubcomponentTypesOutgoingPorts()" domainClass="montiarc.Port">
-              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="service:getPortLabel()" labelPosition="node" resizeKind="NSEW">
+              <style xsi:type="style:SquareDescription" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
                 <forbiddenSides>WEST</forbiddenSides>
                 <forbiddenSides>SOUTH</forbiddenSides>
                 <forbiddenSides>NORTH</forbiddenSides>
-                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
               </style>
             </borderedNodeMappings>
             <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="service:getSubComponentDeclarationLabel()" labelPosition="node" resizeKind="NSEW">
@@ -57,7 +57,7 @@
             <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
-            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
           </style>
         </containerMappings>
       </defaultLayer>
