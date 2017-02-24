@@ -116,17 +116,18 @@ public class CdValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(cdClass, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cdClass, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cdClass, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCDClass_NameIsLeadingUpperCase(cdClass, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCDClass_ClassNameBeginsUpperCase(cdClass, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCDClass_UnambiguousAttributeNames(cdClass, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the NameIsLeadingUpperCase constraint of '<em>CD Class</em>'.
+	 * The cached validation expression for the ClassNameBeginsUpperCase constraint of '<em>CD Class</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CD_CLASS__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
+	protected static final String CD_CLASS__CLASS_NAME_BEGINS_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
 		"\tmessage : String = 'The name of class \"' + name + '\" must begin uppercase.',\n" +
 		"\tstatus : Boolean = \n" +
 		"\t\t\tlet firstLetter: String = (name).substring(1,1)\n" +
@@ -134,12 +135,12 @@ public class CdValidator extends EObjectValidator {
 		"}.status";
 
 	/**
-	 * Validates the NameIsLeadingUpperCase constraint of '<em>CD Class</em>'.
+	 * Validates the ClassNameBeginsUpperCase constraint of '<em>CD Class</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCDClass_NameIsLeadingUpperCase(CDClass cdClass, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCDClass_ClassNameBeginsUpperCase(CDClass cdClass, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(CdPackage.Literals.CD_CLASS,
@@ -147,8 +148,41 @@ public class CdValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "NameIsLeadingUpperCase",
-				 CD_CLASS__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION,
+				 "ClassNameBeginsUpperCase",
+				 CD_CLASS__CLASS_NAME_BEGINS_UPPER_CASE__EEXPRESSION,
+				 Diagnostic.ERROR,
+				 DIAGNOSTIC_SOURCE,
+				 0);
+	}
+
+	/**
+	 * The cached validation expression for the UnambiguousAttributeNames constraint of '<em>CD Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected static final String CD_CLASS__UNAMBIGUOUS_ATTRIBUTE_NAMES__EEXPRESSION = "Tuple {\n" +
+		"\tmessage : String = 'The names of all attributes of a class must be unambiguous.',\n" +
+		"\tstatus : Boolean = \n" +
+		"\t\t\ttrue\n" +
+		"}.status";
+
+	/**
+	 * Validates the UnambiguousAttributeNames constraint of '<em>CD Class</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateCDClass_UnambiguousAttributeNames(CDClass cdClass, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return
+			validate
+				(CdPackage.Literals.CD_CLASS,
+				 cdClass,
+				 diagnostics,
+				 context,
+				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+				 "UnambiguousAttributeNames",
+				 CD_CLASS__UNAMBIGUOUS_ATTRIBUTE_NAMES__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -169,17 +203,17 @@ public class CdValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(cdAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cdAttribute, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cdAttribute, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCDAttribute_NameIsLeadingUpperCase(cdAttribute, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCDAttribute_AttributeNameBeginsLowerCase(cdAttribute, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the NameIsLeadingUpperCase constraint of '<em>CD Attribute</em>'.
+	 * The cached validation expression for the AttributeNameBeginsLowerCase constraint of '<em>CD Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CD_ATTRIBUTE__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
+	protected static final String CD_ATTRIBUTE__ATTRIBUTE_NAME_BEGINS_LOWER_CASE__EEXPRESSION = "Tuple {\n" +
 		"\tmessage : String = 'The name of class \"' + name + '\" must begin lowercase.',\n" +
 		"\tstatus : Boolean = \n" +
 		"\t\t\tlet firstLetter: String = (name).substring(1,1)\n" +
@@ -187,12 +221,12 @@ public class CdValidator extends EObjectValidator {
 		"}.status";
 
 	/**
-	 * Validates the NameIsLeadingUpperCase constraint of '<em>CD Attribute</em>'.
+	 * Validates the AttributeNameBeginsLowerCase constraint of '<em>CD Attribute</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCDAttribute_NameIsLeadingUpperCase(CDAttribute cdAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCDAttribute_AttributeNameBeginsLowerCase(CDAttribute cdAttribute, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(CdPackage.Literals.CD_ATTRIBUTE,
@@ -200,8 +234,8 @@ public class CdValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "NameIsLeadingUpperCase",
-				 CD_ATTRIBUTE__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION,
+				 "AttributeNameBeginsLowerCase",
+				 CD_ATTRIBUTE__ATTRIBUTE_NAME_BEGINS_LOWER_CASE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
@@ -231,7 +265,8 @@ public class CdValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(cdEnumeration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cdEnumeration, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cdEnumeration, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCDClass_NameIsLeadingUpperCase(cdEnumeration, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCDClass_ClassNameBeginsUpperCase(cdEnumeration, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCDClass_UnambiguousAttributeNames(cdEnumeration, diagnostics, context);
 		return result;
 	}
 
@@ -250,29 +285,29 @@ public class CdValidator extends EObjectValidator {
 		if (result || diagnostics != null) result &= validate_UniqueID(cdConstant, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryKeyUnique(cdConstant, diagnostics, context);
 		if (result || diagnostics != null) result &= validate_EveryMapEntryUnique(cdConstant, diagnostics, context);
-		if (result || diagnostics != null) result &= validateCDConstant_NameIsLeadingUpperCase(cdConstant, diagnostics, context);
+		if (result || diagnostics != null) result &= validateCDConstant_ConstantNameBeginsUpperCase(cdConstant, diagnostics, context);
 		return result;
 	}
 
 	/**
-	 * The cached validation expression for the NameIsLeadingUpperCase constraint of '<em>CD Constant</em>'.
+	 * The cached validation expression for the ConstantNameBeginsUpperCase constraint of '<em>CD Constant</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected static final String CD_CONSTANT__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
+	protected static final String CD_CONSTANT__CONSTANT_NAME_BEGINS_UPPER_CASE__EEXPRESSION = "Tuple {\n" +
 		"\tmessage : String = 'The name of constant \"' + name + '\" must be all uppercase.',\n" +
 		"\tstatus : Boolean = \n" +
 		"\t\t\tname.toUpperCase() = name\n" +
 		"}.status";
 
 	/**
-	 * Validates the NameIsLeadingUpperCase constraint of '<em>CD Constant</em>'.
+	 * Validates the ConstantNameBeginsUpperCase constraint of '<em>CD Constant</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean validateCDConstant_NameIsLeadingUpperCase(CDConstant cdConstant, DiagnosticChain diagnostics, Map<Object, Object> context) {
+	public boolean validateCDConstant_ConstantNameBeginsUpperCase(CDConstant cdConstant, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return
 			validate
 				(CdPackage.Literals.CD_CONSTANT,
@@ -280,8 +315,8 @@ public class CdValidator extends EObjectValidator {
 				 diagnostics,
 				 context,
 				 "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
-				 "NameIsLeadingUpperCase",
-				 CD_CONSTANT__NAME_IS_LEADING_UPPER_CASE__EEXPRESSION,
+				 "ConstantNameBeginsUpperCase",
+				 CD_CONSTANT__CONSTANT_NAME_BEGINS_UPPER_CASE__EEXPRESSION,
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);

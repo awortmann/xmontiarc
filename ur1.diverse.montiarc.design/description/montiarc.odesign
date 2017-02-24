@@ -4,13 +4,29 @@
     <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Components Diagram" domainClass="montiarc.ComponentType" enablePopupBars="true">
       <metamodel href="../../ur1.diverse.montiarc.model/ur1.diverse.montiarc.model/montiarc.ecore#/"/>
       <defaultLayer name="Default">
-        <nodeMappings name="ComponentNode" domainClass="montiarc.ComponentType">
-          <style xsi:type="style:SquareDescription" labelPosition="node" resizeKind="NSEW">
+        <containerMappings name="ComponentTypeContainer" semanticCandidatesExpression="var:self" domainClass="montiarc.ComponentType">
+          <subNodeMappings name="SubComponentDeclarationNode" semanticCandidatesExpression="feature:subcomponents" domainClass="montiarc.SubcomponentDeclaration">
+            <borderedNodeMappings name="PortNote" semanticCandidatesExpression="PortNote" domainClass="montiarc.Port">
+              <style xsi:type="style:SquareDescription" labelSize="10" labelExpression="[componentType.name + ' ' + instanceName/]" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:SquareDescription" labelSize="12" labelExpression="[componentType.name + ' ' + instanceName/]" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="14" labelAlignment="LEFT">
             <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelFormat>bold</labelFormat>
             <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
-            <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_blue']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='light_green']"/>
           </style>
-        </nodeMappings>
+        </containerMappings>
       </defaultLayer>
     </ownedRepresentations>
   </ownedViewpoints>

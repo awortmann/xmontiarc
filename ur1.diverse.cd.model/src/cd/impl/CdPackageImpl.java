@@ -253,24 +253,6 @@ public class CdPackageImpl extends EPackageImpl implements CdPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getCDConstant_Value() {
-		return (EAttribute)cdConstantEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCDConstant_Classes() {
-		return (EReference)cdConstantEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public CdFactory getCdFactory() {
 		return (CdFactory)getEFactoryInstance();
 	}
@@ -311,8 +293,6 @@ public class CdPackageImpl extends EPackageImpl implements CdPackage {
 
 		cdConstantEClass = createEClass(CD_CONSTANT);
 		createEAttribute(cdConstantEClass, CD_CONSTANT__NAME);
-		createEAttribute(cdConstantEClass, CD_CONSTANT__VALUE);
-		createEReference(cdConstantEClass, CD_CONSTANT__CLASSES);
 	}
 
 	/**
@@ -347,12 +327,12 @@ public class CdPackageImpl extends EPackageImpl implements CdPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(cdClassEClass, CDClass.class, "CDClass", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCDClass_Name(), ecorePackage.getEString(), "name", null, 0, 1, CDClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCDClass_Name(), ecorePackage.getEString(), "name", null, 1, 1, CDClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCDClass_Attributes(), this.getCDAttribute(), null, "attributes", null, 0, -1, CDClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCDClass_SuperType(), this.getCDClass(), null, "superType", null, 0, 1, CDClass.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(cdAttributeEClass, CDAttribute.class, "CDAttribute", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getCDAttribute_Name(), ecorePackage.getEString(), "name", null, 0, 1, CDAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getCDAttribute_Name(), ecorePackage.getEString(), "name", null, 1, 1, CDAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getCDAttribute_Type(), this.getCDClass(), null, "type", null, 1, 1, CDAttribute.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(classDiagramEClass, ClassDiagram.class, "ClassDiagram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -363,8 +343,6 @@ public class CdPackageImpl extends EPackageImpl implements CdPackage {
 
 		initEClass(cdConstantEClass, CDConstant.class, "CDConstant", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCDConstant_Name(), ecorePackage.getEString(), "name", null, 0, 1, CDConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getCDConstant_Value(), ecorePackage.getEInt(), "value", null, 0, 1, CDConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getCDConstant_Classes(), this.getCDClass(), null, "classes", null, 1, -1, CDConstant.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -414,19 +392,19 @@ public class CdPackageImpl extends EPackageImpl implements CdPackage {
 		  (cdClassEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "NameIsLeadingUpperCase"
+			 "constraints", "ClassNameBeginsUpperCase UnambiguousAttributeNames"
 		   });	
 		addAnnotation
 		  (cdAttributeEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "NameIsLeadingUpperCase"
+			 "constraints", "AttributeNameBeginsLowerCase"
 		   });	
 		addAnnotation
 		  (cdConstantEClass, 
 		   source, 
 		   new String[] {
-			 "constraints", "NameIsLeadingUpperCase"
+			 "constraints", "ConstantNameBeginsUpperCase"
 		   });
 	}
 
@@ -442,19 +420,20 @@ public class CdPackageImpl extends EPackageImpl implements CdPackage {
 		  (cdClassEClass, 
 		   source, 
 		   new String[] {
-			 "NameIsLeadingUpperCase", "Tuple {\n\tmessage : String = \'The name of class \"\' + name + \'\" must begin uppercase.\',\n\tstatus : Boolean = \n\t\t\tlet firstLetter: String = (name).substring(1,1)\n\t\t\t\tin firstLetter.toUpperCase() = firstLetter\n}.status"
+			 "ClassNameBeginsUpperCase", "Tuple {\n\tmessage : String = \'The name of class \"\' + name + \'\" must begin uppercase.\',\n\tstatus : Boolean = \n\t\t\tlet firstLetter: String = (name).substring(1,1)\n\t\t\t\tin firstLetter.toUpperCase() = firstLetter\n}.status",
+			 "UnambiguousAttributeNames", "Tuple {\n\tmessage : String = \'The names of all attributes of a class must be unambiguous.\',\n\tstatus : Boolean = \n\t\t\ttrue\n}.status"
 		   });	
 		addAnnotation
 		  (cdAttributeEClass, 
 		   source, 
 		   new String[] {
-			 "NameIsLeadingUpperCase", "Tuple {\n\tmessage : String = \'The name of class \"\' + name + \'\" must begin lowercase.\',\n\tstatus : Boolean = \n\t\t\tlet firstLetter: String = (name).substring(1,1)\n\t\t\t\tin firstLetter.toLowerCase() = firstLetter\n}.status"
+			 "AttributeNameBeginsLowerCase", "Tuple {\n\tmessage : String = \'The name of class \"\' + name + \'\" must begin lowercase.\',\n\tstatus : Boolean = \n\t\t\tlet firstLetter: String = (name).substring(1,1)\n\t\t\t\tin firstLetter.toLowerCase() = firstLetter\n}.status"
 		   });	
 		addAnnotation
 		  (cdConstantEClass, 
 		   source, 
 		   new String[] {
-			 "NameIsLeadingUpperCase", "Tuple {\n\tmessage : String = \'The name of constant \"\' + name + \'\" must be all uppercase.\',\n\tstatus : Boolean = \n\t\t\tname.toUpperCase() = name\n}.status"
+			 "ConstantNameBeginsUpperCase", "Tuple {\n\tmessage : String = \'The name of constant \"\' + name + \'\" must be all uppercase.\',\n\tstatus : Boolean = \n\t\t\tname.toUpperCase() = name\n}.status"
 		   });
 	}
 

@@ -2,7 +2,6 @@
  */
 package cd;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -15,13 +14,11 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link cd.CDConstant#getName <em>Name</em>}</li>
- *   <li>{@link cd.CDConstant#getValue <em>Value</em>}</li>
- *   <li>{@link cd.CDConstant#getClasses <em>Classes</em>}</li>
  * </ul>
  *
  * @see cd.CdPackage#getCDConstant()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NameIsLeadingUpperCase'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NameIsLeadingUpperCase='Tuple {\n\tmessage : String = \'The name of constant \"\' + name + \'\" must be all uppercase.\',\n\tstatus : Boolean = \n\t\t\tname.toUpperCase() = name\n}.status'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ConstantNameBeginsUpperCase'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot ConstantNameBeginsUpperCase='Tuple {\n\tmessage : String = \'The name of constant \"\' + name + \'\" must be all uppercase.\',\n\tstatus : Boolean = \n\t\t\tname.toUpperCase() = name\n}.status'"
  * @generated
  */
 public interface CDConstant extends EObject {
@@ -50,47 +47,5 @@ public interface CDConstant extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(int)
-	 * @see cd.CdPackage#getCDConstant_Value()
-	 * @model
-	 * @generated
-	 */
-	int getValue();
-
-	/**
-	 * Sets the value of the '{@link cd.CDConstant#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Classes</b></em>' containment reference list.
-	 * The list contents are of type {@link cd.CDClass}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Classes</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Classes</em>' containment reference list.
-	 * @see cd.CdPackage#getCDConstant_Classes()
-	 * @model containment="true" required="true"
-	 * @generated
-	 */
-	EList<CDClass> getClasses();
 
 } // CDConstant

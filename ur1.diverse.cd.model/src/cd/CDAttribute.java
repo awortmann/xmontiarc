@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see cd.CdPackage#getCDAttribute()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NameIsLeadingUpperCase'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NameIsLeadingUpperCase='Tuple {\n\tmessage : String = \'The name of class \"\' + name + \'\" must begin lowercase.\',\n\tstatus : Boolean = \n\t\t\tlet firstLetter: String = (name).substring(1,1)\n\t\t\t\tin firstLetter.toLowerCase() = firstLetter\n}.status'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AttributeNameBeginsLowerCase'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot AttributeNameBeginsLowerCase='Tuple {\n\tmessage : String = \'The name of class \"\' + name + \'\" must begin lowercase.\',\n\tstatus : Boolean = \n\t\t\tlet firstLetter: String = (name).substring(1,1)\n\t\t\t\tin firstLetter.toLowerCase() = firstLetter\n}.status'"
  * @generated
  */
 public interface CDAttribute extends EObject {
@@ -34,7 +34,7 @@ public interface CDAttribute extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see cd.CdPackage#getCDAttribute_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

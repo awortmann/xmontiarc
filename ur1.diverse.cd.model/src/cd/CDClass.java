@@ -21,8 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see cd.CdPackage#getCDClass()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NameIsLeadingUpperCase'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NameIsLeadingUpperCase='Tuple {\n\tmessage : String = \'The name of class \"\' + name + \'\" must begin uppercase.\',\n\tstatus : Boolean = \n\t\t\tlet firstLetter: String = (name).substring(1,1)\n\t\t\t\tin firstLetter.toUpperCase() = firstLetter\n}.status'"
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ClassNameBeginsUpperCase UnambiguousAttributeNames'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot ClassNameBeginsUpperCase='Tuple {\n\tmessage : String = \'The name of class \"\' + name + \'\" must begin uppercase.\',\n\tstatus : Boolean = \n\t\t\tlet firstLetter: String = (name).substring(1,1)\n\t\t\t\tin firstLetter.toUpperCase() = firstLetter\n}.status' UnambiguousAttributeNames='Tuple {\n\tmessage : String = \'The names of all attributes of a class must be unambiguous.\',\n\tstatus : Boolean = \n\t\t\ttrue\n}.status'"
  * @generated
  */
 public interface CDClass extends EObject {
@@ -37,7 +37,7 @@ public interface CDClass extends EObject {
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see cd.CdPackage#getCDClass_Name()
-	 * @model
+	 * @model required="true"
 	 * @generated
 	 */
 	String getName();

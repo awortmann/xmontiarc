@@ -281,31 +281,13 @@ public interface CdPackage extends EPackage {
 	int CD_CONSTANT__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CD_CONSTANT__VALUE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Classes</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CD_CONSTANT__CLASSES = 2;
-
-	/**
 	 * The number of structural features of the '<em>CD Constant</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CD_CONSTANT_FEATURE_COUNT = 3;
+	int CD_CONSTANT_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>CD Constant</em>' class.
@@ -456,28 +438,6 @@ public interface CdPackage extends EPackage {
 	EAttribute getCDConstant_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link cd.CDConstant#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see cd.CDConstant#getValue()
-	 * @see #getCDConstant()
-	 * @generated
-	 */
-	EAttribute getCDConstant_Value();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link cd.CDConstant#getClasses <em>Classes</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Classes</em>'.
-	 * @see cd.CDConstant#getClasses()
-	 * @see #getCDConstant()
-	 * @generated
-	 */
-	EReference getCDConstant_Classes();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -613,22 +573,6 @@ public interface CdPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CD_CONSTANT__NAME = eINSTANCE.getCDConstant_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CD_CONSTANT__VALUE = eINSTANCE.getCDConstant_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Classes</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CD_CONSTANT__CLASSES = eINSTANCE.getCDConstant_Classes();
 
 	}
 

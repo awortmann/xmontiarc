@@ -48,6 +48,5 @@
       <details key="ConstantNameBeginsUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of constant &quot;' + name + '&quot; must be all uppercase.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;name.toUpperCase() = name&#xA;}.status"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value"/>
   </eClassifiers>
 </ecore:EPackage>
