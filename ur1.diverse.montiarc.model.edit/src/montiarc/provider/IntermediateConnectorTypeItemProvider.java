@@ -16,6 +16,7 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import montiarc.ComponentInstance;
 import montiarc.ComponentType;
 import montiarc.ConnectorType;
+import montiarc.IntermediateConnectorType;
 import montiarc.MontiarcPackage;
 import montiarc.PortInstance;
 
@@ -153,11 +154,11 @@ public class IntermediateConnectorTypeItemProvider extends ConnectorTypeItemProv
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String getText(Object object) {
-		return getString("_UI_IntermediateConnectorType_type");
+		return ((IntermediateConnectorType)object).toString();
 	}
 	
 

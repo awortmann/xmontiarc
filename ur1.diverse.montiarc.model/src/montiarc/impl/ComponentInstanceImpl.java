@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -24,9 +23,8 @@ import montiarc.PortInstance;
 import montiarc.PortType;
 
 /**
- * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Component Instance</b></em>'.
- * <!-- end-user-doc -->
+ * <!-- begin-user-doc --> An implementation of the model object
+ * '<em><b>Component Instance</b></em>'. <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * </p>
@@ -42,8 +40,7 @@ import montiarc.PortType;
 public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implements ComponentInstance {
 	/**
 	 * The default value of the '{@link #getInstanceName() <em>Instance Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getInstanceName()
 	 * @generated
 	 * @ordered
@@ -52,8 +49,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * The cached value of the '{@link #getInstanceName() <em>Instance Name</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getInstanceName()
 	 * @generated
 	 * @ordered
@@ -62,8 +58,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -72,8 +67,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 
 	/**
 	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getPorts()
 	 * @generated
 	 * @ordered
@@ -81,8 +75,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	protected EList<PortInstance> ports;
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	protected ComponentInstanceImpl() {
@@ -90,8 +83,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -100,8 +92,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public String getInstanceName() {
@@ -109,8 +100,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setInstanceName(String newInstanceName) {
@@ -121,8 +111,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ComponentType getType() {
@@ -138,8 +127,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ComponentType basicGetType() {
@@ -147,20 +135,19 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated NOT
 	 */
 	public void setType(ComponentType newType) {
 		ComponentType oldType = type;
 		type = newType;
+		this.setPorts();
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_INSTANCE__TYPE, oldType, type));
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<PortInstance> getPorts() {
@@ -169,28 +156,50 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 		}
 		return ports;
 	}
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated NOT
 	 */
-	public void setPorts() {
-		if (this.getType() == null) return;
-		ports = new EObjectResolvingEList<PortInstance>(PortInstance.class, this, MontiarcPackage.COMPONENT_INSTANCE__PORTS);
-		// Lookup port types of component type and create ports accordingly
-		EList<PortType> portTypes = this.getType().getPorts();
-		for (PortType pt : portTypes) {
-			System.out.println(pt);
-			PortInstance p = MontiarcFactory.eINSTANCE.createPortInstance();
-			p.setType(pt);
-			ports.add(p);
+	public EList<PortInstance> setPorts() {
+		System.out.println("SET PORTS of " + this.toString() + " ---");
+		if (ports == null) {
+			ports = new EObjectContainmentWithInverseEList<PortInstance>(PortInstance.class, this,
+					MontiarcPackage.COMPONENT_INSTANCE__PORTS, MontiarcPackage.PORT_INSTANCE__PARENT);
 		}
+		System.out.println("  ports = " + ports.toString());
+		if (this.getType() != null) {
+//			this.ports.clear();
+			ComponentType type = this.getType();
+			for (PortType pt : type.getPorts()) {
+				System.out.println("Looking for port of type '" + pt.toString() + "':");
+				if (!containsPortInstanceOfType(pt)) {
+					PortInstance pi = MontiarcFactory.eINSTANCE.createPortInstance();
+					pi.setType(pt);
+					ports.add(pi);
+					pi.setParent(this);
+					System.out.println("  -> ADDED port instance '" + pi.toString() + "'.");
+				}
+				else {
+					System.out.println("  -> ALREADY CONTAINED");
+				}
+			}
+		}
+		return ports;
+	}
+	
+	private boolean containsPortInstanceOfType(PortType pt) {
+		for (PortInstance pi: this.getPorts()) {
+			if (pi.getType().equals(pt)) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public ComponentType getParent() {
@@ -199,8 +208,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public NotificationChain basicSetParent(ComponentType newParent, NotificationChain msgs) {
@@ -209,8 +217,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setParent(ComponentType newParent) {
@@ -230,8 +237,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -249,8 +255,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -265,8 +270,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -279,8 +283,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -300,8 +303,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -326,8 +328,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -350,8 +351,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -370,16 +370,17 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy()) return super.toString();
+		if (eIsProxy())
+			return super.toString();
 		String result = "";
-		result += (this.getType()!=null) ? this.getType().getName() + " " : "";
+		result += (this.getType() != null) ? this.getType().getName() + " " : "";
 		return result + this.getInstanceName();
 	}
 
-} //ComponentInstanceImpl
+} // ComponentInstanceImpl

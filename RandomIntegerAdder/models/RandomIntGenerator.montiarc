@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ur1.diverse.montiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ur1.diverse.montiarc.model="http://u1/diverse/montiarc/model" name="RandomIntGenerator" groovyBehavior="">
+  <ports isIncoming="false" name="secondInt">
+    <type href="datatypes.cd#//@classes.0"/>
+  </ports>
+  <ports isIncoming="false" name="firstInt">
+    <type href="datatypes.cd#//@classes.0"/>
+  </ports>
+</ur1.diverse.montiarc.model:ComponentType>
