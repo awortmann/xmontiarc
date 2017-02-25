@@ -16,7 +16,6 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import montiarc.ComponentInstance;
 import montiarc.ComponentType;
 import montiarc.ConnectorType;
-import montiarc.IntermediateConnectorType;
 import montiarc.MontiarcPackage;
 import montiarc.PortInstance;
 
@@ -158,7 +157,7 @@ public class IntermediateConnectorTypeItemProvider extends ConnectorTypeItemProv
 	 */
 	@Override
 	public String getText(Object object) {
-		return ((IntermediateConnectorType)object).toString();
+		return getString("_UI_IntermediateConnectorType_type");
 	}
 	
 

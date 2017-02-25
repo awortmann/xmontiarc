@@ -29,6 +29,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface ComponentInstance extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Instance Name</b></em>' attribute.
+	 * The default value is <code>"UnnamedComponentInstance"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Instance Name</em>' attribute isn't clear,
@@ -38,7 +39,7 @@ public interface ComponentInstance extends EObject {
 	 * @return the value of the '<em>Instance Name</em>' attribute.
 	 * @see #setInstanceName(String)
 	 * @see montiarc.MontiarcPackage#getComponentInstance_InstanceName()
-	 * @model required="true"
+	 * @model default="UnnamedComponentInstance" required="true"
 	 * @generated
 	 */
 	String getInstanceName();

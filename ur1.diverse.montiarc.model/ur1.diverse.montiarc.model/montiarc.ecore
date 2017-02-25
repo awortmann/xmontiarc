@@ -17,7 +17,8 @@
       <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of component type &quot;' + name + '&quot; must begin uppercase.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;let firstLetter: String = (name).substring(1, 1) &#xA;&#x9;&#x9;&#x9;&#x9;in firstLetter.toUpperCase() = firstLetter&#xA;}.status"/>
       <details key="ConnectorsDoNotCrossCutComponents" value="&#xA;&#x9;&#x9;&#x9;true"/>
     </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="UnnamedComponentType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superComponentType" eType="#//ComponentType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
         eType="#//PortType" containment="true" eOpposite="#//PortType/parent"/>
@@ -36,7 +37,8 @@
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIncoming" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="UnnamedPortType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../ur1.diverse.cd.model/ur1.diverse.cd.model/cd.ecore#//CDClass"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
         eType="#//ComponentType" eOpposite="#//ComponentType/ports"/>
@@ -49,7 +51,7 @@
       <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of instance name of subcomponent &quot;' + instanceName +&#xA;&#x9;&#x9;&#x9;'&quot; must begin lowercase.',&#xA;&#x9;status : Boolean = let firstLetter : String = (instanceName).substring(1, 1)&#xA;&#x9;&#x9;in firstLetter.toUpperCase() = firstLetter&#xA;}.status"/>
     </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceName" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="UnnamedComponentInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//ComponentType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
         eType="#//PortInstance" containment="true" eOpposite="#//PortInstance/parent"/>

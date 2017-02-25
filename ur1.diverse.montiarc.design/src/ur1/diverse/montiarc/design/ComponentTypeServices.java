@@ -7,8 +7,9 @@ import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
 
 import montiarc.ComponentType;
-import montiarc.Connector;
-import montiarc.Port;
+import montiarc.IncomingConnectorType;
+import montiarc.IntermediateConnectorType;
+import montiarc.OutgoingConnectorType;
 import montiarc.PortType;
 
 /**
@@ -23,8 +24,13 @@ public class ComponentTypeServices {
 	 * @return 
 	 */
 	public String getPortTypeLabel(EObject self) {
-		PortType pt = ((Port)self).getType();
+		PortType pt = (PortType)self;
 		return pt.getType().getName() + " " + pt.getName();
+	}
+	
+	public String getComponentTypeLabel(EObject self) {
+		ComponentType c = (ComponentType)self;
+		return c.getName();
 	}
 
 	/**
@@ -69,22 +75,46 @@ public class ComponentTypeServices {
 		return ports;
 	}
 	
-	public String getConnectorLabel(Connector c) {
-		String sourceName = c.getSourcePort().getParent().getInstanceName() + "." + c.getSourcePort().getType().getName();
-		String targetName = c.getTargetPort().getParent().getInstanceName() + "." + c.getTargetPort().getType().getName();
-		return sourceName + " -> " + targetName; 
-	}
+//	public String createConnectorLabel(ConnectorType c) {
+//		String sourceName = c.getSourcePort().getParent().getInstanceName() + "." + c.getSourcePort().getType().getName();
+//		String targetName = c.getTargetPort().getParent().getInstanceName() + "." + c.getTargetPort().getType().getName();
+//		return sourceName + " -> " + targetName; 
+//	}
 	
-	public EObject getConnectorSourcePort(EObject self) {
-		Connector c = (Connector)self;
-		System.out.println("Drawing source port for connector '" + getConnectorLabel(c) + "'.");
+	public EObject getIntermediateConnectorSourcePortInstance(EObject self) {
+		IntermediateConnectorType c = (IntermediateConnectorType)self;
+		System.out.println("Drawing source port for intermediate connector '" + c.toString() + "'.");
 		return c.getSourcePort();
 	}
 	
-	public EObject getConnectorTargetPort(EObject self) {
-		Connector c = (Connector)self;
-		System.out.println("Drawing target port for connector '" + getConnectorLabel(c) + "'.");
+	public EObject getIntermediateConnectorTargetPortInstance(EObject self) {
+		IntermediateConnectorType c = (IntermediateConnectorType)self;
+		System.out.println("Drawing target port for intermediate connector '" + c.toString() + "'.");
 		return c.getTargetPort();
+	}
+	
+	public EObject getIncomingConnectorSourcePortType(EObject self) {
+		IncomingConnectorType c = (IncomingConnectorType)self;
+		System.out.println("Drawing source port for incoming connector '" + c.toString() + "'.");
+		return c.getSourcePortType();
+	}
+	
+	public EObject getIncomingConnectorTargetPortInstance(EObject self) {
+		IncomingConnectorType c = (IncomingConnectorType)self;
+		System.out.println("Drawing target port for incoming connector '" + c.toString() + "'.");
+		return c.getTargetPort();
+	}
+	
+	public EObject getOutgoingConnectorSourcePortInstance(EObject self) {
+		OutgoingConnectorType c = (OutgoingConnectorType)self;
+		System.out.println("Drawing source port for outgoing connector '" + c.toString() + "'.");
+		return c.getSourcePort();
+	}
+	
+	public EObject getOutgoingConnectorTargetPortType(EObject self) {
+		OutgoingConnectorType c = (OutgoingConnectorType)self;
+		System.out.println("Drawing target port for outgoing connector '" + c.toString() + "'.");
+		return c.getTargetPortType();
 	}
 	
 }

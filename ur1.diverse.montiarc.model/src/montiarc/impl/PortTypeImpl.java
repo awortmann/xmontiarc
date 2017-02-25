@@ -64,7 +64,7 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final String NAME_EDEFAULT = "UnnamedPortType";
 
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.

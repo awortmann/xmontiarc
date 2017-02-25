@@ -48,7 +48,7 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String INSTANCE_NAME_EDEFAULT = null;
+	protected static final String INSTANCE_NAME_EDEFAULT = "UnnamedComponentInstance";
 
 	/**
 	 * The cached value of the '{@link #getInstanceName() <em>Instance Name</em>}' attribute.

@@ -1,11 +1,14 @@
 package ur1.diverse.montiarc.design;
 
 import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 
-import montiarc.Component;
-import montiarc.Port;
+import montiarc.ComponentInstance;
+import montiarc.PortInstance;
+import montiarc.PortType;
 
 /**
  * Services for component aspects of montiarc diagrams.
@@ -13,36 +16,44 @@ import montiarc.Port;
  */
 public class ComponentInstanceServices {
 	
-	private ComponentTypeServices typeServices = new ComponentTypeServices();
-
+	public String getComponentInstanceLabel(EObject self) {
+		ComponentInstance c = (ComponentInstance)self;
+		return c.toString();
+	}
+	
+	public Collection<EObject> getComponentInstanceIncomingPorts(EObject self) {
+		return getDirectedPortInstances((ComponentInstance)self, true);
+	}
+	
+	public Collection<EObject> getComponentInstanceOutgoingPorts(EObject self) {
+		return getDirectedPortInstances((ComponentInstance)self, false);
+	}
+	
+	public Collection<EObject> getDirectedPortInstances(ComponentInstance comp, boolean collectIncomingPorts) {
+		Set<EObject> ports = new HashSet<>();
+		for (PortInstance pi : comp.getPorts()) {
+			if (collectIncomingPorts && pi.getType().isIsIncoming()) {
+				ports.add(pi);
+			} else if (!collectIncomingPorts && !pi.getType().isIsIncoming()) {
+				ports.add(pi);
+			}
+		}
+		return ports;
+	}
+	
 	/**
-	 * A nice label for {@link SubcomponentDeclaration}s
-	 * @param self A {@link SubcomponentDeclaration}
+	 * A nice label for {@link PortType}s
+	 * @param self A {@link PortType}
 	 * @return 
 	 */
-	public String getComponentLabel(EObject self) {
-		Component s = (Component)self;
-		return s.getType().getName() + " "  + s.getInstanceName();
+	public String getPortInstanceLabel(EObject self) {
+		PortType pt = ((PortInstance)self).getType();
+		return pt.getType().getName() + " " + pt.getName();
 	}
 	
-	/**
-	 * Returns the incoming {@link Port}s of the subcomponent's component type
-	 * @param self A {@link SubcomponentDeclaration}
-	 * @return A set of its incoming {@link Port}s
-	 */
-	public Collection<EObject> getComponentIncomingPorts(EObject self) {
-		Component s = (Component)self;
-		return typeServices.getComponentTypeIncomingPorts(s.getType());
-	}
-	
-	/**
-	 * Returns the outgoing {@link Port}s of the subcomponent's component type
-	 * @param self A {@link SubcomponentDeclaration}
-	 * @return A set of its outgoing {@link Port}s
-	 */
-	public Collection<EObject> getComponentOutgoingPorts(EObject self) {
-		Component s = (Component)self;
-		return typeServices.getComponentTypeOutgoingPorts(s.getType());
+	public String getComponentInstanceTypeName(EObject self) {
+		ComponentInstance ci = (ComponentInstance)self;
+		return ci.getType().getName();
 	}
 	
 }
