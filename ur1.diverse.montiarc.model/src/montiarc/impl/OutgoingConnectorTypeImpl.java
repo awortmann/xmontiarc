@@ -222,7 +222,7 @@ public class OutgoingConnectorTypeImpl extends ConnectorTypeImpl implements Outg
 	private String qualify(PortType p) {
 		String qualifiedName = "";
 		if (p != null && this.getParent() != null && p.getType() != null) {
-			qualifiedName = this.getParent().getName() + "." + p.getType().getName();
+			qualifiedName = this.getParent().getName() + "." + p.getName();
 		}
 		return qualifiedName;
 	}

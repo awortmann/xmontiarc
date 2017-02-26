@@ -61,7 +61,7 @@ public interface PortInstance extends EObject {
 	 * @see #setParent(ComponentInstance)
 	 * @see montiarc.MontiarcPackage#getPortInstance_Parent()
 	 * @see montiarc.ComponentInstance#getPorts
-	 * @model opposite="ports" required="true" transient="false"
+	 * @model opposite="ports" required="true"
 	 * @generated
 	 */
 	ComponentInstance getParent();

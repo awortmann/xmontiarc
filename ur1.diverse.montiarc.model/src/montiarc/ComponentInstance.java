@@ -93,7 +93,7 @@ public interface ComponentInstance extends EObject {
 	 * @return the value of the '<em>Ports</em>' containment reference list.
 	 * @see montiarc.MontiarcPackage#getComponentInstance_Ports()
 	 * @see montiarc.PortInstance#getParent
-	 * @model opposite="parent" containment="true" derived="true"
+	 * @model opposite="parent" containment="true" transient="true" derived="true"
 	 * @generated
 	 */
 	EList<PortInstance> getPorts();

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ur1.diverse.montiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ur1.diverse.montiarc.model="http://u1/diverse/montiarc/model" name="Adder">
+<ur1.diverse.montiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ur1.diverse.montiarc.model="http://u1/diverse/montiarc/model" name="Adder">
   <ports name="summandA">
     <type href="datatypes.cd#//@classes.0"/>
   </ports>
@@ -9,6 +9,9 @@
   <ports isIncoming="false" name="result">
     <type href="datatypes.cd#//@classes.0"/>
   </ports>
+  <connectors xsi:type="ur1.diverse.montiarc.model:IncomingConnectorType" targetPort="//@subcomponents.0/@ports.0" sourcePortType="//@ports.0"/>
+  <connectors xsi:type="ur1.diverse.montiarc.model:IncomingConnectorType" targetPort="//@subcomponents.0/@ports.1" sourcePortType="//@ports.1"/>
+  <connectors xsi:type="ur1.diverse.montiarc.model:OutgoingConnectorType" sourcePort="//@subcomponents.0/@ports.2" targetPortType="//@ports.2"/>
   <subcomponents instanceName="innerAdder">
     <type href="InnerAdder.montiarc#/"/>
   </subcomponents>

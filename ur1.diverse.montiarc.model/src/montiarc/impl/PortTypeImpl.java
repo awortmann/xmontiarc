@@ -369,6 +369,7 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 		if (eIsProxy()) return super.toString();
 
 		String result = "";
+		result += (this.isIncoming) ? "in " : "out ";
 		result += (this.getType()!=null) ? this.getType().getName() + " " : "";
 		result += this.getName();
 		return result;
