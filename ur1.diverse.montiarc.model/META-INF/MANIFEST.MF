@@ -12,5 +12,7 @@ Export-Package: montiarc,
  montiarc.util
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- ur1.diverse.cd.model;bundle-version="0.1.0";visibility:=reexport
+ ur1.diverse.cd.model;bundle-version="0.1.0";visibility:=reexport,
+ org.eclipse.emf.edit,
+ org.eclipse.emf.ecore.xmi
 Bundle-ActivationPolicy: lazy

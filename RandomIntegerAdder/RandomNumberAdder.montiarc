@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ur1.diverse.montiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ur1.diverse.montiarc.model="http://u1/diverse/montiarc/model" name="RandomNumberAdder">
-  <connectors xsi:type="ur1.diverse.montiarc.model:IntermediateConnectorType" sourcePort="//@subcomponents.0/@ports.1" targetPort="//@subcomponents.1/@ports.0"/>
-  <connectors xsi:type="ur1.diverse.montiarc.model:IntermediateConnectorType" sourcePort="//@subcomponents.0/@ports.0" targetPort="//@subcomponents.1/@ports.1"/>
-  <connectors xsi:type="ur1.diverse.montiarc.model:IntermediateConnectorType" sourcePort="//@subcomponents.1/@ports.2" targetPort="//@subcomponents.2/@ports.0"/>
+  <connectors xsi:type="ur1.diverse.montiarc.model:IntermediateConnectorType"/>
+  <connectors xsi:type="ur1.diverse.montiarc.model:IntermediateConnectorType"/>
+  <connectors xsi:type="ur1.diverse.montiarc.model:IntermediateConnectorType"/>
   <subcomponents instanceName="gen">
     <type href="models/RandomIntGenerator.montiarc#/"/>
     <ports>
@@ -13,15 +13,15 @@
     </ports>
   </subcomponents>
   <subcomponents instanceName="adder">
-    <type href="models/IntegerAdder.montiarc#/"/>
+    <type href="models/InnerAdder.montiarc#/"/>
     <ports>
-      <type href="models/IntegerAdder.montiarc#//@ports.0"/>
+      <type href="models/InnerAdder.montiarc#//@ports.0"/>
     </ports>
     <ports>
-      <type href="models/IntegerAdder.montiarc#//@ports.1"/>
+      <type href="models/InnerAdder.montiarc#//@ports.1"/>
     </ports>
     <ports>
-      <type href="models/IntegerAdder.montiarc#//@ports.2"/>
+      <type href="models/InnerAdder.montiarc#//@ports.2"/>
     </ports>
   </subcomponents>
   <subcomponents instanceName="printer">

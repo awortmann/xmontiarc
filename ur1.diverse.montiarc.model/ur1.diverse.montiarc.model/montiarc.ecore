@@ -54,7 +54,7 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="UnnamedComponentInstance"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//ComponentType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
-        eType="#//PortInstance" containment="true" eOpposite="#//PortInstance/parent"/>
+        eType="#//PortInstance" derived="true" containment="true" eOpposite="#//PortInstance/parent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
         eType="#//ComponentType" eOpposite="#//ComponentType/subcomponents"/>
   </eClassifiers>
