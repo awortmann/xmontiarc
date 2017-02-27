@@ -31,7 +31,7 @@ public class ComponentInstanceServices {
 	
 	public Collection<EObject> getDirectedPortInstances(ComponentInstance comp, boolean collectIncomingPorts) {
 		Set<EObject> ports = new HashSet<>();
-		for (PortInstance pi : comp.getPorts()) {
+		for (PortInstance pi : comp.getPortInstances()) {
 			if (collectIncomingPorts && pi.getType().isIsIncoming()) {
 				ports.add(pi);
 			} else if (!collectIncomingPorts && !pi.getType().isIsIncoming()) {
@@ -48,12 +48,12 @@ public class ComponentInstanceServices {
 	 */
 	public String getPortInstanceLabel(EObject self) {
 		PortType pt = ((PortInstance)self).getType();
-		return pt.getType().getName() + " " + pt.getName();
+		return pt.getDataType().getName() + " " + pt.getName();
 	}
 	
 	public String getComponentInstanceTypeName(EObject self) {
 		ComponentInstance ci = (ComponentInstance)self;
-		return ci.getType().getName();
+		return ci.getComponentType().getName();
 	}
 	
 }

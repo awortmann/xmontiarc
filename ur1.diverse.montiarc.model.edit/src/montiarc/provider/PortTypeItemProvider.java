@@ -20,7 +20,6 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import montiarc.MontiarcPackage;
-import montiarc.PortInstance;
 import montiarc.PortType;
 
 /**
@@ -115,7 +114,7 @@ public class PortTypeItemProvider extends ItemProviderAdapter implements IEditin
 				 getResourceLocator(),
 				 getString("_UI_PortType_type_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_PortType_type_feature", "_UI_PortType_type"),
-				 MontiarcPackage.Literals.PORT_TYPE__TYPE,
+				 MontiarcPackage.Literals.PORT_TYPE__DATA_TYPE,
 				 true,
 				 false,
 				 true,

@@ -48,12 +48,56 @@ public class IntermediateConnectorTypeItemProvider extends ConnectorTypeItemProv
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourcePortPropertyDescriptor(object);
-			addTargetPortPropertyDescriptor(object);
+			addSourcePortInstancePropertyDescriptor(object);
+			addTargetPortInstancePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 	
+	/**
+	 * This adds a property descriptor for the Source Port Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourcePortInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IntermediateConnectorType_sourcePortInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IntermediateConnectorType_sourcePortInstance_feature", "_UI_IntermediateConnectorType_type"),
+				 MontiarcPackage.Literals.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Target Port Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTargetPortInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_IntermediateConnectorType_targetPortInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_IntermediateConnectorType_targetPortInstance_feature", "_UI_IntermediateConnectorType_type"),
+				 MontiarcPackage.Literals.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT_INSTANCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
+	}
+
 	/**
 	 * This adds a property descriptor for the Source Port feature.
 	 * <!-- begin-user-doc -->
@@ -67,7 +111,7 @@ public class IntermediateConnectorTypeItemProvider extends ConnectorTypeItemProv
 				 getResourceLocator(),
 				 getString("_UI_IntermediateConnectorType_sourcePort_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IntermediateConnectorType_sourcePort_feature", "_UI_IntermediateConnectorType_type"),
-				 MontiarcPackage.Literals.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT,
+				 MontiarcPackage.Literals.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE,
 				 true,
 				 false,
 				 true,
@@ -83,8 +127,8 @@ public class IntermediateConnectorTypeItemProvider extends ConnectorTypeItemProv
 			        	ComponentType parentComponentType = self.getParent();
 			        	
 			        	if (parentComponentType != null) {
-			        		for (ComponentInstance siblingInstance : parentComponentType.getSubcomponents()) {
-			        			for (PortInstance portInstance : siblingInstance.getPorts()) {
+			        		for (ComponentInstance siblingInstance : parentComponentType.getComponentInstances()) {
+			        			for (PortInstance portInstance : siblingInstance.getPortInstances()) {
 			        				boolean isOutgoing = !portInstance.getType().isIsIncoming();
 			        				if (portInstance.getType() != null && isOutgoing) {
 			        					outgoingPortInstances.add(portInstance);
@@ -110,7 +154,7 @@ public class IntermediateConnectorTypeItemProvider extends ConnectorTypeItemProv
 				 getResourceLocator(),
 				 getString("_UI_IntermediateConnectorType_targetPort_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_IntermediateConnectorType_targetPort_feature", "_UI_IntermediateConnectorType_type"),
-				 MontiarcPackage.Literals.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT,
+				 MontiarcPackage.Literals.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT_INSTANCE,
 				 true,
 				 false,
 				 true,
@@ -125,8 +169,8 @@ public class IntermediateConnectorTypeItemProvider extends ConnectorTypeItemProv
 		        	ComponentType parentComponentType = self.getParent();
 		        	
 		        	if (parentComponentType != null) {
-		        		for (ComponentInstance siblingInstance : parentComponentType.getSubcomponents()) {
-		        			for (PortInstance portInstance : siblingInstance.getPorts()) {
+		        		for (ComponentInstance siblingInstance : parentComponentType.getComponentInstances()) {
+		        			for (PortInstance portInstance : siblingInstance.getPortInstances()) {
 		        				boolean isIncoming = portInstance.getType().isIsIncoming();
 		        				if (portInstance.getType() != null && isIncoming) {
 		        					incomingPortInstances.add(portInstance);

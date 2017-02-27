@@ -49,10 +49,32 @@ public class OutgoingConnectorTypeItemProvider extends ConnectorTypeItemProvider
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSourcePortPropertyDescriptor(object);
+			addSourcePortInstancePropertyDescriptor(object);
 			addTargetPortTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
+	}
+
+	/**
+	 * This adds a property descriptor for the Source Port Instance feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSourcePortInstancePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_OutgoingConnectorType_sourcePortInstance_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_OutgoingConnectorType_sourcePortInstance_feature", "_UI_OutgoingConnectorType_type"),
+				 MontiarcPackage.Literals.OUTGOING_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE,
+				 true,
+				 false,
+				 true,
+				 null,
+				 null,
+				 null));
 	}
 
 	/**
@@ -68,7 +90,7 @@ public class OutgoingConnectorTypeItemProvider extends ConnectorTypeItemProvider
 				 getResourceLocator(),
 				 getString("_UI_OutgoingConnectorType_sourcePort_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_OutgoingConnectorType_sourcePort_feature", "_UI_OutgoingConnectorType_type"),
-				 MontiarcPackage.Literals.OUTGOING_CONNECTOR_TYPE__SOURCE_PORT,
+				 MontiarcPackage.Literals.OUTGOING_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE,
 				 true,
 				 false,
 				 true,
@@ -84,8 +106,8 @@ public class OutgoingConnectorTypeItemProvider extends ConnectorTypeItemProvider
 		        	ComponentType parentComponentType = self.getParent();
 		        	
 		        	if (parentComponentType != null) {
-		        		for (ComponentInstance siblingInstance : parentComponentType.getSubcomponents()) {
-		        			for (PortInstance portInstance : siblingInstance.getPorts()) {
+		        		for (ComponentInstance siblingInstance : parentComponentType.getComponentInstances()) {
+		        			for (PortInstance portInstance : siblingInstance.getPortInstances()) {
 		        				boolean isOutgoing = !portInstance.getType().isIsIncoming();
 		        				if (portInstance.getType() != null && isOutgoing) {
 		        					outgoingPortInstances.add(portInstance);
@@ -126,7 +148,7 @@ public class OutgoingConnectorTypeItemProvider extends ConnectorTypeItemProvider
 		        	ComponentType parentComponentType = self.getParent();
 		        	
 		        	if (parentComponentType != null) {
-		        		for (PortType pt : parentComponentType.getPorts()) {
+		        		for (PortType pt : parentComponentType.getPortTypes()) {
 		        			if (!pt.isIsIncoming()) {
 		        				outgoingPortTypes.add(pt);
 		        			}

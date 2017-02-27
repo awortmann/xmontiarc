@@ -87,8 +87,8 @@ public class PortInstanceItemProvider extends ItemProviderAdapter implements IEd
 		        	PortInstance self = (PortInstance)object;
 		        	ComponentInstance parentInstance = self.getParent();
 		        	
-		        	if (parentInstance != null && parentInstance.getType() != null) {
-		        		ComponentType parentType = parentInstance.getType();
+		        	if (parentInstance != null && parentInstance.getComponentType() != null) {
+		        		ComponentType parentType = parentInstance.getComponentType();
 			            for (Object value : choiceOfValues) {
 			            	if (value !=null) {
 			            		PortType pt = (PortType) value;

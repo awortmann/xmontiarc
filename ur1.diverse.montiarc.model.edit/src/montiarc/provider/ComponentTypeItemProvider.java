@@ -135,9 +135,9 @@ public class ComponentTypeItemProvider extends ItemProviderAdapter implements IE
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_TYPE__PORTS);
+			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_TYPE__PORT_TYPES);
 			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_TYPE__CONNECTORS);
-			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_TYPE__SUBCOMPONENTS);
+			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_TYPE__COMPONENT_INSTANCES);
 		}
 		return childrenFeatures;
 	}
@@ -196,9 +196,9 @@ public class ComponentTypeItemProvider extends ItemProviderAdapter implements IE
 			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case MontiarcPackage.COMPONENT_TYPE__PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__PORT_TYPES:
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
-			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+			case MontiarcPackage.COMPONENT_TYPE__COMPONENT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -218,7 +218,7 @@ public class ComponentTypeItemProvider extends ItemProviderAdapter implements IE
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MontiarcPackage.Literals.COMPONENT_TYPE__PORTS,
+				(MontiarcPackage.Literals.COMPONENT_TYPE__PORT_TYPES,
 				 MontiarcFactory.eINSTANCE.createPortType()));
 
 		newChildDescriptors.add
@@ -238,7 +238,7 @@ public class ComponentTypeItemProvider extends ItemProviderAdapter implements IE
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MontiarcPackage.Literals.COMPONENT_TYPE__SUBCOMPONENTS,
+				(MontiarcPackage.Literals.COMPONENT_TYPE__COMPONENT_INSTANCES,
 				 MontiarcFactory.eINSTANCE.createComponentInstance()));
 	}
 

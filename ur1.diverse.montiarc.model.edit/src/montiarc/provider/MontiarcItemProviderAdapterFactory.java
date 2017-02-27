@@ -71,6 +71,29 @@ public class MontiarcItemProviderAdapterFactory extends MontiarcAdapterFactory i
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link montiarc.ConnectorInstance} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ConnectorInstanceItemProvider connectorInstanceItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link montiarc.ConnectorInstance}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createConnectorInstanceAdapter() {
+		if (connectorInstanceItemProvider == null) {
+			connectorInstanceItemProvider = new ConnectorInstanceItemProvider(this);
+		}
+
+		return connectorInstanceItemProvider;
+	}
+
+	/**
 	 * This keeps track of the one adapter used for all {@link montiarc.ComponentType} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -330,6 +353,7 @@ public class MontiarcItemProviderAdapterFactory extends MontiarcAdapterFactory i
 	 * @generated
 	 */
 	public void dispose() {
+		if (connectorInstanceItemProvider != null) connectorInstanceItemProvider.dispose();
 		if (componentTypeItemProvider != null) componentTypeItemProvider.dispose();
 		if (portTypeItemProvider != null) portTypeItemProvider.dispose();
 		if (componentInstanceItemProvider != null) componentInstanceItemProvider.dispose();

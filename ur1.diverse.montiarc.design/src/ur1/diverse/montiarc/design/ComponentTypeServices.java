@@ -25,7 +25,7 @@ public class ComponentTypeServices {
 	 */
 	public String getPortTypeLabel(EObject self) {
 		PortType pt = (PortType)self;
-		return pt.getType().getName() + " " + pt.getName();
+		return pt.getDataType().getName() + " " + pt.getName();
 	}
 	
 	public String getComponentTypeLabel(EObject self) {
@@ -64,7 +64,7 @@ public class ComponentTypeServices {
 	 */
 	public Collection<PortType> getDirectedPorts(ComponentType comp, boolean collectIncomingPorts) {
 		Set<PortType> ports = new HashSet<>();
-		for (PortType pt : comp.getPorts()) {
+		for (PortType pt : comp.getPortTypes()) {
 			if (collectIncomingPorts && pt.isIsIncoming()) {
 				ports.add(pt);
 			} else if (!collectIncomingPorts && !pt.isIsIncoming()) {
@@ -84,13 +84,13 @@ public class ComponentTypeServices {
 	public EObject getIntermediateConnectorSourcePortInstance(EObject self) {
 		IntermediateConnectorType c = (IntermediateConnectorType)self;
 		System.out.println("Drawing source port for intermediate connector '" + c.toString() + "'.");
-		return c.getSourcePort();
+		return c.getSourcePortInstance();
 	}
 	
 	public EObject getIntermediateConnectorTargetPortInstance(EObject self) {
 		IntermediateConnectorType c = (IntermediateConnectorType)self;
 		System.out.println("Drawing target port for intermediate connector '" + c.toString() + "'.");
-		return c.getTargetPort();
+		return c.getTargetPortInstance();
 	}
 	
 	public EObject getIncomingConnectorSourcePortType(EObject self) {
@@ -102,13 +102,13 @@ public class ComponentTypeServices {
 	public EObject getIncomingConnectorTargetPortInstance(EObject self) {
 		IncomingConnectorType c = (IncomingConnectorType)self;
 		System.out.println("Drawing target port for incoming connector '" + c.toString() + "'.");
-		return c.getTargetPort();
+		return c.getTargetPortInstance();
 	}
 	
 	public EObject getOutgoingConnectorSourcePortInstance(EObject self) {
 		OutgoingConnectorType c = (OutgoingConnectorType)self;
 		System.out.println("Drawing source port for outgoing connector '" + c.toString() + "'.");
-		return c.getSourcePort();
+		return c.getSourcePortInstance();
 	}
 	
 	public EObject getOutgoingConnectorTargetPortType(EObject self) {

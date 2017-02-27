@@ -101,7 +101,7 @@ public class ComponentInstanceItemProvider
 				 getResourceLocator(),
 				 getString("_UI_ComponentInstance_type_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_type_feature", "_UI_ComponentInstance_type"),
-				 MontiarcPackage.Literals.COMPONENT_INSTANCE__TYPE,
+				 MontiarcPackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE,
 				 true,
 				 false,
 				 true,
@@ -122,7 +122,8 @@ public class ComponentInstanceItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_INSTANCE__PORTS);
+			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES);
+			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES);
 		}
 		return childrenFeatures;
 	}
@@ -161,8 +162,8 @@ public class ComponentInstanceItemProvider
 	public String getText(Object object) {
 		String label = null;
 		ComponentInstance c = (ComponentInstance)object;
-		if (c.getType() != null) {
-			label = c.getType().getName() + " " + c.getInstanceName();
+		if (c.getComponentType() != null) {
+			label = c.getComponentType().getName() + " " + c.getInstanceName();
 		}
 		return label == null || label.length() == 0 ?
 			getString("_UI_ComponentInstance_type") :
@@ -184,7 +185,8 @@ public class ComponentInstanceItemProvider
 			case MontiarcPackage.COMPONENT_INSTANCE__INSTANCE_NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case MontiarcPackage.COMPONENT_INSTANCE__PORTS:
+			case MontiarcPackage.COMPONENT_INSTANCE__PORT_INSTANCES:
+			case MontiarcPackage.COMPONENT_INSTANCE__CONNECTOR_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -204,8 +206,13 @@ public class ComponentInstanceItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MontiarcPackage.Literals.COMPONENT_INSTANCE__PORTS,
+				(MontiarcPackage.Literals.COMPONENT_INSTANCE__PORT_INSTANCES,
 				 MontiarcFactory.eINSTANCE.createPortInstance()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(MontiarcPackage.Literals.COMPONENT_INSTANCE__CONNECTOR_INSTANCES,
+				 MontiarcFactory.eINSTANCE.createConnectorInstance()));
 	}
 
 	/**
