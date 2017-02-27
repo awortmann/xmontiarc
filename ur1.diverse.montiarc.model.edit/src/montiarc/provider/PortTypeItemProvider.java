@@ -20,6 +20,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 import montiarc.MontiarcPackage;
+import montiarc.PortInstance;
 import montiarc.PortType;
 
 /**
@@ -130,8 +131,16 @@ public class PortTypeItemProvider extends ItemProviderAdapter implements IEditin
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/port"));
+		PortType pt = (PortType) object;
+		String imagePath = "";
+		if (!pt.isIsIncoming()) {
+			imagePath = "full/outgoingport";
+		} else {
+			imagePath = "full/incomingport";
+		} 
+		return overlayImage(object, getResourceLocator().getImage(imagePath));
 	}
+
 
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc

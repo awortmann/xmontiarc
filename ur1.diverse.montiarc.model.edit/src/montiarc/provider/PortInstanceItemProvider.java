@@ -110,7 +110,16 @@ public class PortInstanceItemProvider extends ItemProviderAdapter implements IEd
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/port"));
+		PortInstance pi = (PortInstance) object;
+		String imagePath = "";
+		if (pi.getType() != null && !pi.getType().isIsIncoming()) {
+			imagePath = "full/outgoingport";
+		} else if (pi.getType() != null && pi.getType().isIsIncoming()) {
+			imagePath = "full/incomingport";
+		} else {
+			imagePath = "full/problem";
+		}
+		return overlayImage(object, getResourceLocator().getImage(imagePath));
 	}
 
 	/**
