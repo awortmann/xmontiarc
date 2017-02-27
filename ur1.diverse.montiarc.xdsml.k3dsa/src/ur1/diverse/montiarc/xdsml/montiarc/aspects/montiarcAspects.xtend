@@ -1,93 +1,100 @@
 package ur1.diverse.montiarc.xdsml.montiarc.aspects
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
+import fr.inria.diverse.k3.al.annotationprocessor.Main
+import fr.inria.diverse.k3.al.annotationprocessor.Step
+import java.util.Random
+import montiarc.ComponentInstance
 import montiarc.ComponentType
 import montiarc.Connector
-import montiarc.Port
-import montiarc.SubcomponentDeclaration
-
-import static extension ur1.diverse.montiarc.xdsml.montiarc.aspects.ComponentTypeAspect.*
-import static extension ur1.diverse.montiarc.xdsml.montiarc.aspects.PortAspect.*
-import static extension ur1.diverse.montiarc.xdsml.montiarc.aspects.ConnectorAspect.*
-import static extension ur1.diverse.montiarc.xdsml.montiarc.aspects.SubcomponentDeclarationAspect.*
-import montiarcruntime.PortValue
-import fr.inria.diverse.k3.al.annotationprocessor.Main
+import montiarc.ConnectorType
+import montiarc.PortInstance
 import montiarcruntime.MontiarcruntimeFactory
-import fr.inria.diverse.k3.al.annotationprocessor.Step
+import montiarcruntime.PortValue
 import org.eclipse.emf.common.util.EList
-import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
-import java.util.Random
+import montiarc.IntermediateConnectorType
+import montiarc.IncomingConnectorType
 
 @Aspect(className=ComponentType)
 class ComponentTypeAspect {
 
-	private Random r = new Random
-	
-	//@InitializeModel
+	// @InitializeModel
 	public def void init(EList<String> args) {
 		println('''Initializing '«_self.name»''')
 	}
-	
-//	Map<String,Object> inputs = new HashMap();
-//	Map<String,Object> computationResults = new HashMap();
-	
-	// All components compute their output based on previous input stored in Port.currentValue 
-	// All outputs are stored in variables Port.nextValue
+
+	 // Computes behavior for the composed top-level component type 
 	@Main
 	@Step
 	def void compute() {
-//		_self.inputs.clear;
-//		_self.computationResults.clear;
-		println('''Currently computing '«_self.name»''')
-		if (_self.subcomponents.isEmpty) { // assume an atomic component
-			// invoke _self.groovyBehavior
-			//foreach groovey behavior result
-			//iterate over hashmap and assign values to ports of the same name
-			
-			for (Port p : _self.ports) {
-				p.portValue = MontiarcruntimeFactory.eINSTANCE.createPortValue
-				p.portValue.value=_self.r.nextInt
-				p.portValue.type=p.type
-			}
-	   }
-	   // for composed components, propagate computation to subcomponents
-	   else { 
-			for (SubcomponentDeclaration scd : _self.subcomponents) {
-				scd.componentType.compute();
-			}
-	   }
+		for (ComponentInstance ci : _self.subcomponents) {
+			ci.compute();
+		}
 	}
 
-    // Composed components update all their subcomponents via the respective connectors
-    @Step
-  	def void update() {
-   		if (!_self.subcomponents.isEmpty) { // assume a composed component
-   			for (Connector con : _self.connectors) {
-   				con.update();
-   				println('''Propagating message over connector '«con.toString»'.''')
-   			}
-  		}
-  	}
+	// Composed components update all their subcomponents via the respective connectors
+	@Step
+	def void update() {
+		if (!_self.subcomponents.isEmpty) {
+			for (ConnectorType con : _self.connectors) {
+				println('''Propagating message over connector '«con.toString»'.''')
+				con.update();
+			}
+		}
+	}
 }
 
-@Aspect(className=Port)
-class PortAspect {
+@Aspect(className=ComponentInstance)
+class ComponentInstanceAspect {
+
+
+	private Random r = new Random
+	
+	@Step
+	def void compute() {
+		println('''Currently computing '«_self.instanceName»''')
+//		_self.inputs.clear;
+//		_self.computationResults.clear;
+		
+		// for atomic components: delegate behavior computation to their Groovy script
+		if (_self.type.subcomponents.isEmpty) { // assume an atomic component
+			// invoke _self.groovyBehavior
+			// for each groovy behavior result
+			// iterate over Hashmap and assign values to ports of the same name
+			for (PortInstance pi : _self.ports) {
+				pi.portValue = MontiarcruntimeFactory.eINSTANCE.createPortValue
+				pi.portValue.value = _self.r.nextInt
+				pi.portValue.type = pi.type
+			}
+		} // for composed components, propagate computation to subcomponents
+		else {
+			for (ComponentInstance ci : _self.type.subcomponents) {
+				ci.compute();
+			}
+		}
+	}
+
+}
+
+@Aspect(className=PortInstance)
+class PortInstanceAspect {
 	public PortValue portValue;
 }
 
-@Aspect(className=Connector)
-class ConnectorAspect {
-	
+@Aspect(className=IntermediateConnectorType)
+class IntermediateConnectorTypeAspect {
 	// Moves data from source port to target port
 	def void update() {
 		_self.targetPort.portValue = _self.sourcePort.portValue;
 		_self.targetPort.portValue = null;
 	}
-	
 }
 
-@Aspect(className=SubcomponentDeclaration)
-class SubcomponentDeclarationAspect {
-
+@Aspect(className=IncomingConnectorType)
+class IncomingConnectorTypeAspect {
+	// Moves data from source port to target port
+	def void update() {
+		_self.targetPort.portValue = _self.sourcePort.portValue;
+		_self.targetPort.portValue = null;
+	}
 }
-
