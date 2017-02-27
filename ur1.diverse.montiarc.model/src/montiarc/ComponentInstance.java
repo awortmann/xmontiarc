@@ -16,14 +16,14 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link montiarc.ComponentInstance#getInstanceName <em>Instance Name</em>}</li>
- *   <li>{@link montiarc.ComponentInstance#getType <em>Type</em>}</li>
- *   <li>{@link montiarc.ComponentInstance#getPorts <em>Ports</em>}</li>
+ *   <li>{@link montiarc.ComponentInstance#getComponentType <em>Component Type</em>}</li>
+ *   <li>{@link montiarc.ComponentInstance#getPortInstances <em>Port Instances</em>}</li>
  *   <li>{@link montiarc.ComponentInstance#getParent <em>Parent</em>}</li>
+ *   <li>{@link montiarc.ComponentInstance#getConnectorInstances <em>Connector Instances</em>}</li>
  * </ul>
  *
  * @see montiarc.MontiarcPackage#getComponentInstance()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NameIsLeadingUpperCase'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NameIsLeadingUpperCase='Tuple {\n\tmessage : String = \'The name of instance name of subcomponent \"\' + instanceName +\n\t\t\t\'\" must begin lowercase.\',\n\tstatus : Boolean = let firstLetter : String = (instanceName).substring(1, 1)\n\t\tin firstLetter.toUpperCase() = firstLetter\n}.status'"
+ * @model
  * @generated
  */
 public interface ComponentInstance extends EObject {
@@ -55,52 +55,52 @@ public interface ComponentInstance extends EObject {
 	void setInstanceName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' reference.
+	 * Returns the value of the '<em><b>Component Type</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Type</em>' reference isn't clear,
+	 * If the meaning of the '<em>Component Type</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(ComponentType)
-	 * @see montiarc.MontiarcPackage#getComponentInstance_Type()
+	 * @return the value of the '<em>Component Type</em>' reference.
+	 * @see #setComponentType(ComponentType)
+	 * @see montiarc.MontiarcPackage#getComponentInstance_ComponentType()
 	 * @model required="true"
 	 * @generated
 	 */
-	ComponentType getType();
+	ComponentType getComponentType();
 
 	/**
-	 * Sets the value of the '{@link montiarc.ComponentInstance#getType <em>Type</em>}' reference.
+	 * Sets the value of the '{@link montiarc.ComponentInstance#getComponentType <em>Component Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' reference.
-	 * @see #getType()
+	 * @param value the new value of the '<em>Component Type</em>' reference.
+	 * @see #getComponentType()
 	 * @generated
 	 */
-	void setType(ComponentType value);
+	void setComponentType(ComponentType value);
 
 	/**
-	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Port Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link montiarc.PortInstance}.
 	 * It is bidirectional and its opposite is '{@link montiarc.PortInstance#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Port Instances</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ports</em>' containment reference list.
-	 * @see montiarc.MontiarcPackage#getComponentInstance_Ports()
+	 * @return the value of the '<em>Port Instances</em>' containment reference list.
+	 * @see montiarc.MontiarcPackage#getComponentInstance_PortInstances()
 	 * @see montiarc.PortInstance#getParent
 	 * @model opposite="parent" containment="true" transient="true" derived="true"
 	 * @generated
 	 */
-	EList<PortInstance> getPorts();
+	EList<PortInstance> getPortInstances();
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link montiarc.ComponentType#getSubcomponents <em>Subcomponents</em>}'.
+	 * It is bidirectional and its opposite is '{@link montiarc.ComponentType#getComponentInstances <em>Component Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent</em>' reference isn't clear,
@@ -110,8 +110,8 @@ public interface ComponentInstance extends EObject {
 	 * @return the value of the '<em>Parent</em>' container reference.
 	 * @see #setParent(ComponentType)
 	 * @see montiarc.MontiarcPackage#getComponentInstance_Parent()
-	 * @see montiarc.ComponentType#getSubcomponents
-	 * @model opposite="subcomponents" required="true" transient="false"
+	 * @see montiarc.ComponentType#getComponentInstances
+	 * @model opposite="componentInstances" required="true" transient="false"
 	 * @generated
 	 */
 	ComponentType getParent();
@@ -125,5 +125,23 @@ public interface ComponentInstance extends EObject {
 	 * @generated
 	 */
 	void setParent(ComponentType value);
+
+	/**
+	 * Returns the value of the '<em><b>Connector Instances</b></em>' containment reference list.
+	 * The list contents are of type {@link montiarc.ConnectorInstance}.
+	 * It is bidirectional and its opposite is '{@link montiarc.ConnectorInstance#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Connector Instances</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Connector Instances</em>' containment reference list.
+	 * @see montiarc.MontiarcPackage#getComponentInstance_ConnectorInstances()
+	 * @see montiarc.ConnectorInstance#getParent
+	 * @model opposite="parent" containment="true" transient="true" derived="true"
+	 * @generated
+	 */
+	EList<ConnectorInstance> getConnectorInstances();
 
 } // ComponentInstance

@@ -12,7 +12,7 @@ package montiarc;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link montiarc.OutgoingConnectorType#getSourcePort <em>Source Port</em>}</li>
+ *   <li>{@link montiarc.OutgoingConnectorType#getSourcePortInstance <em>Source Port Instance</em>}</li>
  *   <li>{@link montiarc.OutgoingConnectorType#getTargetPortType <em>Target Port Type</em>}</li>
  * </ul>
  *
@@ -22,30 +22,30 @@ package montiarc;
  */
 public interface OutgoingConnectorType extends ConnectorType {
 	/**
-	 * Returns the value of the '<em><b>Source Port</b></em>' reference.
+	 * Returns the value of the '<em><b>Source Port Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source Port</em>' reference isn't clear,
+	 * If the meaning of the '<em>Source Port Instance</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Port</em>' reference.
-	 * @see #setSourcePort(PortInstance)
-	 * @see montiarc.MontiarcPackage#getOutgoingConnectorType_SourcePort()
+	 * @return the value of the '<em>Source Port Instance</em>' reference.
+	 * @see #setSourcePortInstance(PortInstance)
+	 * @see montiarc.MontiarcPackage#getOutgoingConnectorType_SourcePortInstance()
 	 * @model required="true"
 	 * @generated
 	 */
-	PortInstance getSourcePort();
+	PortInstance getSourcePortInstance();
 
 	/**
-	 * Sets the value of the '{@link montiarc.OutgoingConnectorType#getSourcePort <em>Source Port</em>}' reference.
+	 * Sets the value of the '{@link montiarc.OutgoingConnectorType#getSourcePortInstance <em>Source Port Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Port</em>' reference.
-	 * @see #getSourcePort()
+	 * @param value the new value of the '<em>Source Port Instance</em>' reference.
+	 * @see #getSourcePortInstance()
 	 * @generated
 	 */
-	void setSourcePort(PortInstance value);
+	void setSourcePortInstance(PortInstance value);
 
 	/**
 	 * Returns the value of the '<em><b>Target Port Type</b></em>' reference.

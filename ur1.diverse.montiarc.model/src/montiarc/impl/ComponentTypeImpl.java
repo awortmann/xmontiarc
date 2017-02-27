@@ -3,23 +3,22 @@
 package montiarc.impl;
 
 import java.util.Collection;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import montiarc.ComponentInstance;
 import montiarc.ComponentType;
 import montiarc.ConnectorType;
 import montiarc.MontiarcPackage;
 import montiarc.PortType;
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
-import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,9 +30,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link montiarc.impl.ComponentTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link montiarc.impl.ComponentTypeImpl#getSuperComponentType <em>Super Component Type</em>}</li>
- *   <li>{@link montiarc.impl.ComponentTypeImpl#getPorts <em>Ports</em>}</li>
+ *   <li>{@link montiarc.impl.ComponentTypeImpl#getPortTypes <em>Port Types</em>}</li>
  *   <li>{@link montiarc.impl.ComponentTypeImpl#getConnectors <em>Connectors</em>}</li>
- *   <li>{@link montiarc.impl.ComponentTypeImpl#getSubcomponents <em>Subcomponents</em>}</li>
+ *   <li>{@link montiarc.impl.ComponentTypeImpl#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link montiarc.impl.ComponentTypeImpl#getGroovyBehavior <em>Groovy Behavior</em>}</li>
  * </ul>
  *
@@ -71,14 +70,14 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	protected ComponentType superComponentType;
 
 	/**
-	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
+	 * The cached value of the '{@link #getPortTypes() <em>Port Types</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPorts()
+	 * @see #getPortTypes()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<PortType> ports;
+	protected EList<PortType> portTypes;
 
 	/**
 	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' containment reference list.
@@ -91,14 +90,14 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	protected EList<ConnectorType> connectors;
 
 	/**
-	 * The cached value of the '{@link #getSubcomponents() <em>Subcomponents</em>}' containment reference list.
+	 * The cached value of the '{@link #getComponentInstances() <em>Component Instances</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSubcomponents()
+	 * @see #getComponentInstances()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<ComponentInstance> subcomponents;
+	protected EList<ComponentInstance> componentInstances;
 
 	/**
 	 * The default value of the '{@link #getGroovyBehavior() <em>Groovy Behavior</em>}' attribute.
@@ -203,11 +202,11 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<PortType> getPorts() {
-		if (ports == null) {
-			ports = new EObjectContainmentWithInverseEList<PortType>(PortType.class, this, MontiarcPackage.COMPONENT_TYPE__PORTS, MontiarcPackage.PORT_TYPE__PARENT);
+	public EList<PortType> getPortTypes() {
+		if (portTypes == null) {
+			portTypes = new EObjectContainmentWithInverseEList<PortType>(PortType.class, this, MontiarcPackage.COMPONENT_TYPE__PORT_TYPES, MontiarcPackage.PORT_TYPE__PARENT);
 		}
-		return ports;
+		return portTypes;
 	}
 
 	/**
@@ -227,11 +226,11 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<ComponentInstance> getSubcomponents() {
-		if (subcomponents == null) {
-			subcomponents = new EObjectContainmentWithInverseEList<ComponentInstance>(ComponentInstance.class, this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS, MontiarcPackage.COMPONENT_INSTANCE__PARENT);
+	public EList<ComponentInstance> getComponentInstances() {
+		if (componentInstances == null) {
+			componentInstances = new EObjectContainmentWithInverseEList<ComponentInstance>(ComponentInstance.class, this, MontiarcPackage.COMPONENT_TYPE__COMPONENT_INSTANCES, MontiarcPackage.COMPONENT_INSTANCE__PARENT);
 		}
-		return subcomponents;
+		return componentInstances;
 	}
 
 	/**
@@ -264,12 +263,12 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MontiarcPackage.COMPONENT_TYPE__PORTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPorts()).basicAdd(otherEnd, msgs);
+			case MontiarcPackage.COMPONENT_TYPE__PORT_TYPES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getPortTypes()).basicAdd(otherEnd, msgs);
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectors()).basicAdd(otherEnd, msgs);
-			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubcomponents()).basicAdd(otherEnd, msgs);
+			case MontiarcPackage.COMPONENT_TYPE__COMPONENT_INSTANCES:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getComponentInstances()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -282,12 +281,12 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MontiarcPackage.COMPONENT_TYPE__PORTS:
-				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
+			case MontiarcPackage.COMPONENT_TYPE__PORT_TYPES:
+				return ((InternalEList<?>)getPortTypes()).basicRemove(otherEnd, msgs);
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return ((InternalEList<?>)getConnectors()).basicRemove(otherEnd, msgs);
-			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
-				return ((InternalEList<?>)getSubcomponents()).basicRemove(otherEnd, msgs);
+			case MontiarcPackage.COMPONENT_TYPE__COMPONENT_INSTANCES:
+				return ((InternalEList<?>)getComponentInstances()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -305,12 +304,12 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 			case MontiarcPackage.COMPONENT_TYPE__SUPER_COMPONENT_TYPE:
 				if (resolve) return getSuperComponentType();
 				return basicGetSuperComponentType();
-			case MontiarcPackage.COMPONENT_TYPE__PORTS:
-				return getPorts();
+			case MontiarcPackage.COMPONENT_TYPE__PORT_TYPES:
+				return getPortTypes();
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return getConnectors();
-			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
-				return getSubcomponents();
+			case MontiarcPackage.COMPONENT_TYPE__COMPONENT_INSTANCES:
+				return getComponentInstances();
 			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
 				return getGroovyBehavior();
 		}
@@ -332,17 +331,17 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 			case MontiarcPackage.COMPONENT_TYPE__SUPER_COMPONENT_TYPE:
 				setSuperComponentType((ComponentType)newValue);
 				return;
-			case MontiarcPackage.COMPONENT_TYPE__PORTS:
-				getPorts().clear();
-				getPorts().addAll((Collection<? extends PortType>)newValue);
+			case MontiarcPackage.COMPONENT_TYPE__PORT_TYPES:
+				getPortTypes().clear();
+				getPortTypes().addAll((Collection<? extends PortType>)newValue);
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				getConnectors().clear();
 				getConnectors().addAll((Collection<? extends ConnectorType>)newValue);
 				return;
-			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
-				getSubcomponents().clear();
-				getSubcomponents().addAll((Collection<? extends ComponentInstance>)newValue);
+			case MontiarcPackage.COMPONENT_TYPE__COMPONENT_INSTANCES:
+				getComponentInstances().clear();
+				getComponentInstances().addAll((Collection<? extends ComponentInstance>)newValue);
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
 				setGroovyBehavior((String)newValue);
@@ -365,14 +364,14 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 			case MontiarcPackage.COMPONENT_TYPE__SUPER_COMPONENT_TYPE:
 				setSuperComponentType((ComponentType)null);
 				return;
-			case MontiarcPackage.COMPONENT_TYPE__PORTS:
-				getPorts().clear();
+			case MontiarcPackage.COMPONENT_TYPE__PORT_TYPES:
+				getPortTypes().clear();
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				getConnectors().clear();
 				return;
-			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
-				getSubcomponents().clear();
+			case MontiarcPackage.COMPONENT_TYPE__COMPONENT_INSTANCES:
+				getComponentInstances().clear();
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
 				setGroovyBehavior(GROOVY_BEHAVIOR_EDEFAULT);
@@ -393,12 +392,12 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case MontiarcPackage.COMPONENT_TYPE__SUPER_COMPONENT_TYPE:
 				return superComponentType != null;
-			case MontiarcPackage.COMPONENT_TYPE__PORTS:
-				return ports != null && !ports.isEmpty();
+			case MontiarcPackage.COMPONENT_TYPE__PORT_TYPES:
+				return portTypes != null && !portTypes.isEmpty();
 			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return connectors != null && !connectors.isEmpty();
-			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
-				return subcomponents != null && !subcomponents.isEmpty();
+			case MontiarcPackage.COMPONENT_TYPE__COMPONENT_INSTANCES:
+				return componentInstances != null && !componentInstances.isEmpty();
 			case MontiarcPackage.COMPONENT_TYPE__GROOVY_BEHAVIOR:
 				return GROOVY_BEHAVIOR_EDEFAULT == null ? groovyBehavior != null : !GROOVY_BEHAVIOR_EDEFAULT.equals(groovyBehavior);
 		}

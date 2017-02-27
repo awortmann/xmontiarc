@@ -50,7 +50,7 @@ public interface PortInstance extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link montiarc.ComponentInstance#getPorts <em>Ports</em>}'.
+	 * It is bidirectional and its opposite is '{@link montiarc.ComponentInstance#getPortInstances <em>Port Instances</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent</em>' reference isn't clear,
@@ -60,8 +60,8 @@ public interface PortInstance extends EObject {
 	 * @return the value of the '<em>Parent</em>' container reference.
 	 * @see #setParent(ComponentInstance)
 	 * @see montiarc.MontiarcPackage#getPortInstance_Parent()
-	 * @see montiarc.ComponentInstance#getPorts
-	 * @model opposite="ports" required="true"
+	 * @see montiarc.ComponentInstance#getPortInstances
+	 * @model opposite="portInstances" required="true"
 	 * @generated
 	 */
 	ComponentInstance getParent();

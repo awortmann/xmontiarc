@@ -2,17 +2,15 @@
  */
 package montiarc.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import montiarc.IncomingConnectorType;
 import montiarc.MontiarcPackage;
 import montiarc.PortInstance;
 import montiarc.PortType;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link montiarc.impl.IncomingConnectorTypeImpl#getTargetPort <em>Target Port</em>}</li>
+ *   <li>{@link montiarc.impl.IncomingConnectorTypeImpl#getTargetPortInstance <em>Target Port Instance</em>}</li>
  *   <li>{@link montiarc.impl.IncomingConnectorTypeImpl#getSourcePortType <em>Source Port Type</em>}</li>
  * </ul>
  *
@@ -30,14 +28,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class IncomingConnectorTypeImpl extends ConnectorTypeImpl implements IncomingConnectorType {
 	/**
-	 * The cached value of the '{@link #getTargetPort() <em>Target Port</em>}' reference.
+	 * The cached value of the '{@link #getTargetPortInstance() <em>Target Port Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetPort()
+	 * @see #getTargetPortInstance()
 	 * @generated
 	 * @ordered
 	 */
-	protected PortInstance targetPort;
+	protected PortInstance targetPortInstance;
 
 	/**
 	 * The cached value of the '{@link #getSourcePortType() <em>Source Port Type</em>}' reference.
@@ -73,16 +71,16 @@ public class IncomingConnectorTypeImpl extends ConnectorTypeImpl implements Inco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortInstance getTargetPort() {
-		if (targetPort != null && targetPort.eIsProxy()) {
-			InternalEObject oldTargetPort = (InternalEObject)targetPort;
-			targetPort = (PortInstance)eResolveProxy(oldTargetPort);
-			if (targetPort != oldTargetPort) {
+	public PortInstance getTargetPortInstance() {
+		if (targetPortInstance != null && targetPortInstance.eIsProxy()) {
+			InternalEObject oldTargetPortInstance = (InternalEObject)targetPortInstance;
+			targetPortInstance = (PortInstance)eResolveProxy(oldTargetPortInstance);
+			if (targetPortInstance != oldTargetPortInstance) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT, oldTargetPort, targetPort));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT_INSTANCE, oldTargetPortInstance, targetPortInstance));
 			}
 		}
-		return targetPort;
+		return targetPortInstance;
 	}
 
 	/**
@@ -90,8 +88,8 @@ public class IncomingConnectorTypeImpl extends ConnectorTypeImpl implements Inco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortInstance basicGetTargetPort() {
-		return targetPort;
+	public PortInstance basicGetTargetPortInstance() {
+		return targetPortInstance;
 	}
 
 	/**
@@ -99,11 +97,11 @@ public class IncomingConnectorTypeImpl extends ConnectorTypeImpl implements Inco
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTargetPort(PortInstance newTargetPort) {
-		PortInstance oldTargetPort = targetPort;
-		targetPort = newTargetPort;
+	public void setTargetPortInstance(PortInstance newTargetPortInstance) {
+		PortInstance oldTargetPortInstance = targetPortInstance;
+		targetPortInstance = newTargetPortInstance;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT, oldTargetPort, targetPort));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT_INSTANCE, oldTargetPortInstance, targetPortInstance));
 	}
 
 	/**
@@ -152,9 +150,9 @@ public class IncomingConnectorTypeImpl extends ConnectorTypeImpl implements Inco
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT:
-				if (resolve) return getTargetPort();
-				return basicGetTargetPort();
+			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT_INSTANCE:
+				if (resolve) return getTargetPortInstance();
+				return basicGetTargetPortInstance();
 			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__SOURCE_PORT_TYPE:
 				if (resolve) return getSourcePortType();
 				return basicGetSourcePortType();
@@ -170,8 +168,8 @@ public class IncomingConnectorTypeImpl extends ConnectorTypeImpl implements Inco
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT:
-				setTargetPort((PortInstance)newValue);
+			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT_INSTANCE:
+				setTargetPortInstance((PortInstance)newValue);
 				return;
 			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__SOURCE_PORT_TYPE:
 				setSourcePortType((PortType)newValue);
@@ -188,8 +186,8 @@ public class IncomingConnectorTypeImpl extends ConnectorTypeImpl implements Inco
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT:
-				setTargetPort((PortInstance)null);
+			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT_INSTANCE:
+				setTargetPortInstance((PortInstance)null);
 				return;
 			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__SOURCE_PORT_TYPE:
 				setSourcePortType((PortType)null);
@@ -206,8 +204,8 @@ public class IncomingConnectorTypeImpl extends ConnectorTypeImpl implements Inco
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT:
-				return targetPort != null;
+			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__TARGET_PORT_INSTANCE:
+				return targetPortInstance != null;
 			case MontiarcPackage.INCOMING_CONNECTOR_TYPE__SOURCE_PORT_TYPE:
 				return sourcePortType != null;
 		}
@@ -221,7 +219,7 @@ public class IncomingConnectorTypeImpl extends ConnectorTypeImpl implements Inco
 	 */
 	private String qualify(PortType p) {
 		String qualifiedName = "";
-		if (p != null && this.getParent() != null && p.getType() != null) {
+		if (p != null && this.getParent() != null && p.getDataType() != null) {
 			qualifiedName = this.getParent().getName() + "." + p.getName();
 		}
 		return qualifiedName;
@@ -250,7 +248,7 @@ public class IncomingConnectorTypeImpl extends ConnectorTypeImpl implements Inco
 		if (eIsProxy()) return super.toString();
 		
 		String source = qualify(getSourcePortType());
-		String target = qualify(getTargetPort());
+		String target = qualify(getTargetPortInstance());
 		return source + " -> " + target;
 	}
 

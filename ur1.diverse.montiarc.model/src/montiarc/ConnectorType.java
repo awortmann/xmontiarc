@@ -18,8 +18,6 @@ import org.eclipse.emf.ecore.EObject;
  *
  * @see montiarc.MontiarcPackage#getConnectorType()
  * @model abstract="true"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore constraints='ConnectsDifferentComponents ConnectsDifferentComponents PortTypeMatch'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot ConnectsDifferentComponents='Tuple {\n\tmessage : String = \'The connector must connect two different subcomponents.\',\n\tstatus : Boolean = \n\t\t\tself.sourceSubcomponent <> self.targetSubcomponent\n}.status' PortTypeMatch='Tuple {\n\tmessage : String = \'Both ports of a connector must have the same type\',\n\tstatus : Boolean = \n\t\t\tself.sourcePort.type = self.targetPort.type\n}.status'"
  * @generated
  */
 public interface ConnectorType extends EObject {

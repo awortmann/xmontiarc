@@ -17,13 +17,12 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link montiarc.PortType#isIsIncoming <em>Is Incoming</em>}</li>
  *   <li>{@link montiarc.PortType#getName <em>Name</em>}</li>
- *   <li>{@link montiarc.PortType#getType <em>Type</em>}</li>
  *   <li>{@link montiarc.PortType#getParent <em>Parent</em>}</li>
+ *   <li>{@link montiarc.PortType#getDataType <em>Data Type</em>}</li>
  * </ul>
  *
  * @see montiarc.MontiarcPackage#getPortType()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NameIsLeadingUpperCase'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NameIsLeadingUpperCase='Tuple {\n\tmessage : String = \'The name of port \"\' + name + \'\" must begin lowercase.\',\n\tstatus : Boolean = let firstLetter : String =\n\t\t\t(name).substring(1, 1)\n\t\tin firstLetter.toLowerCase() = firstLetter\n}.status'"
+ * @model
  * @generated
  */
 public interface PortType extends EObject {
@@ -82,34 +81,8 @@ public interface PortType extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' reference.
-	 * @see #setType(CDClass)
-	 * @see montiarc.MontiarcPackage#getPortType_Type()
-	 * @model required="true"
-	 * @generated
-	 */
-	CDClass getType();
-
-	/**
-	 * Sets the value of the '{@link montiarc.PortType#getType <em>Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' reference.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(CDClass value);
-
-	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link montiarc.ComponentType#getPorts <em>Ports</em>}'.
+	 * It is bidirectional and its opposite is '{@link montiarc.ComponentType#getPortTypes <em>Port Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent</em>' container reference isn't clear,
@@ -119,8 +92,8 @@ public interface PortType extends EObject {
 	 * @return the value of the '<em>Parent</em>' container reference.
 	 * @see #setParent(ComponentType)
 	 * @see montiarc.MontiarcPackage#getPortType_Parent()
-	 * @see montiarc.ComponentType#getPorts
-	 * @model opposite="ports" required="true" transient="false"
+	 * @see montiarc.ComponentType#getPortTypes
+	 * @model opposite="portTypes" required="true" transient="false"
 	 * @generated
 	 */
 	ComponentType getParent();
@@ -134,5 +107,31 @@ public interface PortType extends EObject {
 	 * @generated
 	 */
 	void setParent(ComponentType value);
+
+	/**
+	 * Returns the value of the '<em><b>Data Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Data Type</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Data Type</em>' reference.
+	 * @see #setDataType(CDClass)
+	 * @see montiarc.MontiarcPackage#getPortType_DataType()
+	 * @model required="true"
+	 * @generated
+	 */
+	CDClass getDataType();
+
+	/**
+	 * Sets the value of the '{@link montiarc.PortType#getDataType <em>Data Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Data Type</em>' reference.
+	 * @see #getDataType()
+	 * @generated
+	 */
+	void setDataType(CDClass value);
 
 } // PortType

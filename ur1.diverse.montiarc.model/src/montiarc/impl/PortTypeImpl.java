@@ -2,22 +2,18 @@
  */
 package montiarc.impl;
 
-import cd.CDClass;
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 
+import cd.CDClass;
 import montiarc.ComponentType;
 import montiarc.MontiarcPackage;
 import montiarc.PortType;
-
-import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,8 +25,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
  * <ul>
  *   <li>{@link montiarc.impl.PortTypeImpl#isIsIncoming <em>Is Incoming</em>}</li>
  *   <li>{@link montiarc.impl.PortTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link montiarc.impl.PortTypeImpl#getType <em>Type</em>}</li>
  *   <li>{@link montiarc.impl.PortTypeImpl#getParent <em>Parent</em>}</li>
+ *   <li>{@link montiarc.impl.PortTypeImpl#getDataType <em>Data Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -77,14 +73,14 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
+	 * The cached value of the '{@link #getDataType() <em>Data Type</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getType()
+	 * @see #getDataType()
 	 * @generated
 	 * @ordered
 	 */
-	protected CDClass type;
+	protected CDClass dataType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -152,44 +148,6 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public CDClass getType() {
-		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject)type;
-			type = (CDClass)eResolveProxy(oldType);
-			if (type != oldType) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.PORT_TYPE__TYPE, oldType, type));
-			}
-		}
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public CDClass basicGetType() {
-		return type;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setType(CDClass newType) {
-		CDClass oldType = type;
-		type = newType;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.PORT_TYPE__TYPE, oldType, type));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ComponentType getParent() {
 		if (eContainerFeatureID() != MontiarcPackage.PORT_TYPE__PARENT) return null;
 		return (ComponentType)eInternalContainer();
@@ -218,12 +176,50 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newParent != null)
-				msgs = ((InternalEObject)newParent).eInverseAdd(this, MontiarcPackage.COMPONENT_TYPE__PORTS, ComponentType.class, msgs);
+				msgs = ((InternalEObject)newParent).eInverseAdd(this, MontiarcPackage.COMPONENT_TYPE__PORT_TYPES, ComponentType.class, msgs);
 			msgs = basicSetParent(newParent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.PORT_TYPE__PARENT, newParent, newParent));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CDClass getDataType() {
+		if (dataType != null && dataType.eIsProxy()) {
+			InternalEObject oldDataType = (InternalEObject)dataType;
+			dataType = (CDClass)eResolveProxy(oldDataType);
+			if (dataType != oldDataType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.PORT_TYPE__DATA_TYPE, oldDataType, dataType));
+			}
+		}
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public CDClass basicGetDataType() {
+		return dataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDataType(CDClass newDataType) {
+		CDClass oldDataType = dataType;
+		dataType = newDataType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.PORT_TYPE__DATA_TYPE, oldDataType, dataType));
 	}
 
 	/**
@@ -265,7 +261,7 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MontiarcPackage.PORT_TYPE__PARENT:
-				return eInternalContainer().eInverseRemove(this, MontiarcPackage.COMPONENT_TYPE__PORTS, ComponentType.class, msgs);
+				return eInternalContainer().eInverseRemove(this, MontiarcPackage.COMPONENT_TYPE__PORT_TYPES, ComponentType.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -282,11 +278,11 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 				return isIsIncoming();
 			case MontiarcPackage.PORT_TYPE__NAME:
 				return getName();
-			case MontiarcPackage.PORT_TYPE__TYPE:
-				if (resolve) return getType();
-				return basicGetType();
 			case MontiarcPackage.PORT_TYPE__PARENT:
 				return getParent();
+			case MontiarcPackage.PORT_TYPE__DATA_TYPE:
+				if (resolve) return getDataType();
+				return basicGetDataType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -305,11 +301,11 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 			case MontiarcPackage.PORT_TYPE__NAME:
 				setName((String)newValue);
 				return;
-			case MontiarcPackage.PORT_TYPE__TYPE:
-				setType((CDClass)newValue);
-				return;
 			case MontiarcPackage.PORT_TYPE__PARENT:
 				setParent((ComponentType)newValue);
+				return;
+			case MontiarcPackage.PORT_TYPE__DATA_TYPE:
+				setDataType((CDClass)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -329,11 +325,11 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 			case MontiarcPackage.PORT_TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case MontiarcPackage.PORT_TYPE__TYPE:
-				setType((CDClass)null);
-				return;
 			case MontiarcPackage.PORT_TYPE__PARENT:
 				setParent((ComponentType)null);
+				return;
+			case MontiarcPackage.PORT_TYPE__DATA_TYPE:
+				setDataType((CDClass)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -351,10 +347,10 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 				return isIncoming != IS_INCOMING_EDEFAULT;
 			case MontiarcPackage.PORT_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case MontiarcPackage.PORT_TYPE__TYPE:
-				return type != null;
 			case MontiarcPackage.PORT_TYPE__PARENT:
 				return getParent() != null;
+			case MontiarcPackage.PORT_TYPE__DATA_TYPE:
+				return dataType != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -370,7 +366,7 @@ public class PortTypeImpl extends MinimalEObjectImpl.Container implements PortTy
 
 		String result = "";
 		result += (this.isIncoming) ? "in " : "out ";
-		result += (this.getType()!=null) ? this.getType().getName() + " " : "";
+		result += (this.getDataType()!=null) ? this.getDataType().getName() + " " : "";
 		result += this.getName();
 		return result;
 	}

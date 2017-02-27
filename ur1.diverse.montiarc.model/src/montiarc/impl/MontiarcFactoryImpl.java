@@ -2,15 +2,22 @@
  */
 package montiarc.impl;
 
-import montiarc.*;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
+
+import montiarc.ComponentInstance;
+import montiarc.ComponentType;
+import montiarc.ConnectorInstance;
+import montiarc.IncomingConnectorType;
+import montiarc.IntermediateConnectorType;
+import montiarc.MontiarcFactory;
+import montiarc.MontiarcPackage;
+import montiarc.OutgoingConnectorType;
+import montiarc.PortInstance;
+import montiarc.PortType;
 
 /**
  * <!-- begin-user-doc -->
@@ -56,6 +63,7 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
+			case MontiarcPackage.CONNECTOR_INSTANCE: return createConnectorInstance();
 			case MontiarcPackage.COMPONENT_TYPE: return createComponentType();
 			case MontiarcPackage.PORT_TYPE: return createPortType();
 			case MontiarcPackage.COMPONENT_INSTANCE: return createComponentInstance();
@@ -66,6 +74,16 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ConnectorInstance createConnectorInstance() {
+		ConnectorInstanceImpl connectorInstance = new ConnectorInstanceImpl();
+		return connectorInstance;
 	}
 
 	/**

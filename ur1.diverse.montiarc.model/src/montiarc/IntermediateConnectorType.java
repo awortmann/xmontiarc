@@ -12,8 +12,8 @@ package montiarc;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link montiarc.IntermediateConnectorType#getSourcePort <em>Source Port</em>}</li>
- *   <li>{@link montiarc.IntermediateConnectorType#getTargetPort <em>Target Port</em>}</li>
+ *   <li>{@link montiarc.IntermediateConnectorType#getSourcePortInstance <em>Source Port Instance</em>}</li>
+ *   <li>{@link montiarc.IntermediateConnectorType#getTargetPortInstance <em>Target Port Instance</em>}</li>
  * </ul>
  *
  * @see montiarc.MontiarcPackage#getIntermediateConnectorType()
@@ -22,55 +22,55 @@ package montiarc;
  */
 public interface IntermediateConnectorType extends ConnectorType {
 	/**
-	 * Returns the value of the '<em><b>Source Port</b></em>' reference.
+	 * Returns the value of the '<em><b>Source Port Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Source Port</em>' reference isn't clear,
+	 * If the meaning of the '<em>Source Port Instance</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Source Port</em>' reference.
-	 * @see #setSourcePort(PortInstance)
-	 * @see montiarc.MontiarcPackage#getIntermediateConnectorType_SourcePort()
+	 * @return the value of the '<em>Source Port Instance</em>' reference.
+	 * @see #setSourcePortInstance(PortInstance)
+	 * @see montiarc.MontiarcPackage#getIntermediateConnectorType_SourcePortInstance()
 	 * @model required="true"
 	 * @generated
 	 */
-	PortInstance getSourcePort();
+	PortInstance getSourcePortInstance();
 
 	/**
-	 * Sets the value of the '{@link montiarc.IntermediateConnectorType#getSourcePort <em>Source Port</em>}' reference.
+	 * Sets the value of the '{@link montiarc.IntermediateConnectorType#getSourcePortInstance <em>Source Port Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Source Port</em>' reference.
-	 * @see #getSourcePort()
+	 * @param value the new value of the '<em>Source Port Instance</em>' reference.
+	 * @see #getSourcePortInstance()
 	 * @generated
 	 */
-	void setSourcePort(PortInstance value);
+	void setSourcePortInstance(PortInstance value);
 
 	/**
-	 * Returns the value of the '<em><b>Target Port</b></em>' reference.
+	 * Returns the value of the '<em><b>Target Port Instance</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Target Port</em>' reference isn't clear,
+	 * If the meaning of the '<em>Target Port Instance</em>' reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Target Port</em>' reference.
-	 * @see #setTargetPort(PortInstance)
-	 * @see montiarc.MontiarcPackage#getIntermediateConnectorType_TargetPort()
+	 * @return the value of the '<em>Target Port Instance</em>' reference.
+	 * @see #setTargetPortInstance(PortInstance)
+	 * @see montiarc.MontiarcPackage#getIntermediateConnectorType_TargetPortInstance()
 	 * @model required="true"
 	 * @generated
 	 */
-	PortInstance getTargetPort();
+	PortInstance getTargetPortInstance();
 
 	/**
-	 * Sets the value of the '{@link montiarc.IntermediateConnectorType#getTargetPort <em>Target Port</em>}' reference.
+	 * Sets the value of the '{@link montiarc.IntermediateConnectorType#getTargetPortInstance <em>Target Port Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Target Port</em>' reference.
-	 * @see #getTargetPort()
+	 * @param value the new value of the '<em>Target Port Instance</em>' reference.
+	 * @see #getTargetPortInstance()
 	 * @generated
 	 */
-	void setTargetPort(PortInstance value);
+	void setTargetPortInstance(PortInstance value);
 
 } // IntermediateConnectorType

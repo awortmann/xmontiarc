@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pivot:Model xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pivot="http://www.eclipse.org/ocl/2015/Pivot"
+    xsi:schemaLocation="http://www.eclipse.org/ocl/2015/Pivot java://org.eclipse.ocl.pivot.PivotPackage" name="montiarc.ecore.oclas" externalURI="platform:/resource/ur1.diverse.montiarc.model/ur1.diverse.montiarc.model/montiarc.ecore.oclas">
+  <ownedImports name="ur1.diverse.cd" importedNamespace="pivot:Package ../../ur1.diverse.cd.model/ur1.diverse.cd.model/cd.ecore.oclas#//@ownedPackages.0"/>
+  <ownedPackages xmi:id="P.montiarc" name="montiarc" URI="http://u1/diverse/montiarc/model" nsPrefix="ur1.diverse.montiarc.model">
+    <ownedClasses xmi:id="T.montiarc.ConnectorInstance" name="ConnectorInstance" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedProperties xmi:id="p.montiarc.ConnectorInstance.sourcePortInstance" name="sourcePortInstance" type="#T.montiarc.PortInstance"
+          opposite="#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.7"/>
+      <ownedProperties xmi:id="p.montiarc.ConnectorInstance.targetPortInstance" name="targetPortInstance" type="#T.montiarc.PortInstance"
+          opposite="#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.5"/>
+      <ownedProperties xmi:id="p.montiarc.ConnectorInstance.parent" name="parent" type="#T.montiarc.ComponentInstance" isTransient="true"
+          opposite="#p.montiarc.ComponentInstance.connectorInstances"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.montiarc.ComponentType" name="ComponentType" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedInvariants xmi:id="cimontiarc.ComponentType.NameIsLeadingUpperCase" name="NameIsLeadingUpperCase">
+        <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="Tuple {&#xA;&#x9;message : String = 'The name of component type &quot;' + name + '&quot; must begin uppercase.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;let firstLetter: String = (name).substring(1, 1) &#xA;&#x9;&#x9;&#x9;&#x9;in firstLetter.toUpperCase() = firstLetter&#xA;}.status"/>
+      </ownedInvariants>
+      <ownedInvariants xmi:id="cimontiarc.ComponentType.ConnectorsDoNotCrossCutComponents" name="ConnectorsDoNotCrossCutComponents">
+        <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="&#xA;&#x9;&#x9;&#x9;true"/>
+      </ownedInvariants>
+      <ownedProperties xmi:id="p.montiarc.ComponentType.name" name="name" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+          defaultValueString="UnnamedComponentType"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentType.superComponentType" name="superComponentType" isRequired="false" type="#T.montiarc.ComponentType"
+          opposite="#p.montiarc.ComponentType.ComponentType"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentType.portTypes" name="portTypes" type="#//@ownedPackages.2/@ownedClasses.0" isComposite="true"
+          opposite="#p.montiarc.PortType.parent"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentType.connectors" name="connectors" type="#//@ownedPackages.2/@ownedClasses.1" isComposite="true"
+          opposite="#p.montiarc.ConnectorType.parent"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentType.componentInstances" name="componentInstances" type="#//@ownedPackages.2/@ownedClasses.2"
+          isComposite="true" opposite="#p.montiarc.ComponentInstance.parent"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentType.groovyBehavior" name="groovyBehavior" isRequired="false" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentType.ComponentType" name="ComponentType" type="#//@ownedPackages.2/@ownedClasses.3"
+          isImplicit="true" opposite="#p.montiarc.ComponentType.superComponentType"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentType.ComponentInstance" name="ComponentInstance" type="#//@ownedPackages.2/@ownedClasses.4"
+          isImplicit="true" opposite="#p.montiarc.ComponentInstance.type"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.montiarc.PortType" name="PortType" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedInvariants xmi:id="cimontiarc.PortType.NameIsLeadingUpperCase" name="NameIsLeadingUpperCase">
+        <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="Tuple {&#xA;&#x9;message : String = 'The name of port &quot;' + name + '&quot; must begin lowercase.',&#xA;&#x9;status : Boolean = let firstLetter : String =&#xA;&#x9;&#x9;&#x9;(name).substring(1, 1)&#xA;&#x9;&#x9;in firstLetter.toLowerCase() = firstLetter&#xA;}.status"/>
+      </ownedInvariants>
+      <ownedProperties xmi:id="p.montiarc.PortType.isIncoming" name="isIncoming" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#Boolean"
+          defaultValueString="true"/>
+      <ownedProperties xmi:id="p.montiarc.PortType.name" name="name" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+          defaultValueString="UnnamedPortType"/>
+      <ownedProperties xmi:id="p.montiarc.PortType.type" name="type" type="pivot:Class ../../ur1.diverse.cd.model/ur1.diverse.cd.model/cd.ecore.oclas#//@ownedPackages.0/@ownedClasses.0"
+          opposite="#p.cd.CDClass.PortType"/>
+      <ownedProperties xmi:id="p.montiarc.PortType.parent" name="parent" type="#T.montiarc.ComponentType" opposite="#p.montiarc.ComponentType.portTypes"/>
+      <ownedProperties xmi:id="p.montiarc.PortType.IncomingConnectorType" name="IncomingConnectorType" type="#//@ownedPackages.2/@ownedClasses.5"
+          isImplicit="true" opposite="#p.montiarc.IncomingConnectorType.sourcePortType"/>
+      <ownedProperties xmi:id="p.montiarc.PortType.PortInstance" name="PortInstance" type="#//@ownedPackages.2/@ownedClasses.6" isImplicit="true"
+          opposite="#p.montiarc.PortInstance.type"/>
+      <ownedProperties xmi:id="p.montiarc.PortType.OutgoingConnectorType" name="OutgoingConnectorType" type="#//@ownedPackages.2/@ownedClasses.7"
+          isImplicit="true" opposite="#p.montiarc.OutgoingConnectorType.targetPortType"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.montiarc.ComponentInstance" name="ComponentInstance" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedInvariants xmi:id="cimontiarc.ComponentInstance.NameIsLeadingUpperCase" name="NameIsLeadingUpperCase">
+        <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="Tuple {&#xA;&#x9;message : String = 'The name of instance name of subcomponent &quot;' + instanceName +&#xA;&#x9;&#x9;&#x9;'&quot; must begin lowercase.',&#xA;&#x9;status : Boolean = let firstLetter : String = (instanceName).substring(1, 1)&#xA;&#x9;&#x9;in firstLetter.toUpperCase() = firstLetter&#xA;}.status"/>
+      </ownedInvariants>
+      <ownedProperties xmi:id="p.montiarc.ComponentInstance.instanceName" name="instanceName" type="pivot:PrimitiveType http://www.eclipse.org/ocl/2015/Library.oclas#String"
+          defaultValueString="UnnamedComponentInstance"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentInstance.type" name="type" type="#T.montiarc.ComponentType" opposite="#p.montiarc.ComponentType.ComponentInstance"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentInstance.portInstances" name="portInstances" type="#//@ownedPackages.2/@ownedClasses.8"
+          isComposite="true" isDerived="true" isTransient="true" opposite="#p.montiarc.PortInstance.parent"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentInstance.parent" name="parent" type="#T.montiarc.ComponentType" opposite="#p.montiarc.ComponentType.componentInstances"/>
+      <ownedProperties xmi:id="p.montiarc.ComponentInstance.connectorInstances" name="connectorInstances" type="#//@ownedPackages.2/@ownedClasses.9"
+          isComposite="true" isDerived="true" isTransient="true" opposite="#p.montiarc.ConnectorInstance.parent"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.montiarc.PortInstance" name="PortInstance" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedProperties xmi:id="p.montiarc.PortInstance.type" name="type" type="#T.montiarc.PortType" opposite="#p.montiarc.PortType.PortInstance"/>
+      <ownedProperties xmi:id="p.montiarc.PortInstance.parent" name="parent" type="#T.montiarc.ComponentInstance" isTransient="true" opposite="#p.montiarc.ComponentInstance.portInstances"/>
+      <ownedProperties xmi:id="p.montiarc.PortInstance.IncomingConnectorType" name="IncomingConnectorType" type="#//@ownedPackages.2/@ownedClasses.5"
+          isImplicit="true" opposite="#p.montiarc.IncomingConnectorType.targetPortInstance"/>
+      <ownedProperties name="IntermediateConnectorType" type="#//@ownedPackages.2/@ownedClasses.10" isImplicit="true" opposite="#p.montiarc.IntermediateConnectorType.sourcePortInstance"/>
+      <ownedProperties xmi:id="p.montiarc.PortInstance.OutgoingConnectorType" name="OutgoingConnectorType" type="#//@ownedPackages.2/@ownedClasses.7"
+          isImplicit="true" opposite="#p.montiarc.OutgoingConnectorType.sourcePortInstance"/>
+      <ownedProperties name="ConnectorInstance" type="#//@ownedPackages.2/@ownedClasses.11" isImplicit="true" opposite="#p.montiarc.ConnectorInstance.targetPortInstance"/>
+      <ownedProperties name="IntermediateConnectorType" type="#//@ownedPackages.2/@ownedClasses.10" isImplicit="true" opposite="#p.montiarc.IntermediateConnectorType.targetPortInstance"/>
+      <ownedProperties name="ConnectorInstance" type="#//@ownedPackages.2/@ownedClasses.11" isImplicit="true" opposite="#p.montiarc.ConnectorInstance.sourcePortInstance"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.montiarc.ConnectorType" name="ConnectorType" isAbstract="true" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclElement">
+      <ownedInvariants xmi:id="cimontiarc.ConnectorType.ConnectsDifferentComponents" name="ConnectsDifferentComponents">
+        <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="Tuple {&#xA;&#x9;message : String = 'The connector must connect two different subcomponents.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;self.sourceSubcomponent &lt;> self.targetSubcomponent&#xA;}.status"/>
+      </ownedInvariants>
+      <ownedInvariants xmi:id="cimontiarc.ConnectorType.PortTypeMatch" name="PortTypeMatch">
+        <ownedSpecification xsi:type="pivot:ExpressionInOCL" body="Tuple {&#xA;&#x9;message : String = 'Both ports of a connector must have the same type',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;self.sourcePort.type = self.targetPort.type&#xA;}.status"/>
+      </ownedInvariants>
+      <ownedProperties xmi:id="p.montiarc.ConnectorType.parent" name="parent" type="#T.montiarc.ComponentType" opposite="#p.montiarc.ComponentType.connectors"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.montiarc.IntermediateConnectorType" name="IntermediateConnectorType" superClasses="#T.montiarc.ConnectorType">
+      <ownedProperties xmi:id="p.montiarc.IntermediateConnectorType.sourcePortInstance" name="sourcePortInstance" type="#T.montiarc.PortInstance"
+          opposite="#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.3"/>
+      <ownedProperties xmi:id="p.montiarc.IntermediateConnectorType.targetPortInstance" name="targetPortInstance" type="#T.montiarc.PortInstance"
+          opposite="#//@ownedPackages.0/@ownedClasses.4/@ownedProperties.6"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.montiarc.IncomingConnectorType" name="IncomingConnectorType" superClasses="#T.montiarc.ConnectorType">
+      <ownedProperties xmi:id="p.montiarc.IncomingConnectorType.targetPortInstance" name="targetPortInstance" type="#T.montiarc.PortInstance"
+          opposite="#p.montiarc.PortInstance.IncomingConnectorType"/>
+      <ownedProperties xmi:id="p.montiarc.IncomingConnectorType.sourcePortType" name="sourcePortType" type="#T.montiarc.PortType" opposite="#p.montiarc.PortType.IncomingConnectorType"/>
+    </ownedClasses>
+    <ownedClasses xmi:id="T.montiarc.OutgoingConnectorType" name="OutgoingConnectorType" superClasses="#T.montiarc.ConnectorType">
+      <ownedProperties xmi:id="p.montiarc.OutgoingConnectorType.sourcePortInstance" name="sourcePortInstance" type="#T.montiarc.PortInstance"
+          opposite="#p.montiarc.PortInstance.OutgoingConnectorType"/>
+      <ownedProperties xmi:id="p.montiarc.OutgoingConnectorType.targetPortType" name="targetPortType" type="#T.montiarc.PortType" opposite="#p.montiarc.PortType.OutgoingConnectorType"/>
+    </ownedClasses>
+  </ownedPackages>
+  <ownedPackages xmi:id="P.cd" name="cd" URI="http://ur1/diverse/cd/model" nsPrefix="ur1.diverse.cd.model">
+    <ownedClasses xmi:id="T.cd.CDClass" name="CDClass">
+      <ownedProperties xmi:id="p.cd.CDClass.PortType" name="PortType" type="#//@ownedPackages.2/@ownedClasses.12" isImplicit="true" opposite="#p.montiarc.PortType.type"/>
+    </ownedClasses>
+  </ownedPackages>
+  <ownedPackages xmi:id="P.$$" name="$$" URI="http://www.eclipse.org/ocl/2015/Orphanage" nsPrefix="orphanage">
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.13 #//@ownedPackages.2/@ownedClasses.14"
+        elementType="#T.montiarc.PortType" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.PortType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.15 #//@ownedPackages.2/@ownedClasses.16"
+        elementType="#T.montiarc.ConnectorType" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ConnectorType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.17 #//@ownedPackages.2/@ownedClasses.18"
+        elementType="#T.montiarc.ComponentInstance" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ComponentInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.19" elementType="#T.montiarc.ComponentType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ComponentType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.20" elementType="#T.montiarc.ComponentInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ComponentInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.21" elementType="#T.montiarc.IncomingConnectorType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.IncomingConnectorType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.22" elementType="#T.montiarc.PortInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.PortInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.23" elementType="#T.montiarc.OutgoingConnectorType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.OutgoingConnectorType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.24 #//@ownedPackages.2/@ownedClasses.25"
+        elementType="#T.montiarc.PortInstance" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.PortInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:OrderedSetType" name="OrderedSet" superClasses="#//@ownedPackages.2/@ownedClasses.26 #//@ownedPackages.2/@ownedClasses.27"
+        elementType="#T.montiarc.ConnectorInstance" isNullFree="true">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ConnectorInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedSetT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.28" elementType="#T.montiarc.IntermediateConnectorType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.IntermediateConnectorType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.29" elementType="#T.montiarc.ConnectorInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ConnectorInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:BagType" name="Bag" superClasses="#//@ownedPackages.2/@ownedClasses.30" elementType="#T.montiarc.PortType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.PortType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..BagT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.30" elementType="#T.montiarc.PortType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.PortType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.30" elementType="#T.montiarc.PortType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.PortType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.31" elementType="#T.montiarc.ConnectorType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ConnectorType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.31" elementType="#T.montiarc.ConnectorType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ConnectorType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.20" elementType="#T.montiarc.ComponentInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ComponentInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.20" elementType="#T.montiarc.ComponentInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ComponentInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.montiarc.ComponentType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ComponentType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.montiarc.ComponentInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ComponentInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.montiarc.IncomingConnectorType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.IncomingConnectorType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.montiarc.PortInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.PortInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.montiarc.OutgoingConnectorType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.OutgoingConnectorType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.22" elementType="#T.montiarc.PortInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.PortInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.22" elementType="#T.montiarc.PortInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.PortInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="OrderedCollection" superClasses="#//@ownedPackages.2/@ownedClasses.29" elementType="#T.montiarc.ConnectorInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ConnectorInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..OrderedCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="UniqueCollection" superClasses="#//@ownedPackages.2/@ownedClasses.29" elementType="#T.montiarc.ConnectorInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ConnectorInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..UniqueCollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.montiarc.IntermediateConnectorType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.IntermediateConnectorType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.montiarc.ConnectorInstance">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ConnectorInstance" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.montiarc.PortType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.PortType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+    <ownedClasses xsi:type="pivot:CollectionType" name="Collection" superClasses="http://www.eclipse.org/ocl/2015/Library.oclas#T.ocl.OclAny"
+        elementType="#T.montiarc.ConnectorType">
+      <ownedBindings>
+        <ownedSubstitutions actual="#T.montiarc.ConnectorType" formal="http://www.eclipse.org/ocl/2015/Library.oclas#t.ocl..CollectionT"/>
+      </ownedBindings>
+    </ownedClasses>
+  </ownedPackages>
+</pivot:Model>

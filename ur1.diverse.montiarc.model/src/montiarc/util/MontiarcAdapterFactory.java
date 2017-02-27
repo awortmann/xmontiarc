@@ -68,6 +68,10 @@ public class MontiarcAdapterFactory extends AdapterFactoryImpl {
 	protected MontiarcSwitch<Adapter> modelSwitch =
 		new MontiarcSwitch<Adapter>() {
 			@Override
+			public Adapter caseConnectorInstance(ConnectorInstance object) {
+				return createConnectorInstanceAdapter();
+			}
+			@Override
 			public Adapter caseComponentType(ComponentType object) {
 				return createComponentTypeAdapter();
 			}
@@ -118,6 +122,20 @@ public class MontiarcAdapterFactory extends AdapterFactoryImpl {
 		return modelSwitch.doSwitch((EObject)target);
 	}
 
+
+	/**
+	 * Creates a new adapter for an object of class '{@link montiarc.ConnectorInstance <em>Connector Instance</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see montiarc.ConnectorInstance
+	 * @generated
+	 */
+	public Adapter createConnectorInstanceAdapter() {
+		return null;
+	}
 
 	/**
 	 * Creates a new adapter for an object of class '{@link montiarc.ComponentType <em>Component Type</em>}'.

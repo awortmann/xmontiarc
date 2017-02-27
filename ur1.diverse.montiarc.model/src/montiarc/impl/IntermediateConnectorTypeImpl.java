@@ -2,16 +2,14 @@
  */
 package montiarc.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+
 import montiarc.IntermediateConnectorType;
 import montiarc.MontiarcPackage;
 import montiarc.PortInstance;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -21,32 +19,32 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link montiarc.impl.IntermediateConnectorTypeImpl#getSourcePort <em>Source Port</em>}</li>
- *   <li>{@link montiarc.impl.IntermediateConnectorTypeImpl#getTargetPort <em>Target Port</em>}</li>
+ *   <li>{@link montiarc.impl.IntermediateConnectorTypeImpl#getSourcePortInstance <em>Source Port Instance</em>}</li>
+ *   <li>{@link montiarc.impl.IntermediateConnectorTypeImpl#getTargetPortInstance <em>Target Port Instance</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements IntermediateConnectorType {
 	/**
-	 * The cached value of the '{@link #getSourcePort() <em>Source Port</em>}' reference.
+	 * The cached value of the '{@link #getSourcePortInstance() <em>Source Port Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSourcePort()
+	 * @see #getSourcePortInstance()
 	 * @generated
 	 * @ordered
 	 */
-	protected PortInstance sourcePort;
+	protected PortInstance sourcePortInstance;
 
 	/**
-	 * The cached value of the '{@link #getTargetPort() <em>Target Port</em>}' reference.
+	 * The cached value of the '{@link #getTargetPortInstance() <em>Target Port Instance</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getTargetPort()
+	 * @see #getTargetPortInstance()
 	 * @generated
 	 * @ordered
 	 */
-	protected PortInstance targetPort;
+	protected PortInstance targetPortInstance;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -72,16 +70,16 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortInstance getSourcePort() {
-		if (sourcePort != null && sourcePort.eIsProxy()) {
-			InternalEObject oldSourcePort = (InternalEObject)sourcePort;
-			sourcePort = (PortInstance)eResolveProxy(oldSourcePort);
-			if (sourcePort != oldSourcePort) {
+	public PortInstance getSourcePortInstance() {
+		if (sourcePortInstance != null && sourcePortInstance.eIsProxy()) {
+			InternalEObject oldSourcePortInstance = (InternalEObject)sourcePortInstance;
+			sourcePortInstance = (PortInstance)eResolveProxy(oldSourcePortInstance);
+			if (sourcePortInstance != oldSourcePortInstance) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT, oldSourcePort, sourcePort));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE, oldSourcePortInstance, sourcePortInstance));
 			}
 		}
-		return sourcePort;
+		return sourcePortInstance;
 	}
 
 	/**
@@ -89,8 +87,8 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortInstance basicGetSourcePort() {
-		return sourcePort;
+	public PortInstance basicGetSourcePortInstance() {
+		return sourcePortInstance;
 	}
 
 	/**
@@ -98,11 +96,11 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSourcePort(PortInstance newSourcePort) {
-		PortInstance oldSourcePort = sourcePort;
-		sourcePort = newSourcePort;
+	public void setSourcePortInstance(PortInstance newSourcePortInstance) {
+		PortInstance oldSourcePortInstance = sourcePortInstance;
+		sourcePortInstance = newSourcePortInstance;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT, oldSourcePort, sourcePort));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE, oldSourcePortInstance, sourcePortInstance));
 	}
 
 	/**
@@ -110,16 +108,16 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortInstance getTargetPort() {
-		if (targetPort != null && targetPort.eIsProxy()) {
-			InternalEObject oldTargetPort = (InternalEObject)targetPort;
-			targetPort = (PortInstance)eResolveProxy(oldTargetPort);
-			if (targetPort != oldTargetPort) {
+	public PortInstance getTargetPortInstance() {
+		if (targetPortInstance != null && targetPortInstance.eIsProxy()) {
+			InternalEObject oldTargetPortInstance = (InternalEObject)targetPortInstance;
+			targetPortInstance = (PortInstance)eResolveProxy(oldTargetPortInstance);
+			if (targetPortInstance != oldTargetPortInstance) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT, oldTargetPort, targetPort));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT_INSTANCE, oldTargetPortInstance, targetPortInstance));
 			}
 		}
-		return targetPort;
+		return targetPortInstance;
 	}
 
 	/**
@@ -127,8 +125,8 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public PortInstance basicGetTargetPort() {
-		return targetPort;
+	public PortInstance basicGetTargetPortInstance() {
+		return targetPortInstance;
 	}
 
 	/**
@@ -136,11 +134,11 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setTargetPort(PortInstance newTargetPort) {
-		PortInstance oldTargetPort = targetPort;
-		targetPort = newTargetPort;
+	public void setTargetPortInstance(PortInstance newTargetPortInstance) {
+		PortInstance oldTargetPortInstance = targetPortInstance;
+		targetPortInstance = newTargetPortInstance;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT, oldTargetPort, targetPort));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT_INSTANCE, oldTargetPortInstance, targetPortInstance));
 	}
 
 	/**
@@ -151,12 +149,12 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT:
-				if (resolve) return getSourcePort();
-				return basicGetSourcePort();
-			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT:
-				if (resolve) return getTargetPort();
-				return basicGetTargetPort();
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE:
+				if (resolve) return getSourcePortInstance();
+				return basicGetSourcePortInstance();
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT_INSTANCE:
+				if (resolve) return getTargetPortInstance();
+				return basicGetTargetPortInstance();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -169,11 +167,11 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT:
-				setSourcePort((PortInstance)newValue);
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE:
+				setSourcePortInstance((PortInstance)newValue);
 				return;
-			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT:
-				setTargetPort((PortInstance)newValue);
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT_INSTANCE:
+				setTargetPortInstance((PortInstance)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -187,11 +185,11 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT:
-				setSourcePort((PortInstance)null);
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE:
+				setSourcePortInstance((PortInstance)null);
 				return;
-			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT:
-				setTargetPort((PortInstance)null);
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT_INSTANCE:
+				setTargetPortInstance((PortInstance)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -205,10 +203,10 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT:
-				return sourcePort != null;
-			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT:
-				return targetPort != null;
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE:
+				return sourcePortInstance != null;
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT_INSTANCE:
+				return targetPortInstance != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -235,8 +233,8 @@ public class IntermediateConnectorTypeImpl extends ConnectorTypeImpl implements 
 	public String toString() {
 		if (eIsProxy()) return super.toString();
 		
-		String source = qualify(getSourcePort());
-		String target = qualify(getTargetPort());
+		String source = qualify(getSourcePortInstance());
+		String target = qualify(getTargetPortInstance());
 		return source + " -> " + target;
 	}
 

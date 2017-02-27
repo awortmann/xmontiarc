@@ -2,20 +2,18 @@
  */
 package montiarc.impl;
 
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+
 import montiarc.ComponentInstance;
 import montiarc.MontiarcPackage;
 import montiarc.PortInstance;
 import montiarc.PortType;
-
-import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.InternalEObject;
-
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EcoreUtil;
 
 /**
  * <!-- begin-user-doc -->
@@ -132,7 +130,7 @@ public class PortInstanceImpl extends MinimalEObjectImpl.Container implements Po
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newParent != null)
-				msgs = ((InternalEObject)newParent).eInverseAdd(this, MontiarcPackage.COMPONENT_INSTANCE__PORTS, ComponentInstance.class, msgs);
+				msgs = ((InternalEObject)newParent).eInverseAdd(this, MontiarcPackage.COMPONENT_INSTANCE__PORT_INSTANCES, ComponentInstance.class, msgs);
 			msgs = basicSetParent(newParent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -179,7 +177,7 @@ public class PortInstanceImpl extends MinimalEObjectImpl.Container implements Po
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MontiarcPackage.PORT_INSTANCE__PARENT:
-				return eInternalContainer().eInverseRemove(this, MontiarcPackage.COMPONENT_INSTANCE__PORTS, ComponentInstance.class, msgs);
+				return eInternalContainer().eInverseRemove(this, MontiarcPackage.COMPONENT_INSTANCE__PORT_INSTANCES, ComponentInstance.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}

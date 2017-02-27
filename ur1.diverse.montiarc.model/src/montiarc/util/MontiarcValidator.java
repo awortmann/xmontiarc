@@ -86,6 +86,8 @@ public class MontiarcValidator extends EObjectValidator {
 	@Override
 	protected boolean validate(int classifierID, Object value, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		switch (classifierID) {
+			case MontiarcPackage.CONNECTOR_INSTANCE:
+				return validateConnectorInstance((ConnectorInstance)value, diagnostics, context);
 			case MontiarcPackage.COMPONENT_TYPE:
 				return validateComponentType((ComponentType)value, diagnostics, context);
 			case MontiarcPackage.PORT_TYPE:
@@ -105,6 +107,15 @@ public class MontiarcValidator extends EObjectValidator {
 			default:
 				return true;
 		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateConnectorInstance(ConnectorInstance connectorInstance, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(connectorInstance, diagnostics, context);
 	}
 
 	/**

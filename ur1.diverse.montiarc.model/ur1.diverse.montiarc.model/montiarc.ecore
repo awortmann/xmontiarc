@@ -1,96 +1,63 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="montiarc" nsURI="http://u1/diverse/montiarc/model" nsPrefix="ur1.diverse.montiarc.model">
+<?xml version="1.0" encoding="ASCII"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="montiarc" nsURI="http://u1/diverse/montiarc/model" nsPrefix="ur1.diverse.montiarc.model">
   <eAnnotations source="http://www.eclipse.org/OCL/Import">
-    <details key="ur1.diverse.cd" value="cd.ecore#/"/>
+    <details key="ur1.diverse.cd.model" value="../../ur1.diverse.cd.model/ur1.diverse.cd.model/cd.ecore#/"/>
   </eAnnotations>
-  <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-    <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-    <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-    <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
-  </eAnnotations>
+  <eClassifiers xsi:type="ecore:EClass" name="ConnectorInstance">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePortInstance" lowerBound="1" eType="//PortInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPortInstance" lowerBound="1" eType="//PortInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//ComponentInstance" transient="true" eOpposite="//ComponentInstance/connectorInstances"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentType">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="NameIsLeadingUpperCase ConnectorsDoNotCrossCutComponents"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of component type &quot;' + name + '&quot; must begin uppercase.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;let firstLetter: String = (name).substring(1, 1) &#xA;&#x9;&#x9;&#x9;&#x9;in firstLetter.toUpperCase() = firstLetter&#xA;}.status"/>
-      <details key="ConnectorsDoNotCrossCutComponents" value="&#xA;&#x9;&#x9;&#x9;true"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="UnnamedComponentType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="superComponentType" eType="#//ComponentType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
-        eType="#//PortType" containment="true" eOpposite="#//PortType/parent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1"
-        eType="#//ConnectorType" containment="true" eOpposite="#//ConnectorType/parent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" upperBound="-1"
-        eType="#//ComponentInstance" containment="true" eOpposite="#//ComponentInstance/parent"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="groovyBehavior" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" defaultValueLiteral="UnnamedComponentType">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="superComponentType" eType="//ComponentType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portTypes" upperBound="-1" eType="//PortType" containment="true" eOpposite="//PortType/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1" eType="//ConnectorType" containment="true" eOpposite="//ConnectorType/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances" upperBound="-1" eType="//ComponentInstance" containment="true" eOpposite="//ComponentInstance/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="groovyBehavior">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortType">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="NameIsLeadingUpperCase"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of port &quot;' + name + '&quot; must begin lowercase.',&#xA;&#x9;status : Boolean = let firstLetter : String =&#xA;&#x9;&#x9;&#x9;(name).substring(1, 1)&#xA;&#x9;&#x9;in firstLetter.toLowerCase() = firstLetter&#xA;}.status"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIncoming" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean" defaultValueLiteral="true"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
-        defaultValueLiteral="UnnamedPortType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="ecore:EClass ../../ur1.diverse.cd.model/ur1.diverse.cd.model/cd.ecore#//CDClass"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
-        eType="#//ComponentType" eOpposite="#//ComponentType/ports"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIncoming" lowerBound="1" defaultValueLiteral="true">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" defaultValueLiteral="UnnamedPortType">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//ComponentType" eOpposite="//ComponentType/portTypes"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="dataType" lowerBound="1">
+      <eType xsi:type="ecore:EClass" href="../../ur1.diverse.cd.model/ur1.diverse.cd.model/cd.ecore#//CDClass"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentInstance">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="NameIsLeadingUpperCase"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of instance name of subcomponent &quot;' + instanceName +&#xA;&#x9;&#x9;&#x9;'&quot; must begin lowercase.',&#xA;&#x9;status : Boolean = let firstLetter : String = (instanceName).substring(1, 1)&#xA;&#x9;&#x9;in firstLetter.toUpperCase() = firstLetter&#xA;}.status"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceName" lowerBound="1"
-        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString" defaultValueLiteral="UnnamedComponentInstance"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//ComponentType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1"
-        eType="#//PortInstance" transient="true" derived="true" containment="true"
-        eOpposite="#//PortInstance/parent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
-        eType="#//ComponentType" eOpposite="#//ComponentType/subcomponents"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceName" lowerBound="1" defaultValueLiteral="UnnamedComponentInstance">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="componentType" lowerBound="1" eType="//ComponentType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="portInstances" upperBound="-1" eType="//PortInstance" transient="true" derived="true" containment="true" eOpposite="//PortInstance/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//ComponentType" eOpposite="//ComponentType/componentInstances"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectorInstances" upperBound="-1" eType="//ConnectorInstance" transient="true" derived="true" containment="true" eOpposite="//ConnectorInstance/parent"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="PortInstance">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="#//PortType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
-        eType="#//ComponentInstance" transient="true" eOpposite="#//ComponentInstance/ports"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="//PortType"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//ComponentInstance" transient="true" eOpposite="//ComponentInstance/portInstances"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true">
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
-      <details key="constraints" value="ConnectsDifferentComponents ConnectsDifferentComponents PortTypeMatch"/>
-    </eAnnotations>
-    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
-      <details key="ConnectsDifferentComponents" value="Tuple {&#xA;&#x9;message : String = 'The connector must connect two different subcomponents.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;self.sourceSubcomponent &lt;> self.targetSubcomponent&#xA;}.status"/>
-      <details key="PortTypeMatch" value="Tuple {&#xA;&#x9;message : String = 'Both ports of a connector must have the same type',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;self.sourcePort.type = self.targetPort.type&#xA;}.status"/>
-    </eAnnotations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1"
-        eType="#//ComponentType" eOpposite="#//ComponentType/connectors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//ComponentType" eOpposite="//ComponentType/connectors"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IntermediateConnectorType" eSuperTypes="#//ConnectorType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" lowerBound="1"
-        eType="#//PortInstance"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" lowerBound="1"
-        eType="#//PortInstance"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IntermediateConnectorType" eSuperTypes="//ConnectorType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePortInstance" lowerBound="1" eType="//PortInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPortInstance" lowerBound="1" eType="//PortInstance"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IncomingConnectorType" eSuperTypes="#//ConnectorType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" lowerBound="1"
-        eType="#//PortInstance"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePortType" lowerBound="1"
-        eType="#//PortType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="IncomingConnectorType" eSuperTypes="//ConnectorType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPortInstance" lowerBound="1" eType="//PortInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePortType" lowerBound="1" eType="//PortType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="OutgoingConnectorType" eSuperTypes="#//ConnectorType">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" lowerBound="1"
-        eType="#//PortInstance"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPortType" lowerBound="1"
-        eType="#//PortType"/>
+  <eClassifiers xsi:type="ecore:EClass" name="OutgoingConnectorType" eSuperTypes="//ConnectorType">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePortInstance" lowerBound="1" eType="//PortInstance"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="targetPortType" lowerBound="1" eType="//PortType"/>
   </eClassifiers>
 </ecore:EPackage>

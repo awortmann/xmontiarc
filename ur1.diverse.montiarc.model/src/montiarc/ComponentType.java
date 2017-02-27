@@ -17,15 +17,14 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link montiarc.ComponentType#getName <em>Name</em>}</li>
  *   <li>{@link montiarc.ComponentType#getSuperComponentType <em>Super Component Type</em>}</li>
- *   <li>{@link montiarc.ComponentType#getPorts <em>Ports</em>}</li>
+ *   <li>{@link montiarc.ComponentType#getPortTypes <em>Port Types</em>}</li>
  *   <li>{@link montiarc.ComponentType#getConnectors <em>Connectors</em>}</li>
- *   <li>{@link montiarc.ComponentType#getSubcomponents <em>Subcomponents</em>}</li>
+ *   <li>{@link montiarc.ComponentType#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link montiarc.ComponentType#getGroovyBehavior <em>Groovy Behavior</em>}</li>
  * </ul>
  *
  * @see montiarc.MontiarcPackage#getComponentType()
- * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NameIsLeadingUpperCase ConnectorsDoNotCrossCutComponents'"
- *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NameIsLeadingUpperCase='Tuple {\n\tmessage : String = \'The name of component type \"\' + name + \'\" must begin uppercase.\',\n\tstatus : Boolean = \n\t\t\tlet firstLetter: String = (name).substring(1, 1) \n\t\t\t\tin firstLetter.toUpperCase() = firstLetter\n}.status' ConnectorsDoNotCrossCutComponents='\n\t\t\ttrue'"
+ * @model
  * @generated
  */
 public interface ComponentType extends EObject {
@@ -83,22 +82,22 @@ public interface ComponentType extends EObject {
 	void setSuperComponentType(ComponentType value);
 
 	/**
-	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Port Types</b></em>' containment reference list.
 	 * The list contents are of type {@link montiarc.PortType}.
 	 * It is bidirectional and its opposite is '{@link montiarc.PortType#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Port Types</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ports</em>' containment reference list.
-	 * @see montiarc.MontiarcPackage#getComponentType_Ports()
+	 * @return the value of the '<em>Port Types</em>' containment reference list.
+	 * @see montiarc.MontiarcPackage#getComponentType_PortTypes()
 	 * @see montiarc.PortType#getParent
 	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
-	EList<PortType> getPorts();
+	EList<PortType> getPortTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Connectors</b></em>' containment reference list.
@@ -119,22 +118,22 @@ public interface ComponentType extends EObject {
 	EList<ConnectorType> getConnectors();
 
 	/**
-	 * Returns the value of the '<em><b>Subcomponents</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference list.
 	 * The list contents are of type {@link montiarc.ComponentInstance}.
 	 * It is bidirectional and its opposite is '{@link montiarc.ComponentInstance#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Subcomponents</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Component Instances</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Subcomponents</em>' containment reference list.
-	 * @see montiarc.MontiarcPackage#getComponentType_Subcomponents()
+	 * @return the value of the '<em>Component Instances</em>' containment reference list.
+	 * @see montiarc.MontiarcPackage#getComponentType_ComponentInstances()
 	 * @see montiarc.ComponentInstance#getParent
 	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
-	EList<ComponentInstance> getSubcomponents();
+	EList<ComponentInstance> getComponentInstances();
 
 	/**
 	 * Returns the value of the '<em><b>Groovy Behavior</b></em>' attribute.

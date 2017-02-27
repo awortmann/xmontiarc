@@ -22,6 +22,15 @@ public interface MontiarcFactory extends EFactory {
 	MontiarcFactory eINSTANCE = montiarc.impl.MontiarcFactoryImpl.init();
 
 	/**
+	 * Returns a new object of class '<em>Connector Instance</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Connector Instance</em>'.
+	 * @generated
+	 */
+	ConnectorInstance createConnectorInstance();
+
+	/**
 	 * Returns a new object of class '<em>Component Type</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
