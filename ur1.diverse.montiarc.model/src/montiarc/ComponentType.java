@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link montiarc.ComponentType#getName <em>Name</em>}</li>
  *   <li>{@link montiarc.ComponentType#getSuperComponentType <em>Super Component Type</em>}</li>
  *   <li>{@link montiarc.ComponentType#getPortTypes <em>Port Types</em>}</li>
- *   <li>{@link montiarc.ComponentType#getConnectors <em>Connectors</em>}</li>
+ *   <li>{@link montiarc.ComponentType#getConnectorTypes <em>Connector Types</em>}</li>
  *   <li>{@link montiarc.ComponentType#getComponentInstances <em>Component Instances</em>}</li>
  *   <li>{@link montiarc.ComponentType#getGroovyBehavior <em>Groovy Behavior</em>}</li>
  * </ul>
@@ -100,22 +100,22 @@ public interface ComponentType extends EObject {
 	EList<PortType> getPortTypes();
 
 	/**
-	 * Returns the value of the '<em><b>Connectors</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Connector Types</b></em>' containment reference list.
 	 * The list contents are of type {@link montiarc.ConnectorType}.
 	 * It is bidirectional and its opposite is '{@link montiarc.ConnectorType#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Connectors</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Connector Types</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Connectors</em>' containment reference list.
-	 * @see montiarc.MontiarcPackage#getComponentType_Connectors()
+	 * @return the value of the '<em>Connector Types</em>' containment reference list.
+	 * @see montiarc.MontiarcPackage#getComponentType_ConnectorTypes()
 	 * @see montiarc.ConnectorType#getParent
 	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
-	EList<ConnectorType> getConnectors();
+	EList<ConnectorType> getConnectorTypes();
 
 	/**
 	 * Returns the value of the '<em><b>Component Instances</b></em>' containment reference list.

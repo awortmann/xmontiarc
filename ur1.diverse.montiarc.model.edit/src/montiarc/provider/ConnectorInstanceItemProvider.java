@@ -6,13 +6,9 @@ package montiarc.provider;
 import java.util.Collection;
 import java.util.List;
 
-import montiarc.MontiarcPackage;
-
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.util.ResourceLocator;
-
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
 import org.eclipse.emf.edit.provider.IItemLabelProvider;
@@ -21,6 +17,9 @@ import org.eclipse.emf.edit.provider.IItemPropertySource;
 import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
 import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemProviderAdapter;
+
+import montiarc.ConnectorInstance;
+import montiarc.MontiarcPackage;
 
 /**
  * This is the item provider adapter for a {@link montiarc.ConnectorInstance} object.
@@ -122,11 +121,11 @@ public class ConnectorInstanceItemProvider
 	 * This returns the label text for the adapted class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	@Override
+	@Override 
 	public String getText(Object object) {
-		return getString("_UI_ConnectorInstance_type");
+		return ((ConnectorInstance)object).toString();
 	}
 	
 

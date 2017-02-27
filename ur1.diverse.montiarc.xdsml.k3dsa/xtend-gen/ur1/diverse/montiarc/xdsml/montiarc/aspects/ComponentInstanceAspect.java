@@ -45,11 +45,12 @@ public class ComponentInstanceAspect {
   
   protected static void _privk3_compute(final ComponentInstanceAspectComponentInstanceAspectProperties _self_, final ComponentInstance _self) {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method portValue(PortValue) is undefined for the type PortInstance"
-      + "\nThe method or field portValue is undefined for the type PortInstance"
-      + "\nThe method or field portValue is undefined for the type PortInstance"
-      + "\nvalue cannot be resolved"
-      + "\ntype cannot be resolved");
+      + "\nThe method or field type is undefined for the type ComponentInstance"
+      + "\nThe method or field type is undefined for the type ComponentInstance"
+      + "\nType mismatch: cannot convert from PortType to CDClass"
+      + "\nsubcomponents cannot be resolved"
+      + "\nisEmpty cannot be resolved"
+      + "\nsubcomponents cannot be resolved");
   }
   
   protected static Random _privk3_r(final ComponentInstanceAspectComponentInstanceAspectProperties _self_, final ComponentInstance _self) {

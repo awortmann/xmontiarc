@@ -136,7 +136,7 @@ public class ComponentTypeItemProvider extends ItemProviderAdapter implements IE
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_TYPE__PORT_TYPES);
-			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_TYPE__CONNECTORS);
+			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_TYPE__CONNECTOR_TYPES);
 			childrenFeatures.add(MontiarcPackage.Literals.COMPONENT_TYPE__COMPONENT_INSTANCES);
 		}
 		return childrenFeatures;
@@ -197,7 +197,7 @@ public class ComponentTypeItemProvider extends ItemProviderAdapter implements IE
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case MontiarcPackage.COMPONENT_TYPE__PORT_TYPES:
-			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTOR_TYPES:
 			case MontiarcPackage.COMPONENT_TYPE__COMPONENT_INSTANCES:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
@@ -223,17 +223,17 @@ public class ComponentTypeItemProvider extends ItemProviderAdapter implements IE
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MontiarcPackage.Literals.COMPONENT_TYPE__CONNECTORS,
+				(MontiarcPackage.Literals.COMPONENT_TYPE__CONNECTOR_TYPES,
 				 MontiarcFactory.eINSTANCE.createIntermediateConnectorType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MontiarcPackage.Literals.COMPONENT_TYPE__CONNECTORS,
+				(MontiarcPackage.Literals.COMPONENT_TYPE__CONNECTOR_TYPES,
 				 MontiarcFactory.eINSTANCE.createIncomingConnectorType()));
 
 		newChildDescriptors.add
 			(createChildParameter
-				(MontiarcPackage.Literals.COMPONENT_TYPE__CONNECTORS,
+				(MontiarcPackage.Literals.COMPONENT_TYPE__CONNECTOR_TYPES,
 				 MontiarcFactory.eINSTANCE.createOutgoingConnectorType()));
 
 		newChildDescriptors.add

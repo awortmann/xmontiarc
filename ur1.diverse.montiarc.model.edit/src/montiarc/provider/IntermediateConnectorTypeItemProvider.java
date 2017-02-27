@@ -13,12 +13,11 @@ import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 
-import montiarc.ComponentInstance;
-import montiarc.ComponentType;
 import montiarc.ConnectorType;
 import montiarc.IntermediateConnectorType;
 import montiarc.MontiarcPackage;
 import montiarc.PortInstance;
+import montiarc.impl.ComponentTypeImpl;
 
 /**
  * This is the item provider adapter for a {@link montiarc.IntermediateConnectorType} object.
@@ -58,11 +57,11 @@ public class IntermediateConnectorTypeItemProvider extends ConnectorTypeItemProv
 	 * This adds a property descriptor for the Source Port Instance feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addSourcePortInstancePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_IntermediateConnectorType_sourcePortInstance_feature"),
@@ -73,18 +72,28 @@ public class IntermediateConnectorTypeItemProvider extends ConnectorTypeItemProv
 				 true,
 				 null,
 				 null,
-				 null));
+				 null){
+		        @Override
+		        public Collection<?> getChoiceOfValues(Object object)
+		        {
+		        	ConnectorType self = (ConnectorType)object;
+		        	ComponentTypeImpl parentComponentType = (ComponentTypeImpl) self.getParent();
+		        	List<PortInstance> validSourcePorts = new ArrayList<PortInstance>();
+		        	validSourcePorts.addAll(parentComponentType.getOutgoingPortsOfSubcomponents());
+		            return validSourcePorts;
+		        }
+		});
 	}
 
 	/**
 	 * This adds a property descriptor for the Target Port Instance feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected void addTargetPortInstancePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
+			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
 				 getString("_UI_IntermediateConnectorType_targetPortInstance_feature"),
@@ -95,90 +104,15 @@ public class IntermediateConnectorTypeItemProvider extends ConnectorTypeItemProv
 				 true,
 				 null,
 				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Source Port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addSourcePortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IntermediateConnectorType_sourcePort_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IntermediateConnectorType_sourcePort_feature", "_UI_IntermediateConnectorType_type"),
-				 MontiarcPackage.Literals.INTERMEDIATE_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null){
-			        @Override
-			        public Collection<?> getChoiceOfValues(Object object)
-			        {
-			        	List<Object> outgoingPortInstances = new ArrayList<Object>();
-			        	ConnectorType self = (ConnectorType)object;
-			        	self.getParent();
-			        	ComponentType parentComponentType = self.getParent();
-			        	
-			        	if (parentComponentType != null) {
-			        		for (ComponentInstance siblingInstance : parentComponentType.getComponentInstances()) {
-			        			for (PortInstance portInstance : siblingInstance.getPortInstances()) {
-			        				boolean isOutgoing = !portInstance.getType().isIsIncoming();
-			        				if (portInstance.getType() != null && isOutgoing) {
-			        					outgoingPortInstances.add(portInstance);
-			        				}
-			        			}
-			        		}
-			        	}
-			            return outgoingPortInstances;
-			        }
-			});
-	}
-
-	/**
-	 * This adds a property descriptor for the Target Port feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected void addTargetPortPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(new ItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IntermediateConnectorType_targetPort_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IntermediateConnectorType_targetPort_feature", "_UI_IntermediateConnectorType_type"),
-				 MontiarcPackage.Literals.INTERMEDIATE_CONNECTOR_TYPE__TARGET_PORT_INSTANCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
 				 null){
 		        @Override
 		        public Collection<?> getChoiceOfValues(Object object)
 		        {
-		        	List<Object> incomingPortInstances = new ArrayList<Object>();
 		        	ConnectorType self = (ConnectorType)object;
-		        	ComponentType parentComponentType = self.getParent();
-		        	
-		        	if (parentComponentType != null) {
-		        		for (ComponentInstance siblingInstance : parentComponentType.getComponentInstances()) {
-		        			for (PortInstance portInstance : siblingInstance.getPortInstances()) {
-		        				boolean isIncoming = portInstance.getType().isIsIncoming();
-		        				if (portInstance.getType() != null && isIncoming) {
-		        					incomingPortInstances.add(portInstance);
-		        				}
-		        			}
-		        		}
-		        	}
-		            return incomingPortInstances;
+		        	ComponentTypeImpl parentComponentType = (ComponentTypeImpl) self.getParent();
+		        	List<PortInstance> validSourcePorts = new ArrayList<PortInstance>();
+		        	validSourcePorts.addAll(parentComponentType.getIncomingPortsOfSubcomponents());
+		            return validSourcePorts;
 		        }
 		});
 	}

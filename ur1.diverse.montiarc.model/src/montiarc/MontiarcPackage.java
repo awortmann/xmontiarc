@@ -160,13 +160,13 @@ public interface MontiarcPackage extends EPackage {
 	int COMPONENT_TYPE__PORT_TYPES = 2;
 
 	/**
-	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Connector Types</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE__CONNECTORS = 3;
+	int COMPONENT_TYPE__CONNECTOR_TYPES = 3;
 
 	/**
 	 * The feature id for the '<em><b>Component Instances</b></em>' containment reference list.
@@ -666,15 +666,15 @@ public interface MontiarcPackage extends EPackage {
 	EReference getComponentType_PortTypes();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link montiarc.ComponentType#getConnectors <em>Connectors</em>}'.
+	 * Returns the meta object for the containment reference list '{@link montiarc.ComponentType#getConnectorTypes <em>Connector Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Connectors</em>'.
-	 * @see montiarc.ComponentType#getConnectors()
+	 * @return the meta object for the containment reference list '<em>Connector Types</em>'.
+	 * @see montiarc.ComponentType#getConnectorTypes()
 	 * @see #getComponentType()
 	 * @generated
 	 */
-	EReference getComponentType_Connectors();
+	EReference getComponentType_ConnectorTypes();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link montiarc.ComponentType#getComponentInstances <em>Component Instances</em>}'.
@@ -1058,12 +1058,12 @@ public interface MontiarcPackage extends EPackage {
 		EReference COMPONENT_TYPE__PORT_TYPES = eINSTANCE.getComponentType_PortTypes();
 
 		/**
-		 * The meta object literal for the '<em><b>Connectors</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Connector Types</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference COMPONENT_TYPE__CONNECTORS = eINSTANCE.getComponentType_Connectors();
+		EReference COMPONENT_TYPE__CONNECTOR_TYPES = eINSTANCE.getComponentType_ConnectorTypes();
 
 		/**
 		 * The meta object literal for the '<em><b>Component Instances</b></em>' containment reference list feature.

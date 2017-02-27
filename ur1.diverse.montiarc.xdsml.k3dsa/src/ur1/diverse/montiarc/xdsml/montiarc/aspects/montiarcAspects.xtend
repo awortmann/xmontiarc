@@ -14,6 +14,8 @@ import montiarcruntime.PortValue
 import org.eclipse.emf.common.util.EList
 import montiarc.IntermediateConnectorType
 import montiarc.IncomingConnectorType
+import static extension ur1.diverse.montiarc.xdsml.montiarc.aspects.ComponentTypeAspect.*
+import static extension ur1.diverse.montiarc.xdsml.montiarc.aspects.PortInstanceAspect.*
 
 @Aspect(className=ComponentType)
 class ComponentTypeAspect {
@@ -61,7 +63,7 @@ class ComponentInstanceAspect {
 			// invoke _self.groovyBehavior
 			// for each groovy behavior result
 			// iterate over Hashmap and assign values to ports of the same name
-			for (PortInstance pi : _self.ports) {
+			for (PortInstance pi : _self.portInstances) {
 				pi.portValue = MontiarcruntimeFactory.eINSTANCE.createPortValue
 				pi.portValue.value = _self.r.nextInt
 				pi.portValue.type = pi.type

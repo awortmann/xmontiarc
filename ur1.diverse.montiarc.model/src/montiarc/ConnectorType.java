@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface ConnectorType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link montiarc.ComponentType#getConnectors <em>Connectors</em>}'.
+	 * It is bidirectional and its opposite is '{@link montiarc.ComponentType#getConnectorTypes <em>Connector Types</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Parent</em>' container reference isn't clear,
@@ -33,8 +33,8 @@ public interface ConnectorType extends EObject {
 	 * @return the value of the '<em>Parent</em>' container reference.
 	 * @see #setParent(ComponentType)
 	 * @see montiarc.MontiarcPackage#getConnectorType_Parent()
-	 * @see montiarc.ComponentType#getConnectors
-	 * @model opposite="connectors" required="true" transient="false"
+	 * @see montiarc.ComponentType#getConnectorTypes
+	 * @model opposite="connectorTypes" required="true" transient="false"
 	 * @generated
 	 */
 	ComponentType getParent();

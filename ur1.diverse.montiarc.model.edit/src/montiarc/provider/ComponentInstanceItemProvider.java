@@ -61,7 +61,7 @@ public class ComponentInstanceItemProvider
 			super.getPropertyDescriptors(object);
 
 			addInstanceNamePropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
+			addComponentTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -89,18 +89,18 @@ public class ComponentInstanceItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
+	 * This adds a property descriptor for the Component Type feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addComponentTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_ComponentInstance_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_type_feature", "_UI_ComponentInstance_type"),
+				 getString("_UI_ComponentInstance_componentType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentInstance_componentType_feature", "_UI_ComponentInstance_type"),
 				 MontiarcPackage.Literals.COMPONENT_INSTANCE__COMPONENT_TYPE,
 				 true,
 				 false,

@@ -232,7 +232,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentType_Connectors() {
+	public EReference getComponentType_ConnectorTypes() {
 		return (EReference)componentTypeEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -516,7 +516,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		createEAttribute(componentTypeEClass, COMPONENT_TYPE__NAME);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__SUPER_COMPONENT_TYPE);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__PORT_TYPES);
-		createEReference(componentTypeEClass, COMPONENT_TYPE__CONNECTORS);
+		createEReference(componentTypeEClass, COMPONENT_TYPE__CONNECTOR_TYPES);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__COMPONENT_INSTANCES);
 		createEAttribute(componentTypeEClass, COMPONENT_TYPE__GROOVY_BEHAVIOR);
 
@@ -598,7 +598,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		initEAttribute(getComponentType_Name(), ecorePackage.getEString(), "name", "UnnamedComponentType", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_SuperComponentType(), this.getComponentType(), null, "superComponentType", null, 0, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_PortTypes(), this.getPortType(), this.getPortType_Parent(), "portTypes", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentType_Connectors(), this.getConnectorType(), this.getConnectorType_Parent(), "connectors", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentType_ConnectorTypes(), this.getConnectorType(), this.getConnectorType_Parent(), "connectorTypes", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_ComponentInstances(), this.getComponentInstance(), this.getComponentInstance_Parent(), "componentInstances", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentType_GroovyBehavior(), ecorePackage.getEString(), "groovyBehavior", null, 0, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -620,7 +620,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		initEReference(getPortInstance_Parent(), this.getComponentInstance(), this.getComponentInstance_PortInstances(), "parent", null, 1, 1, PortInstance.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorTypeEClass, ConnectorType.class, "ConnectorType", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnectorType_Parent(), this.getComponentType(), this.getComponentType_Connectors(), "parent", null, 1, 1, ConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConnectorType_Parent(), this.getComponentType(), this.getComponentType_ConnectorTypes(), "parent", null, 1, 1, ConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(intermediateConnectorTypeEClass, IntermediateConnectorType.class, "IntermediateConnectorType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIntermediateConnectorType_SourcePortInstance(), this.getPortInstance(), null, "sourcePortInstance", null, 1, 1, IntermediateConnectorType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

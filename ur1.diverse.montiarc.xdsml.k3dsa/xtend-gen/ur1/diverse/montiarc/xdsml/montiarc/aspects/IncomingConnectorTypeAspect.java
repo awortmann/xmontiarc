@@ -14,9 +14,11 @@ public class IncomingConnectorTypeAspect {
   
   protected static void _privk3_update(final IncomingConnectorTypeAspectIncomingConnectorTypeAspectProperties _self_, final IncomingConnectorType _self) {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method portValue(Object) is undefined for the type PortInstance"
+      + "\nThe method or field targetPort is undefined for the type IncomingConnectorType"
       + "\nThe method or field sourcePort is undefined for the type IncomingConnectorType"
-      + "\nThe method portValue(Object) is undefined for the type PortInstance"
+      + "\nThe method or field targetPort is undefined for the type IncomingConnectorType"
+      + "\nportValue cannot be resolved"
+      + "\nportValue cannot be resolved"
       + "\nportValue cannot be resolved");
   }
 }

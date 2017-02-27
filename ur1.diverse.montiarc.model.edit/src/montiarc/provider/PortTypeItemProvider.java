@@ -52,7 +52,7 @@ public class PortTypeItemProvider extends ItemProviderAdapter implements IEditin
 
 			addIsIncomingPropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addTypePropertyDescriptor(object);
+			addDataTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -102,18 +102,18 @@ public class PortTypeItemProvider extends ItemProviderAdapter implements IEditin
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Data Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addTypePropertyDescriptor(Object object) {
+	protected void addDataTypePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(createItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
 				 getResourceLocator(),
-				 getString("_UI_PortType_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_PortType_type_feature", "_UI_PortType_type"),
+				 getString("_UI_PortType_dataType_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_PortType_dataType_feature", "_UI_PortType_type"),
 				 MontiarcPackage.Literals.PORT_TYPE__DATA_TYPE,
 				 true,
 				 false,

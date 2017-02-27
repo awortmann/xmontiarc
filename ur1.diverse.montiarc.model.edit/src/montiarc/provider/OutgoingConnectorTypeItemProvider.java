@@ -55,35 +55,14 @@ public class OutgoingConnectorTypeItemProvider extends ConnectorTypeItemProvider
 		return itemPropertyDescriptors;
 	}
 
-	/**
-	 * This adds a property descriptor for the Source Port Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addSourcePortInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_OutgoingConnectorType_sourcePortInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_OutgoingConnectorType_sourcePortInstance_feature", "_UI_OutgoingConnectorType_type"),
-				 MontiarcPackage.Literals.OUTGOING_CONNECTOR_TYPE__SOURCE_PORT_INSTANCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
 
 	/**
 	 * This adds a property descriptor for the Source Port feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOTØ‚
+	 * @generated NOT‚
 	 */
-	protected void addSourcePortPropertyDescriptor(Object object) {
+	protected void addSourcePortInstancePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),

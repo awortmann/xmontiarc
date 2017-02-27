@@ -56,34 +56,12 @@ public class IncomingConnectorTypeItemProvider extends ConnectorTypeItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Target Port Instance feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTargetPortInstancePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_IncomingConnectorType_targetPortInstance_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_IncomingConnectorType_targetPortInstance_feature", "_UI_IncomingConnectorType_type"),
-				 MontiarcPackage.Literals.INCOMING_CONNECTOR_TYPE__TARGET_PORT_INSTANCE,
-				 true,
-				 false,
-				 true,
-				 null,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Target Port feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	protected void addTargetPortPropertyDescriptor(Object object) {
+	protected void addTargetPortInstancePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add
 			(new ItemPropertyDescriptor
 				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),

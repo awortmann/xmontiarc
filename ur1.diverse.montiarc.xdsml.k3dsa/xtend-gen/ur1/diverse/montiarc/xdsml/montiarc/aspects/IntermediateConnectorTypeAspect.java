@@ -14,8 +14,11 @@ public class IntermediateConnectorTypeAspect {
   
   protected static void _privk3_update(final IntermediateConnectorTypeAspectIntermediateConnectorTypeAspectProperties _self_, final IntermediateConnectorType _self) {
     throw new Error("Unresolved compilation problems:"
-      + "\nThe method portValue(Object) is undefined for the type PortInstance"
-      + "\nThe method or field portValue is undefined for the type PortInstance"
-      + "\nThe method portValue(Object) is undefined for the type PortInstance");
+      + "\nThe method or field targetPort is undefined for the type IntermediateConnectorType"
+      + "\nThe method or field sourcePort is undefined for the type IntermediateConnectorType"
+      + "\nThe method or field targetPort is undefined for the type IntermediateConnectorType"
+      + "\nportValue cannot be resolved"
+      + "\nportValue cannot be resolved"
+      + "\nportValue cannot be resolved");
   }
 }

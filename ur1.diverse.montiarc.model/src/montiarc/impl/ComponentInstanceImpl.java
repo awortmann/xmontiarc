@@ -151,11 +151,13 @@ public class ComponentInstanceImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void setComponentType(ComponentType newComponentType) {
 		ComponentType oldComponentType = componentType;
 		componentType = newComponentType;
+		// Update port instances and connector instances
+		ComponentInstanceHelper.setPropertiesDerivedFromComponentType(this);
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_INSTANCE__COMPONENT_TYPE, oldComponentType, componentType));
 	}

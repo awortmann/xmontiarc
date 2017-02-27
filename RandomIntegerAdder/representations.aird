@@ -5,10 +5,10 @@
     <semanticResources>models/RandomIntGenerator.montiarc</semanticResources>
     <semanticResources>models/NumberPrinter.montiarc</semanticResources>
     <semanticResources>RandomIntegerAdder.montiarc</semanticResources>
-    <semanticResources>RandomNumberAdder.montiarc</semanticResources>
     <semanticResources>models/InnerAdder.montiarc</semanticResources>
     <semanticResources>models/IntegerAdder.montiarc</semanticResources>
     <semanticResources>models/Adder.montiarc</semanticResources>
+    <semanticResources>RandomNumberAdder.montiarc</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_XDheUPrtEeaoBKOwnXVYcw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_8ctcUPsvEea_YJAZe2lr7w" name="RandomNumberAdder Diagram" representation="_8cv4kPsvEea_YJAZe2lr7w">
@@ -23,6 +23,18 @@
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']"/>
         <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/IntegerAdder.montiarc#/"/>
       </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_LGxEIP0sEeaVTq77FzAZxQ" name="InnerAdder Diagram" representation="_LG0HcP0sEeaVTq77FzAZxQ">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']"/>
+        <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/InnerAdder.montiarc#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_SGpnYP0sEeaVTq77FzAZxQ" name="NumberPrinter Diagram" representation="_SGqOcP0sEeaVTq77FzAZxQ">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']"/>
+        <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/NumberPrinter.montiarc#/"/>
+      </ownedRepresentationDescriptors>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_U_KsoP0sEeaVTq77FzAZxQ" name="RandomIntGenerator Diagram" representation="_U_LTsP0sEeaVTq77FzAZxQ">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']"/>
+        <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/RandomIntGenerator.montiarc#/"/>
+      </ownedRepresentationDescriptors>
     </ownedViews>
   </viewpoint:DAnalysis>
   <diagram:DSemanticDiagram xmi:id="_8cv4kPsvEea_YJAZe2lr7w" name="RandomNumberAdder Diagram">
@@ -34,160 +46,112 @@
         <children xmi:type="notation:Node" xmi:id="_8dKIQPsvEea_YJAZe2lr7w" type="2002" element="_8cv4k_svEea_YJAZe2lr7w">
           <children xmi:type="notation:Node" xmi:id="_8dQO4PsvEea_YJAZe2lr7w" type="5006"/>
           <children xmi:type="notation:Node" xmi:id="_8dRdAPsvEea_YJAZe2lr7w" type="7001">
-            <children xmi:type="notation:Node" xmi:id="_8dSrIPsvEea_YJAZe2lr7w" type="3007" element="_8cv4lfsvEea_YJAZe2lr7w">
-              <children xmi:type="notation:Node" xmi:id="_8dT5QPsvEea_YJAZe2lr7w" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_8dT5QfsvEea_YJAZe2lr7w" y="5"/>
+            <children xmi:type="notation:Node" xmi:id="_3fY_cP0sEeaVTq77FzAZxQ" type="3007" element="_3fPOcP0sEeaVTq77FzAZxQ">
+              <children xmi:type="notation:Node" xmi:id="_3fZmgP0sEeaVTq77FzAZxQ" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_3fZmgf0sEeaVTq77FzAZxQ" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_8dbOAPsvEea_YJAZe2lr7w" type="3001" element="_8cv4lvsvEea_YJAZe2lr7w">
-                <children xmi:type="notation:Node" xmi:id="_8db1EPsvEea_YJAZe2lr7w" type="5001">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_8db1EfsvEea_YJAZe2lr7w" y="5"/>
+              <children xmi:type="notation:Node" xmi:id="_3fa0oP0sEeaVTq77FzAZxQ" type="3001" element="_3fRDoP0sEeaVTq77FzAZxQ">
+                <children xmi:type="notation:Node" xmi:id="_3fa0o_0sEeaVTq77FzAZxQ" type="5001">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_3fbbsP0sEeaVTq77FzAZxQ" y="5"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_8dkX8PsvEea_YJAZe2lr7w" type="3003" element="_8cv4l_svEea_YJAZe2lr7w">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_8dkX8fsvEea_YJAZe2lr7w" fontName=".SF NS Text"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dkX8vsvEea_YJAZe2lr7w"/>
+                <children xmi:type="notation:Node" xmi:id="_3fcCw_0sEeaVTq77FzAZxQ" type="3003" element="_3fRqsP0sEeaVTq77FzAZxQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_3fcCxP0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fcCxf0sEeaVTq77FzAZxQ"/>
                 </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_8dbOAfsvEea_YJAZe2lr7w" fontName=".SF NS Text" fontHeight="10"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dbOAvsvEea_YJAZe2lr7w" x="125" y="75" width="72" height="30"/>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_3fa0of0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fa0ov0sEeaVTq77FzAZxQ" x="151" width="56" height="30"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_8dh7sPsvEea_YJAZe2lr7w" type="3001" element="_8cv4mPsvEea_YJAZe2lr7w">
-                <children xmi:type="notation:Node" xmi:id="_8djJ0PsvEea_YJAZe2lr7w" type="5001">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_8djJ0fsvEea_YJAZe2lr7w" y="5"/>
+              <children xmi:type="notation:Node" xmi:id="_3fbbsf0sEeaVTq77FzAZxQ" type="3001" element="_3fRqsf0sEeaVTq77FzAZxQ">
+                <children xmi:type="notation:Node" xmi:id="_3fbbtP0sEeaVTq77FzAZxQ" type="5001">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_3fbbtf0sEeaVTq77FzAZxQ" y="5"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_8dk_APsvEea_YJAZe2lr7w" type="3003" element="_8cv4mfsvEea_YJAZe2lr7w">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_8dk_AfsvEea_YJAZe2lr7w" fontName=".SF NS Text"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dk_AvsvEea_YJAZe2lr7w"/>
+                <children xmi:type="notation:Node" xmi:id="_3fcp0P0sEeaVTq77FzAZxQ" type="3003" element="_3fRqsv0sEeaVTq77FzAZxQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_3fcp0f0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fcp0v0sEeaVTq77FzAZxQ"/>
                 </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_8dh7sfsvEea_YJAZe2lr7w" fontName=".SF NS Text" fontHeight="10"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dh7svsvEea_YJAZe2lr7w" x="125" width="72" height="30"/>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_3fbbsv0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fbbs_0sEeaVTq77FzAZxQ" x="151" y="75" width="56" height="30"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_8djw4PsvEea_YJAZe2lr7w" type="3003" element="_8cv4mvsvEea_YJAZe2lr7w">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_8djw4fsvEea_YJAZe2lr7w" fontName=".SF NS Text"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8djw4vsvEea_YJAZe2lr7w"/>
+              <children xmi:type="notation:Node" xmi:id="_3fcCwP0sEeaVTq77FzAZxQ" type="3003" element="_3fPOcf0sEeaVTq77FzAZxQ">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_3fcCwf0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fcCwv0sEeaVTq77FzAZxQ"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_8dSrIfsvEea_YJAZe2lr7w" fontName=".SF NS Text" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dSrIvsvEea_YJAZe2lr7w" x="7" y="110" width="133" height="105"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_3fY_cf0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fY_cv0sEeaVTq77FzAZxQ" x="29" y="30" width="159" height="105"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_8dVHYPsvEea_YJAZe2lr7w" type="3007" element="_8cv4m_svEea_YJAZe2lr7w">
-              <children xmi:type="notation:Node" xmi:id="_8dVucPsvEea_YJAZe2lr7w" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_8dVucfsvEea_YJAZe2lr7w" y="5"/>
+            <children xmi:type="notation:Node" xmi:id="_3fZmgv0sEeaVTq77FzAZxQ" type="3007" element="_3fP1gP0sEeaVTq77FzAZxQ">
+              <children xmi:type="notation:Node" xmi:id="_3fZmhf0sEeaVTq77FzAZxQ" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_3fZmhv0sEeaVTq77FzAZxQ" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_8dlmEPsvEea_YJAZe2lr7w" type="3001" element="_8cv4nPsvEea_YJAZe2lr7w">
-                <children xmi:type="notation:Node" xmi:id="_8dmNIPsvEea_YJAZe2lr7w" type="5001">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_8dmNIfsvEea_YJAZe2lr7w" y="5"/>
+              <children xmi:type="notation:Node" xmi:id="_3fcp0_0sEeaVTq77FzAZxQ" type="3001" element="_3fSRwP0sEeaVTq77FzAZxQ">
+                <children xmi:type="notation:Node" xmi:id="_3fcp1v0sEeaVTq77FzAZxQ" type="5001">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_3fcp1_0sEeaVTq77FzAZxQ" y="5"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_8dp3gPsvEea_YJAZe2lr7w" type="3003" element="_8cv4nfsvEea_YJAZe2lr7w">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_8dp3gfsvEea_YJAZe2lr7w" fontName=".SF NS Text"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dp3gvsvEea_YJAZe2lr7w"/>
+                <children xmi:type="notation:Node" xmi:id="_3fefAv0sEeaVTq77FzAZxQ" type="3003" element="_3fSRwf0sEeaVTq77FzAZxQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_3fefA_0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fefBP0sEeaVTq77FzAZxQ"/>
                 </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_8dlmEfsvEea_YJAZe2lr7w" fontName=".SF NS Text" fontHeight="10"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dlmEvsvEea_YJAZe2lr7w" x="-52" y="75" width="60" height="30"/>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_3fcp1P0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fcp1f0sEeaVTq77FzAZxQ" x="-48" y="75" width="56" height="30"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_8dpQcPsvEea_YJAZe2lr7w" type="3003" element="_8cv4ovsvEea_YJAZe2lr7w">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_8dpQcfsvEea_YJAZe2lr7w" fontName=".SF NS Text"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dpQcvsvEea_YJAZe2lr7w"/>
+              <children xmi:type="notation:Node" xmi:id="_3fdQ4P0sEeaVTq77FzAZxQ" type="3001" element="_3fS40P0sEeaVTq77FzAZxQ">
+                <children xmi:type="notation:Node" xmi:id="_3fdQ4_0sEeaVTq77FzAZxQ" type="5001">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_3fdQ5P0sEeaVTq77FzAZxQ" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_3fefBf0sEeaVTq77FzAZxQ" type="3003" element="_3fS40f0sEeaVTq77FzAZxQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_3fefBv0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fefB_0sEeaVTq77FzAZxQ"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_3fdQ4f0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fdQ4v0sEeaVTq77FzAZxQ" x="-48" width="56" height="30"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_i9WL4Px1Eea4nolGID2Xnw" type="3001" element="_g_TK0Px1Eea4nolGID2Xnw">
-                <children xmi:type="notation:Node" xmi:id="_i9Wy8Px1Eea4nolGID2Xnw" type="5001">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_i9Wy8fx1Eea4nolGID2Xnw" y="5"/>
+              <children xmi:type="notation:Node" xmi:id="_3fd38P0sEeaVTq77FzAZxQ" type="3001" element="_3fTf4P0sEeaVTq77FzAZxQ">
+                <children xmi:type="notation:Node" xmi:id="_3fd38_0sEeaVTq77FzAZxQ" type="5001">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_3fd39P0sEeaVTq77FzAZxQ" y="5"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_i9YBEvx1Eea4nolGID2Xnw" type="3003" element="_g_TK0fx1Eea4nolGID2Xnw">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_i9YBE_x1Eea4nolGID2Xnw" fontName=".SF NS Text"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9YBFPx1Eea4nolGID2Xnw"/>
+                <children xmi:type="notation:Node" xmi:id="_3ffGEP0sEeaVTq77FzAZxQ" type="3003" element="_3fTf4f0sEeaVTq77FzAZxQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_3ffGEf0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3ffGEv0sEeaVTq77FzAZxQ"/>
                 </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_i9WL4fx1Eea4nolGID2Xnw" fontName=".SF NS Text" fontHeight="10"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9WL4vx1Eea4nolGID2Xnw" x="-22" width="30" height="30"/>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_3fd38f0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fd38v0sEeaVTq77FzAZxQ" x="133" y="36" width="52" height="30"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_i9XaAPx1Eea4nolGID2Xnw" type="3001" element="_g_VAAPx1Eea4nolGID2Xnw">
-                <children xmi:type="notation:Node" xmi:id="_i9YBEPx1Eea4nolGID2Xnw" type="5001">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_i9YBEfx1Eea4nolGID2Xnw" y="5"/>
-                </children>
-                <children xmi:type="notation:Node" xmi:id="_i9YoIPx1Eea4nolGID2Xnw" type="3003" element="_g_VAAfx1Eea4nolGID2Xnw">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_i9YoIfx1Eea4nolGID2Xnw" fontName=".SF NS Text"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9YoIvx1Eea4nolGID2Xnw"/>
-                </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_i9XaAfx1Eea4nolGID2Xnw" fontName=".SF NS Text" fontHeight="10"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9XaAvx1Eea4nolGID2Xnw" x="121" width="30" height="30"/>
+              <children xmi:type="notation:Node" xmi:id="_3fd39f0sEeaVTq77FzAZxQ" type="3003" element="_3fQckP0sEeaVTq77FzAZxQ">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_3fefAP0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fefAf0sEeaVTq77FzAZxQ"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_8dVHYfsvEea_YJAZe2lr7w" fontName=".SF NS Text" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dVHYvsvEea_YJAZe2lr7w" x="359" y="110" width="129" height="105"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_3fZmg_0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3fZmhP0sEeaVTq77FzAZxQ" x="347" y="30" width="141" height="105"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_8dWVgPsvEea_YJAZe2lr7w" type="3007" element="_8cv4o_svEea_YJAZe2lr7w">
-              <children xmi:type="notation:Node" xmi:id="_8dW8kPsvEea_YJAZe2lr7w" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_8dW8kfsvEea_YJAZe2lr7w" y="5"/>
+            <children xmi:type="notation:Node" xmi:id="_LzApoP0tEeaVTq77FzAZxQ" type="3007" element="_Ly6jAP0tEeaVTq77FzAZxQ">
+              <children xmi:type="notation:Node" xmi:id="_LzBQsP0tEeaVTq77FzAZxQ" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_LzBQsf0tEeaVTq77FzAZxQ" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_8drss_svEea_YJAZe2lr7w" type="3001" element="_8cv4pPsvEea_YJAZe2lr7w">
-                <children xmi:type="notation:Node" xmi:id="_8duI8PsvEea_YJAZe2lr7w" type="5001">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_8duI8fsvEea_YJAZe2lr7w" y="5"/>
+              <children xmi:type="notation:Node" xmi:id="_LzB3wP0tEeaVTq77FzAZxQ" type="3001" element="_Ly7KEP0tEeaVTq77FzAZxQ">
+                <children xmi:type="notation:Node" xmi:id="_LzDF4P0tEeaVTq77FzAZxQ" type="5001">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_LzDF4f0tEeaVTq77FzAZxQ" y="5"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_8dvXEPsvEea_YJAZe2lr7w" type="3003" element="_8cv4pfsvEea_YJAZe2lr7w">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_8dvXEfsvEea_YJAZe2lr7w" fontName=".SF NS Text"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dvXEvsvEea_YJAZe2lr7w"/>
+                <children xmi:type="notation:Node" xmi:id="_LzDs8P0tEeaVTq77FzAZxQ" type="3003" element="_Ly7KEf0tEeaVTq77FzAZxQ">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_LzDs8f0tEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LzDs8v0tEeaVTq77FzAZxQ"/>
                 </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_8drstPsvEea_YJAZe2lr7w" fontName=".SF NS Text" fontHeight="10"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8drstfsvEea_YJAZe2lr7w" x="-40" width="48" height="30"/>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_LzB3wf0tEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LzB3wv0tEeaVTq77FzAZxQ" x="-48" y="40" width="56" height="30"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_8duwAPsvEea_YJAZe2lr7w" type="3003" element="_8cv4pvsvEea_YJAZe2lr7w">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_8duwAfsvEea_YJAZe2lr7w" fontName=".SF NS Text"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8duwAvsvEea_YJAZe2lr7w"/>
+              <children xmi:type="notation:Node" xmi:id="_LzDF4v0tEeaVTq77FzAZxQ" type="3003" element="_Ly6jAf0tEeaVTq77FzAZxQ">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_LzDF4_0tEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LzDF5P0tEeaVTq77FzAZxQ"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_8dWVgfsvEea_YJAZe2lr7w" fontName=".SF NS Text" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dWVgvsvEea_YJAZe2lr7w" x="639" y="110" width="129" height="105"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_LzApof0tEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LzApov0tEeaVTq77FzAZxQ" x="347" y="178" width="141" height="105"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_8dRdAfsvEea_YJAZe2lr7w"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_8dRdAvsvEea_YJAZe2lr7w"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_8dKIQfsvEea_YJAZe2lr7w" fontName=".SF NS Text" fontHeight="14" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dKIQvsvEea_YJAZe2lr7w" x="108" y="40" width="799" height="315"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_8dKIQvsvEea_YJAZe2lr7w" x="56" y="32" width="655" height="315"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_8c_wMvsvEea_YJAZe2lr7w"/>
-        <edges xmi:type="notation:Edge" xmi:id="_i9ZPMPx1Eea4nolGID2Xnw" type="4001" element="_i9QsUPx1Eea4nolGID2Xnw" source="_8dh7sPsvEea_YJAZe2lr7w" target="_i9WL4Px1Eea4nolGID2Xnw">
-          <children xmi:type="notation:Node" xmi:id="_i9Z2QPx1Eea4nolGID2Xnw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9Z2Qfx1Eea4nolGID2Xnw" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_i9Z2Qvx1Eea4nolGID2Xnw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9Z2Q_x1Eea4nolGID2Xnw" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_i9Z2RPx1Eea4nolGID2Xnw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9Z2Rfx1Eea4nolGID2Xnw" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_i9ZPMfx1Eea4nolGID2Xnw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_i9ZPMvx1Eea4nolGID2Xnw" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_i9ZPM_x1Eea4nolGID2Xnw" points="[240, 150, 240, 150]$[445, 150, 445, 150]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i9adUPx1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i9adUfx1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_i9bEYPx1Eea4nolGID2Xnw" type="4001" element="_i9R6cPx1Eea4nolGID2Xnw" source="_8dbOAPsvEea_YJAZe2lr7w" target="_8dlmEPsvEea_YJAZe2lr7w">
-          <children xmi:type="notation:Node" xmi:id="_i9bEZPx1Eea4nolGID2Xnw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9bEZfx1Eea4nolGID2Xnw" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_i9bEZvx1Eea4nolGID2Xnw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9bEZ_x1Eea4nolGID2Xnw" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_i9bEaPx1Eea4nolGID2Xnw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9bEafx1Eea4nolGID2Xnw" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_i9bEYfx1Eea4nolGID2Xnw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_i9bEYvx1Eea4nolGID2Xnw" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_i9bEY_x1Eea4nolGID2Xnw" points="[240, 225, 240, 225]$[415, 225, 415, 225]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i9brcPx1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i9brcfx1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
-        </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_i9brcvx1Eea4nolGID2Xnw" type="4001" element="_i9ShgPx1Eea4nolGID2Xnw" source="_i9XaAPx1Eea4nolGID2Xnw" target="_8drss_svEea_YJAZe2lr7w">
-          <children xmi:type="notation:Node" xmi:id="_i9brdvx1Eea4nolGID2Xnw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9brd_x1Eea4nolGID2Xnw" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_i9brePx1Eea4nolGID2Xnw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9brefx1Eea4nolGID2Xnw" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_i9brevx1Eea4nolGID2Xnw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_i9bre_x1Eea4nolGID2Xnw" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_i9brc_x1Eea4nolGID2Xnw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_i9brdPx1Eea4nolGID2Xnw" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_i9brdfx1Eea4nolGID2Xnw" points="[588, 150, 588, 150]$[707, 150, 707, 150]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i9cSgPx1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_i9cSgfx1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
-        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_8cv4k_svEea_YJAZe2lr7w" name="RandomNumberAdder">
@@ -201,27 +165,62 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8cv4lfsvEea_YJAZe2lr7w" name="RandomIntGenerator gen" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@subcomponents.0"/>
-        <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@subcomponents.0"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_8cv4lvsvEea_YJAZe2lr7w" name="Integer secondInt" outgoingEdges="_i9R6cPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.0/@ports.1"/>
-          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.0/@ports.1"/>
-          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_8cv4l_svEea_YJAZe2lr7w" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_3fPOcP0sEeaVTq77FzAZxQ" name="RandomIntGenerator generator" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@componentInstances.0"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@componentInstances.0"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_3fRDoP0sEeaVTq77FzAZxQ" name="Integer firstInt" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.0/@portInstances.0"/>
+          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.0/@portInstances.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_3fRqsP0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_8cv4mPsvEea_YJAZe2lr7w" name="Integer firstInt" outgoingEdges="_i9QsUPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.0/@ports.0"/>
-          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.0/@ports.0"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_3fRqsf0sEeaVTq77FzAZxQ" name="Integer secondInt" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.0/@portInstances.1"/>
+          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.0/@portInstances.1"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_8cv4mfsvEea_YJAZe2lr7w" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_3fRqsv0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']"/>
+        </ownedBorderedNodes>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_3fPOcf0sEeaVTq77FzAZxQ" labelSize="12" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="194,239,255">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']"/>
+      </ownedDiagramElements>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_3fP1gP0sEeaVTq77FzAZxQ" name="Adder adder" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@componentInstances.1"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@componentInstances.1"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_3fSRwP0sEeaVTq77FzAZxQ" name="Integer b" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.1/@portInstances.1"/>
+          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.1/@portInstances.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_3fSRwf0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_3fS40P0sEeaVTq77FzAZxQ" name="Integer a" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.1/@portInstances.0"/>
+          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.1/@portInstances.0"/>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_3fS40f0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
+            <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']/@style"/>
+          </ownedStyle>
+          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']"/>
+        </ownedBorderedNodes>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_3fTf4P0sEeaVTq77FzAZxQ" name="Integer c" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.1/@portInstances.2"/>
+          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.1/@portInstances.2"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_3fTf4f0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']"/>
@@ -229,56 +228,21 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_8cv4mvsvEea_YJAZe2lr7w" labelSize="12" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="194,239,255">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_3fQckP0sEeaVTq77FzAZxQ" labelSize="12" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="194,239,255">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8cv4m_svEea_YJAZe2lr7w" name="Adder adder" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@subcomponents.1"/>
-        <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@subcomponents.1"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_8cv4nPsvEea_YJAZe2lr7w" name="Integer summandB" incomingEdges="_i9R6cPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.1/@ports.1"/>
-          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.1/@ports.1"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Ly6jAP0tEeaVTq77FzAZxQ" name="NumberPrinter printer" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@componentInstances.2"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@componentInstances.2"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_Ly7KEP0tEeaVTq77FzAZxQ" name="Integer number" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.2/@portInstances.0"/>
+          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@componentInstances.2/@portInstances.0"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_8cv4nfsvEea_YJAZe2lr7w" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
-            <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']"/>
-        </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_g_TK0Px1Eea4nolGID2Xnw" name="Integer summandA" incomingEdges="_i9QsUPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.1/@ports.0"/>
-          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.1/@ports.0"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_g_TK0fx1Eea4nolGID2Xnw" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
-            <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']"/>
-        </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_g_VAAPx1Eea4nolGID2Xnw" name="Integer result" outgoingEdges="_i9ShgPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.1/@ports.2"/>
-          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.1/@ports.2"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_g_VAAfx1Eea4nolGID2Xnw" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
-            <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']/@style"/>
-          </ownedStyle>
-          <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']"/>
-        </ownedBorderedNodes>
-        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
-        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
-        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_8cv4ovsvEea_YJAZe2lr7w" labelSize="12" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="194,239,255">
-          <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']"/>
-      </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_8cv4o_svEea_YJAZe2lr7w" name="NumberPrinter printer" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@subcomponents.2"/>
-        <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="RandomNumberAdder.montiarc#//@subcomponents.2"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_8cv4pPsvEea_YJAZe2lr7w" name="Integer number" incomingEdges="_i9ShgPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.2/@ports.0"/>
-          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="RandomNumberAdder.montiarc#//@subcomponents.2/@ports.0"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_8cv4pfsvEea_YJAZe2lr7w" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_Ly7KEf0tEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']"/>
@@ -286,38 +250,11 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_8cv4pvsvEea_YJAZe2lr7w" labelSize="12" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="194,239,255">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_Ly6jAf0tEeaVTq77FzAZxQ" labelSize="12" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="194,239,255">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']"/>
       </ownedDiagramElements>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_i9QsUPx1Eea4nolGID2Xnw" sourceNode="_8cv4mPsvEea_YJAZe2lr7w" targetNode="_g_TK0Px1Eea4nolGID2Xnw">
-      <target xmi:type="ur1.diverse.montiarc.model:IntermediateConnectorType" href="RandomNumberAdder.montiarc#//@connectors.0"/>
-      <semanticElements xmi:type="ur1.diverse.montiarc.model:IntermediateConnectorType" href="RandomNumberAdder.montiarc#//@connectors.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_i9RTYPx1Eea4nolGID2Xnw" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_i9RTYfx1Eea4nolGID2Xnw"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_i9R6cPx1Eea4nolGID2Xnw" sourceNode="_8cv4lvsvEea_YJAZe2lr7w" targetNode="_8cv4nPsvEea_YJAZe2lr7w">
-      <target xmi:type="ur1.diverse.montiarc.model:IntermediateConnectorType" href="RandomNumberAdder.montiarc#//@connectors.1"/>
-      <semanticElements xmi:type="ur1.diverse.montiarc.model:IntermediateConnectorType" href="RandomNumberAdder.montiarc#//@connectors.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_i9R6cfx1Eea4nolGID2Xnw" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_i9R6cvx1Eea4nolGID2Xnw"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_i9ShgPx1Eea4nolGID2Xnw" sourceNode="_g_VAAPx1Eea4nolGID2Xnw" targetNode="_8cv4pPsvEea_YJAZe2lr7w">
-      <target xmi:type="ur1.diverse.montiarc.model:IntermediateConnectorType" href="RandomNumberAdder.montiarc#//@connectors.2"/>
-      <semanticElements xmi:type="ur1.diverse.montiarc.model:IntermediateConnectorType" href="RandomNumberAdder.montiarc#//@connectors.2"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_i9Shgfx1Eea4nolGID2Xnw" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_i9Shgvx1Eea4nolGID2Xnw"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']"/>
     </ownedDiagramElements>
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_8cv4sPsvEea_YJAZe2lr7w"/>
@@ -333,172 +270,172 @@
         <children xmi:type="notation:Node" xmi:id="_4ZcJQPsxEeaWk6LXIuZqEA" type="2002" element="_4ZOG1PsxEeaWk6LXIuZqEA">
           <children xmi:type="notation:Node" xmi:id="_4Zo9kPsxEeaWk6LXIuZqEA" type="5006"/>
           <children xmi:type="notation:Node" xmi:id="_4Zsn8PsxEeaWk6LXIuZqEA" type="7001">
-            <children xmi:type="notation:Node" xmi:id="_4Z4OIPsxEeaWk6LXIuZqEA" type="3007" element="_4ZOG3PsxEeaWk6LXIuZqEA">
-              <children xmi:type="notation:Node" xmi:id="_4Z4OI_sxEeaWk6LXIuZqEA" type="5003">
-                <layoutConstraint xmi:type="notation:Location" xmi:id="_4Z4OJPsxEeaWk6LXIuZqEA" y="5"/>
+            <children xmi:type="notation:Node" xmi:id="_eA66cPz_EeaO-u8A3QmErg" type="3007" element="_cbcKYPz_EeaO-u8A3QmErg">
+              <children xmi:type="notation:Node" xmi:id="_eA7hgPz_EeaO-u8A3QmErg" type="5003">
+                <layoutConstraint xmi:type="notation:Location" xmi:id="_eA7hgfz_EeaO-u8A3QmErg" y="5"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_4aFpgPsxEeaWk6LXIuZqEA" type="3003" element="_4ZOG4_sxEeaWk6LXIuZqEA">
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_4aFpgfsxEeaWk6LXIuZqEA" fontName=".SF NS Text"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4aFpgvsxEeaWk6LXIuZqEA"/>
+              <children xmi:type="notation:Node" xmi:id="_eA8IkPz_EeaO-u8A3QmErg" type="3001" element="_c2Oo8Pz_EeaO-u8A3QmErg">
+                <children xmi:type="notation:Node" xmi:id="_eA8voPz_EeaO-u8A3QmErg" type="5001">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_eA8vofz_EeaO-u8A3QmErg" y="5"/>
+                </children>
+                <children xmi:type="notation:Node" xmi:id="_eBBBEPz_EeaO-u8A3QmErg" type="3003" element="_c2PQAPz_EeaO-u8A3QmErg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_eBBBEfz_EeaO-u8A3QmErg" fontName=".SF NS Text"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBBBEvz_EeaO-u8A3QmErg"/>
+                </children>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_eA8Ikfz_EeaO-u8A3QmErg" fontName=".SF NS Text" fontHeight="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eA8Ikvz_EeaO-u8A3QmErg" x="-52" y="8" width="60" height="30"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_ntQ0cPxxEeaLLvMNfzEBsg" type="3001" element="_ntHDcPxxEeaLLvMNfzEBsg">
-                <children xmi:type="notation:Node" xmi:id="_ntRbgPxxEeaLLvMNfzEBsg" type="5001">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_ntRbgfxxEeaLLvMNfzEBsg" y="5"/>
+              <children xmi:type="notation:Node" xmi:id="_eA9WsPz_EeaO-u8A3QmErg" type="3001" element="_c2QeIPz_EeaO-u8A3QmErg">
+                <children xmi:type="notation:Node" xmi:id="_eA99wPz_EeaO-u8A3QmErg" type="5001">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_eA99wfz_EeaO-u8A3QmErg" y="5"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_ntT3wPxxEeaLLvMNfzEBsg" type="3003" element="_ntHDcfxxEeaLLvMNfzEBsg">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_ntT3wfxxEeaLLvMNfzEBsg" fontName=".SF NS Text"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ntT3wvxxEeaLLvMNfzEBsg"/>
+                <children xmi:type="notation:Node" xmi:id="_eBBoIPz_EeaO-u8A3QmErg" type="3003" element="_c2RFMPz_EeaO-u8A3QmErg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_eBBoIfz_EeaO-u8A3QmErg" fontName=".SF NS Text"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBBoIvz_EeaO-u8A3QmErg"/>
                 </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_ntQ0cfxxEeaLLvMNfzEBsg" fontName=".SF NS Text" fontHeight="10"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_ntQ0cvxxEeaLLvMNfzEBsg" x="-22" y="94" width="30" height="30"/>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_eA9Wsfz_EeaO-u8A3QmErg" fontName=".SF NS Text" fontHeight="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eA9Wsvz_EeaO-u8A3QmErg" x="-56" y="62" width="64" height="30"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_U5QmEPx1Eea4nolGID2Xnw" type="3001" element="_U4zTEPx1Eea4nolGID2Xnw">
-                <children xmi:type="notation:Node" xmi:id="_U5ZI8Px1Eea4nolGID2Xnw" type="5001">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_U5ZI8fx1Eea4nolGID2Xnw" y="5"/>
+              <children xmi:type="notation:Node" xmi:id="_eA-k0Pz_EeaO-u8A3QmErg" type="3001" element="_dH3LgPz_EeaO-u8A3QmErg">
+                <children xmi:type="notation:Node" xmi:id="_eA_L4Pz_EeaO-u8A3QmErg" type="5001">
+                  <layoutConstraint xmi:type="notation:Location" xmi:id="_eA_L4fz_EeaO-u8A3QmErg" y="5"/>
                 </children>
-                <children xmi:type="notation:Node" xmi:id="_U5nLYPx1Eea4nolGID2Xnw" type="3003" element="_U4z6IPx1Eea4nolGID2Xnw">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_U5nLYfx1Eea4nolGID2Xnw" fontName=".SF NS Text"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U5nLYvx1Eea4nolGID2Xnw"/>
+                <children xmi:type="notation:Node" xmi:id="_eBCPMPz_EeaO-u8A3QmErg" type="3003" element="_dH3ykPz_EeaO-u8A3QmErg">
+                  <styles xmi:type="notation:ShapeStyle" xmi:id="_eBCPMfz_EeaO-u8A3QmErg" fontName=".SF NS Text"/>
+                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBCPMvz_EeaO-u8A3QmErg"/>
                 </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_U5QmEfx1Eea4nolGID2Xnw" fontName=".SF NS Text" fontHeight="10"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U5QmEvx1Eea4nolGID2Xnw" x="-22" width="30" height="30"/>
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_eA-k0fz_EeaO-u8A3QmErg" fontName=".SF NS Text" fontHeight="10"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eA-k0vz_EeaO-u8A3QmErg" x="133" y="36" width="56" height="30"/>
               </children>
-              <children xmi:type="notation:Node" xmi:id="_U5lWMPx1Eea4nolGID2Xnw" type="3001" element="_U41vUPx1Eea4nolGID2Xnw">
-                <children xmi:type="notation:Node" xmi:id="_U5l9QPx1Eea4nolGID2Xnw" type="5001">
-                  <layoutConstraint xmi:type="notation:Location" xmi:id="_U5l9Qfx1Eea4nolGID2Xnw" y="5"/>
-                </children>
-                <children xmi:type="notation:Node" xmi:id="_U5nycPx1Eea4nolGID2Xnw" type="3003" element="_U41vUfx1Eea4nolGID2Xnw">
-                  <styles xmi:type="notation:ShapeStyle" xmi:id="_U5nycfx1Eea4nolGID2Xnw" fontName=".SF NS Text"/>
-                  <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U5nycvx1Eea4nolGID2Xnw"/>
-                </children>
-                <styles xmi:type="notation:ShapeStyle" xmi:id="_U5lWMfx1Eea4nolGID2Xnw" fontName=".SF NS Text" fontHeight="10"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U5lWMvx1Eea4nolGID2Xnw" x="225" width="30" height="30"/>
+              <children xmi:type="notation:Node" xmi:id="_eBAaAPz_EeaO-u8A3QmErg" type="3003" element="_cbcxcPz_EeaO-u8A3QmErg">
+                <styles xmi:type="notation:ShapeStyle" xmi:id="_eBAaAfz_EeaO-u8A3QmErg" fontName=".SF NS Text"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBAaAvz_EeaO-u8A3QmErg"/>
               </children>
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_4Z4OIfsxEeaWk6LXIuZqEA" fontName=".SF NS Text" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Z4OIvsxEeaWk6LXIuZqEA" x="155" y="56" width="233" height="143"/>
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_eA66cfz_EeaO-u8A3QmErg" fontName=".SF NS Text" fontHeight="12"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eA66cvz_EeaO-u8A3QmErg" x="115" y="18" width="141" height="113"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_4ZtPAPsxEeaWk6LXIuZqEA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_4ZtPAfsxEeaWk6LXIuZqEA"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_4ZudIPsxEeaWk6LXIuZqEA" type="3012" element="_4ZOG1fsxEeaWk6LXIuZqEA">
-            <children xmi:type="notation:Node" xmi:id="_4ZvrQPsxEeaWk6LXIuZqEA" type="5010">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_4ZvrQfsxEeaWk6LXIuZqEA" y="5"/>
+          <children xmi:type="notation:Node" xmi:id="_eAh44Pz_EeaO-u8A3QmErg" type="3012" element="_cbU1oPz_EeaO-u8A3QmErg">
+            <children xmi:type="notation:Node" xmi:id="_eArC0Pz_EeaO-u8A3QmErg" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_eArC0fz_EeaO-u8A3QmErg" y="5"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_4aIs0PsxEeaWk6LXIuZqEA" type="3003" element="_4ZOG1vsxEeaWk6LXIuZqEA">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_4aIs0fsxEeaWk6LXIuZqEA" fontName=".SF NS Text"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4aIs0vsxEeaWk6LXIuZqEA"/>
+            <children xmi:type="notation:Node" xmi:id="_eBCPM_z_EeaO-u8A3QmErg" type="3003" element="_cbWDwPz_EeaO-u8A3QmErg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_eBCPNPz_EeaO-u8A3QmErg" fontName=".SF NS Text"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBCPNfz_EeaO-u8A3QmErg"/>
             </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_4ZudIfsxEeaWk6LXIuZqEA" fontName=".SF NS Text" fontHeight="10"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ZudIvsxEeaWk6LXIuZqEA" x="-92" y="176" width="100" height="30"/>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eAh44fz_EeaO-u8A3QmErg" fontName=".SF NS Text" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eAh44vz_EeaO-u8A3QmErg" x="-52" y="32" width="60" height="30"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_4Z1K0PsxEeaWk6LXIuZqEA" type="3012" element="_4ZOG1_sxEeaWk6LXIuZqEA">
-            <children xmi:type="notation:Node" xmi:id="_4Z1x4PsxEeaWk6LXIuZqEA" type="5010">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_4Z1x4fsxEeaWk6LXIuZqEA" y="5"/>
+          <children xmi:type="notation:Node" xmi:id="_eA33IPz_EeaO-u8A3QmErg" type="3012" element="_cbX48Pz_EeaO-u8A3QmErg">
+            <children xmi:type="notation:Node" xmi:id="_eA4eMPz_EeaO-u8A3QmErg" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_eA4eMfz_EeaO-u8A3QmErg" y="5"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_4aJT4PsxEeaWk6LXIuZqEA" type="3003" element="_4ZOG2PsxEeaWk6LXIuZqEA">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_4aJT4fsxEeaWk6LXIuZqEA" fontName=".SF NS Text"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4aJT4vsxEeaWk6LXIuZqEA"/>
+            <children xmi:type="notation:Node" xmi:id="_eBDdUPz_EeaO-u8A3QmErg" type="3003" element="_cbX48fz_EeaO-u8A3QmErg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_eBDdUfz_EeaO-u8A3QmErg" fontName=".SF NS Text"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBDdUvz_EeaO-u8A3QmErg"/>
             </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_4Z1K0fsxEeaWk6LXIuZqEA" fontName=".SF NS Text" fontHeight="10"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Z1K0vsxEeaWk6LXIuZqEA" x="-92" y="64" width="100" height="30"/>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eA33Ifz_EeaO-u8A3QmErg" fontName=".SF NS Text" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eA33Ivz_EeaO-u8A3QmErg" x="-52" y="88" width="60" height="30"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_4Z2Y8PsxEeaWk6LXIuZqEA" type="3012" element="_4ZOG2fsxEeaWk6LXIuZqEA">
-            <children xmi:type="notation:Node" xmi:id="_4Z3AAPsxEeaWk6LXIuZqEA" type="5010">
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_4Z3AAfsxEeaWk6LXIuZqEA" y="5"/>
+          <children xmi:type="notation:Node" xmi:id="_eA5FQPz_EeaO-u8A3QmErg" type="3012" element="_cbZuIPz_EeaO-u8A3QmErg">
+            <children xmi:type="notation:Node" xmi:id="_eA5sUPz_EeaO-u8A3QmErg" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_eA5sUfz_EeaO-u8A3QmErg" y="5"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_4aKiAPsxEeaWk6LXIuZqEA" type="3003" element="_4ZOG2vsxEeaWk6LXIuZqEA">
-              <styles xmi:type="notation:ShapeStyle" xmi:id="_4aKiAfsxEeaWk6LXIuZqEA" fontName=".SF NS Text"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4aKiAvsxEeaWk6LXIuZqEA"/>
+            <children xmi:type="notation:Node" xmi:id="_eBEEYPz_EeaO-u8A3QmErg" type="3003" element="_cbZuIfz_EeaO-u8A3QmErg">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_eBEEYfz_EeaO-u8A3QmErg" fontName=".SF NS Text"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBEEYvz_EeaO-u8A3QmErg"/>
             </children>
-            <styles xmi:type="notation:ShapeStyle" xmi:id="_4Z2Y8fsxEeaWk6LXIuZqEA" fontName=".SF NS Text" fontHeight="10"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4Z2Y8vsxEeaWk6LXIuZqEA" x="557" y="112" width="68" height="30"/>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_eA5FQfz_EeaO-u8A3QmErg" fontName=".SF NS Text" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eA5FQvz_EeaO-u8A3QmErg" x="333" y="60" width="60" height="30"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_4ZcJQfsxEeaWk6LXIuZqEA" fontName=".SF NS Text" fontHeight="14" bold="true"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ZcJQvsxEeaWk6LXIuZqEA" x="168" y="104" width="567" height="255"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_4ZcJQvsxEeaWk6LXIuZqEA" x="168" y="104" width="343" height="163"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_4ZWpsvsxEeaWk6LXIuZqEA"/>
-        <edges xmi:type="notation:Edge" xmi:id="_U5--0Px1Eea4nolGID2Xnw" type="4001" element="_U4-SMPx1Eea4nolGID2Xnw" source="_4Z1K0PsxEeaWk6LXIuZqEA" target="_U5QmEPx1Eea4nolGID2Xnw">
-          <children xmi:type="notation:Node" xmi:id="_U6AM8Px1Eea4nolGID2Xnw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U6AM8fx1Eea4nolGID2Xnw" y="-10"/>
+        <edges xmi:type="notation:Edge" xmi:id="_eBdF8Pz_EeaO-u8A3QmErg" type="4001" element="_eAKsgPz_EeaO-u8A3QmErg" source="_eAh44Pz_EeaO-u8A3QmErg" target="_eA8IkPz_EeaO-u8A3QmErg">
+          <children xmi:type="notation:Node" xmi:id="_eBeUEPz_EeaO-u8A3QmErg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBeUEfz_EeaO-u8A3QmErg" x="14" y="-11"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_U6A0APx1Eea4nolGID2Xnw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U6A0Afx1Eea4nolGID2Xnw" y="10"/>
+          <children xmi:type="notation:Node" xmi:id="_eBe7IPz_EeaO-u8A3QmErg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBe7Ifz_EeaO-u8A3QmErg" x="-8" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_U6CCIPx1Eea4nolGID2Xnw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U6CCIfx1Eea4nolGID2Xnw" y="10"/>
+          <children xmi:type="notation:Node" xmi:id="_eBfiMPz_EeaO-u8A3QmErg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBfiMfz_EeaO-u8A3QmErg" x="-13" y="6"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_U5--0fx1Eea4nolGID2Xnw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_U5--0vx1Eea4nolGID2Xnw" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U5--0_x1Eea4nolGID2Xnw" points="[76, 168, 76, 168]$[301, 160, 301, 160]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_U6RSsPx1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_U6RSsfx1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_eBdF8fz_EeaO-u8A3QmErg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_eBdF8vz_EeaO-u8A3QmErg" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eBdF8_z_EeaO-u8A3QmErg" points="[15, 4, -105, 4]$[105, 0, -15, 0]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eBs9kPz_EeaO-u8A3QmErg" id="(0.75,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eBs9kfz_EeaO-u8A3QmErg" id="(0.75,0.5)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_U6R5wPx1Eea4nolGID2Xnw" type="4001" element="_U5AHYPx1Eea4nolGID2Xnw" source="_4ZudIPsxEeaWk6LXIuZqEA" target="_ntQ0cPxxEeaLLvMNfzEBsg">
-          <children xmi:type="notation:Node" xmi:id="_U6Sg0Px1Eea4nolGID2Xnw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U6Sg0fx1Eea4nolGID2Xnw" y="-10"/>
+        <edges xmi:type="notation:Edge" xmi:id="_eBtkoPz_EeaO-u8A3QmErg" type="4001" element="_eAL6oPz_EeaO-u8A3QmErg" source="_eA33IPz_EeaO-u8A3QmErg" target="_eA9WsPz_EeaO-u8A3QmErg">
+          <children xmi:type="notation:Node" xmi:id="_eBuLsPz_EeaO-u8A3QmErg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBuLsfz_EeaO-u8A3QmErg" x="-2" y="-7"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_U6Sg0vx1Eea4nolGID2Xnw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U6Sg0_x1Eea4nolGID2Xnw" y="10"/>
+          <children xmi:type="notation:Node" xmi:id="_eBuLsvz_EeaO-u8A3QmErg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBuLs_z_EeaO-u8A3QmErg" x="5" y="5"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_U6Sg1Px1Eea4nolGID2Xnw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U6Sg1fx1Eea4nolGID2Xnw" y="10"/>
+          <children xmi:type="notation:Node" xmi:id="_eBuLtPz_EeaO-u8A3QmErg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBuLtfz_EeaO-u8A3QmErg" x="-11" y="4"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_U6R5wfx1Eea4nolGID2Xnw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_U6R5wvx1Eea4nolGID2Xnw" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U6R5w_x1Eea4nolGID2Xnw" points="[76, 280, 76, 280]$[301, 254, 301, 254]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_U6TH4Px1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_U6TH4fx1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_eBtkofz_EeaO-u8A3QmErg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_eBtkovz_EeaO-u8A3QmErg" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eBtko_z_EeaO-u8A3QmErg" points="[15, 0, -105, 2]$[105, 1, -15, 3]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eBuywPz_EeaO-u8A3QmErg" id="(0.75,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eBuywfz_EeaO-u8A3QmErg" id="(0.765625,0.5)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_U6TH4vx1Eea4nolGID2Xnw" type="4001" element="_U5BVgPx1Eea4nolGID2Xnw" source="_U5lWMPx1Eea4nolGID2Xnw" target="_4Z2Y8PsxEeaWk6LXIuZqEA">
-          <children xmi:type="notation:Node" xmi:id="_U6TH5vx1Eea4nolGID2Xnw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U6TH5_x1Eea4nolGID2Xnw" y="-10"/>
+        <edges xmi:type="notation:Edge" xmi:id="_eBuywvz_EeaO-u8A3QmErg" type="4001" element="_eAO98Pz_EeaO-u8A3QmErg" source="_eA-k0Pz_EeaO-u8A3QmErg" target="_eA5FQPz_EeaO-u8A3QmErg">
+          <children xmi:type="notation:Node" xmi:id="_eBvZ0Pz_EeaO-u8A3QmErg" type="6001">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBvZ0fz_EeaO-u8A3QmErg" x="-8" y="-10"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_U6TH6Px1Eea4nolGID2Xnw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U6TH6fx1Eea4nolGID2Xnw" y="10"/>
+          <children xmi:type="notation:Node" xmi:id="_eBvZ0vz_EeaO-u8A3QmErg" type="6002">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBvZ0_z_EeaO-u8A3QmErg" x="2" y="7"/>
           </children>
-          <children xmi:type="notation:Node" xmi:id="_U6TH6vx1Eea4nolGID2Xnw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U6TH6_x1Eea4nolGID2Xnw" y="10"/>
+          <children xmi:type="notation:Node" xmi:id="_eBvZ1Pz_EeaO-u8A3QmErg" type="6003">
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_eBvZ1fz_EeaO-u8A3QmErg" x="4" y="4"/>
           </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_U6TH4_x1Eea4nolGID2Xnw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_U6TH5Px1Eea4nolGID2Xnw" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_U6TH5fx1Eea4nolGID2Xnw" points="[548, 160, 548, 160]$[725, 216, 725, 216]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_U6Tu8Px1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_U6Tu8fx1Eea4nolGID2Xnw" id="(0.5,0.5)"/>
+          <styles xmi:type="notation:ConnectorStyle" xmi:id="_eBuyw_z_EeaO-u8A3QmErg"/>
+          <styles xmi:type="notation:FontStyle" xmi:id="_eBuyxPz_EeaO-u8A3QmErg" fontName=".SF NS Text" fontHeight="8"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_eBuyxfz_EeaO-u8A3QmErg" points="[41, -4, -87, -4]$[113, -1, -15, -1]"/>
+          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eBwA4Pz_EeaO-u8A3QmErg" id="(0.26785714285714285,0.5)"/>
+          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_eBwA4fz_EeaO-u8A3QmErg" id="(0.25,0.5)"/>
         </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_4ZOG1PsxEeaWk6LXIuZqEA" name="Adder">
       <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/Adder.montiarc#/"/>
       <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/Adder.montiarc#/"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_4ZOG1fsxEeaWk6LXIuZqEA" name="Integer summandB" outgoingEdges="_U5AHYPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@ports.1"/>
-        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@ports.1"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_cbU1oPz_EeaO-u8A3QmErg" name="Integer a" outgoingEdges="_eAKsgPz_EeaO-u8A3QmErg" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@portTypes.0"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@portTypes.0"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_4ZOG1vsxEeaWk6LXIuZqEA" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_cbWDwPz_EeaO-u8A3QmErg" labelSize="10" showIcon="false" labelAlignment="RIGHT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="204,242,166">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_4ZOG1_sxEeaWk6LXIuZqEA" name="Integer summandA" outgoingEdges="_U4-SMPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@ports.0"/>
-        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@ports.0"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_cbX48Pz_EeaO-u8A3QmErg" name="Integer b" outgoingEdges="_eAL6oPz_EeaO-u8A3QmErg" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@portTypes.1"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@portTypes.1"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_4ZOG2PsxEeaWk6LXIuZqEA" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_cbX48fz_EeaO-u8A3QmErg" labelSize="10" showIcon="false" labelAlignment="RIGHT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="204,242,166">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_4ZOG2fsxEeaWk6LXIuZqEA" name="Integer result" incomingEdges="_U5BVgPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@ports.2"/>
-        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@ports.2"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_cbZuIPz_EeaO-u8A3QmErg" name="Integer c" incomingEdges="_eAO98Pz_EeaO-u8A3QmErg" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@portTypes.2"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/Adder.montiarc#//@portTypes.2"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_4ZOG2vsxEeaWk6LXIuZqEA" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_cbZuIfz_EeaO-u8A3QmErg" labelSize="10" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="246,139,139">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']"/>
@@ -511,32 +448,38 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_4ZOG3PsxEeaWk6LXIuZqEA" name="InnerAdder innerAdder" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="models/Adder.montiarc#//@subcomponents.0"/>
-        <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="models/Adder.montiarc#//@subcomponents.0"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_ntHDcPxxEeaLLvMNfzEBsg" name="Integer innerSummandB" incomingEdges="_U5AHYPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@subcomponents.0/@ports.1"/>
-          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@subcomponents.0/@ports.1"/>
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_cbcKYPz_EeaO-u8A3QmErg" name="InnerAdder innerAdder" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="models/Adder.montiarc#//@componentInstances.0"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentInstance" href="models/Adder.montiarc#//@componentInstances.0"/>
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_c2Oo8Pz_EeaO-u8A3QmErg" name="Integer innerSummandA" incomingEdges="_eAKsgPz_EeaO-u8A3QmErg" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@componentInstances.0/@portInstances.0"/>
+          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@componentInstances.0/@portInstances.0"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_ntHDcfxxEeaLLvMNfzEBsg" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_c2PQAPz_EeaO-u8A3QmErg" labelSize="10" showIcon="false" labelAlignment="RIGHT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_U4zTEPx1Eea4nolGID2Xnw" name="Integer innerSummandA" incomingEdges="_U4-SMPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@subcomponents.0/@ports.0"/>
-          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@subcomponents.0/@ports.0"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_U4z6IPx1Eea4nolGID2Xnw" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_c2QeIPz_EeaO-u8A3QmErg" name="Integer innerSummandB" incomingEdges="_eAL6oPz_EeaO-u8A3QmErg" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@componentInstances.0/@portInstances.1"/>
+          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@componentInstances.0/@portInstances.1"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_c2RFMPz_EeaO-u8A3QmErg" labelSize="10" showIcon="false" labelAlignment="RIGHT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="204,242,166">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentIncomingPortNode']"/>
         </ownedBorderedNodes>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_U41vUPx1Eea4nolGID2Xnw" name="Integer innerResult" outgoingEdges="_U5BVgPx1Eea4nolGID2Xnw" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@subcomponents.0/@ports.2"/>
-          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@subcomponents.0/@ports.2"/>
-          <ownedStyle xmi:type="diagram:Square" xmi:id="_U41vUfx1Eea4nolGID2Xnw" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_dH3LgPz_EeaO-u8A3QmErg" name="Integer innerResult" outgoingEdges="_eAO98Pz_EeaO-u8A3QmErg" width="3" height="3" resizeKind="NSEW">
+          <target xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@componentInstances.0/@portInstances.2"/>
+          <semanticElements xmi:type="ur1.diverse.montiarc.model:PortInstance" href="models/Adder.montiarc#//@componentInstances.0/@portInstances.2"/>
+          <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+          <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+          <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+          <ownedStyle xmi:type="diagram:Square" xmi:id="_dH3ykPz_EeaO-u8A3QmErg" labelSize="10" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="209,209,209">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@borderedNodeMappings[name='ComponentOutgoingPortNode']"/>
@@ -544,36 +487,36 @@
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
         <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
         <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
-        <ownedStyle xmi:type="diagram:Square" xmi:id="_4ZOG4_sxEeaWk6LXIuZqEA" labelSize="12" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="194,239,255">
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_cbcxcPz_EeaO-u8A3QmErg" labelSize="12" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="246,139,139">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='ComponentInstanceNode']"/>
       </ownedDiagramElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_U4-SMPx1Eea4nolGID2Xnw" sourceNode="_4ZOG1_sxEeaWk6LXIuZqEA" targetNode="_U4zTEPx1Eea4nolGID2Xnw">
-      <target xmi:type="ur1.diverse.montiarc.model:IncomingConnectorType" href="models/Adder.montiarc#//@connectors.0"/>
-      <semanticElements xmi:type="ur1.diverse.montiarc.model:IncomingConnectorType" href="models/Adder.montiarc#//@connectors.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_U4-5QPx1Eea4nolGID2Xnw" size="2">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_eAKsgPz_EeaO-u8A3QmErg" sourceNode="_cbU1oPz_EeaO-u8A3QmErg" targetNode="_c2Oo8Pz_EeaO-u8A3QmErg">
+      <target xmi:type="ur1.diverse.montiarc.model:IncomingConnectorType" href="models/Adder.montiarc#//@connectorTypes.0"/>
+      <semanticElements xmi:type="ur1.diverse.montiarc.model:IncomingConnectorType" href="models/Adder.montiarc#//@connectorTypes.0"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_eALTkPz_EeaO-u8A3QmErg" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='IncomingConnectorEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_U4-5Qfx1Eea4nolGID2Xnw"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_eALTkfz_EeaO-u8A3QmErg"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='IncomingConnectorEdge']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_U5AHYPx1Eea4nolGID2Xnw" sourceNode="_4ZOG1fsxEeaWk6LXIuZqEA" targetNode="_ntHDcPxxEeaLLvMNfzEBsg">
-      <target xmi:type="ur1.diverse.montiarc.model:IncomingConnectorType" href="models/Adder.montiarc#//@connectors.1"/>
-      <semanticElements xmi:type="ur1.diverse.montiarc.model:IncomingConnectorType" href="models/Adder.montiarc#//@connectors.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_U5AHYfx1Eea4nolGID2Xnw" size="2">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_eAL6oPz_EeaO-u8A3QmErg" sourceNode="_cbX48Pz_EeaO-u8A3QmErg" targetNode="_c2QeIPz_EeaO-u8A3QmErg">
+      <target xmi:type="ur1.diverse.montiarc.model:IncomingConnectorType" href="models/Adder.montiarc#//@connectorTypes.1"/>
+      <semanticElements xmi:type="ur1.diverse.montiarc.model:IncomingConnectorType" href="models/Adder.montiarc#//@connectorTypes.1"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_eAMhsPz_EeaO-u8A3QmErg" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='IncomingConnectorEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_U5AHYvx1Eea4nolGID2Xnw"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_eAMhsfz_EeaO-u8A3QmErg"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='IncomingConnectorEdge']"/>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_U5BVgPx1Eea4nolGID2Xnw" sourceNode="_U41vUPx1Eea4nolGID2Xnw" targetNode="_4ZOG2fsxEeaWk6LXIuZqEA">
-      <target xmi:type="ur1.diverse.montiarc.model:OutgoingConnectorType" href="models/Adder.montiarc#//@connectors.2"/>
-      <semanticElements xmi:type="ur1.diverse.montiarc.model:OutgoingConnectorType" href="models/Adder.montiarc#//@connectors.2"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_U5B8kPx1Eea4nolGID2Xnw" size="2">
+    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_eAO98Pz_EeaO-u8A3QmErg" sourceNode="_dH3LgPz_EeaO-u8A3QmErg" targetNode="_cbZuIPz_EeaO-u8A3QmErg">
+      <target xmi:type="ur1.diverse.montiarc.model:OutgoingConnectorType" href="models/Adder.montiarc#//@connectorTypes.2"/>
+      <semanticElements xmi:type="ur1.diverse.montiarc.model:OutgoingConnectorType" href="models/Adder.montiarc#//@connectorTypes.2"/>
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_eAO98fz_EeaO-u8A3QmErg" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='OutgoingConnectorEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_U5B8kfx1Eea4nolGID2Xnw"/>
+        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_eAO98vz_EeaO-u8A3QmErg"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@edgeMappings[name='OutgoingConnectorEdge']"/>
     </ownedDiagramElements>
@@ -887,5 +830,242 @@
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_PII12PupEeaNvux5O0Gdrw"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer"/>
     <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/IntegerAdder.montiarc#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram xmi:id="_LG0HcP0sEeaVTq77FzAZxQ" name="InnerAdder Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_LG0Hcf0sEeaVTq77FzAZxQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_LG0Hcv0sEeaVTq77FzAZxQ"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_LHXhEP0sEeaVTq77FzAZxQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_LHXhEf0sEeaVTq77FzAZxQ" type="Sirius" element="_LG0HcP0sEeaVTq77FzAZxQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_LHtfUP0sEeaVTq77FzAZxQ" type="2002" element="_LG0Hc_0sEeaVTq77FzAZxQ">
+          <children xmi:type="notation:Node" xmi:id="_LIQ48P0sEeaVTq77FzAZxQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_LISHEP0sEeaVTq77FzAZxQ" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_LISHEf0sEeaVTq77FzAZxQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_LISHEv0sEeaVTq77FzAZxQ"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_LIap8P0sEeaVTq77FzAZxQ" type="3012" element="_LG0HdP0sEeaVTq77FzAZxQ">
+            <children xmi:type="notation:Node" xmi:id="_LIbRAP0sEeaVTq77FzAZxQ" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_LIbRAf0sEeaVTq77FzAZxQ" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_LIvaEP0sEeaVTq77FzAZxQ" type="3003" element="_LG0Hdf0sEeaVTq77FzAZxQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_LIvaEf0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LIvaEv0sEeaVTq77FzAZxQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_LIap8f0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LIap8v0sEeaVTq77FzAZxQ" x="-56" y="20" width="64" height="30"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_LIrvsP0sEeaVTq77FzAZxQ" type="3012" element="_LG0Hdv0sEeaVTq77FzAZxQ">
+            <children xmi:type="notation:Node" xmi:id="_LIs90P0sEeaVTq77FzAZxQ" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_LIs90f0sEeaVTq77FzAZxQ" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_LIvaE_0sEeaVTq77FzAZxQ" type="3003" element="_LG0Hd_0sEeaVTq77FzAZxQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_LIvaFP0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LIvaFf0sEeaVTq77FzAZxQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_LIrvsf0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LIrvsv0sEeaVTq77FzAZxQ" x="-56" y="80" width="64" height="30"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_LItk4P0sEeaVTq77FzAZxQ" type="3012" element="_LG0HeP0sEeaVTq77FzAZxQ">
+            <children xmi:type="notation:Node" xmi:id="_LIuL8P0sEeaVTq77FzAZxQ" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_LIuL8f0sEeaVTq77FzAZxQ" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_LIwBIP0sEeaVTq77FzAZxQ" type="3003" element="_LG0Hef0sEeaVTq77FzAZxQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_LIwBIf0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LIwBIv0sEeaVTq77FzAZxQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_LItk4f0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LItk4v0sEeaVTq77FzAZxQ" x="185" y="44" width="56" height="30"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_LHtfUf0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="14" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_LHtfUv0sEeaVTq77FzAZxQ" x="172" y="120" width="195" height="127"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_LHXhEv0sEeaVTq77FzAZxQ"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_LG0Hc_0sEeaVTq77FzAZxQ" name="InnerAdder">
+      <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/InnerAdder.montiarc#/"/>
+      <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/InnerAdder.montiarc#/"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_LG0HdP0sEeaVTq77FzAZxQ" name="Integer innerSummandA" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/InnerAdder.montiarc#//@portTypes.0"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/InnerAdder.montiarc#//@portTypes.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_LG0Hdf0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_LG0Hdv0sEeaVTq77FzAZxQ" name="Integer innerSummandB" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/InnerAdder.montiarc#//@portTypes.1"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/InnerAdder.montiarc#//@portTypes.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_LG0Hd_0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_LG0HeP0sEeaVTq77FzAZxQ" name="Integer innerResult" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/InnerAdder.montiarc#//@portTypes.2"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/InnerAdder.montiarc#//@portTypes.2"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_LG0Hef0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_LG0Hev0sEeaVTq77FzAZxQ" labelSize="14" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_LG0He_0sEeaVTq77FzAZxQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer"/>
+    <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/InnerAdder.montiarc#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram xmi:id="_SGqOcP0sEeaVTq77FzAZxQ" name="NumberPrinter Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_SGqOcf0sEeaVTq77FzAZxQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_SGqOcv0sEeaVTq77FzAZxQ"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_SGqOeP0sEeaVTq77FzAZxQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_SGqOef0sEeaVTq77FzAZxQ" type="Sirius" element="_SGqOcP0sEeaVTq77FzAZxQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_SGq1gP0sEeaVTq77FzAZxQ" type="2002" element="_SGqOc_0sEeaVTq77FzAZxQ">
+          <children xmi:type="notation:Node" xmi:id="_SGrckP0sEeaVTq77FzAZxQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_SGrckf0sEeaVTq77FzAZxQ" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_SGrckv0sEeaVTq77FzAZxQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_SGrck_0sEeaVTq77FzAZxQ"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_SGrclP0sEeaVTq77FzAZxQ" type="3012" element="_SGqOdP0sEeaVTq77FzAZxQ">
+            <children xmi:type="notation:Node" xmi:id="_SGsDoP0sEeaVTq77FzAZxQ" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_SGsDof0sEeaVTq77FzAZxQ" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_SGtRwP0sEeaVTq77FzAZxQ" type="3003" element="_SGqOdf0sEeaVTq77FzAZxQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_SGtRwf0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SGtRwv0sEeaVTq77FzAZxQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_SGrclf0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SGrclv0sEeaVTq77FzAZxQ" x="-44" y="40" width="52" height="30"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_SGq1gf0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="14" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_SGq1gv0sEeaVTq77FzAZxQ" x="232" y="160" width="211" height="111"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_SGqOev0sEeaVTq77FzAZxQ"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_SGqOc_0sEeaVTq77FzAZxQ" name="NumberPrinter">
+      <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/NumberPrinter.montiarc#/"/>
+      <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/NumberPrinter.montiarc#/"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_SGqOdP0sEeaVTq77FzAZxQ" name="Integer number" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/NumberPrinter.montiarc#//@portTypes.0"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/NumberPrinter.montiarc#//@portTypes.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_SGqOdf0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" labelPosition="node" color="209,209,209">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_SGqOdv0sEeaVTq77FzAZxQ" labelSize="14" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_SGqOd_0sEeaVTq77FzAZxQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer"/>
+    <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/NumberPrinter.montiarc#/"/>
+  </diagram:DSemanticDiagram>
+  <diagram:DSemanticDiagram xmi:id="_U_LTsP0sEeaVTq77FzAZxQ" name="RandomIntGenerator Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_U_LTsf0sEeaVTq77FzAZxQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_U_LTsv0sEeaVTq77FzAZxQ"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_U_LTuv0sEeaVTq77FzAZxQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_U_LTu_0sEeaVTq77FzAZxQ" type="Sirius" element="_U_LTsP0sEeaVTq77FzAZxQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_U_NI4P0sEeaVTq77FzAZxQ" type="2002" element="_U_LTs_0sEeaVTq77FzAZxQ">
+          <children xmi:type="notation:Node" xmi:id="_U_OXAP0sEeaVTq77FzAZxQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_U_O-EP0sEeaVTq77FzAZxQ" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_U_O-Ef0sEeaVTq77FzAZxQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_U_O-Ev0sEeaVTq77FzAZxQ"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_U_O-E_0sEeaVTq77FzAZxQ" type="3012" element="_U_LTtP0sEeaVTq77FzAZxQ">
+            <children xmi:type="notation:Node" xmi:id="_U_PlIP0sEeaVTq77FzAZxQ" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_U_PlIf0sEeaVTq77FzAZxQ" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_U_SBYP0sEeaVTq77FzAZxQ" type="3003" element="_U_LTtf0sEeaVTq77FzAZxQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_U_SBYf0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U_SBYv0sEeaVTq77FzAZxQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_U_O-FP0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U_O-Ff0sEeaVTq77FzAZxQ" x="161" y="12" width="68" height="30"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_U_QMMP0sEeaVTq77FzAZxQ" type="3012" element="_U_LTtv0sEeaVTq77FzAZxQ">
+            <children xmi:type="notation:Node" xmi:id="_U_QzQP0sEeaVTq77FzAZxQ" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_U_QzQf0sEeaVTq77FzAZxQ" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_U_SBY_0sEeaVTq77FzAZxQ" type="3003" element="_U_LTt_0sEeaVTq77FzAZxQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_U_SBZP0sEeaVTq77FzAZxQ" fontName=".SF NS Text"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U_SBZf0sEeaVTq77FzAZxQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_U_QMMf0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U_QMMv0sEeaVTq77FzAZxQ" x="161" y="52" width="68" height="30"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_U_NI4f0sEeaVTq77FzAZxQ" fontName=".SF NS Text" fontHeight="14" bold="true"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_U_NI4v0sEeaVTq77FzAZxQ" x="52" y="88" height="95"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_U_LTvP0sEeaVTq77FzAZxQ"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_U_LTs_0sEeaVTq77FzAZxQ" name="RandomIntGenerator">
+      <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/RandomIntGenerator.montiarc#/"/>
+      <semanticElements xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/RandomIntGenerator.montiarc#/"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_U_LTtP0sEeaVTq77FzAZxQ" name="Integer secondInt" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/RandomIntGenerator.montiarc#//@portTypes.0"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/RandomIntGenerator.montiarc#//@portTypes.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_U_LTtf0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']"/>
+      </ownedBorderedNodes>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_U_LTtv0sEeaVTq77FzAZxQ" name="Integer firstInt" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.montiarc.model:PortType" href="models/RandomIntGenerator.montiarc#//@portTypes.1"/>
+        <semanticElements xmi:type="ur1.diverse.montiarc.model:PortType" href="models/RandomIntGenerator.montiarc#//@portTypes.1"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_U_LTt_0sEeaVTq77FzAZxQ" labelSize="10" showIcon="false" labelAlignment="LEFT" labelPosition="node" color="209,209,209">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_U_LTuP0sEeaVTq77FzAZxQ" labelSize="14" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+        <labelFormat>bold</labelFormat>
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_U_LTuf0sEeaVTq77FzAZxQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/ur1.diverse.montiarc.design/description/montiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Components%20Diagram']/@defaultLayer"/>
+    <target xmi:type="ur1.diverse.montiarc.model:ComponentType" href="models/RandomIntGenerator.montiarc#/"/>
   </diagram:DSemanticDiagram>
 </xmi:XMI>

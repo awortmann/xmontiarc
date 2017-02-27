@@ -14,7 +14,7 @@
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="superComponentType" eType="//ComponentType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="portTypes" upperBound="-1" eType="//PortType" containment="true" eOpposite="//PortType/parent"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1" eType="//ConnectorType" containment="true" eOpposite="//ConnectorType/parent"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="connectorTypes" upperBound="-1" eType="//ConnectorType" containment="true" eOpposite="//ConnectorType/parent"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="componentInstances" upperBound="-1" eType="//ComponentInstance" containment="true" eOpposite="//ComponentInstance/parent"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="groovyBehavior">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -46,7 +46,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//ComponentInstance" transient="true" eOpposite="//ComponentInstance/portInstances"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="ConnectorType" abstract="true">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//ComponentType" eOpposite="//ComponentType/connectors"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parent" lowerBound="1" eType="//ComponentType" eOpposite="//ComponentType/connectorTypes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IntermediateConnectorType" eSuperTypes="//ConnectorType">
     <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePortInstance" lowerBound="1" eType="//PortInstance"/>

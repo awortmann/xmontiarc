@@ -80,7 +80,7 @@ public abstract class ConnectorTypeImpl extends MinimalEObjectImpl.Container imp
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newParent != null)
-				msgs = ((InternalEObject)newParent).eInverseAdd(this, MontiarcPackage.COMPONENT_TYPE__CONNECTORS, ComponentType.class, msgs);
+				msgs = ((InternalEObject)newParent).eInverseAdd(this, MontiarcPackage.COMPONENT_TYPE__CONNECTOR_TYPES, ComponentType.class, msgs);
 			msgs = basicSetParent(newParent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -127,7 +127,7 @@ public abstract class ConnectorTypeImpl extends MinimalEObjectImpl.Container imp
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case MontiarcPackage.CONNECTOR_TYPE__PARENT:
-				return eInternalContainer().eInverseRemove(this, MontiarcPackage.COMPONENT_TYPE__CONNECTORS, ComponentType.class, msgs);
+				return eInternalContainer().eInverseRemove(this, MontiarcPackage.COMPONENT_TYPE__CONNECTOR_TYPES, ComponentType.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
