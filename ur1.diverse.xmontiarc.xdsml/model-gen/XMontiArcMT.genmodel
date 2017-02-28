@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="ASCII"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ur1.diverse.xmontiarc.xdsml/src-gen" modelPluginID="ur1.diverse.xmontiarc.xdsml" modelName="XMontiArcMT" complianceLevel="7.0" copyrightFields="false">
   <foreignModel>platform:/resource/ur1.diverse.xmontiarc.xdsml/model-gen/XMontiArcMT.ecore</foreignModel>
-  <genPackages prefix="Xmontiarc" basePackage="xdsml.xmontiarcmt" disposableProviderFactory="true">
+  <genPackages prefix="Xmontiarc" basePackage="ur1.diverse.xmontiarc.xdsml.xmontiarcmt" disposableProviderFactory="true">
     <ecorePackage href="XMontiArcMT.ecore#/0"/>
     <genClasses>
       <ecoreClass href="XMontiArcMT.ecore#/0/ComponentType"/>
@@ -79,7 +79,7 @@
       </genOperations>
     </genClasses>
   </genPackages>
-  <genPackages prefix="Runtime" basePackage="xdsml.xmontiarcmt" disposableProviderFactory="true">
+  <genPackages prefix="Runtime" basePackage="ur1.diverse.xmontiarc.xdsml.xmontiarcmt" disposableProviderFactory="true">
     <ecorePackage href="XMontiArcMT.ecore#/1"/>
     <genClasses>
       <ecoreClass href="XMontiArcMT.ecore#/1/Message"/>
