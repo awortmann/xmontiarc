@@ -35,6 +35,7 @@ import xmontiarc.XmontiarcPackage;
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getSubcomponents <em>Subcomponents</em>}</li>
+ *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getBehavior <em>Behavior</em>}</li>
  * </ul>
  *
  * @generated
@@ -89,6 +90,26 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * @ordered
 	 */
 	protected EList<Subcomponent> subcomponents;
+
+	/**
+	 * The default value of the '{@link #getBehavior() <em>Behavior</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String BEHAVIOR_EDEFAULT = "\"\"";
+
+	/**
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected String behavior = BEHAVIOR_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -171,6 +192,27 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getBehavior() {
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBehavior(String newBehavior) {
+		String oldBehavior = behavior;
+		behavior = newBehavior;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR, oldBehavior, behavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -215,6 +257,8 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return getConnectors();
 			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return getSubcomponents();
+			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+				return getBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -243,6 +287,9 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				getSubcomponents().clear();
 				getSubcomponents().addAll((Collection<? extends Subcomponent>)newValue);
 				return;
+			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+				setBehavior((String)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -267,6 +314,9 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				getSubcomponents().clear();
 				return;
+			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+				setBehavior(BEHAVIOR_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -287,6 +337,8 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return connectors != null && !connectors.isEmpty();
 			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return subcomponents != null && !subcomponents.isEmpty();
+			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+				return BEHAVIOR_EDEFAULT == null ? behavior != null : !BEHAVIOR_EDEFAULT.equals(behavior);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -331,7 +383,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	public List<Port> getDirectedPortsOfSubcomponents(boolean collectIncoming) {
 		List<Port> incomingPorts = new ArrayList<>();
 		for (Subcomponent sc: this.getSubcomponents()) {
-			for (Port p : sc.getDerivedPorts()) {
+			for (Port p : sc.getPorts()) {
 				if (p.isIncoming()==collectIncoming) {
 					incomingPorts.add(p);
 				}

@@ -13,9 +13,9 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import xmontiarc.ComponentType;
 import xmontiarc.Port;
 import xmontiarc.Subcomponent;
@@ -28,10 +28,9 @@ import xmontiarc.XmontiarcPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- * <li>{@link xmontiarc.impl.SubcomponentImpl#getName <em>Name</em>}</li>
- * <li>{@link xmontiarc.impl.SubcomponentImpl#getType <em>Type</em>}</li>
- * <li>{@link xmontiarc.impl.SubcomponentImpl#getDerivedPorts <em>Derived
- * Ports</em>}</li>
+ *   <li>{@link xmontiarc.impl.SubcomponentImpl#getName <em>Name</em>}</li>
+ *   <li>{@link xmontiarc.impl.SubcomponentImpl#getType <em>Type</em>}</li>
+ *   <li>{@link xmontiarc.impl.SubcomponentImpl#getPorts <em>Ports</em>}</li>
  * </ul>
  *
  * @generated
@@ -40,7 +39,6 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -50,7 +48,6 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	/**
 	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getName()
 	 * @generated
 	 * @ordered
@@ -60,7 +57,6 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	/**
 	 * The cached value of the '{@link #getType() <em>Type</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @see #getType()
 	 * @generated
 	 * @ordered
@@ -68,19 +64,17 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	protected ComponentType type;
 
 	/**
-	 * The cached value of the '{@link #getDerivedPorts() <em>Derived
-	 * Ports</em>}' containment reference list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 * 
-	 * @see #getDerivedPorts()
+	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPorts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Port> derivedPorts;
+	protected EList<Port> ports;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	protected SubcomponentImpl() {
@@ -89,7 +83,6 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -99,7 +92,6 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public String getName() {
@@ -108,7 +100,6 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setName(String newName) {
@@ -120,17 +111,15 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ComponentType getType() {
 		if (type != null && type.eIsProxy()) {
-			InternalEObject oldType = (InternalEObject) type;
-			type = (ComponentType) eResolveProxy(oldType);
+			InternalEObject oldType = (InternalEObject)type;
+			type = (ComponentType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XmontiarcPackage.SUBCOMPONENT__TYPE,
-							oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XmontiarcPackage.SUBCOMPONENT__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -138,7 +127,6 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public ComponentType basicGetType() {
@@ -153,123 +141,129 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	public void setType(ComponentType newType) {
 		ComponentType oldType = type;
 		type = newType;
-		System.out.println("SubcomponentImpl.setType(" + newType.toString() + "): Clearing derived ports list.");
-		this.getDerivedPorts().clear();
-		List<Port> derivedPorts = SubcomponentDerivedPortsHelper.setDerivedPorts(this);
-		System.out.println("SubcomponentImpl.setType(" + newType.toString() + "): Adding derived ports '" + derivedPorts + "'.");
-		this.getDerivedPorts().addAll(derivedPorts);
+//		System.out.println("SubcomponentImpl.setType(" + newType.toString() + "): Clearing derived ports list.");
+//		this.getDerivedPorts().clear();
+//		List<Port> derivedPorts = SubcomponentDerivedPortsHelper.setDerivedPorts(this);
+//		System.out.println("SubcomponentImpl.setType(" + newType.toString() + "): Adding derived ports '" + derivedPorts + "'.");
+//		this.getDerivedPorts().addAll(derivedPorts);
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, XmontiarcPackage.SUBCOMPONENT__TYPE, oldType, type));
 	}
 
 	
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
 	 */
-	public EList<Port> getDerivedPorts() {
-		if (derivedPorts == null) {
-			derivedPorts = new EObjectResolvingEList<Port>(Port.class, this,
-					XmontiarcPackage.SUBCOMPONENT__DERIVED_PORTS);
-//			List<Port> derivedPorts = SubcomponentDerivedPortsHelper.setDerivedPorts(this);
-//			System.out.println("SubcomponentImpl.getDerivedPorts(" + this.toString() + "): Adding derived ports '" + derivedPorts + "'.");
+	public EList<Port> getPorts() {
+		if (ports == null) {
+			ports = new EObjectContainmentEList<Port>(Port.class, this, XmontiarcPackage.SUBCOMPONENT__PORTS);
 		}
-		return derivedPorts;
+		return ports;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
+	 * @generated NOT
+	 */
+	private EList<Port> getDerivedPorts() {
+		if (ports == null) {
+			ports = new EObjectResolvingEList<Port>(Port.class, this,
+					XmontiarcPackage.SUBCOMPONENT__PORTS);
+//			List<Port> derivedPorts = SubcomponentDerivedPortsHelper.setDerivedPorts(this);
+//			System.out.println("SubcomponentImpl.getDerivedPorts(" + this.toString() + "): Adding derived ports '" + derivedPorts + "'.");
+		}
+		return ports;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case XmontiarcPackage.SUBCOMPONENT__DERIVED_PORTS:
-			return ((InternalEList<?>) getDerivedPorts()).basicRemove(otherEnd, msgs);
+			case XmontiarcPackage.SUBCOMPONENT__PORTS:
+				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case XmontiarcPackage.SUBCOMPONENT__NAME:
-			return getName();
-		case XmontiarcPackage.SUBCOMPONENT__TYPE:
-			if (resolve)
-				return getType();
-			return basicGetType();
-		case XmontiarcPackage.SUBCOMPONENT__DERIVED_PORTS:
-			return getDerivedPorts();
+			case XmontiarcPackage.SUBCOMPONENT__NAME:
+				return getName();
+			case XmontiarcPackage.SUBCOMPONENT__TYPE:
+				if (resolve) return getType();
+				return basicGetType();
+			case XmontiarcPackage.SUBCOMPONENT__PORTS:
+				return getPorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case XmontiarcPackage.SUBCOMPONENT__NAME:
-			setName((String) newValue);
-			return;
-		case XmontiarcPackage.SUBCOMPONENT__TYPE:
-			setType((ComponentType) newValue);
-			return;
-		case XmontiarcPackage.SUBCOMPONENT__DERIVED_PORTS:
-			getDerivedPorts().clear();
-			getDerivedPorts().addAll((Collection<? extends Port>) newValue);
-			return;
+			case XmontiarcPackage.SUBCOMPONENT__NAME:
+				setName((String)newValue);
+				return;
+			case XmontiarcPackage.SUBCOMPONENT__TYPE:
+				setType((ComponentType)newValue);
+				return;
+			case XmontiarcPackage.SUBCOMPONENT__PORTS:
+				getPorts().clear();
+				getPorts().addAll((Collection<? extends Port>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case XmontiarcPackage.SUBCOMPONENT__NAME:
-			setName(NAME_EDEFAULT);
-			return;
-		case XmontiarcPackage.SUBCOMPONENT__TYPE:
-			setType((ComponentType) null);
-			return;
-		case XmontiarcPackage.SUBCOMPONENT__DERIVED_PORTS:
-			getDerivedPorts().clear();
-			return;
+			case XmontiarcPackage.SUBCOMPONENT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
+			case XmontiarcPackage.SUBCOMPONENT__TYPE:
+				setType((ComponentType)null);
+				return;
+			case XmontiarcPackage.SUBCOMPONENT__PORTS:
+				getPorts().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case XmontiarcPackage.SUBCOMPONENT__NAME:
-			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case XmontiarcPackage.SUBCOMPONENT__TYPE:
-			return type != null;
-		case XmontiarcPackage.SUBCOMPONENT__DERIVED_PORTS:
-			return derivedPorts != null && !derivedPorts.isEmpty();
+			case XmontiarcPackage.SUBCOMPONENT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case XmontiarcPackage.SUBCOMPONENT__TYPE:
+				return type != null;
+			case XmontiarcPackage.SUBCOMPONENT__PORTS:
+				return ports != null && !ports.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -319,8 +313,7 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	 */
 	private List<Port> getDirectedPorts(boolean collectIncomingPorts) {
 		List<Port> ports = new ArrayList<Port>();
-		List<Port> derivedPorts = this.getDerivedPorts();
-		for (Port p : derivedPorts) {
+		for (Port p : this.getPorts()) {
 			if (p.isIncoming() == collectIncomingPorts) {
 				ports.add(p);
 			}

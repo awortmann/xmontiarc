@@ -39,7 +39,15 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:="privat
  
  ur1.diverse.montiarc.runtime.model;bundle-version="0.0.0";visibility:="reexport",
  
- ur1.diverse.montiarc.xdsml.xmontiarc
+ ur1.diverse.montiarc.xdsml.xmontiarc,
+ 
+ ur1.diverse.xmontiarc.k3dsa;bundle-version="0.0.0";visibility:="reexport",
+ 
+ ur1.diverse.montiarc.xdsml;bundle-version="0.0.0";visibility:="reexport",
+ 
+ ur1.diverse.xmontiarc.model;bundle-version="0.0.0";visibility:="reexport",
+ 
+ ur1.diverse.xmontiarc.runtime.model;bundle-version="0.0.0";visibility:="reexport"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0

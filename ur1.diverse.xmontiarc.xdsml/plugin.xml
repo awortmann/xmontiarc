@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="xdsml.XMontiArcMT" uri="http://xdsml.xmontiarcmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="Connector:xdsml.xmontiarc.aspects.ConnectorAspect;ComponentType:xdsml.xmontiarc.aspects.ComponentTypeAspect;Port:xdsml.xmontiarc.aspects.PortAspect;Subcomponent:xdsml.xmontiarc.aspects.SubcomponentAspect" entryPoints="xdsml.xmontiarc.aspects.ComponentTypeAspect.compute(xdsml.xmontiarc.xmontiarc.ComponentType)" exactType="xdsml.XMontiArcMT" id="xdsml.XMontiArc" uri="http://xdsml.xmontiarc/xmontiarc/">
+      <adapter class="xdsml.xmontiarc.adapters.xmontiarcmt.XMontiArcAdapter" modeltypeId="xdsml.XMontiArcMT"/>
+    </language>
+  </extension>
+</plugin>

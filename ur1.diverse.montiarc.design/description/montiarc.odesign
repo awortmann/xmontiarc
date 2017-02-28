@@ -92,6 +92,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:CreateInstance" typeName="montiarc.PortType" referenceName="ports" variableName="newPortType">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="UnnamedPortType"/>
+                  <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="SetComponentType"/>
                 </subModelOperations>
               </firstModelOperations>
             </initialOperation>

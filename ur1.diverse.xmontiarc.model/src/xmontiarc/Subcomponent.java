@@ -3,7 +3,6 @@
 package xmontiarc;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -17,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link xmontiarc.Subcomponent#getName <em>Name</em>}</li>
  *   <li>{@link xmontiarc.Subcomponent#getType <em>Type</em>}</li>
- *   <li>{@link xmontiarc.Subcomponent#getDerivedPorts <em>Derived Ports</em>}</li>
+ *   <li>{@link xmontiarc.Subcomponent#getPorts <em>Ports</em>}</li>
  * </ul>
  *
  * @see xmontiarc.XmontiarcPackage#getSubcomponent()
@@ -79,19 +78,19 @@ public interface Subcomponent extends EObject {
 	void setType(ComponentType value);
 
 	/**
-	 * Returns the value of the '<em><b>Derived Ports</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link xmontiarc.Port}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Derived Ports</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Derived Ports</em>' containment reference list.
-	 * @see xmontiarc.XmontiarcPackage#getSubcomponent_DerivedPorts()
-	 * @model containment="true" transient="true"
+	 * @return the value of the '<em>Ports</em>' containment reference list.
+	 * @see xmontiarc.XmontiarcPackage#getSubcomponent_Ports()
+	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Port> getDerivedPorts();
+	EList<Port> getPorts();
 
 } // Subcomponent

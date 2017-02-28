@@ -64,6 +64,7 @@ public class ComponentTypeItemProvider
 			super.getPropertyDescriptors(object);
 
 			addNamePropertyDescriptor(object);
+			addBehaviorPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -82,6 +83,28 @@ public class ComponentTypeItemProvider
 				 getString("_UI_ComponentType_name_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentType_name_feature", "_UI_ComponentType_type"),
 				 XmontiarcPackage.Literals.COMPONENT_TYPE__NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Behavior feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addBehaviorPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_ComponentType_behavior_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_ComponentType_behavior_feature", "_UI_ComponentType_type"),
+				 XmontiarcPackage.Literals.COMPONENT_TYPE__BEHAVIOR,
 				 true,
 				 false,
 				 false,
@@ -158,6 +181,7 @@ public class ComponentTypeItemProvider
 
 		switch (notification.getFeatureID(ComponentType.class)) {
 			case XmontiarcPackage.COMPONENT_TYPE__NAME:
+			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
 			case XmontiarcPackage.COMPONENT_TYPE__PORTS:

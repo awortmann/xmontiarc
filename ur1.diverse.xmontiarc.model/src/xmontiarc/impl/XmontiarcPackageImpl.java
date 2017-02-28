@@ -162,6 +162,15 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getComponentType_Behavior() {
+		return (EAttribute)componentTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getPort() {
 		return portEClass;
 	}
@@ -261,7 +270,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubcomponent_DerivedPorts() {
+	public EReference getSubcomponent_Ports() {
 		return (EReference)subcomponentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -298,6 +307,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		createEReference(componentTypeEClass, COMPONENT_TYPE__PORTS);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__CONNECTORS);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__SUBCOMPONENTS);
+		createEAttribute(componentTypeEClass, COMPONENT_TYPE__BEHAVIOR);
 
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__NAME);
@@ -312,7 +322,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		subcomponentEClass = createEClass(SUBCOMPONENT);
 		createEAttribute(subcomponentEClass, SUBCOMPONENT__NAME);
 		createEReference(subcomponentEClass, SUBCOMPONENT__TYPE);
-		createEReference(subcomponentEClass, SUBCOMPONENT__DERIVED_PORTS);
+		createEReference(subcomponentEClass, SUBCOMPONENT__PORTS);
 	}
 
 	/**
@@ -350,6 +360,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		initEReference(getComponentType_Ports(), this.getPort(), null, "ports", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_Connectors(), this.getConnector(), this.getConnector_Parent(), "connectors", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_Subcomponents(), this.getSubcomponent(), null, "subcomponents", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getComponentType_Behavior(), ecorePackage.getEString(), "behavior", "\"\"", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", "UnnamedPort", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -364,7 +375,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		initEClass(subcomponentEClass, Subcomponent.class, "Subcomponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSubcomponent_Name(), ecorePackage.getEString(), "name", "UnnamedSubcomponent", 1, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Type(), this.getComponentType(), null, "type", null, 1, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSubcomponent_DerivedPorts(), this.getPort(), null, "derivedPorts", null, 0, -1, Subcomponent.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubcomponent_Ports(), this.getPort(), null, "ports", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

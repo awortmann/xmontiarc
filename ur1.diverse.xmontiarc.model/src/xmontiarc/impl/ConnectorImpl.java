@@ -330,7 +330,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 			}
 			else { // port must be of some subcomponent of the surrounding component
 				for (Subcomponent sc: parent.getSubcomponents()) {
-					if (sc.getDerivedPorts().contains(source)) {
+					if (sc.getPorts().contains(source)) {
 						result.append(sc.getName() + "." + source.getName());
 					}
 				}
@@ -351,7 +351,7 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 			}
 			else { // port must be of some subcomponent of the surrounding component
 				for (Subcomponent sc: parent.getSubcomponents()) {
-					if (sc.getDerivedPorts().contains(target)) {
+					if (sc.getPorts().contains(target)) {
 						result.append(sc.getName() + "." + target.getName());
 					}
 				}

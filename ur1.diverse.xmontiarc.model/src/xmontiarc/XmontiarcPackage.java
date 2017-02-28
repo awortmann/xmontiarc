@@ -103,13 +103,22 @@ public interface XmontiarcPackage extends EPackage {
 	int COMPONENT_TYPE__SUBCOMPONENTS = 3;
 
 	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_TYPE__BEHAVIOR = 4;
+
+	/**
 	 * The number of structural features of the '<em>Component Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE_FEATURE_COUNT = 4;
+	int COMPONENT_TYPE_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Component Type</em>' class.
@@ -259,13 +268,13 @@ public interface XmontiarcPackage extends EPackage {
 	int SUBCOMPONENT__TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Derived Ports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT__DERIVED_PORTS = 2;
+	int SUBCOMPONENT__PORTS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Subcomponent</em>' class.
@@ -339,6 +348,17 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getComponentType_Subcomponents();
+
+	/**
+	 * Returns the meta object for the attribute '{@link xmontiarc.ComponentType#getBehavior <em>Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Behavior</em>'.
+	 * @see xmontiarc.ComponentType#getBehavior()
+	 * @see #getComponentType()
+	 * @generated
+	 */
+	EAttribute getComponentType_Behavior();
 
 	/**
 	 * Returns the meta object for class '{@link xmontiarc.Port <em>Port</em>}'.
@@ -459,15 +479,15 @@ public interface XmontiarcPackage extends EPackage {
 	EReference getSubcomponent_Type();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link xmontiarc.Subcomponent#getDerivedPorts <em>Derived Ports</em>}'.
+	 * Returns the meta object for the containment reference list '{@link xmontiarc.Subcomponent#getPorts <em>Ports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Derived Ports</em>'.
-	 * @see xmontiarc.Subcomponent#getDerivedPorts()
+	 * @return the meta object for the containment reference list '<em>Ports</em>'.
+	 * @see xmontiarc.Subcomponent#getPorts()
 	 * @see #getSubcomponent()
 	 * @generated
 	 */
-	EReference getSubcomponent_DerivedPorts();
+	EReference getSubcomponent_Ports();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -533,6 +553,14 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMPONENT_TYPE__SUBCOMPONENTS = eINSTANCE.getComponentType_Subcomponents();
+
+		/**
+		 * The meta object literal for the '<em><b>Behavior</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute COMPONENT_TYPE__BEHAVIOR = eINSTANCE.getComponentType_Behavior();
 
 		/**
 		 * The meta object literal for the '{@link xmontiarc.impl.PortImpl <em>Port</em>}' class.
@@ -629,12 +657,12 @@ public interface XmontiarcPackage extends EPackage {
 		EReference SUBCOMPONENT__TYPE = eINSTANCE.getSubcomponent_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Derived Ports</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SUBCOMPONENT__DERIVED_PORTS = eINSTANCE.getSubcomponent_DerivedPorts();
+		EReference SUBCOMPONENT__PORTS = eINSTANCE.getSubcomponent_Ports();
 
 	}
 
