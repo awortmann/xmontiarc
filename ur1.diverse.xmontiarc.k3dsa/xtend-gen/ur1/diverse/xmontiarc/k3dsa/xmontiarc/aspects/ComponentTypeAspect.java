@@ -1,6 +1,7 @@
 package ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
+import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
 import org.eclipse.emf.common.util.EList;
@@ -15,6 +16,7 @@ import xmontiarc.Subcomponent;
 @Aspect(className = ComponentType.class)
 @SuppressWarnings("all")
 public class ComponentTypeAspect {
+  @InitializeModel
   public static void init(final ComponentType _self, final EList<String> args) {
     final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
     _privk3_init(_self_, _self,args);;

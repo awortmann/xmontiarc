@@ -14,10 +14,12 @@ import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect
 import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect.*
 import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect.*
 import ur1.diverse.xmontiarc.runtime.GroovyInterpreter
+import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
 
 @Aspect(className=ComponentType)
 class ComponentTypeAspect {
-// @InitializeModel
+	
+	@InitializeModel
 	public def void init(EList<String> args) {
 		println("Initializing component type " + _self.name);
 	}
@@ -66,7 +68,7 @@ class SubcomponentAspect {
 		if (_self.type.subcomponents.isEmpty) { // assume an atomic component
 			for (Port p : _self.ports) {
 				if (!p.isIncoming) {
-					p.value =  GroovyInterpreter.interpret(_self.type.behavior);
+					p.value = GroovyInterpreter.interpret(_self.type.behavior);
 				}
 			}
 		} // for composed components, propagate computation to subcomponents

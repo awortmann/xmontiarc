@@ -5,6 +5,7 @@
     <semanticResources>NumberGenerator.xmontiarc</semanticResources>
     <semanticResources>Vocalizer.xmontiarc</semanticResources>
     <semanticResources>Printer.xmontiarc</semanticResources>
+    <semanticResources>gemoc-gen/execution/execution-20170228_160249/RandomNumberPrinter.xmontiarc</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_AL_EEP2ZEeayw_QMxRDzZw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_BcDk0P2ZEeayw_QMxRDzZw" name="RandomNumberPrinter Diagram" representation="_BcEL4P2ZEeayw_QMxRDzZw">
