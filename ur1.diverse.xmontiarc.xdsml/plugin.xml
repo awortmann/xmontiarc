@@ -2,13 +2,19 @@
 <?eclipse version="3.4"?><plugin>
   
    <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated XMontiArcMT -->
-    <package class="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage" genModel="model-gen/XMontiArcMT.genmodel" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/xmontiarc/"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated XMontiArcMT -->
-    <package class="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage" genModel="model-gen/XMontiArcMT.genmodel" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/runtime/"/>
-  </extension>
+      <!-- @generated XMontiArcMT -->
+      <package
+            uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/xmontiarc/"
+            class="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage"
+            genModel="model-gen/XMontiArcMT.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XMontiArcMT -->
+      <package
+            uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/runtime/"
+            class="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage"
+            genModel="model-gen/XMontiArcMT.genmodel"/>
+   </extension>
   <extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="ur1.diverse.xmontiarc.xdsml.XMontiArcMT" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/"/>
   </extension>
