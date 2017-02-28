@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+<plugin>
+  <extension point="org.eclipse.sirius.componentization">
+    <component class="ur1.diverse.xmontiarc.design.Activator"
+               id="ur1.diverse.xmontiarc.design"
+	       name="xmontiarc">
+    </component>
+  </extension>
+</plugin>

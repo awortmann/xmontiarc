@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated model -->
+      <package
+            uri="http://ur1/diverse/xmontiarc/model"
+            class="model.ModelPackage"
+            genModel="ur1.diverse.xmontiarc.model/model.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated xmontiarc -->
+      <package
+            uri="http://ur1/diverse/xmontiarc/model"
+            class="xmontiarc.XmontiarcPackage"
+            genModel="ur1.diverse.xmontiarc.model/xmontiarc.genmodel"/>
+   </extension>
+
+</plugin>
