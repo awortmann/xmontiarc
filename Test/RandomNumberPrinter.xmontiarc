@@ -20,8 +20,4 @@
     <type href="NumberGenerator.xmontiarc#/"/>
     <ports name="no" type="Integer" incoming="false"/>
   </subcomponents>
-  <subcomponents name="gen0">
-    <type href="NumberGenerator.xmontiarc#/"/>
-    <ports name="no" type="Integer" incoming="false"/>
-  </subcomponents>
 </ur1.diverse.xmontiarc.model:ComponentType>
