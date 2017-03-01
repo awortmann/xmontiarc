@@ -277,13 +277,22 @@ public interface XmontiarcPackage extends EPackage {
 	int SUBCOMPONENT__PORTS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBCOMPONENT__PARENT = 3;
+
+	/**
 	 * The number of structural features of the '<em>Subcomponent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_FEATURE_COUNT = 3;
+	int SUBCOMPONENT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Subcomponent</em>' class.
@@ -490,6 +499,17 @@ public interface XmontiarcPackage extends EPackage {
 	EReference getSubcomponent_Ports();
 
 	/**
+	 * Returns the meta object for the container reference '{@link xmontiarc.Subcomponent#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see xmontiarc.Subcomponent#getParent()
+	 * @see #getSubcomponent()
+	 * @generated
+	 */
+	EReference getSubcomponent_Parent();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -663,6 +683,14 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SUBCOMPONENT__PORTS = eINSTANCE.getSubcomponent_Ports();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBCOMPONENT__PARENT = eINSTANCE.getSubcomponent_Parent();
 
 	}
 

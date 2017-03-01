@@ -279,6 +279,15 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSubcomponent_Parent() {
+		return (EReference)subcomponentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public XmontiarcFactory getXmontiarcFactory() {
 		return (XmontiarcFactory)getEFactoryInstance();
 	}
@@ -323,6 +332,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		createEAttribute(subcomponentEClass, SUBCOMPONENT__NAME);
 		createEReference(subcomponentEClass, SUBCOMPONENT__TYPE);
 		createEReference(subcomponentEClass, SUBCOMPONENT__PORTS);
+		createEReference(subcomponentEClass, SUBCOMPONENT__PARENT);
 	}
 
 	/**
@@ -359,7 +369,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		initEAttribute(getComponentType_Name(), ecorePackage.getEString(), "name", "UnnamedComponentType", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_Ports(), this.getPort(), null, "ports", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_Connectors(), this.getConnector(), this.getConnector_Parent(), "connectors", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentType_Subcomponents(), this.getSubcomponent(), null, "subcomponents", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentType_Subcomponents(), this.getSubcomponent(), this.getSubcomponent_Parent(), "subcomponents", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentType_Behavior(), ecorePackage.getEString(), "behavior", "\"\"", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -376,6 +386,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		initEAttribute(getSubcomponent_Name(), ecorePackage.getEString(), "name", "UnnamedSubcomponent", 1, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Type(), this.getComponentType(), null, "type", null, 1, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Ports(), this.getPort(), null, "ports", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubcomponent_Parent(), this.getComponentType(), this.getComponentType_Subcomponents(), "parent", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

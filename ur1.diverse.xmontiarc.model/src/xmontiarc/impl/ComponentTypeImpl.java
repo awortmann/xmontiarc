@@ -182,7 +182,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 */
 	public EList<Subcomponent> getSubcomponents() {
 		if (subcomponents == null) {
-			subcomponents = new EObjectContainmentEList<Subcomponent>(Subcomponent.class, this, XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS);
+			subcomponents = new EObjectContainmentWithInverseEList<Subcomponent>(Subcomponent.class, this, XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS, XmontiarcPackage.SUBCOMPONENT__PARENT);
 		}
 		return subcomponents;
 	}
@@ -219,6 +219,8 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 		switch (featureID) {
 			case XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectors()).basicAdd(otherEnd, msgs);
+			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubcomponents()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
