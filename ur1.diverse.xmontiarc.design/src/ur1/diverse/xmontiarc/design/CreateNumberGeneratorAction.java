@@ -4,10 +4,12 @@ import java.util.Collection;
 import java.util.Map;
 
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.sirius.business.api.action.AbstractExternalJavaAction;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 
 import xmontiarc.ComponentType;
+import xmontiarc.Port;
 import xmontiarc.Subcomponent;
 
 public class CreateNumberGeneratorAction extends AbstractExternalJavaAction implements IExternalJavaAction {
@@ -25,5 +27,10 @@ public class CreateNumberGeneratorAction extends AbstractExternalJavaAction impl
 		ComponentType type = DesignerHelper.loadComponentType("NumberGenerator");
 		sc.setName(DesignerHelper.getRandomInstanceName(typeName));
 		sc.setType(type);
+		sc.getPorts().clear();
+		for (Port p : type.getPorts()) {
+			Port copy = EcoreUtil.copy(p);
+			sc.getPorts().add(copy);
+		}
 	}
 }
