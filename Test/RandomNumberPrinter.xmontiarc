@@ -3,6 +3,7 @@
   <connectors source="//@subcomponents.3/@ports.0" target="//@subcomponents.2/@ports.0"/>
   <connectors source="//@subcomponents.2/@ports.1" target="//@subcomponents.0/@ports.0"/>
   <connectors source="//@subcomponents.2/@ports.1" target="//@subcomponents.1/@ports.0"/>
+  <connectors source="//@subcomponents.4/@ports.0" target="//@subcomponents.5/@ports.0"/>
   <subcomponents name="printer0">
     <type href="Printer.xmontiarc#/"/>
     <ports name="message" type="String"/>
