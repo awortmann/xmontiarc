@@ -35,7 +35,7 @@ public class Services {
 		Set<EObject> ports = new HashSet<>();
 		SubcomponentImpl c = (SubcomponentImpl) self;
 		ports.addAll(c.getIncomingPorts());
-		System.out.println("Services.getSubcomponentIncomingPorts(" + c.toString() + "): subcomponent has incoming ports '" + ports.toString() + "'.");
+//		System.out.println("Services.getSubcomponentIncomingPorts(" + c.toString() + "): subcomponent has incoming ports '" + ports.toString() + "'.");
 		return ports;
 	}
 	
@@ -43,31 +43,31 @@ public class Services {
 		Set<EObject> ports = new HashSet<>();
 		SubcomponentImpl c = (SubcomponentImpl) self;
 		ports.addAll(c.getOutgoingPorts());
-		System.out.println("Services.getSubcomponentOutgoingPorts(" + c.toString() + "): subcomponent has outgoing ports '" + ports.toString() + "'.");
+//		System.out.println("Services.getSubcomponentOutgoingPorts(" + c.toString() + "): subcomponent has outgoing ports '" + ports.toString() + "'.");
 		return ports;
 	}
 	
 	public String getPortLabel(EObject self) {
 		Port p = (Port)self;
-		System.out.println("Services.getPortLabel(" + p.toString() + ")");
+//		System.out.println("Services.getPortLabel(" + p.toString() + ")");
 		return p.getType() + " " + p.getName();
 	}
 	
 	public String getSubcomponentLabel(EObject self) {
 		Subcomponent p = (Subcomponent)self;
-		System.out.println("Services.getSubcomponentLabel(" + p.toString() + ")");
+//		System.out.println("Services.getSubcomponentLabel(" + p.toString() + ")");
 		return p.getType() + " " + p.getName();
 	}
 	
 	public EObject getConnectorSourcePort(EObject self) {
 		Connector c = (Connector)self;
-		System.out.println("Drawing source port for connector '" + c.toString() + "'.");
+//		System.out.println("Drawing source port for connector '" + c.toString() + "'.");
 		return c.getSource();
 	}
 	
 	public EObject getConnectorTargetPort(EObject self) {
 		Connector c = (Connector)self;
-		System.out.println("Drawing target port for connector '" + c.toString() + "'.");
+//		System.out.println("Drawing target port for connector '" + c.toString() + "'.");
 		return c.getTarget();
 	}
 }
