@@ -3,14 +3,9 @@
 package xmontiarc.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
-import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
-import xmontiarc.ComponentType;
 import xmontiarc.Port;
 import xmontiarc.XmontiarcPackage;
 
@@ -25,7 +20,6 @@ import xmontiarc.XmontiarcPackage;
  *   <li>{@link xmontiarc.impl.PortImpl#getName <em>Name</em>}</li>
  *   <li>{@link xmontiarc.impl.PortImpl#getType <em>Type</em>}</li>
  *   <li>{@link xmontiarc.impl.PortImpl#isIncoming <em>Incoming</em>}</li>
- *   <li>{@link xmontiarc.impl.PortImpl#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @generated
@@ -90,16 +84,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 * @ordered
 	 */
 	protected boolean incoming = INCOMING_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getParent() <em>Parent</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getParent()
-	 * @generated
-	 * @ordered
-	 */
-	protected ComponentType parent;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,44 +172,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentType getParent() {
-		if (parent != null && parent.eIsProxy()) {
-			InternalEObject oldParent = (InternalEObject)parent;
-			parent = (ComponentType)eResolveProxy(oldParent);
-			if (parent != oldParent) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XmontiarcPackage.PORT__PARENT, oldParent, parent));
-			}
-		}
-		return parent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ComponentType basicGetParent() {
-		return parent;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setParent(ComponentType newParent) {
-		ComponentType oldParent = parent;
-		parent = newParent;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XmontiarcPackage.PORT__PARENT, oldParent, parent));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -235,9 +181,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 				return getType();
 			case XmontiarcPackage.PORT__INCOMING:
 				return isIncoming();
-			case XmontiarcPackage.PORT__PARENT:
-				if (resolve) return getParent();
-				return basicGetParent();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -258,9 +201,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 				return;
 			case XmontiarcPackage.PORT__INCOMING:
 				setIncoming((Boolean)newValue);
-				return;
-			case XmontiarcPackage.PORT__PARENT:
-				setParent((ComponentType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -283,9 +223,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 			case XmontiarcPackage.PORT__INCOMING:
 				setIncoming(INCOMING_EDEFAULT);
 				return;
-			case XmontiarcPackage.PORT__PARENT:
-				setParent((ComponentType)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -304,8 +241,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
 			case XmontiarcPackage.PORT__INCOMING:
 				return incoming != INCOMING_EDEFAULT;
-			case XmontiarcPackage.PORT__PARENT:
-				return parent != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -167,22 +167,13 @@ public interface XmontiarcPackage extends EPackage {
 	int PORT__INCOMING = 2;
 
 	/**
-	 * The feature id for the '<em><b>Parent</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__PARENT = 3;
-
-	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 4;
+	int PORT_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
@@ -422,17 +413,6 @@ public interface XmontiarcPackage extends EPackage {
 	EAttribute getPort_Incoming();
 
 	/**
-	 * Returns the meta object for the reference '{@link xmontiarc.Port#getParent <em>Parent</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Parent</em>'.
-	 * @see xmontiarc.Port#getParent()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EReference getPort_Parent();
-
-	/**
 	 * Returns the meta object for class '{@link xmontiarc.Connector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -635,14 +615,6 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PORT__INCOMING = eINSTANCE.getPort_Incoming();
-
-		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference PORT__PARENT = eINSTANCE.getPort_Parent();
 
 		/**
 		 * The meta object literal for the '{@link xmontiarc.impl.ConnectorImpl <em>Connector</em>}' class.

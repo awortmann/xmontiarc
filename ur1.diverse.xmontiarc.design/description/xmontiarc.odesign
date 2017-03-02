@@ -68,7 +68,7 @@
           </style>
         </containerMappings>
         <toolSections name="New" label="New Elements">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewConnector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='ConnectorEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewConnector" label="New Connector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='ConnectorEdge']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -98,6 +98,7 @@
           <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewConnectorAction" id="ur1.diverse.xmontiarc.design.CreateConnectorAction1">
             <parameters name="source" value="var:source"/>
             <parameters name="target" value="var:target"/>
+            <parameters name="sourceSubcomponent" value="aql:self.eContainer()"/>
           </ownedTools>
         </toolSections>
       </defaultLayer>
