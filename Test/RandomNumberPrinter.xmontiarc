@@ -20,4 +20,13 @@
     <type href="NumberGenerator.xmontiarc#/"/>
     <ports name="no" type="Integer" incoming="false"/>
   </subcomponents>
+  <subcomponents name="numberGenerator42">
+    <type href="NumberGenerator.xmontiarc#/"/>
+    <ports name="no" type="Integer" incoming="false"/>
+  </subcomponents>
+  <subcomponents name="vocalizer20">
+    <type href="Vocalizer.xmontiarc#/"/>
+    <ports name="number" type="Integer"/>
+    <ports name="word" type="String" incoming="false"/>
+  </subcomponents>
 </ur1.diverse.xmontiarc.model:ComponentType>
