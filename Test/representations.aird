@@ -142,14 +142,14 @@
                   <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DxHUv8tEeaoaIFffDwW6g"/>
                 </children>
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_-DqZof8tEeaoaIFffDwW6g" fontName=".SF NS Text" fontHeight="10"/>
-                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DqZov8tEeaoaIFffDwW6g" x="22" width="30" height="30"/>
+                <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DqZov8tEeaoaIFffDwW6g" x="123" width="30" height="30"/>
               </children>
               <children xmi:type="notation:Node" xmi:id="_-DwgQP8tEeaoaIFffDwW6g" type="3003" element="_-DEjwP8tEeaoaIFffDwW6g">
                 <styles xmi:type="notation:ShapeStyle" xmi:id="_-DwgQf8tEeaoaIFffDwW6g" fontName=".SF NS Text"/>
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-DwgQv8tEeaoaIFffDwW6g"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_-Dfagf8tEeaoaIFffDwW6g" fontName=".SF NS Text" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-Dfagv8tEeaoaIFffDwW6g" x="44" y="35" width="30" height="30"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-Dfagv8tEeaoaIFffDwW6g" x="27" y="14" width="131" height="52"/>
             </children>
             <children xmi:type="notation:Node" xmi:id="_-802QP8tEeaoaIFffDwW6g" type="3007" element="_-8na4P8tEeaoaIFffDwW6g">
               <children xmi:type="notation:Node" xmi:id="_-81dUP8tEeaoaIFffDwW6g" type="5003">
@@ -182,7 +182,7 @@
                 <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-83ShP8tEeaoaIFffDwW6g"/>
               </children>
               <styles xmi:type="notation:ShapeStyle" xmi:id="_-802Qf8tEeaoaIFffDwW6g" fontName=".SF NS Text" fontHeight="12"/>
-              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-802Qv8tEeaoaIFffDwW6g" x="215" y="42" width="30" height="30"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_-802Qv8tEeaoaIFffDwW6g" x="283" y="36" width="30" height="30"/>
             </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_BdIi4P2ZEeayw_QMxRDzZw"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_BdIi4f2ZEeayw_QMxRDzZw"/>
@@ -241,17 +241,17 @@
         </edges>
         <edges xmi:type="notation:Edge" xmi:id="_lygrcP9EEeafuY_FKuWSUw" type="4001" element="_lySpAP9EEeafuY_FKuWSUw" source="_-DqZoP8tEeaoaIFffDwW6g" target="_-82EYP8tEeaoaIFffDwW6g">
           <children xmi:type="notation:Node" xmi:id="_lyoAMP9EEeafuY_FKuWSUw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lyoAMf9EEeafuY_FKuWSUw" y="-10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lyoAMf9EEeafuY_FKuWSUw" x="-27" y="-4"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_lyonQP9EEeafuY_FKuWSUw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lyonQf9EEeafuY_FKuWSUw" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lyonQf9EEeafuY_FKuWSUw" x="24" y="4"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_lypOUP9EEeafuY_FKuWSUw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lypOUf9EEeafuY_FKuWSUw" y="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lypOUf9EEeafuY_FKuWSUw" x="19" y="4"/>
           </children>
           <styles xmi:type="notation:ConnectorStyle" xmi:id="_lygrcf9EEeafuY_FKuWSUw"/>
           <styles xmi:type="notation:FontStyle" xmi:id="_lygrcv9EEeafuY_FKuWSUw" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lygrc_9EEeafuY_FKuWSUw" points="[0, 0, -97, 0]$[97, 0, 0, 0]"/>
+          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lygrc_9EEeafuY_FKuWSUw" points="[0, 0, -81, -15]$[81, 15, 0, 0]"/>
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lyp1YP9EEeafuY_FKuWSUw" id="(1.0,0.7333333333333333)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lyp1Yf9EEeafuY_FKuWSUw" id="(0.0,0.5)"/>
         </edges>
@@ -366,7 +366,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-DD8sP8tEeaoaIFffDwW6g" name="NumberGenerator numberGenerator42" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-DD8sP8tEeaoaIFffDwW6g" name="NumberGenerator yo" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RandomNumberPrinter.xmontiarc#//@subcomponents.4"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RandomNumberPrinter.xmontiarc#//@subcomponents.4"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DHAAP8tEeaoaIFffDwW6g" name="Integer no" outgoingEdges="_lySpAP9EEeafuY_FKuWSUw" width="3" height="3" resizeKind="NSEW">
@@ -377,6 +377,9 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']"/>
         </ownedBorderedNodes>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_-DEjwP8tEeaoaIFffDwW6g" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@style"/>
         </ownedStyle>
@@ -401,6 +404,9 @@
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']"/>
         </ownedBorderedNodes>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
         <ownedStyle xmi:type="diagram:Square" xmi:id="_-8oB8P8tEeaoaIFffDwW6g" labelSize="12" showIcon="false" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
           <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@style"/>
         </ownedStyle>

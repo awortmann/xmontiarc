@@ -21,7 +21,7 @@
     <type href="NumberGenerator.xmontiarc#/"/>
     <ports name="no" type="Integer" incoming="false"/>
   </subcomponents>
-  <subcomponents name="numberGenerator42">
+  <subcomponents name="yo">
     <type href="NumberGenerator.xmontiarc#/"/>
     <ports name="no" type="Integer" incoming="false"/>
   </subcomponents>
