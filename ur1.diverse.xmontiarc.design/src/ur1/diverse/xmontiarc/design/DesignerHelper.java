@@ -1,6 +1,7 @@
 package ur1.diverse.xmontiarc.design;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -11,6 +12,7 @@ import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
 import org.eclipse.core.runtime.CoreException;
 import org.eclipse.emf.common.util.URI;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
@@ -87,5 +89,16 @@ public class DesignerHelper {
 		}
 		
 		return Optional.empty();
+	}
+
+	public static Optional<ComponentType> getComponentTypeFromArgs(Collection<? extends EObject> args) {
+		for (EObject item : args) {
+			System.out.println("Designerhelper.getComponentTypeFromArgs(): item = " + item);
+			if (item instanceof ComponentType)  {
+				return Optional.of((ComponentType)args);
+			}
+		}
+		return Optional.empty();
+		
 	}
 }

@@ -1,7 +1,6 @@
 package ur1.diverse.xmontiarc.design;
 
 import java.util.Collection;
-import java.util.List;
 import java.util.Map;
 import java.util.Optional;
 
@@ -20,7 +19,6 @@ public class CreateSubcomponentAction extends AbstractExternalJavaAction impleme
 
 	@Override
 	public boolean canExecute(Collection<? extends EObject> args) {
-//		System.out.println("can args = " + args.toString());
 		return true;
 	}
 
