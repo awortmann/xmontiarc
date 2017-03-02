@@ -9,15 +9,16 @@
   </extension>
   <extension
         point="org.eclipse.sirius.externalJavaAction">
-  </extension>
-  <extension
-        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="ur1.diverse.xmontiarc.design.CreateSubcomponentAction"
+           id="ur1.diverse.xmontiarc.design.CreateSubcomponentAction1">
+     </javaActions>
   </extension>
   <extension
         point="org.eclipse.sirius.externalJavaAction">
      <javaActions
-           actionClass="ur1.diverse.xmontiarc.design.CreateSubcomponentAction"
-           id="ur1.diverse.xmontiarc.design.CreateSubcomponentAction1">
+           actionClass="ur1.diverse.xmontiarc.design.CreateConnectorAction"
+           id="ur1.diverse.xmontiarc.design.CreateConnectorAction1">
      </javaActions>
   </extension>
 </plugin>

@@ -77,6 +77,7 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:source"/>
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="aql:target"/>
+                <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="CallNewConnectorAction" action="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewConnectorAction']"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
@@ -93,6 +94,10 @@
           </ownedTools>
           <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewSubcomponentAction" id="ur1.diverse.xmontiarc.design.CreateSubcomponentAction1">
             <parameters name="subcomponent" value="var:self"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewConnectorAction" id="ur1.diverse.xmontiarc.design.CreateConnectorAction1">
+            <parameters name="source" value="var:source"/>
+            <parameters name="target" value="var:target"/>
           </ownedTools>
         </toolSections>
       </defaultLayer>
