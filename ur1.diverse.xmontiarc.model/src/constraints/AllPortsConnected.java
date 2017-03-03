@@ -22,8 +22,8 @@ public class AllPortsConnected extends AbstractModelConstraint {
 
 	@Override
 	public IStatus validate(IValidationContext ctx) {
+		System.out.println("AllPortsConnected.validate(): Checking EObject '" + ctx.getTarget().eClass().getName() + "'.");
 		EObject obj = ctx.getTarget();
-		System.out.println("AllPortsConnected:obj='"+obj+"'");
 		if (obj instanceof ComponentType) {
 			ComponentType type = (ComponentType) obj;
 			Optional<ConstraintStatus> optError = this.checkPortConnected(ctx, type);
@@ -37,20 +37,23 @@ public class AllPortsConnected extends AbstractModelConstraint {
 	private Optional<ConstraintStatus> checkPortConnected(IValidationContext ctx, ComponentType type) {
 		Optional<ConstraintStatus> error = Optional.empty();
 		Set<EObject> problemElements = new HashSet<>();
-		if (!allPortsConnected(type)) {
+		List<Port> unconnectedPorts = allPortsConnected(type);
+		if (!unconnectedPorts.isEmpty()) {
 			problemElements.add(type);
 			error = Optional.of(ConstraintStatus.createStatus(
 	                ctx,
 	                problemElements,
-	                "The name of {0} should start upper case.",
-	                new Object[] {type}));
+	                "The ports {0} are unconnected.",
+	                new Object[] {unconnectedPorts}));
 		}
         return error;
     }
 
-	private boolean allPortsConnected(ComponentType type) {
+	private List<Port> allPortsConnected(ComponentType type) {
+		System.out.println("AllPortsConnected.allPortsConnected(): Checking connectors of component type '" + type.getName() + "'.");
 		List<Port> potentialSourcePorts = new ArrayList<>();
 		List<Port> potentialTargetPorts = new ArrayList<>();
+		List<Port> unconnectedPorts = new ArrayList<>();
 		ComponentTypeImpl cti = (ComponentTypeImpl) type;
 		potentialSourcePorts.addAll(cti.getIncomingPorts());
 		potentialTargetPorts.addAll(cti.getOutgoingPorts());
@@ -61,40 +64,27 @@ public class AllPortsConnected extends AbstractModelConstraint {
 					potentialTargetPorts.add(p);
 				}
 				else {
-					potentialTargetPorts.add(p);
+					potentialSourcePorts.add(p);
 				}
 			}
 		}
 		
-		List<Port> unconnectedSourcePorts = new ArrayList<>();
-		for (Port sourcePort : potentialSourcePorts) {
-			boolean foundUsage = false;
-			for (Connector con : type.getConnectors()) {
-				if (con.getSource().equals(sourcePort)) {
-					foundUsage = true;
-				}
-				if (!foundUsage) {
-					unconnectedSourcePorts.add(sourcePort);
-				}
-			}
+		System.out.println("potentialTargetPorts '" + potentialTargetPorts + "'.");
+		System.out.println("potentialSourcePorts '" + potentialSourcePorts + "'.");
+		
+		for (Connector con : type.getConnectors()) {
+			System.out.println("checking connector '" + con.toString() + "'.");
+			potentialSourcePorts.remove(con.getSource());
+			potentialTargetPorts.remove(con.getTarget());
 		}
 		
-		List<Port> unconnectedTargetPorts = new ArrayList<>();
-		for (Port targetPort : potentialTargetPorts) {
-			boolean foundUsage = false;
-			for (Connector con : type.getConnectors()) {
-				if (con.getTarget().equals(targetPort)) {
-					foundUsage = true;
-				}
-				if (!foundUsage) {
-					unconnectedTargetPorts.add(targetPort);
-				}
-			}
-		}
+		System.out.println("potentialTargetPorts@post '" + potentialTargetPorts + "'.");
+		System.out.println("potentialSourcePorts@post '" + potentialSourcePorts + "'.");
 		
-		// TODO Continue reporting unconnected ports
+		unconnectedPorts.addAll(potentialSourcePorts);
+		unconnectedPorts.addAll(potentialTargetPorts);
 		
-		return false;
+		return unconnectedPorts;
 	}
 
 }
