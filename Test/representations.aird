@@ -239,22 +239,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Cb4KoP27EeaN29HkgvVJqQ" id="(0.3409090909090909,0.5)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Cb4Kof27EeaN29HkgvVJqQ" id="(0.7,0.5)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_lygrcP9EEeafuY_FKuWSUw" type="4001" element="_lySpAP9EEeafuY_FKuWSUw" source="_-DqZoP8tEeaoaIFffDwW6g" target="_-82EYP8tEeaoaIFffDwW6g">
-          <children xmi:type="notation:Node" xmi:id="_lyoAMP9EEeafuY_FKuWSUw" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lyoAMf9EEeafuY_FKuWSUw" x="-27" y="-4"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_lyonQP9EEeafuY_FKuWSUw" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lyonQf9EEeafuY_FKuWSUw" x="24" y="4"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_lypOUP9EEeafuY_FKuWSUw" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lypOUf9EEeafuY_FKuWSUw" x="19" y="4"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_lygrcf9EEeafuY_FKuWSUw"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_lygrcv9EEeafuY_FKuWSUw" fontName=".SF NS Text" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lygrc_9EEeafuY_FKuWSUw" points="[0, 0, -81, -15]$[81, 15, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lyp1YP9EEeafuY_FKuWSUw" id="(1.0,0.7333333333333333)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lyp1Yf9EEeafuY_FKuWSUw" id="(0.0,0.5)"/>
-        </edges>
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_BcEL4_2ZEeayw_QMxRDzZw" name="RandomNumberPrinter">
@@ -366,10 +350,10 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-DD8sP8tEeaoaIFffDwW6g" name="NumberGenerator yo" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-DD8sP8tEeaoaIFffDwW6g" name="NumberGenerator XXX" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RandomNumberPrinter.xmontiarc#//@subcomponents.4"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RandomNumberPrinter.xmontiarc#//@subcomponents.4"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DHAAP8tEeaoaIFffDwW6g" name="Integer no" outgoingEdges="_lySpAP9EEeafuY_FKuWSUw" width="3" height="3" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-DHAAP8tEeaoaIFffDwW6g" name="Integer no" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="ur1.diverse.xmontiarc.model:Port" href="RandomNumberPrinter.xmontiarc#//@subcomponents.4/@ports.0"/>
           <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Port" href="RandomNumberPrinter.xmontiarc#//@subcomponents.4/@ports.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-DHAAf8tEeaoaIFffDwW6g" labelSize="10" showIcon="false" labelAlignment="RIGHT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
@@ -388,7 +372,7 @@
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-8na4P8tEeaoaIFffDwW6g" name="Vocalizer vocalizer20" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RandomNumberPrinter.xmontiarc#//@subcomponents.5"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RandomNumberPrinter.xmontiarc#//@subcomponents.5"/>
-        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-8opAP8tEeaoaIFffDwW6g" name="Integer number" incomingEdges="_lySpAP9EEeafuY_FKuWSUw" width="3" height="3" resizeKind="NSEW">
+        <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-8opAP8tEeaoaIFffDwW6g" name="Integer number" width="3" height="3" resizeKind="NSEW">
           <target xmi:type="ur1.diverse.xmontiarc.model:Port" href="RandomNumberPrinter.xmontiarc#//@subcomponents.5/@ports.0"/>
           <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Port" href="RandomNumberPrinter.xmontiarc#//@subcomponents.5/@ports.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_-8opAf8tEeaoaIFffDwW6g" labelSize="10" showIcon="false" labelAlignment="RIGHT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
@@ -437,15 +421,6 @@
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Cbz5MP27EeaN29HkgvVJqQ" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='ConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Cbz5Mf27EeaN29HkgvVJqQ"/>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='ConnectorEdge']"/>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lySpAP9EEeafuY_FKuWSUw" sourceNode="_-DHAAP8tEeaoaIFffDwW6g" targetNode="_-8opAP8tEeaoaIFffDwW6g">
-      <target xmi:type="ur1.diverse.xmontiarc.model:Connector" href="RandomNumberPrinter.xmontiarc#//@connectors.3"/>
-      <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Connector" href="RandomNumberPrinter.xmontiarc#//@connectors.3"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_lyTQEP9EEeafuY_FKuWSUw" size="2">
-        <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='ConnectorEdge']/@style"/>
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_lyTQEf9EEeafuY_FKuWSUw"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='ConnectorEdge']"/>
     </ownedDiagramElements>
