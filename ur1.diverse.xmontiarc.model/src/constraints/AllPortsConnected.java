@@ -22,7 +22,7 @@ public class AllPortsConnected extends AbstractModelConstraint {
 
 	@Override
 	public IStatus validate(IValidationContext ctx) {
-		System.out.println("AllPortsConnected.validate(): Checking EObject '" + ctx.getTarget().eClass().getName() + "'.");
+//		System.out.println("AllPortsConnected.validate(): Checking EObject '" + ctx.getTarget().eClass().getName() + "'.");
 		EObject obj = ctx.getTarget();
 		if (obj instanceof ComponentType) {
 			ComponentType type = (ComponentType) obj;
@@ -50,7 +50,7 @@ public class AllPortsConnected extends AbstractModelConstraint {
     }
 
 	private List<Port> allPortsConnected(ComponentType type) {
-		System.out.println("AllPortsConnected.allPortsConnected(): Checking connectors of component type '" + type.getName() + "'.");
+//		System.out.println("AllPortsConnected.allPortsConnected(): Checking connectors of component type '" + type.getName() + "'.");
 		List<Port> potentialSourcePorts = new ArrayList<>();
 		List<Port> potentialTargetPorts = new ArrayList<>();
 		List<Port> unconnectedPorts = new ArrayList<>();
@@ -69,17 +69,17 @@ public class AllPortsConnected extends AbstractModelConstraint {
 			}
 		}
 		
-		System.out.println("potentialTargetPorts '" + potentialTargetPorts + "'.");
-		System.out.println("potentialSourcePorts '" + potentialSourcePorts + "'.");
+//		System.out.println("potentialTargetPorts '" + potentialTargetPorts + "'.");
+//		System.out.println("potentialSourcePorts '" + potentialSourcePorts + "'.");
 		
 		for (Connector con : type.getConnectors()) {
-			System.out.println("checking connector '" + con.toString() + "'.");
+//			System.out.println("checking connector '" + con.toString() + "'.");
 			potentialSourcePorts.remove(con.getSource());
 			potentialTargetPorts.remove(con.getTarget());
 		}
 		
-		System.out.println("potentialTargetPorts@post '" + potentialTargetPorts + "'.");
-		System.out.println("potentialSourcePorts@post '" + potentialSourcePorts + "'.");
+//		System.out.println("potentialTargetPorts@post '" + potentialTargetPorts + "'.");
+//		System.out.println("potentialSourcePorts@post '" + potentialSourcePorts + "'.");
 		
 		unconnectedPorts.addAll(potentialSourcePorts);
 		unconnectedPorts.addAll(potentialTargetPorts);
