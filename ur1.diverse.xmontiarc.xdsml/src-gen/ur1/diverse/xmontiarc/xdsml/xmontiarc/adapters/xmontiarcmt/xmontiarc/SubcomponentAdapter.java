@@ -50,6 +50,18 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
   }
   
   @Override
+  public ComponentType getParent() {
+    return (ComponentType) adaptersFactory.createAdapter(adaptee.getParent(), eResource);
+  }
+  
+  @Override
+  public void setParent(final ComponentType o) {
+    if (o != null)
+    	adaptee.setParent(((ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ComponentTypeAdapter) o).getAdaptee());
+    else adaptee.setParent(null);
+  }
+  
+  @Override
   public void compute() {
     ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspect.compute(adaptee);
   }
@@ -70,6 +82,8 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     		return getType();
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.SUBCOMPONENT__PORTS:
     		return getPorts();
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.SUBCOMPONENT__PARENT:
+    		return getParent();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -84,6 +98,8 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     		return getType() != null;
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.SUBCOMPONENT__PORTS:
     		return getPorts() != null && !getPorts().isEmpty();
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.SUBCOMPONENT__PARENT:
+    		return getParent() != null;
     }
     
     return super.eIsSet(featureID);
@@ -105,6 +121,11 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.SUBCOMPONENT__PORTS:
     		getPorts().clear();
     		getPorts().addAll((Collection) newValue);
+    		return;
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.SUBCOMPONENT__PARENT:
+    		setParent(
+    		(ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType)
+    		 newValue);
     		return;
     }
     

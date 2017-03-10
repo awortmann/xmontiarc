@@ -1,5 +1,14 @@
-Bundle-SymbolicName: ur1.diverse.xmontiarc.xdsml-old;singleton:=true
-Export-Package: ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.impl,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.util,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt,ur1.diverse.xmontiarc.xdsml
+Bundle-SymbolicName: ur1.diverse.xmontiarc.xdsml;singleton:=true
+Export-Package: ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util,
+ ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.impl,
+ ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime,
+ ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.util,
+ ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc,
+ ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl,
+ ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime,
+ ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc,
+ ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt,
+ ur1.diverse.xmontiarc.xdsml
 Bundle-Name: ur1.diverse.xmontiarc.xdsml
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .

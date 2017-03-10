@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import xmontiarc.ComponentType;
@@ -15,6 +16,7 @@ import xmontiarc.Port;
 import xmontiarc.Subcomponent;
 import xmontiarc.XmontiarcFactory;
 import xmontiarc.XmontiarcPackage;
+import xmontiarc.util.XmontiarcValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -102,6 +104,15 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 
 		// Initialize created meta-data
 		theXmontiarcPackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theXmontiarcPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return XmontiarcValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theXmontiarcPackage.freeze();
@@ -390,6 +401,52 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 
 		// Create resource
 		createResource(eNS_URI);
+
+		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });	
+		addAnnotation
+		  (subcomponentEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "NameIsLowerCase"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (subcomponentEClass, 
+		   source, 
+		   new String[] {
+			 "NameIsLowerCase", "Tuple {\n\tmessage : String = \'\\\'\' + name + \'\\\' must be lowercase\',\n\tstatus : Boolean = \n            let firstLetter : String = (name).substring(0,1) \n                in firstLetter.toLowerCase() = firstLetter\n}.status"
+		   });
 	}
 
 } //XmontiarcPackageImpl

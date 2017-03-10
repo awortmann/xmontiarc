@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
+import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.EcorePackage;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
@@ -21,6 +22,7 @@ import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcFactory;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util.XmontiarcValidator;
 
 /**
  * <!-- begin-user-doc -->
@@ -116,6 +118,15 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		// Initialize created meta-data
 		theXmontiarcPackage.initializePackageContents();
 		theRuntimePackage.initializePackageContents();
+
+		// Register package validator
+		EValidator.Registry.INSTANCE.put
+			(theXmontiarcPackage, 
+			 new EValidator.Descriptor() {
+				 public EValidator getEValidator() {
+					 return XmontiarcValidator.INSTANCE;
+				 }
+			 });
 
 		// Mark meta-data to indicate it can't be changed
 		theXmontiarcPackage.freeze();
@@ -302,6 +313,15 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSubcomponent_Parent() {
+		return (EReference)subcomponentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public XmontiarcFactory getXmontiarcFactory() {
 		return (XmontiarcFactory)getEFactoryInstance();
 	}
@@ -347,6 +367,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		createEAttribute(subcomponentEClass, SUBCOMPONENT__NAME);
 		createEReference(subcomponentEClass, SUBCOMPONENT__TYPE);
 		createEReference(subcomponentEClass, SUBCOMPONENT__PORTS);
+		createEReference(subcomponentEClass, SUBCOMPONENT__PARENT);
 	}
 
 	/**
@@ -383,7 +404,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		initEAttribute(getComponentType_Name(), ecorePackage.getEString(), "name", "UnnamedComponentType", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_Ports(), this.getPort(), null, "ports", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_Connectors(), this.getConnector(), this.getConnector_Parent(), "connectors", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentType_Subcomponents(), this.getSubcomponent(), null, "subcomponents", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentType_Subcomponents(), this.getSubcomponent(), this.getSubcomponent_Parent(), "subcomponents", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentType_Behavior(), ecorePackage.getEString(), "behavior", "\"\"", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(componentTypeEClass, null, "init", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -410,6 +431,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		initEAttribute(getSubcomponent_Name(), ecorePackage.getEString(), "name", "UnnamedSubcomponent", 1, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Type(), this.getComponentType(), null, "type", null, 1, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Ports(), this.getPort(), null, "ports", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubcomponent_Parent(), this.getComponentType(), this.getComponentType_Subcomponents(), "parent", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(subcomponentEClass, null, "compute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -417,8 +439,36 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		createResource(eNS_URI);
 
 		// Create annotations
+		// http://www.eclipse.org/emf/2002/Ecore
+		createEcoreAnnotations();
 		// aspect
 		createAspectAnnotations();
+		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
+		createPivotAnnotations();
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createEcoreAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore";	
+		addAnnotation
+		  (this, 
+		   source, 
+		   new String[] {
+			 "invocationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "settingDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot",
+			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
+		   });	
+		addAnnotation
+		  (subcomponentEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "NameIsLowerCase"
+		   });
 	}
 
 	/**
@@ -458,6 +508,22 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		  (subcomponentEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (subcomponentEClass, 
+		   source, 
+		   new String[] {
+			 "NameIsLowerCase", "Tuple {\n\tmessage : String = \'\\\'\' + name + \'\\\' must be lowercase\',\n\tstatus : Boolean = \n            let firstLetter : String = (name).substring(0,1) \n                in firstLetter.toLowerCase() = firstLetter\n}.status"
 		   });
 	}
 

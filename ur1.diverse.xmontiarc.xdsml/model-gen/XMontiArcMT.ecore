@@ -1,6 +1,11 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore">
   <ecore:EPackage name="xmontiarc" nsURI="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/xmontiarc/" nsPrefix="ur1.diverse.xmontiarc.model">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
     <eClassifiers xsi:type="ecore:EClass" name="ComponentType">
       <eOperations name="init">
         <eAnnotations source="aspect"/>
@@ -19,7 +24,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1" eType="/0/Port" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1" eType="/0/Connector" containment="true" eOpposite="/0/Connector/parent"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" upperBound="-1" eType="/0/Subcomponent" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" upperBound="-1" eType="/0/Subcomponent" containment="true" eOpposite="/0/Subcomponent/parent"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="behavior" lowerBound="1" defaultValueLiteral="&quot;&quot;">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eStructuralFeatures>
@@ -48,6 +53,12 @@
       <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="/0/ComponentType" eOpposite="/0/ComponentType/connectors"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Subcomponent">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NameIsLowerCase"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="NameIsLowerCase" value="Tuple {&#xA;&#x9;message : String = '\'' + name + '\' must be lowercase',&#xA;&#x9;status : Boolean = &#xA;            let firstLetter : String = (name).substring(0,1) &#xA;                in firstLetter.toLowerCase() = firstLetter&#xA;}.status"/>
+      </eAnnotations>
       <eOperations name="compute">
         <eAnnotations source="aspect"/>
       </eOperations>
@@ -56,6 +67,7 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="/0/ComponentType"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1" eType="/0/Port" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="/0/ComponentType" eOpposite="/0/ComponentType/subcomponents"/>
     </eClassifiers>
   </ecore:EPackage>
   <ecore:EPackage name="runtime" nsURI="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/runtime/" nsPrefix="ur1.diverse.xmontiarc.runtime.model">

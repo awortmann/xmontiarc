@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EReference;
  * <!-- end-user-doc -->
  * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcFactory
  * @model kind="package"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore invocationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' settingDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot' validationDelegates='http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot'"
  * @generated
  */
 public interface XmontiarcPackage extends EPackage {
@@ -258,13 +259,22 @@ public interface XmontiarcPackage extends EPackage {
 	int SUBCOMPONENT__PORTS = 2;
 
 	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBCOMPONENT__PARENT = 3;
+
+	/**
 	 * The number of structural features of the '<em>Subcomponent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_FEATURE_COUNT = 3;
+	int SUBCOMPONENT_FEATURE_COUNT = 4;
 
 
 	/**
@@ -473,6 +483,17 @@ public interface XmontiarcPackage extends EPackage {
 	EReference getSubcomponent_Ports();
 
 	/**
+	 * Returns the meta object for the container reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getParent <em>Parent</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the container reference '<em>Parent</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getParent()
+	 * @see #getSubcomponent()
+	 * @generated
+	 */
+	EReference getSubcomponent_Parent();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -653,6 +674,14 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SUBCOMPONENT__PORTS = eINSTANCE.getSubcomponent_Ports();
+
+		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBCOMPONENT__PARENT = eINSTANCE.getSubcomponent_Parent();
 
 	}
 

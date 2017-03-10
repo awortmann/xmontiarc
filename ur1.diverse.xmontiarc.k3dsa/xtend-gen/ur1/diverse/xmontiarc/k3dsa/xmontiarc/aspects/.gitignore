@@ -10,3 +10,16 @@
 /.SubcomponentAspect.java._trace
 /.SubcomponentAspectSubcomponentAspectContext.java._trace
 /.SubcomponentAspectSubcomponentAspectProperties.java._trace
+/.xmontiarcAspects.xtendbin
+/ComponentTypeAspect.java
+/ComponentTypeAspectComponentTypeAspectContext.java
+/ComponentTypeAspectComponentTypeAspectProperties.java
+/ConnectorAspect.java
+/ConnectorAspectConnectorAspectContext.java
+/ConnectorAspectConnectorAspectProperties.java
+/PortAspect.java
+/PortAspectPortAspectContext.java
+/PortAspectPortAspectProperties.java
+/SubcomponentAspect.java
+/SubcomponentAspectSubcomponentAspectContext.java
+/SubcomponentAspectSubcomponentAspectProperties.java

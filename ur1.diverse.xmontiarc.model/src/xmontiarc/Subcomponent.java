@@ -21,7 +21,8 @@ import org.eclipse.emf.ecore.EObject;
  * </ul>
  *
  * @see xmontiarc.XmontiarcPackage#getSubcomponent()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NameIsLowerCase'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NameIsLowerCase='Tuple {\n\tmessage : String = \'\\\'\' + name + \'\\\' must be lowercase\',\n\tstatus : Boolean = \n            let firstLetter : String = (name).substring(0,1) \n                in firstLetter.toLowerCase() = firstLetter\n}.status'"
  * @generated
  */
 public interface Subcomponent extends EObject {

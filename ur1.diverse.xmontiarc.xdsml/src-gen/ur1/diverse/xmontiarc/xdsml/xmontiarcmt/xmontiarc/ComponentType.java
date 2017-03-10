@@ -91,6 +91,7 @@ public interface ComponentType extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Subcomponents</b></em>' containment reference list.
 	 * The list contents are of type {@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent}.
+	 * It is bidirectional and its opposite is '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Subcomponents</em>' containment reference list isn't clear,
@@ -99,7 +100,8 @@ public interface ComponentType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subcomponents</em>' containment reference list.
 	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getComponentType_Subcomponents()
-	 * @model containment="true"
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getParent
+	 * @model opposite="parent" containment="true"
 	 * @generated
 	 */
 	EList<Subcomponent> getSubcomponents();
