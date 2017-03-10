@@ -1,5 +1,6 @@
 package ur1.diverse.xmontiarc.design;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
 
@@ -41,6 +42,12 @@ public class CreateConnectorAction extends AbstractExternalJavaAction implements
 		con.setParent(type);
 		System.out.println("CreateConnectorAction.execute(): Created connector '" + con.toString() + "'.");
 		type.getConnectors().add(con);
+		try {
+			type.eResource().save(null);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		System.out.println("CreateConnectorAction.execute(): Connectors now is '" + type.getConnectors() + "'.");
 	}
 }

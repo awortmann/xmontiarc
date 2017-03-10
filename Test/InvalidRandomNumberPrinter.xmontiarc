@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ur1.diverse.xmontiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ur1.diverse.xmontiarc.model="http://ur1/diverse/xmontiarc/model" name="RandomNumberPrinter">
+<ur1.diverse.xmontiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ur1.diverse.xmontiarc.model="http://ur1/diverse/xmontiarc/model" name="InvalidRandomNumberPrinter">
   <connectors source="//@subcomponents.3/@ports.0" target="//@subcomponents.2/@ports.0"/>
   <connectors source="//@subcomponents.2/@ports.1" target="//@subcomponents.0/@ports.0"/>
   <connectors source="//@subcomponents.2/@ports.1" target="//@subcomponents.1/@ports.0"/>
+  <connectors source="//@subcomponents.4/@ports.0" target="//@subcomponents.5/@ports.0"/>
+  <connectors source="//@subcomponents.5/@ports.1" target="//@subcomponents.1/@ports.0"/>
+  <connectors source="//@subcomponents.4/@ports.0" target="//@subcomponents.2/@ports.0"/>
+  <connectors source="//@subcomponents.3/@ports.0" target="//@subcomponents.6/@ports.0"/>
+  <connectors source="//@subcomponents.3/@ports.0" target="//@subcomponents.1/@ports.0"/>
   <subcomponents name="printer0">
     <type href="Printer.xmontiarc#/"/>
     <ports name="message" type="String"/>
@@ -28,5 +33,13 @@
     <type href="Vocalizer.xmontiarc#/"/>
     <ports name="number" type="Integer"/>
     <ports name="word" type="String" incoming="false"/>
+  </subcomponents>
+  <subcomponents name="printer2">
+    <type href="Printer.xmontiarc#/"/>
+    <ports name="message" type="String"/>
+  </subcomponents>
+  <subcomponents name="numberGenerator40">
+    <type href="NumberGenerator.xmontiarc#/"/>
+    <ports name="no" type="Integer" incoming="false"/>
   </subcomponents>
 </ur1.diverse.xmontiarc.model:ComponentType>

@@ -8,7 +8,6 @@ import java.util.Set;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
-import org.eclipse.emf.validation.AbstractModelConstraint;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
 
@@ -18,15 +17,14 @@ import xmontiarc.Port;
 import xmontiarc.Subcomponent;
 import xmontiarc.impl.ComponentTypeImpl;
 
-public class AllPortsConnected extends AbstractModelConstraint {
+public class AllPortsConnected extends MontiArcModelConstraint {
 
 	@Override
 	public IStatus validate(IValidationContext ctx) {
-//		System.out.println("AllPortsConnected.validate(): Checking EObject '" + ctx.getTarget().eClass().getName() + "'.");
 		EObject obj = ctx.getTarget();
 		if (obj instanceof ComponentType) {
 			ComponentType type = (ComponentType) obj;
-			Optional<ConstraintStatus> optError = this.checkPortConnected(ctx, type);
+			Optional<ConstraintStatus> optError = this.checkForUnconnectedPorts(ctx, type);
 			if (optError.isPresent()) {
 				return optError.get();
 			}
@@ -34,23 +32,23 @@ public class AllPortsConnected extends AbstractModelConstraint {
 		return ctx.createSuccessStatus();
 	}
 	
-	private Optional<ConstraintStatus> checkPortConnected(IValidationContext ctx, ComponentType type) {
+	private Optional<ConstraintStatus> checkForUnconnectedPorts(IValidationContext ctx, ComponentType type) {
+		this.log("checkForUnconnectedPorts", type);
 		Optional<ConstraintStatus> error = Optional.empty();
 		Set<EObject> problemElements = new HashSet<>();
-		List<Port> unconnectedPorts = allPortsConnected(type);
+		List<Port> unconnectedPorts = calcUnconnectedPorts(type);
 		if (!unconnectedPorts.isEmpty()) {
 			problemElements.add(type);
 			error = Optional.of(ConstraintStatus.createStatus(
 	                ctx,
 	                problemElements,
-	                "The ports {0} are unconnected.",
+	                format("The ports {0} are unconnected."),
 	                new Object[] {unconnectedPorts}));
 		}
         return error;
     }
 
-	private List<Port> allPortsConnected(ComponentType type) {
-//		System.out.println("AllPortsConnected.allPortsConnected(): Checking connectors of component type '" + type.getName() + "'.");
+	private List<Port> calcUnconnectedPorts(ComponentType type) {
 		List<Port> potentialSourcePorts = new ArrayList<>();
 		List<Port> potentialTargetPorts = new ArrayList<>();
 		List<Port> unconnectedPorts = new ArrayList<>();
@@ -69,22 +67,13 @@ public class AllPortsConnected extends AbstractModelConstraint {
 			}
 		}
 		
-//		System.out.println("potentialTargetPorts '" + potentialTargetPorts + "'.");
-//		System.out.println("potentialSourcePorts '" + potentialSourcePorts + "'.");
-		
 		for (Connector con : type.getConnectors()) {
-//			System.out.println("checking connector '" + con.toString() + "'.");
 			potentialSourcePorts.remove(con.getSource());
 			potentialTargetPorts.remove(con.getTarget());
 		}
-		
-//		System.out.println("potentialTargetPorts@post '" + potentialTargetPorts + "'.");
-//		System.out.println("potentialSourcePorts@post '" + potentialSourcePorts + "'.");
-		
 		unconnectedPorts.addAll(potentialSourcePorts);
 		unconnectedPorts.addAll(potentialTargetPorts);
 		
 		return unconnectedPorts;
 	}
-
 }

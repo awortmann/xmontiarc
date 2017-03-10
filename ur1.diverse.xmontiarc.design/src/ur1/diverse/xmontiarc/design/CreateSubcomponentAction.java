@@ -1,5 +1,6 @@
 package ur1.diverse.xmontiarc.design;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Map;
 import java.util.Optional;
@@ -37,9 +38,11 @@ public class CreateSubcomponentAction extends AbstractExternalJavaAction impleme
 					Port copy = EcoreUtil.copy(p);
 					sc.getPorts().add(copy);
 				}
+				sc.getParent().eResource().save(null);
 			}
 		} catch (CoreException e) {
-			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 

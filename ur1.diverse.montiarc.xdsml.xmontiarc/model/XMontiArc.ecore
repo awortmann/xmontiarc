@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="ASCII"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore">
+  <ecore:EPackage name="montiarc" nsURI="http://ur1.diverse.montiarc.xdsml.xmontiarc/montiarc/" nsPrefix="ur1.diverse.montiarc.model">
+    <eAnnotations source="http://www.eclipse.org/OCL/Import">
+      <details key="ur1.diverse.cd" value="cd.ecore#/"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentType">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NameIsLeadingUpperCase ConnectorsDoNotCrossCutComponents"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of component type &quot;' + name + '&quot; must begin uppercase.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;let firstLetter: String = (name).substring(1, 1) &#xA;&#x9;&#x9;&#x9;&#x9;in firstLetter.toUpperCase() = firstLetter&#xA;}.status"/>
+        <details key="ConnectorsDoNotCrossCutComponents" value="&#xA;&#x9;&#x9;&#x9;true"/>
+      </eAnnotations>
+      <eOperations name="init">
+        <eAnnotations source="aspect"/>
+        <eParameters name="args" upperBound="-1">
+          <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+        </eParameters>
+      </eOperations>
+      <eOperations name="compute">
+        <eAnnotations source="aspect"/>
+      </eOperations>
+      <eOperations name="update">
+        <eAnnotations source="aspect"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="superComponentType" eType="/0/ComponentType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1" eType="/0/Port" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1" eType="/0/Connector" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" upperBound="-1" eType="/0/SubcomponentDeclaration" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="groovyBehavior">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Port">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NameIsLeadingUpperCase"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of port &quot;' + name + '&quot; must begin lowercase.',&#xA;&#x9;status : Boolean = let firstLetter : String =&#xA;&#x9;&#x9;&#x9;(name).substring(1, 1)&#xA;&#x9;&#x9;in firstLetter.toLowerCase() = firstLetter&#xA;}.status"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="isIncoming" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="/2/CDClass"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="portValue" unique="false" eType="/0/PortValue">
+        <eAnnotations source="aspect"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="Connector">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="ConnectsDifferentComponents ConnectsDifferentComponents PortTypeMatch"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="ConnectsDifferentComponents" value="Tuple {&#xA;&#x9;message : String = 'The connector must connect two different subcomponents.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;self.sourceSubcomponent &lt;> self.targetSubcomponent&#xA;}.status"/>
+        <details key="PortTypeMatch" value="Tuple {&#xA;&#x9;message : String = 'Both ports of a connector must have the same type',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;self.sourcePort.type = self.targetPort.type&#xA;}.status"/>
+      </eAnnotations>
+      <eOperations name="update">
+        <eAnnotations source="aspect"/>
+      </eOperations>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourcePort" lowerBound="1" eType="/0/Port"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetPort" lowerBound="1" eType="/0/Port"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="sourceSubcomponent" lowerBound="1" eType="/0/SubcomponentDeclaration"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="targetSubcomponent" lowerBound="1" eType="/0/SubcomponentDeclaration"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="SubcomponentDeclaration">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NameIsLeadingUpperCase"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of instance name of subcomponent &quot;' + instanceName +&#xA;&#x9;&#x9;&#x9;'&quot; must begin lowercase.',&#xA;&#x9;status : Boolean = let firstLetter : String = (instanceName).substring(1, 1)&#xA;&#x9;&#x9;in firstLetter.toUpperCase() = firstLetter&#xA;}.status"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="instanceName" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="componentType" lowerBound="1" eType="/0/ComponentType"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="PortValue">
+      <eAnnotations source="aspect"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ecore:EPackage name="montiarcruntime" nsURI="http://ur1.diverse.montiarc.xdsml.xmontiarc/montiarcruntime/" nsPrefix="montiarcruntime">
+    <eClassifiers xsi:type="ecore:EClass" name="PortValue">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="/2/CDClass"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ecore:EPackage name="cd" nsURI="http://ur1.diverse.montiarc.xdsml.xmontiarc/cd/" nsPrefix="ur1.diverse.cd">
+    <eAnnotations source="http://www.eclipse.org/OCL/Import">
+      <details key="ecore" value="http://www.eclipse.org/emf/2002/Ecore"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+      <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
+    </eAnnotations>
+    <eClassifiers xsi:type="ecore:EClass" name="CDClass">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NameIsLeadingUpperCase"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of class &quot;' + name + '&quot; must begin uppercase.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;let firstLetter: String = (name).substring(1,1)&#xA;&#x9;&#x9;&#x9;&#x9;in firstLetter.toUpperCase() = firstLetter&#xA;}.status"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="attributes" upperBound="-1" eType="/2/CDAttribute" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="superType" eType="/2/CDClass"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CDAttribute">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NameIsLeadingUpperCase"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of class &quot;' + name + '&quot; must begin lowercase.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;let firstLetter: String = (name).substring(1,1)&#xA;&#x9;&#x9;&#x9;&#x9;in firstLetter.toLowerCase() = firstLetter&#xA;}.status"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="/2/CDClass"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ClassDiagram">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="classes" lowerBound="1" upperBound="-1" eType="/2/CDClass" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CDEnumeration" eSuperTypes="/2/CDClass">
+      <eStructuralFeatures xsi:type="ecore:EReference" name="constants" upperBound="-1" eType="/2/CDConstant" containment="true"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="CDConstant">
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+        <details key="constraints" value="NameIsLeadingUpperCase"/>
+      </eAnnotations>
+      <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+        <details key="NameIsLeadingUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of constant &quot;' + name + '&quot; must be all uppercase.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;name.toUpperCase() = name&#xA;}.status"/>
+      </eAnnotations>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="classes" lowerBound="1" upperBound="-1" eType="/2/CDClass" containment="true"/>
+    </eClassifiers>
+  </ecore:EPackage>
+</xmi:XMI>
