@@ -13,8 +13,8 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getName <em>Name</em>}</li>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getType <em>Type</em>}</li>
+ *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getName <em>Name</em>}</li>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#isIncoming <em>Incoming</em>}</li>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getValue <em>Value</em>}</li>
  * </ul>
@@ -24,6 +24,33 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Port extends EObject {
+	/**
+	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The default value is <code>"java.lang.Object"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Type</em>' attribute.
+	 * @see #setType(String)
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getPort_Type()
+	 * @model default="java.lang.Object"
+	 * @generated
+	 */
+	String getType();
+
+	/**
+	 * Sets the value of the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getType <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see #getType()
+	 * @generated
+	 */
+	void setType(String value);
+
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
 	 * The default value is <code>"UnnamedPort"</code>.
@@ -50,32 +77,6 @@ public interface Port extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
-	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getPort_Type()
-	 * @model required="true"
-	 * @generated
-	 */
-	String getType();
-
-	/**
-	 * Sets the value of the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getType <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Type</em>' attribute.
-	 * @see #getType()
-	 * @generated
-	 */
-	void setType(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Incoming</b></em>' attribute.
@@ -106,6 +107,7 @@ public interface Port extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * The default value is <code>"UnnamedPort"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
@@ -115,7 +117,7 @@ public interface Port extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getPort_Value()
-	 * @model unique="false"
+	 * @model default="UnnamedPort" required="true"
 	 * @generated
 	 */
 	String getValue();

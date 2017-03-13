@@ -14,6 +14,8 @@ import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect
 import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect.*
 import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect.*
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
+// import runtime.Message
+import runtime.RuntimeFactory
 
 @Aspect(className=ComponentType)
 class ComponentTypeAspect {
@@ -23,8 +25,17 @@ class ComponentTypeAspect {
         println("Initializing component type " + _self.name);
     }
 
-    // Computes behavior for the composed top-level component type 
     @Main
+    def void main() {
+        if (_self.ports.empty) {
+            while (true) {
+                _self.compute
+                _self.update
+            }
+        }
+    }
+
+    // Computes behavior for the composed top-level component type 
     @Step
     def void compute() {
         for (Subcomponent sc : _self.subcomponents) {
@@ -46,7 +57,7 @@ class ComponentTypeAspect {
 
 @Aspect(className=Port)
 class PortAspect {
-    public String value;
+    // public Message msgValue;
 }
 
 @Aspect(className=Connector)
@@ -67,12 +78,13 @@ class SubcomponentAspect {
         if (_self.type.subcomponents.isEmpty) { // assume an atomic component
             println("Subcomponent '" + _self.name + "' is atomic.");
             for (Port p : _self.ports) {
-                println("Subcomponent '" + _self.name + "' has port '" + p.toString + "'.");
+                println("Subcomponent '" + _self.name + "' has port '" + p.name + "'.");
                 var behavior = _self.type.behavior
                 println("Behavior of '" + _self.name + "' is '" + behavior + "'.")
                 if (!p.isIncoming) {
                     println("Computing next value of outgoing port " + _self.name + "." + p.name + ".")
-                    p.value = ur1.diverse.xmontiarc.runtime.GroovyInterpreter.interpret(behavior);
+                    var result = ur1.diverse.xmontiarc.runtime.GroovyInterpreter.interpret(behavior);
+                    p.value = result
                     println("Assigning value '" + p.value + "' to outgoing port " + _self.name + "." + p.name + ".")
                 }
             }

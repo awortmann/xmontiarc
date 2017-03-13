@@ -65,10 +65,11 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public Message createMessage() {
 		MessageImpl message = new MessageImpl();
+		message.setTimestamp(System.currentTimeMillis());
 		return message;
 	}
 

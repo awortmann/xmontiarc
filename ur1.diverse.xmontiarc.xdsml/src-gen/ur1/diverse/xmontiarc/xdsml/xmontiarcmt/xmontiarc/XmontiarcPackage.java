@@ -131,22 +131,22 @@ public interface XmontiarcPackage extends EPackage {
 	int PORT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__NAME = 0;
-
-	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__TYPE = 1;
+	int PORT__TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' attribute.
@@ -353,17 +353,6 @@ public interface XmontiarcPackage extends EPackage {
 	EClass getPort();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getName <em>Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getName()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EAttribute getPort_Name();
-
-	/**
 	 * Returns the meta object for the attribute '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getType <em>Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -373,6 +362,17 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPort_Type();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getName()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EAttribute getPort_Name();
 
 	/**
 	 * Returns the meta object for the attribute '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#isIncoming <em>Incoming</em>}'.
@@ -576,20 +576,20 @@ public interface XmontiarcPackage extends EPackage {
 		EClass PORT = eINSTANCE.getPort();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PORT__NAME = eINSTANCE.getPort_Name();
-
-		/**
 		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute PORT__TYPE = eINSTANCE.getPort_Type();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT__NAME = eINSTANCE.getPort_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming</b></em>' attribute feature.

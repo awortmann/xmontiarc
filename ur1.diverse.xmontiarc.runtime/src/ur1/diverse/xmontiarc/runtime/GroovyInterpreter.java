@@ -10,6 +10,6 @@ public class GroovyInterpreter {
 	private static Random rand = new Random();
 	
 	public static String interpret(String groovyScript) {
-		return ""+rand.nextInt();
+		return ""+(rand.nextInt(100)+1);
 	}
 }

@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.Message#getPayload <em>Payload</em>}</li>
+ *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.Message#getTimestamp <em>Timestamp</em>}</li>
  * </ul>
  *
  * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage#getMessage()
@@ -46,5 +47,32 @@ public interface Message extends EObject {
 	 * @generated
 	 */
 	void setPayload(Object value);
+
+	/**
+	 * Returns the value of the '<em><b>Timestamp</b></em>' attribute.
+	 * The default value is <code>"-1"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Timestamp</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Timestamp</em>' attribute.
+	 * @see #setTimestamp(long)
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage#getMessage_Timestamp()
+	 * @model default="-1" required="true"
+	 * @generated
+	 */
+	long getTimestamp();
+
+	/**
+	 * Sets the value of the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.Message#getTimestamp <em>Timestamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Timestamp</em>' attribute.
+	 * @see #getTimestamp()
+	 * @generated
+	 */
+	void setTimestamp(long value);
 
 } // Message

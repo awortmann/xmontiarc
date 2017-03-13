@@ -17,12 +17,12 @@ public class StandaloneSetup {
   
   public void doEMFRegistration() {
     EPackage.Registry.INSTANCE.put(
-    	ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.RuntimePackage.eNS_URI,
-    	ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.RuntimePackage.eINSTANCE
-    );
-    EPackage.Registry.INSTANCE.put(
     	ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.XmontiarcPackage.eNS_URI,
     	ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.XmontiarcPackage.eINSTANCE
+    );
+    EPackage.Registry.INSTANCE.put(
+    	ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.RuntimePackage.eNS_URI,
+    	ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.RuntimePackage.eINSTANCE
     );
     
     Resource.Factory.Registry.INSTANCE.getExtensionToFactoryMap().put(
@@ -37,7 +37,7 @@ public class StandaloneSetup {
   
   public void doAdaptersRegistration() {
     MelangeRegistry.LanguageDescriptor xMontiArc = new MelangeRegistryImpl.LanguageDescriptorImpl(
-    	"ur1.diverse.xmontiarc.xdsml.XMontiArc", "", "http://ur1.diverse.xmontiarc.xdsml.xmontiarc/runtime/", "ur1.diverse.xmontiarc.xdsml.XMontiArcMT"
+    	"ur1.diverse.xmontiarc.xdsml.XMontiArc", "", "http://ur1.diverse.xmontiarc.xdsml.xmontiarc/xmontiarc/", "ur1.diverse.xmontiarc.xdsml.XMontiArcMT"
     );
     xMontiArc.addAdapter("ur1.diverse.xmontiarc.xdsml.XMontiArcMT", ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.XMontiArcAdapter.class);
     MelangeRegistry.INSTANCE.getLanguageMap().put(

@@ -147,6 +147,14 @@ public interface ComponentType extends EObject {
 	 * @model
 	 * @generated
 	 */
+	void main();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
 	void compute();
 
 	/**

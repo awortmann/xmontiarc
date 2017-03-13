@@ -206,7 +206,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPort_Name() {
+	public EAttribute getPort_Type() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -215,7 +215,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPort_Type() {
+	public EAttribute getPort_Name() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -354,8 +354,8 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		createEAttribute(componentTypeEClass, COMPONENT_TYPE__BEHAVIOR);
 
 		portEClass = createEClass(PORT);
-		createEAttribute(portEClass, PORT__NAME);
 		createEAttribute(portEClass, PORT__TYPE);
+		createEAttribute(portEClass, PORT__NAME);
 		createEAttribute(portEClass, PORT__INCOMING);
 		createEAttribute(portEClass, PORT__VALUE);
 
@@ -411,15 +411,17 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		EOperation op = addEOperation(componentTypeEClass, null, "initializeModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "args", 0, -1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(componentTypeEClass, null, "main", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		addEOperation(componentTypeEClass, null, "compute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(componentTypeEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPort_Type(), ecorePackage.getEString(), "type", "java.lang.Object", 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", "UnnamedPort", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_Type(), ecorePackage.getEString(), "type", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_Incoming(), ecorePackage.getEBoolean(), "incoming", "true", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_Value(), ecorePackage.getEString(), "value", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_Value(), ecorePackage.getEString(), "value", "UnnamedPort", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnector_Source(), this.getPort(), null, "source", null, 1, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -496,7 +498,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		   new String[] {
 		   });	
 		addAnnotation
-		  (getPort_Value(), 
+		  (componentTypeEClass.getEOperations().get(3), 
 		   source, 
 		   new String[] {
 		   });	

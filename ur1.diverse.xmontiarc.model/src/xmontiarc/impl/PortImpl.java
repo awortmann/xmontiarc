@@ -17,14 +17,35 @@ import xmontiarc.XmontiarcPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmontiarc.impl.PortImpl#getName <em>Name</em>}</li>
  *   <li>{@link xmontiarc.impl.PortImpl#getType <em>Type</em>}</li>
+ *   <li>{@link xmontiarc.impl.PortImpl#getName <em>Name</em>}</li>
  *   <li>{@link xmontiarc.impl.PortImpl#isIncoming <em>Incoming</em>}</li>
+ *   <li>{@link xmontiarc.impl.PortImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class PortImpl extends MinimalEObjectImpl.Container implements Port {
+	/**
+	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String TYPE_EDEFAULT = "java.lang.Object";
+
+	/**
+	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String type = TYPE_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -44,26 +65,6 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String TYPE_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getType() <em>Type</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getType()
-	 * @generated
-	 * @ordered
-	 */
-	protected String type = TYPE_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isIncoming() <em>Incoming</em>}' attribute.
@@ -86,6 +87,26 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	protected boolean incoming = INCOMING_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String VALUE_EDEFAULT = "UnnamedPort";
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected String value = VALUE_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -104,6 +125,19 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 		return XmontiarcPackage.Literals.PORT;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public void setValue(String newValue) {
+		
+		String oldValue = value;
+		value = newValue;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, XmontiarcPackage.PORT__VALUE, oldValue, value));
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -172,15 +206,26 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getValue() {
+		return value;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case XmontiarcPackage.PORT__NAME:
-				return getName();
 			case XmontiarcPackage.PORT__TYPE:
 				return getType();
+			case XmontiarcPackage.PORT__NAME:
+				return getName();
 			case XmontiarcPackage.PORT__INCOMING:
 				return isIncoming();
+			case XmontiarcPackage.PORT__VALUE:
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -190,17 +235,21 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case XmontiarcPackage.PORT__NAME:
-				setName((String)newValue);
-				return;
 			case XmontiarcPackage.PORT__TYPE:
 				setType((String)newValue);
 				return;
+			case XmontiarcPackage.PORT__NAME:
+				setName((String)newValue);
+				return;
 			case XmontiarcPackage.PORT__INCOMING:
 				setIncoming((Boolean)newValue);
+				return;
+			case XmontiarcPackage.PORT__VALUE:
+				setValue((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -214,14 +263,17 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case XmontiarcPackage.PORT__NAME:
-				setName(NAME_EDEFAULT);
-				return;
 			case XmontiarcPackage.PORT__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
+			case XmontiarcPackage.PORT__NAME:
+				setName(NAME_EDEFAULT);
+				return;
 			case XmontiarcPackage.PORT__INCOMING:
 				setIncoming(INCOMING_EDEFAULT);
+				return;
+			case XmontiarcPackage.PORT__VALUE:
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -235,12 +287,14 @@ public class PortImpl extends MinimalEObjectImpl.Container implements Port {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case XmontiarcPackage.PORT__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case XmontiarcPackage.PORT__TYPE:
 				return TYPE_EDEFAULT == null ? type != null : !TYPE_EDEFAULT.equals(type);
+			case XmontiarcPackage.PORT__NAME:
+				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case XmontiarcPackage.PORT__INCOMING:
 				return incoming != INCOMING_EDEFAULT;
+			case XmontiarcPackage.PORT__VALUE:
+				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}

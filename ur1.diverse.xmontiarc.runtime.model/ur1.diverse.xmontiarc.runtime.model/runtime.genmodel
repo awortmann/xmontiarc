@@ -8,6 +8,9 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="runtime.ecore#//Message/payload"/>
       </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="runtime.ecore#//Message/timestamp"/>
+      </genFeatures>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

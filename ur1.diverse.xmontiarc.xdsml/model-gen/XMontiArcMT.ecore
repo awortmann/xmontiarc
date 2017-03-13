@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="ASCII"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore">
-  <ecore:EPackage name="runtime" nsURI="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/runtime/" nsPrefix="ur1.diverse.xmontiarc.runtime.model">
-    <eClassifiers xsi:type="ecore:EClass" name="Message">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="payload">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
-      </eStructuralFeatures>
-    </eClassifiers>
-  </ecore:EPackage>
   <ecore:EPackage name="xmontiarc" nsURI="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/xmontiarc/" nsPrefix="ur1.diverse.xmontiarc.model">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
       <details key="invocationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
@@ -20,6 +13,9 @@
           <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
         </eParameters>
       </eOperations>
+      <eOperations name="main">
+        <eAnnotations source="aspect"/>
+      </eOperations>
       <eOperations name="compute">
         <eAnnotations source="aspect"/>
       </eOperations>
@@ -29,25 +25,24 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" defaultValueLiteral="UnnamedComponentType">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1" eType="/1/Port" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1" eType="/1/Connector" containment="true" eOpposite="/1/Connector/parent"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" upperBound="-1" eType="/1/Subcomponent" containment="true" eOpposite="/1/Subcomponent/parent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1" eType="/0/Port" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1" eType="/0/Connector" containment="true" eOpposite="/0/Connector/parent"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" upperBound="-1" eType="/0/Subcomponent" containment="true" eOpposite="/0/Subcomponent/parent"/>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="behavior" lowerBound="1" defaultValueLiteral="&quot;&quot;">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Port">
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" defaultValueLiteral="UnnamedPort">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" defaultValueLiteral="java.lang.Object">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" lowerBound="1">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" defaultValueLiteral="UnnamedPort">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="incoming" lowerBound="1" defaultValueLiteral="true">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false">
-        <eAnnotations source="aspect"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" defaultValueLiteral="UnnamedPort">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eStructuralFeatures>
     </eClassifiers>
@@ -55,9 +50,9 @@
       <eOperations name="update">
         <eAnnotations source="aspect"/>
       </eOperations>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="/1/Port"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="/1/Port"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="/1/ComponentType" eOpposite="/1/ComponentType/connectors"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="/0/Port"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="/0/Port"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="/0/ComponentType" eOpposite="/0/ComponentType/connectors"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Subcomponent">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -72,9 +67,19 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" defaultValueLiteral="UnnamedSubcomponent">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="/1/ComponentType"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1" eType="/1/Port" containment="true"/>
-      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="/1/ComponentType" eOpposite="/1/ComponentType/subcomponents"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="type" lowerBound="1" eType="/0/ComponentType"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="ports" upperBound="-1" eType="/0/Port" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="/0/ComponentType" eOpposite="/0/ComponentType/subcomponents"/>
+    </eClassifiers>
+  </ecore:EPackage>
+  <ecore:EPackage name="runtime" nsURI="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/runtime/" nsPrefix="ur1.diverse.xmontiarc.runtime.model">
+    <eClassifiers xsi:type="ecore:EClass" name="Message">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="payload">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EJavaObject"/>
+      </eStructuralFeatures>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="timestamp" lowerBound="1" defaultValueLiteral="-1">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//ELong"/>
+      </eStructuralFeatures>
     </eClassifiers>
   </ecore:EPackage>
 </xmi:XMI>

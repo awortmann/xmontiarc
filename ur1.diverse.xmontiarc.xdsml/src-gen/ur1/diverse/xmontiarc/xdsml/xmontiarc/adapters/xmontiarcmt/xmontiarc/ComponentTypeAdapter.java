@@ -78,6 +78,11 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
   }
   
   @Override
+  public void main() {
+    ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.main(adaptee);
+  }
+  
+  @Override
   public void update() {
     ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.update(adaptee);
   }

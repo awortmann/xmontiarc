@@ -14,6 +14,7 @@ import org.eclipse.emf.validation.model.ConstraintStatus;
 import xmontiarc.ComponentType;
 import xmontiarc.Connector;
 import xmontiarc.Port;
+import xmontiarc.Port;
 import xmontiarc.Subcomponent;
 import xmontiarc.impl.ComponentTypeImpl;
 

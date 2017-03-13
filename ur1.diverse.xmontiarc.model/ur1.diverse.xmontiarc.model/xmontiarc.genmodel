@@ -1,28 +1,67 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ur1.diverse.xmontiarc.model/src" modelPluginID="ur1.diverse.xmontiarc.model"
-    modelName="Xmontiarc" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ur1.diverse.xmontiarc.model/src" modelPluginID="ur1.diverse.xmontiarc.model" modelName="Xmontiarc" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>xmontiarc.ecore</foreignModel>
-  <genPackages prefix="Xmontiarc" disposableProviderFactory="true" ecorePackage="xmontiarc.ecore#/">
-    <genClasses ecoreClass="xmontiarc.ecore#//ComponentType">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmontiarc.ecore#//ComponentType/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmontiarc.ecore#//ComponentType/ports"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmontiarc.ecore#//ComponentType/connectors"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference xmontiarc.ecore#//ComponentType/subcomponents"/>
+  <genPackages prefix="Xmontiarc" disposableProviderFactory="true">
+    <ecorePackage href="xmontiarc.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="xmontiarc.ecore#//ComponentType"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//ComponentType/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//ComponentType/ports"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//ComponentType/connectors"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//ComponentType/subcomponents"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//ComponentType/behavior"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="xmontiarc.ecore#//Port">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmontiarc.ecore#//Port/name"/>
+    <genClasses>
+      <ecoreClass href="xmontiarc.ecore#//Port"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//Port/type"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//Port/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//Port/incoming"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//Port/value"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="xmontiarc.ecore#//Connector">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xmontiarc.ecore#//Connector/source"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xmontiarc.ecore#//Connector/targets"/>
+    <genClasses>
+      <ecoreClass href="xmontiarc.ecore#//Connector"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//Connector/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//Connector/target"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//Connector/parent"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="xmontiarc.ecore#//Subcomponent">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute xmontiarc.ecore#//Subcomponent/name"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xmontiarc.ecore#//Subcomponent/type"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference xmontiarc.ecore#//Subcomponent/derivedPorts"/>
+    <genClasses>
+      <ecoreClass href="xmontiarc.ecore#//Subcomponent"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//Subcomponent/name"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//Subcomponent/type"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//Subcomponent/ports"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//Subcomponent/parent"/>
+      </genFeatures>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

@@ -11,6 +11,7 @@ import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect;
 import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect;
 import xmontiarc.ComponentType;
 import xmontiarc.Connector;
+import xmontiarc.Port;
 import xmontiarc.Subcomponent;
 
 @Aspect(className = ComponentType.class)
@@ -23,54 +24,82 @@ public class ComponentTypeAspect {
   }
   
   @Main
+  public static void main(final ComponentType _self) {
+	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext
+			.getSelf(_self);
+	_privk3_main(_self_, _self);
+	;
+}
+  
   @Step
   public static void compute(final ComponentType _self) {
-    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    	@Override
-    	public void execute() {
-    		_privk3_compute(_self_, _self);
-    	}
-    };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    if (stepManager != null) {
-    	stepManager.executeStep(_self,command,"ComponentType","compute");
-    } else {
-    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry.getInstance().findEventManager(_self);
-    	if (eventManager != null) {
-    		eventManager.manageEvents();
-    	}
-    	command.execute();
-    }
-    ;;
-  }
+	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext
+			.getSelf(_self);
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+		@Override
+		public void execute() {
+			_privk3_compute(_self_, _self);
+		}
+	};
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
+			.getInstance().findStepManager(_self);
+	if (manager != null) {
+		manager.executeStep(_self, command, "ComponentType", "compute");
+	} else {
+		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
+				.getInstance().findEventManager(null);
+		if (eventManager != null) {
+			eventManager.manageEvents();
+		}
+		command.execute();
+	}
+	;
+	;
+}
   
   @Step
   public static void update(final ComponentType _self) {
-    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    	@Override
-    	public void execute() {
-    		_privk3_update(_self_, _self);
-    	}
-    };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    if (stepManager != null) {
-    	stepManager.executeStep(_self,command,"ComponentType","update");
-    } else {
-    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry.getInstance().findEventManager(_self);
-    	if (eventManager != null) {
-    		eventManager.manageEvents();
-    	}
-    	command.execute();
-    }
-    ;;
-  }
+	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext
+			.getSelf(_self);
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+		@Override
+		public void execute() {
+			_privk3_update(_self_, _self);
+		}
+	};
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
+			.getInstance().findStepManager(_self);
+	if (manager != null) {
+		manager.executeStep(_self, command, "ComponentType", "update");
+	} else {
+		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
+				.getInstance().findEventManager(null);
+		if (eventManager != null) {
+			eventManager.manageEvents();
+		}
+		command.execute();
+	}
+	;
+	;
+}
   
   protected static void _privk3_initializeModel(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self, final EList<String> args) {
     String _name = _self.getName();
     String _plus = ("Initializing component type " + _name);
     InputOutput.<String>println(_plus);
+  }
+  
+  protected static void _privk3_main(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self) {
+    EList<Port> _ports = _self.getPorts();
+    boolean _isEmpty = _ports.isEmpty();
+    if (_isEmpty) {
+      while (true) {
+        {
+          ComponentTypeAspect.compute(_self);
+          ComponentTypeAspect.update(_self);
+        }
+      }
+    }
   }
   
   protected static void _privk3_compute(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self) {

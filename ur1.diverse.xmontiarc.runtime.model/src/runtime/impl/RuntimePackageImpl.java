@@ -110,6 +110,15 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getMessage_Timestamp() {
+		return (EAttribute)messageEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public RuntimeFactory getRuntimeFactory() {
 		return (RuntimeFactory)getEFactoryInstance();
 	}
@@ -135,6 +144,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		// Create classes and their features
 		messageEClass = createEClass(MESSAGE);
 		createEAttribute(messageEClass, MESSAGE__PAYLOAD);
+		createEAttribute(messageEClass, MESSAGE__TIMESTAMP);
 	}
 
 	/**
@@ -169,6 +179,7 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 		// Initialize classes, features, and operations; add parameters
 		initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getMessage_Payload(), ecorePackage.getEJavaObject(), "payload", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getMessage_Timestamp(), ecorePackage.getELong(), "timestamp", "-1", 1, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

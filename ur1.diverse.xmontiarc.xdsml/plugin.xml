@@ -19,7 +19,7 @@
     <modeltype id="ur1.diverse.xmontiarc.xdsml.XMontiArcMT" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/"/>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="Connector:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ConnectorAspect;ComponentType:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect;Port:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.PortAspect;Subcomponent:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspect" entryPoints="ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.compute(ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType)" exactType="ur1.diverse.xmontiarc.xdsml.XMontiArcMT" id="ur1.diverse.xmontiarc.xdsml.XMontiArc" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarc/runtime/">
+    <language aspects="Connector:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ConnectorAspect;ComponentType:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect;Port:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.PortAspect;Subcomponent:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspect" entryPoints="ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.main(ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType)" exactType="ur1.diverse.xmontiarc.xdsml.XMontiArcMT" id="ur1.diverse.xmontiarc.xdsml.XMontiArc" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarc/xmontiarc/">
       <adapter class="ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.XMontiArcAdapter" modeltypeId="ur1.diverse.xmontiarc.xdsml.XMontiArcMT"/>
     </language>
   </extension>

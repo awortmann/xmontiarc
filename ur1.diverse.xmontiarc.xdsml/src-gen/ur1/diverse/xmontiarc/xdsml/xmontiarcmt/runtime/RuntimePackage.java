@@ -74,13 +74,22 @@ public interface RuntimePackage extends EPackage {
 	int MESSAGE__PAYLOAD = 0;
 
 	/**
+	 * The feature id for the '<em><b>Timestamp</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int MESSAGE__TIMESTAMP = 1;
+
+	/**
 	 * The number of structural features of the '<em>Message</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int MESSAGE_FEATURE_COUNT = 1;
+	int MESSAGE_FEATURE_COUNT = 2;
 
 
 	/**
@@ -103,6 +112,17 @@ public interface RuntimePackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getMessage_Payload();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.Message#getTimestamp <em>Timestamp</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Timestamp</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.Message#getTimestamp()
+	 * @see #getMessage()
+	 * @generated
+	 */
+	EAttribute getMessage_Timestamp();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -143,6 +163,14 @@ public interface RuntimePackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute MESSAGE__PAYLOAD = eINSTANCE.getMessage_Payload();
+
+		/**
+		 * The meta object literal for the '<em><b>Timestamp</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute MESSAGE__TIMESTAMP = eINSTANCE.getMessage_Timestamp();
 
 	}
 

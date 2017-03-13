@@ -141,22 +141,22 @@ public interface XmontiarcPackage extends EPackage {
 	int PORT = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__NAME = 0;
-
-	/**
 	 * The feature id for the '<em><b>Type</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__TYPE = 1;
+	int PORT__TYPE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__NAME = 1;
 
 	/**
 	 * The feature id for the '<em><b>Incoming</b></em>' attribute.
@@ -168,13 +168,22 @@ public interface XmontiarcPackage extends EPackage {
 	int PORT__INCOMING = 2;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int PORT__VALUE = 3;
+
+	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 3;
+	int PORT_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
@@ -414,6 +423,17 @@ public interface XmontiarcPackage extends EPackage {
 	EAttribute getPort_Incoming();
 
 	/**
+	 * Returns the meta object for the attribute '{@link xmontiarc.Port#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see xmontiarc.Port#getValue()
+	 * @see #getPort()
+	 * @generated
+	 */
+	EAttribute getPort_Value();
+
+	/**
 	 * Returns the meta object for class '{@link xmontiarc.Connector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -616,6 +636,14 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PORT__INCOMING = eINSTANCE.getPort_Incoming();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute PORT__VALUE = eINSTANCE.getPort_Value();
 
 		/**
 		 * The meta object literal for the '{@link xmontiarc.impl.ConnectorImpl <em>Connector</em>}' class.

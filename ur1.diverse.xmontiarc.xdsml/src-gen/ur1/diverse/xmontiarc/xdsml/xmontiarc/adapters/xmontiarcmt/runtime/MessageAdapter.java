@@ -24,7 +24,19 @@ public class MessageAdapter extends EObjectAdapter<Message> implements ur1.diver
     adaptee.setPayload(o);
   }
   
+  @Override
+  public long getTimestamp() {
+    return adaptee.getTimestamp();
+  }
+  
+  @Override
+  public void setTimestamp(final long o) {
+    adaptee.setTimestamp(o);
+  }
+  
   protected final static Object PAYLOAD_EDEFAULT = null;
+  
+  protected final static long TIMESTAMP_EDEFAULT = -1L;
   
   @Override
   public EClass eClass() {
@@ -36,6 +48,8 @@ public class MessageAdapter extends EObjectAdapter<Message> implements ur1.diver
     switch (featureID) {
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage.MESSAGE__PAYLOAD:
     		return getPayload();
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage.MESSAGE__TIMESTAMP:
+    		return new java.lang.Long(getTimestamp());
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -46,6 +60,8 @@ public class MessageAdapter extends EObjectAdapter<Message> implements ur1.diver
     switch (featureID) {
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage.MESSAGE__PAYLOAD:
     		return getPayload() != PAYLOAD_EDEFAULT;
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage.MESSAGE__TIMESTAMP:
+    		return getTimestamp() != TIMESTAMP_EDEFAULT;
     }
     
     return super.eIsSet(featureID);
@@ -56,6 +72,9 @@ public class MessageAdapter extends EObjectAdapter<Message> implements ur1.diver
     switch (featureID) {
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage.MESSAGE__PAYLOAD:
     		setPayload( newValue);
+    		return;
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage.MESSAGE__TIMESTAMP:
+    		setTimestamp(((java.lang.Long) newValue).longValue());
     		return;
     }
     

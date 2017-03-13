@@ -6,7 +6,6 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
-
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
@@ -192,7 +191,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * @generated
 	 */
 	public EAttribute getPort_Name() {
-		return (EAttribute)portEClass.getEStructuralFeatures().get(0);
+		return (EAttribute)portEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -201,7 +200,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * @generated
 	 */
 	public EAttribute getPort_Type() {
-		return (EAttribute)portEClass.getEStructuralFeatures().get(1);
+		return (EAttribute)portEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -211,6 +210,15 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 */
 	public EAttribute getPort_Incoming() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getPort_Value() {
+		return (EAttribute)portEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -330,9 +338,10 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		createEAttribute(componentTypeEClass, COMPONENT_TYPE__BEHAVIOR);
 
 		portEClass = createEClass(PORT);
-		createEAttribute(portEClass, PORT__NAME);
 		createEAttribute(portEClass, PORT__TYPE);
+		createEAttribute(portEClass, PORT__NAME);
 		createEAttribute(portEClass, PORT__INCOMING);
+		createEAttribute(portEClass, PORT__VALUE);
 
 		connectorEClass = createEClass(CONNECTOR);
 		createEReference(connectorEClass, CONNECTOR__SOURCE);
@@ -384,9 +393,10 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		initEAttribute(getComponentType_Behavior(), ecorePackage.getEString(), "behavior", "\"\"", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getPort_Type(), ecorePackage.getEString(), "type", "java.lang.Object", 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", "UnnamedPort", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_Type(), ecorePackage.getEString(), "type", null, 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_Incoming(), ecorePackage.getEBoolean(), "incoming", "true", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_Value(), ecorePackage.getEString(), "value", "UnnamedPort", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnector_Source(), this.getPort(), null, "source", null, 1, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

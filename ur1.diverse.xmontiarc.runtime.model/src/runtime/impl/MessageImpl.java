@@ -21,6 +21,7 @@ import runtime.RuntimePackage;
  * </p>
  * <ul>
  *   <li>{@link runtime.impl.MessageImpl#getPayload <em>Payload</em>}</li>
+ *   <li>{@link runtime.impl.MessageImpl#getTimestamp <em>Timestamp</em>}</li>
  * </ul>
  *
  * @generated
@@ -45,6 +46,26 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 	 * @ordered
 	 */
 	protected Object payload = PAYLOAD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getTimestamp() <em>Timestamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimestamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final long TIMESTAMP_EDEFAULT = -1L;
+
+	/**
+	 * The cached value of the '{@link #getTimestamp() <em>Timestamp</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getTimestamp()
+	 * @generated
+	 * @ordered
+	 */
+	protected long timestamp = TIMESTAMP_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +112,34 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public long getTimestamp() {
+		return timestamp;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setTimestamp(long newTimestamp) {
+		long oldTimestamp = timestamp;
+		timestamp = newTimestamp;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RuntimePackage.MESSAGE__TIMESTAMP, oldTimestamp, timestamp));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 			case RuntimePackage.MESSAGE__PAYLOAD:
 				return getPayload();
+			case RuntimePackage.MESSAGE__TIMESTAMP:
+				return getTimestamp();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +154,9 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 		switch (featureID) {
 			case RuntimePackage.MESSAGE__PAYLOAD:
 				setPayload(newValue);
+				return;
+			case RuntimePackage.MESSAGE__TIMESTAMP:
+				setTimestamp((Long)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +173,9 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 			case RuntimePackage.MESSAGE__PAYLOAD:
 				setPayload(PAYLOAD_EDEFAULT);
 				return;
+			case RuntimePackage.MESSAGE__TIMESTAMP:
+				setTimestamp(TIMESTAMP_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +190,8 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 		switch (featureID) {
 			case RuntimePackage.MESSAGE__PAYLOAD:
 				return PAYLOAD_EDEFAULT == null ? payload != null : !PAYLOAD_EDEFAULT.equals(payload);
+			case RuntimePackage.MESSAGE__TIMESTAMP:
+				return timestamp != TIMESTAMP_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -156,6 +208,8 @@ public class MessageImpl extends MinimalEObjectImpl.Container implements Message
 		StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (payload: ");
 		result.append(payload);
+		result.append(", timestamp: ");
+		result.append(timestamp);
 		result.append(')');
 		return result.toString();
 	}

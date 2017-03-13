@@ -13,9 +13,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link xmontiarc.Port#getName <em>Name</em>}</li>
  *   <li>{@link xmontiarc.Port#getType <em>Type</em>}</li>
+ *   <li>{@link xmontiarc.Port#getName <em>Name</em>}</li>
  *   <li>{@link xmontiarc.Port#isIncoming <em>Incoming</em>}</li>
+ *   <li>{@link xmontiarc.Port#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see xmontiarc.XmontiarcPackage#getPort()
@@ -52,6 +53,7 @@ public interface Port extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
+	 * The default value is <code>"java.lang.Object"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -61,7 +63,7 @@ public interface Port extends EObject {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see #setType(String)
 	 * @see xmontiarc.XmontiarcPackage#getPort_Type()
-	 * @model required="true"
+	 * @model default="java.lang.Object"
 	 * @generated
 	 */
 	String getType();
@@ -102,5 +104,32 @@ public interface Port extends EObject {
 	 * @generated
 	 */
 	void setIncoming(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
+	 * The default value is <code>"UnnamedPort"</code>.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(String)
+	 * @see xmontiarc.XmontiarcPackage#getPort_Value()
+	 * @model default="UnnamedPort" required="true"
+	 * @generated
+	 */
+	String getValue();
+
+	/**
+	 * Sets the value of the '{@link xmontiarc.Port#getValue <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Value</em>' attribute.
+	 * @see #getValue()
+	 * @generated
+	 */
+	void setValue(String value);
 
 } // Port
