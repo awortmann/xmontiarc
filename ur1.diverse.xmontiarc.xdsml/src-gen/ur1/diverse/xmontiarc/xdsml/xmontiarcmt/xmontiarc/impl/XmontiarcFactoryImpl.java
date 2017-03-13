@@ -71,7 +71,8 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 * @generated
 	 */
 	public ComponentType createComponentType() {
-		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
+		ComponentTypeImpl componentType = new ComponentTypeImpl();
+		return componentType;
 	}
 
 	/**
@@ -80,7 +81,8 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 * @generated
 	 */
 	public Port createPort() {
-		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
+		PortImpl port = new PortImpl();
+		return port;
 	}
 
 	/**
@@ -89,7 +91,8 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 * @generated
 	 */
 	public Connector createConnector() {
-		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
+		ConnectorImpl connector = new ConnectorImpl();
+		return connector;
 	}
 
 	/**
@@ -98,7 +101,8 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 * @generated
 	 */
 	public Subcomponent createSubcomponent() {
-		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
+		SubcomponentImpl subcomponent = new SubcomponentImpl();
+		return subcomponent;
 	}
 
 	/**

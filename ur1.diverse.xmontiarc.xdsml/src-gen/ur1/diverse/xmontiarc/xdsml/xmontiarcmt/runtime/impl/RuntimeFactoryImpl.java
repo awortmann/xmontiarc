@@ -68,7 +68,8 @@ public class RuntimeFactoryImpl extends EFactoryImpl implements RuntimeFactory {
 	 * @generated
 	 */
 	public Message createMessage() {
-		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
+		MessageImpl message = new MessageImpl();
+		return message;
 	}
 
 	/**

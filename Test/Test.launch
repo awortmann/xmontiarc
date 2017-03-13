@@ -12,4 +12,5 @@
 <stringAttribute key="Resource" value="/Test/RandomNumberPrinter.xmontiarc"/>
 <stringAttribute key="airdResource" value=""/>
 <booleanAttribute key="montiarc MultiDimensional Trace" value="false"/>
+<booleanAttribute key="xmontiarc MultiDimensional Trace" value="false"/>
 </launchConfiguration>

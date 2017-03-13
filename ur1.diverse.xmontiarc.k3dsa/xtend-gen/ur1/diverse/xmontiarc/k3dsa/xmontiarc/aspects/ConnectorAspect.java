@@ -9,11 +9,9 @@ import xmontiarc.Port;
 @SuppressWarnings("all")
 public class ConnectorAspect {
   public static void update(final Connector _self) {
-	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext
-			.getSelf(_self);
-	_privk3_update(_self_, _self);
-	;
-}
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
+    _privk3_update(_self_, _self);;
+  }
   
   protected static void _privk3_update(final ConnectorAspectConnectorAspectProperties _self_, final Connector _self) {
     Port _target = _self.getTarget();

@@ -26,12 +26,18 @@ class ComponentTypeAspect {
     }
 
     @Main
+    @Step
     def void main() {
-        if (_self.ports.empty) {
-            while (true) {
-                _self.compute
-                _self.update
+        try {
+            if (_self.ports.empty) {
+                while (true) {
+                    println("looping")
+                    _self.compute
+                    _self.update
+                }
             }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
