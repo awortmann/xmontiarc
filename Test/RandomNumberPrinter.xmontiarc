@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ur1.diverse.xmontiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ur1.diverse.xmontiarc.model="http://ur1/diverse/xmontiarc/model" name="RandomNumberPrinter">
+<ur1.diverse.xmontiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ur1.diverse.xmontiarc.model="http://ur1.diverse.xmontiarc.xdsml.xmontiarc/xmontiarc/" name="RandomNumberPrinter">
   <connectors source="//@subcomponents.1/@ports.1" target="//@subcomponents.2/@ports.0"/>
   <connectors source="//@subcomponents.0/@ports.0" target="//@subcomponents.1/@ports.0"/>
   <subcomponents name="gen">
