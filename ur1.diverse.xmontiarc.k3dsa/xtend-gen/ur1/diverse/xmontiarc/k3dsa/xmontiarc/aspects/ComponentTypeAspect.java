@@ -17,9 +17,9 @@ import xmontiarc.Subcomponent;
 @SuppressWarnings("all")
 public class ComponentTypeAspect {
   @InitializeModel
-  public static void init(final ComponentType _self, final EList<String> args) {
+  public static void initializeModel(final ComponentType _self, final EList<String> args) {
     final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    _privk3_init(_self_, _self,args);;
+    _privk3_initializeModel(_self_, _self,args);;
   }
   
   @Main
@@ -67,7 +67,7 @@ public class ComponentTypeAspect {
     ;;
   }
   
-  protected static void _privk3_init(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self, final EList<String> args) {
+  protected static void _privk3_initializeModel(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self, final EList<String> args) {
     String _name = _self.getName();
     String _plus = ("Initializing component type " + _name);
     InputOutput.<String>println(_plus);

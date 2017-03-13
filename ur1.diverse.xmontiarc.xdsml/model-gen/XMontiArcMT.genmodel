@@ -1,94 +1,94 @@
 <?xml version="1.0" encoding="ASCII"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ur1.diverse.xmontiarc.xdsml/src-gen" modelPluginID="ur1.diverse.xmontiarc.xdsml" modelName="XMontiArcMT" complianceLevel="7.0" copyrightFields="false">
   <foreignModel>platform:/resource/ur1.diverse.xmontiarc.xdsml/model-gen/XMontiArcMT.ecore</foreignModel>
-  <genPackages prefix="Xmontiarc" basePackage="ur1.diverse.xmontiarc.xdsml.xmontiarcmt" disposableProviderFactory="true">
+  <genPackages prefix="Runtime" basePackage="ur1.diverse.xmontiarc.xdsml.xmontiarcmt" disposableProviderFactory="true">
     <ecorePackage href="XMontiArcMT.ecore#/0"/>
     <genClasses>
-      <ecoreClass href="XMontiArcMT.ecore#/0/ComponentType"/>
+      <ecoreClass href="XMontiArcMT.ecore#/0/Message"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/0/ComponentType/name"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/0/Message/payload"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <genPackages prefix="Xmontiarc" basePackage="ur1.diverse.xmontiarc.xdsml.xmontiarcmt" disposableProviderFactory="true">
+    <ecorePackage href="XMontiArcMT.ecore#/1"/>
+    <genClasses>
+      <ecoreClass href="XMontiArcMT.ecore#/1/ComponentType"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/1/ComponentType/name"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/ComponentType/ports"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/1/ComponentType/ports"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/ComponentType/connectors"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/1/ComponentType/connectors"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/ComponentType/subcomponents"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/1/ComponentType/subcomponents"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/0/ComponentType/behavior"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/1/ComponentType/behavior"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="XMontiArcMT.ecore#/0/ComponentType/init"/>
+        <ecoreOperation href="XMontiArcMT.ecore#/1/ComponentType/initializeModel"/>
         <genParameters>
-          <ecoreParameter href="XMontiArcMT.ecore#/0/ComponentType/init/args"/>
+          <ecoreParameter href="XMontiArcMT.ecore#/1/ComponentType/initializeModel/args"/>
         </genParameters>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="XMontiArcMT.ecore#/0/ComponentType/compute"/>
+        <ecoreOperation href="XMontiArcMT.ecore#/1/ComponentType/compute"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="XMontiArcMT.ecore#/0/ComponentType/update"/>
+        <ecoreOperation href="XMontiArcMT.ecore#/1/ComponentType/update"/>
       </genOperations>
     </genClasses>
     <genClasses>
-      <ecoreClass href="XMontiArcMT.ecore#/0/Port"/>
+      <ecoreClass href="XMontiArcMT.ecore#/1/Port"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/0/Port/name"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/1/Port/name"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/0/Port/type"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/1/Port/type"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/0/Port/incoming"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/1/Port/incoming"/>
       </genFeatures>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/0/Port/value"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/1/Port/value"/>
       </genFeatures>
     </genClasses>
     <genClasses>
-      <ecoreClass href="XMontiArcMT.ecore#/0/Connector"/>
+      <ecoreClass href="XMontiArcMT.ecore#/1/Connector"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/Connector/source"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/1/Connector/source"/>
       </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/Connector/target"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/1/Connector/target"/>
       </genFeatures>
       <genFeatures property="None" notify="false" createChild="false">
-        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/Connector/parent"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/1/Connector/parent"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="XMontiArcMT.ecore#/0/Connector/update"/>
+        <ecoreOperation href="XMontiArcMT.ecore#/1/Connector/update"/>
       </genOperations>
     </genClasses>
     <genClasses>
-      <ecoreClass href="XMontiArcMT.ecore#/0/Subcomponent"/>
+      <ecoreClass href="XMontiArcMT.ecore#/1/Subcomponent"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/0/Subcomponent/name"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/1/Subcomponent/name"/>
       </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/Subcomponent/type"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/1/Subcomponent/type"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/Subcomponent/ports"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/1/Subcomponent/ports"/>
       </genFeatures>
       <genFeatures property="None" notify="false" createChild="false">
-        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/Subcomponent/parent"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/1/Subcomponent/parent"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="XMontiArcMT.ecore#/0/Subcomponent/compute"/>
+        <ecoreOperation href="XMontiArcMT.ecore#/1/Subcomponent/compute"/>
       </genOperations>
-    </genClasses>
-  </genPackages>
-  <genPackages prefix="Runtime" basePackage="ur1.diverse.xmontiarc.xdsml.xmontiarcmt" disposableProviderFactory="true">
-    <ecorePackage href="XMontiArcMT.ecore#/1"/>
-    <genClasses>
-      <ecoreClass href="XMontiArcMT.ecore#/1/Message"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/1/Message/payload"/>
-      </genFeatures>
     </genClasses>
   </genPackages>
   <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>

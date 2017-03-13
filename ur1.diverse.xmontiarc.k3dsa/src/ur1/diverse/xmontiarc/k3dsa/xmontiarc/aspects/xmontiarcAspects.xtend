@@ -20,7 +20,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
 class ComponentTypeAspect {
 	
 	@InitializeModel
-	public def void init(EList<String> args) {
+    def public void initializeModel(EList<String> args){
 		println("Initializing component type " + _self.name);
 	}
 

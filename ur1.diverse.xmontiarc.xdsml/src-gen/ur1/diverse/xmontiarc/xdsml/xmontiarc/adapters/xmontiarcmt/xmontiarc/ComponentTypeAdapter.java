@@ -72,8 +72,8 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
   }
   
   @Override
-  public void init(final org.eclipse.emf.common.util.EList<java.lang.String> args) {
-    ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.init(adaptee, args
+  public void initializeModel(final org.eclipse.emf.common.util.EList<java.lang.String> args) {
+    ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.initializeModel(adaptee, args
     );
   }
   

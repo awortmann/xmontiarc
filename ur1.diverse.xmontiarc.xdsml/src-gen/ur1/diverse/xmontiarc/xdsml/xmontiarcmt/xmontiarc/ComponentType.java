@@ -139,7 +139,7 @@ public interface ComponentType extends EObject {
 	 * @model argsMany="true"
 	 * @generated
 	 */
-	void init(EList<String> args);
+	void initializeModel(EList<String> args);
 
 	/**
 	 * <!-- begin-user-doc -->

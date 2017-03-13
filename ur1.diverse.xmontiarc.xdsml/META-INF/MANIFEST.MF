@@ -1,14 +1,15 @@
+Manifest-Version: 1.0
 Bundle-SymbolicName: ur1.diverse.xmontiarc.xdsml;singleton:=true
-Export-Package: ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util,
- ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.impl,
+Export-Package: ur1.diverse.xmontiarc.xdsml,
+ ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt,
+ ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime,
+ ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc,
  ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime,
+ ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.impl,
  ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.util,
  ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc,
  ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl,
- ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime,
- ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc,
- ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt,
- ur1.diverse.xmontiarc.xdsml
+ ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util
 Bundle-Name: ur1.diverse.xmontiarc.xdsml
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
@@ -30,4 +31,4 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Manifest-Version: 1.0
+
