@@ -7,7 +7,7 @@ import java.util.Random;
  */
 public class GroovyInterpreter {
 	
-	private static Random rand;
+	private static Random rand = new Random();
 	
 	public static String interpret(String groovyScript) {
 		return ""+rand.nextInt();

@@ -45,22 +45,64 @@ public class SubcomponentAspect {
     EList<Subcomponent> _subcomponents = _type.getSubcomponents();
     boolean _isEmpty = _subcomponents.isEmpty();
     if (_isEmpty) {
+      String _name_1 = _self.getName();
+      String _plus_2 = ("Subcomponent \'" + _name_1);
+      String _plus_3 = (_plus_2 + "\' is atomic.");
+      InputOutput.<String>println(_plus_3);
       EList<Port> _ports = _self.getPorts();
       for (final Port p : _ports) {
-        boolean _isIncoming = p.isIncoming();
-        boolean _not = (!_isIncoming);
-        if (_not) {
+        {
+          String _name_2 = _self.getName();
+          String _plus_4 = ("Subcomponent \'" + _name_2);
+          String _plus_5 = (_plus_4 + "\' has port \'");
+          String _string = p.toString();
+          String _plus_6 = (_plus_5 + _string);
+          String _plus_7 = (_plus_6 + "\'.");
+          InputOutput.<String>println(_plus_7);
           ComponentType _type_1 = _self.getType();
-          String _behavior = _type_1.getBehavior();
-          String _interpret = GroovyInterpreter.interpret(_behavior);
-          PortAspect.value(p, _interpret);
+          String behavior = _type_1.getBehavior();
+          String _name_3 = _self.getName();
+          String _plus_8 = ("Behavior of \'" + _name_3);
+          String _plus_9 = (_plus_8 + "\' is \'");
+          String _plus_10 = (_plus_9 + behavior);
+          String _plus_11 = (_plus_10 + "\'.");
+          InputOutput.<String>println(_plus_11);
+          boolean _isIncoming = p.isIncoming();
+          boolean _not = (!_isIncoming);
+          if (_not) {
+            String _name_4 = _self.getName();
+            String _plus_12 = ("Computing next value of outgoing port " + _name_4);
+            String _plus_13 = (_plus_12 + ".");
+            String _name_5 = p.getName();
+            String _plus_14 = (_plus_13 + _name_5);
+            String _plus_15 = (_plus_14 + ".");
+            InputOutput.<String>println(_plus_15);
+            String _interpret = GroovyInterpreter.interpret(behavior);
+            PortAspect.value(p, _interpret);
+            String _value = PortAspect.value(p);
+            String _plus_16 = ("Assigning value \'" + _value);
+            String _plus_17 = (_plus_16 + "\' to outgoing port ");
+            String _name_6 = _self.getName();
+            String _plus_18 = (_plus_17 + _name_6);
+            String _plus_19 = (_plus_18 + ".");
+            String _name_7 = p.getName();
+            String _plus_20 = (_plus_19 + _name_7);
+            String _plus_21 = (_plus_20 + ".");
+            InputOutput.<String>println(_plus_21);
+          }
         }
       }
     } else {
-      ComponentType _type_2 = _self.getType();
-      EList<Subcomponent> _subcomponents_1 = _type_2.getSubcomponents();
+      ComponentType _type_1 = _self.getType();
+      EList<Subcomponent> _subcomponents_1 = _type_1.getSubcomponents();
       for (final Subcomponent ci : _subcomponents_1) {
-        SubcomponentAspect.compute(ci);
+        {
+          String _name_2 = _self.getName();
+          String _plus_4 = ("Subcomponent \'" + _name_2);
+          String _plus_5 = (_plus_4 + "\' is composed.");
+          InputOutput.<String>println(_plus_5);
+          SubcomponentAspect.compute(ci);
+        }
       }
     }
   }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:ur1.diverse.xmontiarc.model="http://ur1/diverse/xmontiarc/model" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:ur1.diverse.xmontiarc.model="http://ur1.diverse.xmontiarc.xdsml.xmontiarc/xmontiarc/" xmlns:ur1.diverse.xmontiarc.model_1="http://ur1/diverse/xmontiarc/model" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
   <viewpoint:DAnalysis xmi:id="_TVTjIP09EeaIoLy_C4bkTA" selectedViews="_AL_EEP2ZEeayw_QMxRDzZw" version="11.1.0.201608251200">
     <semanticResources>RandomNumberPrinter.xmontiarc</semanticResources>
     <semanticResources>NumberGenerator.xmontiarc</semanticResources>
@@ -21,6 +21,9 @@
     <semanticResources>gemoc-gen/execution/execution-20170313_092634/RandomNumberPrinter.xmontiarc</semanticResources>
     <semanticResources>gemoc-gen/execution/execution-20170313_102230/RandomNumberPrinter.xmontiarc</semanticResources>
     <semanticResources>gemoc-gen/execution/execution-20170313_103357/RandomNumberPrinter.xmontiarc</semanticResources>
+    <semanticResources>gemoc-gen/execution/execution-20170313_111816/RandomNumberPrinter.xmontiarc</semanticResources>
+    <semanticResources>gemoc-gen/execution/execution-20170313_111903/RandomNumberPrinter.xmontiarc</semanticResources>
+    <semanticResources>gemoc-gen/execution/execution-20170313_111913/RandomNumberPrinter.xmontiarc</semanticResources>
     <ownedViews xmi:type="viewpoint:DView" xmi:id="_AL_EEP2ZEeayw_QMxRDzZw">
       <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']"/>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_db59oAVqEeeCHchw4gny4g" name="Vocalizer Diagram" representation="_db59oQVqEeeCHchw4gny4g">
@@ -33,7 +36,7 @@
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_FCEzwAWxEeeN4ZsDePQFBQ" name="RandonNumberPrinter Diagram" representation="_FCEzwQWxEeeN4ZsDePQFBQ">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']"/>
-        <target xmi:type="ur1.diverse.xmontiarc.model:ComponentType" href="RNP.xmontiarc#/"/>
+        <target xmi:type="ur1.diverse.xmontiarc.model_1:ComponentType" href="RNP.xmontiarc#/"/>
       </ownedRepresentationDescriptors>
       <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_qaBRUAfEEee2T7szh5fJpw" name="RandomNumberPrinter Diagram" representation="_qaCfcAfEEee2T7szh5fJpw">
         <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']"/>
@@ -300,8 +303,8 @@
       </data>
     </ownedAnnotationEntries>
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_FCEzxAWxEeeN4ZsDePQFBQ" name="RandomNumberPrinter">
-      <target xmi:type="ur1.diverse.xmontiarc.model:ComponentType" href="RNP.xmontiarc#/"/>
-      <semanticElements xmi:type="ur1.diverse.xmontiarc.model:ComponentType" href="RNP.xmontiarc#/"/>
+      <target xmi:type="ur1.diverse.xmontiarc.model_1:ComponentType" href="RNP.xmontiarc#/"/>
+      <semanticElements xmi:type="ur1.diverse.xmontiarc.model_1:ComponentType" href="RNP.xmontiarc#/"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
       <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
       <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -310,11 +313,11 @@
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']"/>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_HSKAAAWxEeeN4ZsDePQFBQ" name="NumberGenerator numberGenerator52" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RNP.xmontiarc#//@subcomponents.0"/>
-        <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RNP.xmontiarc#//@subcomponents.0"/>
+        <target xmi:type="ur1.diverse.xmontiarc.model_1:Subcomponent" href="RNP.xmontiarc#//@subcomponents.0"/>
+        <semanticElements xmi:type="ur1.diverse.xmontiarc.model_1:Subcomponent" href="RNP.xmontiarc#//@subcomponents.0"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_HSLOIAWxEeeN4ZsDePQFBQ" name="Integer no" outgoingEdges="_Sij9QAWxEeeN4ZsDePQFBQ" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.xmontiarc.model:Port" href="RNP.xmontiarc#//@subcomponents.0/@ports.0"/>
-          <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Port" href="RNP.xmontiarc#//@subcomponents.0/@ports.0"/>
+          <target xmi:type="ur1.diverse.xmontiarc.model_1:Port" href="RNP.xmontiarc#//@subcomponents.0/@ports.0"/>
+          <semanticElements xmi:type="ur1.diverse.xmontiarc.model_1:Port" href="RNP.xmontiarc#//@subcomponents.0/@ports.0"/>
           <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
           <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
           <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
@@ -329,19 +332,19 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_JUwJ4AWxEeeN4ZsDePQFBQ" name="Vocalizer vocalizer94" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RNP.xmontiarc#//@subcomponents.1"/>
-        <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RNP.xmontiarc#//@subcomponents.1"/>
+        <target xmi:type="ur1.diverse.xmontiarc.model_1:Subcomponent" href="RNP.xmontiarc#//@subcomponents.1"/>
+        <semanticElements xmi:type="ur1.diverse.xmontiarc.model_1:Subcomponent" href="RNP.xmontiarc#//@subcomponents.1"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_JUww8AWxEeeN4ZsDePQFBQ" name="Integer number" incomingEdges="_Sij9QAWxEeeN4ZsDePQFBQ" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.xmontiarc.model:Port" href="RNP.xmontiarc#//@subcomponents.1/@ports.0"/>
-          <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Port" href="RNP.xmontiarc#//@subcomponents.1/@ports.0"/>
+          <target xmi:type="ur1.diverse.xmontiarc.model_1:Port" href="RNP.xmontiarc#//@subcomponents.1/@ports.0"/>
+          <semanticElements xmi:type="ur1.diverse.xmontiarc.model_1:Port" href="RNP.xmontiarc#//@subcomponents.1/@ports.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_JUxYAAWxEeeN4ZsDePQFBQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']/@style"/>
           </ownedStyle>
           <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']"/>
         </ownedBorderedNodes>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_JUx_EAWxEeeN4ZsDePQFBQ" name="String word" outgoingEdges="_RtcTIAWxEeeN4ZsDePQFBQ" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.xmontiarc.model:Port" href="RNP.xmontiarc#//@subcomponents.1/@ports.1"/>
-          <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Port" href="RNP.xmontiarc#//@subcomponents.1/@ports.1"/>
+          <target xmi:type="ur1.diverse.xmontiarc.model_1:Port" href="RNP.xmontiarc#//@subcomponents.1/@ports.1"/>
+          <semanticElements xmi:type="ur1.diverse.xmontiarc.model_1:Port" href="RNP.xmontiarc#//@subcomponents.1/@ports.1"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_JUx_EQWxEeeN4ZsDePQFBQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']/@style"/>
           </ownedStyle>
@@ -356,11 +359,11 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']"/>
       </ownedDiagramElements>
       <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_QMW64AWxEeeN4ZsDePQFBQ" name="Printer printer54" width="3" height="3" resizeKind="NSEW">
-        <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RNP.xmontiarc#//@subcomponents.2"/>
-        <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="RNP.xmontiarc#//@subcomponents.2"/>
+        <target xmi:type="ur1.diverse.xmontiarc.model_1:Subcomponent" href="RNP.xmontiarc#//@subcomponents.2"/>
+        <semanticElements xmi:type="ur1.diverse.xmontiarc.model_1:Subcomponent" href="RNP.xmontiarc#//@subcomponents.2"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_QMYJAAWxEeeN4ZsDePQFBQ" name="String message" incomingEdges="_RtcTIAWxEeeN4ZsDePQFBQ" width="3" height="3" resizeKind="NSEW">
-          <target xmi:type="ur1.diverse.xmontiarc.model:Port" href="RNP.xmontiarc#//@subcomponents.2/@ports.0"/>
-          <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Port" href="RNP.xmontiarc#//@subcomponents.2/@ports.0"/>
+          <target xmi:type="ur1.diverse.xmontiarc.model_1:Port" href="RNP.xmontiarc#//@subcomponents.2/@ports.0"/>
+          <semanticElements xmi:type="ur1.diverse.xmontiarc.model_1:Port" href="RNP.xmontiarc#//@subcomponents.2/@ports.0"/>
           <ownedStyle xmi:type="diagram:Square" xmi:id="_QMYJAQWxEeeN4ZsDePQFBQ" labelSize="10" showIcon="false" labelAlignment="RIGHT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
             <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']/@style"/>
           </ownedStyle>
@@ -376,8 +379,8 @@
       </ownedDiagramElements>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_RtcTIAWxEeeN4ZsDePQFBQ" sourceNode="_JUx_EAWxEeeN4ZsDePQFBQ" targetNode="_QMYJAAWxEeeN4ZsDePQFBQ">
-      <target xmi:type="ur1.diverse.xmontiarc.model:Connector" href="RNP.xmontiarc#//@connectors.0"/>
-      <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Connector" href="RNP.xmontiarc#//@connectors.0"/>
+      <target xmi:type="ur1.diverse.xmontiarc.model_1:Connector" href="RNP.xmontiarc#//@connectors.0"/>
+      <semanticElements xmi:type="ur1.diverse.xmontiarc.model_1:Connector" href="RNP.xmontiarc#//@connectors.0"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_RteIUAWxEeeN4ZsDePQFBQ" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='ConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_RteIUQWxEeeN4ZsDePQFBQ"/>
@@ -385,8 +388,8 @@
       <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='ConnectorEdge']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Sij9QAWxEeeN4ZsDePQFBQ" sourceNode="_HSLOIAWxEeeN4ZsDePQFBQ" targetNode="_JUww8AWxEeeN4ZsDePQFBQ">
-      <target xmi:type="ur1.diverse.xmontiarc.model:Connector" href="RNP.xmontiarc#//@connectors.1"/>
-      <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Connector" href="RNP.xmontiarc#//@connectors.1"/>
+      <target xmi:type="ur1.diverse.xmontiarc.model_1:Connector" href="RNP.xmontiarc#//@connectors.1"/>
+      <semanticElements xmi:type="ur1.diverse.xmontiarc.model_1:Connector" href="RNP.xmontiarc#//@connectors.1"/>
       <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Sij9QQWxEeeN4ZsDePQFBQ" size="2">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='ConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Sij9QgWxEeeN4ZsDePQFBQ"/>
@@ -396,7 +399,7 @@
     <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']"/>
     <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_FCEzxgWxEeeN4ZsDePQFBQ"/>
     <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer"/>
-    <target xmi:type="ur1.diverse.xmontiarc.model:ComponentType" href="RNP.xmontiarc#/"/>
+    <target xmi:type="ur1.diverse.xmontiarc.model_1:ComponentType" href="RNP.xmontiarc#/"/>
   </diagram:DSemanticDiagram>
   <diagram:DSemanticDiagram xmi:id="_qaCfcAfEEee2T7szh5fJpw" name="RandomNumberPrinter Diagram">
     <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_qaCfcQfEEee2T7szh5fJpw" source="DANNOTATION_CUSTOMIZATION_KEY">
@@ -488,7 +491,7 @@
             <styles xmi:type="notation:FilteringStyle" xmi:id="_qaaS4gfEEee2T7szh5fJpw"/>
           </children>
           <styles xmi:type="notation:ShapeStyle" xmi:id="_qaQh4QfEEee2T7szh5fJpw" fontName=".SF NS Text" fontHeight="16"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qaQh4gfEEee2T7szh5fJpw" x="236" y="176" width="559" height="131"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qaQh4gfEEee2T7szh5fJpw" x="68" y="104" width="559" height="131"/>
         </children>
         <styles xmi:type="notation:DiagramStyle" xmi:id="_qaLCUgfEEee2T7szh5fJpw"/>
         <edges xmi:type="notation:Edge" xmi:id="_qazUcAfEEee2T7szh5fJpw" type="4001" element="_qaCfgwfEEee2T7szh5fJpw" source="_qaqKgAfEEee2T7szh5fJpw" target="_qasmwgfEEee2T7szh5fJpw">

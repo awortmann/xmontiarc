@@ -22,6 +22,7 @@ import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcFactory;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage;
+
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util.XmontiarcValidator;
 
 /**
