@@ -50,30 +50,33 @@ public class AllPortsConnected extends MontiArcModelConstraint {
     }
 
 	private List<Port> calcUnconnectedPorts(ComponentType type) {
-		List<Port> potentialSourcePorts = new ArrayList<>();
-		List<Port> potentialTargetPorts = new ArrayList<>();
 		List<Port> unconnectedPorts = new ArrayList<>();
-		ComponentTypeImpl cti = (ComponentTypeImpl) type;
-		potentialSourcePorts.addAll(cti.getIncomingPorts());
-		potentialTargetPorts.addAll(cti.getOutgoingPorts());
 		
-		for (Subcomponent sc : type.getSubcomponents()) {
-			for (Port p: sc.getPorts()) {
-				if (p.isIncoming()) {
-					potentialTargetPorts.add(p);
-				}
-				else {
-					potentialSourcePorts.add(p);
-				}
-			}
-		}
-		
-		for (Connector con : type.getConnectors()) {
-			potentialSourcePorts.remove(con.getSource());
-			potentialTargetPorts.remove(con.getTarget());
-		}
-		unconnectedPorts.addAll(potentialSourcePorts);
-		unconnectedPorts.addAll(potentialTargetPorts);
+//		List<Port> potentialSourcePorts = new ArrayList<>();
+//		List<Port> potentialTargetPorts = new ArrayList<>();
+//		
+//		ComponentTypeImpl cti = (ComponentTypeImpl) type;
+//		ComponentTypeHelper.getString();
+//		potentialSourcePorts.addAll(cti.getIncomingPorts());
+//		potentialTargetPorts.addAll(cti.getOutgoingPorts());
+//		
+//		for (Subcomponent sc : type.getSubcomponents()) {
+//			for (Port p: sc.getPorts()) {
+//				if (p.isIncoming()) {
+//					potentialTargetPorts.add(p);
+//				}
+//				else {
+//					potentialSourcePorts.add(p);
+//				}
+//			}
+//		}
+//		
+//		for (Connector con : type.getConnectors()) {
+//			potentialSourcePorts.remove(con.getSource());
+//			potentialTargetPorts.remove(con.getTarget());
+//		}
+//		unconnectedPorts.addAll(potentialSourcePorts);
+//		unconnectedPorts.addAll(potentialTargetPorts);
 		
 		return unconnectedPorts;
 	}

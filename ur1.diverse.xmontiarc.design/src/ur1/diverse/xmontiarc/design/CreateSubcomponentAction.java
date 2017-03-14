@@ -12,9 +12,10 @@ import org.eclipse.sirius.business.api.action.AbstractExternalJavaAction;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import org.eclipse.ui.PlatformUI;
 
-import xmontiarc.ComponentType;
-import xmontiarc.Port;
-import xmontiarc.Subcomponent;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Port;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent;
+
 
 public class CreateSubcomponentAction extends AbstractExternalJavaAction implements IExternalJavaAction {
 

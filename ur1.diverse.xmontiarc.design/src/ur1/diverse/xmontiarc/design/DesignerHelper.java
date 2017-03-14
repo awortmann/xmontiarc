@@ -21,8 +21,9 @@ import org.eclipse.jface.window.Window;
 import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
-import xmontiarc.ComponentType;
-import xmontiarc.Subcomponent;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent;
+
 
 public class DesignerHelper {
 

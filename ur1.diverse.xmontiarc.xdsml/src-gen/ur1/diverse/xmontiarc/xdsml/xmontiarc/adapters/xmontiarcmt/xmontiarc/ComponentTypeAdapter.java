@@ -87,6 +87,44 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.update(adaptee);
   }
   
+  @Override
+  public Subcomponent findOwnerOf(final Port p) {
+    return (Subcomponent) adaptersFactory.createAdapter(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.findOwnerOf(adaptee, (ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Port)((EObjectAdapter)p).getAdaptee()
+    ), eResource);
+  }
+  
+  @Override
+  public EList<Port> getDirectedPorts(final boolean collectIncomingPorts) {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getDirectedPorts(adaptee, collectIncomingPorts
+    ), adaptersFactory, eResource);
+  }
+  
+  @Override
+  public EList<Port> getDirectedPortsOfSubcomponents(final boolean collectIncoming) {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getDirectedPortsOfSubcomponents(adaptee, collectIncoming
+    ), adaptersFactory, eResource);
+  }
+  
+  @Override
+  public EList<Port> getIncomingPorts() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getIncomingPorts(adaptee), adaptersFactory, eResource);
+  }
+  
+  @Override
+  public EList<Port> getIncomingPortsOfSubcomponents() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getIncomingPortsOfSubcomponents(adaptee), adaptersFactory, eResource);
+  }
+  
+  @Override
+  public EList<Port> getOutgoingPorts() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getOutgoingPorts(adaptee), adaptersFactory, eResource);
+  }
+  
+  @Override
+  public EList<Port> getOutgoingPortsOfSubcomponents() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getOutgoingPortsOfSubcomponents(adaptee), adaptersFactory, eResource);
+  }
+  
   protected final static String NAME_EDEFAULT = "UnnamedComponentType";
   
   protected final static String BEHAVIOR_EDEFAULT = "\"\"";

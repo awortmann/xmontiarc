@@ -6,13 +6,7 @@
 
 <plugin>
 
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated model -->
-      <package
-            uri="http://ur1/diverse/xmontiarc/model"
-            class="model.ModelPackage"
-            genModel="ur1.diverse.xmontiarc.model/model.genmodel"/>
-   </extension>
+
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated xmontiarc -->

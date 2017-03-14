@@ -2,6 +2,7 @@
  */
 package ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc;
 
+import java.util.Optional;
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -164,5 +165,61 @@ public interface ComponentType extends EObject {
 	 * @generated
 	 */
 	void update();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	Subcomponent findOwnerOf(Port p);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<Port> getOutgoingPortsOfSubcomponents();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<Port> getIncomingPortsOfSubcomponents();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	EList<Port> getDirectedPortsOfSubcomponents(boolean collectIncoming);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<Port> getIncomingPorts();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	EList<Port> getOutgoingPorts();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	EList<Port> getDirectedPorts(boolean collectIncomingPorts);
 
 } // ComponentType

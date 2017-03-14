@@ -2,8 +2,11 @@
  */
 package ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl;
 
+import java.util.Optional;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EGenericType;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -105,6 +108,9 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		XmontiarcPackageImpl theXmontiarcPackage = (XmontiarcPackageImpl)(EPackage.Registry.INSTANCE.get(eNS_URI) instanceof XmontiarcPackageImpl ? EPackage.Registry.INSTANCE.get(eNS_URI) : new XmontiarcPackageImpl());
 
 		isInited = true;
+
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
 
 		// Obtain or create and register interdependencies
 		RuntimePackageImpl theRuntimePackage = (RuntimePackageImpl)(EPackage.Registry.INSTANCE.getEPackage(RuntimePackage.eNS_URI) instanceof RuntimePackageImpl ? EPackage.Registry.INSTANCE.getEPackage(RuntimePackage.eNS_URI) : RuntimePackage.eINSTANCE);
@@ -414,6 +420,23 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 
 		addEOperation(componentTypeEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(componentTypeEClass, this.getSubcomponent(), "findOwnerOf", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getPort(), "p", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(componentTypeEClass, this.getPort(), "getOutgoingPortsOfSubcomponents", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(componentTypeEClass, this.getPort(), "getIncomingPortsOfSubcomponents", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(componentTypeEClass, this.getPort(), "getDirectedPortsOfSubcomponents", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "collectIncoming", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(componentTypeEClass, this.getPort(), "getIncomingPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(componentTypeEClass, this.getPort(), "getOutgoingPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(componentTypeEClass, this.getPort(), "getDirectedPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "collectIncomingPorts", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Type(), ecorePackage.getEString(), "type", "java.lang.Object", 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", "UnnamedPort", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -427,6 +450,12 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 
 		addEOperation(connectorEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(connectorEClass, ecorePackage.getEString(), "getSourceRepresentation", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(connectorEClass, ecorePackage.getEString(), "getTargetRepresentation", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(connectorEClass, ecorePackage.getEString(), "getRepresentation", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(subcomponentEClass, Subcomponent.class, "Subcomponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSubcomponent_Name(), ecorePackage.getEString(), "name", "UnnamedSubcomponent", 1, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Type(), this.getComponentType(), null, "type", null, 1, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -434,6 +463,13 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		initEReference(getSubcomponent_Parent(), this.getComponentType(), this.getComponentType_Subcomponents(), "parent", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(subcomponentEClass, null, "compute", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(subcomponentEClass, this.getPort(), "getIncomingPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(subcomponentEClass, this.getPort(), "getOutgoingPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(subcomponentEClass, this.getPort(), "getDirectedPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEBoolean(), "collectIncomingPorts", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -500,12 +536,77 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		   new String[] {
 		   });	
 		addAnnotation
+		  (componentTypeEClass.getEOperations().get(4), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (componentTypeEClass.getEOperations().get(5), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (componentTypeEClass.getEOperations().get(6), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (componentTypeEClass.getEOperations().get(7), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (componentTypeEClass.getEOperations().get(8), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (componentTypeEClass.getEOperations().get(9), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (componentTypeEClass.getEOperations().get(10), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (connectorEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
+		  (connectorEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (connectorEClass.getEOperations().get(2), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (connectorEClass.getEOperations().get(3), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (subcomponentEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (subcomponentEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (subcomponentEClass.getEOperations().get(2), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (subcomponentEClass.getEOperations().get(3), 
 		   source, 
 		   new String[] {
 		   });

@@ -66,6 +66,22 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspect.compute(adaptee);
   }
   
+  @Override
+  public EList<Port> getDirectedPorts(final boolean collectIncomingPorts) {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentHelperAspect.getDirectedPorts(adaptee, collectIncomingPorts
+    ), adaptersFactory, eResource);
+  }
+  
+  @Override
+  public EList<Port> getIncomingPorts() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentHelperAspect.getIncomingPorts(adaptee), adaptersFactory, eResource);
+  }
+  
+  @Override
+  public EList<Port> getOutgoingPorts() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentHelperAspect.getOutgoingPorts(adaptee), adaptersFactory, eResource);
+  }
+  
   protected final static String NAME_EDEFAULT = "UnnamedSubcomponent";
   
   @Override

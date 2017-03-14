@@ -77,6 +77,9 @@ public class RuntimePackageImpl extends EPackageImpl implements RuntimePackage {
 
 		isInited = true;
 
+		// Initialize simple dependencies
+		EcorePackage.eINSTANCE.eClass();
+
 		// Obtain or create and register interdependencies
 		XmontiarcPackageImpl theXmontiarcPackage = (XmontiarcPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(XmontiarcPackage.eNS_URI) instanceof XmontiarcPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(XmontiarcPackage.eNS_URI) : XmontiarcPackage.eINSTANCE);
 

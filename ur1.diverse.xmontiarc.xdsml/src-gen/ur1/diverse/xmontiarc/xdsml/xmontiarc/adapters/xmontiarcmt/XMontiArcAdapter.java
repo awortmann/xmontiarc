@@ -15,20 +15,20 @@ public class XMontiArcAdapter extends ResourceAdapter implements XMontiArcMT {
   }
   
   @Override
-  public XmontiarcFactory getXmontiarcFactory() {
-    return new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.XmontiarcFactoryAdapter();
-  }
-  
-  @Override
   public RuntimeFactory getRuntimeFactory() {
     return new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.RuntimeFactoryAdapter();
   }
   
   @Override
+  public XmontiarcFactory getXmontiarcFactory() {
+    return new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.XmontiarcFactoryAdapter();
+  }
+  
+  @Override
   public Set getFactories() {
     java.util.Set<org.eclipse.emf.ecore.EFactory> res = new java.util.HashSet<org.eclipse.emf.ecore.EFactory>();
-    res.add(getXmontiarcFactory());
     res.add(getRuntimeFactory());
+    res.add(getXmontiarcFactory());
     return res;
   }
   

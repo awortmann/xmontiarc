@@ -4,3 +4,4 @@ Bundle-Name: Runtime
 Bundle-SymbolicName: ur1.diverse.xmontiarc.runtime
 Bundle-Version: 1.0.0.qualifier
 Export-Package: ur1.diverse.xmontiarc.runtime
+Import-Package: org.eclipse.emf.common.util

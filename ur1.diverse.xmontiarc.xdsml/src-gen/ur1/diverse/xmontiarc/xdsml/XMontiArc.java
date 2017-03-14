@@ -5,6 +5,7 @@ import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
+import ur1.diverse.xmontiarc.xdsml.MontiArcMT;
 import ur1.diverse.xmontiarc.xdsml.XMontiArcMT;
 
 @SuppressWarnings("all")
@@ -25,6 +26,12 @@ public class XMontiArc implements IMetamodel {
     XMontiArc mm = new XMontiArc();
     mm.setResource(res);
     return mm ;
+  }
+  
+  public MontiArcMT toMontiArcMT() {
+    ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.XMontiArcAdapter adaptee = new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.XMontiArcAdapter() ;
+    adaptee.setAdaptee(resource);
+    return adaptee;
   }
   
   public XMontiArcMT toXMontiArcMT() {

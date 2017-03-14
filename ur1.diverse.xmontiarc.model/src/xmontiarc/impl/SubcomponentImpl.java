@@ -2,10 +2,7 @@
  */
 package xmontiarc.impl;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -14,7 +11,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -225,21 +221,6 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	private EList<Port> getDerivedPorts() {
-		if (ports == null) {
-			ports = new EObjectResolvingEList<Port>(Port.class, this,
-					XmontiarcPackage.SUBCOMPONENT__PORTS);
-//			List<Port> derivedPorts = SubcomponentDerivedPortsHelper.setDerivedPorts(this);
-//			System.out.println("SubcomponentImpl.getDerivedPorts(" + this.toString() + "): Adding derived ports '" + derivedPorts + "'.");
-		}
-		return ports;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
@@ -374,37 +355,5 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 		return result.toString();
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public List<Port> getIncomingPorts() {
-		return this.getDirectedPorts(true);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public List<Port> getOutgoingPorts() {
-		return this.getDirectedPorts(false);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	private List<Port> getDirectedPorts(boolean collectIncomingPorts) {
-		List<Port> ports = new ArrayList<Port>();
-		for (Port p : this.getPorts()) {
-			if (p.isIncoming() == collectIncomingPorts) {
-				ports.add(p);
-			}
-		}
-		return ports;
-	}
 
 } // SubcomponentImpl

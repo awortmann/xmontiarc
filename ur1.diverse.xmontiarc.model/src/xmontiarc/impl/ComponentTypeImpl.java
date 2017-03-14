@@ -2,10 +2,7 @@
  */
 package xmontiarc.impl;
 
-import java.util.ArrayList;
 import java.util.Collection;
-import java.util.List;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -358,73 +355,5 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 		result.append(name);
 		return result.toString();
 	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public List<Port> getOutgoingPortsOfSubcomponents() {
-		return this.getDirectedPortsOfSubcomponents(false);
-	}
 	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public List<Port> getIncomingPortsOfSubcomponents() {
-		return this.getDirectedPortsOfSubcomponents(true);
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public List<Port> getDirectedPortsOfSubcomponents(boolean collectIncoming) {
-		List<Port> incomingPorts = new ArrayList<>();
-		for (Subcomponent sc: this.getSubcomponents()) {
-			for (Port p : sc.getPorts()) {
-				if (p.isIncoming()==collectIncoming) {
-					incomingPorts.add(p);
-				}
-			}
-		}
-		return incomingPorts;
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public List<Port> getIncomingPorts() {
-		return this.getDirectedPorts(true);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public List<Port> getOutgoingPorts() {
-		return this.getDirectedPorts(false);
-	}
-	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	private List<Port> getDirectedPorts(boolean collectIncomingPorts) {
-		List<Port> ports = new ArrayList<Port>();
-		for (Port p : this.getPorts()) {
-			if (p.isIncoming()==collectIncomingPorts) {
-				ports.add(p);
-			}
-		}
-		return ports;
-	}
-
 } //ComponentTypeImpl

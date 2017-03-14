@@ -2,7 +2,9 @@
  */
 package ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl;
 
+import java.util.Optional;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -71,8 +73,7 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 * @generated
 	 */
 	public ComponentType createComponentType() {
-		ComponentTypeImpl componentType = new ComponentTypeImpl();
-		return componentType;
+		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
 
 	/**
@@ -81,8 +82,7 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 * @generated
 	 */
 	public Port createPort() {
-		PortImpl port = new PortImpl();
-		return port;
+		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
 
 	/**
@@ -91,8 +91,7 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 * @generated
 	 */
 	public Connector createConnector() {
-		ConnectorImpl connector = new ConnectorImpl();
-		return connector;
+		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
 
 	/**
@@ -101,8 +100,7 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 * @generated
 	 */
 	public Subcomponent createSubcomponent() {
-		SubcomponentImpl subcomponent = new SubcomponentImpl();
-		return subcomponent;
+		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
 
 	/**

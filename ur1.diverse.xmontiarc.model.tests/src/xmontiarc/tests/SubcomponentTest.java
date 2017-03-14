@@ -13,6 +13,14 @@ import xmontiarc.XmontiarcFactory;
  * <!-- begin-user-doc -->
  * A test case for the model object '<em><b>Subcomponent</b></em>'.
  * <!-- end-user-doc -->
+ * <p>
+ * The following operations are tested:
+ * <ul>
+ *   <li>{@link xmontiarc.Subcomponent#getIncomingPorts() <em>Get Incoming Ports</em>}</li>
+ *   <li>{@link xmontiarc.Subcomponent#getOutgoingPorts() <em>Get Outgoing Ports</em>}</li>
+ *   <li>{@link xmontiarc.Subcomponent#getDirectedPorts(boolean) <em>Get Directed Ports</em>}</li>
+ * </ul>
+ * </p>
  * @generated
  */
 public class SubcomponentTest extends TestCase {
@@ -84,6 +92,45 @@ public class SubcomponentTest extends TestCase {
 	@Override
 	protected void tearDown() throws Exception {
 		setFixture(null);
+	}
+
+	/**
+	 * Tests the '{@link xmontiarc.Subcomponent#getIncomingPorts() <em>Get Incoming Ports</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xmontiarc.Subcomponent#getIncomingPorts()
+	 * @generated
+	 */
+	public void testGetIncomingPorts() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link xmontiarc.Subcomponent#getOutgoingPorts() <em>Get Outgoing Ports</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xmontiarc.Subcomponent#getOutgoingPorts()
+	 * @generated
+	 */
+	public void testGetOutgoingPorts() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
+	}
+
+	/**
+	 * Tests the '{@link xmontiarc.Subcomponent#getDirectedPorts(boolean) <em>Get Directed Ports</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xmontiarc.Subcomponent#getDirectedPorts(boolean)
+	 * @generated
+	 */
+	public void testGetDirectedPorts__boolean() {
+		// TODO: implement this operation test method
+		// Ensure that you remove @generated or mark it @generated NOT
+		fail();
 	}
 
 } //SubcomponentTest

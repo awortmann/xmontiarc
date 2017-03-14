@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: ur1.diverse.xmontiarc.xdsml.edit;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Activator: ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.provider.XMontiArcMTEditPlugin$Implementation
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Export-Package: ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.provider,
+ ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.provider
+Require-Bundle: org.eclipse.core.runtime,
+ ur1.diverse.xmontiarc.xdsml;visibility:=reexport,
+ org.eclipse.emf.edit;visibility:=reexport
+Bundle-ActivationPolicy: lazy

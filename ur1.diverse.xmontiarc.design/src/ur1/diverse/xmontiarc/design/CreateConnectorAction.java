@@ -8,11 +8,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.sirius.business.api.action.AbstractExternalJavaAction;
 import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 
-import xmontiarc.ComponentType;
-import xmontiarc.Connector;
-import xmontiarc.Port;
-import xmontiarc.Subcomponent;
-import xmontiarc.XmontiarcFactory;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Connector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Port;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.XmontiarcFactory;
+
 
 public class CreateConnectorAction extends AbstractExternalJavaAction implements IExternalJavaAction {
 

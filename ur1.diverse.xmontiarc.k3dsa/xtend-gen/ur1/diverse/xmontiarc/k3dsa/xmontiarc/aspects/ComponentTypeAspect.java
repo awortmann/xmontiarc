@@ -9,6 +9,7 @@ import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties;
 import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect;
+import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorHelperAspect;
 import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect;
 import xmontiarc.ComponentType;
 import xmontiarc.Connector;
@@ -25,26 +26,9 @@ public class ComponentTypeAspect {
   }
   
   @Main
-  @Step
   public static void main(final ComponentType _self) {
     final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    	@Override
-    	public void execute() {
-    		_privk3_main(_self_, _self);
-    	}
-    };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    if (stepManager != null) {
-    	stepManager.executeStep(_self,command,"ComponentType","main");
-    } else {
-    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry.getInstance().findEventManager(_self);
-    	if (eventManager != null) {
-    		eventManager.manageEvents();
-    	}
-    	command.execute();
-    }
-    ;;
+    _privk3_main(_self_, _self);;
   }
   
   @Step
@@ -98,13 +82,18 @@ public class ComponentTypeAspect {
   }
   
   protected static void _privk3_main(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self) {
+    InputOutput.<String>println("main()");
     try {
       EList<Port> _ports = _self.getPorts();
       boolean _isEmpty = _ports.isEmpty();
       if (_isEmpty) {
         while (true) {
           {
-            InputOutput.<String>println("looping");
+            String _name = _self.getName();
+            String _plus = ("=== Starting " + _name);
+            String _plus_1 = (_plus + " Main Loop ===");
+            InputOutput.<String>println(_plus_1);
+            Thread.sleep(1000);
             ComponentTypeAspect.compute(_self);
             ComponentTypeAspect.update(_self);
           }
@@ -135,8 +124,8 @@ public class ComponentTypeAspect {
       EList<Connector> _connectors = _self.getConnectors();
       for (final Connector con : _connectors) {
         {
-          String _string = con.toString();
-          String _plus = ("Propagating message over connector \'" + _string);
+          String _representation = ConnectorHelperAspect.getRepresentation(con);
+          String _plus = ("Propagating message over connector \'" + _representation);
           String _plus_1 = (_plus + "\'.");
           InputOutput.<String>println(_plus_1);
           ConnectorAspect.update(con);

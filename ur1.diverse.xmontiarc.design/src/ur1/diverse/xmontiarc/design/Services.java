@@ -6,11 +6,12 @@ import java.util.Set;
 
 import org.eclipse.emf.ecore.EObject;
 
-import xmontiarc.Connector;
-import xmontiarc.Port;
-import xmontiarc.Subcomponent;
-import xmontiarc.impl.ComponentTypeImpl;
-import xmontiarc.impl.SubcomponentImpl;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Connector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Port;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.impl.ComponentTypeImpl;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.impl.SubcomponentImpl;
+
 
 /**
  * The services class used by VSM.
@@ -20,7 +21,11 @@ public class Services {
 	public Collection<EObject> getComponentIncomingPorts(EObject self) {
 		Set<EObject> ports = new HashSet<>();
 		ComponentTypeImpl c = (ComponentTypeImpl) self;
-		ports.addAll(c.getIncomingPorts());
+		
+		for (Port p : c.getIncomingPorts()) {
+			ports.add(p);
+		}
+		
 		return ports;
 	}
 	

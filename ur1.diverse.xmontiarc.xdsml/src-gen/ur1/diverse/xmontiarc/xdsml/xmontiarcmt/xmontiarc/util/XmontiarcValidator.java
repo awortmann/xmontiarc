@@ -4,6 +4,7 @@ package ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util;
 
 import java.util.Map;
 
+import java.util.Optional;
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;

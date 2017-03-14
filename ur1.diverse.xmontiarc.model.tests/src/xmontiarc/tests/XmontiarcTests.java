@@ -31,6 +31,7 @@ public class XmontiarcTests extends TestSuite {
 	 */
 	public static Test suite() {
 		TestSuite suite = new XmontiarcTests("xmontiarc Tests");
+		suite.addTestSuite(SubcomponentTest.class);
 		return suite;
 	}
 

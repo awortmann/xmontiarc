@@ -47,25 +47,27 @@ public class NoMultipleIncomingConnectorsPerPort extends MontiArcModelConstraint
 	}
 
 	private Set<Port> getMultipleIncomingPorts(ComponentType type) {
-		ComponentTypeImpl cti = (ComponentTypeImpl)type;
-		List<Port> portsWithMultipleIncomingConnectors = new ArrayList<>();
 		Set<Port> visitedPorts = new HashSet<>();
 		
-		List<Port> allIncomingPorts = new ArrayList<>();
-		allIncomingPorts.addAll(cti.getOutgoingPorts());
-		for (Subcomponent sc : cti.getSubcomponents()) {
-			SubcomponentImpl sci = (SubcomponentImpl) sc;
-			allIncomingPorts.addAll(sci.getIncomingPorts());
-		}
-		
-		for (Port p : allIncomingPorts) {
-			if (visitedPorts.contains(p)) {
-				portsWithMultipleIncomingConnectors.add(p);
-			}
-			else {
-				visitedPorts.add(p);
-			}
-		}
+//		ComponentTypeImpl cti = (ComponentTypeImpl)type;
+//		List<Port> portsWithMultipleIncomingConnectors = new ArrayList<>();
+//		
+//		
+//		List<Port> allIncomingPorts = new ArrayList<>();
+//		allIncomingPorts.addAll(cti.getOutgoingPorts());
+//		for (Subcomponent sc : cti.getSubcomponents()) {
+//			SubcomponentImpl sci = (SubcomponentImpl) sc;
+//			allIncomingPorts.addAll(sci.getIncomingPorts());
+//		}
+//		
+//		for (Port p : allIncomingPorts) {
+//			if (visitedPorts.contains(p)) {
+//				portsWithMultipleIncomingConnectors.add(p);
+//			}
+//			else {
+//				visitedPorts.add(p);
+//			}
+//		}
 		
 		return visitedPorts;
 	}

@@ -58,6 +58,21 @@ public class ConnectorAdapter extends EObjectAdapter<Connector> implements ur1.d
   }
   
   @Override
+  public String getRepresentation() {
+    return ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ConnectorHelperAspect.getRepresentation(adaptee);
+  }
+  
+  @Override
+  public String getSourceRepresentation() {
+    return ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ConnectorHelperAspect.getSourceRepresentation(adaptee);
+  }
+  
+  @Override
+  public String getTargetRepresentation() {
+    return ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ConnectorHelperAspect.getTargetRepresentation(adaptee);
+  }
+  
+  @Override
   public EClass eClass() {
     return ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.eINSTANCE.getConnector();
   }

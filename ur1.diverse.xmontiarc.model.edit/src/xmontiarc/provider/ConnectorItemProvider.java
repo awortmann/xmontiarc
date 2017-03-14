@@ -22,6 +22,7 @@ import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import xmontiarc.Connector;
 import xmontiarc.Port;
 import xmontiarc.XmontiarcPackage;
+import xmontiarc.helpers.ComponentTypeHelper;
 import xmontiarc.impl.ComponentTypeImpl;
 
 /**
@@ -84,8 +85,9 @@ public class ConnectorItemProvider extends ItemProviderAdapter implements IEditi
 		        	Connector con = (Connector)object;
 		        	ComponentTypeImpl parentComponentType = (ComponentTypeImpl) con.getParent();
 		        	List<Port> validSourcePorts = new ArrayList<Port>();
-		        	validSourcePorts.addAll(parentComponentType.getIncomingPorts());
-		        	validSourcePorts.addAll(parentComponentType.getOutgoingPortsOfSubcomponents());
+		        	
+		        	validSourcePorts.addAll(ComponentTypeHelper.getIncomingPorts(parentComponentType));
+		        	validSourcePorts.addAll(ComponentTypeHelper.getOutgoingPortsOfSubcomponents(parentComponentType));
 		            return validSourcePorts;
 		        }
 		});
@@ -117,8 +119,8 @@ public class ConnectorItemProvider extends ItemProviderAdapter implements IEditi
 		        	Connector con = (Connector)object;
 		        	ComponentTypeImpl parentComponentType = (ComponentTypeImpl) con.getParent();
 		        	List<Port> validTargetPorts = new ArrayList<Port>();
-		        	validTargetPorts.addAll(parentComponentType.getOutgoingPorts());
-		        	validTargetPorts.addAll(parentComponentType.getIncomingPortsOfSubcomponents());
+		        	validTargetPorts.addAll(ComponentTypeHelper.getOutgoingPorts(parentComponentType));
+		        	validTargetPorts.addAll(ComponentTypeHelper.getIncomingPortsOfSubcomponents(parentComponentType));
 		            return validTargetPorts;
 		        }
 		});
