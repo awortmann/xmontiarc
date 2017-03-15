@@ -6,6 +6,12 @@
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
   <eClassifiers xsi:type="ecore:EClass" name="ComponentType">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AtomicOrComposed"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="AtomicOrComposed" value="Tuple {&#xA;&#x9;message : String = 'Component type \'' + name + '\' cannot have connectors and behavior',&#xA;&#x9;status : Boolean = &#xA;            behavior.equalsIgnoreCase('') or self.connectors->isEmpty()&#xA;}.status"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" defaultValueLiteral="UnnamedComponentType">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
@@ -17,6 +23,12 @@
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Port">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="NameIsLowerCase"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="NameIsLowerCase" value="Tuple {&#xA;&#x9;message : String = 'Port \'' + name + '\' must be lowercase',&#xA;&#x9;status : Boolean = &#xA;            let firstLetter : String = (name).substring(0,1)&#xA;                in firstLetter.toLowerCase() = firstLetter&#xA;}.status"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" defaultValueLiteral="java.lang.Object">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
@@ -26,11 +38,17 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="incoming" lowerBound="1" defaultValueLiteral="true">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" defaultValueLiteral="UnnamedPort">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" defaultValueLiteral="N/A">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Connector">
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
+      <details key="constraints" value="AtomicOrComposed"/>
+    </eAnnotations>
+    <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
+      <details key="AtomicOrComposed" value="Tuple {&#xA;&#x9;message : String = 'Connectors cannot have the same source and target.',&#xA;&#x9;status : Boolean = &#xA;            source &lt;> target&#xA;}.status"/>
+    </eAnnotations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="source" lowerBound="1" eType="//Port"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="target" lowerBound="1" eType="//Port"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="//ComponentType" eOpposite="//ComponentType/connectors"/>
