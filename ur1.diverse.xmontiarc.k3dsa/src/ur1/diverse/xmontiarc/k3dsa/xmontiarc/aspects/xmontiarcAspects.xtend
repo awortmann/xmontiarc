@@ -43,7 +43,7 @@ class ComponentTypeAspect {
             if (_self.ports.empty) {
                 while (true) {
                     println("=== Starting " + _self.name + " Main Loop ===")
-                    Thread.sleep(1000);
+                    // Thread.sleep(1000);
                     _self.compute
                     _self.update
                 }

@@ -12,7 +12,7 @@
             id="org.eclipse.emf.ecore.Wizard.category.ID"
             name="%_UI_Wizard_category"/>
       <wizard
-            id="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.presentation.XmontiarcModelWizardID"
+            id="%_UI_XmontiarcModelWizard_labelur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.presentation.XmontiarcModelWizardID"
             name="%_UI_XmontiarcModelWizard_label"
             class="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.presentation.XmontiarcModelWizard"
             category="org.eclipse.emf.ecore.Wizard.category.ID"

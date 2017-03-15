@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XMontiArc -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.presentation.RuntimeModelWizardID"
+            name="%_UI_RuntimeModelWizard_label"
+            class="ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.presentation.RuntimeModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/RuntimeModelFile.gif">
+         <description>%_UI_RuntimeModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XMontiArc -->
+      <editor
+            id="ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.presentation.RuntimeEditorID"
+            name="%_UI_RuntimeEditor_label"
+            icon="icons/full/obj16/RuntimeModelFile.gif"
+            extensions="xmontiarc"
+            class="ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.presentation.RuntimeEditor"
+            contributorClass="ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.presentation.RuntimeActionBarContributor">
+      </editor>
+   </extension>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated XMontiArc -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.presentation.XmontiarcModelWizardID"
+            name="%_UI_XmontiarcModelWizard_label"
+            class="ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.presentation.XmontiarcModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/XmontiarcModelFile.gif">
+         <description>%_UI_XmontiarcModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated XMontiArc -->
+      <editor
+            id="ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.presentation.XmontiarcEditorID"
+            name="%_UI_XmontiarcEditor_label"
+            icon="icons/full/obj16/XmontiarcModelFile.gif"
+            extensions="xmontiarc"
+            class="ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.presentation.XmontiarcEditor"
+            contributorClass="ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.presentation.XmontiarcActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

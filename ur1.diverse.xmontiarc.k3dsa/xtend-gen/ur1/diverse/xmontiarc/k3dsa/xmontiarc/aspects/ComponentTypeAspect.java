@@ -93,7 +93,6 @@ public class ComponentTypeAspect {
             String _plus = ("=== Starting " + _name);
             String _plus_1 = (_plus + " Main Loop ===");
             InputOutput.<String>println(_plus_1);
-            Thread.sleep(1000);
             ComponentTypeAspect.compute(_self);
             ComponentTypeAspect.update(_self);
           }
