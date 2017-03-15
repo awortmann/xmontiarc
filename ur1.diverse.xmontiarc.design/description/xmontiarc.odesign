@@ -5,17 +5,25 @@
       <metamodel href="../../ur1.diverse.xmontiarc.xdsml.xmontiarc/model/XMontiArc.ecore#/0"/>
       <metamodel href="../../ur1.diverse.xmontiarc.xdsml.xmontiarc/model/XMontiArc.ecore#/1"/>
       <defaultLayer name="Default">
-        <edgeMappings name="IncomingConnectorEdge" semanticCandidatesExpression="feature:connectors" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']" domainClass="xmontiarc.IncomingConnector" useDomainElement="true">
+        <edgeMappings name="IncomingConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']" targetFinderExpression="service:getIncomingConnectorTargetPortCandidates()" sourceFinderExpression="service:getIncomingConnectorSourcePortCandidates()" domainClass="xmontiarc.IncomingConnector" useDomainElement="true">
           <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='green']"/>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="ConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode'] //@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode'] //@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']" targetFinderExpression="service:getConnectorTargetPort()" sourceFinderExpression="service:getConnectorSourcePort()" domainClass="xmontiarc.Connector" useDomainElement="true">
+        <edgeMappings name="OutgoingConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']" targetFinderExpression="service:getOutgoingConnectorTargetPortCandidates()" sourceFinderExpression="service:getOutgoingConnectorSourcePortCandidates()" domainClass="xmontiarc.OutgoingConnector" useDomainElement="true">
           <style sizeComputationExpression="2">
-            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='gray']"/>
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="IntermediateConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']" targetFinderExpression="service:getOutgoingConnectorTargetPortCandidates()" sourceFinderExpression="service:getOutgoingConnectorSourcePortCandidates()" domainClass="xmontiarc.IntermediateConnector" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             </centerLabelStyleDescription>
@@ -117,7 +125,7 @@
           </ownedTools>
         </toolSections>
         <toolSections name="NewConnectors" label="New Connectors">
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewIncomingConnector" label="New Incoming Connector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IncomingConnectorEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewIncomingConnector" label="Incoming Connector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IncomingConnectorEdge']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -130,7 +138,7 @@
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewOutgoingConnector" label="New Outgoing Connector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IncomingConnectorEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewOutgoingConnector" label="Outgoing Connector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='OutgoingConnectorEdge']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -139,11 +147,11 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:source"/>
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="aql:target"/>
-                <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="CallNewIncomingConnectorAction" action="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='NewIncomingConnectorAction']"/>
+                <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="CallNewOutgoingConnectorAction" action="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='NewOutgoingConnectorAction']"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
-          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewIntermediateConnector" label="New Intermediate Connector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IncomingConnectorEdge']">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewIntermediateConnector" label="Intermediate Connector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']">
             <sourceVariable name="source"/>
             <targetVariable name="target"/>
             <sourceViewVariable name="sourceView"/>
@@ -152,21 +160,21 @@
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:source"/>
                 <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="aql:target"/>
-                <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="CallNewIncomingConnectorAction" action="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='NewIntermediateConnectorAction']"/>
+                <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="CallNewIIntermediateConnectorAction" action="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='NewIntermediateConnectorAction']"/>
               </firstModelOperations>
             </initialOperation>
           </ownedTools>
           <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewIncomingConnectorAction" id="ur1.diverse.xmontiarc.design.CreateIncomingConnectorAction1">
             <parameters name="source" value="var:source"/>
             <parameters name="target" value="var:target"/>
-            <parameters name="sourceSubcomponent" value="aql:self.eContainer()"/>
+            <parameters name="sourceComponentType" value="aql:self.eContainer()"/>
           </ownedTools>
           <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewOutgoingConnectorAction" id="ur1.diverse.xmontiarc.design.CreateOutgoingConnectorAction1">
             <parameters name="source" value="var:source"/>
             <parameters name="target" value="var:target"/>
             <parameters name="sourceSubcomponent" value="aql:self.eContainer()"/>
           </ownedTools>
-          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewIntermediateConnectorAction" id="ur1.diverse.xmontiarc.design.CreateIntermediateConnectorAction">
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewIntermediateConnectorAction" id="ur1.diverse.xmontiarc.design.CreateIntermediateConnectorAction1">
             <parameters name="source" value="var:source"/>
             <parameters name="target" value="var:target"/>
             <parameters name="sourceSubcomponent" value="aql:self.eContainer()"/>

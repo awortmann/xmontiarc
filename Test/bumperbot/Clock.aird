@@ -31,7 +31,7 @@
               <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a9DdAgmFEeezrJ9vuEwTWA"/>
             </children>
             <styles xmi:type="notation:ShapeStyle" xmi:id="_a899cQmFEeezrJ9vuEwTWA" fontName=".SF NS Text" fontHeight="12"/>
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a899cgmFEeezrJ9vuEwTWA" x="-84" y="56" width="92" height="30"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_a899cgmFEeezrJ9vuEwTWA" x="-156" y="56" width="164" height="30"/>
           </children>
           <children xmi:type="notation:Node" xmi:id="_hARjsAmFEeezrJ9vuEwTWA" type="3012" element="_hANSQAmFEeezrJ9vuEwTWA">
             <children xmi:type="notation:Node" xmi:id="_hASKwAmFEeezrJ9vuEwTWA" type="5010">
@@ -53,7 +53,7 @@
     <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_Ymvs9AmFEeezrJ9vuEwTWA" name="Clock">
       <target xmi:type="ur1.diverse.xmontiarc.model:ComponentType" href="Clock.xmontiarc#/"/>
       <semanticElements xmi:type="ur1.diverse.xmontiarc.model:ComponentType" href="Clock.xmontiarc#/"/>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_a83PwAmFEeezrJ9vuEwTWA" name="Number threshold" width="3" height="3" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_a83PwAmFEeezrJ9vuEwTWA" name="Number countdown" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:IncomingPort" href="Clock.xmontiarc#//@incomingPorts.0"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:IncomingPort" href="Clock.xmontiarc#//@incomingPorts.0"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -64,7 +64,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']"/>
       </ownedBorderedNodes>
-      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_hANSQAmFEeezrJ9vuEwTWA" name="Number remainingTime" width="3" height="3" resizeKind="NSEW">
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_hANSQAmFEeezrJ9vuEwTWA" name="Boolean countdownFinished" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:OutgoingPort" href="Clock.xmontiarc#//@outgoingPorts.0"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:OutgoingPort" href="Clock.xmontiarc#//@outgoingPorts.0"/>
         <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>

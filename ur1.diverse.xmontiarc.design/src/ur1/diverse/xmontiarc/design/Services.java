@@ -61,7 +61,7 @@ public class Services {
 	public String getSubcomponentLabel(EObject self) {
 		Subcomponent p = (Subcomponent)self;
 //		System.out.println("Services.getSubcomponentLabel(" + p.toString() + ")");
-		return p.getType() + " " + p.getName();
+		return p.getType().getName() + " " + p.getName();
 	}
 	
 	public EObject getConnectorSourcePort(EObject self) {
@@ -71,6 +71,30 @@ public class Services {
 	}
 	
 	public EObject getConnectorTargetPort(EObject self) {
+		Connector c = (Connector)self;
+//		System.out.println("Drawing target port for connector '" + c.toString() + "'.");
+		return c.getTarget();
+	}
+	
+	public EObject getIncomingConnectorSourcePortCandidates(EObject self) {
+		Connector c = (Connector)self;
+//		System.out.println("Drawing source port for connector '" + c.toString() + "'.");
+		return c.getSource();
+	}
+	
+	public EObject getIncomingConnectorTargetPortCandidates(EObject self) {
+		Connector c = (Connector)self;
+//		System.out.println("Drawing target port for connector '" + c.toString() + "'.");
+		return c.getTarget();
+	}
+	
+	public EObject getOutgoingConnectorSourcePortCandidates(EObject self) {
+		Connector c = (Connector)self;
+//		System.out.println("Drawing source port for connector '" + c.toString() + "'.");
+		return c.getSource();
+	}
+	
+	public EObject getOutgoingConnectorTargetPortCandidates(EObject self) {
 		Connector c = (Connector)self;
 //		System.out.println("Drawing target port for connector '" + c.toString() + "'.");
 		return c.getTarget();

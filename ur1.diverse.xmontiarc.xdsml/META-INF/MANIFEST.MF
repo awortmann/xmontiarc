@@ -18,11 +18,11 @@ Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
- ur1.diverse.xmontiarc.xdsml.xmontiarc;bundle-version="0.1.0",
  ur1.diverse.xmontiarc.k3dsa;bundle-version="1.0.0",
  fr.inria.diverse.melange;bundle-version="0.2.0",
  fr.inria.diverse.melange.adapters;bundle-version="0.2.0",
- fr.inria.diverse.melange.lib;bundle-version="0.2.0"
+ fr.inria.diverse.melange.lib;bundle-version="0.2.0",
+ ur1.diverse.xmontiarc.xdsml.xmontiarc
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy

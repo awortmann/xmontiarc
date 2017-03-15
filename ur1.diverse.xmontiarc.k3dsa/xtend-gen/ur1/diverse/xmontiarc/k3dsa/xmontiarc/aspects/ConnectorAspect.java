@@ -148,7 +148,11 @@ public class ConnectorAspect {
       Subcomponent sc = ComponentTypeAspect.findOwnerOf(_parent_1, _source);
       boolean _notEquals_1 = (!Objects.equal(sc, null));
       if (_notEquals_1) {
-        return sc.getName();
+        String _name = sc.getName();
+        String _plus = (_name + ".");
+        Port _source_1 = ConnectorAspect.getSource(_self);
+        String _name_1 = _source_1.getName();
+        return (_plus + _name_1);
       }
     }
     return "N/A";
@@ -163,7 +167,11 @@ public class ConnectorAspect {
       final Subcomponent sc = ComponentTypeAspect.findOwnerOf(_parent_1, _target);
       boolean _notEquals_1 = (!Objects.equal(sc, null));
       if (_notEquals_1) {
-        return sc.getName();
+        String _name = sc.getName();
+        String _plus = (_name + ".");
+        Port _target_1 = ConnectorAspect.getTarget(_self);
+        String _name_1 = _target_1.getName();
+        return (_plus + _name_1);
       }
     }
     return "N/A";

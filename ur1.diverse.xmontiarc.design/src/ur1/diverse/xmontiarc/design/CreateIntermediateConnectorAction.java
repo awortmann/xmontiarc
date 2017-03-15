@@ -24,14 +24,6 @@ public class CreateIntermediateConnectorAction extends AbstractExternalJavaActio
 
 	@Override
 	public void execute(Collection<? extends EObject> args, Map<String, Object> options) {
-		System.out.println("CreateIntermediateConnectorAction.execute()");
-		for (Map.Entry<String, Object> option : options.entrySet()) {
-			System.out.println(option.getKey() + " = " + option.getValue());
-		}
-		for (EObject item : args) {
-			System.out.println("arg = " + item);
-		}
-		
 		OutgoingPort subcomponentOut = (OutgoingPort) options.get("source");
 		IncomingPort subcomponentIn = (IncomingPort) options.get("target");
 		

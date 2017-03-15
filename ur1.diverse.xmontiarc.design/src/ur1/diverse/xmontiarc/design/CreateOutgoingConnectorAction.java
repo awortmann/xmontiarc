@@ -23,14 +23,6 @@ public class CreateOutgoingConnectorAction extends AbstractExternalJavaAction im
 
 	@Override
 	public void execute(Collection<? extends EObject> args, Map<String, Object> options) {
-		System.out.println("CreateOutgoingConnectorAction.execute()");
-		for (Map.Entry<String, Object> option : options.entrySet()) {
-			System.out.println(option.getKey() + " = " + option.getValue());
-		}
-		for (EObject item : args) {
-			System.out.println("arg = " + item);
-		}
-		
 		OutgoingPort subcomponentOut = (OutgoingPort) options.get("source");
 		OutgoingPort componentTypeOut = (OutgoingPort) options.get("target");
 		

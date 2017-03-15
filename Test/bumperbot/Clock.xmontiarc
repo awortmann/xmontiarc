@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ur1.diverse.xmontiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ur1.diverse.xmontiarc.model="http://ur1.diverse.xmontiarc.xdsml.xmontiarc/xmontiarc/" name="Clock">
-  <incomingPorts name="threshold" value="-1"/>
-  <outgoingPorts name="remainingTime" value="-1" initialValue="-1"/>
+  <incomingPorts name="countdown" value="-1"/>
+  <outgoingPorts type="Boolean" name="countdownFinished" value="-1" initialValue="-1"/>
 </ur1.diverse.xmontiarc.model:ComponentType>

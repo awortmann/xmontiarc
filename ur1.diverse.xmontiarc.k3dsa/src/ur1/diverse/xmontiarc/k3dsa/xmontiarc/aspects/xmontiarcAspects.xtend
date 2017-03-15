@@ -183,7 +183,7 @@ class ConnectorAspect {
         if (_self.getParent() != null) {
             var Subcomponent sc = _self.getParent().findOwnerOf(_self.getSource);
             if (sc != null) {
-                return sc.getName();
+                return sc.name + "." + _self.source.name
             }
         }
         return "N/A";
@@ -193,7 +193,7 @@ class ConnectorAspect {
         if (_self.getParent() != null) {
             val Subcomponent sc = _self.getParent().findOwnerOf(_self.getTarget);
             if (sc != null) {
-                return sc.getName();
+                return sc.name + "." + _self.target.name
             }
         }
         return "N/A";
