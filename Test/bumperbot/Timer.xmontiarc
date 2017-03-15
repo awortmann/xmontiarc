@@ -3,11 +3,11 @@
   <connectors xsi:type="ur1.diverse.xmontiarc.model:IncomingConnector" source="//@incomingPorts.0" target="//@subcomponents.1/@incomingPorts.0"/>
   <connectors xsi:type="ur1.diverse.xmontiarc.model:OutgoingConnector" source="//@subcomponents.1/@outgoingPorts.0" target="//@outgoingPorts.0"/>
   <connectors xsi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" source="//@subcomponents.1/@outgoingPorts.0" target="//@subcomponents.0/@incomingPorts.0"/>
-  <subcomponents name="numberLogger67">
+  <subcomponents name="logger">
     <type href="NumberLogger.xmontiarc#/"/>
     <incomingPorts name="number" value="-1"/>
   </subcomponents>
-  <subcomponents name="clock17">
+  <subcomponents name="c">
     <type href="Clock.xmontiarc#/"/>
     <incomingPorts name="countdown" value="-1"/>
     <outgoingPorts name="countdownFinished" value="-1" initialValue="-1"/>

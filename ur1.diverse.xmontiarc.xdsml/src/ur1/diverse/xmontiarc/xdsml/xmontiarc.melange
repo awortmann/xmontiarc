@@ -11,9 +11,6 @@ language XMontiArc inherits MontiArc {
 	
 	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect
 	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect
-//	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentHelperAspect
 	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspect
-//	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeHelperAspect
 	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect
-//	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorHelperAspect
 }

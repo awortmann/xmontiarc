@@ -5,24 +5,24 @@
   <connectors xsi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" source="//@subcomponents.4/@outgoingPorts.2" target="//@subcomponents.3/@incomingPorts.0"/>
   <connectors xsi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" source="//@subcomponents.3/@outgoingPorts.0" target="//@subcomponents.4/@incomingPorts.1"/>
   <connectors xsi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" source="//@subcomponents.2/@outgoingPorts.0" target="//@subcomponents.4/@incomingPorts.0"/>
-  <subcomponents name="motor34">
+  <subcomponents name="left">
     <type href="Motor.xmontiarc#/"/>
     <incomingPorts name="speed" value="-1"/>
   </subcomponents>
-  <subcomponents name="motor87">
+  <subcomponents name="right">
     <type href="Motor.xmontiarc#/"/>
     <incomingPorts name="speed" value="-1"/>
   </subcomponents>
-  <subcomponents name="ultrasonicSensor27">
+  <subcomponents name="us">
     <type href="UltrasonicSensor.xmontiarc#/"/>
     <outgoingPorts name="distance" value="-1" initialValue="-1"/>
   </subcomponents>
-  <subcomponents name="timer59">
+  <subcomponents name="timer">
     <type href="Timer.xmontiarc#/"/>
     <incomingPorts name="threshold" value="-1"/>
     <outgoingPorts type="Boolean" name="thresholdReached" value="false" initialValue="false"/>
   </subcomponents>
-  <subcomponents name="controller40">
+  <subcomponents name="ctrl">
     <type href="Controller.xmontiarc#/"/>
     <incomingPorts name="obstacleDistance" value="-1"/>
     <incomingPorts type="Boolean" name="timerSignal" value="false"/>

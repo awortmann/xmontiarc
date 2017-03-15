@@ -1,27 +1,23 @@
 Bundle-SymbolicName: ur1.diverse.xmontiarc.xdsml;singleton:=true
-Export-Package: ur1.diverse.xmontiarc.xdsml,
- ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt,
- ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.xmontiarc,
- ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt,
- ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime,
- ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc,
- ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime,
- ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.impl,
- ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.util,
- ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc,
- ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl,
- ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util
+Export-Package: ur1.diverse.xmontiarc.xdsml,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.xmontiarc,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.impl,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.util,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util
 Bundle-Name: %pluginName
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
+ 
+ org.eclipse.emf.ecore;visibility:="reexport",
+ 
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
+ 
  ur1.diverse.xmontiarc.k3dsa;bundle-version="1.0.0",
+ 
  fr.inria.diverse.melange;bundle-version="0.2.0",
+ 
  fr.inria.diverse.melange.adapters;bundle-version="0.2.0",
+ 
  fr.inria.diverse.melange.lib;bundle-version="0.2.0",
+ 
  ur1.diverse.xmontiarc.xdsml.xmontiarc
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

@@ -289,7 +289,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_7Sb60AmDEeezNKrgnkGpWQ" name="Motor motor34" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_7Sb60AmDEeezNKrgnkGpWQ" name="Motor left" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="BumperBot.xmontiarc#//@subcomponents.0"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="BumperBot.xmontiarc#//@subcomponents.0"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_7SgzUAmDEeezNKrgnkGpWQ" name="Number speed" incomingEdges="_Jam0wAmXEeelkrrBxJVuXw" width="3" height="3" resizeKind="NSEW">
@@ -311,7 +311,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-7tuoAmDEeezNKrgnkGpWQ" name="Motor motor87" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_-7tuoAmDEeezNKrgnkGpWQ" name="Motor right" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="BumperBot.xmontiarc#//@subcomponents.1"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="BumperBot.xmontiarc#//@subcomponents.1"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_-7u8wAmDEeezNKrgnkGpWQ" name="Number speed" incomingEdges="_KH9qAAmXEeelkrrBxJVuXw" width="3" height="3" resizeKind="NSEW">
@@ -333,7 +333,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_C1k8IAmEEeezNKrgnkGpWQ" name="UltrasonicSensor ultrasonicSensor27" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_C1k8IAmEEeezNKrgnkGpWQ" name="UltrasonicSensor us" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="BumperBot.xmontiarc#//@subcomponents.2"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="BumperBot.xmontiarc#//@subcomponents.2"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_C1mKQAmEEeezNKrgnkGpWQ" name="Number distance" outgoingEdges="_NypzEAmXEeelkrrBxJVuXw" width="3" height="3" resizeKind="NSEW">
@@ -355,7 +355,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_G5CxkAmEEeezNKrgnkGpWQ" name="Timer timer59" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_G5CxkAmEEeezNKrgnkGpWQ" name="Timer timer" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="BumperBot.xmontiarc#//@subcomponents.3"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="BumperBot.xmontiarc#//@subcomponents.3"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_G5D_sAmEEeezNKrgnkGpWQ" name="Number threshold" incomingEdges="_KuFO0AmXEeelkrrBxJVuXw" width="3" height="3" resizeKind="NSEW">
@@ -388,7 +388,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Nz-jYAmEEeezNKrgnkGpWQ" name="Controller controller40" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_Nz-jYAmEEeezNKrgnkGpWQ" name="Controller ctrl" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="BumperBot.xmontiarc#//@subcomponents.4"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="BumperBot.xmontiarc#//@subcomponents.4"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_Nz_xgAmEEeezNKrgnkGpWQ" name="Boolean timerSignal" incomingEdges="_NcvNcAmXEeelkrrBxJVuXw" width="3" height="3" resizeKind="NSEW">
@@ -458,7 +458,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_Jam0wAmXEeelkrrBxJVuXw" sourceNode="_N0A_oAmEEeezNKrgnkGpWQ" targetNode="_7SgzUAmDEeezNKrgnkGpWQ">
       <target xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="BumperBot.xmontiarc#//@connectors.0"/>
       <semanticElements xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="BumperBot.xmontiarc#//@connectors.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Jam0wQmXEeelkrrBxJVuXw" size="2">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Jam0wQmXEeelkrrBxJVuXw" size="2" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Jam0wgmXEeelkrrBxJVuXw"/>
       </ownedStyle>
@@ -467,7 +467,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_KH9qAAmXEeelkrrBxJVuXw" sourceNode="_N0A_ogmEEeezNKrgnkGpWQ" targetNode="_-7u8wAmDEeezNKrgnkGpWQ">
       <target xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="BumperBot.xmontiarc#//@connectors.1"/>
       <semanticElements xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="BumperBot.xmontiarc#//@connectors.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_KH9qAQmXEeelkrrBxJVuXw" size="2">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_KH9qAQmXEeelkrrBxJVuXw" size="2" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_KH9qAgmXEeelkrrBxJVuXw"/>
       </ownedStyle>
@@ -476,7 +476,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_KuFO0AmXEeelkrrBxJVuXw" sourceNode="_N0BmsQmEEeezNKrgnkGpWQ" targetNode="_G5D_sAmEEeezNKrgnkGpWQ">
       <target xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="BumperBot.xmontiarc#//@connectors.2"/>
       <semanticElements xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="BumperBot.xmontiarc#//@connectors.2"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_KuFO0QmXEeelkrrBxJVuXw" size="2">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_KuFO0QmXEeelkrrBxJVuXw" size="2" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_KuFO0gmXEeelkrrBxJVuXw"/>
       </ownedStyle>
@@ -485,7 +485,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_NcvNcAmXEeelkrrBxJVuXw" sourceNode="_G5FN0AmEEeezNKrgnkGpWQ" targetNode="_Nz_xgAmEEeezNKrgnkGpWQ">
       <target xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="BumperBot.xmontiarc#//@connectors.3"/>
       <semanticElements xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="BumperBot.xmontiarc#//@connectors.3"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Ncv0gAmXEeelkrrBxJVuXw" size="2">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_Ncv0gAmXEeelkrrBxJVuXw" size="2" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_Ncv0gQmXEeelkrrBxJVuXw"/>
       </ownedStyle>
@@ -494,7 +494,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_NypzEAmXEeelkrrBxJVuXw" sourceNode="_C1mKQAmEEeezNKrgnkGpWQ" targetNode="_N0AYkAmEEeezNKrgnkGpWQ">
       <target xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="BumperBot.xmontiarc#//@connectors.4"/>
       <semanticElements xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="BumperBot.xmontiarc#//@connectors.4"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_NypzEQmXEeelkrrBxJVuXw" size="2">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_NypzEQmXEeelkrrBxJVuXw" size="2" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_NypzEgmXEeelkrrBxJVuXw"/>
       </ownedStyle>

@@ -187,7 +187,7 @@
         <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@style"/>
       </ownedStyle>
       <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']"/>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_1hxR0AmFEeezrJ9vuEwTWA" name="NumberLogger numberLogger67" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_1hxR0AmFEeezrJ9vuEwTWA" name="NumberLogger logger" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="Timer.xmontiarc#//@subcomponents.0"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="Timer.xmontiarc#//@subcomponents.0"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_1hx44AmFEeezrJ9vuEwTWA" name="Number number" incomingEdges="_HM7cQAmXEeelkrrBxJVuXw" width="3" height="3" resizeKind="NSEW">
@@ -209,7 +209,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']"/>
       </ownedDiagramElements>
-      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_U29kUAmMEeehqp3r32FnWw" name="Clock clock17" width="3" height="3" resizeKind="NSEW">
+      <ownedDiagramElements xmi:type="diagram:DNode" xmi:id="_U29kUAmMEeehqp3r32FnWw" name="Clock c" width="3" height="3" resizeKind="NSEW">
         <target xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="Timer.xmontiarc#//@subcomponents.1"/>
         <semanticElements xmi:type="ur1.diverse.xmontiarc.model:Subcomponent" href="Timer.xmontiarc#//@subcomponents.1"/>
         <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_U2_ZgAmMEeehqp3r32FnWw" name="Number countdown" incomingEdges="_mmVr8AmTEee6DbqtpMzqCA" width="3" height="3" resizeKind="NSEW">
@@ -246,7 +246,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_mmVr8AmTEee6DbqtpMzqCA" sourceNode="_yIvSwAmAEee6FuYiStZJ1A" targetNode="_U2_ZgAmMEeehqp3r32FnWw">
       <target xmi:type="ur1.diverse.xmontiarc.model:IncomingConnector" href="Timer.xmontiarc#//@connectors.0"/>
       <semanticElements xmi:type="ur1.diverse.xmontiarc.model:IncomingConnector" href="Timer.xmontiarc#//@connectors.0"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_mmZ9YAmTEee6DbqtpMzqCA" size="2" strokeColor="138,226,52">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_mmZ9YAmTEee6DbqtpMzqCA" size="2" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IncomingConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_mmZ9YQmTEee6DbqtpMzqCA"/>
       </ownedStyle>
@@ -255,7 +255,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_G6uj4AmVEeeBT7Fj2sfuLg" sourceNode="_U3AnoAmMEeehqp3r32FnWw" targetNode="_MaK_MAmBEeeoWpPGmrsq3w">
       <target xmi:type="ur1.diverse.xmontiarc.model:OutgoingConnector" href="Timer.xmontiarc#//@connectors.1"/>
       <semanticElements xmi:type="ur1.diverse.xmontiarc.model:OutgoingConnector" href="Timer.xmontiarc#//@connectors.1"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_G6vyAAmVEeeBT7Fj2sfuLg" size="2" strokeColor="239,41,41">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_G6vyAAmVEeeBT7Fj2sfuLg" size="2" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='OutgoingConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_G6vyAQmVEeeBT7Fj2sfuLg"/>
       </ownedStyle>
@@ -264,7 +264,7 @@
     <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_HM7cQAmXEeelkrrBxJVuXw" sourceNode="_U3AnoAmMEeehqp3r32FnWw" targetNode="_1hx44AmFEeezrJ9vuEwTWA">
       <target xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="Timer.xmontiarc#//@connectors.2"/>
       <semanticElements xmi:type="ur1.diverse.xmontiarc.model:IntermediateConnector" href="Timer.xmontiarc#//@connectors.2"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_HM8DUAmXEeelkrrBxJVuXw" size="2">
+      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_HM8DUAmXEeelkrrBxJVuXw" size="2" strokeColor="0,0,0">
         <description xmi:type="style:EdgeStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']/@style"/>
         <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_HM8DUQmXEeelkrrBxJVuXw"/>
       </ownedStyle>
