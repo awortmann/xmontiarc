@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import xmontiarc.ComponentType;
 import xmontiarc.Connector;
 import xmontiarc.Port;
-import xmontiarc.Subcomponent;
 import xmontiarc.XmontiarcPackage;
 
 /**
@@ -24,34 +23,12 @@ import xmontiarc.XmontiarcPackage;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link xmontiarc.impl.ConnectorImpl#getSource <em>Source</em>}</li>
- *   <li>{@link xmontiarc.impl.ConnectorImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link xmontiarc.impl.ConnectorImpl#getParent <em>Parent</em>}</li>
  * </ul>
  *
  * @generated
  */
-public class ConnectorImpl extends MinimalEObjectImpl.Container implements Connector {
-	/**
-	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getSource()
-	 * @generated
-	 * @ordered
-	 */
-	protected Port source;
-
-	/**
-	 * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getTarget()
-	 * @generated
-	 * @ordered
-	 */
-	protected Port target;
-
+public abstract class ConnectorImpl extends MinimalEObjectImpl.Container implements Connector {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -69,82 +46,6 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	@Override
 	protected EClass eStaticClass() {
 		return XmontiarcPackage.Literals.CONNECTOR;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Port getSource() {
-		if (source != null && source.eIsProxy()) {
-			InternalEObject oldSource = (InternalEObject)source;
-			source = (Port)eResolveProxy(oldSource);
-			if (source != oldSource) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XmontiarcPackage.CONNECTOR__SOURCE, oldSource, source));
-			}
-		}
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Port basicGetSource() {
-		return source;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setSource(Port newSource) {
-		Port oldSource = source;
-		source = newSource;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XmontiarcPackage.CONNECTOR__SOURCE, oldSource, source));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Port getTarget() {
-		if (target != null && target.eIsProxy()) {
-			InternalEObject oldTarget = (InternalEObject)target;
-			target = (Port)eResolveProxy(oldTarget);
-			if (target != oldTarget) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XmontiarcPackage.CONNECTOR__TARGET, oldTarget, target));
-			}
-		}
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public Port basicGetTarget() {
-		return target;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setTarget(Port newTarget) {
-		Port oldTarget = target;
-		target = newTarget;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XmontiarcPackage.CONNECTOR__TARGET, oldTarget, target));
 	}
 
 	/**
@@ -187,6 +88,20 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 		else if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, XmontiarcPackage.CONNECTOR__PARENT, newParent, newParent));
 	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public abstract Port getSource();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public abstract Port getTarget();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -240,12 +155,6 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case XmontiarcPackage.CONNECTOR__SOURCE:
-				if (resolve) return getSource();
-				return basicGetSource();
-			case XmontiarcPackage.CONNECTOR__TARGET:
-				if (resolve) return getTarget();
-				return basicGetTarget();
 			case XmontiarcPackage.CONNECTOR__PARENT:
 				return getParent();
 		}
@@ -260,12 +169,6 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case XmontiarcPackage.CONNECTOR__SOURCE:
-				setSource((Port)newValue);
-				return;
-			case XmontiarcPackage.CONNECTOR__TARGET:
-				setTarget((Port)newValue);
-				return;
 			case XmontiarcPackage.CONNECTOR__PARENT:
 				setParent((ComponentType)newValue);
 				return;
@@ -281,12 +184,6 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case XmontiarcPackage.CONNECTOR__SOURCE:
-				setSource((Port)null);
-				return;
-			case XmontiarcPackage.CONNECTOR__TARGET:
-				setTarget((Port)null);
-				return;
 			case XmontiarcPackage.CONNECTOR__PARENT:
 				setParent((ComponentType)null);
 				return;
@@ -302,10 +199,6 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case XmontiarcPackage.CONNECTOR__SOURCE:
-				return source != null;
-			case XmontiarcPackage.CONNECTOR__TARGET:
-				return target != null;
 			case XmontiarcPackage.CONNECTOR__PARENT:
 				return getParent() != null;
 		}
@@ -319,50 +212,51 @@ public class ConnectorImpl extends MinimalEObjectImpl.Container implements Conne
 	 */
 	@Override
 	public String toString() {
-		StringBuffer result = new StringBuffer();
-		ComponentType parent = this.getParent();
-		
-		if (this.getSource() != null) {
-			Port source = this.getSource();
-			boolean sourcePortOfSurroundingComponent = parent.getPorts().contains(source);
-			if (sourcePortOfSurroundingComponent) {
-				result.append(parent.getName() + "." + source.getName());
-			}
-			else { // port must be of some subcomponent of the surrounding component
-				for (Subcomponent sc: parent.getSubcomponents()) {
-					if (sc.getPorts().contains(source)) {
-						result.append(sc.getName() + "." + source.getName());
-					}
-				}
-			}
-			
-		}
-		else {
-			result.append("<undefined>");
-		}
-		
-		result.append(" -> ");
-		
-		if (this.getTarget() != null) {
-			Port target = this.getTarget();
-			boolean targetPortOfSurroundingComponent = parent.getPorts().contains(target);
-			if (targetPortOfSurroundingComponent) {
-				result.append(parent.getName() + "." + target.getName());
-			}
-			else { // port must be of some subcomponent of the surrounding component
-				for (Subcomponent sc: parent.getSubcomponents()) {
-					if (sc.getPorts().contains(target)) {
-						result.append(sc.getName() + "." + target.getName());
-					}
-				}
-			}
-			
-		}
-		else {
-			result.append("<undefined>");
-		}
-		
-		return result.toString();
+//		StringBuffer result = new StringBuffer();
+//		ComponentType parent = this.getParent();
+//		
+//		if (this.getSource() != null) {
+//			Port source = this.getSource();
+//			boolean sourcePortOfSurroundingComponent = parent.getPorts().contains(source);
+//			if (sourcePortOfSurroundingComponent) {
+//				result.append(parent.getName() + "." + source.getName());
+//			}
+//			else { // port must be of some subcomponent of the surrounding component
+//				for (Subcomponent sc: parent.getSubcomponents()) {
+//					if (sc.getPorts().contains(source)) {
+//						result.append(sc.getName() + "." + source.getName());
+//					}
+//				}
+//			}
+//			
+//		}
+//		else {
+//			result.append("<undefined>");
+//		}
+//		
+//		result.append(" -> ");
+//		
+//		if (this.getTarget() != null) {
+//			Port target = this.getTarget();
+//			boolean targetPortOfSurroundingComponent = parent.getPorts().contains(target);
+//			if (targetPortOfSurroundingComponent) {
+//				result.append(parent.getName() + "." + target.getName());
+//			}
+//			else { // port must be of some subcomponent of the surrounding component
+//				for (Subcomponent sc: parent.getSubcomponents()) {
+//					if (sc.getPorts().contains(target)) {
+//						result.append(sc.getName() + "." + target.getName());
+//					}
+//				}
+//			}
+//			
+//		}
+//		else {
+//			result.append("<undefined>");
+//		}
+//		
+//		return result.toString();
+		return super.toString();
 	}
 
 } //ConnectorImpl

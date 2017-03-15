@@ -123,7 +123,8 @@ public class SubcomponentItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(XmontiarcPackage.Literals.SUBCOMPONENT__PORTS);
+			childrenFeatures.add(XmontiarcPackage.Literals.SUBCOMPONENT__INCOMING_PORTS);
+			childrenFeatures.add(XmontiarcPackage.Literals.SUBCOMPONENT__OUTGOING_PORTS);
 		}
 		return childrenFeatures;
 	}
@@ -179,7 +180,8 @@ public class SubcomponentItemProvider
 			case XmontiarcPackage.SUBCOMPONENT__NAME:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case XmontiarcPackage.SUBCOMPONENT__PORTS:
+			case XmontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
+			case XmontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -199,8 +201,13 @@ public class SubcomponentItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(XmontiarcPackage.Literals.SUBCOMPONENT__PORTS,
-				 XmontiarcFactory.eINSTANCE.createPort()));
+				(XmontiarcPackage.Literals.SUBCOMPONENT__INCOMING_PORTS,
+				 XmontiarcFactory.eINSTANCE.createIncomingPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(XmontiarcPackage.Literals.SUBCOMPONENT__OUTGOING_PORTS,
+				 XmontiarcFactory.eINSTANCE.createOutgoingPort()));
 	}
 
 	/**

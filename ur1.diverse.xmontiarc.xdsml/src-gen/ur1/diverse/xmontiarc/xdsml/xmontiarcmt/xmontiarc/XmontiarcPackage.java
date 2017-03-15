@@ -4,7 +4,7 @@ package ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -77,22 +77,13 @@ public interface XmontiarcPackage extends EPackage {
 	int COMPONENT_TYPE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_TYPE__PORTS = 1;
-
-	/**
 	 * The feature id for the '<em><b>Connectors</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE__CONNECTORS = 2;
+	int COMPONENT_TYPE__CONNECTORS = 1;
 
 	/**
 	 * The feature id for the '<em><b>Subcomponents</b></em>' containment reference list.
@@ -101,7 +92,7 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE__SUBCOMPONENTS = 3;
+	int COMPONENT_TYPE__SUBCOMPONENTS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Behavior</b></em>' attribute.
@@ -110,7 +101,25 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE__BEHAVIOR = 4;
+	int COMPONENT_TYPE__BEHAVIOR = 3;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Ports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_TYPE__INCOMING_PORTS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Ports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_TYPE__OUTGOING_PORTS = 5;
 
 	/**
 	 * The number of structural features of the '<em>Component Type</em>' class.
@@ -119,7 +128,7 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE_FEATURE_COUNT = 5;
+	int COMPONENT_TYPE_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.PortImpl <em>Port</em>}' class.
@@ -150,22 +159,13 @@ public interface XmontiarcPackage extends EPackage {
 	int PORT__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Incoming</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__INCOMING = 2;
-
-	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT__VALUE = 3;
+	int PORT__VALUE = 2;
 
 	/**
 	 * The number of structural features of the '<em>Port</em>' class.
@@ -174,7 +174,108 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 4;
+	int PORT_FEATURE_COUNT = 3;
+
+	/**
+	 * The meta object id for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IncomingPortImpl <em>Incoming Port</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IncomingPortImpl
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getIncomingPort()
+	 * @generated
+	 */
+	int INCOMING_PORT = 2;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_PORT__TYPE = PORT__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_PORT__NAME = PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_PORT__VALUE = PORT__VALUE;
+
+	/**
+	 * The number of structural features of the '<em>Incoming Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.OutgoingPortImpl <em>Outgoing Port</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.OutgoingPortImpl
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getOutgoingPort()
+	 * @generated
+	 */
+	int OUTGOING_PORT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTGOING_PORT__TYPE = PORT__TYPE;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTGOING_PORT__NAME = PORT__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTGOING_PORT__VALUE = PORT__VALUE;
+
+	/**
+	 * The feature id for the '<em><b>Initial Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTGOING_PORT__INITIAL_VALUE = PORT_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Outgoing Port</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTGOING_PORT_FEATURE_COUNT = PORT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -184,25 +285,7 @@ public interface XmontiarcPackage extends EPackage {
 	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getConnector()
 	 * @generated
 	 */
-	int CONNECTOR = 2;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR__SOURCE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CONNECTOR__TARGET = 1;
+	int CONNECTOR = 4;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -211,7 +294,7 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR__PARENT = 2;
+	int CONNECTOR__PARENT = 0;
 
 	/**
 	 * The number of structural features of the '<em>Connector</em>' class.
@@ -220,7 +303,145 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CONNECTOR_FEATURE_COUNT = 3;
+	int CONNECTOR_FEATURE_COUNT = 1;
+
+	/**
+	 * The meta object id for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IntermediateConnectorImpl <em>Intermediate Connector</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IntermediateConnectorImpl
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getIntermediateConnector()
+	 * @generated
+	 */
+	int INTERMEDIATE_CONNECTOR = 5;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERMEDIATE_CONNECTOR__PARENT = CONNECTOR__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERMEDIATE_CONNECTOR__SOURCE = CONNECTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERMEDIATE_CONNECTOR__TARGET = CONNECTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Intermediate Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INTERMEDIATE_CONNECTOR_FEATURE_COUNT = CONNECTOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IncomingConnectorImpl <em>Incoming Connector</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IncomingConnectorImpl
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getIncomingConnector()
+	 * @generated
+	 */
+	int INCOMING_CONNECTOR = 6;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_CONNECTOR__PARENT = CONNECTOR__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_CONNECTOR__SOURCE = CONNECTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_CONNECTOR__TARGET = CONNECTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Incoming Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int INCOMING_CONNECTOR_FEATURE_COUNT = CONNECTOR_FEATURE_COUNT + 2;
+
+	/**
+	 * The meta object id for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.OutgoingConnectorImpl <em>Outgoing Connector</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.OutgoingConnectorImpl
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getOutgoingConnector()
+	 * @generated
+	 */
+	int OUTGOING_CONNECTOR = 7;
+
+	/**
+	 * The feature id for the '<em><b>Parent</b></em>' container reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTGOING_CONNECTOR__PARENT = CONNECTOR__PARENT;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTGOING_CONNECTOR__SOURCE = CONNECTOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTGOING_CONNECTOR__TARGET = CONNECTOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Outgoing Connector</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int OUTGOING_CONNECTOR_FEATURE_COUNT = CONNECTOR_FEATURE_COUNT + 2;
 
 	/**
 	 * The meta object id for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.SubcomponentImpl <em>Subcomponent</em>}' class.
@@ -230,7 +451,7 @@ public interface XmontiarcPackage extends EPackage {
 	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getSubcomponent()
 	 * @generated
 	 */
-	int SUBCOMPONENT = 3;
+	int SUBCOMPONENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -251,13 +472,13 @@ public interface XmontiarcPackage extends EPackage {
 	int SUBCOMPONENT__TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Ports</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Incoming Ports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT__PORTS = 2;
+	int SUBCOMPONENT__INCOMING_PORTS = 2;
 
 	/**
 	 * The feature id for the '<em><b>Parent</b></em>' container reference.
@@ -269,13 +490,32 @@ public interface XmontiarcPackage extends EPackage {
 	int SUBCOMPONENT__PARENT = 3;
 
 	/**
+	 * The feature id for the '<em><b>Outgoing Ports</b></em>' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBCOMPONENT__OUTGOING_PORTS = 4;
+
+	/**
 	 * The number of structural features of the '<em>Subcomponent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_FEATURE_COUNT = 4;
+	int SUBCOMPONENT_FEATURE_COUNT = 5;
+
+	/**
+	 * The meta object id for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType <em>Data Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getDataType()
+	 * @generated
+	 */
+	int DATA_TYPE = 9;
 
 
 	/**
@@ -298,17 +538,6 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getComponentType_Name();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getPorts <em>Ports</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ports</em>'.
-	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getPorts()
-	 * @see #getComponentType()
-	 * @generated
-	 */
-	EReference getComponentType_Ports();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getConnectors <em>Connectors</em>}'.
@@ -344,6 +573,28 @@ public interface XmontiarcPackage extends EPackage {
 	EAttribute getComponentType_Behavior();
 
 	/**
+	 * Returns the meta object for the containment reference list '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getIncomingPorts <em>Incoming Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Incoming Ports</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getIncomingPorts()
+	 * @see #getComponentType()
+	 * @generated
+	 */
+	EReference getComponentType_IncomingPorts();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getOutgoingPorts <em>Outgoing Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Outgoing Ports</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getOutgoingPorts()
+	 * @see #getComponentType()
+	 * @generated
+	 */
+	EReference getComponentType_OutgoingPorts();
+
+	/**
 	 * Returns the meta object for class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port <em>Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -376,17 +627,6 @@ public interface XmontiarcPackage extends EPackage {
 	EAttribute getPort_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#isIncoming <em>Incoming</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Incoming</em>'.
-	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#isIncoming()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EAttribute getPort_Incoming();
-
-	/**
 	 * Returns the meta object for the attribute '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -396,6 +636,37 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getPort_Value();
+
+	/**
+	 * Returns the meta object for class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingPort <em>Incoming Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Incoming Port</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingPort
+	 * @generated
+	 */
+	EClass getIncomingPort();
+
+	/**
+	 * Returns the meta object for class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingPort <em>Outgoing Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Outgoing Port</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingPort
+	 * @generated
+	 */
+	EClass getOutgoingPort();
+
+	/**
+	 * Returns the meta object for the attribute '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingPort#getInitialValue <em>Initial Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initial Value</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingPort#getInitialValue()
+	 * @see #getOutgoingPort()
+	 * @generated
+	 */
+	EAttribute getOutgoingPort_InitialValue();
 
 	/**
 	 * Returns the meta object for class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Connector <em>Connector</em>}'.
@@ -408,28 +679,6 @@ public interface XmontiarcPackage extends EPackage {
 	EClass getConnector();
 
 	/**
-	 * Returns the meta object for the reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Connector#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Connector#getSource()
-	 * @see #getConnector()
-	 * @generated
-	 */
-	EReference getConnector_Source();
-
-	/**
-	 * Returns the meta object for the reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Connector#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Connector#getTarget()
-	 * @see #getConnector()
-	 * @generated
-	 */
-	EReference getConnector_Target();
-
-	/**
 	 * Returns the meta object for the container reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Connector#getParent <em>Parent</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -439,6 +688,102 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getConnector_Parent();
+
+	/**
+	 * Returns the meta object for class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IntermediateConnector <em>Intermediate Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Intermediate Connector</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IntermediateConnector
+	 * @generated
+	 */
+	EClass getIntermediateConnector();
+
+	/**
+	 * Returns the meta object for the reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IntermediateConnector#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IntermediateConnector#getSource()
+	 * @see #getIntermediateConnector()
+	 * @generated
+	 */
+	EReference getIntermediateConnector_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IntermediateConnector#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IntermediateConnector#getTarget()
+	 * @see #getIntermediateConnector()
+	 * @generated
+	 */
+	EReference getIntermediateConnector_Target();
+
+	/**
+	 * Returns the meta object for class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingConnector <em>Incoming Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Incoming Connector</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingConnector
+	 * @generated
+	 */
+	EClass getIncomingConnector();
+
+	/**
+	 * Returns the meta object for the reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingConnector#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingConnector#getSource()
+	 * @see #getIncomingConnector()
+	 * @generated
+	 */
+	EReference getIncomingConnector_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingConnector#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingConnector#getTarget()
+	 * @see #getIncomingConnector()
+	 * @generated
+	 */
+	EReference getIncomingConnector_Target();
+
+	/**
+	 * Returns the meta object for class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingConnector <em>Outgoing Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Outgoing Connector</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingConnector
+	 * @generated
+	 */
+	EClass getOutgoingConnector();
+
+	/**
+	 * Returns the meta object for the reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingConnector#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingConnector#getSource()
+	 * @see #getOutgoingConnector()
+	 * @generated
+	 */
+	EReference getOutgoingConnector_Source();
+
+	/**
+	 * Returns the meta object for the reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingConnector#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingConnector#getTarget()
+	 * @see #getOutgoingConnector()
+	 * @generated
+	 */
+	EReference getOutgoingConnector_Target();
 
 	/**
 	 * Returns the meta object for class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent <em>Subcomponent</em>}'.
@@ -473,15 +818,15 @@ public interface XmontiarcPackage extends EPackage {
 	EReference getSubcomponent_Type();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getPorts <em>Ports</em>}'.
+	 * Returns the meta object for the containment reference list '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getIncomingPorts <em>Incoming Ports</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Ports</em>'.
-	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getPorts()
+	 * @return the meta object for the containment reference list '<em>Incoming Ports</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getIncomingPorts()
 	 * @see #getSubcomponent()
 	 * @generated
 	 */
-	EReference getSubcomponent_Ports();
+	EReference getSubcomponent_IncomingPorts();
 
 	/**
 	 * Returns the meta object for the container reference '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getParent <em>Parent</em>}'.
@@ -493,6 +838,27 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getSubcomponent_Parent();
+
+	/**
+	 * Returns the meta object for the containment reference list '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getOutgoingPorts <em>Outgoing Ports</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference list '<em>Outgoing Ports</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent#getOutgoingPorts()
+	 * @see #getSubcomponent()
+	 * @generated
+	 */
+	EReference getSubcomponent_OutgoingPorts();
+
+	/**
+	 * Returns the meta object for enum '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType <em>Data Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Data Type</em>'.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType
+	 * @generated
+	 */
+	EEnum getDataType();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -535,14 +901,6 @@ public interface XmontiarcPackage extends EPackage {
 		EAttribute COMPONENT_TYPE__NAME = eINSTANCE.getComponentType_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference COMPONENT_TYPE__PORTS = eINSTANCE.getComponentType_Ports();
-
-		/**
 		 * The meta object literal for the '<em><b>Connectors</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -565,6 +923,22 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute COMPONENT_TYPE__BEHAVIOR = eINSTANCE.getComponentType_Behavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Incoming Ports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_TYPE__INCOMING_PORTS = eINSTANCE.getComponentType_IncomingPorts();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing Ports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference COMPONENT_TYPE__OUTGOING_PORTS = eINSTANCE.getComponentType_OutgoingPorts();
 
 		/**
 		 * The meta object literal for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.PortImpl <em>Port</em>}' class.
@@ -593,20 +967,40 @@ public interface XmontiarcPackage extends EPackage {
 		EAttribute PORT__NAME = eINSTANCE.getPort_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Incoming</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PORT__INCOMING = eINSTANCE.getPort_Incoming();
-
-		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EAttribute PORT__VALUE = eINSTANCE.getPort_Value();
+
+		/**
+		 * The meta object literal for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IncomingPortImpl <em>Incoming Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IncomingPortImpl
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getIncomingPort()
+		 * @generated
+		 */
+		EClass INCOMING_PORT = eINSTANCE.getIncomingPort();
+
+		/**
+		 * The meta object literal for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.OutgoingPortImpl <em>Outgoing Port</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.OutgoingPortImpl
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getOutgoingPort()
+		 * @generated
+		 */
+		EClass OUTGOING_PORT = eINSTANCE.getOutgoingPort();
+
+		/**
+		 * The meta object literal for the '<em><b>Initial Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute OUTGOING_PORT__INITIAL_VALUE = eINSTANCE.getOutgoingPort_InitialValue();
 
 		/**
 		 * The meta object literal for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.ConnectorImpl <em>Connector</em>}' class.
@@ -619,12 +1013,30 @@ public interface XmontiarcPackage extends EPackage {
 		EClass CONNECTOR = eINSTANCE.getConnector();
 
 		/**
+		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CONNECTOR__PARENT = eINSTANCE.getConnector_Parent();
+
+		/**
+		 * The meta object literal for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IntermediateConnectorImpl <em>Intermediate Connector</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IntermediateConnectorImpl
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getIntermediateConnector()
+		 * @generated
+		 */
+		EClass INTERMEDIATE_CONNECTOR = eINSTANCE.getIntermediateConnector();
+
+		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR__SOURCE = eINSTANCE.getConnector_Source();
+		EReference INTERMEDIATE_CONNECTOR__SOURCE = eINSTANCE.getIntermediateConnector_Source();
 
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
@@ -632,15 +1044,59 @@ public interface XmontiarcPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR__TARGET = eINSTANCE.getConnector_Target();
+		EReference INTERMEDIATE_CONNECTOR__TARGET = eINSTANCE.getIntermediateConnector_Target();
 
 		/**
-		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
+		 * The meta object literal for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IncomingConnectorImpl <em>Incoming Connector</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.IncomingConnectorImpl
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getIncomingConnector()
+		 * @generated
+		 */
+		EClass INCOMING_CONNECTOR = eINSTANCE.getIncomingConnector();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference CONNECTOR__PARENT = eINSTANCE.getConnector_Parent();
+		EReference INCOMING_CONNECTOR__SOURCE = eINSTANCE.getIncomingConnector_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference INCOMING_CONNECTOR__TARGET = eINSTANCE.getIncomingConnector_Target();
+
+		/**
+		 * The meta object literal for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.OutgoingConnectorImpl <em>Outgoing Connector</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.OutgoingConnectorImpl
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getOutgoingConnector()
+		 * @generated
+		 */
+		EClass OUTGOING_CONNECTOR = eINSTANCE.getOutgoingConnector();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OUTGOING_CONNECTOR__SOURCE = eINSTANCE.getOutgoingConnector_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference OUTGOING_CONNECTOR__TARGET = eINSTANCE.getOutgoingConnector_Target();
 
 		/**
 		 * The meta object literal for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.SubcomponentImpl <em>Subcomponent</em>}' class.
@@ -669,12 +1125,12 @@ public interface XmontiarcPackage extends EPackage {
 		EReference SUBCOMPONENT__TYPE = eINSTANCE.getSubcomponent_Type();
 
 		/**
-		 * The meta object literal for the '<em><b>Ports</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Incoming Ports</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SUBCOMPONENT__PORTS = eINSTANCE.getSubcomponent_Ports();
+		EReference SUBCOMPONENT__INCOMING_PORTS = eINSTANCE.getSubcomponent_IncomingPorts();
 
 		/**
 		 * The meta object literal for the '<em><b>Parent</b></em>' container reference feature.
@@ -683,6 +1139,24 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SUBCOMPONENT__PARENT = eINSTANCE.getSubcomponent_Parent();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing Ports</b></em>' containment reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBCOMPONENT__OUTGOING_PORTS = eINSTANCE.getSubcomponent_OutgoingPorts();
+
+		/**
+		 * The meta object literal for the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType <em>Data Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getDataType()
+		 * @generated
+		 */
+		EEnum DATA_TYPE = eINSTANCE.getDataType();
 
 	}
 

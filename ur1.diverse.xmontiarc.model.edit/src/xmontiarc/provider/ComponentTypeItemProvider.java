@@ -125,9 +125,10 @@ public class ComponentTypeItemProvider
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(XmontiarcPackage.Literals.COMPONENT_TYPE__PORTS);
 			childrenFeatures.add(XmontiarcPackage.Literals.COMPONENT_TYPE__CONNECTORS);
 			childrenFeatures.add(XmontiarcPackage.Literals.COMPONENT_TYPE__SUBCOMPONENTS);
+			childrenFeatures.add(XmontiarcPackage.Literals.COMPONENT_TYPE__INCOMING_PORTS);
+			childrenFeatures.add(XmontiarcPackage.Literals.COMPONENT_TYPE__OUTGOING_PORTS);
 		}
 		return childrenFeatures;
 	}
@@ -184,9 +185,10 @@ public class ComponentTypeItemProvider
 			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;
-			case XmontiarcPackage.COMPONENT_TYPE__PORTS:
 			case XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+			case XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+			case XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 				return;
 		}
@@ -206,18 +208,33 @@ public class ComponentTypeItemProvider
 
 		newChildDescriptors.add
 			(createChildParameter
-				(XmontiarcPackage.Literals.COMPONENT_TYPE__PORTS,
-				 XmontiarcFactory.eINSTANCE.createPort()));
+				(XmontiarcPackage.Literals.COMPONENT_TYPE__CONNECTORS,
+				 XmontiarcFactory.eINSTANCE.createIntermediateConnector()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(XmontiarcPackage.Literals.COMPONENT_TYPE__CONNECTORS,
-				 XmontiarcFactory.eINSTANCE.createConnector()));
+				 XmontiarcFactory.eINSTANCE.createIncomingConnector()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(XmontiarcPackage.Literals.COMPONENT_TYPE__CONNECTORS,
+				 XmontiarcFactory.eINSTANCE.createOutgoingConnector()));
 
 		newChildDescriptors.add
 			(createChildParameter
 				(XmontiarcPackage.Literals.COMPONENT_TYPE__SUBCOMPONENTS,
 				 XmontiarcFactory.eINSTANCE.createSubcomponent()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(XmontiarcPackage.Literals.COMPONENT_TYPE__INCOMING_PORTS,
+				 XmontiarcFactory.eINSTANCE.createIncomingPort()));
+
+		newChildDescriptors.add
+			(createChildParameter
+				(XmontiarcPackage.Literals.COMPONENT_TYPE__OUTGOING_PORTS,
+				 XmontiarcFactory.eINSTANCE.createOutgoingPort()));
 	}
 
 	/**

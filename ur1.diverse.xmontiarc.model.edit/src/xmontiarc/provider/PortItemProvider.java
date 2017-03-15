@@ -61,7 +61,6 @@ public class PortItemProvider
 
 			addTypePropertyDescriptor(object);
 			addNamePropertyDescriptor(object);
-			addIncomingPropertyDescriptor(object);
 			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
@@ -90,50 +89,6 @@ public class PortItemProvider
 	}
 
 	/**
-	 * This adds a property descriptor for the Type feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addTypePropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_type_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_type_feature", "_UI_Port_type"),
-				 XmontiarcPackage.Literals.PORT__TYPE,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Incoming feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addIncomingPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add
-			(createItemPropertyDescriptor
-				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
-				 getResourceLocator(),
-				 getString("_UI_Port_incoming_feature"),
-				 getString("_UI_PropertyDescriptor_description", "_UI_Port_incoming_feature", "_UI_Port_type"),
-				 XmontiarcPackage.Literals.PORT__INCOMING,
-				 true,
-				 false,
-				 false,
-				 ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE,
-				 null,
-				 null));
-	}
-
-	/**
 	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -147,6 +102,28 @@ public class PortItemProvider
 				 getString("_UI_Port_value_feature"),
 				 getString("_UI_PropertyDescriptor_description", "_UI_Port_value_feature", "_UI_Port_type"),
 				 XmontiarcPackage.Literals.PORT__VALUE,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Port_type_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Port_type_feature", "_UI_Port_type"),
+				 XmontiarcPackage.Literals.PORT__TYPE,
 				 true,
 				 false,
 				 false,
@@ -193,7 +170,6 @@ public class PortItemProvider
 		switch (notification.getFeatureID(Port.class)) {
 			case XmontiarcPackage.PORT__TYPE:
 			case XmontiarcPackage.PORT__NAME:
-			case XmontiarcPackage.PORT__INCOMING:
 			case XmontiarcPackage.PORT__VALUE:
 				fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 				return;

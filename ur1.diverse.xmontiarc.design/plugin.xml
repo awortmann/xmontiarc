@@ -17,8 +17,22 @@
   <extension
         point="org.eclipse.sirius.externalJavaAction">
      <javaActions
-           actionClass="ur1.diverse.xmontiarc.design.CreateConnectorAction"
-           id="ur1.diverse.xmontiarc.design.CreateConnectorAction1">
+           actionClass="ur1.diverse.xmontiarc.design.CreateOutgoingConnectorAction"
+           id="ur1.diverse.xmontiarc.design.CreateOutgoingConnectorAction1">
+     </javaActions>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="ur1.diverse.xmontiarc.design.CreateIntermediateConnectorAction"
+           id="ur1.diverse.xmontiarc.design.CreateIncomingConnectorAction1">
+     </javaActions>
+  </extension>
+  <extension
+        point="org.eclipse.sirius.externalJavaAction">
+     <javaActions
+           actionClass="ur1.diverse.xmontiarc.design.CreateOutgoingConnectorAction"
+           id="ur1.diverse.xmontiarc.design.CreateOutgoingConnectorAction1">
      </javaActions>
   </extension>
 </plugin>

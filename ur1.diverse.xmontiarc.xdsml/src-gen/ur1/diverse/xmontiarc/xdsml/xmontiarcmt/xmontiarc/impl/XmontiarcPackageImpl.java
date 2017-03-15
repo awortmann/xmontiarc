@@ -2,11 +2,9 @@
  */
 package ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl;
 
-import java.util.Optional;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
-import org.eclipse.emf.ecore.EDataType;
-import org.eclipse.emf.ecore.EGenericType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -21,6 +19,12 @@ import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.impl.RuntimePackageImpl;
 
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Connector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingConnector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingPort;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IntermediateConnector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingConnector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingPort;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcFactory;
@@ -54,6 +58,20 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass incomingPortEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass outgoingPortEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass connectorEClass = null;
 
 	/**
@@ -61,7 +79,35 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass intermediateConnectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass incomingConnectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass outgoingConnectorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass subcomponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum dataTypeEEnum = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -164,7 +210,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentType_Ports() {
+	public EReference getComponentType_Connectors() {
 		return (EReference)componentTypeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -173,7 +219,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentType_Connectors() {
+	public EReference getComponentType_Subcomponents() {
 		return (EReference)componentTypeEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -182,8 +228,8 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getComponentType_Subcomponents() {
-		return (EReference)componentTypeEClass.getEStructuralFeatures().get(3);
+	public EAttribute getComponentType_Behavior() {
+		return (EAttribute)componentTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -191,8 +237,17 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponentType_Behavior() {
-		return (EAttribute)componentTypeEClass.getEStructuralFeatures().get(4);
+	public EReference getComponentType_IncomingPorts() {
+		return (EReference)componentTypeEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getComponentType_OutgoingPorts() {
+		return (EReference)componentTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -227,7 +282,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPort_Incoming() {
+	public EAttribute getPort_Value() {
 		return (EAttribute)portEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -236,8 +291,26 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getPort_Value() {
-		return (EAttribute)portEClass.getEStructuralFeatures().get(3);
+	public EClass getIncomingPort() {
+		return incomingPortEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOutgoingPort() {
+		return outgoingPortEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getOutgoingPort_InitialValue() {
+		return (EAttribute)outgoingPortEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -254,7 +327,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnector_Source() {
+	public EReference getConnector_Parent() {
 		return (EReference)connectorEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -263,8 +336,8 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnector_Target() {
-		return (EReference)connectorEClass.getEStructuralFeatures().get(1);
+	public EClass getIntermediateConnector() {
+		return intermediateConnectorEClass;
 	}
 
 	/**
@@ -272,8 +345,71 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getConnector_Parent() {
-		return (EReference)connectorEClass.getEStructuralFeatures().get(2);
+	public EReference getIntermediateConnector_Source() {
+		return (EReference)intermediateConnectorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIntermediateConnector_Target() {
+		return (EReference)intermediateConnectorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getIncomingConnector() {
+		return incomingConnectorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIncomingConnector_Source() {
+		return (EReference)incomingConnectorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIncomingConnector_Target() {
+		return (EReference)incomingConnectorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getOutgoingConnector() {
+		return outgoingConnectorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOutgoingConnector_Source() {
+		return (EReference)outgoingConnectorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getOutgoingConnector_Target() {
+		return (EReference)outgoingConnectorEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -308,7 +444,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSubcomponent_Ports() {
+	public EReference getSubcomponent_IncomingPorts() {
 		return (EReference)subcomponentEClass.getEStructuralFeatures().get(2);
 	}
 
@@ -319,6 +455,24 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 */
 	public EReference getSubcomponent_Parent() {
 		return (EReference)subcomponentEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getSubcomponent_OutgoingPorts() {
+		return (EReference)subcomponentEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getDataType() {
+		return dataTypeEEnum;
 	}
 
 	/**
@@ -351,27 +505,46 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		// Create classes and their features
 		componentTypeEClass = createEClass(COMPONENT_TYPE);
 		createEAttribute(componentTypeEClass, COMPONENT_TYPE__NAME);
-		createEReference(componentTypeEClass, COMPONENT_TYPE__PORTS);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__CONNECTORS);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__SUBCOMPONENTS);
 		createEAttribute(componentTypeEClass, COMPONENT_TYPE__BEHAVIOR);
+		createEReference(componentTypeEClass, COMPONENT_TYPE__INCOMING_PORTS);
+		createEReference(componentTypeEClass, COMPONENT_TYPE__OUTGOING_PORTS);
 
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__TYPE);
 		createEAttribute(portEClass, PORT__NAME);
-		createEAttribute(portEClass, PORT__INCOMING);
 		createEAttribute(portEClass, PORT__VALUE);
 
+		incomingPortEClass = createEClass(INCOMING_PORT);
+
+		outgoingPortEClass = createEClass(OUTGOING_PORT);
+		createEAttribute(outgoingPortEClass, OUTGOING_PORT__INITIAL_VALUE);
+
 		connectorEClass = createEClass(CONNECTOR);
-		createEReference(connectorEClass, CONNECTOR__SOURCE);
-		createEReference(connectorEClass, CONNECTOR__TARGET);
 		createEReference(connectorEClass, CONNECTOR__PARENT);
+
+		intermediateConnectorEClass = createEClass(INTERMEDIATE_CONNECTOR);
+		createEReference(intermediateConnectorEClass, INTERMEDIATE_CONNECTOR__SOURCE);
+		createEReference(intermediateConnectorEClass, INTERMEDIATE_CONNECTOR__TARGET);
+
+		incomingConnectorEClass = createEClass(INCOMING_CONNECTOR);
+		createEReference(incomingConnectorEClass, INCOMING_CONNECTOR__SOURCE);
+		createEReference(incomingConnectorEClass, INCOMING_CONNECTOR__TARGET);
+
+		outgoingConnectorEClass = createEClass(OUTGOING_CONNECTOR);
+		createEReference(outgoingConnectorEClass, OUTGOING_CONNECTOR__SOURCE);
+		createEReference(outgoingConnectorEClass, OUTGOING_CONNECTOR__TARGET);
 
 		subcomponentEClass = createEClass(SUBCOMPONENT);
 		createEAttribute(subcomponentEClass, SUBCOMPONENT__NAME);
 		createEReference(subcomponentEClass, SUBCOMPONENT__TYPE);
-		createEReference(subcomponentEClass, SUBCOMPONENT__PORTS);
+		createEReference(subcomponentEClass, SUBCOMPONENT__INCOMING_PORTS);
 		createEReference(subcomponentEClass, SUBCOMPONENT__PARENT);
+		createEReference(subcomponentEClass, SUBCOMPONENT__OUTGOING_PORTS);
+
+		// Create enums
+		dataTypeEEnum = createEEnum(DATA_TYPE);
 	}
 
 	/**
@@ -402,14 +575,20 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		incomingPortEClass.getESuperTypes().add(this.getPort());
+		outgoingPortEClass.getESuperTypes().add(this.getPort());
+		intermediateConnectorEClass.getESuperTypes().add(this.getConnector());
+		incomingConnectorEClass.getESuperTypes().add(this.getConnector());
+		outgoingConnectorEClass.getESuperTypes().add(this.getConnector());
 
 		// Initialize classes and features; add operations and parameters
 		initEClass(componentTypeEClass, ComponentType.class, "ComponentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponentType_Name(), ecorePackage.getEString(), "name", "UnnamedComponentType", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getComponentType_Ports(), this.getPort(), null, "ports", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_Connectors(), this.getConnector(), this.getConnector_Parent(), "connectors", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_Subcomponents(), this.getSubcomponent(), this.getSubcomponent_Parent(), "subcomponents", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getComponentType_Behavior(), ecorePackage.getEString(), "behavior", "\"\"", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentType_IncomingPorts(), this.getIncomingPort(), null, "incomingPorts", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentType_OutgoingPorts(), this.getOutgoingPort(), null, "outgoingPorts", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(componentTypeEClass, null, "initializeModel", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "args", 0, -1, IS_UNIQUE, IS_ORDERED);
@@ -430,25 +609,24 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		op = addEOperation(componentTypeEClass, this.getPort(), "getDirectedPortsOfSubcomponents", 0, -1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEBoolean(), "collectIncoming", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(componentTypeEClass, this.getPort(), "getIncomingPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(componentTypeEClass, this.getPort(), "getOutgoingPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(componentTypeEClass, this.getPort(), "getDirectedPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "collectIncomingPorts", 0, 1, IS_UNIQUE, IS_ORDERED);
-
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getPort_Type(), ecorePackage.getEString(), "type", "java.lang.Object", 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_Type(), this.getDataType(), "type", "Number", 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", "UnnamedPort", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_Incoming(), ecorePackage.getEBoolean(), "incoming", "true", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_Value(), ecorePackage.getEString(), "value", "UnnamedPort", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_Value(), ecorePackage.getEString(), "value", "DefaultValue", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getConnector_Source(), this.getPort(), null, "source", null, 1, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConnector_Target(), this.getPort(), null, "target", null, 1, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(incomingPortEClass, IncomingPort.class, "IncomingPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(outgoingPortEClass, OutgoingPort.class, "OutgoingPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getOutgoingPort_InitialValue(), ecorePackage.getEString(), "initialValue", "DefaultValue", 1, 1, OutgoingPort.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(connectorEClass, Connector.class, "Connector", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConnector_Parent(), this.getComponentType(), this.getComponentType_Connectors(), "parent", null, 0, 1, Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(connectorEClass, null, "update", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(connectorEClass, this.getPort(), "getSource", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(connectorEClass, this.getPort(), "getTarget", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(connectorEClass, ecorePackage.getEString(), "getSourceRepresentation", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -456,20 +634,32 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 
 		addEOperation(connectorEClass, ecorePackage.getEString(), "getRepresentation", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		initEClass(intermediateConnectorEClass, IntermediateConnector.class, "IntermediateConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIntermediateConnector_Source(), this.getOutgoingPort(), null, "source", null, 1, 1, IntermediateConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIntermediateConnector_Target(), this.getIncomingPort(), null, "target", null, 1, 1, IntermediateConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(incomingConnectorEClass, IncomingConnector.class, "IncomingConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIncomingConnector_Source(), this.getIncomingPort(), null, "source", null, 1, 1, IncomingConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getIncomingConnector_Target(), this.getIncomingPort(), null, "target", null, 1, 1, IncomingConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(outgoingConnectorEClass, OutgoingConnector.class, "OutgoingConnector", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getOutgoingConnector_Source(), this.getOutgoingPort(), null, "source", null, 1, 1, OutgoingConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getOutgoingConnector_Target(), this.getOutgoingPort(), null, "target", null, 1, 1, OutgoingConnector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
 		initEClass(subcomponentEClass, Subcomponent.class, "Subcomponent", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSubcomponent_Name(), ecorePackage.getEString(), "name", "UnnamedSubcomponent", 1, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Type(), this.getComponentType(), null, "type", null, 1, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSubcomponent_Ports(), this.getPort(), null, "ports", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubcomponent_IncomingPorts(), this.getIncomingPort(), null, "incomingPorts", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Parent(), this.getComponentType(), this.getComponentType_Subcomponents(), "parent", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubcomponent_OutgoingPorts(), this.getOutgoingPort(), null, "outgoingPorts", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(subcomponentEClass, null, "compute", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(subcomponentEClass, this.getPort(), "getIncomingPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		addEOperation(subcomponentEClass, this.getPort(), "getOutgoingPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
-
-		op = addEOperation(subcomponentEClass, this.getPort(), "getDirectedPorts", 0, -1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEBoolean(), "collectIncomingPorts", 0, 1, IS_UNIQUE, IS_ORDERED);
+		// Initialize enums and add enum literals
+		initEEnum(dataTypeEEnum, DataType.class, "DataType");
+		addEEnumLiteral(dataTypeEEnum, DataType.NUMBER);
+		addEEnumLiteral(dataTypeEEnum, DataType.BOOLEAN);
+		addEEnumLiteral(dataTypeEEnum, DataType.STRING);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -477,10 +667,10 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
-		// aspect
-		createAspectAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
 		createPivotAnnotations();
+		// aspect
+		createAspectAnnotations();
 	}
 
 	/**
@@ -500,10 +690,63 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 			 "validationDelegates", "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"
 		   });	
 		addAnnotation
+		  (componentTypeEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "AtomicOrComposed"
+		   });	
+		addAnnotation
+		  (portEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "NameIsLowerCase"
+		   });	
+		addAnnotation
+		  (connectorEClass, 
+		   source, 
+		   new String[] {
+			 "constraints", "DifferentSourceAndTarget MatchingPortTypes"
+		   });	
+		addAnnotation
 		  (subcomponentEClass, 
 		   source, 
 		   new String[] {
 			 "constraints", "NameIsLowerCase"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createPivotAnnotations() {
+		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
+		addAnnotation
+		  (componentTypeEClass, 
+		   source, 
+		   new String[] {
+			 "AtomicOrComposed", "Tuple {\n\tmessage : String = \'Component type \\\'\' + name + \'\\\' cannot have connectors and behavior\',\n\tstatus : Boolean = \n            behavior.equalsIgnoreCase(\'\') or self.connectors->isEmpty()\n}.status"
+		   });	
+		addAnnotation
+		  (portEClass, 
+		   source, 
+		   new String[] {
+			 "NameIsLowerCase", "Tuple {\n\tmessage : String = \'Port \\\'\' + name + \'\\\' must be lowercase\',\n\tstatus : Boolean = \n            let firstLetter : String = (name).substring(0,1)\n                in firstLetter.toLowerCase() = firstLetter\n}.status"
+		   });	
+		addAnnotation
+		  (connectorEClass, 
+		   source, 
+		   new String[] {
+			 "DifferentSourceAndTarget", "Tuple {\n\tmessage : String = \'Connectors cannot have the same source and target.\',\n\tstatus : Boolean = \n            source <> target\n}.status",
+			 "MatchingPortTypes", "Tuple {\n\tmessage : String = \'The data types of source and target ports must match.\',\n\tstatus : Boolean = \n            source <> target\n}.status"
+		   });	
+		addAnnotation
+		  (subcomponentEClass, 
+		   source, 
+		   new String[] {
+			 "NameIsLowerCase", "Tuple {\n\tmessage : String = \'\\\'\' + name + \'\\\' must be lowercase\',\n\tstatus : Boolean = \n            let firstLetter : String = (name).substring(0,1) \n                in firstLetter.toLowerCase() = firstLetter\n}.status"
 		   });
 	}
 
@@ -556,21 +799,6 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		   new String[] {
 		   });	
 		addAnnotation
-		  (componentTypeEClass.getEOperations().get(8), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (componentTypeEClass.getEOperations().get(9), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (componentTypeEClass.getEOperations().get(10), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
 		  (connectorEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
@@ -591,40 +819,19 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		   new String[] {
 		   });	
 		addAnnotation
+		  (connectorEClass.getEOperations().get(4), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (connectorEClass.getEOperations().get(5), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (subcomponentEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
-		   });	
-		addAnnotation
-		  (subcomponentEClass.getEOperations().get(1), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (subcomponentEClass.getEOperations().get(2), 
-		   source, 
-		   new String[] {
-		   });	
-		addAnnotation
-		  (subcomponentEClass.getEOperations().get(3), 
-		   source, 
-		   new String[] {
-		   });
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createPivotAnnotations() {
-		String source = "http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot";	
-		addAnnotation
-		  (subcomponentEClass, 
-		   source, 
-		   new String[] {
-			 "NameIsLowerCase", "Tuple {\n\tmessage : String = \'\\\'\' + name + \'\\\' must be lowercase\',\n\tstatus : Boolean = \n            let firstLetter : String = (name).substring(0,1) \n                in firstLetter.toLowerCase() = firstLetter\n}.status"
 		   });
 	}
 

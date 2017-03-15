@@ -15,18 +15,19 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getType <em>Type</em>}</li>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getName <em>Name</em>}</li>
- *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#isIncoming <em>Incoming</em>}</li>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getPort()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NameIsLowerCase'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NameIsLowerCase='Tuple {\n\tmessage : String = \'Port \\\'\' + name + \'\\\' must be lowercase\',\n\tstatus : Boolean = \n            let firstLetter : String = (name).substring(0,1)\n                in firstLetter.toLowerCase() = firstLetter\n}.status'"
  * @generated
  */
 public interface Port extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
-	 * The default value is <code>"java.lang.Object"</code>.
+	 * The default value is <code>"Number"</code>.
+	 * The literals are from the enumeration {@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType}.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Type</em>' attribute isn't clear,
@@ -34,22 +35,24 @@ public interface Port extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' attribute.
-	 * @see #setType(String)
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType
+	 * @see #setType(DataType)
 	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getPort_Type()
-	 * @model default="java.lang.Object"
+	 * @model default="Number"
 	 * @generated
 	 */
-	String getType();
+	DataType getType();
 
 	/**
 	 * Sets the value of the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getType <em>Type</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Type</em>' attribute.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType
 	 * @see #getType()
 	 * @generated
 	 */
-	void setType(String value);
+	void setType(DataType value);
 
 	/**
 	 * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -79,35 +82,8 @@ public interface Port extends EObject {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Incoming</b></em>' attribute.
-	 * The default value is <code>"true"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Incoming</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Incoming</em>' attribute.
-	 * @see #setIncoming(boolean)
-	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getPort_Incoming()
-	 * @model default="true" required="true"
-	 * @generated
-	 */
-	boolean isIncoming();
-
-	/**
-	 * Sets the value of the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#isIncoming <em>Incoming</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Incoming</em>' attribute.
-	 * @see #isIncoming()
-	 * @generated
-	 */
-	void setIncoming(boolean value);
-
-	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The default value is <code>"UnnamedPort"</code>.
+	 * The default value is <code>"DefaultValue"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
@@ -117,7 +93,7 @@ public interface Port extends EObject {
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getPort_Value()
-	 * @model default="UnnamedPort" required="true"
+	 * @model default="DefaultValue" required="true"
 	 * @generated
 	 */
 	String getValue();

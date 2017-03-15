@@ -16,7 +16,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import xmontiarc.ComponentType;
 import xmontiarc.Connector;
-import xmontiarc.Port;
+import xmontiarc.IncomingPort;
+import xmontiarc.OutgoingPort;
 import xmontiarc.Subcomponent;
 import xmontiarc.XmontiarcPackage;
 
@@ -29,10 +30,11 @@ import xmontiarc.XmontiarcPackage;
  * </p>
  * <ul>
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getName <em>Name</em>}</li>
- *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getPorts <em>Ports</em>}</li>
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getSubcomponents <em>Subcomponents</em>}</li>
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getBehavior <em>Behavior</em>}</li>
+ *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getIncomingPorts <em>Incoming Ports</em>}</li>
+ *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getOutgoingPorts <em>Outgoing Ports</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,16 +59,6 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPorts()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Port> ports;
 
 	/**
 	 * The cached value of the '{@link #getConnectors() <em>Connectors</em>}' containment reference list.
@@ -109,6 +101,26 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	protected String behavior = BEHAVIOR_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getIncomingPorts() <em>Incoming Ports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIncomingPorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<IncomingPort> incomingPorts;
+
+	/**
+	 * The cached value of the '{@link #getOutgoingPorts() <em>Outgoing Ports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutgoingPorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OutgoingPort> outgoingPorts;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -146,18 +158,6 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 		name = newName;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, XmontiarcPackage.COMPONENT_TYPE__NAME, oldName, name));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Port> getPorts() {
-		if (ports == null) {
-			ports = new EObjectContainmentEList<Port>(Port.class, this, XmontiarcPackage.COMPONENT_TYPE__PORTS);
-		}
-		return ports;
 	}
 
 	/**
@@ -210,6 +210,30 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<IncomingPort> getIncomingPorts() {
+		if (incomingPorts == null) {
+			incomingPorts = new EObjectContainmentEList<IncomingPort>(IncomingPort.class, this, XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS);
+		}
+		return incomingPorts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<OutgoingPort> getOutgoingPorts() {
+		if (outgoingPorts == null) {
+			outgoingPorts = new EObjectContainmentEList<OutgoingPort>(OutgoingPort.class, this, XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS);
+		}
+		return outgoingPorts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -230,12 +254,14 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case XmontiarcPackage.COMPONENT_TYPE__PORTS:
-				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
 			case XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return ((InternalEList<?>)getConnectors()).basicRemove(otherEnd, msgs);
 			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return ((InternalEList<?>)getSubcomponents()).basicRemove(otherEnd, msgs);
+			case XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+				return ((InternalEList<?>)getIncomingPorts()).basicRemove(otherEnd, msgs);
+			case XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+				return ((InternalEList<?>)getOutgoingPorts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -250,14 +276,16 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 		switch (featureID) {
 			case XmontiarcPackage.COMPONENT_TYPE__NAME:
 				return getName();
-			case XmontiarcPackage.COMPONENT_TYPE__PORTS:
-				return getPorts();
 			case XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return getConnectors();
 			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return getSubcomponents();
 			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				return getBehavior();
+			case XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+				return getIncomingPorts();
+			case XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+				return getOutgoingPorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -274,10 +302,6 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 			case XmontiarcPackage.COMPONENT_TYPE__NAME:
 				setName((String)newValue);
 				return;
-			case XmontiarcPackage.COMPONENT_TYPE__PORTS:
-				getPorts().clear();
-				getPorts().addAll((Collection<? extends Port>)newValue);
-				return;
 			case XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				getConnectors().clear();
 				getConnectors().addAll((Collection<? extends Connector>)newValue);
@@ -288,6 +312,14 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return;
 			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				setBehavior((String)newValue);
+				return;
+			case XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+				getIncomingPorts().clear();
+				getIncomingPorts().addAll((Collection<? extends IncomingPort>)newValue);
+				return;
+			case XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+				getOutgoingPorts().clear();
+				getOutgoingPorts().addAll((Collection<? extends OutgoingPort>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -304,9 +336,6 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 			case XmontiarcPackage.COMPONENT_TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case XmontiarcPackage.COMPONENT_TYPE__PORTS:
-				getPorts().clear();
-				return;
 			case XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				getConnectors().clear();
 				return;
@@ -315,6 +344,12 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return;
 			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				setBehavior(BEHAVIOR_EDEFAULT);
+				return;
+			case XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+				getIncomingPorts().clear();
+				return;
+			case XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+				getOutgoingPorts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -330,14 +365,16 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 		switch (featureID) {
 			case XmontiarcPackage.COMPONENT_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case XmontiarcPackage.COMPONENT_TYPE__PORTS:
-				return ports != null && !ports.isEmpty();
 			case XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return connectors != null && !connectors.isEmpty();
 			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return subcomponents != null && !subcomponents.isEmpty();
 			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				return BEHAVIOR_EDEFAULT == null ? behavior != null : !BEHAVIOR_EDEFAULT.equals(behavior);
+			case XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+				return incomingPorts != null && !incomingPorts.isEmpty();
+			case XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+				return outgoingPorts != null && !outgoingPorts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

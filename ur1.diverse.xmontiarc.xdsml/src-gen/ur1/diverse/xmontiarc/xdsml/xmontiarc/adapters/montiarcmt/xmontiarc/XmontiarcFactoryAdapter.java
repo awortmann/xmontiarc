@@ -4,8 +4,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.MontiArcMTAdaptersFactory;
 import xmontiarc.ComponentType;
-import xmontiarc.Connector;
-import xmontiarc.Port;
+import xmontiarc.IncomingConnector;
+import xmontiarc.IncomingPort;
+import xmontiarc.IntermediateConnector;
+import xmontiarc.OutgoingConnector;
+import xmontiarc.OutgoingPort;
 import xmontiarc.Subcomponent;
 import xmontiarc.XmontiarcFactory;
 import xmontiarc.XmontiarcPackage;
@@ -22,13 +25,28 @@ public class XmontiarcFactoryAdapter extends EFactoryImpl implements XmontiarcFa
   }
   
   @Override
-  public Port createPort() {
-    return adaptersFactory.createPortAdapter(xmontiarcAdaptee.createPort(), null);
+  public IncomingPort createIncomingPort() {
+    return adaptersFactory.createIncomingPortAdapter(xmontiarcAdaptee.createIncomingPort(), null);
   }
   
   @Override
-  public Connector createConnector() {
-    return adaptersFactory.createConnectorAdapter(xmontiarcAdaptee.createConnector(), null);
+  public OutgoingPort createOutgoingPort() {
+    return adaptersFactory.createOutgoingPortAdapter(xmontiarcAdaptee.createOutgoingPort(), null);
+  }
+  
+  @Override
+  public IntermediateConnector createIntermediateConnector() {
+    return adaptersFactory.createIntermediateConnectorAdapter(xmontiarcAdaptee.createIntermediateConnector(), null);
+  }
+  
+  @Override
+  public IncomingConnector createIncomingConnector() {
+    return adaptersFactory.createIncomingConnectorAdapter(xmontiarcAdaptee.createIncomingConnector(), null);
+  }
+  
+  @Override
+  public OutgoingConnector createOutgoingConnector() {
+    return adaptersFactory.createOutgoingConnectorAdapter(xmontiarcAdaptee.createOutgoingConnector(), null);
   }
   
   @Override

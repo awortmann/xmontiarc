@@ -7,7 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.MontiArcMTAdaptersFactory;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent;
 import xmontiarc.ComponentType;
-import xmontiarc.Port;
+import xmontiarc.IncomingPort;
+import xmontiarc.OutgoingPort;
 
 @SuppressWarnings("all")
 public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements xmontiarc.Subcomponent {
@@ -40,13 +41,13 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     else adaptee.setType(null);
   }
   
-  private EList<Port> ports_;
+  private EList<IncomingPort> incomingPorts_;
   
   @Override
-  public EList<Port> getPorts() {
-    if (ports_ == null)
-    	ports_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getPorts(), adaptersFactory, eResource);
-    return ports_;
+  public EList<IncomingPort> getIncomingPorts() {
+    if (incomingPorts_ == null)
+    	incomingPorts_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getIncomingPorts(), adaptersFactory, eResource);
+    return incomingPorts_;
   }
   
   @Override
@@ -59,6 +60,15 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     if (o != null)
     	adaptee.setParent(((ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.xmontiarc.ComponentTypeAdapter) o).getAdaptee());
     else adaptee.setParent(null);
+  }
+  
+  private EList<OutgoingPort> outgoingPorts_;
+  
+  @Override
+  public EList<OutgoingPort> getOutgoingPorts() {
+    if (outgoingPorts_ == null)
+    	outgoingPorts_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOutgoingPorts(), adaptersFactory, eResource);
+    return outgoingPorts_;
   }
   
   protected final static String NAME_EDEFAULT = "UnnamedSubcomponent";
@@ -75,10 +85,12 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     		return getName();
     	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__TYPE:
     		return getType();
-    	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__PORTS:
-    		return getPorts();
+    	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
+    		return getIncomingPorts();
     	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__PARENT:
     		return getParent();
+    	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
+    		return getOutgoingPorts();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -91,10 +103,12 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     		return getName() != NAME_EDEFAULT;
     	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__TYPE:
     		return getType() != null;
-    	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__PORTS:
-    		return getPorts() != null && !getPorts().isEmpty();
+    	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
+    		return getIncomingPorts() != null && !getIncomingPorts().isEmpty();
     	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__PARENT:
     		return getParent() != null;
+    	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
+    		return getOutgoingPorts() != null && !getOutgoingPorts().isEmpty();
     }
     
     return super.eIsSet(featureID);
@@ -113,14 +127,18 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     		(xmontiarc.ComponentType)
     		 newValue);
     		return;
-    	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__PORTS:
-    		getPorts().clear();
-    		getPorts().addAll((Collection) newValue);
+    	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
+    		getIncomingPorts().clear();
+    		getIncomingPorts().addAll((Collection) newValue);
     		return;
     	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__PARENT:
     		setParent(
     		(xmontiarc.ComponentType)
     		 newValue);
+    		return;
+    	case xmontiarc.XmontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
+    		getOutgoingPorts().clear();
+    		getOutgoingPorts().addAll((Collection) newValue);
     		return;
     }
     

@@ -76,8 +76,28 @@ public class XmontiarcAdapterFactory extends AdapterFactoryImpl {
 				return createPortAdapter();
 			}
 			@Override
+			public Adapter caseIncomingPort(IncomingPort object) {
+				return createIncomingPortAdapter();
+			}
+			@Override
+			public Adapter caseOutgoingPort(OutgoingPort object) {
+				return createOutgoingPortAdapter();
+			}
+			@Override
 			public Adapter caseConnector(Connector object) {
 				return createConnectorAdapter();
+			}
+			@Override
+			public Adapter caseIntermediateConnector(IntermediateConnector object) {
+				return createIntermediateConnectorAdapter();
+			}
+			@Override
+			public Adapter caseIncomingConnector(IncomingConnector object) {
+				return createIncomingConnectorAdapter();
+			}
+			@Override
+			public Adapter caseOutgoingConnector(OutgoingConnector object) {
+				return createOutgoingConnectorAdapter();
 			}
 			@Override
 			public Adapter caseSubcomponent(Subcomponent object) {
@@ -132,6 +152,34 @@ public class XmontiarcAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link xmontiarc.IncomingPort <em>Incoming Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see xmontiarc.IncomingPort
+	 * @generated
+	 */
+	public Adapter createIncomingPortAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link xmontiarc.OutgoingPort <em>Outgoing Port</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see xmontiarc.OutgoingPort
+	 * @generated
+	 */
+	public Adapter createOutgoingPortAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link xmontiarc.Connector <em>Connector</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -142,6 +190,48 @@ public class XmontiarcAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createConnectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link xmontiarc.IntermediateConnector <em>Intermediate Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see xmontiarc.IntermediateConnector
+	 * @generated
+	 */
+	public Adapter createIntermediateConnectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link xmontiarc.IncomingConnector <em>Incoming Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see xmontiarc.IncomingConnector
+	 * @generated
+	 */
+	public Adapter createIncomingConnectorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link xmontiarc.OutgoingConnector <em>Outgoing Connector</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see xmontiarc.OutgoingConnector
+	 * @generated
+	 */
+	public Adapter createOutgoingConnectorAdapter() {
 		return null;
 	}
 

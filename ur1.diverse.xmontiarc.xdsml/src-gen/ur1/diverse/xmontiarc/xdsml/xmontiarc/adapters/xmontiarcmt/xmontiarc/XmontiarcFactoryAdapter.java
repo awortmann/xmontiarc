@@ -4,7 +4,11 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.XMontiArcMTAdaptersFactory;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType;
-import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Connector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingConnector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingPort;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IntermediateConnector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingConnector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingPort;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcFactory;
@@ -27,8 +31,28 @@ public class XmontiarcFactoryAdapter extends EFactoryImpl implements XmontiarcFa
   }
   
   @Override
-  public Connector createConnector() {
-    return adaptersFactory.createConnectorAdapter(xmontiarcAdaptee.createConnector(), null);
+  public IncomingPort createIncomingPort() {
+    return adaptersFactory.createIncomingPortAdapter(xmontiarcAdaptee.createIncomingPort(), null);
+  }
+  
+  @Override
+  public OutgoingPort createOutgoingPort() {
+    return adaptersFactory.createOutgoingPortAdapter(xmontiarcAdaptee.createOutgoingPort(), null);
+  }
+  
+  @Override
+  public IntermediateConnector createIntermediateConnector() {
+    return adaptersFactory.createIntermediateConnectorAdapter(xmontiarcAdaptee.createIntermediateConnector(), null);
+  }
+  
+  @Override
+  public IncomingConnector createIncomingConnector() {
+    return adaptersFactory.createIncomingConnectorAdapter(xmontiarcAdaptee.createIncomingConnector(), null);
+  }
+  
+  @Override
+  public OutgoingConnector createOutgoingConnector() {
+    return adaptersFactory.createOutgoingConnectorAdapter(xmontiarcAdaptee.createOutgoingConnector(), null);
   }
   
   @Override

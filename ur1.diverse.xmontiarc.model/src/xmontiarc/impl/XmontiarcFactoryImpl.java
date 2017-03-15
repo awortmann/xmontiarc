@@ -3,6 +3,7 @@
 package xmontiarc.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -57,11 +58,44 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case XmontiarcPackage.COMPONENT_TYPE: return createComponentType();
-			case XmontiarcPackage.PORT: return createPort();
-			case XmontiarcPackage.CONNECTOR: return createConnector();
+			case XmontiarcPackage.INCOMING_PORT: return createIncomingPort();
+			case XmontiarcPackage.OUTGOING_PORT: return createOutgoingPort();
+			case XmontiarcPackage.INTERMEDIATE_CONNECTOR: return createIntermediateConnector();
+			case XmontiarcPackage.INCOMING_CONNECTOR: return createIncomingConnector();
+			case XmontiarcPackage.OUTGOING_CONNECTOR: return createOutgoingConnector();
 			case XmontiarcPackage.SUBCOMPONENT: return createSubcomponent();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case XmontiarcPackage.DATA_TYPE:
+				return createDataTypeFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case XmontiarcPackage.DATA_TYPE:
+				return convertDataTypeToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -80,9 +114,9 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Port createPort() {
-		PortImpl port = new PortImpl();
-		return port;
+	public IncomingPort createIncomingPort() {
+		IncomingPortImpl incomingPort = new IncomingPortImpl();
+		return incomingPort;
 	}
 
 	/**
@@ -90,9 +124,39 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Connector createConnector() {
-		ConnectorImpl connector = new ConnectorImpl();
-		return connector;
+	public OutgoingPort createOutgoingPort() {
+		OutgoingPortImpl outgoingPort = new OutgoingPortImpl();
+		return outgoingPort;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IntermediateConnector createIntermediateConnector() {
+		IntermediateConnectorImpl intermediateConnector = new IntermediateConnectorImpl();
+		return intermediateConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IncomingConnector createIncomingConnector() {
+		IncomingConnectorImpl incomingConnector = new IncomingConnectorImpl();
+		return incomingConnector;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public OutgoingConnector createOutgoingConnector() {
+		OutgoingConnectorImpl outgoingConnector = new OutgoingConnectorImpl();
+		return outgoingConnector;
 	}
 
 	/**
@@ -103,6 +167,26 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	public Subcomponent createSubcomponent() {
 		SubcomponentImpl subcomponent = new SubcomponentImpl();
 		return subcomponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public DataType createDataTypeFromString(EDataType eDataType, String initialValue) {
+		DataType result = DataType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertDataTypeToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

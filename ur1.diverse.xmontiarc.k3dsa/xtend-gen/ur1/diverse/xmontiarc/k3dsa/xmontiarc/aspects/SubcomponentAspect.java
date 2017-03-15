@@ -7,6 +7,7 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspectSubcomponentAspectProperties;
 import ur1.diverse.xmontiarc.runtime.GroovyInterpreter;
 import xmontiarc.ComponentType;
+import xmontiarc.OutgoingPort;
 import xmontiarc.Port;
 import xmontiarc.Subcomponent;
 
@@ -44,27 +45,23 @@ public class SubcomponentAspect {
     EList<Subcomponent> _subcomponents = _type.getSubcomponents();
     boolean _isEmpty = _subcomponents.isEmpty();
     if (_isEmpty) {
-      EList<Port> _ports = _self.getPorts();
-      for (final Port p : _ports) {
+      EList<OutgoingPort> _outgoingPorts = _self.getOutgoingPorts();
+      for (final Port p : _outgoingPorts) {
         {
           ComponentType _type_1 = _self.getType();
           String behavior = _type_1.getBehavior();
-          boolean _isIncoming = p.isIncoming();
-          boolean _not = (!_isIncoming);
-          if (_not) {
-            String result = GroovyInterpreter.interpret(behavior);
-            p.setValue(result);
-            String _value = p.getValue();
-            String _plus_2 = ("Assigning value \'" + _value);
-            String _plus_3 = (_plus_2 + "\' to outgoing port ");
-            String _name_1 = _self.getName();
-            String _plus_4 = (_plus_3 + _name_1);
-            String _plus_5 = (_plus_4 + ".");
-            String _name_2 = p.getName();
-            String _plus_6 = (_plus_5 + _name_2);
-            String _plus_7 = (_plus_6 + ".");
-            InputOutput.<String>println(_plus_7);
-          }
+          String result = GroovyInterpreter.interpret(behavior);
+          p.setValue(result);
+          String _value = p.getValue();
+          String _plus_2 = ("Assigning value \'" + _value);
+          String _plus_3 = (_plus_2 + "\' to outgoing port ");
+          String _name_1 = _self.getName();
+          String _plus_4 = (_plus_3 + _name_1);
+          String _plus_5 = (_plus_4 + ".");
+          String _name_2 = p.getName();
+          String _plus_6 = (_plus_5 + _name_2);
+          String _plus_7 = (_plus_6 + ".");
+          InputOutput.<String>println(_plus_7);
         }
       }
     } else {

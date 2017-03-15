@@ -95,49 +95,118 @@ public class XmontiarcItemProviderAdapterFactory extends XmontiarcAdapterFactory
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link xmontiarc.Port} instances.
+	 * This keeps track of the one adapter used for all {@link xmontiarc.IncomingPort} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected PortItemProvider portItemProvider;
+	protected IncomingPortItemProvider incomingPortItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link xmontiarc.Port}.
+	 * This creates an adapter for a {@link xmontiarc.IncomingPort}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createPortAdapter() {
-		if (portItemProvider == null) {
-			portItemProvider = new PortItemProvider(this);
+	public Adapter createIncomingPortAdapter() {
+		if (incomingPortItemProvider == null) {
+			incomingPortItemProvider = new IncomingPortItemProvider(this);
 		}
 
-		return portItemProvider;
+		return incomingPortItemProvider;
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link xmontiarc.Connector} instances.
+	 * This keeps track of the one adapter used for all {@link xmontiarc.OutgoingPort} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected ConnectorItemProvider connectorItemProvider;
+	protected OutgoingPortItemProvider outgoingPortItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link xmontiarc.Connector}.
+	 * This creates an adapter for a {@link xmontiarc.OutgoingPort}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createConnectorAdapter() {
-		if (connectorItemProvider == null) {
-			connectorItemProvider = new ConnectorItemProvider(this);
+	public Adapter createOutgoingPortAdapter() {
+		if (outgoingPortItemProvider == null) {
+			outgoingPortItemProvider = new OutgoingPortItemProvider(this);
 		}
 
-		return connectorItemProvider;
+		return outgoingPortItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link xmontiarc.IntermediateConnector} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IntermediateConnectorItemProvider intermediateConnectorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link xmontiarc.IntermediateConnector}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIntermediateConnectorAdapter() {
+		if (intermediateConnectorItemProvider == null) {
+			intermediateConnectorItemProvider = new IntermediateConnectorItemProvider(this);
+		}
+
+		return intermediateConnectorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link xmontiarc.IncomingConnector} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected IncomingConnectorItemProvider incomingConnectorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link xmontiarc.IncomingConnector}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createIncomingConnectorAdapter() {
+		if (incomingConnectorItemProvider == null) {
+			incomingConnectorItemProvider = new IncomingConnectorItemProvider(this);
+		}
+
+		return incomingConnectorItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link xmontiarc.OutgoingConnector} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected OutgoingConnectorItemProvider outgoingConnectorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link xmontiarc.OutgoingConnector}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createOutgoingConnectorAdapter() {
+		if (outgoingConnectorItemProvider == null) {
+			outgoingConnectorItemProvider = new OutgoingConnectorItemProvider(this);
+		}
+
+		return outgoingConnectorItemProvider;
 	}
 
 	/**
@@ -263,8 +332,11 @@ public class XmontiarcItemProviderAdapterFactory extends XmontiarcAdapterFactory
 	 */
 	public void dispose() {
 		if (componentTypeItemProvider != null) componentTypeItemProvider.dispose();
-		if (portItemProvider != null) portItemProvider.dispose();
-		if (connectorItemProvider != null) connectorItemProvider.dispose();
+		if (incomingPortItemProvider != null) incomingPortItemProvider.dispose();
+		if (outgoingPortItemProvider != null) outgoingPortItemProvider.dispose();
+		if (intermediateConnectorItemProvider != null) intermediateConnectorItemProvider.dispose();
+		if (incomingConnectorItemProvider != null) incomingConnectorItemProvider.dispose();
+		if (outgoingConnectorItemProvider != null) outgoingConnectorItemProvider.dispose();
 		if (subcomponentItemProvider != null) subcomponentItemProvider.dispose();
 	}
 

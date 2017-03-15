@@ -13,7 +13,8 @@ import org.eclipse.sirius.tools.api.ui.IExternalJavaAction;
 import org.eclipse.ui.PlatformUI;
 
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Port;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.IncomingPort;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.OutgoingPort;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent;
 
 
@@ -34,10 +35,15 @@ public class CreateSubcomponentAction extends AbstractExternalJavaAction impleme
 				ComponentType selectedType = selectedTypeOpt.get();
 				sc.setName(DesignerHelper.getRandomInstanceName(selectedType.getName()));
 				sc.setType(selectedType);
-				sc.getPorts().clear();
-				for (Port p : selectedType.getPorts()) {
-					Port copy = EcoreUtil.copy(p);
-					sc.getPorts().add(copy);
+				sc.getIncomingPorts().clear();
+				sc.getOutgoingPorts().clear();
+				for (IncomingPort p : selectedType.getIncomingPorts()) {
+					IncomingPort copy = EcoreUtil.copy(p);
+					sc.getIncomingPorts().add(copy);
+				}
+				for (OutgoingPort p : selectedType.getOutgoingPorts()) {
+					OutgoingPort copy = EcoreUtil.copy(p);
+					sc.getOutgoingPorts().add(copy);
 				}
 				sc.getParent().eResource().save(null);
 			}

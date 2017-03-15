@@ -15,7 +15,8 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import xmontiarc.ComponentType;
-import xmontiarc.Port;
+import xmontiarc.IncomingPort;
+import xmontiarc.OutgoingPort;
 import xmontiarc.Subcomponent;
 import xmontiarc.XmontiarcPackage;
 
@@ -28,8 +29,9 @@ import xmontiarc.XmontiarcPackage;
  * <ul>
  *   <li>{@link xmontiarc.impl.SubcomponentImpl#getName <em>Name</em>}</li>
  *   <li>{@link xmontiarc.impl.SubcomponentImpl#getType <em>Type</em>}</li>
- *   <li>{@link xmontiarc.impl.SubcomponentImpl#getPorts <em>Ports</em>}</li>
+ *   <li>{@link xmontiarc.impl.SubcomponentImpl#getIncomingPorts <em>Incoming Ports</em>}</li>
  *   <li>{@link xmontiarc.impl.SubcomponentImpl#getParent <em>Parent</em>}</li>
+ *   <li>{@link xmontiarc.impl.SubcomponentImpl#getOutgoingPorts <em>Outgoing Ports</em>}</li>
  * </ul>
  *
  * @generated
@@ -63,14 +65,24 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	protected ComponentType type;
 
 	/**
-	 * The cached value of the '{@link #getPorts() <em>Ports</em>}' containment reference list.
+	 * The cached value of the '{@link #getIncomingPorts() <em>Incoming Ports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getPorts()
+	 * @see #getIncomingPorts()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Port> ports;
+	protected EList<IncomingPort> incomingPorts;
+
+	/**
+	 * The cached value of the '{@link #getOutgoingPorts() <em>Outgoing Ports</em>}' containment reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getOutgoingPorts()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<OutgoingPort> outgoingPorts;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -155,11 +167,11 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Port> getPorts() {
-		if (ports == null) {
-			ports = new EObjectContainmentEList<Port>(Port.class, this, XmontiarcPackage.SUBCOMPONENT__PORTS);
+	public EList<IncomingPort> getIncomingPorts() {
+		if (incomingPorts == null) {
+			incomingPorts = new EObjectContainmentEList<IncomingPort>(IncomingPort.class, this, XmontiarcPackage.SUBCOMPONENT__INCOMING_PORTS);
 		}
-		return ports;
+		return incomingPorts;
 	}
 
 	/**
@@ -208,6 +220,18 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<OutgoingPort> getOutgoingPorts() {
+		if (outgoingPorts == null) {
+			outgoingPorts = new EObjectContainmentEList<OutgoingPort>(OutgoingPort.class, this, XmontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS);
+		}
+		return outgoingPorts;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -226,10 +250,12 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case XmontiarcPackage.SUBCOMPONENT__PORTS:
-				return ((InternalEList<?>)getPorts()).basicRemove(otherEnd, msgs);
+			case XmontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
+				return ((InternalEList<?>)getIncomingPorts()).basicRemove(otherEnd, msgs);
 			case XmontiarcPackage.SUBCOMPONENT__PARENT:
 				return basicSetParent(null, msgs);
+			case XmontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
+				return ((InternalEList<?>)getOutgoingPorts()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -260,10 +286,12 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 			case XmontiarcPackage.SUBCOMPONENT__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case XmontiarcPackage.SUBCOMPONENT__PORTS:
-				return getPorts();
+			case XmontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
+				return getIncomingPorts();
 			case XmontiarcPackage.SUBCOMPONENT__PARENT:
 				return getParent();
+			case XmontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
+				return getOutgoingPorts();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -282,12 +310,16 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 			case XmontiarcPackage.SUBCOMPONENT__TYPE:
 				setType((ComponentType)newValue);
 				return;
-			case XmontiarcPackage.SUBCOMPONENT__PORTS:
-				getPorts().clear();
-				getPorts().addAll((Collection<? extends Port>)newValue);
+			case XmontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
+				getIncomingPorts().clear();
+				getIncomingPorts().addAll((Collection<? extends IncomingPort>)newValue);
 				return;
 			case XmontiarcPackage.SUBCOMPONENT__PARENT:
 				setParent((ComponentType)newValue);
+				return;
+			case XmontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
+				getOutgoingPorts().clear();
+				getOutgoingPorts().addAll((Collection<? extends OutgoingPort>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -306,11 +338,14 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 			case XmontiarcPackage.SUBCOMPONENT__TYPE:
 				setType((ComponentType)null);
 				return;
-			case XmontiarcPackage.SUBCOMPONENT__PORTS:
-				getPorts().clear();
+			case XmontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
+				getIncomingPorts().clear();
 				return;
 			case XmontiarcPackage.SUBCOMPONENT__PARENT:
 				setParent((ComponentType)null);
+				return;
+			case XmontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
+				getOutgoingPorts().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -327,10 +362,12 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 			case XmontiarcPackage.SUBCOMPONENT__TYPE:
 				return type != null;
-			case XmontiarcPackage.SUBCOMPONENT__PORTS:
-				return ports != null && !ports.isEmpty();
+			case XmontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
+				return incomingPorts != null && !incomingPorts.isEmpty();
 			case XmontiarcPackage.SUBCOMPONENT__PARENT:
 				return getParent() != null;
+			case XmontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
+				return outgoingPorts != null && !outgoingPorts.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

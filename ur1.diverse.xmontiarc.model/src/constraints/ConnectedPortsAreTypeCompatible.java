@@ -10,6 +10,11 @@ import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
 
 import xmontiarc.Connector;
+import xmontiarc.IncomingConnector;
+import xmontiarc.IntermediateConnector;
+import xmontiarc.OutgoingConnector;
+import xmontiarc.Port;
+import xmontiarc.helpers.ConnectorHelper;
 
 public class ConnectedPortsAreTypeCompatible extends MontiArcModelConstraint {
 
@@ -29,7 +34,9 @@ public class ConnectedPortsAreTypeCompatible extends MontiArcModelConstraint {
 	private Optional<ConstraintStatus> checkConnector(IValidationContext ctx, Connector con) {
 		Optional<ConstraintStatus> error = Optional.empty();
 		Set<Connector> errors = new HashSet<>();
-		if (!con.getSource().getType().equals(con.getTarget().getType())) {
+		Port source = ConnectorHelper.getSource(con);
+		Port target  = ConnectorHelper.getTarget(con);
+		if (!source.getType().equals(target.getType())) {
 			errors.add(con);
 			error = Optional.of(ConstraintStatus.createStatus(
 	                ctx,

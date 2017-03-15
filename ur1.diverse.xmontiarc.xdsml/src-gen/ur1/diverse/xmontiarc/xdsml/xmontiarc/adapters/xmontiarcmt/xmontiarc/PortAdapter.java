@@ -4,6 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.XMontiArcMTAdaptersFactory;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Port;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType;
 
 @SuppressWarnings("all")
 public class PortAdapter extends EObjectAdapter<Port> implements ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port {
@@ -15,13 +16,13 @@ public class PortAdapter extends EObjectAdapter<Port> implements ur1.diverse.xmo
   }
   
   @Override
-  public String getType() {
-    return adaptee.getType();
+  public DataType getType() {
+    return ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType.get(adaptee.getType().getValue());
   }
   
   @Override
-  public void setType(final String o) {
-    adaptee.setType(o);
+  public void setType(final DataType o) {
+    adaptee.setType(ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.DataType.get(o.getValue()));
   }
   
   @Override
@@ -35,16 +36,6 @@ public class PortAdapter extends EObjectAdapter<Port> implements ur1.diverse.xmo
   }
   
   @Override
-  public boolean isIncoming() {
-    return adaptee.isIncoming();
-  }
-  
-  @Override
-  public void setIncoming(final boolean o) {
-    adaptee.setIncoming(o);
-  }
-  
-  @Override
   public String getValue() {
     return adaptee.getValue();
   }
@@ -54,13 +45,11 @@ public class PortAdapter extends EObjectAdapter<Port> implements ur1.diverse.xmo
     adaptee.setValue(o);
   }
   
-  protected final static String TYPE_EDEFAULT = "java.lang.Object";
+  protected final static DataType TYPE_EDEFAULT = ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType.NUMBER;
   
   protected final static String NAME_EDEFAULT = "UnnamedPort";
   
-  protected final static boolean INCOMING_EDEFAULT = true;
-  
-  protected final static String VALUE_EDEFAULT = "UnnamedPort";
+  protected final static String VALUE_EDEFAULT = "DefaultValue";
   
   @Override
   public EClass eClass() {
@@ -74,8 +63,6 @@ public class PortAdapter extends EObjectAdapter<Port> implements ur1.diverse.xmo
     		return getType();
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.PORT__NAME:
     		return getName();
-    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.PORT__INCOMING:
-    		return isIncoming() ? Boolean.TRUE : Boolean.FALSE;
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.PORT__VALUE:
     		return getValue();
     }
@@ -90,8 +77,6 @@ public class PortAdapter extends EObjectAdapter<Port> implements ur1.diverse.xmo
     		return getType() != TYPE_EDEFAULT;
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.PORT__NAME:
     		return getName() != NAME_EDEFAULT;
-    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.PORT__INCOMING:
-    		return isIncoming() != INCOMING_EDEFAULT;
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.PORT__VALUE:
     		return getValue() != VALUE_EDEFAULT;
     }
@@ -104,16 +89,13 @@ public class PortAdapter extends EObjectAdapter<Port> implements ur1.diverse.xmo
     switch (featureID) {
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.PORT__TYPE:
     		setType(
-    		(java.lang.String)
+    		(ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.DataType)
     		 newValue);
     		return;
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.PORT__NAME:
     		setName(
     		(java.lang.String)
     		 newValue);
-    		return;
-    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.PORT__INCOMING:
-    		setIncoming(((java.lang.Boolean) newValue).booleanValue());
     		return;
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.PORT__VALUE:
     		setValue(

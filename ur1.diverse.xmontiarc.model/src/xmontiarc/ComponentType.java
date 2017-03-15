@@ -16,14 +16,16 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link xmontiarc.ComponentType#getName <em>Name</em>}</li>
- *   <li>{@link xmontiarc.ComponentType#getPorts <em>Ports</em>}</li>
  *   <li>{@link xmontiarc.ComponentType#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link xmontiarc.ComponentType#getSubcomponents <em>Subcomponents</em>}</li>
  *   <li>{@link xmontiarc.ComponentType#getBehavior <em>Behavior</em>}</li>
+ *   <li>{@link xmontiarc.ComponentType#getIncomingPorts <em>Incoming Ports</em>}</li>
+ *   <li>{@link xmontiarc.ComponentType#getOutgoingPorts <em>Outgoing Ports</em>}</li>
  * </ul>
  *
  * @see xmontiarc.XmontiarcPackage#getComponentType()
- * @model
+ * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtomicOrComposed'"
+ *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot AtomicOrComposed='Tuple {\n\tmessage : String = \'Component type \\\'\' + name + \'\\\' cannot have connectors and behavior\',\n\tstatus : Boolean = \n            behavior.equalsIgnoreCase(\'\') or self.connectors->isEmpty()\n}.status'"
  * @generated
  */
 public interface ComponentType extends EObject {
@@ -53,22 +55,6 @@ public interface ComponentType extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
-	 * The list contents are of type {@link xmontiarc.Port}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ports</em>' containment reference list.
-	 * @see xmontiarc.XmontiarcPackage#getComponentType_Ports()
-	 * @model containment="true"
-	 * @generated
-	 */
-	EList<Port> getPorts();
 
 	/**
 	 * Returns the value of the '<em><b>Connectors</b></em>' containment reference list.
@@ -132,5 +118,37 @@ public interface ComponentType extends EObject {
 	 * @generated
 	 */
 	void setBehavior(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Incoming Ports</b></em>' containment reference list.
+	 * The list contents are of type {@link xmontiarc.IncomingPort}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Incoming Ports</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Incoming Ports</em>' containment reference list.
+	 * @see xmontiarc.XmontiarcPackage#getComponentType_IncomingPorts()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<IncomingPort> getIncomingPorts();
+
+	/**
+	 * Returns the value of the '<em><b>Outgoing Ports</b></em>' containment reference list.
+	 * The list contents are of type {@link xmontiarc.OutgoingPort}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outgoing Ports</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outgoing Ports</em>' containment reference list.
+	 * @see xmontiarc.XmontiarcPackage#getComponentType_OutgoingPorts()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<OutgoingPort> getOutgoingPorts();
 
 } // ComponentType

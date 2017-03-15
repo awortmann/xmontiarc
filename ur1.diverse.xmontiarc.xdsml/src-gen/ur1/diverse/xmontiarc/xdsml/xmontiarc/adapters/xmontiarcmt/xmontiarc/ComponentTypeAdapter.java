@@ -7,6 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.XMontiArcMTAdaptersFactory;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Connector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingPort;
+import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.OutgoingPort;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port;
 import ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Subcomponent;
 
@@ -39,15 +41,6 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     adaptee.setBehavior(o);
   }
   
-  private EList<Port> ports_;
-  
-  @Override
-  public EList<Port> getPorts() {
-    if (ports_ == null)
-    	ports_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getPorts(), adaptersFactory, eResource);
-    return ports_;
-  }
-  
   private EList<Connector> connectors_;
   
   @Override
@@ -66,9 +59,49 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     return subcomponents_;
   }
   
+  private EList<IncomingPort> incomingPorts_;
+  
+  @Override
+  public EList<IncomingPort> getIncomingPorts() {
+    if (incomingPorts_ == null)
+    	incomingPorts_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getIncomingPorts(), adaptersFactory, eResource);
+    return incomingPorts_;
+  }
+  
+  private EList<OutgoingPort> outgoingPorts_;
+  
+  @Override
+  public EList<OutgoingPort> getOutgoingPorts() {
+    if (outgoingPorts_ == null)
+    	outgoingPorts_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOutgoingPorts(), adaptersFactory, eResource);
+    return outgoingPorts_;
+  }
+  
   @Override
   public void compute() {
     ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.compute(adaptee);
+  }
+  
+  @Override
+  public Subcomponent findOwnerOf(final Port p) {
+    return (Subcomponent) adaptersFactory.createAdapter(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.findOwnerOf(adaptee, (ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Port)((EObjectAdapter)p).getAdaptee()
+    ), eResource);
+  }
+  
+  @Override
+  public EList<Port> getDirectedPortsOfSubcomponents(final boolean collectIncoming) {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.getDirectedPortsOfSubcomponents(adaptee, collectIncoming
+    ), adaptersFactory, eResource);
+  }
+  
+  @Override
+  public EList<Port> getIncomingPortsOfSubcomponents() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.getIncomingPortsOfSubcomponents(adaptee), adaptersFactory, eResource);
+  }
+  
+  @Override
+  public EList<Port> getOutgoingPortsOfSubcomponents() {
+    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.getOutgoingPortsOfSubcomponents(adaptee), adaptersFactory, eResource);
   }
   
   @Override
@@ -87,44 +120,6 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.update(adaptee);
   }
   
-  @Override
-  public Subcomponent findOwnerOf(final Port p) {
-    return (Subcomponent) adaptersFactory.createAdapter(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.findOwnerOf(adaptee, (ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Port)((EObjectAdapter)p).getAdaptee()
-    ), eResource);
-  }
-  
-  @Override
-  public EList<Port> getDirectedPorts(final boolean collectIncomingPorts) {
-    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getDirectedPorts(adaptee, collectIncomingPorts
-    ), adaptersFactory, eResource);
-  }
-  
-  @Override
-  public EList<Port> getDirectedPortsOfSubcomponents(final boolean collectIncoming) {
-    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getDirectedPortsOfSubcomponents(adaptee, collectIncoming
-    ), adaptersFactory, eResource);
-  }
-  
-  @Override
-  public EList<Port> getIncomingPorts() {
-    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getIncomingPorts(adaptee), adaptersFactory, eResource);
-  }
-  
-  @Override
-  public EList<Port> getIncomingPortsOfSubcomponents() {
-    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getIncomingPortsOfSubcomponents(adaptee), adaptersFactory, eResource);
-  }
-  
-  @Override
-  public EList<Port> getOutgoingPorts() {
-    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getOutgoingPorts(adaptee), adaptersFactory, eResource);
-  }
-  
-  @Override
-  public EList<Port> getOutgoingPortsOfSubcomponents() {
-    return fr.inria.diverse.melange.adapters.EListAdapter.newInstance(ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeHelperAspect.getOutgoingPortsOfSubcomponents(adaptee), adaptersFactory, eResource);
-  }
-  
   protected final static String NAME_EDEFAULT = "UnnamedComponentType";
   
   protected final static String BEHAVIOR_EDEFAULT = "\"\"";
@@ -139,14 +134,16 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     switch (featureID) {
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__NAME:
     		return getName();
-    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__PORTS:
-    		return getPorts();
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
     		return getConnectors();
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
     		return getSubcomponents();
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
     		return getBehavior();
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+    		return getIncomingPorts();
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+    		return getOutgoingPorts();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -157,14 +154,16 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     switch (featureID) {
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__NAME:
     		return getName() != NAME_EDEFAULT;
-    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__PORTS:
-    		return getPorts() != null && !getPorts().isEmpty();
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
     		return getConnectors() != null && !getConnectors().isEmpty();
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
     		return getSubcomponents() != null && !getSubcomponents().isEmpty();
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
     		return getBehavior() != BEHAVIOR_EDEFAULT;
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+    		return getIncomingPorts() != null && !getIncomingPorts().isEmpty();
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+    		return getOutgoingPorts() != null && !getOutgoingPorts().isEmpty();
     }
     
     return super.eIsSet(featureID);
@@ -178,10 +177,6 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     		(java.lang.String)
     		 newValue);
     		return;
-    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__PORTS:
-    		getPorts().clear();
-    		getPorts().addAll((Collection) newValue);
-    		return;
     	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
     		getConnectors().clear();
     		getConnectors().addAll((Collection) newValue);
@@ -194,6 +189,14 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     		setBehavior(
     		(java.lang.String)
     		 newValue);
+    		return;
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+    		getIncomingPorts().clear();
+    		getIncomingPorts().addAll((Collection) newValue);
+    		return;
+    	case ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+    		getOutgoingPorts().clear();
+    		getOutgoingPorts().addAll((Collection) newValue);
     		return;
     }
     

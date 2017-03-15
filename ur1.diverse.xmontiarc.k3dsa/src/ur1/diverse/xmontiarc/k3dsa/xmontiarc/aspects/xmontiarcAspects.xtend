@@ -13,9 +13,6 @@ import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentT
 import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect.*
 import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect.*
 import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect.*
-import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeHelperAspect.*
-import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorHelperAspect.*
-import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentHelperAspect.*
 
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
 // import runtime.Message
@@ -27,6 +24,9 @@ import xmontiarc.impl.ComponentTypeImpl
 import java.util.ArrayList
 import java.util.List
 import org.eclipse.emf.common.util.BasicEList
+import xmontiarc.IntermediateConnector
+import xmontiarc.IncomingConnector
+import xmontiarc.OutgoingConnector
 
 @Aspect(className=ComponentType)
 class ComponentTypeAspect {
@@ -40,7 +40,7 @@ class ComponentTypeAspect {
     def void main() {
         println("main()")
         try {
-            if (_self.ports.empty) {
+            if (_self.incomingPorts.empty && _self.outgoingPorts.empty) {
                 while (true) {
                     println("=== Starting " + _self.name + " Main Loop ===")
                     // Thread.sleep(1000);
@@ -71,13 +71,15 @@ class ComponentTypeAspect {
             }
         }
     }
-}
 
-@Aspect(className=ComponentType) 
-class ComponentTypeHelperAspect {
     def Subcomponent findOwnerOf(Port p) {
-        for (Subcomponent sc: _self.getSubcomponents()) {
-            for (Port scp : sc.getPorts()) {
+        for (Subcomponent sc : _self.getSubcomponents()) {
+            for (Port scp : sc.incomingPorts) {
+                if (scp.equals(p)) {
+                    return sc;
+                }
+            }
+            for (Port scp : sc.outgoingPorts) {
                 if (scp.equals(p)) {
                     return sc;
                 }
@@ -85,7 +87,7 @@ class ComponentTypeHelperAspect {
         }
         return null;
     }
-    
+
     def EList<Port> getOutgoingPortsOfSubcomponents() {
         return _self.getDirectedPortsOfSubcomponents(false);
     }
@@ -95,34 +97,17 @@ class ComponentTypeHelperAspect {
     }
     
     def EList<Port> getDirectedPortsOfSubcomponents(boolean collectIncoming) {
-        var EList<Port> incomingPorts = new BasicEList<Port>();
-        for (Subcomponent sc: _self.getSubcomponents()) {
-            for (Port p : sc.getPorts()) {
-                if (p.isIncoming()==collectIncoming) {
-                    incomingPorts.add(p);
-                }
-            }
-        }
-        return incomingPorts;
-    }
-    
-    def EList<Port> getIncomingPorts() {
-        return _self.getDirectedPorts(true);
-    }
-
-    def EList<Port> getOutgoingPorts() {
-        return _self.getDirectedPorts(false);
-    }
-    
-    def EList<Port> getDirectedPorts(boolean collectIncomingPorts) {
-        val EList<Port> ports = new BasicEList<Port>();
-        for (Port p : _self.getPorts()) {
-            if (p.isIncoming()==collectIncomingPorts) {
-                ports.add(p);
+        var EList<Port> ports = new BasicEList<Port>();
+        for (Subcomponent sc : _self.getSubcomponents()) {
+            if (collectIncoming) {
+                ports.addAll(sc.incomingPorts)
+            } else {
+                ports.addAll(sc.outgoingPorts)
             }
         }
         return ports;
     }
+   
 }
 
 @Aspect(className=Port)
@@ -134,18 +119,69 @@ class PortAspect {
 class ConnectorAspect {
     // Moves data from source port to target port
     def void update() {
-        _self.target.value = _self.source.value;
-        _self.target.value = null;
+        if (_self instanceof IntermediateConnector) {
+            val IntermediateConnector c = _self as IntermediateConnector
+            c.target.value = c.source.value
+            c.source.value = null
+        }
+        else if (_self instanceof IncomingConnector) {
+            val IncomingConnector c = _self as IncomingConnector
+            c.target.value = c.source.value
+            c.source.value = null
+        }
+        else if (_self instanceof OutgoingConnector) {
+            val OutgoingConnector c = _self as OutgoingConnector
+            c.target.value = c.source.value
+            c.source.value = null
+        }
+        else {
+            throw new Error("Trying to pass a message over instance of abstract connector class")
+        }
     }
-}
-
-
-@Aspect(className=Connector)
-class ConnectorHelperAspect {
-
+    
+    def Port getSource() {
+        var Port source;
+        if (_self instanceof IntermediateConnector) {
+            val IntermediateConnector c = _self as IntermediateConnector
+            source = c.getSource();
+        }
+        else if (_self instanceof IncomingConnector) {
+            val IncomingConnector c = _self as IncomingConnector
+            source = c.getSource();
+        }
+        else if (_self instanceof OutgoingConnector) {
+            val OutgoingConnector c = _self as OutgoingConnector
+            source = c.getSource();
+        }
+        else {
+            throw new Error("Found instance of abstract class Connector.");
+        }
+        return source;
+    }
+    
+     def Port getTarget() {
+        var Port target;
+        if (_self instanceof IntermediateConnector) {
+            val IntermediateConnector c = _self as IntermediateConnector
+            target = c.getTarget();
+        }
+        else if (_self instanceof IncomingConnector) {
+            val IncomingConnector c = _self as IncomingConnector
+            target = c.getTarget();
+        }
+        else if (_self instanceof OutgoingConnector) {
+            val OutgoingConnector c = _self as OutgoingConnector
+            target = c.getTarget();
+        }
+        else {
+            throw new Error("Found instance of abstract class Connector.");
+        }
+        return target;
+    }
+    
     def String getSourceRepresentation() {
         if (_self.getParent() != null) {
-            var Subcomponent sc = _self.getParent().findOwnerOf(_self.getSource());
+            var Subcomponent sc = _self.getParent().findOwnerOf(_self.getSource);
             if (sc != null) {
                 return sc.getName();
             }
@@ -155,8 +191,8 @@ class ConnectorHelperAspect {
 
     def String getTargetRepresentation() {
         if (_self.getParent() != null) {
-            val Subcomponent sc = _self.getParent().findOwnerOf(_self.getTarget());
-            if (sc != null ) {
+            val Subcomponent sc = _self.getParent().findOwnerOf(_self.getTarget);
+            if (sc != null) {
                 return sc.getName();
             }
         }
@@ -167,27 +203,24 @@ class ConnectorHelperAspect {
         return _self.getSourceRepresentation() + " -> " + _self.getTargetRepresentation();
     }
 }
- 
 
 @Aspect(className=Subcomponent)
 class SubcomponentAspect {
     @Step
     def void compute() {
-        //println("SubcomponentAspect.compute()")
+        // println("SubcomponentAspect.compute()")
         println("Computing behavior for subcomponent '" + _self.name + "'.");
         // for atomic components: delegate behavior computation to their Groovy script
         if (_self.type.subcomponents.isEmpty) { // assume an atomic component
-            // println("Subcomponent '" + _self.name + "' is atomic.");
-            for (Port p : _self.ports) {
+        // println("Subcomponent '" + _self.name + "' is atomic.");
+            for (Port p : _self.outgoingPorts) {
                 // println("Subcomponent '" + _self.name + "' has port '" + p.name + "'.");
                 var behavior = _self.type.behavior
                 // println("Behavior of '" + _self.name + "' is '" + behavior + "'.")
-                if (!p.isIncoming) {
-                    // println("Computing next value of outgoing port " + _self.name + "." + p.name + ".")
-                    var result = ur1.diverse.xmontiarc.runtime.GroovyInterpreter.interpret(behavior);
-                    p.value = result
-                    println("Assigning value '" + p.value + "' to outgoing port " + _self.name + "." + p.name + ".")
-                }
+                // println("Computing next value of outgoing port " + _self.name + "." + p.name + ".")
+                var result = ur1.diverse.xmontiarc.runtime.GroovyInterpreter.interpret(behavior);
+                p.value = result
+                println("Assigning value '" + p.value + "' to outgoing port " + _self.name + "." + p.name + ".")
             }
         } // for composed components, propagate computation to subcomponents
         else {
@@ -198,26 +231,3 @@ class SubcomponentAspect {
         }
     }
 }
-
-@Aspect(className=Subcomponent)
-class SubcomponentHelperAspect {
-
-    def EList<Port> getIncomingPorts() {
-        return _self.getDirectedPorts(true);
-    }
-
-    def EList<Port> getOutgoingPorts() {
-        return _self.getDirectedPorts(false);
-    }
-
-    def EList<Port> getDirectedPorts(boolean collectIncomingPorts) {
-        val EList<Port> ports = new BasicEList<Port>();
-        for (Port p : _self.getPorts()) {
-            if (p.isIncoming() == collectIncomingPorts) {
-                ports.add(p);
-            }
-        }
-        return ports;
-    }
-}
-

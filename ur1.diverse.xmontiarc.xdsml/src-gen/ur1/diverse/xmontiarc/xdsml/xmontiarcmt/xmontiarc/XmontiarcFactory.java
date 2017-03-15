@@ -40,13 +40,49 @@ public interface XmontiarcFactory extends EFactory {
 	Port createPort();
 
 	/**
-	 * Returns a new object of class '<em>Connector</em>'.
+	 * Returns a new object of class '<em>Incoming Port</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Connector</em>'.
+	 * @return a new object of class '<em>Incoming Port</em>'.
 	 * @generated
 	 */
-	Connector createConnector();
+	IncomingPort createIncomingPort();
+
+	/**
+	 * Returns a new object of class '<em>Outgoing Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Outgoing Port</em>'.
+	 * @generated
+	 */
+	OutgoingPort createOutgoingPort();
+
+	/**
+	 * Returns a new object of class '<em>Intermediate Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Intermediate Connector</em>'.
+	 * @generated
+	 */
+	IntermediateConnector createIntermediateConnector();
+
+	/**
+	 * Returns a new object of class '<em>Incoming Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Incoming Connector</em>'.
+	 * @generated
+	 */
+	IncomingConnector createIncomingConnector();
+
+	/**
+	 * Returns a new object of class '<em>Outgoing Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Outgoing Connector</em>'.
+	 * @generated
+	 */
+	OutgoingConnector createOutgoingConnector();
 
 	/**
 	 * Returns a new object of class '<em>Subcomponent</em>'.

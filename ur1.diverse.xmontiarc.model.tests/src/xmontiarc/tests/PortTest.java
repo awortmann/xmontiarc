@@ -3,11 +3,7 @@
 package xmontiarc.tests;
 
 import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
-
 import xmontiarc.Port;
-import xmontiarc.XmontiarcFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +11,7 @@ import xmontiarc.XmontiarcFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class PortTest extends TestCase {
+public abstract class PortTest extends TestCase {
 
 	/**
 	 * The fixture for this Port test case.
@@ -24,15 +20,6 @@ public class PortTest extends TestCase {
 	 * @generated
 	 */
 	protected Port fixture = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(PortTest.class);
-	}
 
 	/**
 	 * Constructs a new Port test case with the given name.
@@ -62,28 +49,6 @@ public class PortTest extends TestCase {
 	 */
 	protected Port getFixture() {
 		return fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(XmontiarcFactory.eINSTANCE.createPort());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 } //PortTest

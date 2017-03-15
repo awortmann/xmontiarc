@@ -13,7 +13,12 @@ public class ComponentTypeHelper {
 
     public static Optional<Subcomponent> findOwnerOf(ComponentType ct, Port p) {
         for (Subcomponent sc: ct.getSubcomponents()) {
-            for (Port scp : sc.getPorts()) {
+            for (Port scp : sc.getIncomingPorts()) {
+                if (scp.equals(p)) {
+                    return Optional.of(sc);
+                }
+            }
+            for (Port scp : sc.getOutgoingPorts()) {
                 if (scp.equals(p)) {
                     return Optional.of(sc);
                 }
@@ -33,31 +38,36 @@ public class ComponentTypeHelper {
 	public static List<Port> getDirectedPortsOfSubcomponents(ComponentType ct, boolean collectIncoming) {
 		List<Port> incomingPorts = new ArrayList<>();
 		for (Subcomponent sc: ct.getSubcomponents()) {
-			for (Port p : sc.getPorts()) {
-				if (p.isIncoming()==collectIncoming) {
-					incomingPorts.add(p);
-				}
+			if (collectIncoming) {
+				incomingPorts.addAll(sc.getIncomingPorts());
+			}
+			else {
+				incomingPorts.addAll(sc.getOutgoingPorts());
 			}
 		}
 		return incomingPorts;
 	}
 	
-	public static List<Port> getIncomingPorts(ComponentType ct) {
-		return getDirectedPorts(ct, true);
-	}
-
-	public static List<Port> getOutgoingPorts(ComponentType ct) {
-		return getDirectedPorts(ct, false);
-	}
-	
-	public static List<Port> getDirectedPorts(ComponentType ct, boolean collectIncomingPorts) {
-		List<Port> ports = new ArrayList<Port>();
-		for (Port p : ct.getPorts()) {
-			if (p.isIncoming()==collectIncomingPorts) {
-				ports.add(p);
-			}
-		}
-		return ports;
-	}
+//	public static List<Port> getIncomingPorts(ComponentType ct) {
+//		return getDirectedPorts(ct, true);
+//	}
+//
+//	public static List<Port> getOutgoingPorts(ComponentType ct) {
+//		return getDirectedPorts(ct, false);
+//	}
+//	
+//	public static List<Port> getDirectedPorts(ComponentType ct, boolean collectIncomingPorts) {
+//		List<Port> ports = new ArrayList<Port>();
+//		if (collectIncomingPorts) {
+//			
+//		}
+//		for (Port p : ct.getPorts()) {
+//			
+//			if (p.isIncoming()==collectIncomingPorts) {
+//				ports.add(p);
+//			}
+//		}
+//		return ports;
+//	}
 
 }

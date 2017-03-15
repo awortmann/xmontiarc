@@ -78,9 +78,44 @@ public class XmontiarcSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case XmontiarcPackage.INCOMING_PORT: {
+				IncomingPort incomingPort = (IncomingPort)theEObject;
+				T result = caseIncomingPort(incomingPort);
+				if (result == null) result = casePort(incomingPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XmontiarcPackage.OUTGOING_PORT: {
+				OutgoingPort outgoingPort = (OutgoingPort)theEObject;
+				T result = caseOutgoingPort(outgoingPort);
+				if (result == null) result = casePort(outgoingPort);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case XmontiarcPackage.CONNECTOR: {
 				Connector connector = (Connector)theEObject;
 				T result = caseConnector(connector);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XmontiarcPackage.INTERMEDIATE_CONNECTOR: {
+				IntermediateConnector intermediateConnector = (IntermediateConnector)theEObject;
+				T result = caseIntermediateConnector(intermediateConnector);
+				if (result == null) result = caseConnector(intermediateConnector);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XmontiarcPackage.INCOMING_CONNECTOR: {
+				IncomingConnector incomingConnector = (IncomingConnector)theEObject;
+				T result = caseIncomingConnector(incomingConnector);
+				if (result == null) result = caseConnector(incomingConnector);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XmontiarcPackage.OUTGOING_CONNECTOR: {
+				OutgoingConnector outgoingConnector = (OutgoingConnector)theEObject;
+				T result = caseOutgoingConnector(outgoingConnector);
+				if (result == null) result = caseConnector(outgoingConnector);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -125,6 +160,36 @@ public class XmontiarcSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Incoming Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Incoming Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIncomingPort(IncomingPort object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Outgoing Port</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Outgoing Port</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOutgoingPort(OutgoingPort object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Connector</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -136,6 +201,51 @@ public class XmontiarcSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseConnector(Connector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Intermediate Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Intermediate Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIntermediateConnector(IntermediateConnector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Incoming Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Incoming Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIncomingConnector(IncomingConnector object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Outgoing Connector</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Outgoing Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseOutgoingConnector(OutgoingConnector object) {
 		return null;
 	}
 

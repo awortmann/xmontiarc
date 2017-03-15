@@ -16,8 +16,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link xmontiarc.Subcomponent#getName <em>Name</em>}</li>
  *   <li>{@link xmontiarc.Subcomponent#getType <em>Type</em>}</li>
- *   <li>{@link xmontiarc.Subcomponent#getPorts <em>Ports</em>}</li>
+ *   <li>{@link xmontiarc.Subcomponent#getIncomingPorts <em>Incoming Ports</em>}</li>
  *   <li>{@link xmontiarc.Subcomponent#getParent <em>Parent</em>}</li>
+ *   <li>{@link xmontiarc.Subcomponent#getOutgoingPorts <em>Outgoing Ports</em>}</li>
  * </ul>
  *
  * @see xmontiarc.XmontiarcPackage#getSubcomponent()
@@ -80,20 +81,20 @@ public interface Subcomponent extends EObject {
 	void setType(ComponentType value);
 
 	/**
-	 * Returns the value of the '<em><b>Ports</b></em>' containment reference list.
-	 * The list contents are of type {@link xmontiarc.Port}.
+	 * Returns the value of the '<em><b>Incoming Ports</b></em>' containment reference list.
+	 * The list contents are of type {@link xmontiarc.IncomingPort}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Ports</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Incoming Ports</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Ports</em>' containment reference list.
-	 * @see xmontiarc.XmontiarcPackage#getSubcomponent_Ports()
+	 * @return the value of the '<em>Incoming Ports</em>' containment reference list.
+	 * @see xmontiarc.XmontiarcPackage#getSubcomponent_IncomingPorts()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Port> getPorts();
+	EList<IncomingPort> getIncomingPorts();
 
 	/**
 	 * Returns the value of the '<em><b>Parent</b></em>' container reference.
@@ -122,5 +123,21 @@ public interface Subcomponent extends EObject {
 	 * @generated
 	 */
 	void setParent(ComponentType value);
+
+	/**
+	 * Returns the value of the '<em><b>Outgoing Ports</b></em>' containment reference list.
+	 * The list contents are of type {@link xmontiarc.OutgoingPort}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Outgoing Ports</em>' containment reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Outgoing Ports</em>' containment reference list.
+	 * @see xmontiarc.XmontiarcPackage#getSubcomponent_OutgoingPorts()
+	 * @model containment="true"
+	 * @generated
+	 */
+	EList<OutgoingPort> getOutgoingPorts();
 
 } // Subcomponent

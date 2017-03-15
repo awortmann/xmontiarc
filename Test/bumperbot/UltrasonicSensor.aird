@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:diagram="http://www.eclipse.org/sirius/diagram/1.1.0" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:ur1.diverse.xmontiarc.model="http://ur1.diverse.xmontiarc.xdsml.xmontiarc/xmontiarc/" xmlns:viewpoint="http://www.eclipse.org/sirius/1.1.0" xsi:schemaLocation="http://www.eclipse.org/sirius/description/1.1.0 http://www.eclipse.org/sirius/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description http://www.eclipse.org/sirius/diagram/description/style/1.1.0 http://www.eclipse.org/sirius/diagram/1.1.0#//description/style">
+  <viewpoint:DAnalysis xmi:id="_4erI0Al6Eeev0O1t-5_bSQ" selectedViews="_6Bb8EAl6Eeev0O1t-5_bSQ" version="11.1.0.201608251200">
+    <semanticResources>UltrasonicSensor.xmontiarc</semanticResources>
+    <ownedViews xmi:type="viewpoint:DView" xmi:id="_6Bb8EAl6Eeev0O1t-5_bSQ">
+      <viewpoint xmi:type="description:Viewpoint" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']"/>
+      <ownedRepresentationDescriptors xmi:type="viewpoint:DRepresentationDescriptor" xmi:id="_BYrPYAl7Eeev0O1t-5_bSQ" name="UltrasonicSensor Diagram" representation="_BYr2cAl7Eeev0O1t-5_bSQ">
+        <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']"/>
+        <target xmi:type="ur1.diverse.xmontiarc.model:ComponentType" href="UltrasonicSensor.xmontiarc#/"/>
+      </ownedRepresentationDescriptors>
+    </ownedViews>
+  </viewpoint:DAnalysis>
+  <diagram:DSemanticDiagram xmi:id="_BYr2cAl7Eeev0O1t-5_bSQ" name="UltrasonicSensor Diagram">
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_BYr2cQl7Eeev0O1t-5_bSQ" source="DANNOTATION_CUSTOMIZATION_KEY">
+      <data xmi:type="diagram:ComputedStyleDescriptionRegistry" xmi:id="_BYr2cgl7Eeev0O1t-5_bSQ"/>
+    </ownedAnnotationEntries>
+    <ownedAnnotationEntries xmi:type="description:AnnotationEntry" xmi:id="_BZOB8Al7Eeev0O1t-5_bSQ" source="GMF_DIAGRAMS">
+      <data xmi:type="notation:Diagram" xmi:id="_BZOB8Ql7Eeev0O1t-5_bSQ" type="Sirius" element="_BYr2cAl7Eeev0O1t-5_bSQ" measurementUnit="Pixel">
+        <children xmi:type="notation:Node" xmi:id="_BZhj8Al7Eeev0O1t-5_bSQ" type="2002" element="_BYr2cwl7Eeev0O1t-5_bSQ">
+          <children xmi:type="notation:Node" xmi:id="_BaAFEAl7Eeev0O1t-5_bSQ" type="5006"/>
+          <children xmi:type="notation:Node" xmi:id="_BaB6QAl7Eeev0O1t-5_bSQ" type="7001">
+            <styles xmi:type="notation:SortingStyle" xmi:id="_BaB6QQl7Eeev0O1t-5_bSQ"/>
+            <styles xmi:type="notation:FilteringStyle" xmi:id="_BaB6Qgl7Eeev0O1t-5_bSQ"/>
+          </children>
+          <children xmi:type="notation:Node" xmi:id="_fKNlgAl7EeeiHuwfxc_1KQ" type="3012" element="_fJyuwAl7EeeiHuwfxc_1KQ">
+            <children xmi:type="notation:Node" xmi:id="_fKU6QAl7EeeiHuwfxc_1KQ" type="5010">
+              <layoutConstraint xmi:type="notation:Location" xmi:id="_fKU6QQl7EeeiHuwfxc_1KQ" y="5"/>
+            </children>
+            <children xmi:type="notation:Node" xmi:id="_fKbn8Al7EeeiHuwfxc_1KQ" type="3003" element="_fJ4OUAl7EeeiHuwfxc_1KQ">
+              <styles xmi:type="notation:ShapeStyle" xmi:id="_fKbn8Ql7EeeiHuwfxc_1KQ" fontName=".SF NS Text"/>
+              <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fKbn8gl7EeeiHuwfxc_1KQ"/>
+            </children>
+            <styles xmi:type="notation:ShapeStyle" xmi:id="_fKNlgQl7EeeiHuwfxc_1KQ" fontName=".SF NS Text" fontHeight="10"/>
+            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_fKNlggl7EeeiHuwfxc_1KQ" x="225" y="44" width="68" height="41"/>
+          </children>
+          <styles xmi:type="notation:ShapeStyle" xmi:id="_BZhj8Ql7Eeev0O1t-5_bSQ" fontName=".SF NS Text" fontHeight="16"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BZhj8gl7Eeev0O1t-5_bSQ" x="220" y="144" width="235" height="135"/>
+        </children>
+        <styles xmi:type="notation:DiagramStyle" xmi:id="_BZOB8gl7Eeev0O1t-5_bSQ"/>
+      </data>
+    </ownedAnnotationEntries>
+    <ownedDiagramElements xmi:type="diagram:DNodeContainer" xmi:id="_BYr2cwl7Eeev0O1t-5_bSQ" name="UltrasonicSensor">
+      <target xmi:type="ur1.diverse.xmontiarc.model:ComponentType" href="UltrasonicSensor.xmontiarc#/"/>
+      <semanticElements xmi:type="ur1.diverse.xmontiarc.model:ComponentType" href="UltrasonicSensor.xmontiarc#/"/>
+      <ownedBorderedNodes xmi:type="diagram:DNode" xmi:id="_fJyuwAl7EeeiHuwfxc_1KQ" name="Number distance" width="3" height="3" resizeKind="NSEW">
+        <target xmi:type="ur1.diverse.xmontiarc.model:OutgoingPort" href="UltrasonicSensor.xmontiarc#//@outgoingPorts.0"/>
+        <semanticElements xmi:type="ur1.diverse.xmontiarc.model:OutgoingPort" href="UltrasonicSensor.xmontiarc#//@outgoingPorts.0"/>
+        <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+        <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+        <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+        <ownedStyle xmi:type="diagram:Square" xmi:id="_fJ4OUAl7EeeiHuwfxc_1KQ" labelSize="12" showIcon="false" labelAlignment="LEFT" borderSize="1" borderSizeComputationExpression="1" labelPosition="node" color="255,255,255">
+          <description xmi:type="style:SquareDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingNode']/@style"/>
+        </ownedStyle>
+        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingNode']"/>
+      </ownedBorderedNodes>
+      <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
+      <arrangeConstraints>KEEP_SIZE</arrangeConstraints>
+      <arrangeConstraints>KEEP_RATIO</arrangeConstraints>
+      <ownedStyle xmi:type="diagram:FlatContainerStyle" xmi:id="_BYr2dAl7Eeev0O1t-5_bSQ" labelSize="16" showIcon="false" borderSize="1" borderSizeComputationExpression="1" backgroundStyle="Liquid" foregroundColor="255,255,255">
+        <description xmi:type="style:FlatContainerStyleDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@style"/>
+      </ownedStyle>
+      <actualMapping xmi:type="description_1:ContainerMapping" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']"/>
+    </ownedDiagramElements>
+    <description xmi:type="description_1:DiagramDescription" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']"/>
+    <filterVariableHistory xmi:type="diagram:FilterVariableHistory" xmi:id="_BYr2dQl7Eeev0O1t-5_bSQ"/>
+    <activatedLayers xmi:type="description_1:Layer" href="platform:/plugin/ur1.diverse.xmontiarc.design/description/xmontiarc.odesign#//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer"/>
+    <target xmi:type="ur1.diverse.xmontiarc.model:ComponentType" href="UltrasonicSensor.xmontiarc#/"/>
+  </diagram:DSemanticDiagram>
+</xmi:XMI>

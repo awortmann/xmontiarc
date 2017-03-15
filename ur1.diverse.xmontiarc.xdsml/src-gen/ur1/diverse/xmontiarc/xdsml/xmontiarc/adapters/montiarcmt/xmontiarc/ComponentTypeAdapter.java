@@ -7,7 +7,8 @@ import org.eclipse.emf.ecore.EClass;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.MontiArcMTAdaptersFactory;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType;
 import xmontiarc.Connector;
-import xmontiarc.Port;
+import xmontiarc.IncomingPort;
+import xmontiarc.OutgoingPort;
 import xmontiarc.Subcomponent;
 
 @SuppressWarnings("all")
@@ -39,15 +40,6 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     adaptee.setBehavior(o);
   }
   
-  private EList<Port> ports_;
-  
-  @Override
-  public EList<Port> getPorts() {
-    if (ports_ == null)
-    	ports_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getPorts(), adaptersFactory, eResource);
-    return ports_;
-  }
-  
   private EList<Connector> connectors_;
   
   @Override
@@ -66,6 +58,24 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     return subcomponents_;
   }
   
+  private EList<IncomingPort> incomingPorts_;
+  
+  @Override
+  public EList<IncomingPort> getIncomingPorts() {
+    if (incomingPorts_ == null)
+    	incomingPorts_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getIncomingPorts(), adaptersFactory, eResource);
+    return incomingPorts_;
+  }
+  
+  private EList<OutgoingPort> outgoingPorts_;
+  
+  @Override
+  public EList<OutgoingPort> getOutgoingPorts() {
+    if (outgoingPorts_ == null)
+    	outgoingPorts_ = fr.inria.diverse.melange.adapters.EListAdapter.newInstance(adaptee.getOutgoingPorts(), adaptersFactory, eResource);
+    return outgoingPorts_;
+  }
+  
   protected final static String NAME_EDEFAULT = "UnnamedComponentType";
   
   protected final static String BEHAVIOR_EDEFAULT = "\"\"";
@@ -80,14 +90,16 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     switch (featureID) {
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__NAME:
     		return getName();
-    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__PORTS:
-    		return getPorts();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
     		return getConnectors();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
     		return getSubcomponents();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
     		return getBehavior();
+    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+    		return getIncomingPorts();
+    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+    		return getOutgoingPorts();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -98,14 +110,16 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     switch (featureID) {
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__NAME:
     		return getName() != NAME_EDEFAULT;
-    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__PORTS:
-    		return getPorts() != null && !getPorts().isEmpty();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
     		return getConnectors() != null && !getConnectors().isEmpty();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
     		return getSubcomponents() != null && !getSubcomponents().isEmpty();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
     		return getBehavior() != BEHAVIOR_EDEFAULT;
+    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+    		return getIncomingPorts() != null && !getIncomingPorts().isEmpty();
+    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+    		return getOutgoingPorts() != null && !getOutgoingPorts().isEmpty();
     }
     
     return super.eIsSet(featureID);
@@ -119,10 +133,6 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     		(java.lang.String)
     		 newValue);
     		return;
-    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__PORTS:
-    		getPorts().clear();
-    		getPorts().addAll((Collection) newValue);
-    		return;
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__CONNECTORS:
     		getConnectors().clear();
     		getConnectors().addAll((Collection) newValue);
@@ -135,6 +145,14 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     		setBehavior(
     		(java.lang.String)
     		 newValue);
+    		return;
+    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
+    		getIncomingPorts().clear();
+    		getIncomingPorts().addAll((Collection) newValue);
+    		return;
+    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+    		getOutgoingPorts().clear();
+    		getOutgoingPorts().addAll((Collection) newValue);
     		return;
     }
     

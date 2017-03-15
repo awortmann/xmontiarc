@@ -3,11 +3,7 @@
 package xmontiarc.tests;
 
 import junit.framework.TestCase;
-
-import junit.textui.TestRunner;
-
 import xmontiarc.Connector;
-import xmontiarc.XmontiarcFactory;
 
 /**
  * <!-- begin-user-doc -->
@@ -15,7 +11,7 @@ import xmontiarc.XmontiarcFactory;
  * <!-- end-user-doc -->
  * @generated
  */
-public class ConnectorTest extends TestCase {
+public abstract class ConnectorTest extends TestCase {
 
 	/**
 	 * The fixture for this Connector test case.
@@ -24,15 +20,6 @@ public class ConnectorTest extends TestCase {
 	 * @generated
 	 */
 	protected Connector fixture = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public static void main(String[] args) {
-		TestRunner.run(ConnectorTest.class);
-	}
 
 	/**
 	 * Constructs a new Connector test case with the given name.
@@ -62,28 +49,6 @@ public class ConnectorTest extends TestCase {
 	 */
 	protected Connector getFixture() {
 		return fixture;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#setUp()
-	 * @generated
-	 */
-	@Override
-	protected void setUp() throws Exception {
-		setFixture(XmontiarcFactory.eINSTANCE.createConnector());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see junit.framework.TestCase#tearDown()
-	 * @generated
-	 */
-	@Override
-	protected void tearDown() throws Exception {
-		setFixture(null);
 	}
 
 } //ConnectorTest

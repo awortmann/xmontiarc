@@ -7,6 +7,8 @@ import java.util.Map;
 import java.util.Optional;
 import java.util.Random;
 
+import org.eclipse.core.resources.IContainer;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IResource;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -23,7 +25,6 @@ import org.eclipse.ui.dialogs.ElementListSelectionDialog;
 
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent;
-
 
 public class DesignerHelper {
 
@@ -61,15 +62,25 @@ public class DesignerHelper {
 	private static List<String> loadAllComponentTypes() throws CoreException {
 		List<String> files = new ArrayList<String>();
 		for (IProject project : ResourcesPlugin.getWorkspace().getRoot().getProjects()) {
-			if (project.isAccessible() && project.isOpen())
-				for (IResource member : project.members()) {
-//					System.out.println("member = " + member);
-					if (member.getFileExtension() != null && member.getFileExtension().equals("xmontiarc")) {
-						String path = member.getFullPath().toOSString();
-//						System.out.println("Found model file at '" + path + "'.");
-						files.add(path);
-					}
+			if (project.isAccessible() && project.isOpen()) {
+				files.addAll(loadModels(project));
+			}
+		}
+		return files;
+	}
+
+	private static List<String> loadModels(IContainer container) throws CoreException {
+		List<String> files = new ArrayList<String>();
+		IResource[] members = container.members();
+		for (IResource member : members) {
+			if (member instanceof IContainer) {
+				files.addAll(loadModels((IContainer) member));
+			} else if (member instanceof IFile) {
+				if (member.getFileExtension() != null && member.getFileExtension().equals("xmontiarc")) {
+					String path = member.getFullPath().toOSString();
+					files.add(path);
 				}
+			}
 		}
 		return files;
 	}
@@ -88,18 +99,18 @@ public class DesignerHelper {
 			ComponentType type = loadComponentType(typeName);
 			return Optional.of(type);
 		}
-		
+
 		return Optional.empty();
 	}
 
 	public static Optional<ComponentType> getComponentTypeFromArgs(Collection<? extends EObject> args) {
 		for (EObject item : args) {
 			System.out.println("Designerhelper.getComponentTypeFromArgs(): item = " + item);
-			if (item instanceof ComponentType)  {
-				return Optional.of((ComponentType)args);
+			if (item instanceof ComponentType) {
+				return Optional.of((ComponentType) args);
 			}
 		}
 		return Optional.empty();
-		
+
 	}
 }

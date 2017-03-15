@@ -4,15 +4,17 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.xbase.lib.Exceptions;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties;
 import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect;
-import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorHelperAspect;
 import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect;
 import xmontiarc.ComponentType;
 import xmontiarc.Connector;
+import xmontiarc.IncomingPort;
+import xmontiarc.OutgoingPort;
 import xmontiarc.Port;
 import xmontiarc.Subcomponent;
 
@@ -75,6 +77,34 @@ public class ComponentTypeAspect {
     ;;
   }
   
+  public static Subcomponent findOwnerOf(final ComponentType _self, final Port p) {
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_findOwnerOf(_self_, _self,p);;
+    return (xmontiarc.Subcomponent)result;
+  }
+  
+  public static EList<Port> getOutgoingPortsOfSubcomponents(final ComponentType _self) {
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getOutgoingPortsOfSubcomponents(_self_, _self);;
+    return (org.eclipse.emf.common.util.EList<xmontiarc.Port>)result;
+  }
+  
+  public static EList<Port> getIncomingPortsOfSubcomponents(final ComponentType _self) {
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getIncomingPortsOfSubcomponents(_self_, _self);;
+    return (org.eclipse.emf.common.util.EList<xmontiarc.Port>)result;
+  }
+  
+  public static EList<Port> getDirectedPortsOfSubcomponents(final ComponentType _self, final boolean collectIncoming) {
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getDirectedPortsOfSubcomponents(_self_, _self,collectIncoming);;
+    return (org.eclipse.emf.common.util.EList<xmontiarc.Port>)result;
+  }
+  
   protected static void _privk3_initializeModel(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self, final EList<String> args) {
     String _name = _self.getName();
     String _plus = ("Initializing component type " + _name);
@@ -84,9 +114,7 @@ public class ComponentTypeAspect {
   protected static void _privk3_main(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self) {
     InputOutput.<String>println("main()");
     try {
-      EList<Port> _ports = _self.getPorts();
-      boolean _isEmpty = _ports.isEmpty();
-      if (_isEmpty) {
+      if ((_self.getIncomingPorts().isEmpty() && _self.getOutgoingPorts().isEmpty())) {
         while (true) {
           {
             String _name = _self.getName();
@@ -123,7 +151,7 @@ public class ComponentTypeAspect {
       EList<Connector> _connectors = _self.getConnectors();
       for (final Connector con : _connectors) {
         {
-          String _representation = ConnectorHelperAspect.getRepresentation(con);
+          String _representation = ConnectorAspect.getRepresentation(con);
           String _plus = ("Propagating message over connector \'" + _representation);
           String _plus_1 = (_plus + "\'.");
           InputOutput.<String>println(_plus_1);
@@ -131,5 +159,51 @@ public class ComponentTypeAspect {
         }
       }
     }
+  }
+  
+  protected static Subcomponent _privk3_findOwnerOf(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self, final Port p) {
+    EList<Subcomponent> _subcomponents = _self.getSubcomponents();
+    for (final Subcomponent sc : _subcomponents) {
+      {
+        EList<IncomingPort> _incomingPorts = sc.getIncomingPorts();
+        for (final Port scp : _incomingPorts) {
+          boolean _equals = scp.equals(p);
+          if (_equals) {
+            return sc;
+          }
+        }
+        EList<OutgoingPort> _outgoingPorts = sc.getOutgoingPorts();
+        for (final Port scp_1 : _outgoingPorts) {
+          boolean _equals_1 = scp_1.equals(p);
+          if (_equals_1) {
+            return sc;
+          }
+        }
+      }
+    }
+    return null;
+  }
+  
+  protected static EList<Port> _privk3_getOutgoingPortsOfSubcomponents(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self) {
+    return ComponentTypeAspect.getDirectedPortsOfSubcomponents(_self, false);
+  }
+  
+  protected static EList<Port> _privk3_getIncomingPortsOfSubcomponents(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self) {
+    return ComponentTypeAspect.getDirectedPortsOfSubcomponents(_self, true);
+  }
+  
+  protected static EList<Port> _privk3_getDirectedPortsOfSubcomponents(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self, final boolean collectIncoming) {
+    EList<Port> ports = new BasicEList<Port>();
+    EList<Subcomponent> _subcomponents = _self.getSubcomponents();
+    for (final Subcomponent sc : _subcomponents) {
+      if (collectIncoming) {
+        EList<IncomingPort> _incomingPorts = sc.getIncomingPorts();
+        ports.addAll(_incomingPorts);
+      } else {
+        EList<OutgoingPort> _outgoingPorts = sc.getOutgoingPorts();
+        ports.addAll(_outgoingPorts);
+      }
+    }
+    return ports;
   }
 }

@@ -16,6 +16,14 @@
       <details key="ClassNameBeginsUpperCase" value="Tuple {&#xA;&#x9;message : String = 'The name of class &quot;' + name + '&quot; must begin uppercase.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;let firstLetter: String = (name).substring(1,1)&#xA;&#x9;&#x9;&#x9;&#x9;in firstLetter.toUpperCase() = firstLetter&#xA;}.status"/>
       <details key="UnambiguousAttributeNames" value="Tuple {&#xA;&#x9;message : String = 'The names of all attributes of a class must be unambiguous.',&#xA;&#x9;status : Boolean = &#xA;&#x9;&#x9;&#x9;true&#xA;}.status"/>
     </eAnnotations>
+    <eOperations name="serialize">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="deserialize">
+      <eParameters name="content">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eParameters>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
