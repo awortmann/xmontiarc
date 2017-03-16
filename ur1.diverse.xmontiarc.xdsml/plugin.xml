@@ -1,31 +1,31 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
   <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
-    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="ur1.diverse.xmontiarc.xdsml.XMontiArc" xdsmlFilePath="/ur1.diverse.xmontiarc.xdsml/src/ur1/diverse/xmontiarc/xdsml/xmontiarc.melange" />
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="ur1.diverse.xmontiarc.xdsml.XMontiArc" xdsmlFilePath="/ur1.diverse.xmontiarc.xdsml/src/ur1/diverse/xmontiarc/xdsml/xmontiarc.melange"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated XMontiArcMT -->
-    <package class="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage" genModel="model-gen/XMontiArcMT.genmodel" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/xmontiarc/" />
+    <package class="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage" genModel="model-gen/XMontiArcMT.genmodel" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/xmontiarc/"/>
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated XMontiArcMT -->
-    <package class="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage" genModel="model-gen/XMontiArcMT.genmodel" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/runtime/" />
+    <package class="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.runtime.RuntimePackage" genModel="model-gen/XMontiArcMT.genmodel" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/runtime/"/>
   </extension>
   <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
-    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="ur1.diverse.xmontiarc.xdsml.XMontiArc" xdsmlFilePath="/ur1.diverse.xmontiarc.xdsml/bin/ur1/diverse/xmontiarc/xdsml/xmontiarc.melange" />
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="ur1.diverse.xmontiarc.xdsml.XMontiArc" xdsmlFilePath="/ur1.diverse.xmontiarc.xdsml/bin/ur1/diverse/xmontiarc/xdsml/xmontiarc.melange"/>
   </extension>
-  <extension point="fr.inria.diverse.melange.modeltype">
-    <modeltype id="ur1.diverse.xmontiarc.xdsml.MontiArcMT" uri="http://ur1.diverse.xmontiarc.xdsml.montiarcmt/" />
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="ur1.diverse.xmontiarc.xdsml.MontiArcMT" uri="http://ur1.diverse.xmontiarc.xdsml.montiarcmt/"/>
     <modeltype id="ur1.diverse.xmontiarc.xdsml.XMontiArcMT" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/">
-      <subtyping modeltypeId="ur1.diverse.xmontiarc.xdsml.MontiArcMT" />
+      <subtyping modeltypeId="ur1.diverse.xmontiarc.xdsml.MontiArcMT"/>
     </modeltype>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="" entryPoints="" exactType="ur1.diverse.xmontiarc.xdsml.MontiArcMT" id="ur1.diverse.xmontiarc.xdsml.MontiArc" uri="http://ur1/diverse/xmontiarc/model" />
+    <language aspects="" entryPoints="" exactType="ur1.diverse.xmontiarc.xdsml.MontiArcMT" id="ur1.diverse.xmontiarc.xdsml.MontiArc" uri="http://ur1/diverse/xmontiarc/model"/>
     <language aspects="Connector:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ConnectorAspect;ComponentType:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect;Port:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.PortAspect;Subcomponent:ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspect" entryPoints="ur1.diverse.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.main(ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType)" exactType="ur1.diverse.xmontiarc.xdsml.XMontiArcMT" id="ur1.diverse.xmontiarc.xdsml.XMontiArc" uri="http://ur1.diverse.xmontiarc.xdsml.xmontiarc/xmontiarc/">
-      <adapter class="ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.XMontiArcAdapter" modeltypeId="ur1.diverse.xmontiarc.xdsml.MontiArcMT" />
-      <adapter class="ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.XMontiArcAdapter" modeltypeId="ur1.diverse.xmontiarc.xdsml.XMontiArcMT" />
+      <adapter class="ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.XMontiArcAdapter" modeltypeId="ur1.diverse.xmontiarc.xdsml.MontiArcMT"/>
+      <adapter class="ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.XMontiArcAdapter" modeltypeId="ur1.diverse.xmontiarc.xdsml.XMontiArcMT"/>
     </language>
   </extension>
 </plugin>

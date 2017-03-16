@@ -22,9 +22,26 @@ import xmontiarc.Subcomponent;
 @SuppressWarnings("all")
 public class ComponentTypeAspect {
   @InitializeModel
+  @Step
   public static void initializeModel(final ComponentType _self, final EList<String> args) {
     final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    _privk3_initializeModel(_self_, _self,args);;
+    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+    	@Override
+    	public void execute() {
+    		_privk3_initializeModel(_self_, _self,args);
+    	}
+    };
+    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
+    if (stepManager != null) {
+    	stepManager.executeStep(_self,command,"ComponentType","initializeModel");
+    } else {
+    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry.getInstance().findEventManager(_self);
+    	if (eventManager != null) {
+    		eventManager.manageEvents();
+    	}
+    	command.execute();
+    }
+    ;;
   }
   
   @Main

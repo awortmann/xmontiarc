@@ -44,6 +44,9 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
   }
   
   public EObjectAdapter createAdapter(final EObject o, final Resource res) {
+    if (o instanceof ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.Message){
+    	return createMessageAdapter((ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.Message) o, res);
+    }
     if (o instanceof ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType){
     	return createComponentTypeAdapter((ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType) o, res);
     }
@@ -68,11 +71,23 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     if (o instanceof ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent){
     	return createSubcomponentAdapter((ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent) o, res);
     }
-    if (o instanceof ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.Message){
-    	return createMessageAdapter((ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.Message) o, res);
-    }
     
     return null;
+  }
+  
+  public MessageAdapter createMessageAdapter(final Message adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter) adapter;
+    else {
+    	adapter = new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter) adapter;
+    }
   }
   
   public ComponentTypeAdapter createComponentTypeAdapter(final ComponentType adaptee, final Resource res) {
@@ -207,21 +222,6 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     	adapter.setResource(res);
     	register.put(adaptee, adapter);
     	return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.SubcomponentAdapter) adapter;
-    }
-  }
-  
-  public MessageAdapter createMessageAdapter(final Message adaptee, final Resource res) {
-    if (adaptee == null)
-    	return null;
-    EObjectAdapter adapter = register.get(adaptee);
-    if(adapter != null)
-    	 return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter) adapter;
-    else {
-    	adapter = new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter();
-    	adapter.setAdaptee(adaptee);
-    	adapter.setResource(res);
-    	register.put(adaptee, adapter);
-    	return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter) adapter;
     }
   }
 }

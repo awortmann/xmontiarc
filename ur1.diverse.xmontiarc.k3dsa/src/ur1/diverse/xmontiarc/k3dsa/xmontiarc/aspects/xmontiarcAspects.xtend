@@ -32,6 +32,7 @@ import xmontiarc.OutgoingConnector
 class ComponentTypeAspect {
 
     @InitializeModel
+    @Step
     def public void initializeModel(EList<String> args) {
         println("Initializing component type " + _self.name);
     }
