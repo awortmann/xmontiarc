@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ur1.diverse.xmontiarc.model:ComponentType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ur1.diverse.xmontiarc.model="http://ur1.diverse.xmontiarc.xdsml.xmontiarc/xmontiarc/" name="NumberLogger">
-  <incomingPorts name="number" value="-1"/>
+  <incomingPorts name="number"/>
 </ur1.diverse.xmontiarc.model:ComponentType>

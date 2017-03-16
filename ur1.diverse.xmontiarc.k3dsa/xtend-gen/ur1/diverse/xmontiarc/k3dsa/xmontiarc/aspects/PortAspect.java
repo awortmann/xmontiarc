@@ -9,20 +9,16 @@ import xmontiarc.Port;
 @SuppressWarnings("all")
 public class PortAspect {
   public static EObject value(final Port _self) {
-	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspectPortAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspectPortAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_value(_self_, _self);
-	;
-	return (org.eclipse.emf.ecore.EObject) result;
-}
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspectPortAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspectPortAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_value(_self_, _self);;
+    return (org.eclipse.emf.ecore.EObject)result;
+  }
   
   public static void value(final Port _self, final EObject value) {
-	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspectPortAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspectPortAspectContext
-			.getSelf(_self);
-	_privk3_value(_self_, _self, value);
-	;
-}
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspectPortAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspectPortAspectContext.getSelf(_self);
+    _privk3_value(_self_, _self,value);;
+  }
   
   protected static EObject _privk3_value(final PortAspectPortAspectProperties _self_, final Port _self) {
     try {

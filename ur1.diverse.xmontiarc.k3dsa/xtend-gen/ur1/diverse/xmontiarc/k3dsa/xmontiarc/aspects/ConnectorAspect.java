@@ -20,56 +20,44 @@ import xmontiarc.Subcomponent;
 @SuppressWarnings("all")
 public class ConnectorAspect {
   public static void update(final Connector _self) {
-	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext
-			.getSelf(_self);
-	_privk3_update(_self_, _self);
-	;
-}
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
+    _privk3_update(_self_, _self);;
+  }
   
   public static Port getSource(final Connector _self) {
-	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getSource(_self_, _self);
-	;
-	return (xmontiarc.Port) result;
-}
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getSource(_self_, _self);;
+    return (xmontiarc.Port)result;
+  }
   
   public static Port getTarget(final Connector _self) {
-	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getTarget(_self_, _self);
-	;
-	return (xmontiarc.Port) result;
-}
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getTarget(_self_, _self);;
+    return (xmontiarc.Port)result;
+  }
   
   public static String getSourceRepresentation(final Connector _self) {
-	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getSourceRepresentation(_self_, _self);
-	;
-	return (java.lang.String) result;
-}
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getSourceRepresentation(_self_, _self);;
+    return (java.lang.String)result;
+  }
   
   public static String getTargetRepresentation(final Connector _self) {
-	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getTargetRepresentation(_self_, _self);
-	;
-	return (java.lang.String) result;
-}
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getTargetRepresentation(_self_, _self);;
+    return (java.lang.String)result;
+  }
   
   public static String getRepresentation(final Connector _self) {
-	final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getRepresentation(_self_, _self);
-	;
-	return (java.lang.String) result;
-}
+    final ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectProperties _self_ = ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getRepresentation(_self_, _self);;
+    return (java.lang.String)result;
+  }
   
   protected static void _privk3_update(final ConnectorAspectConnectorAspectProperties _self_, final Connector _self) {
     if ((_self instanceof IntermediateConnector)) {

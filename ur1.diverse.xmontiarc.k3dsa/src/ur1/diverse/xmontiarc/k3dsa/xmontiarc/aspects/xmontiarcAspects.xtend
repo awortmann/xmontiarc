@@ -58,6 +58,7 @@ class ComponentTypeAspect {
     // Computes behavior for the composed top-level component type 
     @Step
     def void compute() {
+        println("=== Computing behavior for component type '" + _self.name + "' ===")
         for (Subcomponent sc : _self.subcomponents) {
             sc.compute();
         }
@@ -68,7 +69,7 @@ class ComponentTypeAspect {
     def void update() {
         if (!_self.subcomponents.isEmpty) {
             for (Connector con : _self.connectors) {
-                println("Propagating message over connector '" + con.getRepresentation() + "'.")
+                println("-> Propagating message over connector '" + con.getRepresentation() + "'.")
                 con.update();
             }
         }
@@ -211,7 +212,7 @@ class SubcomponentAspect {
     @Step
     def void compute() {
         // println("SubcomponentAspect.compute()")
-        println("Computing behavior for subcomponent '" + _self.name + "'.");
+        println("### Computing behavior for subcomponent '" + _self.type.name + "." + _self.name + "'.");
         // for atomic components: delegate behavior computation to their Groovy script
         if (_self.type.subcomponents.isEmpty) { // assume an atomic component
         // println("Subcomponent '" + _self.name + "' is atomic.");
@@ -222,12 +223,13 @@ class SubcomponentAspect {
                 // println("Computing next value of outgoing port " + _self.name + "." + p.name + ".")
                 var result = ur1.diverse.xmontiarc.runtime.GroovyInterpreter.interpret(behavior);
                 p.value = result
-                println("Assigning value '" + p.value + "' to outgoing port " + _self.name + "." + p.name + ".")
+                println("### Assigning value '" + p.value + "' to outgoing port " + _self.name + "." + p.name + ".")
             }
         } // for composed components, propagate computation to subcomponents
         else {
+            println("=> Computing behavior for composed subcomponent '" + _self.type.name + "." + _self.name + "'.");
             for (Subcomponent ci : _self.type.subcomponents) {
-                println("Subcomponent '" + _self.name + "' is composed.");
+                
                 ci.compute();
             }
         }
