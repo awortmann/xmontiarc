@@ -44,9 +44,6 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//Port/name"/>
       </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//Port/value"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="xmontiarc.ecore#//IncomingPort"/>

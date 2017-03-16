@@ -4,6 +4,7 @@ package ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -517,6 +518,16 @@ public interface XmontiarcPackage extends EPackage {
 	 */
 	int DATA_TYPE = 9;
 
+	/**
+	 * The meta object id for the '<em>EObject</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.ecore.EObject
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getEObject()
+	 * @generated
+	 */
+	int EOBJECT = 10;
+
 
 	/**
 	 * Returns the meta object for class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType <em>Component Type</em>}'.
@@ -861,6 +872,17 @@ public interface XmontiarcPackage extends EPackage {
 	EEnum getDataType();
 
 	/**
+	 * Returns the meta object for data type '{@link org.eclipse.emf.ecore.EObject <em>EObject</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>EObject</em>'.
+	 * @see org.eclipse.emf.ecore.EObject
+	 * @model instanceClass="org.eclipse.emf.ecore.EObject"
+	 * @generated
+	 */
+	EDataType getEObject();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1157,6 +1179,16 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum DATA_TYPE = eINSTANCE.getDataType();
+
+		/**
+		 * The meta object literal for the '<em>EObject</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.emf.ecore.EObject
+		 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl.XmontiarcPackageImpl#getEObject()
+		 * @generated
+		 */
+		EDataType EOBJECT = eINSTANCE.getEObject();
 
 	}
 

@@ -80,6 +80,8 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 		switch (eDataType.getClassifierID()) {
 			case XmontiarcPackage.DATA_TYPE:
 				return createDataTypeFromString(eDataType, initialValue);
+			case XmontiarcPackage.EOBJECT:
+				return createEObjectFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -95,6 +97,8 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 		switch (eDataType.getClassifierID()) {
 			case XmontiarcPackage.DATA_TYPE:
 				return convertDataTypeToString(eDataType, instanceValue);
+			case XmontiarcPackage.EOBJECT:
+				return convertEObjectToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -190,6 +194,24 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	 */
 	public String convertDataTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EObject createEObjectFromString(EDataType eDataType, String initialValue) {
+		return (EObject)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEObjectToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
 	}
 
 	/**

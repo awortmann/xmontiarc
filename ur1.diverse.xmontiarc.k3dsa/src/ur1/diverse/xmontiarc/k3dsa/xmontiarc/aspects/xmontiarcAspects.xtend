@@ -27,6 +27,7 @@ import org.eclipse.emf.common.util.BasicEList
 import xmontiarc.IntermediateConnector
 import xmontiarc.IncomingConnector
 import xmontiarc.OutgoingConnector
+import org.eclipse.emf.ecore.EObject
 
 @Aspect(className=ComponentType)
 class ComponentTypeAspect {
@@ -113,7 +114,7 @@ class ComponentTypeAspect {
 
 @Aspect(className=Port)
 class PortAspect {
-    // public Message msgValue;
+    public EObject value;
 }
 
 @Aspect(className=Connector)

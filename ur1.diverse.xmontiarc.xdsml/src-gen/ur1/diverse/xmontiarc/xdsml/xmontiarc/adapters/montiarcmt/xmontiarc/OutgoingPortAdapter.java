@@ -36,16 +36,6 @@ public class OutgoingPortAdapter extends EObjectAdapter<OutgoingPort> implements
   }
   
   @Override
-  public String getValue() {
-    return adaptee.getValue();
-  }
-  
-  @Override
-  public void setValue(final String o) {
-    adaptee.setValue(o);
-  }
-  
-  @Override
   public String getInitialValue() {
     return adaptee.getInitialValue();
   }
@@ -58,8 +48,6 @@ public class OutgoingPortAdapter extends EObjectAdapter<OutgoingPort> implements
   protected final static DataType TYPE_EDEFAULT = xmontiarc.DataType.NUMBER;
   
   protected final static String NAME_EDEFAULT = "UnnamedPort";
-  
-  protected final static String VALUE_EDEFAULT = "DefaultValue";
   
   protected final static String INITIAL_VALUE_EDEFAULT = "DefaultValue";
   
@@ -75,8 +63,6 @@ public class OutgoingPortAdapter extends EObjectAdapter<OutgoingPort> implements
     		return getType();
     	case xmontiarc.XmontiarcPackage.OUTGOING_PORT__NAME:
     		return getName();
-    	case xmontiarc.XmontiarcPackage.OUTGOING_PORT__VALUE:
-    		return getValue();
     	case xmontiarc.XmontiarcPackage.OUTGOING_PORT__INITIAL_VALUE:
     		return getInitialValue();
     }
@@ -91,8 +77,6 @@ public class OutgoingPortAdapter extends EObjectAdapter<OutgoingPort> implements
     		return getType() != TYPE_EDEFAULT;
     	case xmontiarc.XmontiarcPackage.OUTGOING_PORT__NAME:
     		return getName() != NAME_EDEFAULT;
-    	case xmontiarc.XmontiarcPackage.OUTGOING_PORT__VALUE:
-    		return getValue() != VALUE_EDEFAULT;
     	case xmontiarc.XmontiarcPackage.OUTGOING_PORT__INITIAL_VALUE:
     		return getInitialValue() != INITIAL_VALUE_EDEFAULT;
     }
@@ -110,11 +94,6 @@ public class OutgoingPortAdapter extends EObjectAdapter<OutgoingPort> implements
     		return;
     	case xmontiarc.XmontiarcPackage.OUTGOING_PORT__NAME:
     		setName(
-    		(java.lang.String)
-    		 newValue);
-    		return;
-    	case xmontiarc.XmontiarcPackage.OUTGOING_PORT__VALUE:
-    		setValue(
     		(java.lang.String)
     		 newValue);
     		return;

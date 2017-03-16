@@ -5,16 +5,6 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import java.util.WeakHashMap;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ComponentTypeAdapter;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ConnectorAdapter;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.IncomingConnectorAdapter;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.IncomingPortAdapter;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.IntermediateConnectorAdapter;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.OutgoingConnectorAdapter;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.OutgoingPortAdapter;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.PortAdapter;
-import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.SubcomponentAdapter;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.Message;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Connector;
@@ -75,7 +65,7 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     return null;
   }
   
-  public MessageAdapter createMessageAdapter(final Message adaptee, final Resource res) {
+  public ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter createMessageAdapter(final Message adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
@@ -90,7 +80,7 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public ComponentTypeAdapter createComponentTypeAdapter(final ComponentType adaptee, final Resource res) {
+  public ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ComponentTypeAdapter createComponentTypeAdapter(final ComponentType adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
@@ -105,7 +95,7 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public PortAdapter createPortAdapter(final Port adaptee, final Resource res) {
+  public ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.PortAdapter createPortAdapter(final Port adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
@@ -120,7 +110,7 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public IncomingPortAdapter createIncomingPortAdapter(final IncomingPort adaptee, final Resource res) {
+  public ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.IncomingPortAdapter createIncomingPortAdapter(final IncomingPort adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
@@ -135,7 +125,7 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public OutgoingPortAdapter createOutgoingPortAdapter(final OutgoingPort adaptee, final Resource res) {
+  public ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.OutgoingPortAdapter createOutgoingPortAdapter(final OutgoingPort adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
@@ -150,7 +140,7 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public ConnectorAdapter createConnectorAdapter(final Connector adaptee, final Resource res) {
+  public ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ConnectorAdapter createConnectorAdapter(final Connector adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
@@ -165,7 +155,7 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public IntermediateConnectorAdapter createIntermediateConnectorAdapter(final IntermediateConnector adaptee, final Resource res) {
+  public ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.IntermediateConnectorAdapter createIntermediateConnectorAdapter(final IntermediateConnector adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
@@ -180,7 +170,7 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public IncomingConnectorAdapter createIncomingConnectorAdapter(final IncomingConnector adaptee, final Resource res) {
+  public ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.IncomingConnectorAdapter createIncomingConnectorAdapter(final IncomingConnector adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
@@ -195,7 +185,7 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public OutgoingConnectorAdapter createOutgoingConnectorAdapter(final OutgoingConnector adaptee, final Resource res) {
+  public ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.OutgoingConnectorAdapter createOutgoingConnectorAdapter(final OutgoingConnector adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
@@ -210,7 +200,7 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public SubcomponentAdapter createSubcomponentAdapter(final Subcomponent adaptee, final Resource res) {
+  public ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.SubcomponentAdapter createSubcomponentAdapter(final Subcomponent adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);

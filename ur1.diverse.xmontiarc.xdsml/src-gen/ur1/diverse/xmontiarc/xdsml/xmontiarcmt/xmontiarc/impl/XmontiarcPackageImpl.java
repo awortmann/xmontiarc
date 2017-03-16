@@ -4,7 +4,9 @@ package ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EEnum;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -108,6 +110,13 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * @generated
 	 */
 	private EEnum dataTypeEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType eObjectEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -480,6 +489,15 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getEObject() {
+		return eObjectEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public XmontiarcFactory getXmontiarcFactory() {
 		return (XmontiarcFactory)getEFactoryInstance();
 	}
@@ -545,6 +563,9 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 
 		// Create enums
 		dataTypeEEnum = createEEnum(DATA_TYPE);
+
+		// Create data types
+		eObjectEDataType = createEDataType(EOBJECT);
 	}
 
 	/**
@@ -612,7 +633,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		initEClass(portEClass, Port.class, "Port", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Type(), this.getDataType(), "type", "Number", 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getPort_Name(), ecorePackage.getEString(), "name", "UnnamedPort", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getPort_Value(), ecorePackage.getEString(), "value", "DefaultValue", 1, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getPort_Value(), this.getEObject(), "value", null, 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(incomingPortEClass, IncomingPort.class, "IncomingPort", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -660,6 +681,9 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		addEEnumLiteral(dataTypeEEnum, DataType.NUMBER);
 		addEEnumLiteral(dataTypeEEnum, DataType.BOOLEAN);
 		addEEnumLiteral(dataTypeEEnum, DataType.STRING);
+
+		// Initialize data types
+		initEDataType(eObjectEDataType, EObject.class, "EObject", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -799,6 +823,11 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		   new String[] {
 		   });	
 		addAnnotation
+		  (getPort_Value(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (connectorEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
@@ -830,6 +859,11 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		   });	
 		addAnnotation
 		  (subcomponentEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (eObjectEDataType, 
 		   source, 
 		   new String[] {
 		   });

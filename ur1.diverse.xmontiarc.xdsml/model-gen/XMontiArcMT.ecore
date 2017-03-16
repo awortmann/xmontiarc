@@ -66,8 +66,8 @@
       <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" defaultValueLiteral="UnnamedPort">
         <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
       </eStructuralFeatures>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" lowerBound="1" defaultValueLiteral="DefaultValue">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" unique="false" eType="/0/EObject">
+        <eAnnotations source="aspect"/>
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="IncomingPort" eSuperTypes="/0/Port"/>
@@ -141,6 +141,9 @@
       <eLiterals name="Number" value="1" literal="Number"/>
       <eLiterals name="Boolean" literal="Boolean"/>
       <eLiterals name="String" value="2" literal="String"/>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EDataType" name="EObject" instanceClassName="org.eclipse.emf.ecore.EObject">
+      <eAnnotations source="aspect"/>
     </eClassifiers>
   </ecore:EPackage>
   <ecore:EPackage name="runtime" nsURI="http://ur1.diverse.xmontiarc.xdsml.xmontiarcmt/runtime/" nsPrefix="ur1.diverse.xmontiarc.runtime.model">

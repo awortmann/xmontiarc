@@ -83,7 +83,6 @@ public interface Port extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The default value is <code>"DefaultValue"</code>.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
@@ -91,12 +90,12 @@ public interface Port extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
+	 * @see #setValue(EObject)
 	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getPort_Value()
-	 * @model default="DefaultValue" required="true"
+	 * @model unique="false" dataType="ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.EObject"
 	 * @generated
 	 */
-	String getValue();
+	EObject getValue();
 
 	/**
 	 * Sets the value of the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.Port#getValue <em>Value</em>}' attribute.
@@ -106,6 +105,6 @@ public interface Port extends EObject {
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(String value);
+	void setValue(EObject value);
 
 } // Port

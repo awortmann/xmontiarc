@@ -169,22 +169,13 @@ public interface XmontiarcPackage extends EPackage {
 	int PORT__NAME = 1;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int PORT__VALUE = 2;
-
-	/**
 	 * The number of structural features of the '<em>Port</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int PORT_FEATURE_COUNT = 3;
+	int PORT_FEATURE_COUNT = 2;
 
 	/**
 	 * The number of operations of the '<em>Port</em>' class.
@@ -222,15 +213,6 @@ public interface XmontiarcPackage extends EPackage {
 	 * @ordered
 	 */
 	int INCOMING_PORT__NAME = PORT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int INCOMING_PORT__VALUE = PORT__VALUE;
 
 	/**
 	 * The number of structural features of the '<em>Incoming Port</em>' class.
@@ -277,15 +259,6 @@ public interface XmontiarcPackage extends EPackage {
 	 * @ordered
 	 */
 	int OUTGOING_PORT__NAME = PORT__NAME;
-
-	/**
-	 * The feature id for the '<em><b>Value</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int OUTGOING_PORT__VALUE = PORT__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Initial Value</b></em>' attribute.
@@ -699,17 +672,6 @@ public interface XmontiarcPackage extends EPackage {
 	EAttribute getPort_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link xmontiarc.Port#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see xmontiarc.Port#getValue()
-	 * @see #getPort()
-	 * @generated
-	 */
-	EAttribute getPort_Value();
-
-	/**
 	 * Returns the meta object for class '{@link xmontiarc.IncomingPort <em>Incoming Port</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1041,14 +1003,6 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute PORT__NAME = eINSTANCE.getPort_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute PORT__VALUE = eINSTANCE.getPort_Value();
 
 		/**
 		 * The meta object literal for the '{@link xmontiarc.impl.IncomingPortImpl <em>Incoming Port</em>}' class.

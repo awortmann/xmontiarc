@@ -15,6 +15,9 @@
         <ecoreEnumLiteral href="XMontiArcMT.ecore#/0/DataType/String"/>
       </genEnumLiterals>
     </genEnums>
+    <genDataTypes>
+      <ecoreDataType href="XMontiArcMT.ecore#/0/EObject"/>
+    </genDataTypes>
     <genClasses>
       <ecoreClass href="XMontiArcMT.ecore#/0/ComponentType"/>
       <genFeatures createChild="false">

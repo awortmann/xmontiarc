@@ -8,6 +8,7 @@ import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
 import org.eclipse.emf.common.util.ResourceLocator;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.EObjectValidator;
@@ -106,6 +107,8 @@ public class XmontiarcValidator extends EObjectValidator {
 				return validateSubcomponent((Subcomponent)value, diagnostics, context);
 			case XmontiarcPackage.DATA_TYPE:
 				return validateDataType((DataType)value, diagnostics, context);
+			case XmontiarcPackage.EOBJECT:
+				return validateEObject((EObject)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -459,6 +462,15 @@ public class XmontiarcValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateDataType(DataType dataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEObject(EObject eObject, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

@@ -21,7 +21,6 @@ import xmontiarc.XmontiarcPackage;
  * <ul>
  *   <li>{@link xmontiarc.impl.PortImpl#getType <em>Type</em>}</li>
  *   <li>{@link xmontiarc.impl.PortImpl#getName <em>Name</em>}</li>
- *   <li>{@link xmontiarc.impl.PortImpl#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @generated
@@ -68,26 +67,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String VALUE_EDEFAULT = "DefaultValue";
-
-	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getValue()
-	 * @generated
-	 * @ordered
-	 */
-	protected String value = VALUE_EDEFAULT;
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -132,27 +111,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(String newValue) {
-		String oldValue = value;
-		value = newValue;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, XmontiarcPackage.PORT__VALUE, oldValue, value));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public DataType getType() {
 		return type;
 	}
@@ -181,8 +139,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 				return getType();
 			case XmontiarcPackage.PORT__NAME:
 				return getName();
-			case XmontiarcPackage.PORT__VALUE:
-				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -202,9 +158,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 			case XmontiarcPackage.PORT__NAME:
 				setName((String)newValue);
 				return;
-			case XmontiarcPackage.PORT__VALUE:
-				setValue((String)newValue);
-				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -223,9 +176,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 			case XmontiarcPackage.PORT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case XmontiarcPackage.PORT__VALUE:
-				setValue(VALUE_EDEFAULT);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -242,8 +192,6 @@ public abstract class PortImpl extends MinimalEObjectImpl.Container implements P
 				return type != TYPE_EDEFAULT;
 			case XmontiarcPackage.PORT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case XmontiarcPackage.PORT__VALUE:
-				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);
 	}

@@ -35,21 +35,9 @@ public class IncomingPortAdapter extends EObjectAdapter<IncomingPort> implements
     adaptee.setName(o);
   }
   
-  @Override
-  public String getValue() {
-    return adaptee.getValue();
-  }
-  
-  @Override
-  public void setValue(final String o) {
-    adaptee.setValue(o);
-  }
-  
   protected final static DataType TYPE_EDEFAULT = xmontiarc.DataType.NUMBER;
   
   protected final static String NAME_EDEFAULT = "UnnamedPort";
-  
-  protected final static String VALUE_EDEFAULT = "DefaultValue";
   
   @Override
   public EClass eClass() {
@@ -63,8 +51,6 @@ public class IncomingPortAdapter extends EObjectAdapter<IncomingPort> implements
     		return getType();
     	case xmontiarc.XmontiarcPackage.INCOMING_PORT__NAME:
     		return getName();
-    	case xmontiarc.XmontiarcPackage.INCOMING_PORT__VALUE:
-    		return getValue();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -77,8 +63,6 @@ public class IncomingPortAdapter extends EObjectAdapter<IncomingPort> implements
     		return getType() != TYPE_EDEFAULT;
     	case xmontiarc.XmontiarcPackage.INCOMING_PORT__NAME:
     		return getName() != NAME_EDEFAULT;
-    	case xmontiarc.XmontiarcPackage.INCOMING_PORT__VALUE:
-    		return getValue() != VALUE_EDEFAULT;
     }
     
     return super.eIsSet(featureID);
@@ -94,11 +78,6 @@ public class IncomingPortAdapter extends EObjectAdapter<IncomingPort> implements
     		return;
     	case xmontiarc.XmontiarcPackage.INCOMING_PORT__NAME:
     		setName(
-    		(java.lang.String)
-    		 newValue);
-    		return;
-    	case xmontiarc.XmontiarcPackage.INCOMING_PORT__VALUE:
-    		setValue(
     		(java.lang.String)
     		 newValue);
     		return;

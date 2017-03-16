@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link xmontiarc.Port#getType <em>Type</em>}</li>
  *   <li>{@link xmontiarc.Port#getName <em>Name</em>}</li>
- *   <li>{@link xmontiarc.Port#getValue <em>Value</em>}</li>
  * </ul>
  *
  * @see xmontiarc.XmontiarcPackage#getPort()
@@ -51,33 +50,6 @@ public interface Port extends EObject {
 	 * @generated
 	 */
 	void setName(String value);
-
-	/**
-	 * Returns the value of the '<em><b>Value</b></em>' attribute.
-	 * The default value is <code>"DefaultValue"</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' attribute.
-	 * @see #setValue(String)
-	 * @see xmontiarc.XmontiarcPackage#getPort_Value()
-	 * @model default="DefaultValue" required="true"
-	 * @generated
-	 */
-	String getValue();
-
-	/**
-	 * Sets the value of the '{@link xmontiarc.Port#getValue <em>Value</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' attribute.
-	 * @see #getValue()
-	 * @generated
-	 */
-	void setValue(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Type</b></em>' attribute.
