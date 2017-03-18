@@ -10,9 +10,11 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import xmontiarc.ComponentBehavior;
 import xmontiarc.ComponentType;
 import xmontiarc.Connector;
 import xmontiarc.DataType;
+import xmontiarc.GroovyComponentBehavior;
 import xmontiarc.IncomingConnector;
 import xmontiarc.IncomingPort;
 import xmontiarc.IntermediateConnector;
@@ -93,6 +95,20 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * @generated
 	 */
 	private EClass subcomponentEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass componentBehaviorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass groovyComponentBehaviorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,8 +228,8 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getComponentType_Behavior() {
-		return (EAttribute)componentTypeEClass.getEStructuralFeatures().get(3);
+	public EReference getComponentType_Behavior() {
+		return (EReference)componentTypeEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -222,7 +238,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * @generated
 	 */
 	public EReference getComponentType_IncomingPorts() {
-		return (EReference)componentTypeEClass.getEStructuralFeatures().get(4);
+		return (EReference)componentTypeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -231,7 +247,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * @generated
 	 */
 	public EReference getComponentType_OutgoingPorts() {
-		return (EReference)componentTypeEClass.getEStructuralFeatures().get(5);
+		return (EReference)componentTypeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -446,6 +462,33 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getComponentBehavior() {
+		return componentBehaviorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getGroovyComponentBehavior() {
+		return groovyComponentBehaviorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getGroovyComponentBehavior_ScriptBody() {
+		return (EAttribute)groovyComponentBehaviorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDataType() {
 		return dataTypeEEnum;
 	}
@@ -482,9 +525,9 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		createEAttribute(componentTypeEClass, COMPONENT_TYPE__NAME);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__CONNECTORS);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__SUBCOMPONENTS);
-		createEAttribute(componentTypeEClass, COMPONENT_TYPE__BEHAVIOR);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__INCOMING_PORTS);
 		createEReference(componentTypeEClass, COMPONENT_TYPE__OUTGOING_PORTS);
+		createEReference(componentTypeEClass, COMPONENT_TYPE__BEHAVIOR);
 
 		portEClass = createEClass(PORT);
 		createEAttribute(portEClass, PORT__TYPE);
@@ -516,6 +559,11 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		createEReference(subcomponentEClass, SUBCOMPONENT__INCOMING_PORTS);
 		createEReference(subcomponentEClass, SUBCOMPONENT__PARENT);
 		createEReference(subcomponentEClass, SUBCOMPONENT__OUTGOING_PORTS);
+
+		componentBehaviorEClass = createEClass(COMPONENT_BEHAVIOR);
+
+		groovyComponentBehaviorEClass = createEClass(GROOVY_COMPONENT_BEHAVIOR);
+		createEAttribute(groovyComponentBehaviorEClass, GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY);
 
 		// Create enums
 		dataTypeEEnum = createEEnum(DATA_TYPE);
@@ -554,15 +602,16 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		intermediateConnectorEClass.getESuperTypes().add(this.getConnector());
 		incomingConnectorEClass.getESuperTypes().add(this.getConnector());
 		outgoingConnectorEClass.getESuperTypes().add(this.getConnector());
+		groovyComponentBehaviorEClass.getESuperTypes().add(this.getComponentBehavior());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentTypeEClass, ComponentType.class, "ComponentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getComponentType_Name(), ecorePackage.getEString(), "name", "UnnamedComponentType", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_Connectors(), this.getConnector(), this.getConnector_Parent(), "connectors", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_Subcomponents(), this.getSubcomponent(), this.getSubcomponent_Parent(), "subcomponents", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getComponentType_Behavior(), ecorePackage.getEString(), "behavior", "\"\"", 1, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_IncomingPorts(), this.getIncomingPort(), null, "incomingPorts", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getComponentType_OutgoingPorts(), this.getOutgoingPort(), null, "outgoingPorts", null, 0, -1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getComponentType_Behavior(), this.getComponentBehavior(), null, "behavior", null, 0, 1, ComponentType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(portEClass, Port.class, "Port", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPort_Type(), this.getDataType(), "type", "Number", 0, 1, Port.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -594,6 +643,11 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		initEReference(getSubcomponent_IncomingPorts(), this.getIncomingPort(), null, "incomingPorts", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Parent(), this.getComponentType(), this.getComponentType_Subcomponents(), "parent", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_OutgoingPorts(), this.getOutgoingPort(), null, "outgoingPorts", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(componentBehaviorEClass, ComponentBehavior.class, "ComponentBehavior", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(groovyComponentBehaviorEClass, GroovyComponentBehavior.class, "GroovyComponentBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGroovyComponentBehavior_ScriptBody(), ecorePackage.getEString(), "scriptBody", "\"\"", 1, 1, GroovyComponentBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(dataTypeEEnum, DataType.class, "DataType");

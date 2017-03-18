@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autoamta:Automaton xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:autoamta="http://ur1.diverse.xautomata.xdsml.xautomata/automata/">
+  <states name="start" initial="true"/>
+  <states name="end" initial="true"/>
+  <transitions source="//@states.0" target="//@states.1">
+    <guard xsi:type="autoamta:BooleanGuard" source="//@variables.0"/>
+    <action xsi:type="autoamta:BooleanAction" target="//@variables.0"/>
+  </transitions>
+  <variables xsi:type="autoamta:BooleanVariable" name="propertyX" initialValue="true"/>
+</autoamta:Automaton>

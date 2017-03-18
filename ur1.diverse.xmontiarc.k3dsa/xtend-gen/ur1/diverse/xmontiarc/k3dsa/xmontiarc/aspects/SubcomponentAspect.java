@@ -8,7 +8,9 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect;
 import ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspectSubcomponentAspectProperties;
 import ur1.diverse.xmontiarc.runtime.GroovyInterpreter;
+import xmontiarc.ComponentBehavior;
 import xmontiarc.ComponentType;
+import xmontiarc.GroovyComponentBehavior;
 import xmontiarc.OutgoingPort;
 import xmontiarc.Port;
 import xmontiarc.Subcomponent;
@@ -55,9 +57,14 @@ public class SubcomponentAspect {
       for (final Port p : _outgoingPorts) {
         {
           ComponentType _type_2 = _self.getType();
-          String behavior = _type_2.getBehavior();
-          EObject result = GroovyInterpreter.interpret(behavior);
-          PortAspect.value(p, result);
+          final ComponentBehavior behavior = _type_2.getBehavior();
+          if ((behavior instanceof GroovyComponentBehavior)) {
+            final GroovyComponentBehavior gcb = ((GroovyComponentBehavior) behavior);
+            String _scriptBody = gcb.getScriptBody();
+            EObject result = GroovyInterpreter.interpret(_scriptBody);
+            PortAspect.value(p, result);
+          } else {
+          }
           EObject _value = PortAspect.value(p);
           String _plus_4 = ("### Assigning value \'" + _value);
           String _plus_5 = (_plus_4 + "\' to outgoing port ");

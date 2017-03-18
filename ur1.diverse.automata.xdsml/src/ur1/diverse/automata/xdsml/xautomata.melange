@@ -1,0 +1,22 @@
+package ur1.diverse.xautomata.xdsml
+
+language XAutomata {
+	syntax "platform:/resource/ur1.diverse.automata.model/ur1.diverse.automata.model/automata.ecore"
+	
+	with ur1.diverse.automata.k3dsa.automata.aspects.ActionAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.VariableAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.NumberVariableAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.TransitionAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.NumberGuardAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.BooleanGuardAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.AutomatonAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.StringVariableAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.BooleanVariableAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.GuardAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.BooleanActionAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.NumberActionAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.StringGuardAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.StringActionAspect
+	with ur1.diverse.automata.k3dsa.automata.aspects.StateAspect
+
+}

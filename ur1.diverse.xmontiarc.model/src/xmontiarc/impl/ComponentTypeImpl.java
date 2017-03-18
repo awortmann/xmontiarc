@@ -14,6 +14,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import xmontiarc.ComponentBehavior;
 import xmontiarc.ComponentType;
 import xmontiarc.Connector;
 import xmontiarc.IncomingPort;
@@ -32,9 +33,9 @@ import xmontiarc.XmontiarcPackage;
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getName <em>Name</em>}</li>
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getSubcomponents <em>Subcomponents</em>}</li>
- *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getIncomingPorts <em>Incoming Ports</em>}</li>
  *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getOutgoingPorts <em>Outgoing Ports</em>}</li>
+ *   <li>{@link xmontiarc.impl.ComponentTypeImpl#getBehavior <em>Behavior</em>}</li>
  * </ul>
  *
  * @generated
@@ -81,26 +82,6 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	protected EList<Subcomponent> subcomponents;
 
 	/**
-	 * The default value of the '{@link #getBehavior() <em>Behavior</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehavior()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String BEHAVIOR_EDEFAULT = "\"\"";
-
-	/**
-	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBehavior()
-	 * @generated
-	 * @ordered
-	 */
-	protected String behavior = BEHAVIOR_EDEFAULT;
-
-	/**
 	 * The cached value of the '{@link #getIncomingPorts() <em>Incoming Ports</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -119,6 +100,16 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * @ordered
 	 */
 	protected EList<OutgoingPort> outgoingPorts;
+
+	/**
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentBehavior behavior;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -189,7 +180,15 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getBehavior() {
+	public ComponentBehavior getBehavior() {
+		if (behavior != null && behavior.eIsProxy()) {
+			InternalEObject oldBehavior = (InternalEObject)behavior;
+			behavior = (ComponentBehavior)eResolveProxy(oldBehavior);
+			if (behavior != oldBehavior) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR, oldBehavior, behavior));
+			}
+		}
 		return behavior;
 	}
 
@@ -198,8 +197,17 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBehavior(String newBehavior) {
-		String oldBehavior = behavior;
+	public ComponentBehavior basicGetBehavior() {
+		return behavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBehavior(ComponentBehavior newBehavior) {
+		ComponentBehavior oldBehavior = behavior;
 		behavior = newBehavior;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR, oldBehavior, behavior));
@@ -280,12 +288,13 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return getConnectors();
 			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return getSubcomponents();
-			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
-				return getBehavior();
 			case XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
 				return getIncomingPorts();
 			case XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				return getOutgoingPorts();
+			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+				if (resolve) return getBehavior();
+				return basicGetBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -310,9 +319,6 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				getSubcomponents().clear();
 				getSubcomponents().addAll((Collection<? extends Subcomponent>)newValue);
 				return;
-			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
-				setBehavior((String)newValue);
-				return;
 			case XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
 				getIncomingPorts().clear();
 				getIncomingPorts().addAll((Collection<? extends IncomingPort>)newValue);
@@ -320,6 +326,9 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 			case XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				getOutgoingPorts().clear();
 				getOutgoingPorts().addAll((Collection<? extends OutgoingPort>)newValue);
+				return;
+			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+				setBehavior((ComponentBehavior)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -342,14 +351,14 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				getSubcomponents().clear();
 				return;
-			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
-				setBehavior(BEHAVIOR_EDEFAULT);
-				return;
 			case XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
 				getIncomingPorts().clear();
 				return;
 			case XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				getOutgoingPorts().clear();
+				return;
+			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+				setBehavior((ComponentBehavior)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -369,12 +378,12 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return connectors != null && !connectors.isEmpty();
 			case XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return subcomponents != null && !subcomponents.isEmpty();
-			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
-				return BEHAVIOR_EDEFAULT == null ? behavior != null : !BEHAVIOR_EDEFAULT.equals(behavior);
 			case XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
 				return incomingPorts != null && !incomingPorts.isEmpty();
 			case XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				return outgoingPorts != null && !outgoingPorts.isEmpty();
+			case XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+				return behavior != null;
 		}
 		return super.eIsSet(featureID);
 	}

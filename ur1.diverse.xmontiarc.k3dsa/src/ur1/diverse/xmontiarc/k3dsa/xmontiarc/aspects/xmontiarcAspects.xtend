@@ -28,6 +28,8 @@ import xmontiarc.IntermediateConnector
 import xmontiarc.IncomingConnector
 import xmontiarc.OutgoingConnector
 import org.eclipse.emf.ecore.EObject
+import xmontiarc.ComponentBehavior
+import xmontiarc.GroovyComponentBehavior
 
 @Aspect(className=ComponentType)
 class ComponentTypeAspect {
@@ -218,11 +220,18 @@ class SubcomponentAspect {
         // println("Subcomponent '" + _self.name + "' is atomic.");
             for (Port p : _self.outgoingPorts) {
                 // println("Subcomponent '" + _self.name + "' has port '" + p.name + "'.");
-                var behavior = _self.type.behavior
+                val ComponentBehavior behavior = _self.type.behavior
+                if (behavior instanceof GroovyComponentBehavior) {
+                    val GroovyComponentBehavior gcb = behavior as GroovyComponentBehavior
+                    var result = ur1.diverse.xmontiarc.runtime.GroovyInterpreter.interpret(gcb.scriptBody)
+                    p.value = result
+                } 
+                else {
+                    //TODO: Behavior integration
+                }
                 // println("Behavior of '" + _self.name + "' is '" + behavior + "'.")
                 // println("Computing next value of outgoing port " + _self.name + "." + p.name + ".")
-                var result = ur1.diverse.xmontiarc.runtime.GroovyInterpreter.interpret(behavior);
-                p.value = result
+                
                 println("### Assigning value '" + p.value + "' to outgoing port " + _self.name + "." + p.name + ".")
             }
         } // for composed components, propagate computation to subcomponents

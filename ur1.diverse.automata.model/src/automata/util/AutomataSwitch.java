@@ -90,6 +90,27 @@ public class AutomataSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case AutomataPackage.STRING_VARIABLE: {
+				StringVariable stringVariable = (StringVariable)theEObject;
+				T result = caseStringVariable(stringVariable);
+				if (result == null) result = caseVariable(stringVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AutomataPackage.NUMBER_VARIABLE: {
+				NumberVariable numberVariable = (NumberVariable)theEObject;
+				T result = caseNumberVariable(numberVariable);
+				if (result == null) result = caseVariable(numberVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AutomataPackage.BOOLEAN_VARIABLE: {
+				BooleanVariable booleanVariable = (BooleanVariable)theEObject;
+				T result = caseBooleanVariable(booleanVariable);
+				if (result == null) result = caseVariable(booleanVariable);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case AutomataPackage.GUARD: {
 				Guard guard = (Guard)theEObject;
 				T result = caseGuard(guard);
@@ -120,6 +141,27 @@ public class AutomataSwitch<T> extends Switch<T> {
 			case AutomataPackage.ACTION: {
 				Action action = (Action)theEObject;
 				T result = caseAction(action);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AutomataPackage.STRING_ACTION: {
+				StringAction stringAction = (StringAction)theEObject;
+				T result = caseStringAction(stringAction);
+				if (result == null) result = caseAction(stringAction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AutomataPackage.NUMBER_ACTION: {
+				NumberAction numberAction = (NumberAction)theEObject;
+				T result = caseNumberAction(numberAction);
+				if (result == null) result = caseAction(numberAction);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case AutomataPackage.BOOLEAN_ACTION: {
+				BooleanAction booleanAction = (BooleanAction)theEObject;
+				T result = caseBooleanAction(booleanAction);
+				if (result == null) result = caseAction(booleanAction);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -184,6 +226,51 @@ public class AutomataSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseVariable(Variable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringVariable(StringVariable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Number Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Number Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNumberVariable(NumberVariable object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Variable</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanVariable(BooleanVariable object) {
 		return null;
 	}
 
@@ -259,6 +346,51 @@ public class AutomataSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseAction(Action object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>String Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>String Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStringAction(StringAction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Number Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Number Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseNumberAction(NumberAction object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Boolean Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Boolean Action</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBooleanAction(BooleanAction object) {
 		return null;
 	}
 

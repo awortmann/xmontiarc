@@ -6,10 +6,12 @@ import automata.AutomataPackage;
 import automata.NumberGuard;
 import automata.NumberOperator;
 
+import automata.NumberVariable;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link automata.impl.NumberGuardImpl#getValue <em>Value</em>}</li>
  *   <li>{@link automata.impl.NumberGuardImpl#getOperator <em>Operator</em>}</li>
+ *   <li>{@link automata.impl.NumberGuardImpl#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +69,16 @@ public class NumberGuardImpl extends GuardImpl implements NumberGuard {
 	 * @ordered
 	 */
 	protected NumberOperator operator = OPERATOR_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected NumberVariable source;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +146,44 @@ public class NumberGuardImpl extends GuardImpl implements NumberGuard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public NumberVariable getSource() {
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject)source;
+			source = (NumberVariable)eResolveProxy(oldSource);
+			if (source != oldSource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AutomataPackage.NUMBER_GUARD__SOURCE, oldSource, source));
+			}
+		}
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NumberVariable basicGetSource() {
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSource(NumberVariable newSource) {
+		NumberVariable oldSource = source;
+		source = newSource;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AutomataPackage.NUMBER_GUARD__SOURCE, oldSource, source));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +191,9 @@ public class NumberGuardImpl extends GuardImpl implements NumberGuard {
 				return getValue();
 			case AutomataPackage.NUMBER_GUARD__OPERATOR:
 				return getOperator();
+			case AutomataPackage.NUMBER_GUARD__SOURCE:
+				if (resolve) return getSource();
+				return basicGetSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +211,9 @@ public class NumberGuardImpl extends GuardImpl implements NumberGuard {
 				return;
 			case AutomataPackage.NUMBER_GUARD__OPERATOR:
 				setOperator((NumberOperator)newValue);
+				return;
+			case AutomataPackage.NUMBER_GUARD__SOURCE:
+				setSource((NumberVariable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +233,9 @@ public class NumberGuardImpl extends GuardImpl implements NumberGuard {
 			case AutomataPackage.NUMBER_GUARD__OPERATOR:
 				setOperator(OPERATOR_EDEFAULT);
 				return;
+			case AutomataPackage.NUMBER_GUARD__SOURCE:
+				setSource((NumberVariable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +252,8 @@ public class NumberGuardImpl extends GuardImpl implements NumberGuard {
 				return value != VALUE_EDEFAULT;
 			case AutomataPackage.NUMBER_GUARD__OPERATOR:
 				return operator != OPERATOR_EDEFAULT;
+			case AutomataPackage.NUMBER_GUARD__SOURCE:
+				return source != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -14,6 +14,7 @@ package automata;
  * <ul>
  *   <li>{@link automata.BooleanGuard#isValue <em>Value</em>}</li>
  *   <li>{@link automata.BooleanGuard#getOperator <em>Operator</em>}</li>
+ *   <li>{@link automata.BooleanGuard#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @see automata.AutomataPackage#getBooleanGuard()
@@ -76,5 +77,31 @@ public interface BooleanGuard extends Guard {
 	 * @generated
 	 */
 	void setOperator(BooleanOperator value);
+
+	/**
+	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source</em>' reference.
+	 * @see #setSource(BooleanVariable)
+	 * @see automata.AutomataPackage#getBooleanGuard_Source()
+	 * @model required="true"
+	 * @generated
+	 */
+	BooleanVariable getSource();
+
+	/**
+	 * Sets the value of the '{@link automata.BooleanGuard#getSource <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @see #getSource()
+	 * @generated
+	 */
+	void setSource(BooleanVariable value);
 
 } // BooleanGuard

@@ -1,4 +1,3 @@
-Manifest-Version: 1.0
 Bundle-SymbolicName: ur1.diverse.xmontiarc.xdsml;singleton:=true
 Export-Package: ur1.diverse.xmontiarc.xdsml,
  ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt,
@@ -12,7 +11,7 @@ Export-Package: ur1.diverse.xmontiarc.xdsml,
  ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc,
  ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl,
  ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util
-Bundle-Name: %pluginName
+Bundle-Name: pluginName
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Localization: plugin
@@ -28,4 +27,4 @@ Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
-
+Manifest-Version: 1.0

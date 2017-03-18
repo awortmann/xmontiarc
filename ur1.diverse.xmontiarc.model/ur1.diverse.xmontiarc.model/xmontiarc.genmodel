@@ -26,14 +26,14 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//ComponentType/subcomponents"/>
       </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//ComponentType/behavior"/>
-      </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//ComponentType/incomingPorts"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//ComponentType/outgoingPorts"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//ComponentType/behavior"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -103,6 +103,15 @@
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="xmontiarc.ecore#//Subcomponent/outgoingPorts"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="xmontiarc.ecore#//ComponentBehavior"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="xmontiarc.ecore#//GroovyComponentBehavior"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//GroovyComponentBehavior/scriptBody"/>
       </genFeatures>
     </genClasses>
   </genPackages>

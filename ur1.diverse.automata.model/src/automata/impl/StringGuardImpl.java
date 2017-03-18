@@ -6,10 +6,12 @@ import automata.AutomataPackage;
 import automata.StringGuard;
 import automata.StringOperator;
 
+import automata.StringVariable;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link automata.impl.StringGuardImpl#getValue <em>Value</em>}</li>
  *   <li>{@link automata.impl.StringGuardImpl#getOperator <em>Operator</em>}</li>
+ *   <li>{@link automata.impl.StringGuardImpl#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +69,16 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 	 * @ordered
 	 */
 	protected StringOperator operator = OPERATOR_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected StringVariable source;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +146,44 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public StringVariable getSource() {
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject)source;
+			source = (StringVariable)eResolveProxy(oldSource);
+			if (source != oldSource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AutomataPackage.STRING_GUARD__SOURCE, oldSource, source));
+			}
+		}
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StringVariable basicGetSource() {
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSource(StringVariable newSource) {
+		StringVariable oldSource = source;
+		source = newSource;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AutomataPackage.STRING_GUARD__SOURCE, oldSource, source));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +191,9 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 				return getValue();
 			case AutomataPackage.STRING_GUARD__OPERATOR:
 				return getOperator();
+			case AutomataPackage.STRING_GUARD__SOURCE:
+				if (resolve) return getSource();
+				return basicGetSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +211,9 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 				return;
 			case AutomataPackage.STRING_GUARD__OPERATOR:
 				setOperator((StringOperator)newValue);
+				return;
+			case AutomataPackage.STRING_GUARD__SOURCE:
+				setSource((StringVariable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +233,9 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 			case AutomataPackage.STRING_GUARD__OPERATOR:
 				setOperator(OPERATOR_EDEFAULT);
 				return;
+			case AutomataPackage.STRING_GUARD__SOURCE:
+				setSource((StringVariable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +252,8 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 			case AutomataPackage.STRING_GUARD__OPERATOR:
 				return operator != OPERATOR_EDEFAULT;
+			case AutomataPackage.STRING_GUARD__SOURCE:
+				return source != null;
 		}
 		return super.eIsSet(featureID);
 	}

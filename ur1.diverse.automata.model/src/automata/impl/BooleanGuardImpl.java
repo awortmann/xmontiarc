@@ -6,10 +6,12 @@ import automata.AutomataPackage;
 import automata.BooleanGuard;
 import automata.BooleanOperator;
 
+import automata.BooleanVariable;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 /**
@@ -22,6 +24,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * <ul>
  *   <li>{@link automata.impl.BooleanGuardImpl#isValue <em>Value</em>}</li>
  *   <li>{@link automata.impl.BooleanGuardImpl#getOperator <em>Operator</em>}</li>
+ *   <li>{@link automata.impl.BooleanGuardImpl#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @generated
@@ -66,6 +69,16 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 	 * @ordered
 	 */
 	protected BooleanOperator operator = OPERATOR_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getSource() <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSource()
+	 * @generated
+	 * @ordered
+	 */
+	protected BooleanVariable source;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +146,44 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public BooleanVariable getSource() {
+		if (source != null && source.eIsProxy()) {
+			InternalEObject oldSource = (InternalEObject)source;
+			source = (BooleanVariable)eResolveProxy(oldSource);
+			if (source != oldSource) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, AutomataPackage.BOOLEAN_GUARD__SOURCE, oldSource, source));
+			}
+		}
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BooleanVariable basicGetSource() {
+		return source;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSource(BooleanVariable newSource) {
+		BooleanVariable oldSource = source;
+		source = newSource;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, AutomataPackage.BOOLEAN_GUARD__SOURCE, oldSource, source));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +191,9 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 				return isValue();
 			case AutomataPackage.BOOLEAN_GUARD__OPERATOR:
 				return getOperator();
+			case AutomataPackage.BOOLEAN_GUARD__SOURCE:
+				if (resolve) return getSource();
+				return basicGetSource();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +211,9 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 				return;
 			case AutomataPackage.BOOLEAN_GUARD__OPERATOR:
 				setOperator((BooleanOperator)newValue);
+				return;
+			case AutomataPackage.BOOLEAN_GUARD__SOURCE:
+				setSource((BooleanVariable)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +233,9 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 			case AutomataPackage.BOOLEAN_GUARD__OPERATOR:
 				setOperator(OPERATOR_EDEFAULT);
 				return;
+			case AutomataPackage.BOOLEAN_GUARD__SOURCE:
+				setSource((BooleanVariable)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +252,8 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 				return value != VALUE_EDEFAULT;
 			case AutomataPackage.BOOLEAN_GUARD__OPERATOR:
 				return operator != OPERATOR_EDEFAULT;
+			case AutomataPackage.BOOLEAN_GUARD__SOURCE:
+				return source != null;
 		}
 		return super.eIsSet(featureID);
 	}

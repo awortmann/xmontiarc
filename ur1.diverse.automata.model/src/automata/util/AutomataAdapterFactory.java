@@ -84,6 +84,18 @@ public class AutomataAdapterFactory extends AdapterFactoryImpl {
 				return createVariableAdapter();
 			}
 			@Override
+			public Adapter caseStringVariable(StringVariable object) {
+				return createStringVariableAdapter();
+			}
+			@Override
+			public Adapter caseNumberVariable(NumberVariable object) {
+				return createNumberVariableAdapter();
+			}
+			@Override
+			public Adapter caseBooleanVariable(BooleanVariable object) {
+				return createBooleanVariableAdapter();
+			}
+			@Override
 			public Adapter caseGuard(Guard object) {
 				return createGuardAdapter();
 			}
@@ -102,6 +114,18 @@ public class AutomataAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseAction(Action object) {
 				return createActionAdapter();
+			}
+			@Override
+			public Adapter caseStringAction(StringAction object) {
+				return createStringActionAdapter();
+			}
+			@Override
+			public Adapter caseNumberAction(NumberAction object) {
+				return createNumberActionAdapter();
+			}
+			@Override
+			public Adapter caseBooleanAction(BooleanAction object) {
+				return createBooleanActionAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -180,6 +204,48 @@ public class AutomataAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link automata.StringVariable <em>String Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see automata.StringVariable
+	 * @generated
+	 */
+	public Adapter createStringVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link automata.NumberVariable <em>Number Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see automata.NumberVariable
+	 * @generated
+	 */
+	public Adapter createNumberVariableAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link automata.BooleanVariable <em>Boolean Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see automata.BooleanVariable
+	 * @generated
+	 */
+	public Adapter createBooleanVariableAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link automata.Guard <em>Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -246,6 +312,48 @@ public class AutomataAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link automata.StringAction <em>String Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see automata.StringAction
+	 * @generated
+	 */
+	public Adapter createStringActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link automata.NumberAction <em>Number Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see automata.NumberAction
+	 * @generated
+	 */
+	public Adapter createNumberActionAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link automata.BooleanAction <em>Boolean Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see automata.BooleanAction
+	 * @generated
+	 */
+	public Adapter createBooleanActionAdapter() {
 		return null;
 	}
 

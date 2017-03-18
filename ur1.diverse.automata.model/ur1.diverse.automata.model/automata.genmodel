@@ -4,18 +4,6 @@
   <genPackages prefix="Automata" disposableProviderFactory="true">
     <ecorePackage href="automata.ecore#/"/>
     <genEnums typeSafeEnumCompatible="false">
-      <ecoreEnum href="automata.ecore#//DataType"/>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="automata.ecore#//DataType/Number"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="automata.ecore#//DataType/Boolean"/>
-      </genEnumLiterals>
-      <genEnumLiterals>
-        <ecoreEnumLiteral href="automata.ecore#//DataType/String"/>
-      </genEnumLiterals>
-    </genEnums>
-    <genEnums typeSafeEnumCompatible="false">
       <ecoreEnum href="automata.ecore#//BooleanOperator"/>
       <genEnumLiterals>
         <ecoreEnumLiteral href="automata.ecore#//BooleanOperator/Equal"/>
@@ -40,6 +28,18 @@
       </genEnumLiterals>
       <genEnumLiterals>
         <ecoreEnumLiteral href="automata.ecore#//NumberOperator/Unequal"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="automata.ecore#//NumberOperator/LessThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="automata.ecore#//NumberOperator/GreaterThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="automata.ecore#//NumberOperator/GreaterOrEqualThan"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="automata.ecore#//NumberOperator/LessOrEqualThan"/>
       </genEnumLiterals>
     </genEnums>
     <genClasses>
@@ -74,21 +74,36 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="automata.ecore#//Transition/guard"/>
       </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="automata.ecore#//Transition/action"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="automata.ecore#//Variable"/>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//Variable/name"/>
       </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="automata.ecore#//StringVariable"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//Variable/type"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//StringVariable/initialValue"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="automata.ecore#//NumberVariable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//NumberVariable/initialValue"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="automata.ecore#//BooleanVariable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//BooleanVariable/initialValue"/>
       </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="automata.ecore#//Guard"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="automata.ecore#//Guard/source"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="automata.ecore#//BooleanGuard"/>
@@ -97,6 +112,9 @@
       </genFeatures>
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//BooleanGuard/operator"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="automata.ecore#//BooleanGuard/source"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -107,6 +125,9 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//StringGuard/operator"/>
       </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="automata.ecore#//StringGuard/source"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="automata.ecore#//NumberGuard"/>
@@ -116,11 +137,38 @@
       <genFeatures createChild="false">
         <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//NumberGuard/operator"/>
       </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="automata.ecore#//NumberGuard/source"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="automata.ecore#//Action"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="automata.ecore#//StringAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//StringAction/value"/>
+      </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="automata.ecore#//Action/target"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="automata.ecore#//StringAction/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="automata.ecore#//NumberAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//NumberAction/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="automata.ecore#//NumberAction/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="automata.ecore#//BooleanAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="automata.ecore#//BooleanAction/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="automata.ecore#//BooleanAction/target"/>
       </genFeatures>
     </genClasses>
   </genPackages>

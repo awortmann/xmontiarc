@@ -85,6 +85,15 @@ public interface XmontiarcFactory extends EFactory {
 	Subcomponent createSubcomponent();
 
 	/**
+	 * Returns a new object of class '<em>Groovy Component Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Groovy Component Behavior</em>'.
+	 * @generated
+	 */
+	GroovyComponentBehavior createGroovyComponentBehavior();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

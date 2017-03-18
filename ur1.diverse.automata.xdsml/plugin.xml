@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="ur1.diverse.xautomata.xdsml.XAutomata" xdsmlFilePath="/ur1.diverse.automata.xdsml/src/ur1/diverse/automata/xdsml/xautomata.melange" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XAutomataMT -->
+    <package class="ur1.diverse.xautomata.xdsml.xautomatamt.automata.AutomataPackage" genModel="model-gen/XAutomataMT.genmodel" uri="http://ur1.diverse.xautomata.xdsml.xautomatamt/automata/" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="ur1.diverse.xautomata.xdsml.XAutomataMT" uri="http://ur1.diverse.xautomata.xdsml.xautomatamt/" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="Action:ur1.diverse.xautomata.xdsml.xautomata.aspects.ActionAspect;Variable:ur1.diverse.xautomata.xdsml.xautomata.aspects.VariableAspect;Automaton:ur1.diverse.xautomata.xdsml.xautomata.aspects.AutomatonAspect;StringGuard:ur1.diverse.xautomata.xdsml.xautomata.aspects.StringGuardAspect;BooleanGuard:ur1.diverse.xautomata.xdsml.xautomata.aspects.BooleanGuardAspect;StringVariable:ur1.diverse.xautomata.xdsml.xautomata.aspects.StringVariableAspect;NumberGuard:ur1.diverse.xautomata.xdsml.xautomata.aspects.NumberGuardAspect;NumberAction:ur1.diverse.xautomata.xdsml.xautomata.aspects.NumberActionAspect;StringAction:ur1.diverse.xautomata.xdsml.xautomata.aspects.StringActionAspect;NumberVariable:ur1.diverse.xautomata.xdsml.xautomata.aspects.NumberVariableAspect;BooleanVariable:ur1.diverse.xautomata.xdsml.xautomata.aspects.BooleanVariableAspect;State:ur1.diverse.xautomata.xdsml.xautomata.aspects.StateAspect;Transition:ur1.diverse.xautomata.xdsml.xautomata.aspects.TransitionAspect;BooleanAction:ur1.diverse.xautomata.xdsml.xautomata.aspects.BooleanActionAspect;Guard:ur1.diverse.xautomata.xdsml.xautomata.aspects.GuardAspect" entryPoints="ur1.diverse.xautomata.xdsml.xautomata.aspects.AutomatonAspect.main(ur1.diverse.xautomata.xdsml.xautomata.automata.Automaton)" exactType="ur1.diverse.xautomata.xdsml.XAutomataMT" id="ur1.diverse.xautomata.xdsml.XAutomata" uri="http://ur1.diverse.xautomata.xdsml.xautomata/automata/">
+      <adapter class="ur1.diverse.xautomata.xdsml.xautomata.adapters.xautomatamt.XAutomataAdapter" modeltypeId="ur1.diverse.xautomata.xdsml.XAutomataMT" />
+    </language>
+  </extension>
+</plugin>

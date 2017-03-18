@@ -196,13 +196,22 @@ public interface AutomataPackage extends EPackage {
 	int TRANSITION__GUARD = 2;
 
 	/**
+	 * The feature id for the '<em><b>Action</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TRANSITION__ACTION = 3;
+
+	/**
 	 * The number of structural features of the '<em>Transition</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TRANSITION_FEATURE_COUNT = 3;
+	int TRANSITION_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Transition</em>' class.
@@ -233,22 +242,13 @@ public interface AutomataPackage extends EPackage {
 	int VARIABLE__NAME = 0;
 
 	/**
-	 * The feature id for the '<em><b>Type</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int VARIABLE__TYPE = 1;
-
-	/**
 	 * The number of structural features of the '<em>Variable</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VARIABLE_FEATURE_COUNT = 2;
+	int VARIABLE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Variable</em>' class.
@@ -260,6 +260,144 @@ public interface AutomataPackage extends EPackage {
 	int VARIABLE_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link automata.impl.StringVariableImpl <em>String Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see automata.impl.StringVariableImpl
+	 * @see automata.impl.AutomataPackageImpl#getStringVariable()
+	 * @generated
+	 */
+	int STRING_VARIABLE = 4;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VARIABLE__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Initial Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VARIABLE__INITIAL_VALUE = VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>String Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>String Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_VARIABLE_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link automata.impl.NumberVariableImpl <em>Number Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see automata.impl.NumberVariableImpl
+	 * @see automata.impl.AutomataPackageImpl#getNumberVariable()
+	 * @generated
+	 */
+	int NUMBER_VARIABLE = 5;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VARIABLE__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Initial Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VARIABLE__INITIAL_VALUE = VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Number Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Number Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_VARIABLE_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link automata.impl.BooleanVariableImpl <em>Boolean Variable</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see automata.impl.BooleanVariableImpl
+	 * @see automata.impl.AutomataPackageImpl#getBooleanVariable()
+	 * @generated
+	 */
+	int BOOLEAN_VARIABLE = 6;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VARIABLE__NAME = VARIABLE__NAME;
+
+	/**
+	 * The feature id for the '<em><b>Initial Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VARIABLE__INITIAL_VALUE = VARIABLE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VARIABLE_FEATURE_COUNT = VARIABLE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Boolean Variable</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_VARIABLE_OPERATION_COUNT = VARIABLE_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link automata.impl.GuardImpl <em>Guard</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -267,16 +405,7 @@ public interface AutomataPackage extends EPackage {
 	 * @see automata.impl.AutomataPackageImpl#getGuard()
 	 * @generated
 	 */
-	int GUARD = 4;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int GUARD__SOURCE = 0;
+	int GUARD = 7;
 
 	/**
 	 * The number of structural features of the '<em>Guard</em>' class.
@@ -285,7 +414,7 @@ public interface AutomataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int GUARD_FEATURE_COUNT = 1;
+	int GUARD_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Guard</em>' class.
@@ -304,16 +433,7 @@ public interface AutomataPackage extends EPackage {
 	 * @see automata.impl.AutomataPackageImpl#getBooleanGuard()
 	 * @generated
 	 */
-	int BOOLEAN_GUARD = 5;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOLEAN_GUARD__SOURCE = GUARD__SOURCE;
+	int BOOLEAN_GUARD = 8;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -334,13 +454,22 @@ public interface AutomataPackage extends EPackage {
 	int BOOLEAN_GUARD__OPERATOR = GUARD_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_GUARD__SOURCE = GUARD_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Boolean Guard</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_GUARD_FEATURE_COUNT = GUARD_FEATURE_COUNT + 2;
+	int BOOLEAN_GUARD_FEATURE_COUNT = GUARD_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Boolean Guard</em>' class.
@@ -359,16 +488,7 @@ public interface AutomataPackage extends EPackage {
 	 * @see automata.impl.AutomataPackageImpl#getStringGuard()
 	 * @generated
 	 */
-	int STRING_GUARD = 6;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STRING_GUARD__SOURCE = GUARD__SOURCE;
+	int STRING_GUARD = 9;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -389,13 +509,22 @@ public interface AutomataPackage extends EPackage {
 	int STRING_GUARD__OPERATOR = GUARD_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_GUARD__SOURCE = GUARD_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>String Guard</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STRING_GUARD_FEATURE_COUNT = GUARD_FEATURE_COUNT + 2;
+	int STRING_GUARD_FEATURE_COUNT = GUARD_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>String Guard</em>' class.
@@ -414,16 +543,7 @@ public interface AutomataPackage extends EPackage {
 	 * @see automata.impl.AutomataPackageImpl#getNumberGuard()
 	 * @generated
 	 */
-	int NUMBER_GUARD = 7;
-
-	/**
-	 * The feature id for the '<em><b>Source</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUMBER_GUARD__SOURCE = GUARD__SOURCE;
+	int NUMBER_GUARD = 10;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -444,13 +564,22 @@ public interface AutomataPackage extends EPackage {
 	int NUMBER_GUARD__OPERATOR = GUARD_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_GUARD__SOURCE = GUARD_FEATURE_COUNT + 2;
+
+	/**
 	 * The number of structural features of the '<em>Number Guard</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUMBER_GUARD_FEATURE_COUNT = GUARD_FEATURE_COUNT + 2;
+	int NUMBER_GUARD_FEATURE_COUNT = GUARD_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Number Guard</em>' class.
@@ -469,16 +598,7 @@ public interface AutomataPackage extends EPackage {
 	 * @see automata.impl.AutomataPackageImpl#getAction()
 	 * @generated
 	 */
-	int ACTION = 8;
-
-	/**
-	 * The feature id for the '<em><b>Target</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ACTION__TARGET = 0;
+	int ACTION = 11;
 
 	/**
 	 * The number of structural features of the '<em>Action</em>' class.
@@ -487,7 +607,7 @@ public interface AutomataPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = 1;
+	int ACTION_FEATURE_COUNT = 0;
 
 	/**
 	 * The number of operations of the '<em>Action</em>' class.
@@ -499,14 +619,142 @@ public interface AutomataPackage extends EPackage {
 	int ACTION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link automata.DataType <em>Data Type</em>}' enum.
+	 * The meta object id for the '{@link automata.impl.StringActionImpl <em>String Action</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see automata.DataType
-	 * @see automata.impl.AutomataPackageImpl#getDataType()
+	 * @see automata.impl.StringActionImpl
+	 * @see automata.impl.AutomataPackageImpl#getStringAction()
 	 * @generated
 	 */
-	int DATA_TYPE = 9;
+	int STRING_ACTION = 12;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ACTION__VALUE = ACTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ACTION__TARGET = ACTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>String Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ACTION_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>String Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STRING_ACTION_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link automata.impl.NumberActionImpl <em>Number Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see automata.impl.NumberActionImpl
+	 * @see automata.impl.AutomataPackageImpl#getNumberAction()
+	 * @generated
+	 */
+	int NUMBER_ACTION = 13;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_ACTION__VALUE = ACTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_ACTION__TARGET = ACTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Number Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_ACTION_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Number Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMBER_ACTION_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link automata.impl.BooleanActionImpl <em>Boolean Action</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see automata.impl.BooleanActionImpl
+	 * @see automata.impl.AutomataPackageImpl#getBooleanAction()
+	 * @generated
+	 */
+	int BOOLEAN_ACTION = 14;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_ACTION__VALUE = ACTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_ACTION__TARGET = ACTION_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Boolean Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_ACTION_FEATURE_COUNT = ACTION_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Boolean Action</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_ACTION_OPERATION_COUNT = ACTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link automata.BooleanOperator <em>Boolean Operator</em>}' enum.
@@ -516,7 +764,7 @@ public interface AutomataPackage extends EPackage {
 	 * @see automata.impl.AutomataPackageImpl#getBooleanOperator()
 	 * @generated
 	 */
-	int BOOLEAN_OPERATOR = 10;
+	int BOOLEAN_OPERATOR = 15;
 
 	/**
 	 * The meta object id for the '{@link automata.StringOperator <em>String Operator</em>}' enum.
@@ -526,7 +774,7 @@ public interface AutomataPackage extends EPackage {
 	 * @see automata.impl.AutomataPackageImpl#getStringOperator()
 	 * @generated
 	 */
-	int STRING_OPERATOR = 11;
+	int STRING_OPERATOR = 16;
 
 	/**
 	 * The meta object id for the '{@link automata.NumberOperator <em>Number Operator</em>}' enum.
@@ -536,7 +784,7 @@ public interface AutomataPackage extends EPackage {
 	 * @see automata.impl.AutomataPackageImpl#getNumberOperator()
 	 * @generated
 	 */
-	int NUMBER_OPERATOR = 12;
+	int NUMBER_OPERATOR = 17;
 
 
 	/**
@@ -658,6 +906,17 @@ public interface AutomataPackage extends EPackage {
 	EReference getTransition_Guard();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link automata.Transition#getAction <em>Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Action</em>'.
+	 * @see automata.Transition#getAction()
+	 * @see #getTransition()
+	 * @generated
+	 */
+	EReference getTransition_Action();
+
+	/**
 	 * Returns the meta object for class '{@link automata.Variable <em>Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -679,15 +938,67 @@ public interface AutomataPackage extends EPackage {
 	EAttribute getVariable_Name();
 
 	/**
-	 * Returns the meta object for the attribute '{@link automata.Variable#getType <em>Type</em>}'.
+	 * Returns the meta object for class '{@link automata.StringVariable <em>String Variable</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Type</em>'.
-	 * @see automata.Variable#getType()
-	 * @see #getVariable()
+	 * @return the meta object for class '<em>String Variable</em>'.
+	 * @see automata.StringVariable
 	 * @generated
 	 */
-	EAttribute getVariable_Type();
+	EClass getStringVariable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link automata.StringVariable#getInitialValue <em>Initial Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initial Value</em>'.
+	 * @see automata.StringVariable#getInitialValue()
+	 * @see #getStringVariable()
+	 * @generated
+	 */
+	EAttribute getStringVariable_InitialValue();
+
+	/**
+	 * Returns the meta object for class '{@link automata.NumberVariable <em>Number Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Number Variable</em>'.
+	 * @see automata.NumberVariable
+	 * @generated
+	 */
+	EClass getNumberVariable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link automata.NumberVariable#getInitialValue <em>Initial Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initial Value</em>'.
+	 * @see automata.NumberVariable#getInitialValue()
+	 * @see #getNumberVariable()
+	 * @generated
+	 */
+	EAttribute getNumberVariable_InitialValue();
+
+	/**
+	 * Returns the meta object for class '{@link automata.BooleanVariable <em>Boolean Variable</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Boolean Variable</em>'.
+	 * @see automata.BooleanVariable
+	 * @generated
+	 */
+	EClass getBooleanVariable();
+
+	/**
+	 * Returns the meta object for the attribute '{@link automata.BooleanVariable#isInitialValue <em>Initial Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Initial Value</em>'.
+	 * @see automata.BooleanVariable#isInitialValue()
+	 * @see #getBooleanVariable()
+	 * @generated
+	 */
+	EAttribute getBooleanVariable_InitialValue();
 
 	/**
 	 * Returns the meta object for class '{@link automata.Guard <em>Guard</em>}'.
@@ -698,17 +1009,6 @@ public interface AutomataPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getGuard();
-
-	/**
-	 * Returns the meta object for the reference '{@link automata.Guard#getSource <em>Source</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Source</em>'.
-	 * @see automata.Guard#getSource()
-	 * @see #getGuard()
-	 * @generated
-	 */
-	EReference getGuard_Source();
 
 	/**
 	 * Returns the meta object for class '{@link automata.BooleanGuard <em>Boolean Guard</em>}'.
@@ -743,6 +1043,17 @@ public interface AutomataPackage extends EPackage {
 	EAttribute getBooleanGuard_Operator();
 
 	/**
+	 * Returns the meta object for the reference '{@link automata.BooleanGuard#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see automata.BooleanGuard#getSource()
+	 * @see #getBooleanGuard()
+	 * @generated
+	 */
+	EReference getBooleanGuard_Source();
+
+	/**
 	 * Returns the meta object for class '{@link automata.StringGuard <em>String Guard</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -773,6 +1084,17 @@ public interface AutomataPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStringGuard_Operator();
+
+	/**
+	 * Returns the meta object for the reference '{@link automata.StringGuard#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see automata.StringGuard#getSource()
+	 * @see #getStringGuard()
+	 * @generated
+	 */
+	EReference getStringGuard_Source();
 
 	/**
 	 * Returns the meta object for class '{@link automata.NumberGuard <em>Number Guard</em>}'.
@@ -807,6 +1129,17 @@ public interface AutomataPackage extends EPackage {
 	EAttribute getNumberGuard_Operator();
 
 	/**
+	 * Returns the meta object for the reference '{@link automata.NumberGuard#getSource <em>Source</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see automata.NumberGuard#getSource()
+	 * @see #getNumberGuard()
+	 * @generated
+	 */
+	EReference getNumberGuard_Source();
+
+	/**
 	 * Returns the meta object for class '{@link automata.Action <em>Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -817,25 +1150,100 @@ public interface AutomataPackage extends EPackage {
 	EClass getAction();
 
 	/**
-	 * Returns the meta object for the reference '{@link automata.Action#getTarget <em>Target</em>}'.
+	 * Returns the meta object for class '{@link automata.StringAction <em>String Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>String Action</em>'.
+	 * @see automata.StringAction
+	 * @generated
+	 */
+	EClass getStringAction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link automata.StringAction#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see automata.StringAction#getValue()
+	 * @see #getStringAction()
+	 * @generated
+	 */
+	EAttribute getStringAction_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link automata.StringAction#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the reference '<em>Target</em>'.
-	 * @see automata.Action#getTarget()
-	 * @see #getAction()
+	 * @see automata.StringAction#getTarget()
+	 * @see #getStringAction()
 	 * @generated
 	 */
-	EReference getAction_Target();
+	EReference getStringAction_Target();
 
 	/**
-	 * Returns the meta object for enum '{@link automata.DataType <em>Data Type</em>}'.
+	 * Returns the meta object for class '{@link automata.NumberAction <em>Number Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for enum '<em>Data Type</em>'.
-	 * @see automata.DataType
+	 * @return the meta object for class '<em>Number Action</em>'.
+	 * @see automata.NumberAction
 	 * @generated
 	 */
-	EEnum getDataType();
+	EClass getNumberAction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link automata.NumberAction#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see automata.NumberAction#getValue()
+	 * @see #getNumberAction()
+	 * @generated
+	 */
+	EAttribute getNumberAction_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link automata.NumberAction#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see automata.NumberAction#getTarget()
+	 * @see #getNumberAction()
+	 * @generated
+	 */
+	EReference getNumberAction_Target();
+
+	/**
+	 * Returns the meta object for class '{@link automata.BooleanAction <em>Boolean Action</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Boolean Action</em>'.
+	 * @see automata.BooleanAction
+	 * @generated
+	 */
+	EClass getBooleanAction();
+
+	/**
+	 * Returns the meta object for the attribute '{@link automata.BooleanAction#isValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see automata.BooleanAction#isValue()
+	 * @see #getBooleanAction()
+	 * @generated
+	 */
+	EAttribute getBooleanAction_Value();
+
+	/**
+	 * Returns the meta object for the reference '{@link automata.BooleanAction#getTarget <em>Target</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see automata.BooleanAction#getTarget()
+	 * @see #getBooleanAction()
+	 * @generated
+	 */
+	EReference getBooleanAction_Target();
 
 	/**
 	 * Returns the meta object for enum '{@link automata.BooleanOperator <em>Boolean Operator</em>}'.
@@ -985,6 +1393,14 @@ public interface AutomataPackage extends EPackage {
 		EReference TRANSITION__GUARD = eINSTANCE.getTransition_Guard();
 
 		/**
+		 * The meta object literal for the '<em><b>Action</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference TRANSITION__ACTION = eINSTANCE.getTransition_Action();
+
+		/**
 		 * The meta object literal for the '{@link automata.impl.VariableImpl <em>Variable</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1003,12 +1419,58 @@ public interface AutomataPackage extends EPackage {
 		EAttribute VARIABLE__NAME = eINSTANCE.getVariable_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Type</b></em>' attribute feature.
+		 * The meta object literal for the '{@link automata.impl.StringVariableImpl <em>String Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see automata.impl.StringVariableImpl
+		 * @see automata.impl.AutomataPackageImpl#getStringVariable()
+		 * @generated
+		 */
+		EClass STRING_VARIABLE = eINSTANCE.getStringVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Initial Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute VARIABLE__TYPE = eINSTANCE.getVariable_Type();
+		EAttribute STRING_VARIABLE__INITIAL_VALUE = eINSTANCE.getStringVariable_InitialValue();
+
+		/**
+		 * The meta object literal for the '{@link automata.impl.NumberVariableImpl <em>Number Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see automata.impl.NumberVariableImpl
+		 * @see automata.impl.AutomataPackageImpl#getNumberVariable()
+		 * @generated
+		 */
+		EClass NUMBER_VARIABLE = eINSTANCE.getNumberVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Initial Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMBER_VARIABLE__INITIAL_VALUE = eINSTANCE.getNumberVariable_InitialValue();
+
+		/**
+		 * The meta object literal for the '{@link automata.impl.BooleanVariableImpl <em>Boolean Variable</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see automata.impl.BooleanVariableImpl
+		 * @see automata.impl.AutomataPackageImpl#getBooleanVariable()
+		 * @generated
+		 */
+		EClass BOOLEAN_VARIABLE = eINSTANCE.getBooleanVariable();
+
+		/**
+		 * The meta object literal for the '<em><b>Initial Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOLEAN_VARIABLE__INITIAL_VALUE = eINSTANCE.getBooleanVariable_InitialValue();
 
 		/**
 		 * The meta object literal for the '{@link automata.impl.GuardImpl <em>Guard</em>}' class.
@@ -1019,14 +1481,6 @@ public interface AutomataPackage extends EPackage {
 		 * @generated
 		 */
 		EClass GUARD = eINSTANCE.getGuard();
-
-		/**
-		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference GUARD__SOURCE = eINSTANCE.getGuard_Source();
 
 		/**
 		 * The meta object literal for the '{@link automata.impl.BooleanGuardImpl <em>Boolean Guard</em>}' class.
@@ -1055,6 +1509,14 @@ public interface AutomataPackage extends EPackage {
 		EAttribute BOOLEAN_GUARD__OPERATOR = eINSTANCE.getBooleanGuard_Operator();
 
 		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOLEAN_GUARD__SOURCE = eINSTANCE.getBooleanGuard_Source();
+
+		/**
 		 * The meta object literal for the '{@link automata.impl.StringGuardImpl <em>String Guard</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1079,6 +1541,14 @@ public interface AutomataPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STRING_GUARD__OPERATOR = eINSTANCE.getStringGuard_Operator();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STRING_GUARD__SOURCE = eINSTANCE.getStringGuard_Source();
 
 		/**
 		 * The meta object literal for the '{@link automata.impl.NumberGuardImpl <em>Number Guard</em>}' class.
@@ -1107,6 +1577,14 @@ public interface AutomataPackage extends EPackage {
 		EAttribute NUMBER_GUARD__OPERATOR = eINSTANCE.getNumberGuard_Operator();
 
 		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NUMBER_GUARD__SOURCE = eINSTANCE.getNumberGuard_Source();
+
+		/**
 		 * The meta object literal for the '{@link automata.impl.ActionImpl <em>Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1117,22 +1595,82 @@ public interface AutomataPackage extends EPackage {
 		EClass ACTION = eINSTANCE.getAction();
 
 		/**
+		 * The meta object literal for the '{@link automata.impl.StringActionImpl <em>String Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see automata.impl.StringActionImpl
+		 * @see automata.impl.AutomataPackageImpl#getStringAction()
+		 * @generated
+		 */
+		EClass STRING_ACTION = eINSTANCE.getStringAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STRING_ACTION__VALUE = eINSTANCE.getStringAction_Value();
+
+		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ACTION__TARGET = eINSTANCE.getAction_Target();
+		EReference STRING_ACTION__TARGET = eINSTANCE.getStringAction_Target();
 
 		/**
-		 * The meta object literal for the '{@link automata.DataType <em>Data Type</em>}' enum.
+		 * The meta object literal for the '{@link automata.impl.NumberActionImpl <em>Number Action</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see automata.DataType
-		 * @see automata.impl.AutomataPackageImpl#getDataType()
+		 * @see automata.impl.NumberActionImpl
+		 * @see automata.impl.AutomataPackageImpl#getNumberAction()
 		 * @generated
 		 */
-		EEnum DATA_TYPE = eINSTANCE.getDataType();
+		EClass NUMBER_ACTION = eINSTANCE.getNumberAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMBER_ACTION__VALUE = eINSTANCE.getNumberAction_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference NUMBER_ACTION__TARGET = eINSTANCE.getNumberAction_Target();
+
+		/**
+		 * The meta object literal for the '{@link automata.impl.BooleanActionImpl <em>Boolean Action</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see automata.impl.BooleanActionImpl
+		 * @see automata.impl.AutomataPackageImpl#getBooleanAction()
+		 * @generated
+		 */
+		EClass BOOLEAN_ACTION = eINSTANCE.getBooleanAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOLEAN_ACTION__VALUE = eINSTANCE.getBooleanAction_Value();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOLEAN_ACTION__TARGET = eINSTANCE.getBooleanAction_Target();
 
 		/**
 		 * The meta object literal for the '{@link automata.BooleanOperator <em>Boolean Operator</em>}' enum.

@@ -14,6 +14,7 @@ package automata;
  * <ul>
  *   <li>{@link automata.StringGuard#getValue <em>Value</em>}</li>
  *   <li>{@link automata.StringGuard#getOperator <em>Operator</em>}</li>
+ *   <li>{@link automata.StringGuard#getSource <em>Source</em>}</li>
  * </ul>
  *
  * @see automata.AutomataPackage#getStringGuard()
@@ -76,5 +77,31 @@ public interface StringGuard extends Guard {
 	 * @generated
 	 */
 	void setOperator(StringOperator value);
+
+	/**
+	 * Returns the value of the '<em><b>Source</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Source</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Source</em>' reference.
+	 * @see #setSource(StringVariable)
+	 * @see automata.AutomataPackage#getStringGuard_Source()
+	 * @model required="true"
+	 * @generated
+	 */
+	StringVariable getSource();
+
+	/**
+	 * Sets the value of the '{@link automata.StringGuard#getSource <em>Source</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Source</em>' reference.
+	 * @see #getSource()
+	 * @generated
+	 */
+	void setSource(StringVariable value);
 
 } // StringGuard

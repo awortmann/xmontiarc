@@ -125,6 +125,19 @@ public class XmontiarcSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case XmontiarcPackage.COMPONENT_BEHAVIOR: {
+				ComponentBehavior componentBehavior = (ComponentBehavior)theEObject;
+				T result = caseComponentBehavior(componentBehavior);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case XmontiarcPackage.GROOVY_COMPONENT_BEHAVIOR: {
+				GroovyComponentBehavior groovyComponentBehavior = (GroovyComponentBehavior)theEObject;
+				T result = caseGroovyComponentBehavior(groovyComponentBehavior);
+				if (result == null) result = caseComponentBehavior(groovyComponentBehavior);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -261,6 +274,36 @@ public class XmontiarcSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseSubcomponent(Subcomponent object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Component Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Component Behavior</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseComponentBehavior(ComponentBehavior object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Groovy Component Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Groovy Component Behavior</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGroovyComponentBehavior(GroovyComponentBehavior object) {
 		return null;
 	}
 

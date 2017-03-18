@@ -104,6 +104,10 @@ public class XmontiarcValidator extends EObjectValidator {
 				return validateOutgoingConnector((OutgoingConnector)value, diagnostics, context);
 			case XmontiarcPackage.SUBCOMPONENT:
 				return validateSubcomponent((Subcomponent)value, diagnostics, context);
+			case XmontiarcPackage.COMPONENT_BEHAVIOR:
+				return validateComponentBehavior((ComponentBehavior)value, diagnostics, context);
+			case XmontiarcPackage.GROOVY_COMPONENT_BEHAVIOR:
+				return validateGroovyComponentBehavior((GroovyComponentBehavior)value, diagnostics, context);
 			case XmontiarcPackage.DATA_TYPE:
 				return validateDataType((DataType)value, diagnostics, context);
 			default:
@@ -451,6 +455,24 @@ public class XmontiarcValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateComponentBehavior(ComponentBehavior componentBehavior, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(componentBehavior, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateGroovyComponentBehavior(GroovyComponentBehavior groovyComponentBehavior, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(groovyComponentBehavior, diagnostics, context);
 	}
 
 	/**

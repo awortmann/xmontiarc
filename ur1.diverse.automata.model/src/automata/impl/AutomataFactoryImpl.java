@@ -60,12 +60,15 @@ public class AutomataFactoryImpl extends EFactoryImpl implements AutomataFactory
 			case AutomataPackage.AUTOMATON: return createAutomaton();
 			case AutomataPackage.STATE: return createState();
 			case AutomataPackage.TRANSITION: return createTransition();
-			case AutomataPackage.VARIABLE: return createVariable();
-			case AutomataPackage.GUARD: return createGuard();
+			case AutomataPackage.STRING_VARIABLE: return createStringVariable();
+			case AutomataPackage.NUMBER_VARIABLE: return createNumberVariable();
+			case AutomataPackage.BOOLEAN_VARIABLE: return createBooleanVariable();
 			case AutomataPackage.BOOLEAN_GUARD: return createBooleanGuard();
 			case AutomataPackage.STRING_GUARD: return createStringGuard();
 			case AutomataPackage.NUMBER_GUARD: return createNumberGuard();
-			case AutomataPackage.ACTION: return createAction();
+			case AutomataPackage.STRING_ACTION: return createStringAction();
+			case AutomataPackage.NUMBER_ACTION: return createNumberAction();
+			case AutomataPackage.BOOLEAN_ACTION: return createBooleanAction();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -79,8 +82,6 @@ public class AutomataFactoryImpl extends EFactoryImpl implements AutomataFactory
 	@Override
 	public Object createFromString(EDataType eDataType, String initialValue) {
 		switch (eDataType.getClassifierID()) {
-			case AutomataPackage.DATA_TYPE:
-				return createDataTypeFromString(eDataType, initialValue);
 			case AutomataPackage.BOOLEAN_OPERATOR:
 				return createBooleanOperatorFromString(eDataType, initialValue);
 			case AutomataPackage.STRING_OPERATOR:
@@ -100,8 +101,6 @@ public class AutomataFactoryImpl extends EFactoryImpl implements AutomataFactory
 	@Override
 	public String convertToString(EDataType eDataType, Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
-			case AutomataPackage.DATA_TYPE:
-				return convertDataTypeToString(eDataType, instanceValue);
 			case AutomataPackage.BOOLEAN_OPERATOR:
 				return convertBooleanOperatorToString(eDataType, instanceValue);
 			case AutomataPackage.STRING_OPERATOR:
@@ -148,9 +147,9 @@ public class AutomataFactoryImpl extends EFactoryImpl implements AutomataFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Variable createVariable() {
-		VariableImpl variable = new VariableImpl();
-		return variable;
+	public StringVariable createStringVariable() {
+		StringVariableImpl stringVariable = new StringVariableImpl();
+		return stringVariable;
 	}
 
 	/**
@@ -158,9 +157,19 @@ public class AutomataFactoryImpl extends EFactoryImpl implements AutomataFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Guard createGuard() {
-		GuardImpl guard = new GuardImpl();
-		return guard;
+	public NumberVariable createNumberVariable() {
+		NumberVariableImpl numberVariable = new NumberVariableImpl();
+		return numberVariable;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public BooleanVariable createBooleanVariable() {
+		BooleanVariableImpl booleanVariable = new BooleanVariableImpl();
+		return booleanVariable;
 	}
 
 	/**
@@ -198,9 +207,9 @@ public class AutomataFactoryImpl extends EFactoryImpl implements AutomataFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Action createAction() {
-		ActionImpl action = new ActionImpl();
-		return action;
+	public StringAction createStringAction() {
+		StringActionImpl stringAction = new StringActionImpl();
+		return stringAction;
 	}
 
 	/**
@@ -208,10 +217,9 @@ public class AutomataFactoryImpl extends EFactoryImpl implements AutomataFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public DataType createDataTypeFromString(EDataType eDataType, String initialValue) {
-		DataType result = DataType.get(initialValue);
-		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
-		return result;
+	public NumberAction createNumberAction() {
+		NumberActionImpl numberAction = new NumberActionImpl();
+		return numberAction;
 	}
 
 	/**
@@ -219,8 +227,9 @@ public class AutomataFactoryImpl extends EFactoryImpl implements AutomataFactory
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String convertDataTypeToString(EDataType eDataType, Object instanceValue) {
-		return instanceValue == null ? null : instanceValue.toString();
+	public BooleanAction createBooleanAction() {
+		BooleanActionImpl booleanAction = new BooleanActionImpl();
+		return booleanAction;
 	}
 
 	/**

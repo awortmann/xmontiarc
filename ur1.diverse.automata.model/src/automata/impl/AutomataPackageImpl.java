@@ -6,15 +6,20 @@ import automata.Action;
 import automata.AutomataFactory;
 import automata.AutomataPackage;
 import automata.Automaton;
+import automata.BooleanAction;
 import automata.BooleanGuard;
 import automata.BooleanOperator;
-import automata.DataType;
+import automata.BooleanVariable;
 import automata.Guard;
+import automata.NumberAction;
 import automata.NumberGuard;
 import automata.NumberOperator;
+import automata.NumberVariable;
 import automata.State;
+import automata.StringAction;
 import automata.StringGuard;
 import automata.StringOperator;
+import automata.StringVariable;
 import automata.Transition;
 import automata.Variable;
 
@@ -66,6 +71,27 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass stringVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass numberVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass booleanVariableEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EClass guardEClass = null;
 
 	/**
@@ -101,7 +127,21 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EEnum dataTypeEEnum = null;
+	private EClass stringActionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass numberActionEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass booleanActionEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -289,6 +329,15 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getTransition_Action() {
+		return (EReference)transitionEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getVariable() {
 		return variableEClass;
 	}
@@ -307,8 +356,53 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getVariable_Type() {
-		return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
+	public EClass getStringVariable() {
+		return stringVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getStringVariable_InitialValue() {
+		return (EAttribute)stringVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNumberVariable() {
+		return numberVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumberVariable_InitialValue() {
+		return (EAttribute)numberVariableEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBooleanVariable() {
+		return booleanVariableEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBooleanVariable_InitialValue() {
+		return (EAttribute)booleanVariableEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -318,15 +412,6 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 	 */
 	public EClass getGuard() {
 		return guardEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getGuard_Source() {
-		return (EReference)guardEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -361,6 +446,15 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getBooleanGuard_Source() {
+		return (EReference)booleanGuardEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getStringGuard() {
 		return stringGuardEClass;
 	}
@@ -381,6 +475,15 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 	 */
 	public EAttribute getStringGuard_Operator() {
 		return (EAttribute)stringGuardEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStringGuard_Source() {
+		return (EReference)stringGuardEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -415,6 +518,15 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getNumberGuard_Source() {
+		return (EReference)numberGuardEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getAction() {
 		return actionEClass;
 	}
@@ -424,8 +536,8 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAction_Target() {
-		return (EReference)actionEClass.getEStructuralFeatures().get(0);
+	public EClass getStringAction() {
+		return stringActionEClass;
 	}
 
 	/**
@@ -433,8 +545,71 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getDataType() {
-		return dataTypeEEnum;
+	public EAttribute getStringAction_Value() {
+		return (EAttribute)stringActionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getStringAction_Target() {
+		return (EReference)stringActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getNumberAction() {
+		return numberActionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getNumberAction_Value() {
+		return (EAttribute)numberActionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getNumberAction_Target() {
+		return (EReference)numberActionEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getBooleanAction() {
+		return booleanActionEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getBooleanAction_Value() {
+		return (EAttribute)booleanActionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getBooleanAction_Target() {
+		return (EReference)booleanActionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -505,31 +680,52 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 		createEReference(transitionEClass, TRANSITION__SOURCE);
 		createEReference(transitionEClass, TRANSITION__TARGET);
 		createEReference(transitionEClass, TRANSITION__GUARD);
+		createEReference(transitionEClass, TRANSITION__ACTION);
 
 		variableEClass = createEClass(VARIABLE);
 		createEAttribute(variableEClass, VARIABLE__NAME);
-		createEAttribute(variableEClass, VARIABLE__TYPE);
+
+		stringVariableEClass = createEClass(STRING_VARIABLE);
+		createEAttribute(stringVariableEClass, STRING_VARIABLE__INITIAL_VALUE);
+
+		numberVariableEClass = createEClass(NUMBER_VARIABLE);
+		createEAttribute(numberVariableEClass, NUMBER_VARIABLE__INITIAL_VALUE);
+
+		booleanVariableEClass = createEClass(BOOLEAN_VARIABLE);
+		createEAttribute(booleanVariableEClass, BOOLEAN_VARIABLE__INITIAL_VALUE);
 
 		guardEClass = createEClass(GUARD);
-		createEReference(guardEClass, GUARD__SOURCE);
 
 		booleanGuardEClass = createEClass(BOOLEAN_GUARD);
 		createEAttribute(booleanGuardEClass, BOOLEAN_GUARD__VALUE);
 		createEAttribute(booleanGuardEClass, BOOLEAN_GUARD__OPERATOR);
+		createEReference(booleanGuardEClass, BOOLEAN_GUARD__SOURCE);
 
 		stringGuardEClass = createEClass(STRING_GUARD);
 		createEAttribute(stringGuardEClass, STRING_GUARD__VALUE);
 		createEAttribute(stringGuardEClass, STRING_GUARD__OPERATOR);
+		createEReference(stringGuardEClass, STRING_GUARD__SOURCE);
 
 		numberGuardEClass = createEClass(NUMBER_GUARD);
 		createEAttribute(numberGuardEClass, NUMBER_GUARD__VALUE);
 		createEAttribute(numberGuardEClass, NUMBER_GUARD__OPERATOR);
+		createEReference(numberGuardEClass, NUMBER_GUARD__SOURCE);
 
 		actionEClass = createEClass(ACTION);
-		createEReference(actionEClass, ACTION__TARGET);
+
+		stringActionEClass = createEClass(STRING_ACTION);
+		createEAttribute(stringActionEClass, STRING_ACTION__VALUE);
+		createEReference(stringActionEClass, STRING_ACTION__TARGET);
+
+		numberActionEClass = createEClass(NUMBER_ACTION);
+		createEAttribute(numberActionEClass, NUMBER_ACTION__VALUE);
+		createEReference(numberActionEClass, NUMBER_ACTION__TARGET);
+
+		booleanActionEClass = createEClass(BOOLEAN_ACTION);
+		createEAttribute(booleanActionEClass, BOOLEAN_ACTION__VALUE);
+		createEReference(booleanActionEClass, BOOLEAN_ACTION__TARGET);
 
 		// Create enums
-		dataTypeEEnum = createEEnum(DATA_TYPE);
 		booleanOperatorEEnum = createEEnum(BOOLEAN_OPERATOR);
 		stringOperatorEEnum = createEEnum(STRING_OPERATOR);
 		numberOperatorEEnum = createEEnum(NUMBER_OPERATOR);
@@ -563,9 +759,15 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
+		stringVariableEClass.getESuperTypes().add(this.getVariable());
+		numberVariableEClass.getESuperTypes().add(this.getVariable());
+		booleanVariableEClass.getESuperTypes().add(this.getVariable());
 		booleanGuardEClass.getESuperTypes().add(this.getGuard());
 		stringGuardEClass.getESuperTypes().add(this.getGuard());
 		numberGuardEClass.getESuperTypes().add(this.getGuard());
+		stringActionEClass.getESuperTypes().add(this.getAction());
+		numberActionEClass.getESuperTypes().add(this.getAction());
+		booleanActionEClass.getESuperTypes().add(this.getAction());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(automatonEClass, Automaton.class, "Automaton", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -581,35 +783,52 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 		initEReference(getTransition_Source(), this.getState(), null, "source", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Target(), this.getState(), null, "target", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getTransition_Guard(), this.getGuard(), null, "guard", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTransition_Action(), this.getAction(), null, "action", null, 1, 1, Transition.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(variableEClass, Variable.class, "Variable", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getVariable_Name(), ecorePackage.getEString(), "name", "UnnamedVariable", 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getVariable_Type(), this.getDataType(), "type", "Number", 1, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(guardEClass, Guard.class, "Guard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getGuard_Source(), this.getVariable(), null, "source", null, 1, 1, Guard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(stringVariableEClass, StringVariable.class, "StringVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStringVariable_InitialValue(), ecorePackage.getEString(), "initialValue", null, 1, 1, StringVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(numberVariableEClass, NumberVariable.class, "NumberVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNumberVariable_InitialValue(), ecorePackage.getELong(), "initialValue", null, 1, 1, NumberVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(booleanVariableEClass, BooleanVariable.class, "BooleanVariable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBooleanVariable_InitialValue(), ecorePackage.getEBoolean(), "initialValue", null, 1, 1, BooleanVariable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(guardEClass, Guard.class, "Guard", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(booleanGuardEClass, BooleanGuard.class, "BooleanGuard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getBooleanGuard_Value(), ecorePackage.getEBoolean(), "value", "true", 1, 1, BooleanGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getBooleanGuard_Operator(), this.getBooleanOperator(), "operator", null, 0, 1, BooleanGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBooleanGuard_Source(), this.getBooleanVariable(), null, "source", null, 1, 1, BooleanGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(stringGuardEClass, StringGuard.class, "StringGuard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStringGuard_Value(), ecorePackage.getEString(), "value", "UnnamedVariable", 1, 1, StringGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getStringGuard_Operator(), this.getStringOperator(), "operator", null, 0, 1, StringGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStringGuard_Source(), this.getStringVariable(), null, "source", null, 1, 1, StringGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(numberGuardEClass, NumberGuard.class, "NumberGuard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getNumberGuard_Value(), ecorePackage.getELong(), "value", "-1", 1, 1, NumberGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getNumberGuard_Operator(), this.getNumberOperator(), "operator", null, 0, 1, NumberGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNumberGuard_Source(), this.getNumberVariable(), null, "source", null, 1, 1, NumberGuard.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(actionEClass, Action.class, "Action", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getAction_Target(), this.getVariable(), null, "target", null, 1, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(actionEClass, Action.class, "Action", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(stringActionEClass, StringAction.class, "StringAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getStringAction_Value(), ecorePackage.getEString(), "value", null, 1, 1, StringAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStringAction_Target(), this.getStringVariable(), null, "target", null, 1, 1, StringAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(numberActionEClass, NumberAction.class, "NumberAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNumberAction_Value(), ecorePackage.getELong(), "value", null, 1, 1, NumberAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getNumberAction_Target(), this.getNumberVariable(), null, "target", null, 1, 1, NumberAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(booleanActionEClass, BooleanAction.class, "BooleanAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getBooleanAction_Value(), ecorePackage.getEBoolean(), "value", null, 1, 1, BooleanAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBooleanAction_Target(), this.getBooleanVariable(), null, "target", null, 1, 1, BooleanAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Initialize enums and add enum literals
-		initEEnum(dataTypeEEnum, DataType.class, "DataType");
-		addEEnumLiteral(dataTypeEEnum, DataType.NUMBER);
-		addEEnumLiteral(dataTypeEEnum, DataType.BOOLEAN);
-		addEEnumLiteral(dataTypeEEnum, DataType.STRING);
-
 		initEEnum(booleanOperatorEEnum, BooleanOperator.class, "BooleanOperator");
 		addEEnumLiteral(booleanOperatorEEnum, BooleanOperator.EQUAL);
 		addEEnumLiteral(booleanOperatorEEnum, BooleanOperator.UNEQUAL);
@@ -621,6 +840,10 @@ public class AutomataPackageImpl extends EPackageImpl implements AutomataPackage
 		initEEnum(numberOperatorEEnum, NumberOperator.class, "NumberOperator");
 		addEEnumLiteral(numberOperatorEEnum, NumberOperator.EQUAL);
 		addEEnumLiteral(numberOperatorEEnum, NumberOperator.UNEQUAL);
+		addEEnumLiteral(numberOperatorEEnum, NumberOperator.LESS_THAN);
+		addEEnumLiteral(numberOperatorEEnum, NumberOperator.GREATER_THAN);
+		addEEnumLiteral(numberOperatorEEnum, NumberOperator.GREATER_OR_EQUAL_THAN);
+		addEEnumLiteral(numberOperatorEEnum, NumberOperator.LESS_OR_EQUAL_THAN);
 
 		// Create resource
 		createResource(eNS_URI);

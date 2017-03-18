@@ -64,6 +64,7 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 			case XmontiarcPackage.INCOMING_CONNECTOR: return createIncomingConnector();
 			case XmontiarcPackage.OUTGOING_CONNECTOR: return createOutgoingConnector();
 			case XmontiarcPackage.SUBCOMPONENT: return createSubcomponent();
+			case XmontiarcPackage.GROOVY_COMPONENT_BEHAVIOR: return createGroovyComponentBehavior();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -167,6 +168,16 @@ public class XmontiarcFactoryImpl extends EFactoryImpl implements XmontiarcFacto
 	public Subcomponent createSubcomponent() {
 		SubcomponentImpl subcomponent = new SubcomponentImpl();
 		return subcomponent;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public GroovyComponentBehavior createGroovyComponentBehavior() {
+		GroovyComponentBehaviorImpl groovyComponentBehavior = new GroovyComponentBehaviorImpl();
+		return groovyComponentBehavior;
 	}
 
 	/**

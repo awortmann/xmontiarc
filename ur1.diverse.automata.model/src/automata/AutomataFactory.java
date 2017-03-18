@@ -49,22 +49,31 @@ public interface AutomataFactory extends EFactory {
 	Transition createTransition();
 
 	/**
-	 * Returns a new object of class '<em>Variable</em>'.
+	 * Returns a new object of class '<em>String Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Variable</em>'.
+	 * @return a new object of class '<em>String Variable</em>'.
 	 * @generated
 	 */
-	Variable createVariable();
+	StringVariable createStringVariable();
 
 	/**
-	 * Returns a new object of class '<em>Guard</em>'.
+	 * Returns a new object of class '<em>Number Variable</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Guard</em>'.
+	 * @return a new object of class '<em>Number Variable</em>'.
 	 * @generated
 	 */
-	Guard createGuard();
+	NumberVariable createNumberVariable();
+
+	/**
+	 * Returns a new object of class '<em>Boolean Variable</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Variable</em>'.
+	 * @generated
+	 */
+	BooleanVariable createBooleanVariable();
 
 	/**
 	 * Returns a new object of class '<em>Boolean Guard</em>'.
@@ -94,13 +103,31 @@ public interface AutomataFactory extends EFactory {
 	NumberGuard createNumberGuard();
 
 	/**
-	 * Returns a new object of class '<em>Action</em>'.
+	 * Returns a new object of class '<em>String Action</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Action</em>'.
+	 * @return a new object of class '<em>String Action</em>'.
 	 * @generated
 	 */
-	Action createAction();
+	StringAction createStringAction();
+
+	/**
+	 * Returns a new object of class '<em>Number Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Number Action</em>'.
+	 * @generated
+	 */
+	NumberAction createNumberAction();
+
+	/**
+	 * Returns a new object of class '<em>Boolean Action</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Boolean Action</em>'.
+	 * @generated
+	 */
+	BooleanAction createBooleanAction();
 
 	/**
 	 * Returns the package supported by this factory.

@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link xmontiarc.ComponentType#getName <em>Name</em>}</li>
  *   <li>{@link xmontiarc.ComponentType#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link xmontiarc.ComponentType#getSubcomponents <em>Subcomponents</em>}</li>
- *   <li>{@link xmontiarc.ComponentType#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link xmontiarc.ComponentType#getIncomingPorts <em>Incoming Ports</em>}</li>
  *   <li>{@link xmontiarc.ComponentType#getOutgoingPorts <em>Outgoing Ports</em>}</li>
+ *   <li>{@link xmontiarc.ComponentType#getBehavior <em>Behavior</em>}</li>
  * </ul>
  *
  * @see xmontiarc.XmontiarcPackage#getComponentType()
@@ -93,31 +93,30 @@ public interface ComponentType extends EObject {
 	EList<Subcomponent> getSubcomponents();
 
 	/**
-	 * Returns the value of the '<em><b>Behavior</b></em>' attribute.
-	 * The default value is <code>"\"\""</code>.
+	 * Returns the value of the '<em><b>Behavior</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Behavior</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Behavior</em>' attribute.
-	 * @see #setBehavior(String)
+	 * @return the value of the '<em>Behavior</em>' reference.
+	 * @see #setBehavior(ComponentBehavior)
 	 * @see xmontiarc.XmontiarcPackage#getComponentType_Behavior()
-	 * @model default="\"\"" required="true"
+	 * @model
 	 * @generated
 	 */
-	String getBehavior();
+	ComponentBehavior getBehavior();
 
 	/**
-	 * Sets the value of the '{@link xmontiarc.ComponentType#getBehavior <em>Behavior</em>}' attribute.
+	 * Sets the value of the '{@link xmontiarc.ComponentType#getBehavior <em>Behavior</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Behavior</em>' attribute.
+	 * @param value the new value of the '<em>Behavior</em>' reference.
 	 * @see #getBehavior()
 	 * @generated
 	 */
-	void setBehavior(String value);
+	void setBehavior(ComponentBehavior value);
 
 	/**
 	 * Returns the value of the '<em><b>Incoming Ports</b></em>' containment reference list.

@@ -96,22 +96,13 @@ public interface XmontiarcPackage extends EPackage {
 	int COMPONENT_TYPE__SUBCOMPONENTS = 2;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int COMPONENT_TYPE__BEHAVIOR = 3;
-
-	/**
 	 * The feature id for the '<em><b>Incoming Ports</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE__INCOMING_PORTS = 4;
+	int COMPONENT_TYPE__INCOMING_PORTS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Ports</b></em>' containment reference list.
@@ -120,7 +111,16 @@ public interface XmontiarcPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMPONENT_TYPE__OUTGOING_PORTS = 5;
+	int COMPONENT_TYPE__OUTGOING_PORTS = 4;
+
+	/**
+	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_TYPE__BEHAVIOR = 5;
 
 	/**
 	 * The number of structural features of the '<em>Component Type</em>' class.
@@ -564,6 +564,71 @@ public interface XmontiarcPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link xmontiarc.impl.ComponentBehaviorImpl <em>Component Behavior</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xmontiarc.impl.ComponentBehaviorImpl
+	 * @see xmontiarc.impl.XmontiarcPackageImpl#getComponentBehavior()
+	 * @generated
+	 */
+	int COMPONENT_BEHAVIOR = 9;
+
+	/**
+	 * The number of structural features of the '<em>Component Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_BEHAVIOR_FEATURE_COUNT = 0;
+
+	/**
+	 * The number of operations of the '<em>Component Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int COMPONENT_BEHAVIOR_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link xmontiarc.impl.GroovyComponentBehaviorImpl <em>Groovy Component Behavior</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xmontiarc.impl.GroovyComponentBehaviorImpl
+	 * @see xmontiarc.impl.XmontiarcPackageImpl#getGroovyComponentBehavior()
+	 * @generated
+	 */
+	int GROOVY_COMPONENT_BEHAVIOR = 10;
+
+	/**
+	 * The feature id for the '<em><b>Script Body</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY = COMPONENT_BEHAVIOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Groovy Component Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROOVY_COMPONENT_BEHAVIOR_FEATURE_COUNT = COMPONENT_BEHAVIOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of operations of the '<em>Groovy Component Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int GROOVY_COMPONENT_BEHAVIOR_OPERATION_COUNT = COMPONENT_BEHAVIOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link xmontiarc.DataType <em>Data Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -571,7 +636,7 @@ public interface XmontiarcPackage extends EPackage {
 	 * @see xmontiarc.impl.XmontiarcPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 9;
+	int DATA_TYPE = 11;
 
 
 	/**
@@ -618,15 +683,15 @@ public interface XmontiarcPackage extends EPackage {
 	EReference getComponentType_Subcomponents();
 
 	/**
-	 * Returns the meta object for the attribute '{@link xmontiarc.ComponentType#getBehavior <em>Behavior</em>}'.
+	 * Returns the meta object for the reference '{@link xmontiarc.ComponentType#getBehavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Behavior</em>'.
+	 * @return the meta object for the reference '<em>Behavior</em>'.
 	 * @see xmontiarc.ComponentType#getBehavior()
 	 * @see #getComponentType()
 	 * @generated
 	 */
-	EAttribute getComponentType_Behavior();
+	EReference getComponentType_Behavior();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link xmontiarc.ComponentType#getIncomingPorts <em>Incoming Ports</em>}'.
@@ -896,6 +961,37 @@ public interface XmontiarcPackage extends EPackage {
 	EReference getSubcomponent_OutgoingPorts();
 
 	/**
+	 * Returns the meta object for class '{@link xmontiarc.ComponentBehavior <em>Component Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Component Behavior</em>'.
+	 * @see xmontiarc.ComponentBehavior
+	 * @generated
+	 */
+	EClass getComponentBehavior();
+
+	/**
+	 * Returns the meta object for class '{@link xmontiarc.GroovyComponentBehavior <em>Groovy Component Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Groovy Component Behavior</em>'.
+	 * @see xmontiarc.GroovyComponentBehavior
+	 * @generated
+	 */
+	EClass getGroovyComponentBehavior();
+
+	/**
+	 * Returns the meta object for the attribute '{@link xmontiarc.GroovyComponentBehavior#getScriptBody <em>Script Body</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Script Body</em>'.
+	 * @see xmontiarc.GroovyComponentBehavior#getScriptBody()
+	 * @see #getGroovyComponentBehavior()
+	 * @generated
+	 */
+	EAttribute getGroovyComponentBehavior_ScriptBody();
+
+	/**
 	 * Returns the meta object for enum '{@link xmontiarc.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -963,12 +1059,12 @@ public interface XmontiarcPackage extends EPackage {
 		EReference COMPONENT_TYPE__SUBCOMPONENTS = eINSTANCE.getComponentType_Subcomponents();
 
 		/**
-		 * The meta object literal for the '<em><b>Behavior</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Behavior</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute COMPONENT_TYPE__BEHAVIOR = eINSTANCE.getComponentType_Behavior();
+		EReference COMPONENT_TYPE__BEHAVIOR = eINSTANCE.getComponentType_Behavior();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming Ports</b></em>' containment reference list feature.
@@ -1185,6 +1281,34 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SUBCOMPONENT__OUTGOING_PORTS = eINSTANCE.getSubcomponent_OutgoingPorts();
+
+		/**
+		 * The meta object literal for the '{@link xmontiarc.impl.ComponentBehaviorImpl <em>Component Behavior</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see xmontiarc.impl.ComponentBehaviorImpl
+		 * @see xmontiarc.impl.XmontiarcPackageImpl#getComponentBehavior()
+		 * @generated
+		 */
+		EClass COMPONENT_BEHAVIOR = eINSTANCE.getComponentBehavior();
+
+		/**
+		 * The meta object literal for the '{@link xmontiarc.impl.GroovyComponentBehaviorImpl <em>Groovy Component Behavior</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see xmontiarc.impl.GroovyComponentBehaviorImpl
+		 * @see xmontiarc.impl.XmontiarcPackageImpl#getGroovyComponentBehavior()
+		 * @generated
+		 */
+		EClass GROOVY_COMPONENT_BEHAVIOR = eINSTANCE.getGroovyComponentBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Script Body</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY = eINSTANCE.getGroovyComponentBehavior_ScriptBody();
 
 		/**
 		 * The meta object literal for the '{@link xmontiarc.DataType <em>Data Type</em>}' enum.

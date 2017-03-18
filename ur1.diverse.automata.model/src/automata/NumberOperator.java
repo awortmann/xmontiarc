@@ -26,7 +26,7 @@ public enum NumberOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	EQUAL(1, "Equal", "Equal"),
+	EQUAL(0, "Equal", "Equal"),
 
 	/**
 	 * The '<em><b>Unequal</b></em>' literal object.
@@ -36,7 +36,39 @@ public enum NumberOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	UNEQUAL(0, "Unequal", "Unequal");
+	UNEQUAL(1, "Unequal", "Unequal"), /**
+	 * The '<em><b>Less Than</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LESS_THAN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	LESS_THAN(2, "LessThan", "LessThan"), /**
+	 * The '<em><b>Greater Than</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #GREATER_THAN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	GREATER_THAN(3, "GreaterThan", "GreaterThan"), /**
+	 * The '<em><b>Greater Or Equal Than</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #GREATER_OR_EQUAL_THAN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	GREATER_OR_EQUAL_THAN(5, "GreaterOrEqualThan", "GreaterOrEqualThan"), /**
+	 * The '<em><b>Less Or Equal Than</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LESS_OR_EQUAL_THAN_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	LESS_OR_EQUAL_THAN(4, "LessOrEqualThan", "LessOrEqualThan");
 
 	/**
 	 * The '<em><b>Equal</b></em>' literal value.
@@ -51,7 +83,7 @@ public enum NumberOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int EQUAL_VALUE = 1;
+	public static final int EQUAL_VALUE = 0;
 
 	/**
 	 * The '<em><b>Unequal</b></em>' literal value.
@@ -66,7 +98,67 @@ public enum NumberOperator implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	public static final int UNEQUAL_VALUE = 0;
+	public static final int UNEQUAL_VALUE = 1;
+
+	/**
+	 * The '<em><b>Less Than</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Less Than</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #LESS_THAN
+	 * @model name="LessThan"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LESS_THAN_VALUE = 2;
+
+	/**
+	 * The '<em><b>Greater Than</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Greater Than</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #GREATER_THAN
+	 * @model name="GreaterThan"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GREATER_THAN_VALUE = 3;
+
+	/**
+	 * The '<em><b>Greater Or Equal Than</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Greater Or Equal Than</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #GREATER_OR_EQUAL_THAN
+	 * @model name="GreaterOrEqualThan"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int GREATER_OR_EQUAL_THAN_VALUE = 5;
+
+	/**
+	 * The '<em><b>Less Or Equal Than</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Less Or Equal Than</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #LESS_OR_EQUAL_THAN
+	 * @model name="LessOrEqualThan"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LESS_OR_EQUAL_THAN_VALUE = 4;
 
 	/**
 	 * An array of all the '<em><b>Number Operator</b></em>' enumerators.
@@ -78,6 +170,10 @@ public enum NumberOperator implements Enumerator {
 		new NumberOperator[] {
 			EQUAL,
 			UNEQUAL,
+			LESS_THAN,
+			GREATER_THAN,
+			GREATER_OR_EQUAL_THAN,
+			LESS_OR_EQUAL_THAN,
 		};
 
 	/**
@@ -136,6 +232,10 @@ public enum NumberOperator implements Enumerator {
 		switch (value) {
 			case EQUAL_VALUE: return EQUAL;
 			case UNEQUAL_VALUE: return UNEQUAL;
+			case LESS_THAN_VALUE: return LESS_THAN;
+			case GREATER_THAN_VALUE: return GREATER_THAN;
+			case GREATER_OR_EQUAL_THAN_VALUE: return GREATER_OR_EQUAL_THAN;
+			case LESS_OR_EQUAL_THAN_VALUE: return LESS_OR_EQUAL_THAN;
 		}
 		return null;
 	}
