@@ -6,8 +6,11 @@ import java.util.WeakHashMap;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.AutomatonComponentBehaviorAdapter;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ComponentBehaviorAdapter;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ComponentTypeAdapter;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ConnectorAdapter;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.GroovyComponentBehaviorAdapter;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.IncomingConnectorAdapter;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.IncomingPortAdapter;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.IntermediateConnectorAdapter;
@@ -16,8 +19,11 @@ import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.Outg
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.PortAdapter;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.SubcomponentAdapter;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.Message;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.AutomatonComponentBehavior;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentBehavior;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Connector;
+import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.GroovyComponentBehavior;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.IncomingConnector;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.IncomingPort;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.IntermediateConnector;
@@ -44,9 +50,6 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
   }
   
   public EObjectAdapter createAdapter(final EObject o, final Resource res) {
-    if (o instanceof ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.Message){
-    	return createMessageAdapter((ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.Message) o, res);
-    }
     if (o instanceof ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType){
     	return createComponentTypeAdapter((ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType) o, res);
     }
@@ -71,23 +74,17 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     if (o instanceof ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent){
     	return createSubcomponentAdapter((ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.Subcomponent) o, res);
     }
+    if (o instanceof ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.GroovyComponentBehavior){
+    	return createGroovyComponentBehaviorAdapter((ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.GroovyComponentBehavior) o, res);
+    }
+    if (o instanceof ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.AutomatonComponentBehavior){
+    	return createAutomatonComponentBehaviorAdapter((ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.AutomatonComponentBehavior) o, res);
+    }
+    if (o instanceof ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.Message){
+    	return createMessageAdapter((ur1.diverse.xmontiarc.xdsml.xmontiarc.runtime.Message) o, res);
+    }
     
     return null;
-  }
-  
-  public MessageAdapter createMessageAdapter(final Message adaptee, final Resource res) {
-    if (adaptee == null)
-    	return null;
-    EObjectAdapter adapter = register.get(adaptee);
-    if(adapter != null)
-    	 return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter) adapter;
-    else {
-    	adapter = new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter();
-    	adapter.setAdaptee(adaptee);
-    	adapter.setResource(res);
-    	register.put(adaptee, adapter);
-    	return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter) adapter;
-    }
   }
   
   public ComponentTypeAdapter createComponentTypeAdapter(final ComponentType adaptee, final Resource res) {
@@ -222,6 +219,66 @@ public class XMontiArcMTAdaptersFactory implements AdaptersFactory {
     	adapter.setResource(res);
     	register.put(adaptee, adapter);
     	return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.SubcomponentAdapter) adapter;
+    }
+  }
+  
+  public ComponentBehaviorAdapter createComponentBehaviorAdapter(final ComponentBehavior adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ComponentBehaviorAdapter) adapter;
+    else {
+    	adapter = new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ComponentBehaviorAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.ComponentBehaviorAdapter) adapter;
+    }
+  }
+  
+  public GroovyComponentBehaviorAdapter createGroovyComponentBehaviorAdapter(final GroovyComponentBehavior adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.GroovyComponentBehaviorAdapter) adapter;
+    else {
+    	adapter = new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.GroovyComponentBehaviorAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.GroovyComponentBehaviorAdapter) adapter;
+    }
+  }
+  
+  public AutomatonComponentBehaviorAdapter createAutomatonComponentBehaviorAdapter(final AutomatonComponentBehavior adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.AutomatonComponentBehaviorAdapter) adapter;
+    else {
+    	adapter = new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.AutomatonComponentBehaviorAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc.AutomatonComponentBehaviorAdapter) adapter;
+    }
+  }
+  
+  public MessageAdapter createMessageAdapter(final Message adaptee, final Resource res) {
+    if (adaptee == null)
+    	return null;
+    EObjectAdapter adapter = register.get(adaptee);
+    if(adapter != null)
+    	 return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter) adapter;
+    else {
+    	adapter = new ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter();
+    	adapter.setAdaptee(adaptee);
+    	adapter.setResource(res);
+    	register.put(adaptee, adapter);
+    	return (ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.runtime.MessageAdapter) adapter;
     }
   }
 }

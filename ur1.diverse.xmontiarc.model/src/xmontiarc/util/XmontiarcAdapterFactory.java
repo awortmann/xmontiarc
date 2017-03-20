@@ -112,6 +112,10 @@ public class XmontiarcAdapterFactory extends AdapterFactoryImpl {
 				return createGroovyComponentBehaviorAdapter();
 			}
 			@Override
+			public Adapter caseAutomatonComponentBehavior(AutomatonComponentBehavior object) {
+				return createAutomatonComponentBehaviorAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -282,6 +286,20 @@ public class XmontiarcAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createGroovyComponentBehaviorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link xmontiarc.AutomatonComponentBehavior <em>Automaton Component Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see xmontiarc.AutomatonComponentBehavior
+	 * @generated
+	 */
+	public Adapter createAutomatonComponentBehaviorAdapter() {
 		return null;
 	}
 

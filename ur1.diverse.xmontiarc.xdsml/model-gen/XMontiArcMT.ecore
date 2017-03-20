@@ -49,11 +49,9 @@
       </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="connectors" upperBound="-1" eType="/0/Connector" containment="true" eOpposite="/0/Connector/parent"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="subcomponents" upperBound="-1" eType="/0/Subcomponent" containment="true" eOpposite="/0/Subcomponent/parent"/>
-      <eStructuralFeatures xsi:type="ecore:EAttribute" name="behavior" lowerBound="1" defaultValueLiteral="&quot;&quot;">
-        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-      </eStructuralFeatures>
       <eStructuralFeatures xsi:type="ecore:EReference" name="incomingPorts" upperBound="-1" eType="/0/IncomingPort" containment="true"/>
       <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingPorts" upperBound="-1" eType="/0/OutgoingPort" containment="true"/>
+      <eStructuralFeatures xsi:type="ecore:EReference" name="behavior" eType="/0/ComponentBehavior"/>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="Port">
       <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -142,6 +140,13 @@
       <eLiterals name="Boolean" literal="Boolean"/>
       <eLiterals name="String" value="2" literal="String"/>
     </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="ComponentBehavior" abstract="true"/>
+    <eClassifiers xsi:type="ecore:EClass" name="GroovyComponentBehavior" eSuperTypes="/0/ComponentBehavior">
+      <eStructuralFeatures xsi:type="ecore:EAttribute" name="scriptBody" lowerBound="1" defaultValueLiteral="&quot;&quot;">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+      </eStructuralFeatures>
+    </eClassifiers>
+    <eClassifiers xsi:type="ecore:EClass" name="AutomatonComponentBehavior" eSuperTypes="/0/ComponentBehavior"/>
     <eClassifiers xsi:type="ecore:EDataType" name="EObject" instanceClassName="org.eclipse.emf.ecore.EObject">
       <eAnnotations source="aspect"/>
     </eClassifiers>

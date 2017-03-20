@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.MontiArcMTAdaptersFactory;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.xmontiarc.ComponentType;
+import xmontiarc.ComponentBehavior;
 import xmontiarc.Connector;
 import xmontiarc.IncomingPort;
 import xmontiarc.OutgoingPort;
@@ -28,16 +29,6 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
   @Override
   public void setName(final String o) {
     adaptee.setName(o);
-  }
-  
-  @Override
-  public String getBehavior() {
-    return adaptee.getBehavior();
-  }
-  
-  @Override
-  public void setBehavior(final String o) {
-    adaptee.setBehavior(o);
   }
   
   private EList<Connector> connectors_;
@@ -76,9 +67,19 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     return outgoingPorts_;
   }
   
-  protected final static String NAME_EDEFAULT = "UnnamedComponentType";
+  @Override
+  public ComponentBehavior getBehavior() {
+    return (ComponentBehavior) adaptersFactory.createAdapter(adaptee.getBehavior(), eResource);
+  }
   
-  protected final static String BEHAVIOR_EDEFAULT = "\"\"";
+  @Override
+  public void setBehavior(final ComponentBehavior o) {
+    if (o != null)
+    	adaptee.setBehavior(((ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.xmontiarc.ComponentBehaviorAdapter) o).getAdaptee());
+    else adaptee.setBehavior(null);
+  }
+  
+  protected final static String NAME_EDEFAULT = "UnnamedComponentType";
   
   @Override
   public EClass eClass() {
@@ -94,12 +95,12 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     		return getConnectors();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
     		return getSubcomponents();
-    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
-    		return getBehavior();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
     		return getIncomingPorts();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
     		return getOutgoingPorts();
+    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+    		return getBehavior();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -114,12 +115,12 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     		return getConnectors() != null && !getConnectors().isEmpty();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
     		return getSubcomponents() != null && !getSubcomponents().isEmpty();
-    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
-    		return getBehavior() != BEHAVIOR_EDEFAULT;
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
     		return getIncomingPorts() != null && !getIncomingPorts().isEmpty();
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
     		return getOutgoingPorts() != null && !getOutgoingPorts().isEmpty();
+    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+    		return getBehavior() != null;
     }
     
     return super.eIsSet(featureID);
@@ -141,11 +142,6 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     		getSubcomponents().clear();
     		getSubcomponents().addAll((Collection) newValue);
     		return;
-    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
-    		setBehavior(
-    		(java.lang.String)
-    		 newValue);
-    		return;
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
     		getIncomingPorts().clear();
     		getIncomingPorts().addAll((Collection) newValue);
@@ -153,6 +149,11 @@ public class ComponentTypeAdapter extends EObjectAdapter<ComponentType> implemen
     	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
     		getOutgoingPorts().clear();
     		getOutgoingPorts().addAll((Collection) newValue);
+    		return;
+    	case xmontiarc.XmontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+    		setBehavior(
+    		(xmontiarc.ComponentBehavior)
+    		 newValue);
     		return;
     }
     

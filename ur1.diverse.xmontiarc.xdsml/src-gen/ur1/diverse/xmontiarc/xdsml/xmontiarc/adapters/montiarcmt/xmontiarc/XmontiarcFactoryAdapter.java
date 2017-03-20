@@ -4,6 +4,7 @@ import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.MontiArcMTAdaptersFactory;
 import xmontiarc.ComponentType;
+import xmontiarc.GroovyComponentBehavior;
 import xmontiarc.IncomingConnector;
 import xmontiarc.IncomingPort;
 import xmontiarc.IntermediateConnector;
@@ -52,6 +53,16 @@ public class XmontiarcFactoryAdapter extends EFactoryImpl implements XmontiarcFa
   @Override
   public Subcomponent createSubcomponent() {
     return adaptersFactory.createSubcomponentAdapter(xmontiarcAdaptee.createSubcomponent(), null);
+  }
+  
+  @Override
+  public GroovyComponentBehavior createGroovyComponentBehavior() {
+    return adaptersFactory.createGroovyComponentBehaviorAdapter(xmontiarcAdaptee.createGroovyComponentBehavior(), null);
+  }
+  
+  @Override
+  public xmontiarc.AutomatonComponentBehavior createAutomatonComponentBehavior() {
+    return adaptersFactory.createAutomatonComponentBehaviorAdapter(xmontiarcAdaptee.createAutomatonComponentBehavior(), null);
   }
   
   @Override

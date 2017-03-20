@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import xmontiarc.AutomatonComponentBehavior;
 import xmontiarc.ComponentBehavior;
 import xmontiarc.ComponentType;
 import xmontiarc.Connector;
@@ -109,6 +110,13 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * @generated
 	 */
 	private EClass groovyComponentBehaviorEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass automatonComponentBehaviorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -489,6 +497,15 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getAutomatonComponentBehavior() {
+		return automatonComponentBehaviorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getDataType() {
 		return dataTypeEEnum;
 	}
@@ -565,6 +582,8 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		groovyComponentBehaviorEClass = createEClass(GROOVY_COMPONENT_BEHAVIOR);
 		createEAttribute(groovyComponentBehaviorEClass, GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY);
 
+		automatonComponentBehaviorEClass = createEClass(AUTOMATON_COMPONENT_BEHAVIOR);
+
 		// Create enums
 		dataTypeEEnum = createEEnum(DATA_TYPE);
 	}
@@ -603,6 +622,7 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 		incomingConnectorEClass.getESuperTypes().add(this.getConnector());
 		outgoingConnectorEClass.getESuperTypes().add(this.getConnector());
 		groovyComponentBehaviorEClass.getESuperTypes().add(this.getComponentBehavior());
+		automatonComponentBehaviorEClass.getESuperTypes().add(this.getComponentBehavior());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(componentTypeEClass, ComponentType.class, "ComponentType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -648,6 +668,8 @@ public class XmontiarcPackageImpl extends EPackageImpl implements XmontiarcPacka
 
 		initEClass(groovyComponentBehaviorEClass, GroovyComponentBehavior.class, "GroovyComponentBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGroovyComponentBehavior_ScriptBody(), ecorePackage.getEString(), "scriptBody", "\"\"", 1, 1, GroovyComponentBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(automatonComponentBehaviorEClass, AutomatonComponentBehavior.class, "AutomatonComponentBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(dataTypeEEnum, DataType.class, "DataType");

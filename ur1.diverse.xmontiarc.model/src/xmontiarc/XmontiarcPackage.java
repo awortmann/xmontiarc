@@ -629,6 +629,34 @@ public interface XmontiarcPackage extends EPackage {
 	int GROOVY_COMPONENT_BEHAVIOR_OPERATION_COUNT = COMPONENT_BEHAVIOR_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link xmontiarc.impl.AutomatonComponentBehaviorImpl <em>Automaton Component Behavior</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see xmontiarc.impl.AutomatonComponentBehaviorImpl
+	 * @see xmontiarc.impl.XmontiarcPackageImpl#getAutomatonComponentBehavior()
+	 * @generated
+	 */
+	int AUTOMATON_COMPONENT_BEHAVIOR = 11;
+
+	/**
+	 * The number of structural features of the '<em>Automaton Component Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTOMATON_COMPONENT_BEHAVIOR_FEATURE_COUNT = COMPONENT_BEHAVIOR_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Automaton Component Behavior</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTOMATON_COMPONENT_BEHAVIOR_OPERATION_COUNT = COMPONENT_BEHAVIOR_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link xmontiarc.DataType <em>Data Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -636,7 +664,7 @@ public interface XmontiarcPackage extends EPackage {
 	 * @see xmontiarc.impl.XmontiarcPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 11;
+	int DATA_TYPE = 12;
 
 
 	/**
@@ -992,6 +1020,16 @@ public interface XmontiarcPackage extends EPackage {
 	EAttribute getGroovyComponentBehavior_ScriptBody();
 
 	/**
+	 * Returns the meta object for class '{@link xmontiarc.AutomatonComponentBehavior <em>Automaton Component Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Automaton Component Behavior</em>'.
+	 * @see xmontiarc.AutomatonComponentBehavior
+	 * @generated
+	 */
+	EClass getAutomatonComponentBehavior();
+
+	/**
 	 * Returns the meta object for enum '{@link xmontiarc.DataType <em>Data Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1309,6 +1347,16 @@ public interface XmontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY = eINSTANCE.getGroovyComponentBehavior_ScriptBody();
+
+		/**
+		 * The meta object literal for the '{@link xmontiarc.impl.AutomatonComponentBehaviorImpl <em>Automaton Component Behavior</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see xmontiarc.impl.AutomatonComponentBehaviorImpl
+		 * @see xmontiarc.impl.XmontiarcPackageImpl#getAutomatonComponentBehavior()
+		 * @generated
+		 */
+		EClass AUTOMATON_COMPONENT_BEHAVIOR = eINSTANCE.getAutomatonComponentBehavior();
 
 		/**
 		 * The meta object literal for the '{@link xmontiarc.DataType <em>Data Type</em>}' enum.

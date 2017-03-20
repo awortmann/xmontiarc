@@ -29,14 +29,14 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/ComponentType/subcomponents"/>
       </genFeatures>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/0/ComponentType/behavior"/>
-      </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/ComponentType/incomingPorts"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/ComponentType/outgoingPorts"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#/0/ComponentType/behavior"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="XMontiArcMT.ecore#/0/ComponentType/initializeModel"/>
@@ -164,6 +164,18 @@
       <genOperations>
         <ecoreOperation href="XMontiArcMT.ecore#/0/Subcomponent/compute"/>
       </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XMontiArcMT.ecore#/0/ComponentBehavior"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcMT.ecore#/0/GroovyComponentBehavior"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcMT.ecore#/0/GroovyComponentBehavior/scriptBody"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcMT.ecore#/0/AutomatonComponentBehavior"/>
     </genClasses>
   </genPackages>
   <genPackages prefix="Runtime" basePackage="ur1.diverse.xmontiarc.xdsml.xmontiarcmt" disposableProviderFactory="true">

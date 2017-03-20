@@ -138,6 +138,13 @@ public class XmontiarcSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case XmontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR: {
+				AutomatonComponentBehavior automatonComponentBehavior = (AutomatonComponentBehavior)theEObject;
+				T result = caseAutomatonComponentBehavior(automatonComponentBehavior);
+				if (result == null) result = caseComponentBehavior(automatonComponentBehavior);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -304,6 +311,21 @@ public class XmontiarcSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseGroovyComponentBehavior(GroovyComponentBehavior object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Automaton Component Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Automaton Component Behavior</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAutomatonComponentBehavior(AutomatonComponentBehavior object) {
 		return null;
 	}
 

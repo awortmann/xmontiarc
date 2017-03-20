@@ -256,6 +256,29 @@ public class XmontiarcItemProviderAdapterFactory extends XmontiarcAdapterFactory
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link xmontiarc.AutomatonComponentBehavior} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected AutomatonComponentBehaviorItemProvider automatonComponentBehaviorItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link xmontiarc.AutomatonComponentBehavior}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createAutomatonComponentBehaviorAdapter() {
+		if (automatonComponentBehaviorItemProvider == null) {
+			automatonComponentBehaviorItemProvider = new AutomatonComponentBehaviorItemProvider(this);
+		}
+
+		return automatonComponentBehaviorItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -362,6 +385,7 @@ public class XmontiarcItemProviderAdapterFactory extends XmontiarcAdapterFactory
 		if (outgoingConnectorItemProvider != null) outgoingConnectorItemProvider.dispose();
 		if (subcomponentItemProvider != null) subcomponentItemProvider.dispose();
 		if (groovyComponentBehaviorItemProvider != null) groovyComponentBehaviorItemProvider.dispose();
+		if (automatonComponentBehaviorItemProvider != null) automatonComponentBehaviorItemProvider.dispose();
 	}
 
 }

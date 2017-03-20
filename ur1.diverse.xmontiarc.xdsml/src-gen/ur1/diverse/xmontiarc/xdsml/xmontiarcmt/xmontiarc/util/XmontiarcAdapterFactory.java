@@ -104,6 +104,18 @@ public class XmontiarcAdapterFactory extends AdapterFactoryImpl {
 				return createSubcomponentAdapter();
 			}
 			@Override
+			public Adapter caseComponentBehavior(ComponentBehavior object) {
+				return createComponentBehaviorAdapter();
+			}
+			@Override
+			public Adapter caseGroovyComponentBehavior(GroovyComponentBehavior object) {
+				return createGroovyComponentBehaviorAdapter();
+			}
+			@Override
+			public Adapter caseAutomatonComponentBehavior(AutomatonComponentBehavior object) {
+				return createAutomatonComponentBehaviorAdapter();
+			}
+			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -246,6 +258,48 @@ public class XmontiarcAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createSubcomponentAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentBehavior <em>Component Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentBehavior
+	 * @generated
+	 */
+	public Adapter createComponentBehaviorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.GroovyComponentBehavior <em>Groovy Component Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.GroovyComponentBehavior
+	 * @generated
+	 */
+	public Adapter createGroovyComponentBehaviorAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.AutomatonComponentBehavior <em>Automaton Component Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.AutomatonComponentBehavior
+	 * @generated
+	 */
+	public Adapter createAutomatonComponentBehaviorAdapter() {
 		return null;
 	}
 

@@ -114,5 +114,8 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="xmontiarc.ecore#//GroovyComponentBehavior/scriptBody"/>
       </genFeatures>
     </genClasses>
+    <genClasses>
+      <ecoreClass href="xmontiarc.ecore#//AutomatonComponentBehavior"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

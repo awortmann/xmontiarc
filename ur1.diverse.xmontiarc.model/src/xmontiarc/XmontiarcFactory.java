@@ -94,6 +94,15 @@ public interface XmontiarcFactory extends EFactory {
 	GroovyComponentBehavior createGroovyComponentBehavior();
 
 	/**
+	 * Returns a new object of class '<em>Automaton Component Behavior</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Automaton Component Behavior</em>'.
+	 * @generated
+	 */
+	AutomatonComponentBehavior createAutomatonComponentBehavior();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

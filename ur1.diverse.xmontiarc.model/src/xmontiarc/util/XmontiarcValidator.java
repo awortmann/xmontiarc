@@ -108,6 +108,8 @@ public class XmontiarcValidator extends EObjectValidator {
 				return validateComponentBehavior((ComponentBehavior)value, diagnostics, context);
 			case XmontiarcPackage.GROOVY_COMPONENT_BEHAVIOR:
 				return validateGroovyComponentBehavior((GroovyComponentBehavior)value, diagnostics, context);
+			case XmontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR:
+				return validateAutomatonComponentBehavior((AutomatonComponentBehavior)value, diagnostics, context);
 			case XmontiarcPackage.DATA_TYPE:
 				return validateDataType((DataType)value, diagnostics, context);
 			default:
@@ -473,6 +475,15 @@ public class XmontiarcValidator extends EObjectValidator {
 	 */
 	public boolean validateGroovyComponentBehavior(GroovyComponentBehavior groovyComponentBehavior, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(groovyComponentBehavior, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateAutomatonComponentBehavior(AutomatonComponentBehavior automatonComponentBehavior, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(automatonComponentBehavior, diagnostics, context);
 	}
 
 	/**

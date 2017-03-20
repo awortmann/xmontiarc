@@ -18,9 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getName <em>Name</em>}</li>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getConnectors <em>Connectors</em>}</li>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getSubcomponents <em>Subcomponents</em>}</li>
- *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getBehavior <em>Behavior</em>}</li>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getIncomingPorts <em>Incoming Ports</em>}</li>
  *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getOutgoingPorts <em>Outgoing Ports</em>}</li>
+ *   <li>{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getBehavior <em>Behavior</em>}</li>
  * </ul>
  *
  * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getComponentType()
@@ -93,33 +93,6 @@ public interface ComponentType extends EObject {
 	EList<Subcomponent> getSubcomponents();
 
 	/**
-	 * Returns the value of the '<em><b>Behavior</b></em>' attribute.
-	 * The default value is <code>"\"\""</code>.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Behavior</em>' attribute isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Behavior</em>' attribute.
-	 * @see #setBehavior(String)
-	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getComponentType_Behavior()
-	 * @model default="\"\"" required="true"
-	 * @generated
-	 */
-	String getBehavior();
-
-	/**
-	 * Sets the value of the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getBehavior <em>Behavior</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Behavior</em>' attribute.
-	 * @see #getBehavior()
-	 * @generated
-	 */
-	void setBehavior(String value);
-
-	/**
 	 * Returns the value of the '<em><b>Incoming Ports</b></em>' containment reference list.
 	 * The list contents are of type {@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.IncomingPort}.
 	 * <!-- begin-user-doc -->
@@ -150,6 +123,32 @@ public interface ComponentType extends EObject {
 	 * @generated
 	 */
 	EList<OutgoingPort> getOutgoingPorts();
+
+	/**
+	 * Returns the value of the '<em><b>Behavior</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Behavior</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Behavior</em>' reference.
+	 * @see #setBehavior(ComponentBehavior)
+	 * @see ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage#getComponentType_Behavior()
+	 * @model
+	 * @generated
+	 */
+	ComponentBehavior getBehavior();
+
+	/**
+	 * Sets the value of the '{@link ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.ComponentType#getBehavior <em>Behavior</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Behavior</em>' reference.
+	 * @see #getBehavior()
+	 * @generated
+	 */
+	void setBehavior(ComponentBehavior value);
 
 	/**
 	 * <!-- begin-user-doc -->
