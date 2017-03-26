@@ -3,7 +3,7 @@
 An executable variant of the [MontiArc architecture description language](http://monticore.de/languages/montiarc) for [GEMOC Studio](http://gemoc.org/studio/). 
 
 
-Publications on the langauge and its implementations with the [MontiCore language workbench](http://www.monticore.de/) are available: 
+Publications on the language and its implementations with the [MontiCore language workbench](http://www.monticore.de/) are available: 
 
 
 ## Further reading
