@@ -1,2 +1,4 @@
 /bin/
 /xtend-gen/
+/META-INF/xtend-gen/
+/.DS_Store
