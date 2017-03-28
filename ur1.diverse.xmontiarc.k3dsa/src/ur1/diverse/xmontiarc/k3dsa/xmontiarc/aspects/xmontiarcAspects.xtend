@@ -1,11 +1,23 @@
 package ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
-
+import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
+import fr.inria.diverse.k3.al.annotationprocessor.Main
 import fr.inria.diverse.k3.al.annotationprocessor.Step
+import java.util.Random
+import org.eclipse.emf.common.util.BasicEList
 import org.eclipse.emf.common.util.EList
+import org.eclipse.emf.ecore.EDataType
+import org.eclipse.emf.ecore.EcorePackage
+import xmontiarc.AutomatonComponentBehavior
+import xmontiarc.ComponentBehavior
 import xmontiarc.ComponentType
 import xmontiarc.Connector
+import xmontiarc.DataType
+import xmontiarc.GroovyComponentBehavior
+import xmontiarc.IncomingConnector
+import xmontiarc.IntermediateConnector
+import xmontiarc.OutgoingConnector
 import xmontiarc.Port
 import xmontiarc.Subcomponent
 
@@ -13,27 +25,18 @@ import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentT
 import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect.*
 import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect.*
 import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect.*
+import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.AutomatonComponentBehaviorAspect.*
+import fr.inria.diverse.k3.al.annotationprocessor.Containment
+//import automata.Automaton
 
-import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
-// import runtime.Message
-import runtime.RuntimeFactory
-import fr.inria.diverse.k3.al.annotationprocessor.Main
-import xmontiarc.impl.ConnectorImpl
-import java.util.Optional
-import xmontiarc.impl.ComponentTypeImpl
-import java.util.ArrayList
-import java.util.List
-import org.eclipse.emf.common.util.BasicEList
-import xmontiarc.IntermediateConnector
-import xmontiarc.IncomingConnector
-import xmontiarc.OutgoingConnector
-import org.eclipse.emf.ecore.EObject
-import xmontiarc.ComponentBehavior
-import xmontiarc.GroovyComponentBehavior
+@Aspect(className=AutomatonComponentBehavior)
+class AutomatonComponentBehaviorAspect {
+   // @Containment public Automaton behavior
+}
 
 @Aspect(className=ComponentType)
 class ComponentTypeAspect {
-
+    
     @InitializeModel
     @Step
     def public void initializeModel(EList<String> args) {
@@ -117,7 +120,11 @@ class ComponentTypeAspect {
 
 @Aspect(className=Port)
 class PortAspect {
-    public EObject value;
+    public EDataType value;
+    
+    def String toString() {
+        return _self.value.name
+    }
 }
 
 @Aspect(className=Connector)
@@ -211,6 +218,28 @@ class ConnectorAspect {
 
 @Aspect(className=Subcomponent)
 class SubcomponentAspect {
+    
+    private static Random rand = new Random();
+    
+    def void createDefaultBehavior() {
+        for (Port p : _self.outgoingPorts) {
+            var EDataType data
+            if (p.getType().equals(DataType.BOOLEAN)) {
+                data =  EcorePackage.eINSTANCE.getEBoolean();
+                data.setName("true");
+            }
+            else if (p.getType().equals(DataType.NUMBER)) {
+                data =  EcorePackage.eINSTANCE.getELong();
+                data.setName(""+(rand.nextInt(100)+1));
+            }
+            else if (p.getType().equals(DataType.STRING)) {
+                data =  EcorePackage.eINSTANCE.getEString();
+                data.setName("HalloWelt"+(rand.nextInt(100)+1));
+            }
+            p.value = data
+        }
+    }
+    
     @Step
     def void compute() {
         // println("SubcomponentAspect.compute()")
@@ -222,9 +251,7 @@ class SubcomponentAspect {
                 // println("Subcomponent '" + _self.name + "' has port '" + p.name + "'.");
                 val ComponentBehavior behavior = _self.type.behavior
                 if (behavior instanceof GroovyComponentBehavior) {
-                    val GroovyComponentBehavior gcb = behavior as GroovyComponentBehavior
-                    var result = ur1.diverse.xmontiarc.runtime.GroovyInterpreter.interpret(gcb.scriptBody)
-                    p.value = result
+                    _self.createDefaultBehavior()
                 } 
                 else {
                     //TODO: Behavior integration

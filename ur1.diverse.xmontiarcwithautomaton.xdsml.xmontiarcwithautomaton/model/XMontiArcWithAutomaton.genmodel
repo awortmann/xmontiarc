@@ -1,0 +1,424 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton/src/" modelPluginID="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton" modelName="XMontiArcWithAutomaton" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton/model/XMontiArcWithAutomaton.ecore</foreignModel>
+  <genPackages prefix="Xmontiarc" basePackage="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton" disposableProviderFactory="true" fileExtensions="xmontiarcwithautomaton">
+    <ecorePackage href="XMontiArcWithAutomaton.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="XMontiArcWithAutomaton.ecore#//DataType"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XMontiArcWithAutomaton.ecore#//DataType/Number"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XMontiArcWithAutomaton.ecore#//DataType/Boolean"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="XMontiArcWithAutomaton.ecore#//DataType/String"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genDataTypes>
+      <ecoreDataType href="XMontiArcWithAutomaton.ecore#//EDataType"/>
+    </genDataTypes>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//ComponentType"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//ComponentType/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//ComponentType/connectors"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//ComponentType/subcomponents"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//ComponentType/incomingPorts"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//ComponentType/outgoingPorts"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//ComponentType/behavior"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//ComponentType/initializeModel"/>
+        <genParameters>
+          <ecoreParameter href="XMontiArcWithAutomaton.ecore#//ComponentType/initializeModel/args"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//ComponentType/main"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//ComponentType/compute"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//ComponentType/update"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//ComponentType/findOwnerOf"/>
+        <genParameters>
+          <ecoreParameter href="XMontiArcWithAutomaton.ecore#//ComponentType/findOwnerOf/p"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//ComponentType/getOutgoingPortsOfSubcomponents"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//ComponentType/getIncomingPortsOfSubcomponents"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//ComponentType/getDirectedPortsOfSubcomponents"/>
+        <genParameters>
+          <ecoreParameter href="XMontiArcWithAutomaton.ecore#//ComponentType/getDirectedPortsOfSubcomponents/collectIncoming"/>
+        </genParameters>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//Port"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//Port/type"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//Port/name"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//Port/value"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Port/toString"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//IncomingPort"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//OutgoingPort"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//OutgoingPort/initialValue"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//Connector"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//Connector/parent"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Connector/update"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Connector/getSource"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Connector/getTarget"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Connector/getSourceRepresentation"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Connector/getTargetRepresentation"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Connector/getRepresentation"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//IntermediateConnector"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//IntermediateConnector/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//IntermediateConnector/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//IncomingConnector"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//IncomingConnector/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//IncomingConnector/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//OutgoingConnector"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//OutgoingConnector/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//OutgoingConnector/target"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//Subcomponent"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//Subcomponent/name"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//Subcomponent/type"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//Subcomponent/incomingPorts"/>
+      </genFeatures>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//Subcomponent/parent"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//Subcomponent/outgoingPorts"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Subcomponent/createDefaultBehavior"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Subcomponent/compute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//ComponentBehavior"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//GroovyComponentBehavior"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//GroovyComponentBehavior/scriptBody"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/ownedStates"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/initialState"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/ownedTransitions"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/variables"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/currentState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/unprocessedString"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/consummedString"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/producedString"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/main"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/initializeModel"/>
+        <genParameters>
+          <ecoreParameter href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/initializeModel/args"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//AutomatonComponentBehavior/assignInitialValues"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//NamedElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//NamedElement/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//State"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//State/owningFSM"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//State/outgoingTransitions"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//State/incomingTransitions"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//State/step"/>
+        <genParameters>
+          <ecoreParameter href="XMontiArcWithAutomaton.ecore#//State/step/inputString"/>
+        </genParameters>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//Transition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//Transition/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//Transition/target"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//Transition/input"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//Transition/output"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//Transition/guard"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//Transition/action"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Transition/fire"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//Variable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//Variable/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//StringVariable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//StringVariable/initialValue"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//StringVariable/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//NumberVariable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//NumberVariable/initialValue"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//NumberVariable/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//BooleanVariable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//BooleanVariable/initialValue"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//BooleanVariable/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//Guard"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//Guard/not"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Guard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//BooleanGuard"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//BooleanGuard/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//BooleanGuard/source"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//BooleanGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//StringGuard"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//StringGuard/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//StringGuard/source"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//StringGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//NumberGuard"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//NumberGuard/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//NumberGuard/source"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//NumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//EqualNumberGuard"/>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//EqualNumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//Action"/>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//Action/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//StringAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//StringAction/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//StringAction/target"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//StringAction/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//NumberAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//NumberAction/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//NumberAction/target"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//NumberAction/expression"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//NumberAction/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//BooleanAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XMontiArcWithAutomaton.ecore#//BooleanAction/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcWithAutomaton.ecore#//BooleanAction/target"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//BooleanAction/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//LessThanNumberGuard"/>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//LessThanNumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//GreaterThanNumberGuard"/>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//GreaterThanNumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//GreaterOrEqualThanNumberGuard"/>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//GreaterOrEqualThanNumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XMontiArcWithAutomaton.ecore#//LessOrEqualThanNumberGuard"/>
+      <genOperations>
+        <ecoreOperation href="XMontiArcWithAutomaton.ecore#//LessOrEqualThanNumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+</genmodel:GenModel>

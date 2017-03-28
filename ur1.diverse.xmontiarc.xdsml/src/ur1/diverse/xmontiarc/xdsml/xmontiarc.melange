@@ -6,8 +6,6 @@ external language MontiArc {
 }
 
 language XMontiArc inherits MontiArc {
-	syntax "platform:/resource/ur1.diverse.xmontiarc.runtime.model/ur1.diverse.xmontiarc.runtime.model/runtime.ecore"
-//		withGenmodel "platform:/resource/ur1.diverse.xmontiarc.runtime.model/ur1.diverse.xmontiarc.runtime.model/runtime.genmodel"
 	
 	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect
 	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect
