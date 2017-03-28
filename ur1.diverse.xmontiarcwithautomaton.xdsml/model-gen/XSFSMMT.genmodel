@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/ur1.diverse.xmontiarcwithautomaton.xdsml/src-gen" modelPluginID="ur1.diverse.xmontiarcwithautomaton.xdsml" modelName="XSFSMMT" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/ur1.diverse.xmontiarcwithautomaton.xdsml/model-gen/XSFSMMT.ecore</foreignModel>
+  <genPackages prefix="Fsm" basePackage="ur1.diverse.xmontiarcwithautomaton.xdsml.xsfsmmt" disposableProviderFactory="true">
+    <ecorePackage href="XSFSMMT.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//StateMachine"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//StateMachine/ownedStates"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//StateMachine/initialState"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//StateMachine/ownedTransitions"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//StateMachine/variables"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//StateMachine/currentState"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//StateMachine/unprocessedString"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//StateMachine/consummedString"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//StateMachine/producedString"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//StateMachine/main"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//StateMachine/initializeModel"/>
+        <genParameters>
+          <ecoreParameter href="XSFSMMT.ecore#//StateMachine/initializeModel/args"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//StateMachine/assignInitialValues"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//State"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//State/owningFSM"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//State/outgoingTransitions"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//State/incomingTransitions"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//State/step"/>
+        <genParameters>
+          <ecoreParameter href="XSFSMMT.ecore#//State/step/inputString"/>
+        </genParameters>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//Transition"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//Transition/source"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//Transition/target"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//Transition/input"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//Transition/output"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//Transition/guard"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//Transition/action"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//Transition/fire"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XSFSMMT.ecore#//NamedElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//NamedElement/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XSFSMMT.ecore#//Variable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//Variable/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//StringVariable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//StringVariable/initialValue"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//StringVariable/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//NumberVariable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//NumberVariable/initialValue"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//NumberVariable/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//BooleanVariable"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//BooleanVariable/initialValue"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//BooleanVariable/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XSFSMMT.ecore#//Guard"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//Guard/not"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//Guard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//BooleanGuard"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//BooleanGuard/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//BooleanGuard/source"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//BooleanGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//StringGuard"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//StringGuard/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//StringGuard/source"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//StringGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XSFSMMT.ecore#//NumberGuard"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//NumberGuard/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//NumberGuard/source"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//NumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//EqualNumberGuard"/>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//EqualNumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="XSFSMMT.ecore#//Action"/>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//Action/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//StringAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//StringAction/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//StringAction/target"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//StringAction/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//NumberAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//NumberAction/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//NumberAction/target"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//NumberAction/expression"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//NumberAction/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//BooleanAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="XSFSMMT.ecore#//BooleanAction/value"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XSFSMMT.ecore#//BooleanAction/target"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//BooleanAction/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//LessThanNumberGuard"/>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//LessThanNumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//GreaterThanNumberGuard"/>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//GreaterThanNumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//GreaterOrEqualThanNumberGuard"/>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//GreaterOrEqualThanNumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="XSFSMMT.ecore#//LessOrEqualThanNumberGuard"/>
+      <genOperations>
+        <ecoreOperation href="XSFSMMT.ecore#//LessOrEqualThanNumberGuard/holds"/>
+      </genOperations>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+</genmodel:GenModel>

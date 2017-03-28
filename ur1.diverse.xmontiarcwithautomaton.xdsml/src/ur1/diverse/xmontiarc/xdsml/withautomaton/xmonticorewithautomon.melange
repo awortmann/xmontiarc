@@ -1,7 +1,7 @@
 package ur1.diverse.xmontiarcwithautomaton.xdsml
 
 import org.gemoc.sample.legacyfsm.fsm.k3dsa.*
-
+/*
 external language FSM { 
 	syntax "platform:/resource/org.gemoc.sample.legacyfsm.fsm.model/model/fsm.ecore"
 	//withGenmodel "platform:/resource/org.gemoc.sample.legacyfsm.fsm.model/model/fsm.genmodel"
@@ -16,13 +16,24 @@ external language MontiArc {
         withGenmodel "platform:/resource/ur1.diverse.xmontiarc.model/ur1.diverse.xmontiarc.model/xmontiarc.genmodel" 
 } 
 
-language XMontiArc inherits MontiArc {  
+language XMontiArc inherits ur1.diverse.xmontiMontiArc {  
 	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect
 	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect
 	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspect
 	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect
+} */
+
+language XMontiArcWithAutomaton inherits ur1.diverse.xmontiarc.xdsml.XMontiArc{
+	merge org.gemoc.sample.legacyfsm.xsfsm.XSFSM renaming {"fsm" to "xmontiarc" {"StateMachine" to "AutomatonComponentBehavior" }}
 }
 
-language XMontiArcWithAutomaton inherits XMontiArc{
-	merge XSFSM renaming {"fsm" to "xmontiarc" {"StateMachine" to "AutomatonComponentBehavior" }}
+
+// better alternative to test
+/*
+language MontiArcWithAutomaton inherits ur1.diverse.xmontiarc.xdsml.MontiArc{
+	merge org.gemoc.sample.legacyfsm.xsfsm.FSM renaming {"fsm" to "xmontiarc" {"StateMachine" to "AutomatonComponentBehavior" }}
 }
+language XMontiArcWithAutomaton inherits MontiArcWithAutomaton{
+	merge ur1.diverse.xmontiarc.xdsml.XMontiArc
+	merge org.gemoc.sample.legacyfsm.xsfsm.XSFSM renaming {"fsm" to "xmontiarc" {"StateMachine" to "AutomatonComponentBehavior" }}
+} */
