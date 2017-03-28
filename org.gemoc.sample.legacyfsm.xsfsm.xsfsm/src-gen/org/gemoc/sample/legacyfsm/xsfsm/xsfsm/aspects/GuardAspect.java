@@ -15,30 +15,30 @@ public abstract class GuardAspect {
 	final org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.GuardAspectGuardAspectProperties _self_ = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.GuardAspectGuardAspectContext
 			.getSelf(_self);
 	Object result = null;
-	if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.GreaterOrEqualThanNumberGuard) {
-		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.GreaterOrEqualThanNumberGuardAspect
-				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.GreaterOrEqualThanNumberGuard) _self);
-	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.GreaterThanNumberGuard) {
+	if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.GreaterThanNumberGuard) {
 		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.GreaterThanNumberGuardAspect
 				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.GreaterThanNumberGuard) _self);
+	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.LessOrEqualThanNumberGuard) {
+		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.LessOrEqualThanNumberGuardAspect
+				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.LessOrEqualThanNumberGuard) _self);
+	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.GreaterOrEqualThanNumberGuard) {
+		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.GreaterOrEqualThanNumberGuardAspect
+				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.GreaterOrEqualThanNumberGuard) _self);
+	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.LessThanNumberGuard) {
+		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.LessThanNumberGuardAspect
+				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.LessThanNumberGuard) _self);
+	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.EqualNumberGuard) {
+		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.EqualNumberGuardAspect
+				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.EqualNumberGuard) _self);
+	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.NumberGuard) {
+		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.NumberGuardAspect
+				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.NumberGuard) _self);
 	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.BooleanGuard) {
 		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.BooleanGuardAspect
 				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.BooleanGuard) _self);
 	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.StringGuard) {
 		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.StringGuardAspect
 				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.StringGuard) _self);
-	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.LessOrEqualThanNumberGuard) {
-		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.LessOrEqualThanNumberGuardAspect
-				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.LessOrEqualThanNumberGuard) _self);
-	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.EqualNumberGuard) {
-		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.EqualNumberGuardAspect
-				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.EqualNumberGuard) _self);
-	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.LessThanNumberGuard) {
-		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.LessThanNumberGuardAspect
-				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.LessThanNumberGuard) _self);
-	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.NumberGuard) {
-		result = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.NumberGuardAspect
-				.holds((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.NumberGuard) _self);
 	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.Guard) {
 		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
 			@Override

@@ -12,15 +12,15 @@ public abstract class ActionAspect {
   public static void execute(final Action _self) {
 	final org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.ActionAspectActionAspectProperties _self_ = org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.ActionAspectActionAspectContext
 			.getSelf(_self);
-	if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.BooleanAction) {
+	if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.NumberAction) {
+		org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.NumberActionAspect
+				.execute((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.NumberAction) _self);
+	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.BooleanAction) {
 		org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.BooleanActionAspect
 				.execute((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.BooleanAction) _self);
 	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.StringAction) {
 		org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.StringActionAspect
 				.execute((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.StringAction) _self);
-	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.NumberAction) {
-		org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.NumberActionAspect
-				.execute((org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.NumberAction) _self);
 	} else if (_self instanceof org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.Action) {
 		org.gemoc.sample.legacyfsm.xsfsm.xsfsm.aspects.ActionAspect._privk3_execute(_self_,
 				(org.gemoc.sample.legacyfsm.xsfsm.xsfsm.fsm.Action) _self);
