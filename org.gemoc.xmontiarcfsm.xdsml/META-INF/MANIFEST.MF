@@ -1,6 +1,6 @@
 Manifest-Version: 1.0
-Bundle-SymbolicName: ur1.diverse.xmontiarc.xdsml.withautomaton; singleton:=true
-Bundle-Name: ur1.diverse.xmontiarc.xdsml.withautomaton
+Bundle-SymbolicName: org.gemoc.xmontiarcfsm.xdsml; singleton:=true
+Bundle-Name: org.gemoc.xmontiarcfsm.xdsml
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private,
@@ -15,11 +15,6 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  fr.inria.diverse.melange.adapters;bundle-version="0.2.0",
  fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="0.0.0";visibility:=reexport,
  org.gemoc.montiarc.k3dsa;bundle-version="1.0.0",
- org.gemoc.sample.legacyfsm.fsm.k3dsa;bundle-version="1.0.0",
- org.gemoc.sample.legacyfsm.fsm.model;bundle-version="2.3.0",
- org.gemoc.sample.legacyfsm.xsfsm;bundle-version="1.0.0";visibility:=reexport,
- org.gemoc.sample.legacyfsm.xsfsm.xsfsm;bundle-version="0.1.0",
- ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton,
  org.gemoc.montiarc.xdsml;bundle-version="1.0.0";visibility:=reexport
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
