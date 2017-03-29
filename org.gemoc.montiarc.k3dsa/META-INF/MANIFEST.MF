@@ -1,6 +1,6 @@
 Bundle-SymbolicName: org.gemoc.montiarc.k3dsa;singleton:=true
-Export-Package: ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects
-Bundle-Name: ur1.diverse.xmontiarc.k3dsa
+Export-Package: org.gemoc.montiarc.k3dsa.aspects
+Bundle-Name: org.gemoc.montiarc.k3dsa
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
 Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.0.0";visibility:=reexport,

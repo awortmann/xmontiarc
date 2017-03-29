@@ -1,4 +1,4 @@
-package ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects
+package org.gemoc.montiarc.k3dsa.aspects
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import fr.inria.diverse.k3.al.annotationprocessor.InitializeModel
@@ -9,23 +9,23 @@ import org.eclipse.emf.common.util.BasicEList
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.EDataType
 import org.eclipse.emf.ecore.EcorePackage
-import xmontiarc.AutomatonComponentBehavior
-import xmontiarc.ComponentBehavior
-import xmontiarc.ComponentType
-import xmontiarc.Connector
-import xmontiarc.DataType
-import xmontiarc.GroovyComponentBehavior
-import xmontiarc.IncomingConnector
-import xmontiarc.IntermediateConnector
-import xmontiarc.OutgoingConnector
-import xmontiarc.Port
-import xmontiarc.Subcomponent
+import montiarc.AutomatonComponentBehavior
+import montiarc.ComponentBehavior
+import montiarc.ComponentType
+import montiarc.Connector
+import montiarc.DataType
+import montiarc.GroovyComponentBehavior
+import montiarc.IncomingConnector
+import montiarc.IntermediateConnector
+import montiarc.OutgoingConnector
+import montiarc.Port
+import montiarc.Subcomponent
 
-import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspect.*
-import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect.*
-import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect.*
-import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect.*
-import static extension ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.AutomatonComponentBehaviorAspect.*
+import static extension org.gemoc.montiarc.k3dsa.aspects.ComponentTypeAspect.*
+import static extension org.gemoc.montiarc.k3dsa.aspects.PortAspect.*
+import static extension org.gemoc.montiarc.k3dsa.aspects.ConnectorAspect.*
+import static extension org.gemoc.montiarc.k3dsa.aspects.SubcomponentAspect.*
+import static extension org.gemoc.montiarc.k3dsa.aspects.AutomatonComponentBehaviorAspect.*
 import fr.inria.diverse.k3.al.annotationprocessor.Containment
 //import automata.Automaton
 
