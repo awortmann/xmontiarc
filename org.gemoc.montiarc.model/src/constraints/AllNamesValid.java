@@ -8,10 +8,10 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
+import org.gemoc.montiarc.ComponentType;
+import org.gemoc.montiarc.Port;
+import org.gemoc.montiarc.Subcomponent;
 
-import montiarc.ComponentType;
-import montiarc.Port;
-import montiarc.Subcomponent;
 
 public class AllNamesValid extends MontiArcModelConstraint {
 

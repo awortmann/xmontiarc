@@ -87,7 +87,7 @@
       <!-- @generated montiarc -->
       <package
             uri="http://org/gemoc/montiarc/model"
-            class="montiarc.MontiarcPackage"
+            class="org.gemoc.montiarc.MontiarcPackage"
             genModel="org.gemoc.montiarc.model/montiarc.genmodel"/>
    </extension>
 

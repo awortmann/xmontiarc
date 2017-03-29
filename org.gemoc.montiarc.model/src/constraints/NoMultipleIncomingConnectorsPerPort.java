@@ -1,8 +1,6 @@
 package constraints;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -10,12 +8,8 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
-
-import montiarc.ComponentType;
-import montiarc.Port;
-import montiarc.Subcomponent;
-import montiarc.impl.ComponentTypeImpl;
-import montiarc.impl.SubcomponentImpl;
+import org.gemoc.montiarc.ComponentType;
+import org.gemoc.montiarc.Port;
 
 public class NoMultipleIncomingConnectorsPerPort extends MontiArcModelConstraint {
 

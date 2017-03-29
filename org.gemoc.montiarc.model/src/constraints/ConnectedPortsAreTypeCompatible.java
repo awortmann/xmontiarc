@@ -8,13 +8,9 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
-
-import montiarc.Connector;
-import montiarc.IncomingConnector;
-import montiarc.IntermediateConnector;
-import montiarc.OutgoingConnector;
-import montiarc.Port;
-import montiarc.helpers.ConnectorHelper;
+import org.gemoc.montiarc.Connector;
+import org.gemoc.montiarc.Port;
+import org.gemoc.montiarc.helpers.ConnectorHelper;
 
 public class ConnectedPortsAreTypeCompatible extends MontiArcModelConstraint {
 
