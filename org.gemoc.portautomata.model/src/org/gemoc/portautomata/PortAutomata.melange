@@ -1,0 +1,7 @@
+package org.gemoc.portautomata
+
+
+external language PortAutomata { 
+	syntax "platform:/resource/org.gemoc.portautomata.model/model/portautomata.ecore"
+	//withGenmodel "platform:/resource/org.gemoc.sample.legacyfsm.fsm.model/model/fsm.genmodel"
+}
