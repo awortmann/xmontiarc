@@ -1,27 +1,28 @@
 Bundle-SymbolicName: org.gemoc.xmontiarc.xdsml;singleton:=true
-Export-Package: org.gemoc.xmontiarc.xdsml,
- org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt,
- org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.montiarc,
- org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt,
- org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.montiarc,
- org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc,
- org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.impl,
- org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.util
+Export-Package: org.gemoc.xmontiarc.xdsml,org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt,org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.montiarc,org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt,org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.montiarc,org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc,org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.impl,org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.util
 Bundle-Name: org.gemoc.xmontiarc.xdsml
 Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Localization: plugin
 Require-Bundle: org.eclipse.core.runtime,
- org.eclipse.emf.ecore;visibility:=reexport,
+ 
+ org.eclipse.emf.ecore;visibility:="reexport",
+ 
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
+ 
  fr.inria.diverse.melange;bundle-version="0.2.0",
+ 
  fr.inria.diverse.melange.adapters;bundle-version="0.2.0",
+ 
  fr.inria.diverse.melange.lib;bundle-version="0.2.0",
+ 
  org.gemoc.montiarc.k3dsa;bundle-version="1.0.0",
+ 
  org.gemoc.montiarc.model;bundle-version="1.0.0",
+ 
  org.gemoc.xmontiarc.xdsml.xmontiarc
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Manifest-Version: 1.0
