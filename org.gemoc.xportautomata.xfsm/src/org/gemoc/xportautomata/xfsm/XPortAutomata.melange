@@ -5,5 +5,4 @@ import org.gemoc.portautomata.fsm.k3dsa.*
 
 language XPortAutomata inherits org.gemoc.portautomata.PortAutomata {
 	with  org.gemoc.portautomata.fsm.k3dsa.*
-
 }
