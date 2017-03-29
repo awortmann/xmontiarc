@@ -1,4 +1,4 @@
-Bundle-SymbolicName: ur1.diverse.xmontiarc.xdsml;singleton:=true
+Bundle-SymbolicName: org.gemoc.montiarc.xdsml;singleton:=true
 Export-Package: ur1.diverse.xmontiarc.xdsml,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.xmontiarc,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt,ur1.diverse.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.xmontiarc,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.impl,ur1.diverse.xmontiarc.xdsml.xmontiarcmt.xmontiarc.util
 Bundle-Name: pluginName
 Bundle-Version: 1.0.0.qualifier
@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.core.runtime,
  
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
  
- ur1.diverse.xmontiarc.k3dsa;bundle-version="1.0.0",
+ org.gemoc.montiarc.k3dsa;bundle-version="1.0.0",
  
  fr.inria.diverse.melange;bundle-version="0.2.0",
  

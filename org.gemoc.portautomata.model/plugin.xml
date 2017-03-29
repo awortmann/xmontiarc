@@ -13,7 +13,7 @@
     <package class="org.gemoc.portautomata.fsm.fsmPackage" genModel="model/portautomata.genmodel" uri="http://www.gemoc.org/legacyfsm/fsm" />
   </extension>
   <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
-    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.portautomata.PortAutomata" xdsmlFilePath="/org.gemoc.portautomata.model/bin/org/gemoc/portautomata/PortAutomata.melange" />
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.portautomata.PortAutomata" xdsmlFilePath="/org.gemoc.portautomata.model/src/org/gemoc/portautomata/PortAutomata.melange" />
   </extension>
   <extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="org.gemoc.portautomata.PortAutomataMT" uri="http://org.gemoc.portautomata.portautomatamt/" />
