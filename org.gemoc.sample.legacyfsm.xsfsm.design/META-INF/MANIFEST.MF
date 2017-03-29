@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.gemoc.sample.legacyfsm.fsm.design;bundle-version="1.0.0",
  org.gemoc.sample.legacyfsm.xsfsm.xsfsm,
  org.gemoc.execution.sequential.javaengine.ui;bundle-version="2.2.0",
- org.gemoc.sample.legacyfsm.fsm.model;bundle-version="0.1.0"
+ org.gemoc.portautomata.model;bundle-version="0.1.0"
 Bundle-ManifestVersion: 2
 Bundle-Activator: org.gemoc.sample.legacyfsm.xsfsm.design.Activator
 Bundle-ActivationPolicy: lazy
