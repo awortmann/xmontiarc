@@ -1,14 +1,11 @@
-package ur1.diverse.xmontiarc.xdsml
+package org.gemoc.xmontiarc.xdsml
 
-external language MontiArc {
-    syntax "platform:/resource/ur1.diverse.xmontiarc.model/ur1.diverse.xmontiarc.model/xmontiarc.ecore" 
-    //    withGenmodel "platform:/resource/ur1.diverse.xmontiarc.model/ur1.diverse.xmontiarc.model/xmontiarc.genmodel" 
-}
 
-language XMontiArc inherits MontiArc {
+
+language XMontiArc inherits org.gemoc.montiarc.MontiArc {
 	
-	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect
-	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect
-	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspect
-	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect
+	with org.gemoc.montiarc.k3dsa.aspects.PortAspect
+	with org.gemoc.montiarc.k3dsa.aspects.SubcomponentAspect
+	with org.gemoc.montiarc.k3dsa.aspects.ComponentTypeAspect
+	with org.gemoc.montiarc.k3dsa.aspects.ConnectorAspect 
 }

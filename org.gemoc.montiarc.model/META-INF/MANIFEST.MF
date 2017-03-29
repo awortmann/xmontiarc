@@ -1,4 +1,3 @@
-Manifest-Version: 1.0
 Bundle-SymbolicName: org.gemoc.montiarc.model;singleton:=true
 Export-Package: org.gemoc.montiarc,
  org.gemoc.montiarc.montiarc,
@@ -20,4 +19,4 @@ Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
-
+Manifest-Version: 1.0
