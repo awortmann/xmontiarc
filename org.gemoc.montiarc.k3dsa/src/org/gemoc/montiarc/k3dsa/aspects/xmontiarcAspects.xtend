@@ -9,17 +9,17 @@ import org.eclipse.emf.common.util.BasicEList
 import org.eclipse.emf.common.util.EList
 import org.eclipse.emf.ecore.EDataType
 import org.eclipse.emf.ecore.EcorePackage
-import org.gemoc.montiarc.AutomatonComponentBehavior
-import org.gemoc.montiarc.ComponentBehavior
-import org.gemoc.montiarc.ComponentType
-import org.gemoc.montiarc.Connector
-import org.gemoc.montiarc.DataType
-import org.gemoc.montiarc.GroovyComponentBehavior
-import org.gemoc.montiarc.IncomingConnector
-import org.gemoc.montiarc.IntermediateConnector
-import org.gemoc.montiarc.OutgoingConnector
-import org.gemoc.montiarc.Port
-import org.gemoc.montiarc.Subcomponent
+import org.gemoc.montiarc.montiarc.AutomatonComponentBehavior
+import org.gemoc.montiarc.montiarc.ComponentBehavior
+import org.gemoc.montiarc.montiarc.ComponentType
+import org.gemoc.montiarc.montiarc.Connector
+import org.gemoc.montiarc.montiarc.DataType
+import org.gemoc.montiarc.montiarc.GroovyComponentBehavior
+import org.gemoc.montiarc.montiarc.IncomingConnector
+import org.gemoc.montiarc.montiarc.IntermediateConnector
+import org.gemoc.montiarc.montiarc.OutgoingConnector
+import org.gemoc.montiarc.montiarc.Port
+import org.gemoc.montiarc.montiarc.Subcomponent
 
 import static extension org.gemoc.montiarc.k3dsa.aspects.ComponentTypeAspect.*
 import static extension org.gemoc.montiarc.k3dsa.aspects.PortAspect.*
