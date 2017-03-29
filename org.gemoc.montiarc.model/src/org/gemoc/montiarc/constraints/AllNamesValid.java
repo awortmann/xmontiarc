@@ -1,4 +1,4 @@
-package constraints;
+package org.gemoc.montiarc.constraints;
 
 import java.util.HashSet;
 import java.util.Optional;

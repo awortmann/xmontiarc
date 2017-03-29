@@ -1,4 +1,4 @@
-package constraints;
+package org.gemoc.montiarc.constraints;
 
 import org.eclipse.emf.validation.AbstractModelConstraint;
 

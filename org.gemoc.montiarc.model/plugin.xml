@@ -28,7 +28,7 @@
          </package>
          <constraints>
             <constraint
-                  class="constraints.AllNamesValid"
+                  class="org.gemoc.montiarc.constraintsAllNamesValid"
                   id="ur1.diverse.xmontiarc.model.AllNamesValid"
                   isEnabledByDefault="true"
                   lang="Java"
@@ -41,7 +41,7 @@
                </message>
             </constraint>
             <constraint
-                  class="constraints.AllPortsConnected"
+                  class="org.gemoc.montiarc.constraintsAllPortsConnected"
                   id="ur1.diverse.xmontiarc.model.AllPortsConnected"
                   isEnabledByDefault="true"
                   lang="Java"
@@ -54,7 +54,7 @@
                </message>
             </constraint>
             <constraint
-                  class="constraints.ConnectedPortsAreTypeCompatible"
+                  class="org.gemoc.montiarc.constraintsConnectedPortsAreTypeCompatible"
                   id="ur1.diverse.xmontiarc.model.ConnectedPortsAreTypeCompatible"
                   isEnabledByDefault="true"
                   lang="Java"
@@ -67,7 +67,7 @@
                </message>
             </constraint>
             <constraint
-                  class="constraints.NoMultipleIncomingConnectorsPerPort"
+                  class="org.gemoc.montiarc.constraintsNoMultipleIncomingConnectorsPerPort"
                   id="ur1.diverse.xmontiarc.model.NoMultipleIncomingConnectorsPerPort"
                   isEnabledByDefault="true"
                   lang="Java"
