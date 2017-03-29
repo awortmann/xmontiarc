@@ -1,12 +1,13 @@
 package org.gemoc.montiarc;
 
+import fr.inria.diverse.melange.lib.IMetamodel;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 
 @SuppressWarnings("all")
-public class MontiArc implements fr.inria.diverse.melange.lib.IMetamodel {
+public class MontiArc implements IMetamodel {
   private Resource resource;
   
   public Resource getResource() {

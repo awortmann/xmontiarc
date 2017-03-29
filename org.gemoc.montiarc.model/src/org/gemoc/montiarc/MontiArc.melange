@@ -2,5 +2,5 @@ package org.gemoc.montiarc
 
 external language MontiArc { 
 	syntax "platform:/resource/org.gemoc.montiarc.model/model/montiarc.ecore"
-	//withGenmodel "platform:/resource/org.gemoc.sample.legacyfsm.fsm.model/model/fsm.genmodel"
+	withGenmodel "platform:/resource/org.gemoc.montiarc.model/model/montiarc.genmodel"
 }

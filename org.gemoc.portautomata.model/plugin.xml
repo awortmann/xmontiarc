@@ -4,11 +4,6 @@
 -->
 <plugin>
   <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated fsm -->
-    <package class="org.gemoc.sample.legacyfsm.fsm.FsmPackage" genModel="model/fsm.genmodel" uri="http://www.gemoc.org/legacyfsm/fsm" />
-  </extension>
-  null
-  <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated portautomata -->
     <package class="org.gemoc.portautomata.fsm.fsmPackage" genModel="model/portautomata.genmodel" uri="http://www.gemoc.org/legacyfsm/fsm" />
   </extension>

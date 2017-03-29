@@ -1,31 +1,27 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.0"?><!--
 --><plugin>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated xmontiarc -->
-    <package class="xmontiarc.XmontiarcPackage" genModel="model/xmontiarc.genmodel" uri="http://ur1/diverse/xmontiarc/model"/>
-  </extension>
   <extension point="org.eclipse.emf.validation.constraintProviders">
-    <category id="ur1.diverse.xmontiarc.model.category1" name="name"/>
+    <category id="org.gemoc.montiarc.model.category1" name="name"/>
     <constraintProvider cache="true">
       <package namespaceUri="http://ur1/diverse/xmontiarc/model"/>
       <constraints>
-        <constraint class="org.gemoc.montiarc.constraintsAllNamesValid" id="ur1.diverse.xmontiarc.model.AllNamesValid" isEnabledByDefault="true" lang="Java" mode="Live" name="AllNamesValid" severity="ERROR" statusCode="1">
+        <constraint class="org.gemoc.montiarc.montiarc.constraints.AllNamesValid" id="org.gemoc.montiarc.model.AllNamesValid" isEnabledByDefault="true" lang="Java" mode="Live" name="AllNamesValid" severity="ERROR" statusCode="1">
           <message>
                   message body text
                </message>
         </constraint>
-        <constraint class="org.gemoc.montiarc.constraintsAllPortsConnected" id="ur1.diverse.xmontiarc.model.AllPortsConnected" isEnabledByDefault="true" lang="Java" mode="Live" name="AllPortsConnected" severity="ERROR" statusCode="1">
+        <constraint class="org.gemoc.montiarc.montiarc.constraints.AllPortsConnected" id="org.gemoc.montiarc.model.AllPortsConnected" isEnabledByDefault="true" lang="Java" mode="Live" name="AllPortsConnected" severity="ERROR" statusCode="1">
           <message>
                   message body text
                </message>
         </constraint>
-        <constraint class="org.gemoc.montiarc.constraintsConnectedPortsAreTypeCompatible" id="ur1.diverse.xmontiarc.model.ConnectedPortsAreTypeCompatible" isEnabledByDefault="true" lang="Java" mode="Live" name="ConnectedPortsAreTypeCompatible" severity="ERROR" statusCode="1">
+        <constraint class="org.gemoc.montiarc.montiarc.constraints.ConnectedPortsAreTypeCompatible" id="org.gemoc.montiarc.model.ConnectedPortsAreTypeCompatible" isEnabledByDefault="true" lang="Java" mode="Live" name="ConnectedPortsAreTypeCompatible" severity="ERROR" statusCode="1">
           <message>
                   message body text
                </message>
         </constraint>
-        <constraint class="org.gemoc.montiarc.constraintsNoMultipleIncomingConnectorsPerPort" id="ur1.diverse.xmontiarc.model.NoMultipleIncomingConnectorsPerPort" isEnabledByDefault="true" lang="Java" mode="Live" name="NoMultipleIncomingConnectorsPerPort" severity="ERROR" statusCode="1">
+        <constraint class="org.gemoc.montiarc.montiarc.constraints.NoMultipleIncomingConnectorsPerPort" id="org.gemoc.montiarc.model.NoMultipleIncomingConnectorsPerPort" isEnabledByDefault="true" lang="Java" mode="Live" name="NoMultipleIncomingConnectorsPerPort" severity="ERROR" statusCode="1">
           <message>
                   message body text
                </message>
