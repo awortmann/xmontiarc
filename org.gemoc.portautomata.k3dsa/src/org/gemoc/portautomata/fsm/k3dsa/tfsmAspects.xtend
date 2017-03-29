@@ -63,7 +63,7 @@ class StateMachineAspect {
             }
         }
     }
-
+/*
     @Step
     def public Map<String, Object> process(Map<String, Object> inputValues) {
         _self.mapInputsToVariables(inputValues)
@@ -109,7 +109,7 @@ class StateMachineAspect {
             }
         }
     }
-
+*/
     @Step
     def public void process() {
         var boolean executed = false;

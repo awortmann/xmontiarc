@@ -1,5 +1,18 @@
-Manifest-Version: 1.0
-Bundle-SymbolicName: org.gemoc.xmontiarcfsm.xdsml; singleton:=true
+Bundle-SymbolicName: org.gemoc.xmontiarcfsm.xdsml;singleton:=true
+Export-Package: org.gemoc.xmontiarcfsm.xdsml,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.montiarcmt,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.montiarcmt.montiarc,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcfsmmt,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcfsmmt.montiarc,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcfsmmt.xmontiarc,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcmt,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcmt.montiarc,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc.impl,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc.util,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.xmontiarc,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.xmontiarc.impl,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.xmontiarc.util
 Bundle-Name: org.gemoc.xmontiarcfsm.xdsml
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
@@ -15,17 +28,10 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  fr.inria.diverse.melange.adapters;bundle-version="0.2.0",
  fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="0.0.0";visibility:=reexport,
  org.gemoc.montiarc.k3dsa;bundle-version="1.0.0",
- org.gemoc.montiarc.xdsml;bundle-version="1.0.0";visibility:=reexport
+ org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
+ org.gemoc.xmontiarc.xdsml;bundle-version="1.0.0",
+ org.gemoc.xportautomata.xdsml;bundle-version="1.0.0",
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
-Export-Package: ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomatonmt.xmontiarc.impl,
- ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomatonmt.xmontiarc,
- ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomatonmt.xmontiarc.util,
- ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.adapters.montiarcmt,
- ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.adapters.montiarcmt.xmontiarc,
- ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.adapters.xmontiarcmt,
- ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.adapters.xmontiarcwithautomatonmt.xmontiarc,
- ur1.diverse.xmontiarcwithautomaton.xdsml,
- ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.adapters.xmontiarcwithautomatonmt,
- ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.adapters.xmontiarcmt.xmontiarc
-
+Manifest-Version: 1.0

@@ -1,30 +1,10 @@
-package ur1.diverse.xmontiarcwithautomaton.xdsml
+package org.gemoc.xmontiarcfsm.xdsml
 
-import org.gemoc.sample.legacyfsm.fsm.k3dsa.*
-/*
-external language FSM { 
-	syntax "platform:/resource/org.gemoc.sample.legacyfsm.fsm.model/model/fsm.ecore"
-	//withGenmodel "platform:/resource/org.gemoc.sample.legacyfsm.fsm.model/model/fsm.genmodel"
-}
+//import org.gemoc.sample.legacyfsm.fsm.k3dsa.*
 
-language XSFSM inherits FSM {
-	with  org.gemoc.sample.legacyfsm.fsm.k3dsa.*
-}
 
-external language MontiArc { 
-    syntax "platform:/resource/ur1.diverse.xmontiarc.model/ur1.diverse.xmontiarc.model/xmontiarc.ecore" 
-        withGenmodel "platform:/resource/ur1.diverse.xmontiarc.model/ur1.diverse.xmontiarc.model/xmontiarc.genmodel" 
-} 
-
-language XMontiArc inherits ur1.diverse.xmontiMontiArc {  
-	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect
-	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect
-	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspect
-	with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect
-} */
-
-language XMontiArcWithAutomaton inherits ur1.diverse.xmontiarc.xdsml.XMontiArc{
-	merge org.gemoc.sample.legacyfsm.xsfsm.XSFSM renaming {"fsm" to "xmontiarc" {"StateMachine" to "AutomatonComponentBehavior" }}
+language XMontiArcFSM inherits org.gemoc.xmontiarc.xdsml.XMontiArc{
+	merge org.gemoc.xportautomata.xdsml.XPortAutomata renaming {"fsm" to "xmontiarc" {"StateMachine" to "AutomatonComponentBehavior" }}
 }
 
 

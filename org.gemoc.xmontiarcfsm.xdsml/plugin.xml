@@ -1,32 +1,40 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<?eclipse version="3.4"?><plugin>
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated XSFSMMT -->
-    <package class="ur1.diverse.xmontiarcwithautomaton.xdsml.xsfsmmt.fsm.FsmPackage" genModel="model-gen/XSFSMMT.genmodel" uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xsfsmmt/fsm/"/>
+    <package class="ur1.diverse.xmontiarcwithautomaton.xdsml.xsfsmmt.fsm.FsmPackage" genModel="model-gen/XSFSMMT.genmodel" uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xsfsmmt/fsm/" />
   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated XMontiArcMT -->
-    <package class="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage" genModel="model-gen/XMontiArcMT.genmodel" uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcmt/xmontiarc/"/>
+    <package class="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage" genModel="model-gen/XMontiArcMT.genmodel" uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcmt/xmontiarc/" />
   </extension>
-   <extension point="org.eclipse.emf.ecore.generated_package">
-      <!-- @generated XMontiArcWithAutomatonMT -->
-      <package
-            uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomatonmt/xmontiarc/"
-            class="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomatonmt.xmontiarc.XmontiarcPackage"
-            genModel="model-gen/XMontiArcWithAutomatonMT.genmodel"/>
-   </extension>
-  
-<extension point="fr.inria.diverse.melange.modeltype">
-    <modeltype id="ur1.diverse.xmontiarcwithautomaton.xdsml.XMontiArcWithAutomatonMT" uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomatonmt/">
-      <subtyping modeltypeId="ur1.diverse.xmontiarc.xdsml.MontiArcMT"/>
-      <subtyping modeltypeId="ur1.diverse.xmontiarc.xdsml.XMontiArcMT"/>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XMontiArcWithAutomatonMT -->
+    <package class="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomatonmt.xmontiarc.XmontiarcPackage" genModel="model-gen/XMontiArcWithAutomatonMT.genmodel" uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomatonmt/xmontiarc/" />
+  </extension>
+  <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSM" xdsmlFilePath="/org.gemoc.xmontiarcfsm.xdsml/bin/org/gemoc/xmontiarcfsm/xdsml/xmontiarcfsm.melange" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XMontiArcFSMMT -->
+    <package class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc.MontiarcPackage" genModel="model-gen/XMontiArcFSMMT.genmodel" uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt/montiarc/" />
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XMontiArcFSMMT -->
+    <package class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.xmontiarc.XmontiarcPackage" genModel="model-gen/XMontiArcFSMMT.genmodel" uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt/xmontiarc/" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSMMT" uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt/">
+      <subtyping modeltypeId="org.gemoc.montiarc.MontiArcMT" />
+      <subtyping modeltypeId="org.gemoc.xmontiarc.xdsml.XMontiArcMT" />
     </modeltype>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="Connector:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.ConnectorAspect;Action:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.ActionAspect;ComponentType:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.ComponentTypeAspect;Variable:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.VariableAspect;StringGuard:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.StringGuardAspect;Port:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.PortAspect;BooleanGuard:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.BooleanGuardAspect;StringVariable:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.StringVariableAspect;NumberGuard:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.NumberGuardAspect;NumberAction:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.NumberActionAspect;StringAction:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.StringActionAspect;NumberVariable:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.NumberVariableAspect;GreaterOrEqualThanNumberGuard:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.GreaterOrEqualThanNumberGuardAspect;State:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.StateAspect;BooleanVariable:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.BooleanVariableAspect;GreaterThanNumberGuard:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.GreaterThanNumberGuardAspect;Subcomponent:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.SubcomponentAspect;Transition:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.TransitionAspect;EqualNumberGuard:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.EqualNumberGuardAspect;BooleanAction:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.BooleanActionAspect;Guard:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.GuardAspect;AutomatonComponentBehavior:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.StateMachineAspect;LessThanNumberGuard:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.LessThanNumberGuardAspect;LessOrEqualThanNumberGuard:ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.LessOrEqualThanNumberGuardAspect" description="external language FSM {&#10;syntax &quot;platform:/resource/org.gemoc.sample.legacyfsm.fsm.model/model/fsm.ecore&quot;&#10;//withGenmodel &quot;platform:/resource/org.gemoc.sample.legacyfsm.fsm.model/model/fsm.genmodel&quot;&#10;}&#10;&#10;language XSFSM inherits FSM {&#10;with  org.gemoc.sample.legacyfsm.fsm.k3dsa.&#10;}&#10;&#10;external language MontiArc {&#10;syntax &quot;platform:/resource/ur1.diverse.xmontiarc.model/ur1.diverse.xmontiarc.model/xmontiarc.ecore&quot;&#10;withGenmodel &quot;platform:/resource/ur1.diverse.xmontiarc.model/ur1.diverse.xmontiarc.model/xmontiarc.genmodel&quot;&#10;}&#10;&#10;language XMontiArc inherits ur1.diverse.xmontiMontiArc {&#10;with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.PortAspect&#10;with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.SubcomponentAspect&#10;with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ComponentTypeAspect&#10;with ur1.diverse.xmontiarc.k3dsa.xmontiarc.aspects.ConnectorAspect&#10;}" entryPoints="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.StateMachineAspect.main(ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.xmontiarc.AutomatonComponentBehavior);ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.aspects.ComponentTypeAspect.main(ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.xmontiarc.ComponentType)" exactType="ur1.diverse.xmontiarcwithautomaton.xdsml.XMontiArcWithAutomatonMT" id="ur1.diverse.xmontiarcwithautomaton.xdsml.XMontiArcWithAutomaton" uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton/xmontiarc/">
-      <adapter class="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.adapters.montiarcmt.XMontiArcWithAutomatonAdapter" modeltypeId="ur1.diverse.xmontiarc.xdsml.MontiArcMT"/>
-      <adapter class="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.adapters.xmontiarcmt.XMontiArcWithAutomatonAdapter" modeltypeId="ur1.diverse.xmontiarc.xdsml.XMontiArcMT"/>
-      <adapter class="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomaton.adapters.xmontiarcwithautomatonmt.XMontiArcWithAutomatonAdapter" modeltypeId="ur1.diverse.xmontiarcwithautomaton.xdsml.XMontiArcWithAutomatonMT"/>
+    <language aspects="Connector:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ConnectorAspect;ComponentType:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect;Port:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.PortAspect;Subcomponent:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspect" entryPoints="org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.main(org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.ComponentType)" exactType="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSMMT" id="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSM" uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/xmontiarc/">
+      <adapter class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.montiarcmt.XMontiArcFSMAdapter" modeltypeId="org.gemoc.montiarc.MontiArcMT" />
+      <adapter class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcmt.XMontiArcFSMAdapter" modeltypeId="org.gemoc.xmontiarc.xdsml.XMontiArcMT" />
+      <adapter class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcfsmmt.XMontiArcFSMAdapter" modeltypeId="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSMMT" />
     </language>
   </extension>
 </plugin>
