@@ -11,11 +11,11 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
 
-import xmontiarc.ComponentType;
-import xmontiarc.Port;
-import xmontiarc.Subcomponent;
-import xmontiarc.impl.ComponentTypeImpl;
-import xmontiarc.impl.SubcomponentImpl;
+import montiarc.ComponentType;
+import montiarc.Port;
+import montiarc.Subcomponent;
+import montiarc.impl.ComponentTypeImpl;
+import montiarc.impl.SubcomponentImpl;
 
 public class NoMultipleIncomingConnectorsPerPort extends MontiArcModelConstraint {
 

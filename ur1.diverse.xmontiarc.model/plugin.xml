@@ -13,7 +13,7 @@
       <package
             uri="http://ur1/diverse/xmontiarc/model"
             class="xmontiarc.XmontiarcPackage"
-            genModel="ur1.diverse.xmontiarc.model/xmontiarc.genmodel"/>
+            genModel="org.gemoc.montiarc.model/xmontiarc.genmodel"/>
    </extension>
    <extension
          point="org.eclipse.emf.validation.constraintProviders">
@@ -81,6 +81,14 @@
             </constraint>
          </constraints>
       </constraintProvider>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated montiarc -->
+      <package
+            uri="http://org/gemoc/montiarc/model"
+            class="montiarc.MontiarcPackage"
+            genModel="org.gemoc.montiarc.model/montiarc.genmodel"/>
    </extension>
 
 </plugin>

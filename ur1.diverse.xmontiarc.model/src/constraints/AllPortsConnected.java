@@ -11,12 +11,12 @@ import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.validation.IValidationContext;
 import org.eclipse.emf.validation.model.ConstraintStatus;
 
-import xmontiarc.ComponentType;
-import xmontiarc.Connector;
-import xmontiarc.Port;
-import xmontiarc.Port;
-import xmontiarc.Subcomponent;
-import xmontiarc.impl.ComponentTypeImpl;
+import montiarc.ComponentType;
+import montiarc.Connector;
+import montiarc.Port;
+import montiarc.Port;
+import montiarc.Subcomponent;
+import montiarc.impl.ComponentTypeImpl;
 
 public class AllPortsConnected extends MontiArcModelConstraint {
 
