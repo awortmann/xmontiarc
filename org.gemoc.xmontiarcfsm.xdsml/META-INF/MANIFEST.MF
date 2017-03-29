@@ -33,5 +33,5 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  org.gemoc.xportautomata.xdsml;bundle-version="1.0.0",
  org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm
 Bundle-ManifestVersion: 2
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Manifest-Version: 1.0
