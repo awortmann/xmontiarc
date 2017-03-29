@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+  <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.xportautomata.xfsm.XPortAutomata" xdsmlFilePath="/org.gemoc.xportautomata.xdsml/src/org/gemoc/xportautomata/xfsm/XPortAutomata.melange">
+      <XDSML_Definition_Customization fileExtensions="fsm, xsfsm" />
+    </XDSML_Definition>
+  </extension>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated XPortAutomataMT -->
+    <package class="org.gemoc.xportautomata.xfsm.xportautomatamt.fsm.FsmPackage" genModel="model-gen/XPortAutomataMT.genmodel" uri="http://org.gemoc.xportautomata.xfsm.xportautomatamt/fsm/" />
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.gemoc.xportautomata.xfsm.XPortAutomataMT" uri="http://org.gemoc.xportautomata.xfsm.xportautomatamt/">
+      <subtyping modeltypeId="org.gemoc.portautomata.PortAutomataMT" />
+    </modeltype>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="" entryPoints="" exactType="org.gemoc.xportautomata.xfsm.XPortAutomataMT" id="org.gemoc.xportautomata.xfsm.XPortAutomata" uri="http://org.gemoc.xportautomata.xfsm.xportautomata/fsm/">
+      <adapter class="org.gemoc.xportautomata.xfsm.xportautomata.adapters.portautomatamt.XPortAutomataAdapter" modeltypeId="org.gemoc.portautomata.PortAutomataMT" />
+      <adapter class="org.gemoc.xportautomata.xfsm.xportautomata.adapters.xportautomatamt.XPortAutomataAdapter" modeltypeId="org.gemoc.xportautomata.xfsm.XPortAutomataMT" />
+    </language>
+  </extension>
+</plugin>
