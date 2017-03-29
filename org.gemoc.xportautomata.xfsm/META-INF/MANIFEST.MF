@@ -1,41 +1,27 @@
 Bundle-SymbolicName: org.gemoc.xportautomata.xfsm;singleton:=true
-Export-Package: org.gemoc.sample.legacyfsm.xsfsm.xsfsmmt.fsm,org.gemoc.sample.legacyfsm.xsfsm.xsfsmmt.fsm.impl,org.gemoc.sample.legacyfsm.xsfsm.xsfsmmt.fsm.util,org.gemoc.sample.legacyfsm.xsfsm,org.gemoc.sample.legacyfsm.xsfsm.xsfsm.adapters.xsfsmmt,org.gemoc.sample.legacyfsm.xsfsm.xsfsm.adapters.fsmmt,org.gemoc.sample.legacyfsm.xsfsm.xsfsm.adapters.xsfsmmt.fsm,org.gemoc.sample.legacyfsm.xsfsm.xsfsm.adapters.fsmmt.fsm
+Export-Package: org.gemoc.xportautomata.xfsm.xportautomatamt.fsm,
+ org.gemoc.xportautomata.xfsm.xportautomatamt.fsm.impl,
+ org.gemoc.xportautomata.xfsm.xportautomatamt.fsm.util
 Bundle-Name: org.gemoc.xportautomata.xfsm
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
-Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:="private",
- 
- org.eclipse.xtext.xbase.lib;bundle-version="2.7.0";visibility:="private",
- 
- com.google.guava;bundle-version="0.0.0";visibility:="private",
- 
- org.eclipse.emf.ecore.xmi;bundle-version="2.8.0";visibility:="reexport",
- 
- org.eclipse.emf.ecore;bundle-version="2.8.0";visibility:="reexport",
- 
- org.eclipse.emf.common;bundle-version="2.8.0";visibility:="reexport",
- 
- fr.inria.diverse.melange.lib;bundle-version="0.1.0";visibility:="reexport",
- 
- fr.inria.diverse.melange.resource;bundle-version="0.1.0";visibility:="reexport",
- 
- fr.inria.diverse.melange.adapters;bundle-version="0.1.0";visibility:="reexport",
- 
- fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="0.0.0";visibility:="reexport",
- 
- org.gemoc.xdsmlframework.api;bundle-version="0.0.0";visibility:="reexport",
- 
- org.gemoc.execution.sequential.javaxdsml.api;bundle-version="0.0.0";visibility:="reexport",
- 
- org.gemoc.executionframework.engine;bundle-version="0.0.0";visibility:="reexport",
- 
- org.gemoc.portautomata.model;bundle-version="0.0.0";visibility:="private",
- 
- org.gemoc.portautomata.k3dsa;bundle-version="0.0.0";visibility:="private",
- 
+Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.7.0";visibility:=private,
+ com.google.guava;bundle-version="0.0.0";visibility:=private,
+ org.eclipse.emf.ecore.xmi;bundle-version="2.8.0";visibility:=reexport,
+ org.eclipse.emf.ecore;bundle-version="2.8.0";visibility:=reexport,
+ org.eclipse.emf.common;bundle-version="2.8.0";visibility:=reexport,
+ fr.inria.diverse.melange.lib;bundle-version="0.1.0";visibility:=reexport,
+ fr.inria.diverse.melange.resource;bundle-version="0.1.0";visibility:=reexport,
+ fr.inria.diverse.melange.adapters;bundle-version="0.1.0";visibility:=reexport,
+ fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="0.0.0";visibility:=reexport,
+ org.gemoc.xdsmlframework.api;bundle-version="0.0.0";visibility:=reexport,
+ org.gemoc.execution.sequential.javaxdsml.api;bundle-version="0.0.0";visibility:=reexport,
+ org.gemoc.executionframework.engine;bundle-version="0.0.0";visibility:=reexport,
+ org.gemoc.portautomata.k3dsa;bundle-version="0.0.0";visibility:=private,
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
- 
- org.gemoc.sample.legacyfsm.xsfsm.xsfsm
+ org.gemoc.portautomata.model;bundle-version="2.3.0",
+ org.gemoc.xportautomata.xfsm.xportautomata
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Manifest-Version: 1.0

@@ -14,18 +14,18 @@ public abstract class GuardAspect {
   public static boolean holds(final Guard _self) {
     final org.gemoc.portautomata.fsm.k3dsa.GuardAspectGuardAspectProperties _self_ = org.gemoc.portautomata.fsm.k3dsa.GuardAspectGuardAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.gemoc.portautomata.fsm.LessThanNumberGuard){
-    					result = org.gemoc.portautomata.fsm.k3dsa.LessThanNumberGuardAspect.holds((org.gemoc.portautomata.fsm.LessThanNumberGuard)_self);
-    } else  if (_self instanceof org.gemoc.portautomata.fsm.EqualNumberGuard){
-    					result = org.gemoc.portautomata.fsm.k3dsa.EqualNumberGuardAspect.holds((org.gemoc.portautomata.fsm.EqualNumberGuard)_self);
-    } else  if (_self instanceof org.gemoc.portautomata.fsm.BooleanGuard){
+     if (_self instanceof org.gemoc.portautomata.fsm.BooleanGuard){
     					result = org.gemoc.portautomata.fsm.k3dsa.BooleanGuardAspect.holds((org.gemoc.portautomata.fsm.BooleanGuard)_self);
-    } else  if (_self instanceof org.gemoc.portautomata.fsm.StringGuard){
-    					result = org.gemoc.portautomata.fsm.k3dsa.StringGuardAspect.holds((org.gemoc.portautomata.fsm.StringGuard)_self);
     } else  if (_self instanceof org.gemoc.portautomata.fsm.LessOrEqualThanNumberGuard){
     					result = org.gemoc.portautomata.fsm.k3dsa.LessOrEqualThanNumberGuardAspect.holds((org.gemoc.portautomata.fsm.LessOrEqualThanNumberGuard)_self);
+    } else  if (_self instanceof org.gemoc.portautomata.fsm.StringGuard){
+    					result = org.gemoc.portautomata.fsm.k3dsa.StringGuardAspect.holds((org.gemoc.portautomata.fsm.StringGuard)_self);
     } else  if (_self instanceof org.gemoc.portautomata.fsm.GreaterOrEqualThanNumberGuard){
     					result = org.gemoc.portautomata.fsm.k3dsa.GreaterOrEqualThanNumberGuardAspect.holds((org.gemoc.portautomata.fsm.GreaterOrEqualThanNumberGuard)_self);
+    } else  if (_self instanceof org.gemoc.portautomata.fsm.EqualNumberGuard){
+    					result = org.gemoc.portautomata.fsm.k3dsa.EqualNumberGuardAspect.holds((org.gemoc.portautomata.fsm.EqualNumberGuard)_self);
+    } else  if (_self instanceof org.gemoc.portautomata.fsm.LessThanNumberGuard){
+    					result = org.gemoc.portautomata.fsm.k3dsa.LessThanNumberGuardAspect.holds((org.gemoc.portautomata.fsm.LessThanNumberGuard)_self);
     } else  if (_self instanceof org.gemoc.portautomata.fsm.GreaterThanNumberGuard){
     					result = org.gemoc.portautomata.fsm.k3dsa.GreaterThanNumberGuardAspect.holds((org.gemoc.portautomata.fsm.GreaterThanNumberGuard)_self);
     } else  if (_self instanceof org.gemoc.portautomata.fsm.NumberGuard){

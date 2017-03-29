@@ -14,14 +14,14 @@ public class NumberGuardAspect extends GuardAspect {
   public static boolean holds(final NumberGuard _self) {
     final org.gemoc.portautomata.fsm.k3dsa.NumberGuardAspectNumberGuardAspectProperties _self_ = org.gemoc.portautomata.fsm.k3dsa.NumberGuardAspectNumberGuardAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof org.gemoc.portautomata.fsm.LessThanNumberGuard){
-    					result = org.gemoc.portautomata.fsm.k3dsa.LessThanNumberGuardAspect.holds((org.gemoc.portautomata.fsm.LessThanNumberGuard)_self);
-    } else  if (_self instanceof org.gemoc.portautomata.fsm.EqualNumberGuard){
-    					result = org.gemoc.portautomata.fsm.k3dsa.EqualNumberGuardAspect.holds((org.gemoc.portautomata.fsm.EqualNumberGuard)_self);
-    } else  if (_self instanceof org.gemoc.portautomata.fsm.LessOrEqualThanNumberGuard){
+     if (_self instanceof org.gemoc.portautomata.fsm.LessOrEqualThanNumberGuard){
     					result = org.gemoc.portautomata.fsm.k3dsa.LessOrEqualThanNumberGuardAspect.holds((org.gemoc.portautomata.fsm.LessOrEqualThanNumberGuard)_self);
     } else  if (_self instanceof org.gemoc.portautomata.fsm.GreaterOrEqualThanNumberGuard){
     					result = org.gemoc.portautomata.fsm.k3dsa.GreaterOrEqualThanNumberGuardAspect.holds((org.gemoc.portautomata.fsm.GreaterOrEqualThanNumberGuard)_self);
+    } else  if (_self instanceof org.gemoc.portautomata.fsm.EqualNumberGuard){
+    					result = org.gemoc.portautomata.fsm.k3dsa.EqualNumberGuardAspect.holds((org.gemoc.portautomata.fsm.EqualNumberGuard)_self);
+    } else  if (_self instanceof org.gemoc.portautomata.fsm.LessThanNumberGuard){
+    					result = org.gemoc.portautomata.fsm.k3dsa.LessThanNumberGuardAspect.holds((org.gemoc.portautomata.fsm.LessThanNumberGuard)_self);
     } else  if (_self instanceof org.gemoc.portautomata.fsm.GreaterThanNumberGuard){
     					result = org.gemoc.portautomata.fsm.k3dsa.GreaterThanNumberGuardAspect.holds((org.gemoc.portautomata.fsm.GreaterThanNumberGuard)_self);
     } else  if (_self instanceof org.gemoc.portautomata.fsm.NumberGuard){
