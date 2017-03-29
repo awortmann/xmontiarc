@@ -48,7 +48,7 @@ public interface MontiarcPackage extends EPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	String eNS_PREFIX = "org.gemoc.montiarc.model";
+	String eNS_PREFIX = "montiarc";
 
 	/**
 	 * The singleton instance of the package.

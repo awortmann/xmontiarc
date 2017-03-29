@@ -7,34 +7,32 @@
       <package namespaceUri="http://ur1/diverse/xmontiarc/model"/>
       <constraints>
         <constraint class="org.gemoc.montiarc.montiarc.constraints.AllNamesValid" id="org.gemoc.montiarc.model.AllNamesValid" isEnabledByDefault="true" lang="Java" mode="Live" name="AllNamesValid" severity="ERROR" statusCode="1">
-          <message>
-                  message body text
-               </message>
+          <message>message body text</message>
         </constraint>
         <constraint class="org.gemoc.montiarc.montiarc.constraints.AllPortsConnected" id="org.gemoc.montiarc.model.AllPortsConnected" isEnabledByDefault="true" lang="Java" mode="Live" name="AllPortsConnected" severity="ERROR" statusCode="1">
-          <message>
-                  message body text
-               </message>
+          <message>message body text</message>
         </constraint>
         <constraint class="org.gemoc.montiarc.montiarc.constraints.ConnectedPortsAreTypeCompatible" id="org.gemoc.montiarc.model.ConnectedPortsAreTypeCompatible" isEnabledByDefault="true" lang="Java" mode="Live" name="ConnectedPortsAreTypeCompatible" severity="ERROR" statusCode="1">
-          <message>
-                  message body text
-               </message>
+          <message>message body text</message>
         </constraint>
         <constraint class="org.gemoc.montiarc.montiarc.constraints.NoMultipleIncomingConnectorsPerPort" id="org.gemoc.montiarc.model.NoMultipleIncomingConnectorsPerPort" isEnabledByDefault="true" lang="Java" mode="Live" name="NoMultipleIncomingConnectorsPerPort" severity="ERROR" statusCode="1">
-          <message>
-                  message body text
-               </message>
+          <message>message body text</message>
         </constraint>
       </constraints>
     </constraintProvider>
   </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated montiarc -->
-    <package class="org.gemoc.montiarc.montiarc.MontiarcPackage" genModel="model/montiarc.genmodel" uri="http://org/gemoc/montiarc/model"/>
-  </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated montiarc -->
+      <package
+            uri="http://org/gemoc/montiarc/model"
+            class="org.gemoc.montiarc.montiarc.MontiarcPackage"
+            genModel="model/montiarc.genmodel"/>
+   </extension>
   
-<extension point="fr.inria.diverse.melange.modeltype">
+  <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.montiarc.MontiArc" xdsmlFilePath="/org.gemoc.montiarc.model/src/org/gemoc/montiarc/MontiArc.melange"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="org.gemoc.montiarc.MontiArcMT" uri="http://org.gemoc.montiarc.montiarcmt/"/>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
