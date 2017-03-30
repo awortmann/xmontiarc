@@ -2,6 +2,7 @@
  */
 package org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc;
 
+import org.eclipse.emf.common.util.EMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -14,4 +15,12 @@ package org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc;
  * @generated
  */
 public interface AutomatonComponentBehavior extends ComponentBehavior {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model varsDataType="org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.EMap"
+	 * @generated
+	 */
+	void process(EMap vars);
+
 } // AutomatonComponentBehavior

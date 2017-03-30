@@ -2,6 +2,8 @@
  */
 package org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.impl;
 
+import org.eclipse.emf.common.util.EMap;
+
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -135,6 +137,13 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 * @generated
 	 */
 	private EDataType eDataTypeEDataType = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EDataType eMapEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -544,6 +553,15 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EDataType getEMap() {
+		return eMapEDataType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public MontiarcFactory getMontiarcFactory() {
 		return (MontiarcFactory)getEFactoryInstance();
 	}
@@ -619,6 +637,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 
 		// Create data types
 		eDataTypeEDataType = createEDataType(EDATA_TYPE);
+		eMapEDataType = createEDataType(EMAP);
 	}
 
 	/**
@@ -742,6 +761,9 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 
 		initEClass(automatonComponentBehaviorEClass, AutomatonComponentBehavior.class, "AutomatonComponentBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		op = addEOperation(automatonComponentBehaviorEClass, null, "process", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, this.getEMap(), "vars", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		// Initialize enums and add enum literals
 		initEEnum(dataTypeEEnum, DataType.class, "DataType");
 		addEEnumLiteral(dataTypeEEnum, DataType.NUMBER);
@@ -750,6 +772,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 
 		// Initialize data types
 		initEDataType(eDataTypeEDataType, EDataType.class, "EDataType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
+		initEDataType(eMapEDataType, EMap.class, "EMap", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -939,7 +962,17 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		   new String[] {
 		   });	
 		addAnnotation
+		  (automatonComponentBehaviorEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (eDataTypeEDataType, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (eMapEDataType, 
 		   source, 
 		   new String[] {
 		   });

@@ -2,6 +2,8 @@
  */
 package org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.impl;
 
+import org.eclipse.emf.common.util.EMap;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
@@ -84,6 +86,8 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 				return createDataTypeFromString(eDataType, initialValue);
 			case MontiarcPackage.EDATA_TYPE:
 				return createEDataTypeFromString(eDataType, initialValue);
+			case MontiarcPackage.EMAP:
+				return createEMapFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -101,6 +105,8 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 				return convertDataTypeToString(eDataType, instanceValue);
 			case MontiarcPackage.EDATA_TYPE:
 				return convertEDataTypeToString(eDataType, instanceValue);
+			case MontiarcPackage.EMAP:
+				return convertEMapToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -241,6 +247,24 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	 * @generated
 	 */
 	public String convertEDataTypeToString(EDataType eDataType, Object instanceValue) {
+		return super.convertToString(eDataType, instanceValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EMap createEMapFromString(EDataType eDataType, String initialValue) {
+		return (EMap)super.createFromString(eDataType, initialValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertEMapToString(EDataType eDataType, Object instanceValue) {
 		return super.convertToString(eDataType, instanceValue);
 	}
 

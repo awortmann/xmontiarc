@@ -6,6 +6,7 @@ import java.util.Map;
 
 import org.eclipse.emf.common.util.Diagnostic;
 import org.eclipse.emf.common.util.DiagnosticChain;
+import org.eclipse.emf.common.util.EMap;
 import org.eclipse.emf.common.util.ResourceLocator;
 
 import org.eclipse.emf.ecore.EDataType;
@@ -115,6 +116,8 @@ public class MontiarcValidator extends EObjectValidator {
 				return validateDataType((DataType)value, diagnostics, context);
 			case MontiarcPackage.EDATA_TYPE:
 				return validateEDataType((EDataType)value, diagnostics, context);
+			case MontiarcPackage.EMAP:
+				return validateEMap((EMap)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -504,6 +507,15 @@ public class MontiarcValidator extends EObjectValidator {
 	 * @generated
 	 */
 	public boolean validateEDataType(EDataType eDataType, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return true;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateEMap(EMap eMap, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return true;
 	}
 

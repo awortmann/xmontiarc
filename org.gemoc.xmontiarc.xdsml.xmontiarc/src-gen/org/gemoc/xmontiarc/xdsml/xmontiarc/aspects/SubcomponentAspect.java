@@ -7,8 +7,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.AutomatonComponentBehaviorAspect;
 import org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.PortAspect;
 import org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspectSubcomponentAspectProperties;
+import org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.AutomatonComponentBehavior;
 import org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.ComponentBehavior;
 import org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.ComponentType;
 import org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.DataType;
@@ -115,6 +117,10 @@ public class SubcomponentAspect {
           if ((behavior instanceof GroovyComponentBehavior)) {
             SubcomponentAspect.createDefaultBehavior(_self);
           } else {
+            if ((behavior instanceof AutomatonComponentBehavior)) {
+              AutomatonComponentBehaviorAspect.process(((AutomatonComponentBehavior)behavior), null);
+            } else {
+            }
           }
           EDataType _value = PortAspect.value(p);
           String _plus_4 = ("### Assigning value \'" + _value);

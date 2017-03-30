@@ -27,11 +27,15 @@ import static extension org.gemoc.montiarc.k3dsa.aspects.ConnectorAspect.*
 import static extension org.gemoc.montiarc.k3dsa.aspects.SubcomponentAspect.*
 import static extension org.gemoc.montiarc.k3dsa.aspects.AutomatonComponentBehaviorAspect.*
 import fr.inria.diverse.k3.al.annotationprocessor.Containment
+import org.eclipse.emf.common.util.EMap
+
 //import automata.Automaton
 
 @Aspect(className=AutomatonComponentBehavior)
 class AutomatonComponentBehaviorAspect {
-   // @Containment public Automaton behavior
+ 	def void process(EMap<String, Object> vars){
+ 		//_self.eContainer
+ 	}
 }
 
 @Aspect(className=ComponentType)
@@ -253,8 +257,12 @@ class SubcomponentAspect {
                 if (behavior instanceof GroovyComponentBehavior) {
                     _self.createDefaultBehavior()
                 } 
+                else if (behavior instanceof AutomatonComponentBehavior) {
+                    // TODO 
+                    behavior.process(null)
+                }
                 else {
-                    //TODO: Behavior integration
+                   // Should never occurs !
                 }
                 // println("Behavior of '" + _self.name + "' is '" + behavior + "'.")
                 // println("Computing next value of outgoing port " + _self.name + "." + p.name + ".")

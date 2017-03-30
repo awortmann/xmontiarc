@@ -594,6 +594,16 @@ public interface MontiarcPackage extends EPackage {
 	 */
 	int EDATA_TYPE = 13;
 
+	/**
+	 * The meta object id for the '<em>EMap</em>' data type.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.eclipse.emf.common.util.EMap
+	 * @see org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.impl.MontiarcPackageImpl#getEMap()
+	 * @generated
+	 */
+	int EMAP = 14;
+
 
 	/**
 	 * Returns the meta object for class '{@link org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.ComponentType <em>Component Type</em>}'.
@@ -990,6 +1000,17 @@ public interface MontiarcPackage extends EPackage {
 	EDataType getEDataType();
 
 	/**
+	 * Returns the meta object for data type '{@link org.eclipse.emf.common.util.EMap <em>EMap</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for data type '<em>EMap</em>'.
+	 * @see org.eclipse.emf.common.util.EMap
+	 * @model instanceClass="org.eclipse.emf.common.util.EMap"
+	 * @generated
+	 */
+	EDataType getEMap();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1334,6 +1355,16 @@ public interface MontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType EDATA_TYPE = eINSTANCE.getEDataType();
+
+		/**
+		 * The meta object literal for the '<em>EMap</em>' data type.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.eclipse.emf.common.util.EMap
+		 * @see org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.impl.MontiarcPackageImpl#getEMap()
+		 * @generated
+		 */
+		EDataType EMAP = eINSTANCE.getEMap();
 
 	}
 

@@ -8,4 +8,5 @@ language XMontiArc inherits org.gemoc.montiarc.MontiArc {
 	with org.gemoc.montiarc.k3dsa.aspects.SubcomponentAspect
 	with org.gemoc.montiarc.k3dsa.aspects.ComponentTypeAspect
 	with org.gemoc.montiarc.k3dsa.aspects.ConnectorAspect 
+	with org.gemoc.montiarc.k3dsa.aspects.AutomatonComponentBehaviorAspect 
 }
