@@ -18,18 +18,18 @@ public class NumberGuardAspect extends GuardAspect {
 	if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.LessThanNumberGuard) {
 		result = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.LessThanNumberGuardAspect
 				.holds((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.LessThanNumberGuard) _self);
-	} else if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.GreaterOrEqualThanNumberGuard) {
-		result = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.GreaterOrEqualThanNumberGuardAspect
-				.holds((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.GreaterOrEqualThanNumberGuard) _self);
 	} else if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.EqualNumberGuard) {
 		result = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.EqualNumberGuardAspect
 				.holds((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.EqualNumberGuard) _self);
-	} else if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.LessOrEqualThanNumberGuard) {
-		result = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.LessOrEqualThanNumberGuardAspect
-				.holds((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.LessOrEqualThanNumberGuard) _self);
 	} else if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.GreaterThanNumberGuard) {
 		result = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.GreaterThanNumberGuardAspect
 				.holds((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.GreaterThanNumberGuard) _self);
+	} else if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.GreaterOrEqualThanNumberGuard) {
+		result = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.GreaterOrEqualThanNumberGuardAspect
+				.holds((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.GreaterOrEqualThanNumberGuard) _self);
+	} else if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.LessOrEqualThanNumberGuard) {
+		result = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.LessOrEqualThanNumberGuardAspect
+				.holds((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.LessOrEqualThanNumberGuard) _self);
 	} else if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberGuard) {
 		result = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.NumberGuardAspect._privk3_holds(_self_,
 				(org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberGuard) _self);

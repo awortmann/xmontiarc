@@ -12,12 +12,12 @@ public abstract class ActionAspect {
   public static void execute(final Action _self) {
 	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ActionAspectActionAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ActionAspectActionAspectContext
 			.getSelf(_self);
-	if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StringAction) {
-		org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.StringActionAspect
-				.execute((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StringAction) _self);
-	} else if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberAction) {
+	if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberAction) {
 		org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.NumberActionAspect
 				.execute((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberAction) _self);
+	} else if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StringAction) {
+		org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.StringActionAspect
+				.execute((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StringAction) _self);
 	} else if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.BooleanAction) {
 		org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.BooleanActionAspect
 				.execute((org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.BooleanAction) _self);

@@ -52,7 +52,7 @@ public interface AutomatonComponentBehavior extends ComponentBehavior {
 	 * @model
 	 * @generated
 	 */
-	void sendPortValuesToAutomaton();
+	void wrapPortValuesToAutomaton();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,6 +68,6 @@ public interface AutomatonComponentBehavior extends ComponentBehavior {
 	 * @model
 	 * @generated
 	 */
-	void setPortValuesFromAutomaton();
+	void unwrapPortValuesFromAutomaton();
 
 } // AutomatonComponentBehavior

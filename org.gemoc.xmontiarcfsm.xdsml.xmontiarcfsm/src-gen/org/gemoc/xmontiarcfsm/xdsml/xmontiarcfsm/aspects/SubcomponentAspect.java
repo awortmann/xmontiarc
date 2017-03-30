@@ -117,9 +117,9 @@ public class SubcomponentAspect {
         if (((behavior instanceof AutomatonComponentBehavior) && (_self.getLocalBehavior() instanceof AutomatonComponentBehavior))) {
           ComponentBehavior _localBehavior = _self.getLocalBehavior();
           final AutomatonComponentBehavior localBehavior = ((AutomatonComponentBehavior) _localBehavior);
-          AutomatonComponentBehaviorAspect.sendPortValuesToAutomaton(localBehavior);
+          AutomatonComponentBehaviorAspect.wrapPortValuesToAutomaton(localBehavior);
           AutomatonComponentBehaviorAspect.process(localBehavior);
-          AutomatonComponentBehaviorAspect.setPortValuesFromAutomaton(localBehavior);
+          AutomatonComponentBehaviorAspect.unwrapPortValuesFromAutomaton(localBehavior);
         } else {
         }
       }

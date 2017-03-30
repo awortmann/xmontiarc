@@ -99,7 +99,7 @@ public class AutomatonComponentBehaviorImpl extends ComponentBehaviorImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void sendPortValuesToAutomaton() {
+	public void wrapPortValuesToAutomaton() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -121,7 +121,7 @@ public class AutomatonComponentBehaviorImpl extends ComponentBehaviorImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setPortValuesFromAutomaton() {
+	public void unwrapPortValuesFromAutomaton() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

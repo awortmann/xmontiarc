@@ -796,11 +796,11 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		initEClass(automatonComponentBehaviorEClass, AutomatonComponentBehavior.class, "AutomatonComponentBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getAutomatonComponentBehavior_DelegateFSM(), this.getStateMachine(), null, "delegateFSM", null, 0, 1, AutomatonComponentBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(automatonComponentBehaviorEClass, null, "sendPortValuesToAutomaton", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(automatonComponentBehaviorEClass, null, "wrapPortValuesToAutomaton", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(automatonComponentBehaviorEClass, null, "process", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(automatonComponentBehaviorEClass, null, "setPortValuesFromAutomaton", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(automatonComponentBehaviorEClass, null, "unwrapPortValuesFromAutomaton", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(stateMachineEClass, StateMachine.class, "StateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

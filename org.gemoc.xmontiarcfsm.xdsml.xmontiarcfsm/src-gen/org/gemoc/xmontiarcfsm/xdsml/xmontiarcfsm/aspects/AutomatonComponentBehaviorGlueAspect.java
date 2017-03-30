@@ -10,10 +10,10 @@ import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StateMachine;
 @Aspect(className = AutomatonComponentBehavior.class)
 @SuppressWarnings("all")
 public class AutomatonComponentBehaviorGlueAspect extends AutomatonComponentBehaviorAspect {
-  public static void sendPortValuesToAutomaton(final AutomatonComponentBehavior _self) {
+  public static void wrapPortValuesToAutomaton(final AutomatonComponentBehavior _self) {
 	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.AutomatonComponentBehaviorGlueAspectAutomatonComponentBehaviorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.AutomatonComponentBehaviorGlueAspectAutomatonComponentBehaviorAspectContext
 			.getSelf(_self);
-	_privk3_sendPortValuesToAutomaton(_self_, _self);
+	_privk3_wrapPortValuesToAutomaton(_self_, _self);
 	;
 }
   
@@ -24,10 +24,10 @@ public class AutomatonComponentBehaviorGlueAspect extends AutomatonComponentBeha
 	;
 }
   
-  public static void setPortValuesFromAutomaton(final AutomatonComponentBehavior _self) {
+  public static void unwrapPortValuesFromAutomaton(final AutomatonComponentBehavior _self) {
 	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.AutomatonComponentBehaviorGlueAspectAutomatonComponentBehaviorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.AutomatonComponentBehaviorGlueAspectAutomatonComponentBehaviorAspectContext
 			.getSelf(_self);
-	_privk3_setPortValuesFromAutomaton(_self_, _self);
+	_privk3_unwrapPortValuesFromAutomaton(_self_, _self);
 	;
 }
   
@@ -49,13 +49,13 @@ public class AutomatonComponentBehaviorGlueAspect extends AutomatonComponentBeha
 	;
 }
   
-  protected static void _privk3_sendPortValuesToAutomaton(final AutomatonComponentBehaviorGlueAspectAutomatonComponentBehaviorAspectProperties _self_, final AutomatonComponentBehavior _self) {
+  protected static void _privk3_wrapPortValuesToAutomaton(final AutomatonComponentBehaviorGlueAspectAutomatonComponentBehaviorAspectProperties _self_, final AutomatonComponentBehavior _self) {
   }
   
   protected static void _privk3_process(final AutomatonComponentBehaviorGlueAspectAutomatonComponentBehaviorAspectProperties _self_, final AutomatonComponentBehavior _self) {
   }
   
-  protected static void _privk3_setPortValuesFromAutomaton(final AutomatonComponentBehaviorGlueAspectAutomatonComponentBehaviorAspectProperties _self_, final AutomatonComponentBehavior _self) {
+  protected static void _privk3_unwrapPortValuesFromAutomaton(final AutomatonComponentBehaviorGlueAspectAutomatonComponentBehaviorAspectProperties _self_, final AutomatonComponentBehavior _self) {
   }
   
   protected static StateMachine _privk3_delegateFSM(final AutomatonComponentBehaviorGlueAspectAutomatonComponentBehaviorAspectProperties _self_, final AutomatonComponentBehavior _self) {
