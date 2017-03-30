@@ -32,10 +32,10 @@ import org.eclipse.emf.common.util.EMap
 //import automata.Automaton
 
 @Aspect(className=AutomatonComponentBehavior)
-abstract class AutomatonComponentBehaviorAspect {
- 	abstract def void sendPortValuesToAutomaton();
- 	abstract def void process();
- 	abstract def void setPortValuesFromAutomaton();
+class AutomatonComponentBehaviorAspect {
+ 	def void process(EMap<String, Object> vars){
+ 		//_self.eContainer
+ 	}
 }
 
 @Aspect(className=ComponentType)
@@ -251,16 +251,15 @@ class SubcomponentAspect {
         // for atomic components: delegate behavior computation to their Groovy script
         if (_self.type.subcomponents.isEmpty) { // assume an atomic component
         // println("Subcomponent '" + _self.name + "' is atomic.");
-         /*    for (Port p : _self.outgoingPorts) {
+            for (Port p : _self.outgoingPorts) {
                 // println("Subcomponent '" + _self.name + "' has port '" + p.name + "'.");
                 val ComponentBehavior behavior = _self.type.behavior
                 if (behavior instanceof GroovyComponentBehavior) {
                     _self.createDefaultBehavior()
                 } 
                 else if (behavior instanceof AutomatonComponentBehavior) {
-                    // actually get the behavior copy in the subcomponent
-                    _self.localBehavior.process
-                    //behavior.process(null)
+                    // TODO 
+                    behavior.process(null)
                 }
                 else {
                    // Should never occurs !
@@ -269,20 +268,6 @@ class SubcomponentAspect {
                 // println("Computing next value of outgoing port " + _self.name + "." + p.name + ".")
                 
                 println("### Assigning value '" + p.value + "' to outgoing port " + _self.name + "." + p.name + ".")
-            }*/
-            val ComponentBehavior behavior = _self.type.behavior
-            if (behavior instanceof GroovyComponentBehavior) {
-                _self.createDefaultBehavior()
-            } 
-            else if (behavior instanceof AutomatonComponentBehavior && _self.localBehavior instanceof AutomatonComponentBehavior ) {
-            	val localBehavior =  _self.localBehavior as AutomatonComponentBehavior
-                // actually each subcomponent has its own copy of the behavior in order to have independent diagram
-                localBehavior.sendPortValuesToAutomaton()
-                localBehavior.process()
-                localBehavior.setPortValuesFromAutomaton()
-            }
-            else {
-               // Should never occurs !
             }
         } // for composed components, propagate computation to subcomponents
         else {
