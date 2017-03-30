@@ -414,13 +414,13 @@
         <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcFSMMT.ecore#/1/AutomatonComponentBehavior/delegateFSM"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="XMontiArcFSMMT.ecore#/1/AutomatonComponentBehavior/sendPortValuesToAutomaton"/>
+        <ecoreOperation href="XMontiArcFSMMT.ecore#/1/AutomatonComponentBehavior/wrapPortValuesToAutomaton"/>
       </genOperations>
       <genOperations>
         <ecoreOperation href="XMontiArcFSMMT.ecore#/1/AutomatonComponentBehavior/process"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="XMontiArcFSMMT.ecore#/1/AutomatonComponentBehavior/setPortValuesFromAutomaton"/>
+        <ecoreOperation href="XMontiArcFSMMT.ecore#/1/AutomatonComponentBehavior/unwrapPortValuesFromAutomaton"/>
       </genOperations>
     </genClasses>
     <genClasses>

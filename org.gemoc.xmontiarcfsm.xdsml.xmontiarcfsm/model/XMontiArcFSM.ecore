@@ -339,13 +339,13 @@
       </eStructuralFeatures>
     </eClassifiers>
     <eClassifiers xsi:type="ecore:EClass" name="AutomatonComponentBehavior" eSuperTypes="/1/ComponentBehavior">
-      <eOperations name="sendPortValuesToAutomaton">
+      <eOperations name="wrapPortValuesToAutomaton">
         <eAnnotations source="aspect"/>
       </eOperations>
       <eOperations name="process">
         <eAnnotations source="aspect"/>
       </eOperations>
-      <eOperations name="setPortValuesFromAutomaton">
+      <eOperations name="unwrapPortValuesFromAutomaton">
         <eAnnotations source="aspect"/>
       </eOperations>
       <eStructuralFeatures xsi:type="ecore:EReference" name="delegateFSM" unique="false" eType="/1/StateMachine">
