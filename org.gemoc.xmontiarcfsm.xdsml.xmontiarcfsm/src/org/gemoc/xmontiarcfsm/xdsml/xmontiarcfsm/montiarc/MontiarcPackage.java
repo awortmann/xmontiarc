@@ -500,13 +500,22 @@ public interface MontiarcPackage extends EPackage {
 	int SUBCOMPONENT__OUTGOING_PORTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Local Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBCOMPONENT__LOCAL_BEHAVIOR = 5;
+
+	/**
 	 * The number of structural features of the '<em>Subcomponent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_FEATURE_COUNT = 5;
+	int SUBCOMPONENT_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.impl.ComponentBehaviorImpl <em>Component Behavior</em>}' class.
@@ -566,13 +575,41 @@ public interface MontiarcPackage extends EPackage {
 	int AUTOMATON_COMPONENT_BEHAVIOR = 11;
 
 	/**
+	 * The feature id for the '<em><b>Delegate FSM</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM = COMPONENT_BEHAVIOR_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Automaton Component Behavior</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int AUTOMATON_COMPONENT_BEHAVIOR_FEATURE_COUNT = COMPONENT_BEHAVIOR_FEATURE_COUNT + 0;
+	int AUTOMATON_COMPONENT_BEHAVIOR_FEATURE_COUNT = COMPONENT_BEHAVIOR_FEATURE_COUNT + 1;
+
+	/**
+	 * The meta object id for the '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.impl.StateMachineImpl <em>State Machine</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.impl.StateMachineImpl
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.impl.MontiarcPackageImpl#getStateMachine()
+	 * @generated
+	 */
+	int STATE_MACHINE = 12;
+
+	/**
+	 * The number of structural features of the '<em>State Machine</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STATE_MACHINE_FEATURE_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.DataType <em>Data Type</em>}' enum.
@@ -582,7 +619,7 @@ public interface MontiarcPackage extends EPackage {
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.impl.MontiarcPackageImpl#getDataType()
 	 * @generated
 	 */
-	int DATA_TYPE = 12;
+	int DATA_TYPE = 13;
 
 	/**
 	 * The meta object id for the '<em>EData Type</em>' data type.
@@ -592,7 +629,7 @@ public interface MontiarcPackage extends EPackage {
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.impl.MontiarcPackageImpl#getEDataType()
 	 * @generated
 	 */
-	int EDATA_TYPE = 13;
+	int EDATA_TYPE = 14;
 
 
 	/**
@@ -928,6 +965,17 @@ public interface MontiarcPackage extends EPackage {
 	EReference getSubcomponent_OutgoingPorts();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent#getLocalBehavior <em>Local Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Local Behavior</em>'.
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent#getLocalBehavior()
+	 * @see #getSubcomponent()
+	 * @generated
+	 */
+	EReference getSubcomponent_LocalBehavior();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentBehavior <em>Component Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -967,6 +1015,27 @@ public interface MontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAutomatonComponentBehavior();
+
+	/**
+	 * Returns the meta object for the reference '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.AutomatonComponentBehavior#getDelegateFSM <em>Delegate FSM</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Delegate FSM</em>'.
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.AutomatonComponentBehavior#getDelegateFSM()
+	 * @see #getAutomatonComponentBehavior()
+	 * @generated
+	 */
+	EReference getAutomatonComponentBehavior_DelegateFSM();
+
+	/**
+	 * Returns the meta object for class '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.StateMachine <em>State Machine</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>State Machine</em>'.
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.StateMachine
+	 * @generated
+	 */
+	EClass getStateMachine();
 
 	/**
 	 * Returns the meta object for enum '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.DataType <em>Data Type</em>}'.
@@ -1278,6 +1347,14 @@ public interface MontiarcPackage extends EPackage {
 		EReference SUBCOMPONENT__OUTGOING_PORTS = eINSTANCE.getSubcomponent_OutgoingPorts();
 
 		/**
+		 * The meta object literal for the '<em><b>Local Behavior</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBCOMPONENT__LOCAL_BEHAVIOR = eINSTANCE.getSubcomponent_LocalBehavior();
+
+		/**
 		 * The meta object literal for the '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.impl.ComponentBehaviorImpl <em>Component Behavior</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1314,6 +1391,24 @@ public interface MontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EClass AUTOMATON_COMPONENT_BEHAVIOR = eINSTANCE.getAutomatonComponentBehavior();
+
+		/**
+		 * The meta object literal for the '<em><b>Delegate FSM</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM = eINSTANCE.getAutomatonComponentBehavior_DelegateFSM();
+
+		/**
+		 * The meta object literal for the '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.impl.StateMachineImpl <em>State Machine</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.impl.StateMachineImpl
+		 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.impl.MontiarcPackageImpl#getStateMachine()
+		 * @generated
+		 */
+		EClass STATE_MACHINE = eINSTANCE.getStateMachine();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.DataType <em>Data Type</em>}' enum.

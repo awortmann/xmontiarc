@@ -2,8 +2,6 @@
  */
 package org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.impl;
 
-import org.eclipse.emf.common.util.EMap;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.AutomatonComponentBehavior;
@@ -41,7 +39,29 @@ public class AutomatonComponentBehaviorImpl extends ComponentBehaviorImpl implem
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void process(EMap vars) {
+	public void sendPortValuesToAutomaton() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void process() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPortValuesFromAutomaton() {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();

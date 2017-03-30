@@ -545,13 +545,22 @@ public interface MontiarcPackage extends EPackage {
 	int SUBCOMPONENT__OUTGOING_PORTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Local Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBCOMPONENT__LOCAL_BEHAVIOR = 5;
+
+	/**
 	 * The number of structural features of the '<em>Subcomponent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_FEATURE_COUNT = 5;
+	int SUBCOMPONENT_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Subcomponent</em>' class.
@@ -988,6 +997,17 @@ public interface MontiarcPackage extends EPackage {
 	EReference getSubcomponent_OutgoingPorts();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.gemoc.montiarc.montiarc.Subcomponent#getLocalBehavior <em>Local Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Local Behavior</em>'.
+	 * @see org.gemoc.montiarc.montiarc.Subcomponent#getLocalBehavior()
+	 * @see #getSubcomponent()
+	 * @generated
+	 */
+	EReference getSubcomponent_LocalBehavior();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.montiarc.montiarc.ComponentBehavior <em>Component Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1318,6 +1338,14 @@ public interface MontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EReference SUBCOMPONENT__OUTGOING_PORTS = eINSTANCE.getSubcomponent_OutgoingPorts();
+
+		/**
+		 * The meta object literal for the '<em><b>Local Behavior</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBCOMPONENT__LOCAL_BEHAVIOR = eINSTANCE.getSubcomponent_LocalBehavior();
 
 		/**
 		 * The meta object literal for the '{@link org.gemoc.montiarc.montiarc.impl.ComponentBehaviorImpl <em>Component Behavior</em>}' class.

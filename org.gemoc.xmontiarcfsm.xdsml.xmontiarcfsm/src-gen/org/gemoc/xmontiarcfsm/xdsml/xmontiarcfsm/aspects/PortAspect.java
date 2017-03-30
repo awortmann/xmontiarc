@@ -9,25 +9,29 @@ import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port;
 @SuppressWarnings("all")
 public class PortAspect {
   public static String toString(final Port _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectContext.getSelf(_self);
-    Object result = null;
-     if (_self instanceof org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port){
-    					result = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspect._privk3_toString(_self_, (org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port)_self);
-    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
-    return (java.lang.String)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_toString(_self_, _self);
+	;
+	return (java.lang.String) result;
+}
   
   public static EDataType value(final Port _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_value(_self_, _self);;
-    return (org.eclipse.emf.ecore.EDataType)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_value(_self_, _self);
+	;
+	return (org.eclipse.emf.ecore.EDataType) result;
+}
   
   public static void value(final Port _self, final EDataType value) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectContext.getSelf(_self);
-    _privk3_value(_self_, _self,value);;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspectPortAspectContext
+			.getSelf(_self);
+	_privk3_value(_self_, _self, value);
+	;
+}
   
   protected static String _privk3_toString(final PortAspectPortAspectProperties _self_, final Port _self) {
     EDataType _value = PortAspect.value(_self);

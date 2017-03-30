@@ -494,6 +494,15 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSubcomponent_LocalBehavior() {
+		return (EReference)subcomponentEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComponentBehavior() {
 		return componentBehaviorEClass;
 	}
@@ -610,6 +619,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		createEReference(subcomponentEClass, SUBCOMPONENT__INCOMING_PORTS);
 		createEReference(subcomponentEClass, SUBCOMPONENT__PARENT);
 		createEReference(subcomponentEClass, SUBCOMPONENT__OUTGOING_PORTS);
+		createEReference(subcomponentEClass, SUBCOMPONENT__LOCAL_BEHAVIOR);
 
 		componentBehaviorEClass = createEClass(COMPONENT_BEHAVIOR);
 
@@ -734,6 +744,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		initEReference(getSubcomponent_IncomingPorts(), this.getIncomingPort(), null, "incomingPorts", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Parent(), this.getComponentType(), this.getComponentType_Subcomponents(), "parent", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_OutgoingPorts(), this.getOutgoingPort(), null, "outgoingPorts", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubcomponent_LocalBehavior(), this.getComponentBehavior(), null, "localBehavior", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(subcomponentEClass, null, "createDefaultBehavior", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -745,6 +756,12 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		initEAttribute(getGroovyComponentBehavior_ScriptBody(), ecorePackage.getEString(), "scriptBody", "\"\"", 1, 1, GroovyComponentBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(automatonComponentBehaviorEClass, AutomatonComponentBehavior.class, "AutomatonComponentBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(automatonComponentBehaviorEClass, null, "sendPortValuesToAutomaton", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(automatonComponentBehaviorEClass, null, "process", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(automatonComponentBehaviorEClass, null, "setPortValuesFromAutomaton", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(dataTypeEEnum, DataType.class, "DataType");
@@ -939,6 +956,21 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		   });	
 		addAnnotation
 		  (subcomponentEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (automatonComponentBehaviorEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (automatonComponentBehaviorEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (automatonComponentBehaviorEClass.getEOperations().get(2), 
 		   source, 
 		   new String[] {
 		   });	

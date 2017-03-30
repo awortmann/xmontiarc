@@ -104,6 +104,9 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="montiarc.ecore#//Subcomponent/outgoingPorts"/>
       </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="montiarc.ecore#//Subcomponent/localBehavior"/>
+      </genFeatures>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="montiarc.ecore#//ComponentBehavior"/>

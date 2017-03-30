@@ -109,42 +109,31 @@ public class SubcomponentAspect {
     EList<Subcomponent> _subcomponents = _type_1.getSubcomponents();
     boolean _isEmpty = _subcomponents.isEmpty();
     if (_isEmpty) {
-      EList<OutgoingPort> _outgoingPorts = _self.getOutgoingPorts();
-      for (final Port p : _outgoingPorts) {
-        {
-          ComponentType _type_2 = _self.getType();
-          final ComponentBehavior behavior = _type_2.getBehavior();
-          if ((behavior instanceof GroovyComponentBehavior)) {
-            SubcomponentAspect.createDefaultBehavior(_self);
-          } else {
-            if ((behavior instanceof AutomatonComponentBehavior)) {
-              AutomatonComponentBehaviorAspect.process(((AutomatonComponentBehavior)behavior), null);
-            } else {
-            }
-          }
-          EDataType _value = PortAspect.value(p);
-          String _plus_4 = ("### Assigning value \'" + _value);
-          String _plus_5 = (_plus_4 + "\' to outgoing port ");
-          String _name_2 = _self.getName();
-          String _plus_6 = (_plus_5 + _name_2);
-          String _plus_7 = (_plus_6 + ".");
-          String _name_3 = p.getName();
-          String _plus_8 = (_plus_7 + _name_3);
-          String _plus_9 = (_plus_8 + ".");
-          InputOutput.<String>println(_plus_9);
+      ComponentType _type_2 = _self.getType();
+      final ComponentBehavior behavior = _type_2.getBehavior();
+      if ((behavior instanceof GroovyComponentBehavior)) {
+        SubcomponentAspect.createDefaultBehavior(_self);
+      } else {
+        if (((behavior instanceof AutomatonComponentBehavior) && (_self.getLocalBehavior() instanceof AutomatonComponentBehavior))) {
+          ComponentBehavior _localBehavior = _self.getLocalBehavior();
+          final AutomatonComponentBehavior localBehavior = ((AutomatonComponentBehavior) _localBehavior);
+          AutomatonComponentBehaviorAspect.sendPortValuesToAutomaton(localBehavior);
+          AutomatonComponentBehaviorAspect.process(localBehavior);
+          AutomatonComponentBehaviorAspect.setPortValuesFromAutomaton(localBehavior);
+        } else {
         }
       }
     } else {
-      ComponentType _type_2 = _self.getType();
-      String _name_2 = _type_2.getName();
+      ComponentType _type_3 = _self.getType();
+      String _name_2 = _type_3.getName();
       String _plus_4 = ("=> Computing behavior for composed subcomponent \'" + _name_2);
       String _plus_5 = (_plus_4 + ".");
       String _name_3 = _self.getName();
       String _plus_6 = (_plus_5 + _name_3);
       String _plus_7 = (_plus_6 + "\'.");
       InputOutput.<String>println(_plus_7);
-      ComponentType _type_3 = _self.getType();
-      EList<Subcomponent> _subcomponents_1 = _type_3.getSubcomponents();
+      ComponentType _type_4 = _self.getType();
+      EList<Subcomponent> _subcomponents_1 = _type_4.getSubcomponents();
       for (final Subcomponent ci : _subcomponents_1) {
         SubcomponentAspect.compute(ci);
       }

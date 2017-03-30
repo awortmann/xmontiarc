@@ -1,18 +1,5 @@
+Manifest-Version: 1.0
 Bundle-SymbolicName: org.gemoc.xmontiarcfsm.xdsml;singleton:=true
-Export-Package: org.gemoc.xmontiarcfsm.xdsml,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.montiarcmt,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.montiarcmt.montiarc,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcfsmmt,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcfsmmt.montiarc,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcfsmmt.xmontiarc,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcmt,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcmt.montiarc,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc.impl,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc.util,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.xmontiarc,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.xmontiarc.impl,
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.xmontiarc.util
 Bundle-Name: org.gemoc.xmontiarcfsm.xdsml
 Bundle-Version: 1.0.0
 Bundle-ClassPath: .
@@ -27,11 +14,20 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
  fr.inria.diverse.melange.resource;bundle-version="0.1.0";visibility:=reexport,
  fr.inria.diverse.melange.adapters;bundle-version="0.2.0",
  fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="0.0.0";visibility:=reexport,
- org.gemoc.montiarc.k3dsa;bundle-version="1.0.0",
  org.gemoc.executionframework.extensions.sirius;bundle-version="0.0.0";visibility:=reexport,
- org.gemoc.xmontiarc.xdsml;bundle-version="1.0.0",
- org.gemoc.xportautomata.xdsml;bundle-version="1.0.0",
- org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm,
+ org.gemoc.montiarcfsm.k3dsa;bundle-version="1.0.0",
+ org.gemoc.portautomata.k3dsa;bundle-version="1.0.0",
+ org.gemoc.portautomata.model;bundle-version="1.0.0",
+ org.gemoc.montiarc.k3dsa;bundle-version="1.0.0",
+ org.gemoc.montiarc.model;bundle-version="1.0.0"
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.8
-Manifest-Version: 1.0
+Export-Package: org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc.util,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.fsm.util,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.fsm,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.fsm.impl,
+ org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc.impl,
+ org.gemoc.xmontiarcfsm.xdsml
+

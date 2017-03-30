@@ -1,14 +1,67 @@
 package org.gemoc.xmontiarcfsm.xdsml
 
-//import org.gemoc.sample.legacyfsm.fsm.k3dsa.*
+import org.gemoc.montiarc.k3dsa.aspects.ComponentTypeAspect
+import org.gemoc.montiarc.k3dsa.aspects.ConnectorAspect
+
+/* this one seems to have correct dispatch */
+/*language XMontiArcFSM {
+	syntax "platform:/resource/org.gemoc.portautomata.model/model/portautomata.ecore" 
+	syntax "platform:/resource/org.gemoc.montiarc.model/model/montiarc.ecore"
+	
+	with org.gemoc.montiarcfsm.aspects.AutomatonComponentBehaviorGlueAspect
+		
+	with org.gemoc.montiarc.k3dsa.aspects.* 
+	
+	with  org.gemoc.portautomata.fsm.k3dsa.*
+	
+}*/
 
 
-language XMontiArcFSM inherits org.gemoc.xmontiarc.xdsml.XMontiArc{
-	merge org.gemoc.xportautomata.xdsml.XPortAutomata renaming {"fsm" to "xmontiarc" {"StateMachine" to "AutomatonComponentBehavior" }}
+// better alternatives to test
+language XMontiArcFSM  {
+	syntax "platform:/resource/org.gemoc.portautomata.model/model/portautomata.ecore"
+	syntax "platform:/resource/org.gemoc.montiarc.model/model/montiarc.ecore"
+//	with org.gemoc.montiarc.k3dsa.aspects.* 
+	with org.gemoc.montiarc.k3dsa.aspects.AutomatonComponentBehaviorAspect
+	with org.gemoc.montiarc.k3dsa.aspects.ComponentTypeAspect
+	with org.gemoc.montiarc.k3dsa.aspects.ConnectorAspect
+	with org.gemoc.montiarc.k3dsa.aspects.PortAspect
+	with org.gemoc.montiarc.k3dsa.aspects.SubcomponentAspect
+	
+//	with  org.gemoc.portautomata.fsm.k3dsa.*
+	with  org.gemoc.portautomata.fsm.k3dsa.StateMachineAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.StateAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.TransitionAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.VariableAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.StringVariableAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.NumberVariableAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.BooleanVariableAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.GuardAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.BooleanGuardAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.StringGuardAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.NumberGuardAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.EqualNumberGuardAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.GreaterThanNumberGuardAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.GreaterOrEqualThanNumberGuardAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.LessThanNumberGuardAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.LessOrEqualThanNumberGuardAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.ActionAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.BooleanActionAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.NumberActionAspect
+	with  org.gemoc.portautomata.fsm.k3dsa.StringActionAspect
+	
+	
+	with org.gemoc.montiarcfsm.aspects.AutomatonComponentBehaviorGlueAspect
 }
 
+/*language XMontiArcFSM inherits org.gemoc.xmontiarc.xdsml.XMontiArc{
+	merge org.gemoc.xportautomata.xdsml.XPortAutomata renaming {
+		"fsm" to "xmontiarc" {
+			"StateMachine" to "AutomatonComponentBehavior" 
+		}}
+	with AutomatonComponentBehaviorGlueAspect
+}*/
 
-// better alternative to test
 /*
 language MontiArcWithAutomaton inherits ur1.diverse.xmontiarc.xdsml.MontiArc{
 	merge org.gemoc.sample.legacyfsm.xsfsm.FSM renaming {"fsm" to "xmontiarc" {"StateMachine" to "AutomatonComponentBehavior" }}

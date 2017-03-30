@@ -7,8 +7,10 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EcorePackage;
 import org.eclipse.xtext.xbase.lib.InputOutput;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.AutomatonComponentBehaviorAspect;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspect;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectProperties;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.AutomatonComponentBehavior;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentBehavior;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.DataType;
@@ -23,31 +25,37 @@ public class SubcomponentAspect {
   private static Random rand = new Random();
   
   public static void createDefaultBehavior(final Subcomponent _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectContext.getSelf(_self);
-    _privk3_createDefaultBehavior(_self_, _self);;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectContext
+			.getSelf(_self);
+	_privk3_createDefaultBehavior(_self_, _self);
+	;
+}
   
   @Step
   public static void compute(final Subcomponent _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    	@Override
-    	public void execute() {
-    		_privk3_compute(_self_, _self);
-    	}
-    };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    if (stepManager != null) {
-    	stepManager.executeStep(_self,command,"Subcomponent","compute");
-    } else {
-    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry.getInstance().findEventManager(_self);
-    	if (eventManager != null) {
-    		eventManager.manageEvents();
-    	}
-    	command.execute();
-    }
-    ;;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectContext
+			.getSelf(_self);
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+		@Override
+		public void execute() {
+			_privk3_compute(_self_, _self);
+		}
+	};
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
+			.getInstance().findStepManager(_self);
+	if (manager != null) {
+		manager.executeStep(_self, command, "Subcomponent", "compute");
+	} else {
+		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
+				.getInstance().findEventManager(null);
+		if (eventManager != null) {
+			eventManager.manageEvents();
+		}
+		command.execute();
+	}
+	;
+	;
+}
   
   protected static void _privk3_createDefaultBehavior(final SubcomponentAspectSubcomponentAspectProperties _self_, final Subcomponent _self) {
     EList<OutgoingPort> _outgoingPorts = _self.getOutgoingPorts();
@@ -101,38 +109,31 @@ public class SubcomponentAspect {
     EList<Subcomponent> _subcomponents = _type_1.getSubcomponents();
     boolean _isEmpty = _subcomponents.isEmpty();
     if (_isEmpty) {
-      EList<OutgoingPort> _outgoingPorts = _self.getOutgoingPorts();
-      for (final Port p : _outgoingPorts) {
-        {
-          ComponentType _type_2 = _self.getType();
-          final ComponentBehavior behavior = _type_2.getBehavior();
-          if ((behavior instanceof GroovyComponentBehavior)) {
-            SubcomponentAspect.createDefaultBehavior(_self);
-          } else {
-          }
-          EDataType _value = PortAspect.value(p);
-          String _plus_4 = ("### Assigning value \'" + _value);
-          String _plus_5 = (_plus_4 + "\' to outgoing port ");
-          String _name_2 = _self.getName();
-          String _plus_6 = (_plus_5 + _name_2);
-          String _plus_7 = (_plus_6 + ".");
-          String _name_3 = p.getName();
-          String _plus_8 = (_plus_7 + _name_3);
-          String _plus_9 = (_plus_8 + ".");
-          InputOutput.<String>println(_plus_9);
+      ComponentType _type_2 = _self.getType();
+      final ComponentBehavior behavior = _type_2.getBehavior();
+      if ((behavior instanceof GroovyComponentBehavior)) {
+        SubcomponentAspect.createDefaultBehavior(_self);
+      } else {
+        if (((behavior instanceof AutomatonComponentBehavior) && (_self.getLocalBehavior() instanceof AutomatonComponentBehavior))) {
+          ComponentBehavior _localBehavior = _self.getLocalBehavior();
+          final AutomatonComponentBehavior localBehavior = ((AutomatonComponentBehavior) _localBehavior);
+          AutomatonComponentBehaviorAspect.sendPortValuesToAutomaton(localBehavior);
+          AutomatonComponentBehaviorAspect.process(localBehavior);
+          AutomatonComponentBehaviorAspect.setPortValuesFromAutomaton(localBehavior);
+        } else {
         }
       }
     } else {
-      ComponentType _type_2 = _self.getType();
-      String _name_2 = _type_2.getName();
+      ComponentType _type_3 = _self.getType();
+      String _name_2 = _type_3.getName();
       String _plus_4 = ("=> Computing behavior for composed subcomponent \'" + _name_2);
       String _plus_5 = (_plus_4 + ".");
       String _name_3 = _self.getName();
       String _plus_6 = (_plus_5 + _name_3);
       String _plus_7 = (_plus_6 + "\'.");
       InputOutput.<String>println(_plus_7);
-      ComponentType _type_3 = _self.getType();
-      EList<Subcomponent> _subcomponents_1 = _type_3.getSubcomponents();
+      ComponentType _type_4 = _self.getType();
+      EList<Subcomponent> _subcomponents_1 = _type_4.getSubcomponents();
       for (final Subcomponent ci : _subcomponents_1) {
         SubcomponentAspect.compute(ci);
       }

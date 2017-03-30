@@ -46,81 +46,99 @@ public class ComponentTypeAspect {
   
   @Main
   public static void main(final ComponentType _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    _privk3_main(_self_, _self);;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext
+			.getSelf(_self);
+	_privk3_main(_self_, _self);
+	;
+}
   
   @Step
   public static void compute(final ComponentType _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    	@Override
-    	public void execute() {
-    		_privk3_compute(_self_, _self);
-    	}
-    };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    if (stepManager != null) {
-    	stepManager.executeStep(_self,command,"ComponentType","compute");
-    } else {
-    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry.getInstance().findEventManager(_self);
-    	if (eventManager != null) {
-    		eventManager.manageEvents();
-    	}
-    	command.execute();
-    }
-    ;;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext
+			.getSelf(_self);
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+		@Override
+		public void execute() {
+			_privk3_compute(_self_, _self);
+		}
+	};
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
+			.getInstance().findStepManager(_self);
+	if (manager != null) {
+		manager.executeStep(_self, command, "ComponentType", "compute");
+	} else {
+		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
+				.getInstance().findEventManager(null);
+		if (eventManager != null) {
+			eventManager.manageEvents();
+		}
+		command.execute();
+	}
+	;
+	;
+}
   
   @Step
   public static void update(final ComponentType _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
-    	@Override
-    	public void execute() {
-    		_privk3_update(_self_, _self);
-    	}
-    };
-    fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager stepManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry.getInstance().findStepManager(_self);
-    if (stepManager != null) {
-    	stepManager.executeStep(_self,command,"ComponentType","update");
-    } else {
-    	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry.getInstance().findEventManager(_self);
-    	if (eventManager != null) {
-    		eventManager.manageEvents();
-    	}
-    	command.execute();
-    }
-    ;;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext
+			.getSelf(_self);
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand command = new fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepCommand() {
+		@Override
+		public void execute() {
+			_privk3_update(_self_, _self);
+		}
+	};
+	fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IStepManager manager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.StepManagerRegistry
+			.getInstance().findStepManager(_self);
+	if (manager != null) {
+		manager.executeStep(_self, command, "ComponentType", "update");
+	} else {
+		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
+				.getInstance().findEventManager(null);
+		if (eventManager != null) {
+			eventManager.manageEvents();
+		}
+		command.execute();
+	}
+	;
+	;
+}
   
   public static Subcomponent findOwnerOf(final ComponentType _self, final Port p) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_findOwnerOf(_self_, _self,p);;
-    return (org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_findOwnerOf(_self_, _self, p);
+	;
+	return (org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent) result;
+}
   
   public static EList<Port> getOutgoingPortsOfSubcomponents(final ComponentType _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_getOutgoingPortsOfSubcomponents(_self_, _self);;
-    return (org.eclipse.emf.common.util.EList<org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port>)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_getOutgoingPortsOfSubcomponents(_self_, _self);
+	;
+	return (org.eclipse.emf.common.util.EList) result;
+}
   
   public static EList<Port> getIncomingPortsOfSubcomponents(final ComponentType _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_getIncomingPortsOfSubcomponents(_self_, _self);;
-    return (org.eclipse.emf.common.util.EList<org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port>)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_getIncomingPortsOfSubcomponents(_self_, _self);
+	;
+	return (org.eclipse.emf.common.util.EList) result;
+}
   
   public static EList<Port> getDirectedPortsOfSubcomponents(final ComponentType _self, final boolean collectIncoming) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_getDirectedPortsOfSubcomponents(_self_, _self,collectIncoming);;
-    return (org.eclipse.emf.common.util.EList<org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port>)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspectComponentTypeAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_getDirectedPortsOfSubcomponents(_self_, _self, collectIncoming);
+	;
+	return (org.eclipse.emf.common.util.EList) result;
+}
   
   protected static void _privk3_initializeModel(final ComponentTypeAspectComponentTypeAspectProperties _self_, final ComponentType _self, final EList<String> args) {
     String _name = _self.getName();

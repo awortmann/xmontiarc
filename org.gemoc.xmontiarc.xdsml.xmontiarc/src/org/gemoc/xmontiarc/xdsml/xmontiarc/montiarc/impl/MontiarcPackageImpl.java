@@ -2,8 +2,6 @@
  */
 package org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.impl;
 
-import org.eclipse.emf.common.util.EMap;
-
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -137,13 +135,6 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 * @generated
 	 */
 	private EDataType eDataTypeEDataType = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EDataType eMapEDataType = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -499,6 +490,15 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSubcomponent_LocalBehavior() {
+		return (EReference)subcomponentEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComponentBehavior() {
 		return componentBehaviorEClass;
 	}
@@ -546,15 +546,6 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 */
 	public EDataType getEDataType() {
 		return eDataTypeEDataType;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EDataType getEMap() {
-		return eMapEDataType;
 	}
 
 	/**
@@ -624,6 +615,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		createEReference(subcomponentEClass, SUBCOMPONENT__INCOMING_PORTS);
 		createEReference(subcomponentEClass, SUBCOMPONENT__PARENT);
 		createEReference(subcomponentEClass, SUBCOMPONENT__OUTGOING_PORTS);
+		createEReference(subcomponentEClass, SUBCOMPONENT__LOCAL_BEHAVIOR);
 
 		componentBehaviorEClass = createEClass(COMPONENT_BEHAVIOR);
 
@@ -637,7 +629,6 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 
 		// Create data types
 		eDataTypeEDataType = createEDataType(EDATA_TYPE);
-		eMapEDataType = createEDataType(EMAP);
 	}
 
 	/**
@@ -749,6 +740,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		initEReference(getSubcomponent_IncomingPorts(), this.getIncomingPort(), null, "incomingPorts", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Parent(), this.getComponentType(), this.getComponentType_Subcomponents(), "parent", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_OutgoingPorts(), this.getOutgoingPort(), null, "outgoingPorts", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubcomponent_LocalBehavior(), this.getComponentBehavior(), null, "localBehavior", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(subcomponentEClass, null, "createDefaultBehavior", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -761,8 +753,11 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 
 		initEClass(automatonComponentBehaviorEClass, AutomatonComponentBehavior.class, "AutomatonComponentBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		op = addEOperation(automatonComponentBehaviorEClass, null, "process", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, this.getEMap(), "vars", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(automatonComponentBehaviorEClass, null, "sendPortValuesToAutomaton", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(automatonComponentBehaviorEClass, null, "process", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(automatonComponentBehaviorEClass, null, "setPortValuesFromAutomaton", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		// Initialize enums and add enum literals
 		initEEnum(dataTypeEEnum, DataType.class, "DataType");
@@ -772,7 +767,6 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 
 		// Initialize data types
 		initEDataType(eDataTypeEDataType, EDataType.class, "EDataType", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
-		initEDataType(eMapEDataType, EMap.class, "EMap", IS_SERIALIZABLE, !IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -967,12 +961,17 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		   new String[] {
 		   });	
 		addAnnotation
-		  (eDataTypeEDataType, 
+		  (automatonComponentBehaviorEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });	
 		addAnnotation
-		  (eMapEDataType, 
+		  (automatonComponentBehaviorEClass.getEOperations().get(2), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (eDataTypeEDataType, 
 		   source, 
 		   new String[] {
 		   });

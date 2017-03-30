@@ -1,40 +1,29 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
-<plugin>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated XSFSMMT -->
-    <package class="ur1.diverse.xmontiarcwithautomaton.xdsml.xsfsmmt.fsm.FsmPackage" genModel="model-gen/XSFSMMT.genmodel" uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xsfsmmt/fsm/" />
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated XMontiArcMT -->
-    <package class="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcmt.xmontiarc.XmontiarcPackage" genModel="model-gen/XMontiArcMT.genmodel" uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcmt/xmontiarc/" />
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated XMontiArcWithAutomatonMT -->
-    <package class="ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomatonmt.xmontiarc.XmontiarcPackage" genModel="model-gen/XMontiArcWithAutomatonMT.genmodel" uri="http://ur1.diverse.xmontiarcwithautomaton.xdsml.xmontiarcwithautomatonmt/xmontiarc/" />
-  </extension>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
   <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
-    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSM" xdsmlFilePath="/org.gemoc.xmontiarcfsm.xdsml/bin/org/gemoc/xmontiarcfsm/xdsml/xmontiarcfsm.melange" />
+    <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSM" xdsmlFilePath="/org.gemoc.xmontiarcfsm.xdsml/src/org/gemoc/xmontiarcfsm/xdsml/xmontiarcfsm.melange"/>
   </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated XMontiArcFSMMT -->
-    <package class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc.MontiarcPackage" genModel="model-gen/XMontiArcFSMMT.genmodel" uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt/montiarc/" />
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated XMontiArcFSMMT -->
-    <package class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.xmontiarc.XmontiarcPackage" genModel="model-gen/XMontiArcFSMMT.genmodel" uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt/xmontiarc/" />
-  </extension>
-  <extension point="fr.inria.diverse.melange.modeltype">
-    <modeltype id="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSMMT" uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt/">
-      <subtyping modeltypeId="org.gemoc.montiarc.MontiArcMT" />
-      <subtyping modeltypeId="org.gemoc.xmontiarc.xdsml.XMontiArcMT" />
-    </modeltype>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XMontiArcFSMMT -->
+      <package
+            uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt/montiarc/"
+            class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.montiarc.MontiarcPackage"
+            genModel="model-gen/XMontiArcFSMMT.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated XMontiArcFSMMT -->
+      <package
+            uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt/fsm/"
+            class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt.fsm.FsmPackage"
+            genModel="model-gen/XMontiArcFSMMT.genmodel"/>
+   </extension>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSMMT" uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsmmt/"/>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="Connector:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ConnectorAspect;ComponentType:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect;Port:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.PortAspect;Subcomponent:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspect" entryPoints="org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.main(org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.ComponentType)" exactType="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSMMT" id="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSM" uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/xmontiarc/">
-      <adapter class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.montiarcmt.XMontiArcFSMAdapter" modeltypeId="org.gemoc.montiarc.MontiArcMT" />
-      <adapter class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcmt.XMontiArcFSMAdapter" modeltypeId="org.gemoc.xmontiarc.xdsml.XMontiArcMT" />
-      <adapter class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcfsmmt.XMontiArcFSMAdapter" modeltypeId="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSMMT" />
+    <language aspects="Connector:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspect;Action:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ActionAspect;Variable:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.VariableAspect;StateMachine:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.StateMachineAspect;Port:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.PortAspect;Subcomponent:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspect;GreaterThanNumberGuard:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.GreaterThanNumberGuardAspect;EqualNumberGuard:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.EqualNumberGuardAspect;BooleanAction:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.BooleanActionAspect;Guard:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.GuardAspect;LessThanNumberGuard:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.LessThanNumberGuardAspect;ComponentType:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspect;StringGuard:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.StringGuardAspect;BooleanGuard:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.BooleanGuardAspect;StringVariable:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.StringVariableAspect;NumberGuard:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.NumberGuardAspect;NumberAction:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.NumberActionAspect;StringAction:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.StringActionAspect;NumberVariable:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.NumberVariableAspect;GreaterOrEqualThanNumberGuard:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.GreaterOrEqualThanNumberGuardAspect;State:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.StateAspect;BooleanVariable:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.BooleanVariableAspect;Transition:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.TransitionAspect;AutomatonComponentBehavior:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.AutomatonComponentBehaviorAspect,org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.AutomatonComponentBehaviorGlueAspect;LessOrEqualThanNumberGuard:org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.LessOrEqualThanNumberGuardAspect" description="language XMontiArcFSM {&#10;syntax &quot;platform:/resource/org.gemoc.portautomata.model/model/portautomata.ecore&quot;&#10;syntax &quot;platform:/resource/org.gemoc.montiarc.model/model/montiarc.ecore&quot;&#10;&#10;with org.gemoc.montiarcfsm.aspects.AutomatonComponentBehaviorGlueAspect&#10;&#10;with org.gemoc.montiarc.k3dsa.aspects.&#10;&#10;with  org.gemoc.portautomata.fsm.k3dsa.&#10;&#10;}" entryPoints="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ComponentTypeAspect.main(org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType);org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.StateMachineAspect.main(org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StateMachine)" exactType="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSMMT" id="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSM" uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/fsm/">
+      <adapter class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.adapters.xmontiarcfsmmt.XMontiArcFSMAdapter" modeltypeId="org.gemoc.xmontiarcfsm.xdsml.XMontiArcFSMMT"/>
     </language>
   </extension>
 </plugin>

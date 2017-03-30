@@ -500,13 +500,22 @@ public interface MontiarcPackage extends EPackage {
 	int SUBCOMPONENT__OUTGOING_PORTS = 4;
 
 	/**
+	 * The feature id for the '<em><b>Local Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SUBCOMPONENT__LOCAL_BEHAVIOR = 5;
+
+	/**
 	 * The number of structural features of the '<em>Subcomponent</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SUBCOMPONENT_FEATURE_COUNT = 5;
+	int SUBCOMPONENT_FEATURE_COUNT = 6;
 
 	/**
 	 * The meta object id for the '{@link org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.impl.ComponentBehaviorImpl <em>Component Behavior</em>}' class.
@@ -593,16 +602,6 @@ public interface MontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	int EDATA_TYPE = 13;
-
-	/**
-	 * The meta object id for the '<em>EMap</em>' data type.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.eclipse.emf.common.util.EMap
-	 * @see org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.impl.MontiarcPackageImpl#getEMap()
-	 * @generated
-	 */
-	int EMAP = 14;
 
 
 	/**
@@ -938,6 +937,17 @@ public interface MontiarcPackage extends EPackage {
 	EReference getSubcomponent_OutgoingPorts();
 
 	/**
+	 * Returns the meta object for the containment reference '{@link org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.Subcomponent#getLocalBehavior <em>Local Behavior</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the containment reference '<em>Local Behavior</em>'.
+	 * @see org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.Subcomponent#getLocalBehavior()
+	 * @see #getSubcomponent()
+	 * @generated
+	 */
+	EReference getSubcomponent_LocalBehavior();
+
+	/**
 	 * Returns the meta object for class '{@link org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.ComponentBehavior <em>Component Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -998,17 +1008,6 @@ public interface MontiarcPackage extends EPackage {
 	 * @generated
 	 */
 	EDataType getEDataType();
-
-	/**
-	 * Returns the meta object for data type '{@link org.eclipse.emf.common.util.EMap <em>EMap</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for data type '<em>EMap</em>'.
-	 * @see org.eclipse.emf.common.util.EMap
-	 * @model instanceClass="org.eclipse.emf.common.util.EMap"
-	 * @generated
-	 */
-	EDataType getEMap();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1299,6 +1298,14 @@ public interface MontiarcPackage extends EPackage {
 		EReference SUBCOMPONENT__OUTGOING_PORTS = eINSTANCE.getSubcomponent_OutgoingPorts();
 
 		/**
+		 * The meta object literal for the '<em><b>Local Behavior</b></em>' containment reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference SUBCOMPONENT__LOCAL_BEHAVIOR = eINSTANCE.getSubcomponent_LocalBehavior();
+
+		/**
 		 * The meta object literal for the '{@link org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.impl.ComponentBehaviorImpl <em>Component Behavior</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1355,16 +1362,6 @@ public interface MontiarcPackage extends EPackage {
 		 * @generated
 		 */
 		EDataType EDATA_TYPE = eINSTANCE.getEDataType();
-
-		/**
-		 * The meta object literal for the '<em>EMap</em>' data type.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.eclipse.emf.common.util.EMap
-		 * @see org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.impl.MontiarcPackageImpl#getEMap()
-		 * @generated
-		 */
-		EDataType EMAP = eINSTANCE.getEMap();
 
 	}
 

@@ -67,6 +67,7 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 			case MontiarcPackage.SUBCOMPONENT: return createSubcomponent();
 			case MontiarcPackage.GROOVY_COMPONENT_BEHAVIOR: return createGroovyComponentBehavior();
 			case MontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR: return createAutomatonComponentBehavior();
+			case MontiarcPackage.STATE_MACHINE: return createStateMachine();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -204,6 +205,16 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	public AutomatonComponentBehavior createAutomatonComponentBehavior() {
 		AutomatonComponentBehaviorImpl automatonComponentBehavior = new AutomatonComponentBehaviorImpl();
 		return automatonComponentBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StateMachine createStateMachine() {
+		StateMachineImpl stateMachine = new StateMachineImpl();
+		return stateMachine;
 	}
 
 	/**

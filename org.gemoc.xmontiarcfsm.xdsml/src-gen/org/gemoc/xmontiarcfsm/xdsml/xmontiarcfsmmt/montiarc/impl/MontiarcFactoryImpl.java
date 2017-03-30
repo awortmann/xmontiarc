@@ -67,6 +67,7 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 			case MontiarcPackage.SUBCOMPONENT: return createSubcomponent();
 			case MontiarcPackage.GROOVY_COMPONENT_BEHAVIOR: return createGroovyComponentBehavior();
 			case MontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR: return createAutomatonComponentBehavior();
+			case MontiarcPackage.STATE_MACHINE: return createStateMachine();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -193,6 +194,15 @@ public class MontiarcFactoryImpl extends EFactoryImpl implements MontiarcFactory
 	 * @generated
 	 */
 	public AutomatonComponentBehavior createAutomatonComponentBehavior() {
+		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public StateMachine createStateMachine() {
 		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
 

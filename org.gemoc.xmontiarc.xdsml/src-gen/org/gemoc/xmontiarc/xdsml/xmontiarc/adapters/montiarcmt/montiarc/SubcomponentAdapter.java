@@ -4,6 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import java.util.Collection;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.gemoc.montiarc.montiarc.ComponentBehavior;
 import org.gemoc.montiarc.montiarc.ComponentType;
 import org.gemoc.montiarc.montiarc.IncomingPort;
 import org.gemoc.montiarc.montiarc.OutgoingPort;
@@ -71,6 +72,18 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     return outgoingPorts_;
   }
   
+  @Override
+  public ComponentBehavior getLocalBehavior() {
+    return (ComponentBehavior) adaptersFactory.createAdapter(adaptee.getLocalBehavior(), eResource);
+  }
+  
+  @Override
+  public void setLocalBehavior(final ComponentBehavior o) {
+    if (o != null)
+    	adaptee.setLocalBehavior(((org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.montiarc.ComponentBehaviorAdapter) o).getAdaptee());
+    else adaptee.setLocalBehavior(null);
+  }
+  
   protected final static String NAME_EDEFAULT = "UnnamedSubcomponent";
   
   @Override
@@ -91,6 +104,8 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     		return getParent();
     	case org.gemoc.montiarc.montiarc.MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
     		return getOutgoingPorts();
+    	case org.gemoc.montiarc.montiarc.MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+    		return getLocalBehavior();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -109,6 +124,8 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     		return getParent() != null;
     	case org.gemoc.montiarc.montiarc.MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
     		return getOutgoingPorts() != null && !getOutgoingPorts().isEmpty();
+    	case org.gemoc.montiarc.montiarc.MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+    		return getLocalBehavior() != null;
     }
     
     return super.eIsSet(featureID);
@@ -139,6 +156,11 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     	case org.gemoc.montiarc.montiarc.MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
     		getOutgoingPorts().clear();
     		getOutgoingPorts().addAll((Collection) newValue);
+    		return;
+    	case org.gemoc.montiarc.montiarc.MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+    		setLocalBehavior(
+    		(org.gemoc.montiarc.montiarc.ComponentBehavior)
+    		 newValue);
     		return;
     }
     

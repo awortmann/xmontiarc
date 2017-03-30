@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.gemoc.montiarc.montiarc.ComponentBehavior;
 import org.gemoc.montiarc.montiarc.ComponentType;
 import org.gemoc.montiarc.montiarc.IncomingPort;
 import org.gemoc.montiarc.montiarc.MontiarcPackage;
@@ -38,6 +39,7 @@ import org.gemoc.montiarc.montiarc.Subcomponent;
  *   <li>{@link org.gemoc.montiarc.montiarc.impl.SubcomponentImpl#getIncomingPorts <em>Incoming Ports</em>}</li>
  *   <li>{@link org.gemoc.montiarc.montiarc.impl.SubcomponentImpl#getParent <em>Parent</em>}</li>
  *   <li>{@link org.gemoc.montiarc.montiarc.impl.SubcomponentImpl#getOutgoingPorts <em>Outgoing Ports</em>}</li>
+ *   <li>{@link org.gemoc.montiarc.montiarc.impl.SubcomponentImpl#getLocalBehavior <em>Local Behavior</em>}</li>
  * </ul>
  *
  * @generated
@@ -92,6 +94,16 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	 * @ordered
 	 */
 	protected EList<OutgoingPort> outgoingPorts;
+
+	/**
+	 * The cached value of the '{@link #getLocalBehavior() <em>Local Behavior</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLocalBehavior()
+	 * @generated
+	 * @ordered
+	 */
+	protected ComponentBehavior localBehavior;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -241,6 +253,49 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public ComponentBehavior getLocalBehavior() {
+		return localBehavior;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetLocalBehavior(ComponentBehavior newLocalBehavior, NotificationChain msgs) {
+		ComponentBehavior oldLocalBehavior = localBehavior;
+		localBehavior = newLocalBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, oldLocalBehavior, newLocalBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLocalBehavior(ComponentBehavior newLocalBehavior) {
+		if (newLocalBehavior != localBehavior) {
+			NotificationChain msgs = null;
+			if (localBehavior != null)
+				msgs = ((InternalEObject)localBehavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, null, msgs);
+			if (newLocalBehavior != null)
+				msgs = ((InternalEObject)newLocalBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, null, msgs);
+			msgs = basicSetLocalBehavior(newLocalBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, newLocalBehavior, newLocalBehavior));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -266,6 +321,8 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 				return basicSetParent(null, msgs);
 			case MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
 				return ((InternalEList<?>)getOutgoingPorts()).basicRemove(otherEnd, msgs);
+			case MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+				return basicSetLocalBehavior(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -303,6 +360,8 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 				return getParent();
 			case MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
 				return getOutgoingPorts();
+			case MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+				return getLocalBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -333,6 +392,9 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 				getOutgoingPorts().clear();
 				getOutgoingPorts().addAll((Collection<? extends OutgoingPort>)newValue);
 				return;
+			case MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+				setLocalBehavior((ComponentBehavior)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -360,6 +422,9 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 			case MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
 				getOutgoingPorts().clear();
 				return;
+			case MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+				setLocalBehavior((ComponentBehavior)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -382,6 +447,8 @@ public class SubcomponentImpl extends MinimalEObjectImpl.Container implements Su
 				return getParent() != null;
 			case MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
 				return outgoingPorts != null && !outgoingPorts.isEmpty();
+			case MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+				return localBehavior != null;
 		}
 		return super.eIsSet(featureID);
 	}

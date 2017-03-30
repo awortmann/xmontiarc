@@ -20,44 +20,56 @@ import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent;
 @SuppressWarnings("all")
 public class ConnectorAspect {
   public static void update(final Connector _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
-    _privk3_update(_self_, _self);;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext
+			.getSelf(_self);
+	_privk3_update(_self_, _self);
+	;
+}
   
   public static Port getSource(final Connector _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_getSource(_self_, _self);;
-    return (org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_getSource(_self_, _self);
+	;
+	return (org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port) result;
+}
   
   public static Port getTarget(final Connector _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_getTarget(_self_, _self);;
-    return (org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_getTarget(_self_, _self);
+	;
+	return (org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port) result;
+}
   
   public static String getSourceRepresentation(final Connector _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_getSourceRepresentation(_self_, _self);;
-    return (java.lang.String)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_getSourceRepresentation(_self_, _self);
+	;
+	return (java.lang.String) result;
+}
   
   public static String getTargetRepresentation(final Connector _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_getTargetRepresentation(_self_, _self);;
-    return (java.lang.String)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_getTargetRepresentation(_self_, _self);
+	;
+	return (java.lang.String) result;
+}
   
   public static String getRepresentation(final Connector _self) {
-    final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext.getSelf(_self);
-    Object result = null;
-    result = _privk3_getRepresentation(_self_, _self);;
-    return (java.lang.String)result;
-  }
+	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.ConnectorAspectConnectorAspectContext
+			.getSelf(_self);
+	Object result = null;
+	result = _privk3_getRepresentation(_self_, _self);
+	;
+	return (java.lang.String) result;
+}
   
   protected static void _privk3_update(final ConnectorAspectConnectorAspectProperties _self_, final Connector _self) {
     if ((_self instanceof IntermediateConnector)) {

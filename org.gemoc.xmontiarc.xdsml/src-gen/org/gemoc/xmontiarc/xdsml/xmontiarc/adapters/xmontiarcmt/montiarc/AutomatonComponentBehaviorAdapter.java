@@ -15,6 +15,21 @@ public class AutomatonComponentBehaviorAdapter extends EObjectAdapter<AutomatonC
   }
   
   @Override
+  public void process() {
+    org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.AutomatonComponentBehaviorAspect.process(adaptee);
+  }
+  
+  @Override
+  public void sendPortValuesToAutomaton() {
+    org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.AutomatonComponentBehaviorAspect.sendPortValuesToAutomaton(adaptee);
+  }
+  
+  @Override
+  public void setPortValuesFromAutomaton() {
+    org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.AutomatonComponentBehaviorAspect.setPortValuesFromAutomaton(adaptee);
+  }
+  
+  @Override
   public EClass eClass() {
     return org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.MontiarcPackage.eINSTANCE.getAutomatonComponentBehavior();
   }

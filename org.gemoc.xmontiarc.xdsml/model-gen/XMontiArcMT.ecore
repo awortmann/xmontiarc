@@ -140,6 +140,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingPorts" upperBound="-1" eType="//IncomingPort" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="//ComponentType" eOpposite="//ComponentType/subcomponents"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingPorts" upperBound="-1" eType="//OutgoingPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localBehavior" eType="//ComponentBehavior" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DataType">
     <eLiterals name="Number" value="1" literal="Number"/>
@@ -152,7 +153,17 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="AutomatonComponentBehavior" eSuperTypes="//ComponentBehavior"/>
+  <eClassifiers xsi:type="ecore:EClass" name="AutomatonComponentBehavior" eSuperTypes="//ComponentBehavior">
+    <eOperations name="sendPortValuesToAutomaton">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+    <eOperations name="process">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+    <eOperations name="setPortValuesFromAutomaton">
+      <eAnnotations source="aspect"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="EDataType" instanceClassName="org.eclipse.emf.ecore.EDataType">
     <eAnnotations source="aspect"/>
   </eClassifiers>

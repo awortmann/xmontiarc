@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.gemoc.montiarc.montiarc.Subcomponent#getIncomingPorts <em>Incoming Ports</em>}</li>
  *   <li>{@link org.gemoc.montiarc.montiarc.Subcomponent#getParent <em>Parent</em>}</li>
  *   <li>{@link org.gemoc.montiarc.montiarc.Subcomponent#getOutgoingPorts <em>Outgoing Ports</em>}</li>
+ *   <li>{@link org.gemoc.montiarc.montiarc.Subcomponent#getLocalBehavior <em>Local Behavior</em>}</li>
  * </ul>
  *
  * @see org.gemoc.montiarc.montiarc.MontiarcPackage#getSubcomponent()
@@ -140,5 +141,31 @@ public interface Subcomponent extends EObject {
 	 * @generated
 	 */
 	EList<OutgoingPort> getOutgoingPorts();
+
+	/**
+	 * Returns the value of the '<em><b>Local Behavior</b></em>' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Local Behavior</em>' containment reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Local Behavior</em>' containment reference.
+	 * @see #setLocalBehavior(ComponentBehavior)
+	 * @see org.gemoc.montiarc.montiarc.MontiarcPackage#getSubcomponent_LocalBehavior()
+	 * @model containment="true"
+	 * @generated
+	 */
+	ComponentBehavior getLocalBehavior();
+
+	/**
+	 * Sets the value of the '{@link org.gemoc.montiarc.montiarc.Subcomponent#getLocalBehavior <em>Local Behavior</em>}' containment reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Local Behavior</em>' containment reference.
+	 * @see #getLocalBehavior()
+	 * @generated
+	 */
+	void setLocalBehavior(ComponentBehavior value);
 
 } // Subcomponent

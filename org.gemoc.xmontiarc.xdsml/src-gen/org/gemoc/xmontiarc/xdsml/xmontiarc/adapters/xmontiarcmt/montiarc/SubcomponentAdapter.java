@@ -6,6 +6,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.XMontiArcMTAdaptersFactory;
 import org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.Subcomponent;
+import org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.ComponentBehavior;
 import org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.ComponentType;
 import org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.IncomingPort;
 import org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.OutgoingPort;
@@ -72,6 +73,18 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
   }
   
   @Override
+  public ComponentBehavior getLocalBehavior() {
+    return (ComponentBehavior) adaptersFactory.createAdapter(adaptee.getLocalBehavior(), eResource);
+  }
+  
+  @Override
+  public void setLocalBehavior(final ComponentBehavior o) {
+    if (o != null)
+    	adaptee.setLocalBehavior(((org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.montiarc.ComponentBehaviorAdapter) o).getAdaptee());
+    else adaptee.setLocalBehavior(null);
+  }
+  
+  @Override
   public void compute() {
     org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspect.compute(adaptee);
   }
@@ -101,6 +114,8 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     		return getParent();
     	case org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
     		return getOutgoingPorts();
+    	case org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+    		return getLocalBehavior();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -119,6 +134,8 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     		return getParent() != null;
     	case org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
     		return getOutgoingPorts() != null && !getOutgoingPorts().isEmpty();
+    	case org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+    		return getLocalBehavior() != null;
     }
     
     return super.eIsSet(featureID);
@@ -149,6 +166,11 @@ public class SubcomponentAdapter extends EObjectAdapter<Subcomponent> implements
     	case org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
     		getOutgoingPorts().clear();
     		getOutgoingPorts().addAll((Collection) newValue);
+    		return;
+    	case org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+    		setLocalBehavior(
+    		(org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc.ComponentBehavior)
+    		 newValue);
     		return;
     }
     

@@ -14,4 +14,28 @@ package org.gemoc.xmontiarc.xdsml.xmontiarcmt.montiarc;
  * @generated
  */
 public interface AutomatonComponentBehavior extends ComponentBehavior {
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void sendPortValuesToAutomaton();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void process();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void setPortValuesFromAutomaton();
 } // AutomatonComponentBehavior

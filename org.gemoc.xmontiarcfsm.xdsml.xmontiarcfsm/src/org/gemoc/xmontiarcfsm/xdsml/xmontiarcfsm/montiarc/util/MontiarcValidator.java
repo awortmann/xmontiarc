@@ -111,6 +111,8 @@ public class MontiarcValidator extends EObjectValidator {
 				return validateGroovyComponentBehavior((GroovyComponentBehavior)value, diagnostics, context);
 			case MontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR:
 				return validateAutomatonComponentBehavior((AutomatonComponentBehavior)value, diagnostics, context);
+			case MontiarcPackage.STATE_MACHINE:
+				return validateStateMachine((StateMachine)value, diagnostics, context);
 			case MontiarcPackage.DATA_TYPE:
 				return validateDataType((DataType)value, diagnostics, context);
 			case MontiarcPackage.EDATA_TYPE:
@@ -487,6 +489,15 @@ public class MontiarcValidator extends EObjectValidator {
 	 */
 	public boolean validateAutomatonComponentBehavior(AutomatonComponentBehavior automatonComponentBehavior, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(automatonComponentBehavior, diagnostics, context);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean validateStateMachine(StateMachine stateMachine, DiagnosticChain diagnostics, Map<Object, Object> context) {
+		return validate_EveryDefaultConstraint(stateMachine, diagnostics, context);
 	}
 
 	/**

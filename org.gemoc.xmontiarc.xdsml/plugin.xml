@@ -17,7 +17,7 @@
     </modeltype>
   </extension>
   <extension point="fr.inria.diverse.melange.language">
-    <language aspects="Connector:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ConnectorAspect;ComponentType:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect;Port:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.PortAspect;Subcomponent:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspect" entryPoints="org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.main(org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.ComponentType)" exactType="org.gemoc.xmontiarc.xdsml.XMontiArcMT" id="org.gemoc.xmontiarc.xdsml.XMontiArc" uri="http://org.gemoc.xmontiarc.xdsml.xmontiarc/montiarc/">
+    <language aspects="Connector:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ConnectorAspect;ComponentType:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect;Port:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.PortAspect;Subcomponent:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.SubcomponentAspect;AutomatonComponentBehavior:org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.AutomatonComponentBehaviorAspect" entryPoints="org.gemoc.xmontiarc.xdsml.xmontiarc.aspects.ComponentTypeAspect.main(org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.ComponentType)" exactType="org.gemoc.xmontiarc.xdsml.XMontiArcMT" id="org.gemoc.xmontiarc.xdsml.XMontiArc" uri="http://org.gemoc.xmontiarc.xdsml.xmontiarc/montiarc/">
       <adapter class="org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.montiarcmt.XMontiArcAdapter" modeltypeId="org.gemoc.montiarc.MontiArcMT" />
       <adapter class="org.gemoc.xmontiarc.xdsml.xmontiarc.adapters.xmontiarcmt.XMontiArcAdapter" modeltypeId="org.gemoc.xmontiarc.xdsml.XMontiArcMT" />
     </language>

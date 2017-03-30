@@ -13,6 +13,10 @@ import org.eclipse.emf.ecore.EValidator;
 
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
+
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.impl.FsmPackageImpl;
+
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.AutomatonComponentBehavior;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentBehavior;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType;
@@ -27,13 +31,10 @@ import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.OutgoingConnector;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.OutgoingPort;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.StateMachine;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.util.MontiarcValidator;
-
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.xmontiarc.XmontiarcPackage;
-
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.xmontiarc.impl.XmontiarcPackageImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -131,6 +132,13 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	private EClass stateMachineEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	private EEnum dataTypeEEnum = null;
 
 	/**
@@ -187,15 +195,15 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		isInited = true;
 
 		// Obtain or create and register interdependencies
-		XmontiarcPackageImpl theXmontiarcPackage = (XmontiarcPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(XmontiarcPackage.eNS_URI) instanceof XmontiarcPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(XmontiarcPackage.eNS_URI) : XmontiarcPackage.eINSTANCE);
+		FsmPackageImpl theFsmPackage = (FsmPackageImpl)(EPackage.Registry.INSTANCE.getEPackage(FsmPackage.eNS_URI) instanceof FsmPackageImpl ? EPackage.Registry.INSTANCE.getEPackage(FsmPackage.eNS_URI) : FsmPackage.eINSTANCE);
 
 		// Create package meta-data objects
 		theMontiarcPackage.createPackageContents();
-		theXmontiarcPackage.createPackageContents();
+		theFsmPackage.createPackageContents();
 
 		// Initialize created meta-data
 		theMontiarcPackage.initializePackageContents();
-		theXmontiarcPackage.initializePackageContents();
+		theFsmPackage.initializePackageContents();
 
 		// Register package validator
 		EValidator.Registry.INSTANCE.put
@@ -499,6 +507,15 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getSubcomponent_LocalBehavior() {
+		return (EReference)subcomponentEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getComponentBehavior() {
 		return componentBehaviorEClass;
 	}
@@ -528,6 +545,24 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 	 */
 	public EClass getAutomatonComponentBehavior() {
 		return automatonComponentBehaviorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getAutomatonComponentBehavior_DelegateFSM() {
+		return (EReference)automatonComponentBehaviorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getStateMachine() {
+		return stateMachineEClass;
 	}
 
 	/**
@@ -615,6 +650,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		createEReference(subcomponentEClass, SUBCOMPONENT__INCOMING_PORTS);
 		createEReference(subcomponentEClass, SUBCOMPONENT__PARENT);
 		createEReference(subcomponentEClass, SUBCOMPONENT__OUTGOING_PORTS);
+		createEReference(subcomponentEClass, SUBCOMPONENT__LOCAL_BEHAVIOR);
 
 		componentBehaviorEClass = createEClass(COMPONENT_BEHAVIOR);
 
@@ -622,6 +658,9 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		createEAttribute(groovyComponentBehaviorEClass, GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY);
 
 		automatonComponentBehaviorEClass = createEClass(AUTOMATON_COMPONENT_BEHAVIOR);
+		createEReference(automatonComponentBehaviorEClass, AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM);
+
+		stateMachineEClass = createEClass(STATE_MACHINE);
 
 		// Create enums
 		dataTypeEEnum = createEEnum(DATA_TYPE);
@@ -739,6 +778,7 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		initEReference(getSubcomponent_IncomingPorts(), this.getIncomingPort(), null, "incomingPorts", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_Parent(), this.getComponentType(), this.getComponentType_Subcomponents(), "parent", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getSubcomponent_OutgoingPorts(), this.getOutgoingPort(), null, "outgoingPorts", null, 0, -1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getSubcomponent_LocalBehavior(), this.getComponentBehavior(), null, "localBehavior", null, 0, 1, Subcomponent.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(subcomponentEClass, null, "createDefaultBehavior", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -750,6 +790,15 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		initEAttribute(getGroovyComponentBehavior_ScriptBody(), ecorePackage.getEString(), "scriptBody", "\"\"", 1, 1, GroovyComponentBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(automatonComponentBehaviorEClass, AutomatonComponentBehavior.class, "AutomatonComponentBehavior", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAutomatonComponentBehavior_DelegateFSM(), this.getStateMachine(), null, "delegateFSM", null, 0, 1, AutomatonComponentBehavior.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(automatonComponentBehaviorEClass, null, "sendPortValuesToAutomaton", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(automatonComponentBehaviorEClass, null, "process", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(automatonComponentBehaviorEClass, null, "setPortValuesFromAutomaton", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		initEClass(stateMachineEClass, StateMachine.class, "StateMachine", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Initialize enums and add enum literals
 		initEEnum(dataTypeEEnum, DataType.class, "DataType");
@@ -948,7 +997,32 @@ public class MontiarcPackageImpl extends EPackageImpl implements MontiarcPackage
 		   new String[] {
 		   });	
 		addAnnotation
+		  (automatonComponentBehaviorEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (automatonComponentBehaviorEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (automatonComponentBehaviorEClass.getEOperations().get(2), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getAutomatonComponentBehavior_DelegateFSM(), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (eDataTypeEDataType, 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (stateMachineEClass, 
 		   source, 
 		   new String[] {
 		   });

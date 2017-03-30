@@ -5,7 +5,7 @@
 <plugin>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated portautomata -->
-    <package class="org.gemoc.portautomata.fsm.fsmPackage" genModel="model/portautomata.genmodel" uri="http://www.gemoc.org/legacyfsm/fsm" />
+    <package uri="http://www.gemoc.org/legacyfsm/fsm" class="org.gemoc.portautomata.fsm.fsmPackage" genModel="model/portautomata.genmodel" />
   </extension>
   <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
     <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.portautomata.PortAutomata" xdsmlFilePath="/org.gemoc.portautomata.model/src/org/gemoc/portautomata/PortAutomata.melange" />

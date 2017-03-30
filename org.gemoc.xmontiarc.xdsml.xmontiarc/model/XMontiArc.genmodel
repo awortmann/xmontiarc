@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="ASCII"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.xmontiarc.xdsml.xmontiarc/src/" modelPluginID="org.gemoc.xmontiarc.xdsml.xmontiarc" modelName="XMontiArc" complianceLevel="7.0" copyrightFields="false">
-  <foreignModel>platform:/resource/org.gemoc.xmontiarc.xdsml.xmontiarc/model/XMontiArc.ecore</foreignModel>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.xmontiarc.xdsml.xmontiarc/src/" modelPluginID="org.gemoc.xmontiarc.xdsml.xmontiarc" modelName="XMontiArc" importerID="org.eclipse.emf.importer.ecore" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>XMontiArc.ecore</foreignModel>
   <genPackages prefix="Montiarc" basePackage="org.gemoc.xmontiarc.xdsml.xmontiarc" disposableProviderFactory="true" fileExtensions="xmontiarc">
     <ecorePackage href="XMontiArc.ecore#/"/>
     <genEnums typeSafeEnumCompatible="false">
@@ -164,6 +164,9 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="XMontiArc.ecore#//Subcomponent/outgoingPorts"/>
       </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArc.ecore#//Subcomponent/localBehavior"/>
+      </genFeatures>
       <genOperations>
         <ecoreOperation href="XMontiArc.ecore#//Subcomponent/createDefaultBehavior"/>
       </genOperations>
@@ -182,6 +185,15 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="XMontiArc.ecore#//AutomatonComponentBehavior"/>
+      <genOperations>
+        <ecoreOperation href="XMontiArc.ecore#//AutomatonComponentBehavior/sendPortValuesToAutomaton"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArc.ecore#//AutomatonComponentBehavior/process"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArc.ecore#//AutomatonComponentBehavior/setPortValuesFromAutomaton"/>
+      </genOperations>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

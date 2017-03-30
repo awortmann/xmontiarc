@@ -112,6 +112,15 @@ public interface MontiarcFactory extends EFactory {
 	AutomatonComponentBehavior createAutomatonComponentBehavior();
 
 	/**
+	 * Returns a new object of class '<em>State Machine</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>State Machine</em>'.
+	 * @generated
+	 */
+	StateMachine createStateMachine();
+
+	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

@@ -164,6 +164,9 @@
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#//Subcomponent/outgoingPorts"/>
       </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="XMontiArcMT.ecore#//Subcomponent/localBehavior"/>
+      </genFeatures>
       <genOperations>
         <ecoreOperation href="XMontiArcMT.ecore#//Subcomponent/createDefaultBehavior"/>
       </genOperations>
@@ -182,6 +185,15 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="XMontiArcMT.ecore#//AutomatonComponentBehavior"/>
+      <genOperations>
+        <ecoreOperation href="XMontiArcMT.ecore#//AutomatonComponentBehavior/sendPortValuesToAutomaton"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcMT.ecore#//AutomatonComponentBehavior/process"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="XMontiArcMT.ecore#//AutomatonComponentBehavior/setPortValuesFromAutomaton"/>
+      </genOperations>
     </genClasses>
   </genPackages>
   <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>

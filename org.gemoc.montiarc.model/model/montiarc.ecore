@@ -75,6 +75,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="incomingPorts" upperBound="-1" eType="//IncomingPort" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="parent" eType="//ComponentType" eOpposite="//ComponentType/subcomponents"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="outgoingPorts" upperBound="-1" eType="//OutgoingPort" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="localBehavior" eType="//ComponentBehavior" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="DataType">
     <eLiterals name="Number" value="1" literal="Number"/>

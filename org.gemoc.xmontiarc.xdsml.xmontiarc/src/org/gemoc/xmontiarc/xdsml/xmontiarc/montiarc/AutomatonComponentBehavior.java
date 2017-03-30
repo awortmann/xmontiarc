@@ -2,7 +2,6 @@
  */
 package org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc;
 
-import org.eclipse.emf.common.util.EMap;
 
 /**
  * <!-- begin-user-doc -->
@@ -18,9 +17,25 @@ public interface AutomatonComponentBehavior extends ComponentBehavior {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model varsDataType="org.gemoc.xmontiarc.xdsml.xmontiarc.montiarc.EMap"
+	 * @model
 	 * @generated
 	 */
-	void process(EMap vars);
+	void sendPortValuesToAutomaton();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void process();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	void setPortValuesFromAutomaton();
 
 } // AutomatonComponentBehavior
