@@ -26,21 +26,20 @@ import static extension org.gemoc.montiarc.k3dsa.aspects.PortAspect.*
 import static extension org.gemoc.montiarc.k3dsa.aspects.ConnectorAspect.*
 import static extension org.gemoc.montiarc.k3dsa.aspects.SubcomponentAspect.*
 import static extension org.gemoc.montiarc.k3dsa.aspects.AutomatonComponentBehaviorAspect.*
-import fr.inria.diverse.k3.al.annotationprocessor.Containment
-import org.eclipse.emf.common.util.EMap
+import java.util.Map
+import java.util.HashMap
 
 //import automata.Automaton
-
 @Aspect(className=AutomatonComponentBehavior)
 class AutomatonComponentBehaviorAspect {
- 	def void process(EMap<String, Object> vars){
- 		//_self.eContainer
- 	}
+    def Map<String, Object> process(Map<String, Object> inputs) {
+        return new HashMap<String, Object>();
+    }
 }
 
 @Aspect(className=ComponentType)
 class ComponentTypeAspect {
-    
+
     @InitializeModel
     @Step
     def public void initializeModel(EList<String> args) {
@@ -103,11 +102,11 @@ class ComponentTypeAspect {
     def EList<Port> getOutgoingPortsOfSubcomponents() {
         return _self.getDirectedPortsOfSubcomponents(false);
     }
-    
+
     def EList<Port> getIncomingPortsOfSubcomponents() {
         return _self.getDirectedPortsOfSubcomponents(true);
     }
-    
+
     def EList<Port> getDirectedPortsOfSubcomponents(boolean collectIncoming) {
         var EList<Port> ports = new BasicEList<Port>();
         for (Subcomponent sc : _self.getSubcomponents()) {
@@ -119,15 +118,15 @@ class ComponentTypeAspect {
         }
         return ports;
     }
-   
+
 }
 
 @Aspect(className=Port)
 class PortAspect {
-    public EDataType value;
-    
+    public Object value;
+
     def String toString() {
-        return _self.value.name
+        return _self.value.toString
     }
 }
 
@@ -139,62 +138,53 @@ class ConnectorAspect {
             val IntermediateConnector c = _self as IntermediateConnector
             c.target.value = c.source.value
             c.source.value = null
-        }
-        else if (_self instanceof IncomingConnector) {
+        } else if (_self instanceof IncomingConnector) {
             val IncomingConnector c = _self as IncomingConnector
             c.target.value = c.source.value
             c.source.value = null
-        }
-        else if (_self instanceof OutgoingConnector) {
+        } else if (_self instanceof OutgoingConnector) {
             val OutgoingConnector c = _self as OutgoingConnector
             c.target.value = c.source.value
             c.source.value = null
-        }
-        else {
+        } else {
             throw new Error("Trying to pass a message over instance of abstract connector class")
         }
     }
-    
+
     def Port getSource() {
         var Port source;
         if (_self instanceof IntermediateConnector) {
             val IntermediateConnector c = _self as IntermediateConnector
             source = c.getSource();
-        }
-        else if (_self instanceof IncomingConnector) {
+        } else if (_self instanceof IncomingConnector) {
             val IncomingConnector c = _self as IncomingConnector
             source = c.getSource();
-        }
-        else if (_self instanceof OutgoingConnector) {
+        } else if (_self instanceof OutgoingConnector) {
             val OutgoingConnector c = _self as OutgoingConnector
             source = c.getSource();
-        }
-        else {
+        } else {
             throw new Error("Found instance of abstract class Connector.");
         }
         return source;
     }
-    
-     def Port getTarget() {
+
+    def Port getTarget() {
         var Port target;
         if (_self instanceof IntermediateConnector) {
             val IntermediateConnector c = _self as IntermediateConnector
             target = c.getTarget();
-        }
-        else if (_self instanceof IncomingConnector) {
+        } else if (_self instanceof IncomingConnector) {
             val IncomingConnector c = _self as IncomingConnector
             target = c.getTarget();
-        }
-        else if (_self instanceof OutgoingConnector) {
+        } else if (_self instanceof OutgoingConnector) {
             val OutgoingConnector c = _self as OutgoingConnector
             target = c.getTarget();
-        }
-        else {
+        } else {
             throw new Error("Found instance of abstract class Connector.");
         }
         return target;
     }
-    
+
     def String getSourceRepresentation() {
         if (_self.getParent() != null) {
             var Subcomponent sc = _self.getParent().findOwnerOf(_self.getSource);
@@ -222,58 +212,61 @@ class ConnectorAspect {
 
 @Aspect(className=Subcomponent)
 class SubcomponentAspect {
-    
+
     private static Random rand = new Random();
-    
-    def void createDefaultBehavior() {
+
+    def Map<String,Object> createDefaultBehavior() {
+        var Map<String, Object> results = new HashMap<String, Object>();
         for (Port p : _self.outgoingPorts) {
-            var EDataType data
-            if (p.getType().equals(DataType.BOOLEAN)) {
-                data =  EcorePackage.eINSTANCE.getEBoolean();
-                data.setName("true");
-            }
-            else if (p.getType().equals(DataType.NUMBER)) {
-                data =  EcorePackage.eINSTANCE.getELong();
-                data.setName(""+(rand.nextInt(100)+1));
-            }
-            else if (p.getType().equals(DataType.STRING)) {
-                data =  EcorePackage.eINSTANCE.getEString();
-                data.setName("HalloWelt"+(rand.nextInt(100)+1));
+            
+            var Object data
+            if (p.type.equals(DataType.BOOLEAN)) {
+                p.value = true
+            } else if (p.type.equals(DataType.NUMBER)) { 
+                p.value =  (rand.nextInt(100) + 1);
+            } else if (p.type.equals(DataType.STRING)) { 
+                p.value = "Hello ICSA " + (rand.nextInt(100) + 1);
             }
             p.value = data
         }
+        return results
     }
-    
+
     @Step
     def void compute() {
-        // println("SubcomponentAspect.compute()")
         println("### Computing behavior for subcomponent '" + _self.type.name + "." + _self.name + "'.");
-        // for atomic components: delegate behavior computation to their Groovy script
-        if (_self.type.subcomponents.isEmpty) { // assume an atomic component
-        // println("Subcomponent '" + _self.name + "' is atomic.");
-            for (Port p : _self.outgoingPorts) {
-                // println("Subcomponent '" + _self.name + "' has port '" + p.name + "'.");
-                val ComponentBehavior behavior = _self.type.behavior
-                if (behavior instanceof GroovyComponentBehavior) {
-                    _self.createDefaultBehavior()
-                } 
-                else if (behavior instanceof AutomatonComponentBehavior) {
-                    // TODO 
-                    behavior.process(null)
-                }
-                else {
-                   // Should never occurs !
-                }
-                // println("Behavior of '" + _self.name + "' is '" + behavior + "'.")
-                // println("Computing next value of outgoing port " + _self.name + "." + p.name + ".")
-                
-                println("### Assigning value '" + p.value + "' to outgoing port " + _self.name + "." + p.name + ".")
+        
+        // for atomic components, call the behavior of their behavior description
+        if (_self.type.subcomponents.isEmpty) { 
+            var Map<String, Object> inputs = new HashMap<String, Object>();
+            // wrap port values
+            for (Port p : _self.incomingPorts) {
+                inputs.put(p.name, p.value)
             }
+            // compute behavior
+            val ComponentBehavior behavior = _self.type.behavior
+            var Map<String, Object> results;
+            if (behavior instanceof GroovyComponentBehavior) {
+                results = _self.createDefaultBehavior() // TODO: call groovy script
+            } else if (behavior instanceof AutomatonComponentBehavior) {
+                results = behavior.process(inputs)
+            } else {
+                throw new Error("Found unregistered component behavior modeling technique")
+            }
+            // unwrap port values
+            for (Map.Entry<String,Object> entry : results.entrySet) {
+                for (Port p : _self.outgoingPorts) {
+                    if (p.name == entry.key) {
+                        p.value = entry.value
+                    }
+                }
+            }
+
         } // for composed components, propagate computation to subcomponents
         else {
             println("=> Computing behavior for composed subcomponent '" + _self.type.name + "." + _self.name + "'.");
             for (Subcomponent ci : _self.type.subcomponents) {
-                
+
                 ci.compute();
             }
         }
