@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="xmontiarc" version="11.1.1.201610211630">
+  <ownedViewpoints name="components">
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Component Diagram" domainClass="xmontiarc.ComponentType" enablePopupBars="true">
+      <metamodel href="../../ur1.diverse.xmontiarc.xdsml.xmontiarc/model/XMontiArc.ecore#/0"/>
+      <metamodel href="../../ur1.diverse.xmontiarc.xdsml.xmontiarc/model/XMontiArc.ecore#/1"/>
+      <defaultLayer name="Default">
+        <edgeMappings name="IncomingConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']" targetFinderExpression="service:getIncomingConnectorTargetPortCandidates()" sourceFinderExpression="service:getIncomingConnectorSourcePortCandidates()" domainClass="xmontiarc.IncomingConnector" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="OutgoingConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']" targetFinderExpression="service:getOutgoingConnectorTargetPortCandidates()" sourceFinderExpression="service:getOutgoingConnectorSourcePortCandidates()" domainClass="xmontiarc.OutgoingConnector" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <edgeMappings name="IntermediateConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']" targetFinderExpression="service:getOutgoingConnectorTargetPortCandidates()" sourceFinderExpression="service:getOutgoingConnectorSourcePortCandidates()" domainClass="xmontiarc.IntermediateConnector" useDomainElement="true">
+          <style sizeComputationExpression="2">
+            <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <centerLabelStyleDescription>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            </centerLabelStyleDescription>
+          </style>
+        </edgeMappings>
+        <containerMappings name="ComponentTypeContainer" semanticCandidatesExpression="var:self" domainClass="xmontiarc.ComponentType">
+          <borderedNodeMappings name="ComponentTypeIncomingPortNode" semanticCandidatesExpression="service:getComponentIncomingPorts()" domainClass="xmontiarc.IncomingPort">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>EAST</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
+          <borderedNodeMappings name="ComponentTypeOutgoingPortNode" semanticCandidatesExpression="service:getComponentOutgoingPorts()" domainClass="xmontiarc.OutgoingPort">
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <forbiddenSides>WEST</forbiddenSides>
+              <forbiddenSides>SOUTH</forbiddenSides>
+              <forbiddenSides>NORTH</forbiddenSides>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </borderedNodeMappings>
+          <subNodeMappings name="SubcomponentNode" semanticCandidatesExpression="feature:subcomponents" domainClass="xmontiarc.Subcomponent">
+            <borderedNodeMappings name="SubcomponentIncomingPortNode" semanticCandidatesExpression="service:getSubcomponentIncomingPorts()" domainClass="xmontiarc.IncomingPort">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>EAST</forbiddenSides>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </borderedNodeMappings>
+            <borderedNodeMappings name="SubcomponentOutgoingPortNode" semanticCandidatesExpression="service:getSubcomponentOutgoingPorts()" domainClass="xmontiarc.OutgoingPort">
+              <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
+                <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+                <forbiddenSides>WEST</forbiddenSides>
+                <forbiddenSides>SOUTH</forbiddenSides>
+                <forbiddenSides>NORTH</forbiddenSides>
+                <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+              </style>
+            </borderedNodeMappings>
+            <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="service:getSubcomponentLabel()" labelPosition="node" resizeKind="NSEW">
+              <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+              <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            </style>
+          </subNodeMappings>
+          <style xsi:type="style:FlatContainerStyleDescription" borderSizeComputationExpression="1" labelSize="16" showIcon="false" backgroundStyle="Liquid">
+            <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
+            <backgroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+            <foregroundColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
+          </style>
+        </containerMappings>
+        <toolSections name="New" label="New Elements">
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="NewSubcomponent" label="New Subcomponent" nodeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="xmontiarc.Subcomponent" referenceName="subcomponents">
+                  <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="CallNewSubcomponentAction" action="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewSubcomponentAction']"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewSubcomponentAction" id="ur1.diverse.xmontiarc.design.CreateSubcomponentAction1">
+            <parameters name="subcomponent" value="var:self"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="NewIncomingPort" label="New Incoming Port" nodeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="xmontiarc.IncomingPort" referenceName="incomingPorts">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="UnnamedPort"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Number"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:NodeCreationDescription" name="NewOutgoingPort" label="New Outgoing Port" nodeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']">
+            <variable name="container"/>
+            <viewVariable name="containerView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="xmontiarc.OutgoingPort" referenceName="outgoingPorts">
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="UnnamedPort"/>
+                  <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Number"/>
+                </subModelOperations>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+        </toolSections>
+        <toolSections name="NewConnectors" label="New Connectors">
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewIncomingConnector" label="Incoming Connector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IncomingConnectorEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:source"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="aql:target"/>
+                <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="CallNewIncomingConnectorAction" action="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='NewIncomingConnectorAction']"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewOutgoingConnector" label="Outgoing Connector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='OutgoingConnectorEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:source"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="aql:target"/>
+                <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="CallNewOutgoingConnectorAction" action="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='NewOutgoingConnectorAction']"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool:EdgeCreationDescription" name="NewIntermediateConnector" label="Intermediate Connector" edgeMappings="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@edgeMappings[name='IntermediateConnectorEdge']">
+            <sourceVariable name="source"/>
+            <targetVariable name="target"/>
+            <sourceViewVariable name="sourceView"/>
+            <targetViewVariable name="targetView"/>
+            <initialOperation>
+              <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="source" valueExpression="aql:source"/>
+                <subModelOperations xsi:type="tool_1:SetValue" featureName="target" valueExpression="aql:target"/>
+                <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="CallNewIIntermediateConnectorAction" action="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@toolSections.1/@ownedTools[name='NewIntermediateConnectorAction']"/>
+              </firstModelOperations>
+            </initialOperation>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewIncomingConnectorAction" id="ur1.diverse.xmontiarc.design.CreateIncomingConnectorAction1">
+            <parameters name="source" value="var:source"/>
+            <parameters name="target" value="var:target"/>
+            <parameters name="sourceComponentType" value="aql:self.eContainer()"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewOutgoingConnectorAction" id="ur1.diverse.xmontiarc.design.CreateOutgoingConnectorAction1">
+            <parameters name="source" value="var:source"/>
+            <parameters name="target" value="var:target"/>
+            <parameters name="sourceSubcomponent" value="aql:self.eContainer()"/>
+          </ownedTools>
+          <ownedTools xsi:type="tool_1:ExternalJavaAction" name="NewIntermediateConnectorAction" id="ur1.diverse.xmontiarc.design.CreateIntermediateConnectorAction1">
+            <parameters name="source" value="var:source"/>
+            <parameters name="target" value="var:target"/>
+            <parameters name="sourceSubcomponent" value="aql:self.eContainer()"/>
+          </ownedTools>
+        </toolSections>
+      </defaultLayer>
+    </ownedRepresentations>
+    <ownedJavaExtensions qualifiedClassName="ur1.diverse.xmontiarc.design.Services"/>
+  </ownedViewpoints>
+</description:Group>
