@@ -50,12 +50,10 @@ class AutomatonComponentBehaviorGlueAspect extends  AutomatonComponentBehaviorAs
 					v.value = p.value.toString
 				}
 				NumberVariable case p.type == "Number" : {
-					// TODO						
-					//v.value = p.value.
+					v.value = Long.parseLong(p.value.name)
 				}
 				BooleanVariable case p.type == "Boolean" : {
-					// TODO
-					//v.value = p.value.
+					v.value = p.value.name == "true"
 				}
 				default: {
 					
@@ -84,16 +82,13 @@ class AutomatonComponentBehaviorGlueAspect extends  AutomatonComponentBehaviorAs
 			val v = _self.delegateFSM.variables.findFirst[v| p.name == v.name]
 			switch (v) {
 				StringVariable case p.type == "String" : {
-					// TODO
-					// p.value = v.value
+					p.value.name = v.value
 				}
 				NumberVariable case p.type == "Number" : {
-					// TODO						
-					//p.value = v.value.
+					p.value.name = ""+v.value
 				}
 				BooleanVariable case p.type == "Boolean" : {
-					// TODO
-					//p.value = v.value.
+					if ( v.value ) p.value.name = "true" else p.value.name = "false"
 				}
 				default: {
 					
