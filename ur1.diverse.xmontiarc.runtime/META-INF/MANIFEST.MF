@@ -6,3 +6,5 @@ Bundle-Version: 1.0.0.qualifier
 Export-Package: ur1.diverse.xmontiarc.runtime
 Import-Package: org.eclipse.emf.common.util,
  org.eclipse.emf.ecore
+Bundle-ClassPath: .,
+ lib/groovy-all-2.4.10.jar
