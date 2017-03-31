@@ -15,7 +15,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.OutgoingPort#getInitialValue <em>Initial Value</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getOutgoingPort()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getOutgoingPort()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface OutgoingPort extends Port {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initial Value</em>' attribute.
 	 * @see #setInitialValue(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getOutgoingPort_InitialValue()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getOutgoingPort_InitialValue()
 	 * @model default="DefaultValue" required="true"
 	 * @generated
 	 */

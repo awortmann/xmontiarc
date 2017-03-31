@@ -9,7 +9,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc;
  * <!-- end-user-doc -->
  *
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getIncomingPort()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getIncomingPort()
  * @model
  * @generated
  */

@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.IncomingPort;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.IntermediateConnector;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.OutgoingPort;
 
 /**
@@ -65,7 +66,7 @@ public class IntermediateConnectorImpl extends ConnectorImpl implements Intermed
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.INTERMEDIATE_CONNECTOR;
+		return MontiarcPackage.Literals.INTERMEDIATE_CONNECTOR;
 	}
 
 	/**
@@ -79,7 +80,7 @@ public class IntermediateConnectorImpl extends ConnectorImpl implements Intermed
 			source = (OutgoingPort)eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.INTERMEDIATE_CONNECTOR__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.INTERMEDIATE_CONNECTOR__SOURCE, oldSource, source));
 			}
 		}
 		return source;
@@ -103,7 +104,7 @@ public class IntermediateConnectorImpl extends ConnectorImpl implements Intermed
 		OutgoingPort oldSource = source;
 		source = newSource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.INTERMEDIATE_CONNECTOR__SOURCE, oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.INTERMEDIATE_CONNECTOR__SOURCE, oldSource, source));
 	}
 
 	/**
@@ -117,7 +118,7 @@ public class IntermediateConnectorImpl extends ConnectorImpl implements Intermed
 			target = (IncomingPort)eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.INTERMEDIATE_CONNECTOR__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.INTERMEDIATE_CONNECTOR__TARGET, oldTarget, target));
 			}
 		}
 		return target;
@@ -141,7 +142,7 @@ public class IntermediateConnectorImpl extends ConnectorImpl implements Intermed
 		IncomingPort oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.INTERMEDIATE_CONNECTOR__TARGET, oldTarget, target));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.INTERMEDIATE_CONNECTOR__TARGET, oldTarget, target));
 	}
 
 	/**
@@ -152,10 +153,10 @@ public class IntermediateConnectorImpl extends ConnectorImpl implements Intermed
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.INTERMEDIATE_CONNECTOR__SOURCE:
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
-			case FsmPackage.INTERMEDIATE_CONNECTOR__TARGET:
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
 		}
@@ -170,10 +171,10 @@ public class IntermediateConnectorImpl extends ConnectorImpl implements Intermed
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.INTERMEDIATE_CONNECTOR__SOURCE:
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR__SOURCE:
 				setSource((OutgoingPort)newValue);
 				return;
-			case FsmPackage.INTERMEDIATE_CONNECTOR__TARGET:
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR__TARGET:
 				setTarget((IncomingPort)newValue);
 				return;
 		}
@@ -188,10 +189,10 @@ public class IntermediateConnectorImpl extends ConnectorImpl implements Intermed
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.INTERMEDIATE_CONNECTOR__SOURCE:
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR__SOURCE:
 				setSource((OutgoingPort)null);
 				return;
-			case FsmPackage.INTERMEDIATE_CONNECTOR__TARGET:
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR__TARGET:
 				setTarget((IncomingPort)null);
 				return;
 		}
@@ -206,9 +207,9 @@ public class IntermediateConnectorImpl extends ConnectorImpl implements Intermed
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.INTERMEDIATE_CONNECTOR__SOURCE:
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR__SOURCE:
 				return source != null;
-			case FsmPackage.INTERMEDIATE_CONNECTOR__TARGET:
+			case MontiarcPackage.INTERMEDIATE_CONNECTOR__TARGET:
 				return target != null;
 		}
 		return super.eIsSet(featureID);

@@ -5,6 +5,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.impl;
 import org.eclipse.emf.ecore.EClass;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.EqualNumberGuard;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 
 /**
@@ -31,7 +32,7 @@ public class EqualNumberGuardImpl extends NumberGuardImpl implements EqualNumber
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.EQUAL_NUMBER_GUARD;
+		return FsmPackage.Literals.EQUAL_NUMBER_GUARD;
 	}
 
 } //EqualNumberGuardImpl

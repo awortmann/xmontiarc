@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.AutomatonComponentBehavior;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.StateMachine;
 
 /**
@@ -53,7 +54,7 @@ public class AutomatonComponentBehaviorImpl extends ComponentBehaviorImpl implem
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.AUTOMATON_COMPONENT_BEHAVIOR;
+		return MontiarcPackage.Literals.AUTOMATON_COMPONENT_BEHAVIOR;
 	}
 
 	/**
@@ -67,7 +68,7 @@ public class AutomatonComponentBehaviorImpl extends ComponentBehaviorImpl implem
 			delegateFSM = (StateMachine)eResolveProxy(oldDelegateFSM);
 			if (delegateFSM != oldDelegateFSM) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM, oldDelegateFSM, delegateFSM));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM, oldDelegateFSM, delegateFSM));
 			}
 		}
 		return delegateFSM;
@@ -91,7 +92,7 @@ public class AutomatonComponentBehaviorImpl extends ComponentBehaviorImpl implem
 		StateMachine oldDelegateFSM = delegateFSM;
 		delegateFSM = newDelegateFSM;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM, oldDelegateFSM, delegateFSM));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM, oldDelegateFSM, delegateFSM));
 	}
 
 	/**
@@ -135,7 +136,7 @@ public class AutomatonComponentBehaviorImpl extends ComponentBehaviorImpl implem
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM:
+			case MontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM:
 				if (resolve) return getDelegateFSM();
 				return basicGetDelegateFSM();
 		}
@@ -150,7 +151,7 @@ public class AutomatonComponentBehaviorImpl extends ComponentBehaviorImpl implem
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM:
+			case MontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM:
 				setDelegateFSM((StateMachine)newValue);
 				return;
 		}
@@ -165,7 +166,7 @@ public class AutomatonComponentBehaviorImpl extends ComponentBehaviorImpl implem
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM:
+			case MontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM:
 				setDelegateFSM((StateMachine)null);
 				return;
 		}
@@ -180,7 +181,7 @@ public class AutomatonComponentBehaviorImpl extends ComponentBehaviorImpl implem
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM:
+			case MontiarcPackage.AUTOMATON_COMPONENT_BEHAVIOR__DELEGATE_FSM:
 				return delegateFSM != null;
 		}
 		return super.eIsSet(featureID);

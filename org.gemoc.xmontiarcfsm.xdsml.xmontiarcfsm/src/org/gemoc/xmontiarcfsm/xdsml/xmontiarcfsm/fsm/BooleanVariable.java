@@ -16,7 +16,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.BooleanVariable#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getBooleanVariable()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getBooleanVariable()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface BooleanVariable extends Variable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initial Value</em>' attribute.
 	 * @see #setInitialValue(boolean)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getBooleanVariable_InitialValue()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getBooleanVariable_InitialValue()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface BooleanVariable extends Variable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(Boolean)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getBooleanVariable_Value()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getBooleanVariable_Value()
 	 * @model unique="false"
 	 * @generated
 	 */

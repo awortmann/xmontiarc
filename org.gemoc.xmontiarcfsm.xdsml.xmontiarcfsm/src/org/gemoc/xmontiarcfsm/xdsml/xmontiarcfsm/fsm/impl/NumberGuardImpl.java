@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberGuard;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberVariable;
@@ -74,7 +75,7 @@ public abstract class NumberGuardImpl extends GuardImpl implements NumberGuard {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.NUMBER_GUARD;
+		return FsmPackage.Literals.NUMBER_GUARD;
 	}
 
 	/**
@@ -95,7 +96,7 @@ public abstract class NumberGuardImpl extends GuardImpl implements NumberGuard {
 		long oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.NUMBER_GUARD__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.NUMBER_GUARD__VALUE, oldValue, value));
 	}
 
 	/**
@@ -109,7 +110,7 @@ public abstract class NumberGuardImpl extends GuardImpl implements NumberGuard {
 			source = (NumberVariable)eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.NUMBER_GUARD__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.NUMBER_GUARD__SOURCE, oldSource, source));
 			}
 		}
 		return source;
@@ -133,7 +134,7 @@ public abstract class NumberGuardImpl extends GuardImpl implements NumberGuard {
 		NumberVariable oldSource = source;
 		source = newSource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.NUMBER_GUARD__SOURCE, oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.NUMBER_GUARD__SOURCE, oldSource, source));
 	}
 
 	/**
@@ -144,9 +145,9 @@ public abstract class NumberGuardImpl extends GuardImpl implements NumberGuard {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_GUARD__VALUE:
+			case FsmPackage.NUMBER_GUARD__VALUE:
 				return getValue();
-			case MontiarcPackage.NUMBER_GUARD__SOURCE:
+			case FsmPackage.NUMBER_GUARD__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
 		}
@@ -161,10 +162,10 @@ public abstract class NumberGuardImpl extends GuardImpl implements NumberGuard {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_GUARD__VALUE:
+			case FsmPackage.NUMBER_GUARD__VALUE:
 				setValue((Long)newValue);
 				return;
-			case MontiarcPackage.NUMBER_GUARD__SOURCE:
+			case FsmPackage.NUMBER_GUARD__SOURCE:
 				setSource((NumberVariable)newValue);
 				return;
 		}
@@ -179,10 +180,10 @@ public abstract class NumberGuardImpl extends GuardImpl implements NumberGuard {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_GUARD__VALUE:
+			case FsmPackage.NUMBER_GUARD__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
-			case MontiarcPackage.NUMBER_GUARD__SOURCE:
+			case FsmPackage.NUMBER_GUARD__SOURCE:
 				setSource((NumberVariable)null);
 				return;
 		}
@@ -197,9 +198,9 @@ public abstract class NumberGuardImpl extends GuardImpl implements NumberGuard {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_GUARD__VALUE:
+			case FsmPackage.NUMBER_GUARD__VALUE:
 				return value != VALUE_EDEFAULT;
-			case MontiarcPackage.NUMBER_GUARD__SOURCE:
+			case FsmPackage.NUMBER_GUARD__SOURCE:
 				return source != null;
 		}
 		return super.eIsSet(featureID);

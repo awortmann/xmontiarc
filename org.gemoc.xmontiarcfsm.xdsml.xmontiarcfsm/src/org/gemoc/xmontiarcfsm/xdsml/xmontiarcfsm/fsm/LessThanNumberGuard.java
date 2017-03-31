@@ -9,7 +9,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm;
  * <!-- end-user-doc -->
  *
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getLessThanNumberGuard()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getLessThanNumberGuard()
  * @model
  * @generated
  */

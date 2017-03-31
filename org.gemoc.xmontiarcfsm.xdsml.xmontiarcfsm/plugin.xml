@@ -8,7 +8,7 @@
       <!-- @generated XMontiArcFSM -->
       <package
             uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/montiarc/"
-            class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage"
+            class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage"
             genModel="model/XMontiArcFSM.genmodel"/>
    </extension>
 
@@ -16,7 +16,7 @@
       <!-- @generated XMontiArcFSM -->
       <package
             uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/fsm/"
-            class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage"
+            class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage"
             genModel="model/XMontiArcFSM.genmodel"/>
    </extension>
 </plugin>

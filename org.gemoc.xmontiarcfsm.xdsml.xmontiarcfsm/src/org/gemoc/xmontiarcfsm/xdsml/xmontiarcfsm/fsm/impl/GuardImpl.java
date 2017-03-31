@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Guard;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 
@@ -62,7 +63,7 @@ public abstract class GuardImpl extends EObjectImpl implements Guard {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.GUARD;
+		return FsmPackage.Literals.GUARD;
 	}
 
 	/**
@@ -83,7 +84,7 @@ public abstract class GuardImpl extends EObjectImpl implements Guard {
 		boolean oldNot = not;
 		not = newNot;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.GUARD__NOT, oldNot, not));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.GUARD__NOT, oldNot, not));
 	}
 
 	/**
@@ -105,7 +106,7 @@ public abstract class GuardImpl extends EObjectImpl implements Guard {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.GUARD__NOT:
+			case FsmPackage.GUARD__NOT:
 				return isNot();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -119,7 +120,7 @@ public abstract class GuardImpl extends EObjectImpl implements Guard {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.GUARD__NOT:
+			case FsmPackage.GUARD__NOT:
 				setNot((Boolean)newValue);
 				return;
 		}
@@ -134,7 +135,7 @@ public abstract class GuardImpl extends EObjectImpl implements Guard {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.GUARD__NOT:
+			case FsmPackage.GUARD__NOT:
 				setNot(NOT_EDEFAULT);
 				return;
 		}
@@ -149,7 +150,7 @@ public abstract class GuardImpl extends EObjectImpl implements Guard {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.GUARD__NOT:
+			case FsmPackage.GUARD__NOT:
 				return not != NOT_EDEFAULT;
 		}
 		return super.eIsSet(featureID);

@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberAction;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberVariable;
@@ -95,7 +96,7 @@ public class NumberActionImpl extends ActionImpl implements NumberAction {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.NUMBER_ACTION;
+		return FsmPackage.Literals.NUMBER_ACTION;
 	}
 
 	/**
@@ -116,7 +117,7 @@ public class NumberActionImpl extends ActionImpl implements NumberAction {
 		long oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.NUMBER_ACTION__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.NUMBER_ACTION__VALUE, oldValue, value));
 	}
 
 	/**
@@ -130,7 +131,7 @@ public class NumberActionImpl extends ActionImpl implements NumberAction {
 			target = (NumberVariable)eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.NUMBER_ACTION__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.NUMBER_ACTION__TARGET, oldTarget, target));
 			}
 		}
 		return target;
@@ -154,7 +155,7 @@ public class NumberActionImpl extends ActionImpl implements NumberAction {
 		NumberVariable oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.NUMBER_ACTION__TARGET, oldTarget, target));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.NUMBER_ACTION__TARGET, oldTarget, target));
 	}
 
 	/**
@@ -175,7 +176,7 @@ public class NumberActionImpl extends ActionImpl implements NumberAction {
 		String oldExpression = expression;
 		expression = newExpression;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.NUMBER_ACTION__EXPRESSION, oldExpression, expression));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.NUMBER_ACTION__EXPRESSION, oldExpression, expression));
 	}
 
 	/**
@@ -186,12 +187,12 @@ public class NumberActionImpl extends ActionImpl implements NumberAction {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_ACTION__VALUE:
+			case FsmPackage.NUMBER_ACTION__VALUE:
 				return getValue();
-			case MontiarcPackage.NUMBER_ACTION__TARGET:
+			case FsmPackage.NUMBER_ACTION__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
-			case MontiarcPackage.NUMBER_ACTION__EXPRESSION:
+			case FsmPackage.NUMBER_ACTION__EXPRESSION:
 				return getExpression();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -205,13 +206,13 @@ public class NumberActionImpl extends ActionImpl implements NumberAction {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_ACTION__VALUE:
+			case FsmPackage.NUMBER_ACTION__VALUE:
 				setValue((Long)newValue);
 				return;
-			case MontiarcPackage.NUMBER_ACTION__TARGET:
+			case FsmPackage.NUMBER_ACTION__TARGET:
 				setTarget((NumberVariable)newValue);
 				return;
-			case MontiarcPackage.NUMBER_ACTION__EXPRESSION:
+			case FsmPackage.NUMBER_ACTION__EXPRESSION:
 				setExpression((String)newValue);
 				return;
 		}
@@ -226,13 +227,13 @@ public class NumberActionImpl extends ActionImpl implements NumberAction {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_ACTION__VALUE:
+			case FsmPackage.NUMBER_ACTION__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
-			case MontiarcPackage.NUMBER_ACTION__TARGET:
+			case FsmPackage.NUMBER_ACTION__TARGET:
 				setTarget((NumberVariable)null);
 				return;
-			case MontiarcPackage.NUMBER_ACTION__EXPRESSION:
+			case FsmPackage.NUMBER_ACTION__EXPRESSION:
 				setExpression(EXPRESSION_EDEFAULT);
 				return;
 		}
@@ -247,11 +248,11 @@ public class NumberActionImpl extends ActionImpl implements NumberAction {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_ACTION__VALUE:
+			case FsmPackage.NUMBER_ACTION__VALUE:
 				return value != VALUE_EDEFAULT;
-			case MontiarcPackage.NUMBER_ACTION__TARGET:
+			case FsmPackage.NUMBER_ACTION__TARGET:
 				return target != null;
-			case MontiarcPackage.NUMBER_ACTION__EXPRESSION:
+			case FsmPackage.NUMBER_ACTION__EXPRESSION:
 				return EXPRESSION_EDEFAULT == null ? expression != null : !EXPRESSION_EDEFAULT.equals(expression);
 		}
 		return super.eIsSet(featureID);

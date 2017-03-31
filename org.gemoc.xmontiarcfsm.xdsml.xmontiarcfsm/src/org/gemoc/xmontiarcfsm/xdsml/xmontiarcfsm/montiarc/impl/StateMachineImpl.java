@@ -7,6 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.StateMachine;
 
 /**
@@ -33,7 +34,7 @@ public class StateMachineImpl extends EObjectImpl implements StateMachine {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.STATE_MACHINE;
+		return MontiarcPackage.Literals.STATE_MACHINE;
 	}
 
 } //StateMachineImpl

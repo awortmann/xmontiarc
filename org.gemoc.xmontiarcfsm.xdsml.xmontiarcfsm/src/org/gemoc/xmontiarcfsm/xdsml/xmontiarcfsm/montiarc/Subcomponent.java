@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent#getLocalBehavior <em>Local Behavior</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getSubcomponent()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getSubcomponent()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NameIsLowerCase'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NameIsLowerCase='Tuple {\n\tmessage : String = \'\\\'\' + name + \'\\\' must be lowercase\',\n\tstatus : Boolean = \n            let firstLetter : String = (name).substring(0,1) \n                in firstLetter.toLowerCase() = firstLetter\n}.status'"
  * @generated
@@ -40,7 +40,7 @@ public interface Subcomponent extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getSubcomponent_Name()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getSubcomponent_Name()
 	 * @model default="UnnamedSubcomponent" required="true"
 	 * @generated
 	 */
@@ -66,7 +66,7 @@ public interface Subcomponent extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Type</em>' reference.
 	 * @see #setType(ComponentType)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getSubcomponent_Type()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getSubcomponent_Type()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -92,7 +92,7 @@ public interface Subcomponent extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Incoming Ports</em>' containment reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getSubcomponent_IncomingPorts()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getSubcomponent_IncomingPorts()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -109,7 +109,7 @@ public interface Subcomponent extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Parent</em>' container reference.
 	 * @see #setParent(ComponentType)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getSubcomponent_Parent()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getSubcomponent_Parent()
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType#getSubcomponents
 	 * @model opposite="subcomponents" transient="false"
 	 * @generated
@@ -136,7 +136,7 @@ public interface Subcomponent extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outgoing Ports</em>' containment reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getSubcomponent_OutgoingPorts()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getSubcomponent_OutgoingPorts()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -152,7 +152,7 @@ public interface Subcomponent extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Local Behavior</em>' containment reference.
 	 * @see #setLocalBehavior(ComponentBehavior)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getSubcomponent_LocalBehavior()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getSubcomponent_LocalBehavior()
 	 * @model containment="true"
 	 * @generated
 	 */

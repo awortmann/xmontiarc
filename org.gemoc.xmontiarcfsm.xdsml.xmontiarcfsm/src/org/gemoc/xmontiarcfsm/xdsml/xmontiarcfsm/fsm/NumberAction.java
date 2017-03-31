@@ -17,7 +17,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberAction#getExpression <em>Expression</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getNumberAction()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getNumberAction()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface NumberAction extends Action {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(long)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getNumberAction_Value()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getNumberAction_Value()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface NumberAction extends Action {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(NumberVariable)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getNumberAction_Target()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getNumberAction_Target()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -84,7 +84,7 @@ public interface NumberAction extends Action {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Expression</em>' attribute.
 	 * @see #setExpression(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getNumberAction_Expression()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getNumberAction_Expression()
 	 * @model
 	 * @generated
 	 */

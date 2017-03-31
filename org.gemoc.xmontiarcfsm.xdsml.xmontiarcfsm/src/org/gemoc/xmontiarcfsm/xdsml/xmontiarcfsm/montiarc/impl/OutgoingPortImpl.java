@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.OutgoingPort;
 
 /**
@@ -61,7 +62,7 @@ public class OutgoingPortImpl extends PortImpl implements OutgoingPort {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.OUTGOING_PORT;
+		return MontiarcPackage.Literals.OUTGOING_PORT;
 	}
 
 	/**
@@ -82,7 +83,7 @@ public class OutgoingPortImpl extends PortImpl implements OutgoingPort {
 		String oldInitialValue = initialValue;
 		initialValue = newInitialValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.OUTGOING_PORT__INITIAL_VALUE, oldInitialValue, initialValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.OUTGOING_PORT__INITIAL_VALUE, oldInitialValue, initialValue));
 	}
 
 	/**
@@ -93,7 +94,7 @@ public class OutgoingPortImpl extends PortImpl implements OutgoingPort {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.OUTGOING_PORT__INITIAL_VALUE:
+			case MontiarcPackage.OUTGOING_PORT__INITIAL_VALUE:
 				return getInitialValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +108,7 @@ public class OutgoingPortImpl extends PortImpl implements OutgoingPort {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.OUTGOING_PORT__INITIAL_VALUE:
+			case MontiarcPackage.OUTGOING_PORT__INITIAL_VALUE:
 				setInitialValue((String)newValue);
 				return;
 		}
@@ -122,7 +123,7 @@ public class OutgoingPortImpl extends PortImpl implements OutgoingPort {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.OUTGOING_PORT__INITIAL_VALUE:
+			case MontiarcPackage.OUTGOING_PORT__INITIAL_VALUE:
 				setInitialValue(INITIAL_VALUE_EDEFAULT);
 				return;
 		}
@@ -137,7 +138,7 @@ public class OutgoingPortImpl extends PortImpl implements OutgoingPort {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.OUTGOING_PORT__INITIAL_VALUE:
+			case MontiarcPackage.OUTGOING_PORT__INITIAL_VALUE:
 				return INITIAL_VALUE_EDEFAULT == null ? initialValue != null : !INITIAL_VALUE_EDEFAULT.equals(initialValue);
 		}
 		return super.eIsSet(featureID);

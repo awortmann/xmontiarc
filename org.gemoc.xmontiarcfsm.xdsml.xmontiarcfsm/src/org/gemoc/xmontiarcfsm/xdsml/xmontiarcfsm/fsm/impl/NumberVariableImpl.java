@@ -8,6 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberVariable;
 
@@ -82,7 +83,7 @@ public class NumberVariableImpl extends VariableImpl implements NumberVariable {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.NUMBER_VARIABLE;
+		return FsmPackage.Literals.NUMBER_VARIABLE;
 	}
 
 	/**
@@ -103,7 +104,7 @@ public class NumberVariableImpl extends VariableImpl implements NumberVariable {
 		long oldInitialValue = initialValue;
 		initialValue = newInitialValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.NUMBER_VARIABLE__INITIAL_VALUE, oldInitialValue, initialValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.NUMBER_VARIABLE__INITIAL_VALUE, oldInitialValue, initialValue));
 	}
 
 	/**
@@ -124,7 +125,7 @@ public class NumberVariableImpl extends VariableImpl implements NumberVariable {
 		Long oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.NUMBER_VARIABLE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.NUMBER_VARIABLE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -135,9 +136,9 @@ public class NumberVariableImpl extends VariableImpl implements NumberVariable {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_VARIABLE__INITIAL_VALUE:
+			case FsmPackage.NUMBER_VARIABLE__INITIAL_VALUE:
 				return getInitialValue();
-			case MontiarcPackage.NUMBER_VARIABLE__VALUE:
+			case FsmPackage.NUMBER_VARIABLE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -151,10 +152,10 @@ public class NumberVariableImpl extends VariableImpl implements NumberVariable {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_VARIABLE__INITIAL_VALUE:
+			case FsmPackage.NUMBER_VARIABLE__INITIAL_VALUE:
 				setInitialValue((Long)newValue);
 				return;
-			case MontiarcPackage.NUMBER_VARIABLE__VALUE:
+			case FsmPackage.NUMBER_VARIABLE__VALUE:
 				setValue((Long)newValue);
 				return;
 		}
@@ -169,10 +170,10 @@ public class NumberVariableImpl extends VariableImpl implements NumberVariable {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_VARIABLE__INITIAL_VALUE:
+			case FsmPackage.NUMBER_VARIABLE__INITIAL_VALUE:
 				setInitialValue(INITIAL_VALUE_EDEFAULT);
 				return;
-			case MontiarcPackage.NUMBER_VARIABLE__VALUE:
+			case FsmPackage.NUMBER_VARIABLE__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -187,9 +188,9 @@ public class NumberVariableImpl extends VariableImpl implements NumberVariable {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.NUMBER_VARIABLE__INITIAL_VALUE:
+			case FsmPackage.NUMBER_VARIABLE__INITIAL_VALUE:
 				return initialValue != INITIAL_VALUE_EDEFAULT;
-			case MontiarcPackage.NUMBER_VARIABLE__VALUE:
+			case FsmPackage.NUMBER_VARIABLE__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);

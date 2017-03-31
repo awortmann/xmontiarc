@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectContainmentWithInverseEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.State;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StateMachine;
@@ -108,7 +109,7 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.STATE_MACHINE;
+		return FsmPackage.Literals.STATE_MACHINE;
 	}
 
 	/**
@@ -118,7 +119,7 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	 */
 	public EList<State> getOwnedStates() {
 		if (ownedStates == null) {
-			ownedStates = new EObjectContainmentWithInverseEList<State>(State.class, this, MontiarcPackage.STATE_MACHINE__OWNED_STATES, MontiarcPackage.STATE__OWNING_FSM);
+			ownedStates = new EObjectContainmentWithInverseEList<State>(State.class, this, FsmPackage.STATE_MACHINE__OWNED_STATES, FsmPackage.STATE__OWNING_FSM);
 		}
 		return ownedStates;
 	}
@@ -134,7 +135,7 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 			initialState = (State)eResolveProxy(oldInitialState);
 			if (initialState != oldInitialState) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.STATE_MACHINE__INITIAL_STATE, oldInitialState, initialState));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.STATE_MACHINE__INITIAL_STATE, oldInitialState, initialState));
 			}
 		}
 		return initialState;
@@ -158,7 +159,7 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 		State oldInitialState = initialState;
 		initialState = newInitialState;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.STATE_MACHINE__INITIAL_STATE, oldInitialState, initialState));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.STATE_MACHINE__INITIAL_STATE, oldInitialState, initialState));
 	}
 
 	/**
@@ -168,7 +169,7 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	 */
 	public EList<Transition> getOwnedTransitions() {
 		if (ownedTransitions == null) {
-			ownedTransitions = new EObjectContainmentEList<Transition>(Transition.class, this, MontiarcPackage.STATE_MACHINE__OWNED_TRANSITIONS);
+			ownedTransitions = new EObjectContainmentEList<Transition>(Transition.class, this, FsmPackage.STATE_MACHINE__OWNED_TRANSITIONS);
 		}
 		return ownedTransitions;
 	}
@@ -180,7 +181,7 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	 */
 	public EList<Variable> getVariables() {
 		if (variables == null) {
-			variables = new EObjectContainmentEList<Variable>(Variable.class, this, MontiarcPackage.STATE_MACHINE__VARIABLES);
+			variables = new EObjectContainmentEList<Variable>(Variable.class, this, FsmPackage.STATE_MACHINE__VARIABLES);
 		}
 		return variables;
 	}
@@ -196,7 +197,7 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 			currentState = (State)eResolveProxy(oldCurrentState);
 			if (currentState != oldCurrentState) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.STATE_MACHINE__CURRENT_STATE, oldCurrentState, currentState));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.STATE_MACHINE__CURRENT_STATE, oldCurrentState, currentState));
 			}
 		}
 		return currentState;
@@ -220,7 +221,7 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 		State oldCurrentState = currentState;
 		currentState = newCurrentState;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.STATE_MACHINE__CURRENT_STATE, oldCurrentState, currentState));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.STATE_MACHINE__CURRENT_STATE, oldCurrentState, currentState));
 	}
 
 	/**
@@ -265,7 +266,7 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MontiarcPackage.STATE_MACHINE__OWNED_STATES:
+			case FsmPackage.STATE_MACHINE__OWNED_STATES:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOwnedStates()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -279,11 +280,11 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MontiarcPackage.STATE_MACHINE__OWNED_STATES:
+			case FsmPackage.STATE_MACHINE__OWNED_STATES:
 				return ((InternalEList<?>)getOwnedStates()).basicRemove(otherEnd, msgs);
-			case MontiarcPackage.STATE_MACHINE__OWNED_TRANSITIONS:
+			case FsmPackage.STATE_MACHINE__OWNED_TRANSITIONS:
 				return ((InternalEList<?>)getOwnedTransitions()).basicRemove(otherEnd, msgs);
-			case MontiarcPackage.STATE_MACHINE__VARIABLES:
+			case FsmPackage.STATE_MACHINE__VARIABLES:
 				return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -297,16 +298,16 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.STATE_MACHINE__OWNED_STATES:
+			case FsmPackage.STATE_MACHINE__OWNED_STATES:
 				return getOwnedStates();
-			case MontiarcPackage.STATE_MACHINE__INITIAL_STATE:
+			case FsmPackage.STATE_MACHINE__INITIAL_STATE:
 				if (resolve) return getInitialState();
 				return basicGetInitialState();
-			case MontiarcPackage.STATE_MACHINE__OWNED_TRANSITIONS:
+			case FsmPackage.STATE_MACHINE__OWNED_TRANSITIONS:
 				return getOwnedTransitions();
-			case MontiarcPackage.STATE_MACHINE__VARIABLES:
+			case FsmPackage.STATE_MACHINE__VARIABLES:
 				return getVariables();
-			case MontiarcPackage.STATE_MACHINE__CURRENT_STATE:
+			case FsmPackage.STATE_MACHINE__CURRENT_STATE:
 				if (resolve) return getCurrentState();
 				return basicGetCurrentState();
 		}
@@ -322,22 +323,22 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.STATE_MACHINE__OWNED_STATES:
+			case FsmPackage.STATE_MACHINE__OWNED_STATES:
 				getOwnedStates().clear();
 				getOwnedStates().addAll((Collection<? extends State>)newValue);
 				return;
-			case MontiarcPackage.STATE_MACHINE__INITIAL_STATE:
+			case FsmPackage.STATE_MACHINE__INITIAL_STATE:
 				setInitialState((State)newValue);
 				return;
-			case MontiarcPackage.STATE_MACHINE__OWNED_TRANSITIONS:
+			case FsmPackage.STATE_MACHINE__OWNED_TRANSITIONS:
 				getOwnedTransitions().clear();
 				getOwnedTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
-			case MontiarcPackage.STATE_MACHINE__VARIABLES:
+			case FsmPackage.STATE_MACHINE__VARIABLES:
 				getVariables().clear();
 				getVariables().addAll((Collection<? extends Variable>)newValue);
 				return;
-			case MontiarcPackage.STATE_MACHINE__CURRENT_STATE:
+			case FsmPackage.STATE_MACHINE__CURRENT_STATE:
 				setCurrentState((State)newValue);
 				return;
 		}
@@ -352,19 +353,19 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.STATE_MACHINE__OWNED_STATES:
+			case FsmPackage.STATE_MACHINE__OWNED_STATES:
 				getOwnedStates().clear();
 				return;
-			case MontiarcPackage.STATE_MACHINE__INITIAL_STATE:
+			case FsmPackage.STATE_MACHINE__INITIAL_STATE:
 				setInitialState((State)null);
 				return;
-			case MontiarcPackage.STATE_MACHINE__OWNED_TRANSITIONS:
+			case FsmPackage.STATE_MACHINE__OWNED_TRANSITIONS:
 				getOwnedTransitions().clear();
 				return;
-			case MontiarcPackage.STATE_MACHINE__VARIABLES:
+			case FsmPackage.STATE_MACHINE__VARIABLES:
 				getVariables().clear();
 				return;
-			case MontiarcPackage.STATE_MACHINE__CURRENT_STATE:
+			case FsmPackage.STATE_MACHINE__CURRENT_STATE:
 				setCurrentState((State)null);
 				return;
 		}
@@ -379,15 +380,15 @@ public class StateMachineImpl extends NamedElementImpl implements StateMachine {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.STATE_MACHINE__OWNED_STATES:
+			case FsmPackage.STATE_MACHINE__OWNED_STATES:
 				return ownedStates != null && !ownedStates.isEmpty();
-			case MontiarcPackage.STATE_MACHINE__INITIAL_STATE:
+			case FsmPackage.STATE_MACHINE__INITIAL_STATE:
 				return initialState != null;
-			case MontiarcPackage.STATE_MACHINE__OWNED_TRANSITIONS:
+			case FsmPackage.STATE_MACHINE__OWNED_TRANSITIONS:
 				return ownedTransitions != null && !ownedTransitions.isEmpty();
-			case MontiarcPackage.STATE_MACHINE__VARIABLES:
+			case FsmPackage.STATE_MACHINE__VARIABLES:
 				return variables != null && !variables.isEmpty();
-			case MontiarcPackage.STATE_MACHINE__CURRENT_STATE:
+			case FsmPackage.STATE_MACHINE__CURRENT_STATE:
 				return currentState != null;
 		}
 		return super.eIsSet(featureID);

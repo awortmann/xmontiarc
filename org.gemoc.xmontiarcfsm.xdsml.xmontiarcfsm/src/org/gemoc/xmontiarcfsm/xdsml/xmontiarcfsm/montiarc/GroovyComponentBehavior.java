@@ -15,7 +15,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.GroovyComponentBehavior#getScriptBody <em>Script Body</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getGroovyComponentBehavior()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getGroovyComponentBehavior()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface GroovyComponentBehavior extends ComponentBehavior {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Script Body</em>' attribute.
 	 * @see #setScriptBody(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getGroovyComponentBehavior_ScriptBody()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getGroovyComponentBehavior_ScriptBody()
 	 * @model default="\"\"" required="true"
 	 * @generated
 	 */

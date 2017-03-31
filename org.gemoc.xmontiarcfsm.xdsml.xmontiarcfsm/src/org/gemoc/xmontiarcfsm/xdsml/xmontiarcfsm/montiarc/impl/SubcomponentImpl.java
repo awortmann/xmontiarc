@@ -23,6 +23,7 @@ import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentBehavior;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.IncomingPort;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.OutgoingPort;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent;
 
@@ -121,7 +122,7 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.SUBCOMPONENT;
+		return MontiarcPackage.Literals.SUBCOMPONENT;
 	}
 
 	/**
@@ -142,7 +143,7 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.SUBCOMPONENT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.SUBCOMPONENT__NAME, oldName, name));
 	}
 
 	/**
@@ -156,7 +157,7 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 			type = (ComponentType)eResolveProxy(oldType);
 			if (type != oldType) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.SUBCOMPONENT__TYPE, oldType, type));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.SUBCOMPONENT__TYPE, oldType, type));
 			}
 		}
 		return type;
@@ -180,7 +181,7 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 		ComponentType oldType = type;
 		type = newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.SUBCOMPONENT__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.SUBCOMPONENT__TYPE, oldType, type));
 	}
 
 	/**
@@ -190,7 +191,7 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	 */
 	public EList<IncomingPort> getIncomingPorts() {
 		if (incomingPorts == null) {
-			incomingPorts = new EObjectContainmentEList<IncomingPort>(IncomingPort.class, this, FsmPackage.SUBCOMPONENT__INCOMING_PORTS);
+			incomingPorts = new EObjectContainmentEList<IncomingPort>(IncomingPort.class, this, MontiarcPackage.SUBCOMPONENT__INCOMING_PORTS);
 		}
 		return incomingPorts;
 	}
@@ -201,7 +202,7 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	 * @generated
 	 */
 	public ComponentType getParent() {
-		if (eContainerFeatureID() != FsmPackage.SUBCOMPONENT__PARENT) return null;
+		if (eContainerFeatureID() != MontiarcPackage.SUBCOMPONENT__PARENT) return null;
 		return (ComponentType)eInternalContainer();
 	}
 
@@ -211,7 +212,7 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	 * @generated
 	 */
 	public NotificationChain basicSetParent(ComponentType newParent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParent, FsmPackage.SUBCOMPONENT__PARENT, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newParent, MontiarcPackage.SUBCOMPONENT__PARENT, msgs);
 		return msgs;
 	}
 
@@ -221,19 +222,19 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	 * @generated
 	 */
 	public void setParent(ComponentType newParent) {
-		if (newParent != eInternalContainer() || (eContainerFeatureID() != FsmPackage.SUBCOMPONENT__PARENT && newParent != null)) {
+		if (newParent != eInternalContainer() || (eContainerFeatureID() != MontiarcPackage.SUBCOMPONENT__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newParent != null)
-				msgs = ((InternalEObject)newParent).eInverseAdd(this, FsmPackage.COMPONENT_TYPE__SUBCOMPONENTS, ComponentType.class, msgs);
+				msgs = ((InternalEObject)newParent).eInverseAdd(this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS, ComponentType.class, msgs);
 			msgs = basicSetParent(newParent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.SUBCOMPONENT__PARENT, newParent, newParent));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.SUBCOMPONENT__PARENT, newParent, newParent));
 	}
 
 	/**
@@ -243,7 +244,7 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	 */
 	public EList<OutgoingPort> getOutgoingPorts() {
 		if (outgoingPorts == null) {
-			outgoingPorts = new EObjectContainmentEList<OutgoingPort>(OutgoingPort.class, this, FsmPackage.SUBCOMPONENT__OUTGOING_PORTS);
+			outgoingPorts = new EObjectContainmentEList<OutgoingPort>(OutgoingPort.class, this, MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS);
 		}
 		return outgoingPorts;
 	}
@@ -266,7 +267,7 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 		ComponentBehavior oldLocalBehavior = localBehavior;
 		localBehavior = newLocalBehavior;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FsmPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, oldLocalBehavior, newLocalBehavior);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, oldLocalBehavior, newLocalBehavior);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -281,14 +282,14 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 		if (newLocalBehavior != localBehavior) {
 			NotificationChain msgs = null;
 			if (localBehavior != null)
-				msgs = ((InternalEObject)localBehavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FsmPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, null, msgs);
+				msgs = ((InternalEObject)localBehavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, null, msgs);
 			if (newLocalBehavior != null)
-				msgs = ((InternalEObject)newLocalBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FsmPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, null, msgs);
+				msgs = ((InternalEObject)newLocalBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, null, msgs);
 			msgs = basicSetLocalBehavior(newLocalBehavior, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, newLocalBehavior, newLocalBehavior));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR, newLocalBehavior, newLocalBehavior));
 	}
 
 	/**
@@ -321,7 +322,7 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FsmPackage.SUBCOMPONENT__PARENT:
+			case MontiarcPackage.SUBCOMPONENT__PARENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParent((ComponentType)otherEnd, msgs);
@@ -337,13 +338,13 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FsmPackage.SUBCOMPONENT__INCOMING_PORTS:
+			case MontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
 				return ((InternalEList<?>)getIncomingPorts()).basicRemove(otherEnd, msgs);
-			case FsmPackage.SUBCOMPONENT__PARENT:
+			case MontiarcPackage.SUBCOMPONENT__PARENT:
 				return basicSetParent(null, msgs);
-			case FsmPackage.SUBCOMPONENT__OUTGOING_PORTS:
+			case MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
 				return ((InternalEList<?>)getOutgoingPorts()).basicRemove(otherEnd, msgs);
-			case FsmPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+			case MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
 				return basicSetLocalBehavior(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -357,8 +358,8 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case FsmPackage.SUBCOMPONENT__PARENT:
-				return eInternalContainer().eInverseRemove(this, FsmPackage.COMPONENT_TYPE__SUBCOMPONENTS, ComponentType.class, msgs);
+			case MontiarcPackage.SUBCOMPONENT__PARENT:
+				return eInternalContainer().eInverseRemove(this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS, ComponentType.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -371,18 +372,18 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.SUBCOMPONENT__NAME:
+			case MontiarcPackage.SUBCOMPONENT__NAME:
 				return getName();
-			case FsmPackage.SUBCOMPONENT__TYPE:
+			case MontiarcPackage.SUBCOMPONENT__TYPE:
 				if (resolve) return getType();
 				return basicGetType();
-			case FsmPackage.SUBCOMPONENT__INCOMING_PORTS:
+			case MontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
 				return getIncomingPorts();
-			case FsmPackage.SUBCOMPONENT__PARENT:
+			case MontiarcPackage.SUBCOMPONENT__PARENT:
 				return getParent();
-			case FsmPackage.SUBCOMPONENT__OUTGOING_PORTS:
+			case MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
 				return getOutgoingPorts();
-			case FsmPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+			case MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
 				return getLocalBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -397,24 +398,24 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.SUBCOMPONENT__NAME:
+			case MontiarcPackage.SUBCOMPONENT__NAME:
 				setName((String)newValue);
 				return;
-			case FsmPackage.SUBCOMPONENT__TYPE:
+			case MontiarcPackage.SUBCOMPONENT__TYPE:
 				setType((ComponentType)newValue);
 				return;
-			case FsmPackage.SUBCOMPONENT__INCOMING_PORTS:
+			case MontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
 				getIncomingPorts().clear();
 				getIncomingPorts().addAll((Collection<? extends IncomingPort>)newValue);
 				return;
-			case FsmPackage.SUBCOMPONENT__PARENT:
+			case MontiarcPackage.SUBCOMPONENT__PARENT:
 				setParent((ComponentType)newValue);
 				return;
-			case FsmPackage.SUBCOMPONENT__OUTGOING_PORTS:
+			case MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
 				getOutgoingPorts().clear();
 				getOutgoingPorts().addAll((Collection<? extends OutgoingPort>)newValue);
 				return;
-			case FsmPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+			case MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
 				setLocalBehavior((ComponentBehavior)newValue);
 				return;
 		}
@@ -429,22 +430,22 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.SUBCOMPONENT__NAME:
+			case MontiarcPackage.SUBCOMPONENT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case FsmPackage.SUBCOMPONENT__TYPE:
+			case MontiarcPackage.SUBCOMPONENT__TYPE:
 				setType((ComponentType)null);
 				return;
-			case FsmPackage.SUBCOMPONENT__INCOMING_PORTS:
+			case MontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
 				getIncomingPorts().clear();
 				return;
-			case FsmPackage.SUBCOMPONENT__PARENT:
+			case MontiarcPackage.SUBCOMPONENT__PARENT:
 				setParent((ComponentType)null);
 				return;
-			case FsmPackage.SUBCOMPONENT__OUTGOING_PORTS:
+			case MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
 				getOutgoingPorts().clear();
 				return;
-			case FsmPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+			case MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
 				setLocalBehavior((ComponentBehavior)null);
 				return;
 		}
@@ -459,17 +460,17 @@ public class SubcomponentImpl extends EObjectImpl implements Subcomponent {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.SUBCOMPONENT__NAME:
+			case MontiarcPackage.SUBCOMPONENT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case FsmPackage.SUBCOMPONENT__TYPE:
+			case MontiarcPackage.SUBCOMPONENT__TYPE:
 				return type != null;
-			case FsmPackage.SUBCOMPONENT__INCOMING_PORTS:
+			case MontiarcPackage.SUBCOMPONENT__INCOMING_PORTS:
 				return incomingPorts != null && !incomingPorts.isEmpty();
-			case FsmPackage.SUBCOMPONENT__PARENT:
+			case MontiarcPackage.SUBCOMPONENT__PARENT:
 				return getParent() != null;
-			case FsmPackage.SUBCOMPONENT__OUTGOING_PORTS:
+			case MontiarcPackage.SUBCOMPONENT__OUTGOING_PORTS:
 				return outgoingPorts != null && !outgoingPorts.isEmpty();
-			case FsmPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
+			case MontiarcPackage.SUBCOMPONENT__LOCAL_BEHAVIOR:
 				return localBehavior != null;
 		}
 		return super.eIsSet(featureID);

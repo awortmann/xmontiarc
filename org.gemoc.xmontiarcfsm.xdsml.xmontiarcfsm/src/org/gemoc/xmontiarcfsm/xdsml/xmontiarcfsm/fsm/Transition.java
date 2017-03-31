@@ -20,7 +20,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Transition#getAction <em>Action</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getTransition()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getTransition()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface Transition extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(State)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getTransition_Source()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getTransition_Source()
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.State#getOutgoingTransitions
 	 * @model opposite="outgoingTransitions" required="true"
 	 * @generated
@@ -64,7 +64,7 @@ public interface Transition extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(State)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getTransition_Target()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getTransition_Target()
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.State#getIncomingTransitions
 	 * @model opposite="incomingTransitions" required="true"
 	 * @generated
@@ -91,7 +91,7 @@ public interface Transition extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Input</em>' attribute.
 	 * @see #setInput(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getTransition_Input()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getTransition_Input()
 	 * @model
 	 * @generated
 	 */
@@ -117,7 +117,7 @@ public interface Transition extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Output</em>' attribute.
 	 * @see #setOutput(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getTransition_Output()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getTransition_Output()
 	 * @model
 	 * @generated
 	 */
@@ -143,7 +143,7 @@ public interface Transition extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Guard</em>' containment reference.
 	 * @see #setGuard(Guard)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getTransition_Guard()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getTransition_Guard()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
@@ -169,7 +169,7 @@ public interface Transition extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Action</em>' containment reference.
 	 * @see #setAction(Action)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getTransition_Action()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getTransition_Action()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */

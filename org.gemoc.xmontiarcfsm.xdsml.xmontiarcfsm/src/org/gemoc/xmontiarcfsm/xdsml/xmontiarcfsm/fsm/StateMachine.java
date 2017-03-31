@@ -20,7 +20,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StateMachine#getCurrentState <em>Current State</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getStateMachine()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getStateMachine()
  * @model
  * @generated
  */
@@ -36,7 +36,7 @@ public interface StateMachine extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned States</em>' containment reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getStateMachine_OwnedStates()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getStateMachine_OwnedStates()
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.State#getOwningFSM
 	 * @model opposite="owningFSM" containment="true"
 	 * @generated
@@ -53,7 +53,7 @@ public interface StateMachine extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initial State</em>' reference.
 	 * @see #setInitialState(State)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getStateMachine_InitialState()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getStateMachine_InitialState()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -79,7 +79,7 @@ public interface StateMachine extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owned Transitions</em>' containment reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getStateMachine_OwnedTransitions()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getStateMachine_OwnedTransitions()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -95,7 +95,7 @@ public interface StateMachine extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Variables</em>' containment reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getStateMachine_Variables()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getStateMachine_Variables()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -111,7 +111,7 @@ public interface StateMachine extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Current State</em>' reference.
 	 * @see #setCurrentState(State)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getStateMachine_CurrentState()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getStateMachine_CurrentState()
 	 * @model
 	 * @generated
 	 */

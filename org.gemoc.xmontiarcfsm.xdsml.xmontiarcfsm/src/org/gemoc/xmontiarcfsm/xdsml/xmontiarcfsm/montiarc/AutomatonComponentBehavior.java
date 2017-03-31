@@ -15,7 +15,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.AutomatonComponentBehavior#getDelegateFSM <em>Delegate FSM</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getAutomatonComponentBehavior()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getAutomatonComponentBehavior()
  * @model
  * @generated
  */
@@ -30,7 +30,7 @@ public interface AutomatonComponentBehavior extends ComponentBehavior {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Delegate FSM</em>' reference.
 	 * @see #setDelegateFSM(StateMachine)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getAutomatonComponentBehavior_DelegateFSM()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getAutomatonComponentBehavior_DelegateFSM()
 	 * @model
 	 * @generated
 	 */

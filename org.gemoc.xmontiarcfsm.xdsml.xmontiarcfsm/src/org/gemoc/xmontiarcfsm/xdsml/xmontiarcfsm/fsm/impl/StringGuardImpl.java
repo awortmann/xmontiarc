@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StringGuard;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StringVariable;
@@ -74,7 +75,7 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.STRING_GUARD;
+		return FsmPackage.Literals.STRING_GUARD;
 	}
 
 	/**
@@ -95,7 +96,7 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.STRING_GUARD__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.STRING_GUARD__VALUE, oldValue, value));
 	}
 
 	/**
@@ -109,7 +110,7 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 			source = (StringVariable)eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.STRING_GUARD__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.STRING_GUARD__SOURCE, oldSource, source));
 			}
 		}
 		return source;
@@ -133,7 +134,7 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 		StringVariable oldSource = source;
 		source = newSource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.STRING_GUARD__SOURCE, oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.STRING_GUARD__SOURCE, oldSource, source));
 	}
 
 	/**
@@ -144,9 +145,9 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.STRING_GUARD__VALUE:
+			case FsmPackage.STRING_GUARD__VALUE:
 				return getValue();
-			case MontiarcPackage.STRING_GUARD__SOURCE:
+			case FsmPackage.STRING_GUARD__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
 		}
@@ -161,10 +162,10 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.STRING_GUARD__VALUE:
+			case FsmPackage.STRING_GUARD__VALUE:
 				setValue((String)newValue);
 				return;
-			case MontiarcPackage.STRING_GUARD__SOURCE:
+			case FsmPackage.STRING_GUARD__SOURCE:
 				setSource((StringVariable)newValue);
 				return;
 		}
@@ -179,10 +180,10 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.STRING_GUARD__VALUE:
+			case FsmPackage.STRING_GUARD__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
-			case MontiarcPackage.STRING_GUARD__SOURCE:
+			case FsmPackage.STRING_GUARD__SOURCE:
 				setSource((StringVariable)null);
 				return;
 		}
@@ -197,9 +198,9 @@ public class StringGuardImpl extends GuardImpl implements StringGuard {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.STRING_GUARD__VALUE:
+			case FsmPackage.STRING_GUARD__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-			case MontiarcPackage.STRING_GUARD__SOURCE:
+			case FsmPackage.STRING_GUARD__SOURCE:
 				return source != null;
 		}
 		return super.eIsSet(featureID);

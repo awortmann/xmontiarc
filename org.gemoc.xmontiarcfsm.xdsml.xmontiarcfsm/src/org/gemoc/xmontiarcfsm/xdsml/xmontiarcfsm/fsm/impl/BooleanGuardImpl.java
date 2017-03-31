@@ -11,6 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.BooleanGuard;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.BooleanVariable;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 
 /**
@@ -74,7 +75,7 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.BOOLEAN_GUARD;
+		return FsmPackage.Literals.BOOLEAN_GUARD;
 	}
 
 	/**
@@ -95,7 +96,7 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 		boolean oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.BOOLEAN_GUARD__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.BOOLEAN_GUARD__VALUE, oldValue, value));
 	}
 
 	/**
@@ -109,7 +110,7 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 			source = (BooleanVariable)eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.BOOLEAN_GUARD__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.BOOLEAN_GUARD__SOURCE, oldSource, source));
 			}
 		}
 		return source;
@@ -133,7 +134,7 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 		BooleanVariable oldSource = source;
 		source = newSource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.BOOLEAN_GUARD__SOURCE, oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.BOOLEAN_GUARD__SOURCE, oldSource, source));
 	}
 
 	/**
@@ -144,9 +145,9 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.BOOLEAN_GUARD__VALUE:
+			case FsmPackage.BOOLEAN_GUARD__VALUE:
 				return isValue();
-			case MontiarcPackage.BOOLEAN_GUARD__SOURCE:
+			case FsmPackage.BOOLEAN_GUARD__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
 		}
@@ -161,10 +162,10 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.BOOLEAN_GUARD__VALUE:
+			case FsmPackage.BOOLEAN_GUARD__VALUE:
 				setValue((Boolean)newValue);
 				return;
-			case MontiarcPackage.BOOLEAN_GUARD__SOURCE:
+			case FsmPackage.BOOLEAN_GUARD__SOURCE:
 				setSource((BooleanVariable)newValue);
 				return;
 		}
@@ -179,10 +180,10 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.BOOLEAN_GUARD__VALUE:
+			case FsmPackage.BOOLEAN_GUARD__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
-			case MontiarcPackage.BOOLEAN_GUARD__SOURCE:
+			case FsmPackage.BOOLEAN_GUARD__SOURCE:
 				setSource((BooleanVariable)null);
 				return;
 		}
@@ -197,9 +198,9 @@ public class BooleanGuardImpl extends GuardImpl implements BooleanGuard {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.BOOLEAN_GUARD__VALUE:
+			case FsmPackage.BOOLEAN_GUARD__VALUE:
 				return value != VALUE_EDEFAULT;
-			case MontiarcPackage.BOOLEAN_GUARD__SOURCE:
+			case FsmPackage.BOOLEAN_GUARD__SOURCE:
 				return source != null;
 		}
 		return super.eIsSet(featureID);

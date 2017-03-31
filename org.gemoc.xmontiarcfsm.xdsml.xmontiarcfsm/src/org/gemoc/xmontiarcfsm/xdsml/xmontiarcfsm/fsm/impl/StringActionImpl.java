@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StringAction;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StringVariable;
@@ -74,7 +75,7 @@ public class StringActionImpl extends ActionImpl implements StringAction {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.STRING_ACTION;
+		return FsmPackage.Literals.STRING_ACTION;
 	}
 
 	/**
@@ -95,7 +96,7 @@ public class StringActionImpl extends ActionImpl implements StringAction {
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.STRING_ACTION__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.STRING_ACTION__VALUE, oldValue, value));
 	}
 
 	/**
@@ -109,7 +110,7 @@ public class StringActionImpl extends ActionImpl implements StringAction {
 			target = (StringVariable)eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.STRING_ACTION__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.STRING_ACTION__TARGET, oldTarget, target));
 			}
 		}
 		return target;
@@ -133,7 +134,7 @@ public class StringActionImpl extends ActionImpl implements StringAction {
 		StringVariable oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.STRING_ACTION__TARGET, oldTarget, target));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.STRING_ACTION__TARGET, oldTarget, target));
 	}
 
 	/**
@@ -144,9 +145,9 @@ public class StringActionImpl extends ActionImpl implements StringAction {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.STRING_ACTION__VALUE:
+			case FsmPackage.STRING_ACTION__VALUE:
 				return getValue();
-			case MontiarcPackage.STRING_ACTION__TARGET:
+			case FsmPackage.STRING_ACTION__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
 		}
@@ -161,10 +162,10 @@ public class StringActionImpl extends ActionImpl implements StringAction {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.STRING_ACTION__VALUE:
+			case FsmPackage.STRING_ACTION__VALUE:
 				setValue((String)newValue);
 				return;
-			case MontiarcPackage.STRING_ACTION__TARGET:
+			case FsmPackage.STRING_ACTION__TARGET:
 				setTarget((StringVariable)newValue);
 				return;
 		}
@@ -179,10 +180,10 @@ public class StringActionImpl extends ActionImpl implements StringAction {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.STRING_ACTION__VALUE:
+			case FsmPackage.STRING_ACTION__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
-			case MontiarcPackage.STRING_ACTION__TARGET:
+			case FsmPackage.STRING_ACTION__TARGET:
 				setTarget((StringVariable)null);
 				return;
 		}
@@ -197,9 +198,9 @@ public class StringActionImpl extends ActionImpl implements StringAction {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.STRING_ACTION__VALUE:
+			case FsmPackage.STRING_ACTION__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
-			case MontiarcPackage.STRING_ACTION__TARGET:
+			case FsmPackage.STRING_ACTION__TARGET:
 				return target != null;
 		}
 		return super.eIsSet(featureID);

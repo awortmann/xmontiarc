@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.IncomingPort;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +32,7 @@ public class IncomingPortImpl extends PortImpl implements IncomingPort {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.INCOMING_PORT;
+		return MontiarcPackage.Literals.INCOMING_PORT;
 	}
 
 } //IncomingPortImpl

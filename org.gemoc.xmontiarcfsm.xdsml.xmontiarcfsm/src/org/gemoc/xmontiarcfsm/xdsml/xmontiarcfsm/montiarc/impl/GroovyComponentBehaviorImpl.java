@@ -10,6 +10,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.GroovyComponentBehavior;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -61,7 +62,7 @@ public class GroovyComponentBehaviorImpl extends ComponentBehaviorImpl implement
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.GROOVY_COMPONENT_BEHAVIOR;
+		return MontiarcPackage.Literals.GROOVY_COMPONENT_BEHAVIOR;
 	}
 
 	/**
@@ -82,7 +83,7 @@ public class GroovyComponentBehaviorImpl extends ComponentBehaviorImpl implement
 		String oldScriptBody = scriptBody;
 		scriptBody = newScriptBody;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY, oldScriptBody, scriptBody));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY, oldScriptBody, scriptBody));
 	}
 
 	/**
@@ -93,7 +94,7 @@ public class GroovyComponentBehaviorImpl extends ComponentBehaviorImpl implement
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY:
+			case MontiarcPackage.GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY:
 				return getScriptBody();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -107,7 +108,7 @@ public class GroovyComponentBehaviorImpl extends ComponentBehaviorImpl implement
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY:
+			case MontiarcPackage.GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY:
 				setScriptBody((String)newValue);
 				return;
 		}
@@ -122,7 +123,7 @@ public class GroovyComponentBehaviorImpl extends ComponentBehaviorImpl implement
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY:
+			case MontiarcPackage.GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY:
 				setScriptBody(SCRIPT_BODY_EDEFAULT);
 				return;
 		}
@@ -137,7 +138,7 @@ public class GroovyComponentBehaviorImpl extends ComponentBehaviorImpl implement
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY:
+			case MontiarcPackage.GROOVY_COMPONENT_BEHAVIOR__SCRIPT_BODY:
 				return SCRIPT_BODY_EDEFAULT == null ? scriptBody != null : !SCRIPT_BODY_EDEFAULT.equals(scriptBody);
 		}
 		return super.eIsSet(featureID);

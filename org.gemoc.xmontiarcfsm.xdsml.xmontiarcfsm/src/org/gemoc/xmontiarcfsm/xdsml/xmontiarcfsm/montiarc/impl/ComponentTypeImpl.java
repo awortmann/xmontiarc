@@ -24,6 +24,7 @@ import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Connector;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.IncomingPort;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.OutgoingPort;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent;
@@ -133,7 +134,7 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.COMPONENT_TYPE;
+		return MontiarcPackage.Literals.COMPONENT_TYPE;
 	}
 
 	/**
@@ -154,7 +155,7 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.COMPONENT_TYPE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_TYPE__NAME, oldName, name));
 	}
 
 	/**
@@ -164,7 +165,7 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	 */
 	public EList<Connector> getConnectors() {
 		if (connectors == null) {
-			connectors = new EObjectContainmentWithInverseEList<Connector>(Connector.class, this, FsmPackage.COMPONENT_TYPE__CONNECTORS, FsmPackage.CONNECTOR__PARENT);
+			connectors = new EObjectContainmentWithInverseEList<Connector>(Connector.class, this, MontiarcPackage.COMPONENT_TYPE__CONNECTORS, MontiarcPackage.CONNECTOR__PARENT);
 		}
 		return connectors;
 	}
@@ -176,7 +177,7 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	 */
 	public EList<Subcomponent> getSubcomponents() {
 		if (subcomponents == null) {
-			subcomponents = new EObjectContainmentWithInverseEList<Subcomponent>(Subcomponent.class, this, FsmPackage.COMPONENT_TYPE__SUBCOMPONENTS, FsmPackage.SUBCOMPONENT__PARENT);
+			subcomponents = new EObjectContainmentWithInverseEList<Subcomponent>(Subcomponent.class, this, MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS, MontiarcPackage.SUBCOMPONENT__PARENT);
 		}
 		return subcomponents;
 	}
@@ -188,7 +189,7 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	 */
 	public EList<IncomingPort> getIncomingPorts() {
 		if (incomingPorts == null) {
-			incomingPorts = new EObjectContainmentEList<IncomingPort>(IncomingPort.class, this, FsmPackage.COMPONENT_TYPE__INCOMING_PORTS);
+			incomingPorts = new EObjectContainmentEList<IncomingPort>(IncomingPort.class, this, MontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS);
 		}
 		return incomingPorts;
 	}
@@ -200,7 +201,7 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	 */
 	public EList<OutgoingPort> getOutgoingPorts() {
 		if (outgoingPorts == null) {
-			outgoingPorts = new EObjectContainmentEList<OutgoingPort>(OutgoingPort.class, this, FsmPackage.COMPONENT_TYPE__OUTGOING_PORTS);
+			outgoingPorts = new EObjectContainmentEList<OutgoingPort>(OutgoingPort.class, this, MontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS);
 		}
 		return outgoingPorts;
 	}
@@ -223,7 +224,7 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 		ComponentBehavior oldBehavior = behavior;
 		behavior = newBehavior;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FsmPackage.COMPONENT_TYPE__BEHAVIOR, oldBehavior, newBehavior);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_TYPE__BEHAVIOR, oldBehavior, newBehavior);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -238,14 +239,14 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 		if (newBehavior != behavior) {
 			NotificationChain msgs = null;
 			if (behavior != null)
-				msgs = ((InternalEObject)behavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FsmPackage.COMPONENT_TYPE__BEHAVIOR, null, msgs);
+				msgs = ((InternalEObject)behavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.COMPONENT_TYPE__BEHAVIOR, null, msgs);
 			if (newBehavior != null)
-				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FsmPackage.COMPONENT_TYPE__BEHAVIOR, null, msgs);
+				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.COMPONENT_TYPE__BEHAVIOR, null, msgs);
 			msgs = basicSetBehavior(newBehavior, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.COMPONENT_TYPE__BEHAVIOR, newBehavior, newBehavior));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_TYPE__BEHAVIOR, newBehavior, newBehavior));
 	}
 
 	/**
@@ -345,9 +346,9 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FsmPackage.COMPONENT_TYPE__CONNECTORS:
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConnectors()).basicAdd(otherEnd, msgs);
-			case FsmPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getSubcomponents()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -361,15 +362,15 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FsmPackage.COMPONENT_TYPE__CONNECTORS:
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return ((InternalEList<?>)getConnectors()).basicRemove(otherEnd, msgs);
-			case FsmPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return ((InternalEList<?>)getSubcomponents()).basicRemove(otherEnd, msgs);
-			case FsmPackage.COMPONENT_TYPE__INCOMING_PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
 				return ((InternalEList<?>)getIncomingPorts()).basicRemove(otherEnd, msgs);
-			case FsmPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				return ((InternalEList<?>)getOutgoingPorts()).basicRemove(otherEnd, msgs);
-			case FsmPackage.COMPONENT_TYPE__BEHAVIOR:
+			case MontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				return basicSetBehavior(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -383,17 +384,17 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.COMPONENT_TYPE__NAME:
+			case MontiarcPackage.COMPONENT_TYPE__NAME:
 				return getName();
-			case FsmPackage.COMPONENT_TYPE__CONNECTORS:
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return getConnectors();
-			case FsmPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return getSubcomponents();
-			case FsmPackage.COMPONENT_TYPE__INCOMING_PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
 				return getIncomingPorts();
-			case FsmPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				return getOutgoingPorts();
-			case FsmPackage.COMPONENT_TYPE__BEHAVIOR:
+			case MontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				return getBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -408,26 +409,26 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.COMPONENT_TYPE__NAME:
+			case MontiarcPackage.COMPONENT_TYPE__NAME:
 				setName((String)newValue);
 				return;
-			case FsmPackage.COMPONENT_TYPE__CONNECTORS:
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				getConnectors().clear();
 				getConnectors().addAll((Collection<? extends Connector>)newValue);
 				return;
-			case FsmPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				getSubcomponents().clear();
 				getSubcomponents().addAll((Collection<? extends Subcomponent>)newValue);
 				return;
-			case FsmPackage.COMPONENT_TYPE__INCOMING_PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
 				getIncomingPorts().clear();
 				getIncomingPorts().addAll((Collection<? extends IncomingPort>)newValue);
 				return;
-			case FsmPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				getOutgoingPorts().clear();
 				getOutgoingPorts().addAll((Collection<? extends OutgoingPort>)newValue);
 				return;
-			case FsmPackage.COMPONENT_TYPE__BEHAVIOR:
+			case MontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				setBehavior((ComponentBehavior)newValue);
 				return;
 		}
@@ -442,22 +443,22 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.COMPONENT_TYPE__NAME:
+			case MontiarcPackage.COMPONENT_TYPE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case FsmPackage.COMPONENT_TYPE__CONNECTORS:
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				getConnectors().clear();
 				return;
-			case FsmPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				getSubcomponents().clear();
 				return;
-			case FsmPackage.COMPONENT_TYPE__INCOMING_PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
 				getIncomingPorts().clear();
 				return;
-			case FsmPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				getOutgoingPorts().clear();
 				return;
-			case FsmPackage.COMPONENT_TYPE__BEHAVIOR:
+			case MontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				setBehavior((ComponentBehavior)null);
 				return;
 		}
@@ -472,17 +473,17 @@ public class ComponentTypeImpl extends EObjectImpl implements ComponentType {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.COMPONENT_TYPE__NAME:
+			case MontiarcPackage.COMPONENT_TYPE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case FsmPackage.COMPONENT_TYPE__CONNECTORS:
+			case MontiarcPackage.COMPONENT_TYPE__CONNECTORS:
 				return connectors != null && !connectors.isEmpty();
-			case FsmPackage.COMPONENT_TYPE__SUBCOMPONENTS:
+			case MontiarcPackage.COMPONENT_TYPE__SUBCOMPONENTS:
 				return subcomponents != null && !subcomponents.isEmpty();
-			case FsmPackage.COMPONENT_TYPE__INCOMING_PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__INCOMING_PORTS:
 				return incomingPorts != null && !incomingPorts.isEmpty();
-			case FsmPackage.COMPONENT_TYPE__OUTGOING_PORTS:
+			case MontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				return outgoingPorts != null && !outgoingPorts.isEmpty();
-			case FsmPackage.COMPONENT_TYPE__BEHAVIOR:
+			case MontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
 				return behavior != null;
 		}
 		return super.eIsSet(featureID);

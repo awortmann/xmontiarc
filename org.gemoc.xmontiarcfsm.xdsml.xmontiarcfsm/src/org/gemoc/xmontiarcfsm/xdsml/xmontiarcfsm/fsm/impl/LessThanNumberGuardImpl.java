@@ -4,6 +4,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.impl;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.LessThanNumberGuard;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 
@@ -31,7 +32,7 @@ public class LessThanNumberGuardImpl extends NumberGuardImpl implements LessThan
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.LESS_THAN_NUMBER_GUARD;
+		return FsmPackage.Literals.LESS_THAN_NUMBER_GUARD;
 	}
 
 } //LessThanNumberGuardImpl
