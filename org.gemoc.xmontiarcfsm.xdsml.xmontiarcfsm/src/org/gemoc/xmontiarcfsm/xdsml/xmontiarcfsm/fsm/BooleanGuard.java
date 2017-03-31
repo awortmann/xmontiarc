@@ -16,7 +16,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.BooleanGuard#getSource <em>Source</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getBooleanGuard()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getBooleanGuard()
  * @model
  * @generated
  */
@@ -32,7 +32,7 @@ public interface BooleanGuard extends Guard {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(boolean)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getBooleanGuard_Value()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getBooleanGuard_Value()
 	 * @model default="true" required="true"
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface BooleanGuard extends Guard {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(BooleanVariable)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getBooleanGuard_Source()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getBooleanGuard_Source()
 	 * @model required="true"
 	 * @generated
 	 */

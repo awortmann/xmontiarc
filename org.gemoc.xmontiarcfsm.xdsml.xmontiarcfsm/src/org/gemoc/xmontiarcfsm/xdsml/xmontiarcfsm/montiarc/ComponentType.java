@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType#getBehavior <em>Behavior</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getComponentType()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getComponentType()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='AtomicOrComposed'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot AtomicOrComposed='Tuple {\n\tmessage : String = \'Component type \\\'\' + name + \'\\\' cannot have connectors and behavior\',\n\tstatus : Boolean = \n            behavior.equalsIgnoreCase(\'\') or self.connectors->isEmpty()\n}.status'"
  * @generated
@@ -40,7 +40,7 @@ public interface ComponentType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getComponentType_Name()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getComponentType_Name()
 	 * @model default="UnnamedComponentType" required="true"
 	 * @generated
 	 */
@@ -67,7 +67,7 @@ public interface ComponentType extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Connectors</em>' containment reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getComponentType_Connectors()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getComponentType_Connectors()
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Connector#getParent
 	 * @model opposite="parent" containment="true"
 	 * @generated
@@ -85,7 +85,7 @@ public interface ComponentType extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Subcomponents</em>' containment reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getComponentType_Subcomponents()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getComponentType_Subcomponents()
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent#getParent
 	 * @model opposite="parent" containment="true"
 	 * @generated
@@ -102,7 +102,7 @@ public interface ComponentType extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Incoming Ports</em>' containment reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getComponentType_IncomingPorts()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getComponentType_IncomingPorts()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -118,7 +118,7 @@ public interface ComponentType extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outgoing Ports</em>' containment reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getComponentType_OutgoingPorts()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getComponentType_OutgoingPorts()
 	 * @model containment="true"
 	 * @generated
 	 */
@@ -134,7 +134,7 @@ public interface ComponentType extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Behavior</em>' containment reference.
 	 * @see #setBehavior(ComponentBehavior)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getComponentType_Behavior()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getComponentType_Behavior()
 	 * @model containment="true"
 	 * @generated
 	 */

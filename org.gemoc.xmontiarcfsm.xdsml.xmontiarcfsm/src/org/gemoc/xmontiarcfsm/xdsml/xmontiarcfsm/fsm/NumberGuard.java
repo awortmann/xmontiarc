@@ -16,7 +16,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberGuard#getSource <em>Source</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getNumberGuard()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getNumberGuard()
  * @model abstract="true"
  * @generated
  */
@@ -32,7 +32,7 @@ public interface NumberGuard extends Guard {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(long)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getNumberGuard_Value()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getNumberGuard_Value()
 	 * @model default="-1" required="true"
 	 * @generated
 	 */
@@ -58,7 +58,7 @@ public interface NumberGuard extends Guard {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(NumberVariable)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getNumberGuard_Source()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getNumberGuard_Source()
 	 * @model required="true"
 	 * @generated
 	 */

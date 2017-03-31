@@ -8,7 +8,7 @@ import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StringVariable;
 
 /**
@@ -82,7 +82,7 @@ public class StringVariableImpl extends VariableImpl implements StringVariable {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.STRING_VARIABLE;
+		return MontiarcPackage.Literals.STRING_VARIABLE;
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class StringVariableImpl extends VariableImpl implements StringVariable {
 		String oldInitialValue = initialValue;
 		initialValue = newInitialValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.STRING_VARIABLE__INITIAL_VALUE, oldInitialValue, initialValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.STRING_VARIABLE__INITIAL_VALUE, oldInitialValue, initialValue));
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class StringVariableImpl extends VariableImpl implements StringVariable {
 		String oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.STRING_VARIABLE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.STRING_VARIABLE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -135,9 +135,9 @@ public class StringVariableImpl extends VariableImpl implements StringVariable {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.STRING_VARIABLE__INITIAL_VALUE:
+			case MontiarcPackage.STRING_VARIABLE__INITIAL_VALUE:
 				return getInitialValue();
-			case FsmPackage.STRING_VARIABLE__VALUE:
+			case MontiarcPackage.STRING_VARIABLE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -151,10 +151,10 @@ public class StringVariableImpl extends VariableImpl implements StringVariable {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.STRING_VARIABLE__INITIAL_VALUE:
+			case MontiarcPackage.STRING_VARIABLE__INITIAL_VALUE:
 				setInitialValue((String)newValue);
 				return;
-			case FsmPackage.STRING_VARIABLE__VALUE:
+			case MontiarcPackage.STRING_VARIABLE__VALUE:
 				setValue((String)newValue);
 				return;
 		}
@@ -169,10 +169,10 @@ public class StringVariableImpl extends VariableImpl implements StringVariable {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.STRING_VARIABLE__INITIAL_VALUE:
+			case MontiarcPackage.STRING_VARIABLE__INITIAL_VALUE:
 				setInitialValue(INITIAL_VALUE_EDEFAULT);
 				return;
-			case FsmPackage.STRING_VARIABLE__VALUE:
+			case MontiarcPackage.STRING_VARIABLE__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -187,9 +187,9 @@ public class StringVariableImpl extends VariableImpl implements StringVariable {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.STRING_VARIABLE__INITIAL_VALUE:
+			case MontiarcPackage.STRING_VARIABLE__INITIAL_VALUE:
 				return INITIAL_VALUE_EDEFAULT == null ? initialValue != null : !INITIAL_VALUE_EDEFAULT.equals(initialValue);
-			case FsmPackage.STRING_VARIABLE__VALUE:
+			case MontiarcPackage.STRING_VARIABLE__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);

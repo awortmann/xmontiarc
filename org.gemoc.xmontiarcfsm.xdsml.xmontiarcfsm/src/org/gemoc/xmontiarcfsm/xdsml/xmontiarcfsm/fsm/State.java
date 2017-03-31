@@ -18,7 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.State#getIncomingTransitions <em>Incoming Transitions</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getState()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getState()
  * @model
  * @generated
  */
@@ -34,7 +34,7 @@ public interface State extends NamedElement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Owning FSM</em>' container reference.
 	 * @see #setOwningFSM(StateMachine)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getState_OwningFSM()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getState_OwningFSM()
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StateMachine#getOwnedStates
 	 * @model opposite="ownedStates" required="true" transient="false"
 	 * @generated
@@ -62,7 +62,7 @@ public interface State extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Outgoing Transitions</em>' reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getState_OutgoingTransitions()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getState_OutgoingTransitions()
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Transition#getSource
 	 * @model opposite="source"
 	 * @generated
@@ -80,7 +80,7 @@ public interface State extends NamedElement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Incoming Transitions</em>' reference list.
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getState_IncomingTransitions()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getState_IncomingTransitions()
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Transition#getTarget
 	 * @model opposite="target"
 	 * @generated

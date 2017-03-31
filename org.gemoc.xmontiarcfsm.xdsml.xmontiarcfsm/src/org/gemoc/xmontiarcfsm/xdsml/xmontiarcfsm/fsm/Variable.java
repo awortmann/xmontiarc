@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Variable#getName <em>Name</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getVariable()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getVariable()
  * @model abstract="true"
  * @generated
  */
@@ -32,7 +32,7 @@ public interface Variable extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getVariable_Name()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getVariable_Name()
 	 * @model default="UnnamedVariable" required="true"
 	 * @generated
 	 */

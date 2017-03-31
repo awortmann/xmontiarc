@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.BooleanAction;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.BooleanVariable;
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class BooleanActionImpl extends ActionImpl implements BooleanAction {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.BOOLEAN_ACTION;
+		return MontiarcPackage.Literals.BOOLEAN_ACTION;
 	}
 
 	/**
@@ -95,7 +95,7 @@ public class BooleanActionImpl extends ActionImpl implements BooleanAction {
 		boolean oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.BOOLEAN_ACTION__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.BOOLEAN_ACTION__VALUE, oldValue, value));
 	}
 
 	/**
@@ -109,7 +109,7 @@ public class BooleanActionImpl extends ActionImpl implements BooleanAction {
 			target = (BooleanVariable)eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.BOOLEAN_ACTION__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.BOOLEAN_ACTION__TARGET, oldTarget, target));
 			}
 		}
 		return target;
@@ -133,7 +133,7 @@ public class BooleanActionImpl extends ActionImpl implements BooleanAction {
 		BooleanVariable oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.BOOLEAN_ACTION__TARGET, oldTarget, target));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.BOOLEAN_ACTION__TARGET, oldTarget, target));
 	}
 
 	/**
@@ -144,9 +144,9 @@ public class BooleanActionImpl extends ActionImpl implements BooleanAction {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.BOOLEAN_ACTION__VALUE:
+			case MontiarcPackage.BOOLEAN_ACTION__VALUE:
 				return isValue();
-			case FsmPackage.BOOLEAN_ACTION__TARGET:
+			case MontiarcPackage.BOOLEAN_ACTION__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
 		}
@@ -161,10 +161,10 @@ public class BooleanActionImpl extends ActionImpl implements BooleanAction {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.BOOLEAN_ACTION__VALUE:
+			case MontiarcPackage.BOOLEAN_ACTION__VALUE:
 				setValue((Boolean)newValue);
 				return;
-			case FsmPackage.BOOLEAN_ACTION__TARGET:
+			case MontiarcPackage.BOOLEAN_ACTION__TARGET:
 				setTarget((BooleanVariable)newValue);
 				return;
 		}
@@ -179,10 +179,10 @@ public class BooleanActionImpl extends ActionImpl implements BooleanAction {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.BOOLEAN_ACTION__VALUE:
+			case MontiarcPackage.BOOLEAN_ACTION__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
-			case FsmPackage.BOOLEAN_ACTION__TARGET:
+			case MontiarcPackage.BOOLEAN_ACTION__TARGET:
 				setTarget((BooleanVariable)null);
 				return;
 		}
@@ -197,9 +197,9 @@ public class BooleanActionImpl extends ActionImpl implements BooleanAction {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.BOOLEAN_ACTION__VALUE:
+			case MontiarcPackage.BOOLEAN_ACTION__VALUE:
 				return value != VALUE_EDEFAULT;
-			case FsmPackage.BOOLEAN_ACTION__TARGET:
+			case MontiarcPackage.BOOLEAN_ACTION__TARGET:
 				return target != null;
 		}
 		return super.eIsSet(featureID);

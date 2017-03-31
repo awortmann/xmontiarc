@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Guard#isNot <em>Not</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getGuard()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getGuard()
  * @model abstract="true"
  * @generated
  */
@@ -32,7 +32,7 @@ public interface Guard extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Not</em>' attribute.
 	 * @see #setNot(boolean)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getGuard_Not()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getGuard_Not()
 	 * @model default="false"
 	 * @generated
 	 */

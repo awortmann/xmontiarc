@@ -7,16 +7,16 @@
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated XMontiArcFSM -->
       <package
-            uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/fsm/"
-            class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage"
+            uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/montiarc/"
+            class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage"
             genModel="model/XMontiArcFSM.genmodel"/>
    </extension>
 
    <extension point="org.eclipse.emf.ecore.generated_package">
       <!-- @generated XMontiArcFSM -->
       <package
-            uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/montiarc/"
-            class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage"
+            uri="http://org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/fsm/"
+            class="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage"
             genModel="model/XMontiArcFSM.genmodel"/>
    </extension>
 </plugin>

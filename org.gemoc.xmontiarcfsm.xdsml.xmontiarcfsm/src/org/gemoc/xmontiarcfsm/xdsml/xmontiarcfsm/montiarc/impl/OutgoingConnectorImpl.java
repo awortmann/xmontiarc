@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.OutgoingConnector;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.OutgoingPort;
 
@@ -64,7 +64,7 @@ public class OutgoingConnectorImpl extends ConnectorImpl implements OutgoingConn
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.OUTGOING_CONNECTOR;
+		return FsmPackage.Literals.OUTGOING_CONNECTOR;
 	}
 
 	/**
@@ -78,7 +78,7 @@ public class OutgoingConnectorImpl extends ConnectorImpl implements OutgoingConn
 			source = (OutgoingPort)eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.OUTGOING_CONNECTOR__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.OUTGOING_CONNECTOR__SOURCE, oldSource, source));
 			}
 		}
 		return source;
@@ -102,7 +102,7 @@ public class OutgoingConnectorImpl extends ConnectorImpl implements OutgoingConn
 		OutgoingPort oldSource = source;
 		source = newSource;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.OUTGOING_CONNECTOR__SOURCE, oldSource, source));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.OUTGOING_CONNECTOR__SOURCE, oldSource, source));
 	}
 
 	/**
@@ -116,7 +116,7 @@ public class OutgoingConnectorImpl extends ConnectorImpl implements OutgoingConn
 			target = (OutgoingPort)eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.OUTGOING_CONNECTOR__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.OUTGOING_CONNECTOR__TARGET, oldTarget, target));
 			}
 		}
 		return target;
@@ -140,7 +140,7 @@ public class OutgoingConnectorImpl extends ConnectorImpl implements OutgoingConn
 		OutgoingPort oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.OUTGOING_CONNECTOR__TARGET, oldTarget, target));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.OUTGOING_CONNECTOR__TARGET, oldTarget, target));
 	}
 
 	/**
@@ -151,10 +151,10 @@ public class OutgoingConnectorImpl extends ConnectorImpl implements OutgoingConn
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.OUTGOING_CONNECTOR__SOURCE:
+			case FsmPackage.OUTGOING_CONNECTOR__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
-			case MontiarcPackage.OUTGOING_CONNECTOR__TARGET:
+			case FsmPackage.OUTGOING_CONNECTOR__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
 		}
@@ -169,10 +169,10 @@ public class OutgoingConnectorImpl extends ConnectorImpl implements OutgoingConn
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.OUTGOING_CONNECTOR__SOURCE:
+			case FsmPackage.OUTGOING_CONNECTOR__SOURCE:
 				setSource((OutgoingPort)newValue);
 				return;
-			case MontiarcPackage.OUTGOING_CONNECTOR__TARGET:
+			case FsmPackage.OUTGOING_CONNECTOR__TARGET:
 				setTarget((OutgoingPort)newValue);
 				return;
 		}
@@ -187,10 +187,10 @@ public class OutgoingConnectorImpl extends ConnectorImpl implements OutgoingConn
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.OUTGOING_CONNECTOR__SOURCE:
+			case FsmPackage.OUTGOING_CONNECTOR__SOURCE:
 				setSource((OutgoingPort)null);
 				return;
-			case MontiarcPackage.OUTGOING_CONNECTOR__TARGET:
+			case FsmPackage.OUTGOING_CONNECTOR__TARGET:
 				setTarget((OutgoingPort)null);
 				return;
 		}
@@ -205,9 +205,9 @@ public class OutgoingConnectorImpl extends ConnectorImpl implements OutgoingConn
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.OUTGOING_CONNECTOR__SOURCE:
+			case FsmPackage.OUTGOING_CONNECTOR__SOURCE:
 				return source != null;
-			case MontiarcPackage.OUTGOING_CONNECTOR__TARGET:
+			case FsmPackage.OUTGOING_CONNECTOR__TARGET:
 				return target != null;
 		}
 		return super.eIsSet(featureID);

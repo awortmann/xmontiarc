@@ -14,6 +14,7 @@ Require-Bundle: org.eclipse.core.runtime,
  org.gemoc.portautomata.k3dsa,
  com.google.guava,
  org.gemoc.montiarc.k3dsa,
+ org.codehaus.groovy,
  org.eclipse.xtend.lib,
  org.eclipse.emf.common,
  org.eclipse.emf.ecore.xmi

@@ -16,7 +16,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StringVariable#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getStringVariable()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getStringVariable()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface StringVariable extends Variable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initial Value</em>' attribute.
 	 * @see #setInitialValue(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getStringVariable_InitialValue()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getStringVariable_InitialValue()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface StringVariable extends Variable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getStringVariable_Value()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getStringVariable_Value()
 	 * @model unique="false"
 	 * @generated
 	 */

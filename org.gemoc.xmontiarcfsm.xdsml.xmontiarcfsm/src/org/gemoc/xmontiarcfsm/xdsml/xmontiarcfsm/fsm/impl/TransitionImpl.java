@@ -11,8 +11,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Action;
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Guard;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.State;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Transition;
 
@@ -131,7 +131,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.TRANSITION;
+		return MontiarcPackage.Literals.TRANSITION;
 	}
 
 	/**
@@ -145,7 +145,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 			source = (State)eResolveProxy(oldSource);
 			if (source != oldSource) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.TRANSITION__SOURCE, oldSource, source));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.TRANSITION__SOURCE, oldSource, source));
 			}
 		}
 		return source;
@@ -169,7 +169,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 		State oldSource = source;
 		source = newSource;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FsmPackage.TRANSITION__SOURCE, oldSource, newSource);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiarcPackage.TRANSITION__SOURCE, oldSource, newSource);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -184,14 +184,14 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 		if (newSource != source) {
 			NotificationChain msgs = null;
 			if (source != null)
-				msgs = ((InternalEObject)source).eInverseRemove(this, FsmPackage.STATE__OUTGOING_TRANSITIONS, State.class, msgs);
+				msgs = ((InternalEObject)source).eInverseRemove(this, MontiarcPackage.STATE__OUTGOING_TRANSITIONS, State.class, msgs);
 			if (newSource != null)
-				msgs = ((InternalEObject)newSource).eInverseAdd(this, FsmPackage.STATE__OUTGOING_TRANSITIONS, State.class, msgs);
+				msgs = ((InternalEObject)newSource).eInverseAdd(this, MontiarcPackage.STATE__OUTGOING_TRANSITIONS, State.class, msgs);
 			msgs = basicSetSource(newSource, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.TRANSITION__SOURCE, newSource, newSource));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.TRANSITION__SOURCE, newSource, newSource));
 	}
 
 	/**
@@ -205,7 +205,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 			target = (State)eResolveProxy(oldTarget);
 			if (target != oldTarget) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, FsmPackage.TRANSITION__TARGET, oldTarget, target));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.TRANSITION__TARGET, oldTarget, target));
 			}
 		}
 		return target;
@@ -229,7 +229,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 		State oldTarget = target;
 		target = newTarget;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FsmPackage.TRANSITION__TARGET, oldTarget, newTarget);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiarcPackage.TRANSITION__TARGET, oldTarget, newTarget);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -244,14 +244,14 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 		if (newTarget != target) {
 			NotificationChain msgs = null;
 			if (target != null)
-				msgs = ((InternalEObject)target).eInverseRemove(this, FsmPackage.STATE__INCOMING_TRANSITIONS, State.class, msgs);
+				msgs = ((InternalEObject)target).eInverseRemove(this, MontiarcPackage.STATE__INCOMING_TRANSITIONS, State.class, msgs);
 			if (newTarget != null)
-				msgs = ((InternalEObject)newTarget).eInverseAdd(this, FsmPackage.STATE__INCOMING_TRANSITIONS, State.class, msgs);
+				msgs = ((InternalEObject)newTarget).eInverseAdd(this, MontiarcPackage.STATE__INCOMING_TRANSITIONS, State.class, msgs);
 			msgs = basicSetTarget(newTarget, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.TRANSITION__TARGET, newTarget, newTarget));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.TRANSITION__TARGET, newTarget, newTarget));
 	}
 
 	/**
@@ -272,7 +272,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 		String oldInput = input;
 		input = newInput;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.TRANSITION__INPUT, oldInput, input));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.TRANSITION__INPUT, oldInput, input));
 	}
 
 	/**
@@ -293,7 +293,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 		String oldOutput = output;
 		output = newOutput;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.TRANSITION__OUTPUT, oldOutput, output));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.TRANSITION__OUTPUT, oldOutput, output));
 	}
 
 	/**
@@ -314,7 +314,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 		Guard oldGuard = guard;
 		guard = newGuard;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FsmPackage.TRANSITION__GUARD, oldGuard, newGuard);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiarcPackage.TRANSITION__GUARD, oldGuard, newGuard);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -329,14 +329,14 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 		if (newGuard != guard) {
 			NotificationChain msgs = null;
 			if (guard != null)
-				msgs = ((InternalEObject)guard).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FsmPackage.TRANSITION__GUARD, null, msgs);
+				msgs = ((InternalEObject)guard).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.TRANSITION__GUARD, null, msgs);
 			if (newGuard != null)
-				msgs = ((InternalEObject)newGuard).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FsmPackage.TRANSITION__GUARD, null, msgs);
+				msgs = ((InternalEObject)newGuard).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.TRANSITION__GUARD, null, msgs);
 			msgs = basicSetGuard(newGuard, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.TRANSITION__GUARD, newGuard, newGuard));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.TRANSITION__GUARD, newGuard, newGuard));
 	}
 
 	/**
@@ -357,7 +357,7 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 		Action oldAction = action;
 		action = newAction;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, FsmPackage.TRANSITION__ACTION, oldAction, newAction);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiarcPackage.TRANSITION__ACTION, oldAction, newAction);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -372,14 +372,14 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 		if (newAction != action) {
 			NotificationChain msgs = null;
 			if (action != null)
-				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - FsmPackage.TRANSITION__ACTION, null, msgs);
+				msgs = ((InternalEObject)action).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.TRANSITION__ACTION, null, msgs);
 			if (newAction != null)
-				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - FsmPackage.TRANSITION__ACTION, null, msgs);
+				msgs = ((InternalEObject)newAction).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.TRANSITION__ACTION, null, msgs);
 			msgs = basicSetAction(newAction, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.TRANSITION__ACTION, newAction, newAction));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.TRANSITION__ACTION, newAction, newAction));
 	}
 
 	/**
@@ -401,13 +401,13 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FsmPackage.TRANSITION__SOURCE:
+			case MontiarcPackage.TRANSITION__SOURCE:
 				if (source != null)
-					msgs = ((InternalEObject)source).eInverseRemove(this, FsmPackage.STATE__OUTGOING_TRANSITIONS, State.class, msgs);
+					msgs = ((InternalEObject)source).eInverseRemove(this, MontiarcPackage.STATE__OUTGOING_TRANSITIONS, State.class, msgs);
 				return basicSetSource((State)otherEnd, msgs);
-			case FsmPackage.TRANSITION__TARGET:
+			case MontiarcPackage.TRANSITION__TARGET:
 				if (target != null)
-					msgs = ((InternalEObject)target).eInverseRemove(this, FsmPackage.STATE__INCOMING_TRANSITIONS, State.class, msgs);
+					msgs = ((InternalEObject)target).eInverseRemove(this, MontiarcPackage.STATE__INCOMING_TRANSITIONS, State.class, msgs);
 				return basicSetTarget((State)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -421,13 +421,13 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FsmPackage.TRANSITION__SOURCE:
+			case MontiarcPackage.TRANSITION__SOURCE:
 				return basicSetSource(null, msgs);
-			case FsmPackage.TRANSITION__TARGET:
+			case MontiarcPackage.TRANSITION__TARGET:
 				return basicSetTarget(null, msgs);
-			case FsmPackage.TRANSITION__GUARD:
+			case MontiarcPackage.TRANSITION__GUARD:
 				return basicSetGuard(null, msgs);
-			case FsmPackage.TRANSITION__ACTION:
+			case MontiarcPackage.TRANSITION__ACTION:
 				return basicSetAction(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -441,19 +441,19 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.TRANSITION__SOURCE:
+			case MontiarcPackage.TRANSITION__SOURCE:
 				if (resolve) return getSource();
 				return basicGetSource();
-			case FsmPackage.TRANSITION__TARGET:
+			case MontiarcPackage.TRANSITION__TARGET:
 				if (resolve) return getTarget();
 				return basicGetTarget();
-			case FsmPackage.TRANSITION__INPUT:
+			case MontiarcPackage.TRANSITION__INPUT:
 				return getInput();
-			case FsmPackage.TRANSITION__OUTPUT:
+			case MontiarcPackage.TRANSITION__OUTPUT:
 				return getOutput();
-			case FsmPackage.TRANSITION__GUARD:
+			case MontiarcPackage.TRANSITION__GUARD:
 				return getGuard();
-			case FsmPackage.TRANSITION__ACTION:
+			case MontiarcPackage.TRANSITION__ACTION:
 				return getAction();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -467,22 +467,22 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.TRANSITION__SOURCE:
+			case MontiarcPackage.TRANSITION__SOURCE:
 				setSource((State)newValue);
 				return;
-			case FsmPackage.TRANSITION__TARGET:
+			case MontiarcPackage.TRANSITION__TARGET:
 				setTarget((State)newValue);
 				return;
-			case FsmPackage.TRANSITION__INPUT:
+			case MontiarcPackage.TRANSITION__INPUT:
 				setInput((String)newValue);
 				return;
-			case FsmPackage.TRANSITION__OUTPUT:
+			case MontiarcPackage.TRANSITION__OUTPUT:
 				setOutput((String)newValue);
 				return;
-			case FsmPackage.TRANSITION__GUARD:
+			case MontiarcPackage.TRANSITION__GUARD:
 				setGuard((Guard)newValue);
 				return;
-			case FsmPackage.TRANSITION__ACTION:
+			case MontiarcPackage.TRANSITION__ACTION:
 				setAction((Action)newValue);
 				return;
 		}
@@ -497,22 +497,22 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.TRANSITION__SOURCE:
+			case MontiarcPackage.TRANSITION__SOURCE:
 				setSource((State)null);
 				return;
-			case FsmPackage.TRANSITION__TARGET:
+			case MontiarcPackage.TRANSITION__TARGET:
 				setTarget((State)null);
 				return;
-			case FsmPackage.TRANSITION__INPUT:
+			case MontiarcPackage.TRANSITION__INPUT:
 				setInput(INPUT_EDEFAULT);
 				return;
-			case FsmPackage.TRANSITION__OUTPUT:
+			case MontiarcPackage.TRANSITION__OUTPUT:
 				setOutput(OUTPUT_EDEFAULT);
 				return;
-			case FsmPackage.TRANSITION__GUARD:
+			case MontiarcPackage.TRANSITION__GUARD:
 				setGuard((Guard)null);
 				return;
-			case FsmPackage.TRANSITION__ACTION:
+			case MontiarcPackage.TRANSITION__ACTION:
 				setAction((Action)null);
 				return;
 		}
@@ -527,17 +527,17 @@ public class TransitionImpl extends NamedElementImpl implements Transition {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.TRANSITION__SOURCE:
+			case MontiarcPackage.TRANSITION__SOURCE:
 				return source != null;
-			case FsmPackage.TRANSITION__TARGET:
+			case MontiarcPackage.TRANSITION__TARGET:
 				return target != null;
-			case FsmPackage.TRANSITION__INPUT:
+			case MontiarcPackage.TRANSITION__INPUT:
 				return INPUT_EDEFAULT == null ? input != null : !INPUT_EDEFAULT.equals(input);
-			case FsmPackage.TRANSITION__OUTPUT:
+			case MontiarcPackage.TRANSITION__OUTPUT:
 				return OUTPUT_EDEFAULT == null ? output != null : !OUTPUT_EDEFAULT.equals(output);
-			case FsmPackage.TRANSITION__GUARD:
+			case MontiarcPackage.TRANSITION__GUARD:
 				return guard != null;
-			case FsmPackage.TRANSITION__ACTION:
+			case MontiarcPackage.TRANSITION__ACTION:
 				return action != null;
 		}
 		return super.eIsSet(featureID);

@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Action;
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ public abstract class ActionImpl extends EObjectImpl implements Action {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.ACTION;
+		return MontiarcPackage.Literals.ACTION;
 	}
 
 	/**

@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.State;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.StateMachine;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Transition;
@@ -75,7 +75,7 @@ public class StateImpl extends NamedElementImpl implements State {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.STATE;
+		return MontiarcPackage.Literals.STATE;
 	}
 
 	/**
@@ -84,7 +84,7 @@ public class StateImpl extends NamedElementImpl implements State {
 	 * @generated
 	 */
 	public StateMachine getOwningFSM() {
-		if (eContainerFeatureID() != FsmPackage.STATE__OWNING_FSM) return null;
+		if (eContainerFeatureID() != MontiarcPackage.STATE__OWNING_FSM) return null;
 		return (StateMachine)eInternalContainer();
 	}
 
@@ -94,7 +94,7 @@ public class StateImpl extends NamedElementImpl implements State {
 	 * @generated
 	 */
 	public NotificationChain basicSetOwningFSM(StateMachine newOwningFSM, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newOwningFSM, FsmPackage.STATE__OWNING_FSM, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newOwningFSM, MontiarcPackage.STATE__OWNING_FSM, msgs);
 		return msgs;
 	}
 
@@ -104,19 +104,19 @@ public class StateImpl extends NamedElementImpl implements State {
 	 * @generated
 	 */
 	public void setOwningFSM(StateMachine newOwningFSM) {
-		if (newOwningFSM != eInternalContainer() || (eContainerFeatureID() != FsmPackage.STATE__OWNING_FSM && newOwningFSM != null)) {
+		if (newOwningFSM != eInternalContainer() || (eContainerFeatureID() != MontiarcPackage.STATE__OWNING_FSM && newOwningFSM != null)) {
 			if (EcoreUtil.isAncestor(this, newOwningFSM))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newOwningFSM != null)
-				msgs = ((InternalEObject)newOwningFSM).eInverseAdd(this, FsmPackage.STATE_MACHINE__OWNED_STATES, StateMachine.class, msgs);
+				msgs = ((InternalEObject)newOwningFSM).eInverseAdd(this, MontiarcPackage.STATE_MACHINE__OWNED_STATES, StateMachine.class, msgs);
 			msgs = basicSetOwningFSM(newOwningFSM, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.STATE__OWNING_FSM, newOwningFSM, newOwningFSM));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.STATE__OWNING_FSM, newOwningFSM, newOwningFSM));
 	}
 
 	/**
@@ -126,7 +126,7 @@ public class StateImpl extends NamedElementImpl implements State {
 	 */
 	public EList<Transition> getOutgoingTransitions() {
 		if (outgoingTransitions == null) {
-			outgoingTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, FsmPackage.STATE__OUTGOING_TRANSITIONS, FsmPackage.TRANSITION__SOURCE);
+			outgoingTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, MontiarcPackage.STATE__OUTGOING_TRANSITIONS, MontiarcPackage.TRANSITION__SOURCE);
 		}
 		return outgoingTransitions;
 	}
@@ -138,7 +138,7 @@ public class StateImpl extends NamedElementImpl implements State {
 	 */
 	public EList<Transition> getIncomingTransitions() {
 		if (incomingTransitions == null) {
-			incomingTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, FsmPackage.STATE__INCOMING_TRANSITIONS, FsmPackage.TRANSITION__TARGET);
+			incomingTransitions = new EObjectWithInverseResolvingEList<Transition>(Transition.class, this, MontiarcPackage.STATE__INCOMING_TRANSITIONS, MontiarcPackage.TRANSITION__TARGET);
 		}
 		return incomingTransitions;
 	}
@@ -152,13 +152,13 @@ public class StateImpl extends NamedElementImpl implements State {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FsmPackage.STATE__OWNING_FSM:
+			case MontiarcPackage.STATE__OWNING_FSM:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetOwningFSM((StateMachine)otherEnd, msgs);
-			case FsmPackage.STATE__OUTGOING_TRANSITIONS:
+			case MontiarcPackage.STATE__OUTGOING_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getOutgoingTransitions()).basicAdd(otherEnd, msgs);
-			case FsmPackage.STATE__INCOMING_TRANSITIONS:
+			case MontiarcPackage.STATE__INCOMING_TRANSITIONS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getIncomingTransitions()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -172,11 +172,11 @@ public class StateImpl extends NamedElementImpl implements State {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case FsmPackage.STATE__OWNING_FSM:
+			case MontiarcPackage.STATE__OWNING_FSM:
 				return basicSetOwningFSM(null, msgs);
-			case FsmPackage.STATE__OUTGOING_TRANSITIONS:
+			case MontiarcPackage.STATE__OUTGOING_TRANSITIONS:
 				return ((InternalEList<?>)getOutgoingTransitions()).basicRemove(otherEnd, msgs);
-			case FsmPackage.STATE__INCOMING_TRANSITIONS:
+			case MontiarcPackage.STATE__INCOMING_TRANSITIONS:
 				return ((InternalEList<?>)getIncomingTransitions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -190,8 +190,8 @@ public class StateImpl extends NamedElementImpl implements State {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case FsmPackage.STATE__OWNING_FSM:
-				return eInternalContainer().eInverseRemove(this, FsmPackage.STATE_MACHINE__OWNED_STATES, StateMachine.class, msgs);
+			case MontiarcPackage.STATE__OWNING_FSM:
+				return eInternalContainer().eInverseRemove(this, MontiarcPackage.STATE_MACHINE__OWNED_STATES, StateMachine.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -204,11 +204,11 @@ public class StateImpl extends NamedElementImpl implements State {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.STATE__OWNING_FSM:
+			case MontiarcPackage.STATE__OWNING_FSM:
 				return getOwningFSM();
-			case FsmPackage.STATE__OUTGOING_TRANSITIONS:
+			case MontiarcPackage.STATE__OUTGOING_TRANSITIONS:
 				return getOutgoingTransitions();
-			case FsmPackage.STATE__INCOMING_TRANSITIONS:
+			case MontiarcPackage.STATE__INCOMING_TRANSITIONS:
 				return getIncomingTransitions();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -223,14 +223,14 @@ public class StateImpl extends NamedElementImpl implements State {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.STATE__OWNING_FSM:
+			case MontiarcPackage.STATE__OWNING_FSM:
 				setOwningFSM((StateMachine)newValue);
 				return;
-			case FsmPackage.STATE__OUTGOING_TRANSITIONS:
+			case MontiarcPackage.STATE__OUTGOING_TRANSITIONS:
 				getOutgoingTransitions().clear();
 				getOutgoingTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
-			case FsmPackage.STATE__INCOMING_TRANSITIONS:
+			case MontiarcPackage.STATE__INCOMING_TRANSITIONS:
 				getIncomingTransitions().clear();
 				getIncomingTransitions().addAll((Collection<? extends Transition>)newValue);
 				return;
@@ -246,13 +246,13 @@ public class StateImpl extends NamedElementImpl implements State {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.STATE__OWNING_FSM:
+			case MontiarcPackage.STATE__OWNING_FSM:
 				setOwningFSM((StateMachine)null);
 				return;
-			case FsmPackage.STATE__OUTGOING_TRANSITIONS:
+			case MontiarcPackage.STATE__OUTGOING_TRANSITIONS:
 				getOutgoingTransitions().clear();
 				return;
-			case FsmPackage.STATE__INCOMING_TRANSITIONS:
+			case MontiarcPackage.STATE__INCOMING_TRANSITIONS:
 				getIncomingTransitions().clear();
 				return;
 		}
@@ -267,11 +267,11 @@ public class StateImpl extends NamedElementImpl implements State {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.STATE__OWNING_FSM:
+			case MontiarcPackage.STATE__OWNING_FSM:
 				return getOwningFSM() != null;
-			case FsmPackage.STATE__OUTGOING_TRANSITIONS:
+			case MontiarcPackage.STATE__OUTGOING_TRANSITIONS:
 				return outgoingTransitions != null && !outgoingTransitions.isEmpty();
-			case FsmPackage.STATE__INCOMING_TRANSITIONS:
+			case MontiarcPackage.STATE__INCOMING_TRANSITIONS:
 				return incomingTransitions != null && !incomingTransitions.isEmpty();
 		}
 		return super.eIsSet(featureID);

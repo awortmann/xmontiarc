@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentBehavior;
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -33,7 +33,7 @@ public abstract class ComponentBehaviorImpl extends EObjectImpl implements Compo
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.COMPONENT_BEHAVIOR;
+		return FsmPackage.Literals.COMPONENT_BEHAVIOR;
 	}
 
 } //ComponentBehaviorImpl

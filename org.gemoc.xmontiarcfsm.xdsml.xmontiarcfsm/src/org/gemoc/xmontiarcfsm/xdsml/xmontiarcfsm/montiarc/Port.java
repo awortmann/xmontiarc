@@ -19,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getPort()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getPort()
  * @model annotation="http://www.eclipse.org/emf/2002/Ecore constraints='NameIsLowerCase'"
  *        annotation="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot NameIsLowerCase='Tuple {\n\tmessage : String = \'Port \\\'\' + name + \'\\\' must be lowercase\',\n\tstatus : Boolean = \n            let firstLetter : String = (name).substring(0,1)\n                in firstLetter.toLowerCase() = firstLetter\n}.status'"
  * @generated
@@ -38,7 +38,7 @@ public interface Port extends EObject {
 	 * @return the value of the '<em>Type</em>' attribute.
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.DataType
 	 * @see #setType(DataType)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getPort_Type()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getPort_Type()
 	 * @model default="Number"
 	 * @generated
 	 */
@@ -66,7 +66,7 @@ public interface Port extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getPort_Name()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getPort_Name()
 	 * @model default="UnnamedPort" required="true"
 	 * @generated
 	 */
@@ -92,7 +92,7 @@ public interface Port extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(EDataType)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getPort_Value()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage#getPort_Value()
 	 * @model unique="false" dataType="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.EDataType"
 	 * @generated
 	 */

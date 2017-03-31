@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.Variable;
 
 /**
@@ -62,7 +62,7 @@ public abstract class VariableImpl extends EObjectImpl implements Variable {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.VARIABLE;
+		return MontiarcPackage.Literals.VARIABLE;
 	}
 
 	/**
@@ -83,7 +83,7 @@ public abstract class VariableImpl extends EObjectImpl implements Variable {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.VARIABLE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.VARIABLE__NAME, oldName, name));
 	}
 
 	/**
@@ -94,7 +94,7 @@ public abstract class VariableImpl extends EObjectImpl implements Variable {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.VARIABLE__NAME:
+			case MontiarcPackage.VARIABLE__NAME:
 				return getName();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -108,7 +108,7 @@ public abstract class VariableImpl extends EObjectImpl implements Variable {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.VARIABLE__NAME:
+			case MontiarcPackage.VARIABLE__NAME:
 				setName((String)newValue);
 				return;
 		}
@@ -123,7 +123,7 @@ public abstract class VariableImpl extends EObjectImpl implements Variable {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.VARIABLE__NAME:
+			case MontiarcPackage.VARIABLE__NAME:
 				setName(NAME_EDEFAULT);
 				return;
 		}
@@ -138,7 +138,7 @@ public abstract class VariableImpl extends EObjectImpl implements Variable {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.VARIABLE__NAME:
+			case MontiarcPackage.VARIABLE__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
 		}
 		return super.eIsSet(featureID);

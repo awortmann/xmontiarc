@@ -11,7 +11,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.DataType;
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port;
 
 /**
@@ -106,7 +106,7 @@ public class PortImpl extends EObjectImpl implements Port {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.PORT;
+		return FsmPackage.Literals.PORT;
 	}
 
 	/**
@@ -127,7 +127,7 @@ public class PortImpl extends EObjectImpl implements Port {
 		DataType oldType = type;
 		type = newType == null ? TYPE_EDEFAULT : newType;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.PORT__TYPE, oldType, type));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.PORT__TYPE, oldType, type));
 	}
 
 	/**
@@ -148,7 +148,7 @@ public class PortImpl extends EObjectImpl implements Port {
 		String oldName = name;
 		name = newName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.PORT__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.PORT__NAME, oldName, name));
 	}
 
 	/**
@@ -169,7 +169,7 @@ public class PortImpl extends EObjectImpl implements Port {
 		EDataType oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.PORT__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.PORT__VALUE, oldValue, value));
 	}
 
 	/**
@@ -191,11 +191,11 @@ public class PortImpl extends EObjectImpl implements Port {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.PORT__TYPE:
+			case FsmPackage.PORT__TYPE:
 				return getType();
-			case MontiarcPackage.PORT__NAME:
+			case FsmPackage.PORT__NAME:
 				return getName();
-			case MontiarcPackage.PORT__VALUE:
+			case FsmPackage.PORT__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -209,13 +209,13 @@ public class PortImpl extends EObjectImpl implements Port {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.PORT__TYPE:
+			case FsmPackage.PORT__TYPE:
 				setType((DataType)newValue);
 				return;
-			case MontiarcPackage.PORT__NAME:
+			case FsmPackage.PORT__NAME:
 				setName((String)newValue);
 				return;
-			case MontiarcPackage.PORT__VALUE:
+			case FsmPackage.PORT__VALUE:
 				setValue((EDataType)newValue);
 				return;
 		}
@@ -230,13 +230,13 @@ public class PortImpl extends EObjectImpl implements Port {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.PORT__TYPE:
+			case FsmPackage.PORT__TYPE:
 				setType(TYPE_EDEFAULT);
 				return;
-			case MontiarcPackage.PORT__NAME:
+			case FsmPackage.PORT__NAME:
 				setName(NAME_EDEFAULT);
 				return;
-			case MontiarcPackage.PORT__VALUE:
+			case FsmPackage.PORT__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -251,11 +251,11 @@ public class PortImpl extends EObjectImpl implements Port {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.PORT__TYPE:
+			case FsmPackage.PORT__TYPE:
 				return type != TYPE_EDEFAULT;
-			case MontiarcPackage.PORT__NAME:
+			case FsmPackage.PORT__NAME:
 				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-			case MontiarcPackage.PORT__VALUE:
+			case FsmPackage.PORT__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);

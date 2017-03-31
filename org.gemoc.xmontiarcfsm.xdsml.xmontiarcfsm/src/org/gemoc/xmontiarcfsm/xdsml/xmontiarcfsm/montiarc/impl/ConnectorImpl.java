@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Connector;
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.FsmPackage;
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Port;
 
 /**
@@ -48,7 +48,7 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return MontiarcPackage.Literals.CONNECTOR;
+		return FsmPackage.Literals.CONNECTOR;
 	}
 
 	/**
@@ -57,7 +57,7 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	 * @generated
 	 */
 	public ComponentType getParent() {
-		if (eContainerFeatureID() != MontiarcPackage.CONNECTOR__PARENT) return null;
+		if (eContainerFeatureID() != FsmPackage.CONNECTOR__PARENT) return null;
 		return (ComponentType)eInternalContainer();
 	}
 
@@ -67,7 +67,7 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	 * @generated
 	 */
 	public NotificationChain basicSetParent(ComponentType newParent, NotificationChain msgs) {
-		msgs = eBasicSetContainer((InternalEObject)newParent, MontiarcPackage.CONNECTOR__PARENT, msgs);
+		msgs = eBasicSetContainer((InternalEObject)newParent, FsmPackage.CONNECTOR__PARENT, msgs);
 		return msgs;
 	}
 
@@ -77,19 +77,19 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	 * @generated
 	 */
 	public void setParent(ComponentType newParent) {
-		if (newParent != eInternalContainer() || (eContainerFeatureID() != MontiarcPackage.CONNECTOR__PARENT && newParent != null)) {
+		if (newParent != eInternalContainer() || (eContainerFeatureID() != FsmPackage.CONNECTOR__PARENT && newParent != null)) {
 			if (EcoreUtil.isAncestor(this, newParent))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
 			NotificationChain msgs = null;
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newParent != null)
-				msgs = ((InternalEObject)newParent).eInverseAdd(this, MontiarcPackage.COMPONENT_TYPE__CONNECTORS, ComponentType.class, msgs);
+				msgs = ((InternalEObject)newParent).eInverseAdd(this, FsmPackage.COMPONENT_TYPE__CONNECTORS, ComponentType.class, msgs);
 			msgs = basicSetParent(newParent, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.CONNECTOR__PARENT, newParent, newParent));
+			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.CONNECTOR__PARENT, newParent, newParent));
 	}
 
 	/**
@@ -166,7 +166,7 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MontiarcPackage.CONNECTOR__PARENT:
+			case FsmPackage.CONNECTOR__PARENT:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
 				return basicSetParent((ComponentType)otherEnd, msgs);
@@ -182,7 +182,7 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case MontiarcPackage.CONNECTOR__PARENT:
+			case FsmPackage.CONNECTOR__PARENT:
 				return basicSetParent(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -196,8 +196,8 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
-			case MontiarcPackage.CONNECTOR__PARENT:
-				return eInternalContainer().eInverseRemove(this, MontiarcPackage.COMPONENT_TYPE__CONNECTORS, ComponentType.class, msgs);
+			case FsmPackage.CONNECTOR__PARENT:
+				return eInternalContainer().eInverseRemove(this, FsmPackage.COMPONENT_TYPE__CONNECTORS, ComponentType.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -210,7 +210,7 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case MontiarcPackage.CONNECTOR__PARENT:
+			case FsmPackage.CONNECTOR__PARENT:
 				return getParent();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -224,7 +224,7 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case MontiarcPackage.CONNECTOR__PARENT:
+			case FsmPackage.CONNECTOR__PARENT:
 				setParent((ComponentType)newValue);
 				return;
 		}
@@ -239,7 +239,7 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.CONNECTOR__PARENT:
+			case FsmPackage.CONNECTOR__PARENT:
 				setParent((ComponentType)null);
 				return;
 		}
@@ -254,7 +254,7 @@ public abstract class ConnectorImpl extends EObjectImpl implements Connector {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case MontiarcPackage.CONNECTOR__PARENT:
+			case FsmPackage.CONNECTOR__PARENT:
 				return getParent() != null;
 		}
 		return super.eIsSet(featureID);

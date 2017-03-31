@@ -16,7 +16,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm;
  *   <li>{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.NumberVariable#getValue <em>Value</em>}</li>
  * </ul>
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getNumberVariable()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getNumberVariable()
  * @model
  * @generated
  */
@@ -31,7 +31,7 @@ public interface NumberVariable extends Variable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Initial Value</em>' attribute.
 	 * @see #setInitialValue(long)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getNumberVariable_InitialValue()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getNumberVariable_InitialValue()
 	 * @model required="true"
 	 * @generated
 	 */
@@ -57,7 +57,7 @@ public interface NumberVariable extends Variable {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(Long)
-	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getNumberVariable_Value()
+	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getNumberVariable_Value()
 	 * @model unique="false"
 	 * @generated
 	 */

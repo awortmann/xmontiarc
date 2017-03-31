@@ -9,7 +9,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.BooleanVariable;
-import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage;
+import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -82,7 +82,7 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return FsmPackage.Literals.BOOLEAN_VARIABLE;
+		return MontiarcPackage.Literals.BOOLEAN_VARIABLE;
 	}
 
 	/**
@@ -103,7 +103,7 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 		boolean oldInitialValue = initialValue;
 		initialValue = newInitialValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.BOOLEAN_VARIABLE__INITIAL_VALUE, oldInitialValue, initialValue));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.BOOLEAN_VARIABLE__INITIAL_VALUE, oldInitialValue, initialValue));
 	}
 
 	/**
@@ -124,7 +124,7 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 		Boolean oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, FsmPackage.BOOLEAN_VARIABLE__VALUE, oldValue, value));
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.BOOLEAN_VARIABLE__VALUE, oldValue, value));
 	}
 
 	/**
@@ -135,9 +135,9 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case FsmPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
+			case MontiarcPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
 				return isInitialValue();
-			case FsmPackage.BOOLEAN_VARIABLE__VALUE:
+			case MontiarcPackage.BOOLEAN_VARIABLE__VALUE:
 				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -151,10 +151,10 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case FsmPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
+			case MontiarcPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
 				setInitialValue((Boolean)newValue);
 				return;
-			case FsmPackage.BOOLEAN_VARIABLE__VALUE:
+			case MontiarcPackage.BOOLEAN_VARIABLE__VALUE:
 				setValue((Boolean)newValue);
 				return;
 		}
@@ -169,10 +169,10 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case FsmPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
+			case MontiarcPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
 				setInitialValue(INITIAL_VALUE_EDEFAULT);
 				return;
-			case FsmPackage.BOOLEAN_VARIABLE__VALUE:
+			case MontiarcPackage.BOOLEAN_VARIABLE__VALUE:
 				setValue(VALUE_EDEFAULT);
 				return;
 		}
@@ -187,9 +187,9 @@ public class BooleanVariableImpl extends VariableImpl implements BooleanVariable
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case FsmPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
+			case MontiarcPackage.BOOLEAN_VARIABLE__INITIAL_VALUE:
 				return initialValue != INITIAL_VALUE_EDEFAULT;
-			case FsmPackage.BOOLEAN_VARIABLE__VALUE:
+			case MontiarcPackage.BOOLEAN_VARIABLE__VALUE:
 				return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT.equals(value);
 		}
 		return super.eIsSet(featureID);

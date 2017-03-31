@@ -9,7 +9,7 @@ package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm;
  * <!-- end-user-doc -->
  *
  *
- * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.FsmPackage#getEqualNumberGuard()
+ * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.fsm.MontiarcPackage#getEqualNumberGuard()
  * @model
  * @generated
  */
