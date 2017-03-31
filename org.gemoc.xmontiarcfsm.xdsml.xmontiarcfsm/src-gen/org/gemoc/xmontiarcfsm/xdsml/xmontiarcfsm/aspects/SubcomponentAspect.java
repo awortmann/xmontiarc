@@ -1,8 +1,10 @@
 package org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects;
 
+import com.google.common.base.Objects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
-import java.util.Random;
+import groovy.lang.Binding;
+import groovy.lang.GroovyShell;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EcorePackage;
@@ -22,8 +24,6 @@ import org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.Subcomponent;
 @Aspect(className = Subcomponent.class)
 @SuppressWarnings("all")
 public class SubcomponentAspect {
-  private static Random rand = new Random();
-  
   public static void createDefaultBehavior(final Subcomponent _self) {
 	final org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectProperties _self_ = org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.aspects.SubcomponentAspectSubcomponentAspectContext
 			.getSelf(_self);
@@ -58,36 +58,45 @@ public class SubcomponentAspect {
 }
   
   protected static void _privk3_createDefaultBehavior(final SubcomponentAspectSubcomponentAspectProperties _self_, final Subcomponent _self) {
+    final Binding binding = new Binding();
+    ComponentType _type = _self.getType();
+    ComponentBehavior _behavior = _type.getBehavior();
+    final String groovyScript = ((GroovyComponentBehavior) _behavior).getScriptBody();
+    final GroovyShell shell = new GroovyShell(binding);
+    final Object result = shell.evaluate(groovyScript);
     EList<OutgoingPort> _outgoingPorts = _self.getOutgoingPorts();
     for (final Port p : _outgoingPorts) {
       {
         EDataType data = null;
-        DataType _type = p.getType();
-        boolean _equals = _type.equals(DataType.BOOLEAN);
+        DataType _type_1 = p.getType();
+        boolean _equals = _type_1.equals(DataType.BOOLEAN);
         if (_equals) {
           EDataType _eBoolean = EcorePackage.eINSTANCE.getEBoolean();
           data = _eBoolean;
-          data.setName("true");
-        } else {
-          DataType _type_1 = p.getType();
-          boolean _equals_1 = _type_1.equals(DataType.NUMBER);
+          boolean _equals_1 = Objects.equal(result, Boolean.valueOf(true));
           if (_equals_1) {
+            data.setName("true");
+          } else {
+            data.setName("false");
+          }
+        } else {
+          DataType _type_2 = p.getType();
+          boolean _equals_2 = _type_2.equals(DataType.NUMBER);
+          if (_equals_2) {
             EDataType _eLong = EcorePackage.eINSTANCE.getELong();
             data = _eLong;
-            int _nextInt = SubcomponentAspect.rand.nextInt(100);
-            int _plus = (_nextInt + 1);
-            String _plus_1 = ("" + Integer.valueOf(_plus));
-            data.setName(_plus_1);
+            if ((result instanceof Integer)) {
+              data.setName(("" + result));
+            } else {
+              data.setName("0");
+            }
           } else {
-            DataType _type_2 = p.getType();
-            boolean _equals_2 = _type_2.equals(DataType.STRING);
-            if (_equals_2) {
+            DataType _type_3 = p.getType();
+            boolean _equals_3 = _type_3.equals(DataType.STRING);
+            if (_equals_3) {
               EDataType _eString = EcorePackage.eINSTANCE.getEString();
               data = _eString;
-              int _nextInt_1 = SubcomponentAspect.rand.nextInt(100);
-              int _plus_2 = (_nextInt_1 + 1);
-              String _plus_3 = ("HalloWelt" + Integer.valueOf(_plus_2));
-              data.setName(_plus_3);
+              data.setName(("" + result));
             }
           }
         }

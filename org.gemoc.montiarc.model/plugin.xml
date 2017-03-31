@@ -23,10 +23,13 @@
       </constraints>
     </constraintProvider>
   </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated montiarc -->
-    <package uri="http://org/gemoc/montiarc/model" class="org.gemoc.montiarc.montiarc.MontiarcPackage" genModel="model/montiarc.genmodel" />
-  </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated montiarc -->
+      <package
+            uri="http://org/gemoc/montiarc/model"
+            class="org.gemoc.montiarc.montiarc.MontiarcPackage"
+            genModel="model/montiarc.genmodel"/>
+   </extension>
   <extension point="org.gemoc.gemoc_language_workbench.sequential.xdsml">
     <XDSML_Definition modelLoader_class="org.gemoc.executionframework.extensions.sirius.modelloader.DefaultModelLoader" name="org.gemoc.montiarc.MontiArc" xdsmlFilePath="/org.gemoc.montiarc.model/src/org/gemoc/montiarc/MontiArc.melange" />
   </extension>

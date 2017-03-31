@@ -107,7 +107,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	protected EList<OutgoingPort> outgoingPorts;
 
 	/**
-	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' reference.
+	 * The cached value of the '{@link #getBehavior() <em>Behavior</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getBehavior()
@@ -210,14 +210,6 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * @generated
 	 */
 	public ComponentBehavior getBehavior() {
-		if (behavior != null && behavior.eIsProxy()) {
-			InternalEObject oldBehavior = (InternalEObject)behavior;
-			behavior = (ComponentBehavior)eResolveProxy(oldBehavior);
-			if (behavior != oldBehavior) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, MontiarcPackage.COMPONENT_TYPE__BEHAVIOR, oldBehavior, behavior));
-			}
-		}
 		return behavior;
 	}
 
@@ -226,8 +218,14 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public ComponentBehavior basicGetBehavior() {
-		return behavior;
+	public NotificationChain basicSetBehavior(ComponentBehavior newBehavior, NotificationChain msgs) {
+		ComponentBehavior oldBehavior = behavior;
+		behavior = newBehavior;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_TYPE__BEHAVIOR, oldBehavior, newBehavior);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
 	}
 
 	/**
@@ -236,10 +234,17 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 	 * @generated
 	 */
 	public void setBehavior(ComponentBehavior newBehavior) {
-		ComponentBehavior oldBehavior = behavior;
-		behavior = newBehavior;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_TYPE__BEHAVIOR, oldBehavior, behavior));
+		if (newBehavior != behavior) {
+			NotificationChain msgs = null;
+			if (behavior != null)
+				msgs = ((InternalEObject)behavior).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.COMPONENT_TYPE__BEHAVIOR, null, msgs);
+			if (newBehavior != null)
+				msgs = ((InternalEObject)newBehavior).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MontiarcPackage.COMPONENT_TYPE__BEHAVIOR, null, msgs);
+			msgs = basicSetBehavior(newBehavior, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, MontiarcPackage.COMPONENT_TYPE__BEHAVIOR, newBehavior, newBehavior));
 	}
 
 	/**
@@ -275,6 +280,8 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 				return ((InternalEList<?>)getIncomingPorts()).basicRemove(otherEnd, msgs);
 			case MontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				return ((InternalEList<?>)getOutgoingPorts()).basicRemove(otherEnd, msgs);
+			case MontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
+				return basicSetBehavior(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -298,8 +305,7 @@ public class ComponentTypeImpl extends MinimalEObjectImpl.Container implements C
 			case MontiarcPackage.COMPONENT_TYPE__OUTGOING_PORTS:
 				return getOutgoingPorts();
 			case MontiarcPackage.COMPONENT_TYPE__BEHAVIOR:
-				if (resolve) return getBehavior();
-				return basicGetBehavior();
+				return getBehavior();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}

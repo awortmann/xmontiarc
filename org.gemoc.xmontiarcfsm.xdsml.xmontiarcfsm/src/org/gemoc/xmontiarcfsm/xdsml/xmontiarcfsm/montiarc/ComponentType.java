@@ -125,26 +125,26 @@ public interface ComponentType extends EObject {
 	EList<OutgoingPort> getOutgoingPorts();
 
 	/**
-	 * Returns the value of the '<em><b>Behavior</b></em>' reference.
+	 * Returns the value of the '<em><b>Behavior</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Behavior</em>' reference isn't clear,
+	 * If the meaning of the '<em>Behavior</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Behavior</em>' reference.
+	 * @return the value of the '<em>Behavior</em>' containment reference.
 	 * @see #setBehavior(ComponentBehavior)
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.MontiarcPackage#getComponentType_Behavior()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
 	ComponentBehavior getBehavior();
 
 	/**
-	 * Sets the value of the '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType#getBehavior <em>Behavior</em>}' reference.
+	 * Sets the value of the '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType#getBehavior <em>Behavior</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Behavior</em>' reference.
+	 * @param value the new value of the '<em>Behavior</em>' containment reference.
 	 * @see #getBehavior()
 	 * @generated
 	 */

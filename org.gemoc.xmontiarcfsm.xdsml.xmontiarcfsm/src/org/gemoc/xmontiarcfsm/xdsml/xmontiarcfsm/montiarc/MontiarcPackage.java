@@ -114,7 +114,7 @@ public interface MontiarcPackage extends EPackage {
 	int COMPONENT_TYPE__OUTGOING_PORTS = 4;
 
 	/**
-	 * The feature id for the '<em><b>Behavior</b></em>' reference.
+	 * The feature id for the '<em><b>Behavior</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -698,10 +698,10 @@ public interface MontiarcPackage extends EPackage {
 	EReference getComponentType_OutgoingPorts();
 
 	/**
-	 * Returns the meta object for the reference '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType#getBehavior <em>Behavior</em>}'.
+	 * Returns the meta object for the containment reference '{@link org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType#getBehavior <em>Behavior</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Behavior</em>'.
+	 * @return the meta object for the containment reference '<em>Behavior</em>'.
 	 * @see org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.montiarc.ComponentType#getBehavior()
 	 * @see #getComponentType()
 	 * @generated
@@ -1131,7 +1131,7 @@ public interface MontiarcPackage extends EPackage {
 		EReference COMPONENT_TYPE__OUTGOING_PORTS = eINSTANCE.getComponentType_OutgoingPorts();
 
 		/**
-		 * The meta object literal for the '<em><b>Behavior</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Behavior</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
