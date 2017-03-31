@@ -28,6 +28,8 @@ import static extension org.gemoc.montiarc.k3dsa.aspects.SubcomponentAspect.*
 import static extension org.gemoc.montiarc.k3dsa.aspects.AutomatonComponentBehaviorAspect.*
 import fr.inria.diverse.k3.al.annotationprocessor.Containment
 import org.eclipse.emf.common.util.EMap
+import groovy.lang.Binding
+import groovy.lang.GroovyShell
 
 //import automata.Automaton
 
@@ -223,22 +225,46 @@ class ConnectorAspect {
 @Aspect(className=Subcomponent)
 class SubcomponentAspect {
     
-    private static Random rand = new Random();
+ //   private static Random rand = new Random();
     
     def void createDefaultBehavior() {
+    	val binding = new Binding();
+
+		//Binding setVariable allow to pass a variable from the moonti arc model to the groovy interpreter
+		//binding.setVariable(name, value);
+		val groovyScript  = (_self.type.behavior as GroovyComponentBehavior).scriptBody
+		
+
+		val shell = new GroovyShell(binding);		    
+		val result = shell.evaluate(groovyScript);
+    	
+    	
         for (Port p : _self.outgoingPorts) {
             var EDataType data
             if (p.getType().equals(DataType.BOOLEAN)) {
                 data =  EcorePackage.eINSTANCE.getEBoolean();
-                data.setName("true");
+                if (result == true){
+	                data.setName("true");
+	                
+	                }
+	            else{
+	                data.setName("false");	            	
+	            }
+	            
             }
             else if (p.getType().equals(DataType.NUMBER)) {
-                data =  EcorePackage.eINSTANCE.getELong();
-                data.setName(""+(rand.nextInt(100)+1));
+	            data =  EcorePackage.eINSTANCE.getELong();
+                if (result instanceof Integer){
+	                data.setName(""+result);
+	                
+	                }
+	            else{
+	                data.setName("0");	            	
+	            }
             }
             else if (p.getType().equals(DataType.STRING)) {
                 data =  EcorePackage.eINSTANCE.getEString();
-                data.setName("HalloWelt"+(rand.nextInt(100)+1));
+                data.setName(""+result);
             }
             p.value = data
         }
@@ -251,7 +277,7 @@ class SubcomponentAspect {
         // for atomic components: delegate behavior computation to their Groovy script
         if (_self.type.subcomponents.isEmpty) { // assume an atomic component
         // println("Subcomponent '" + _self.name + "' is atomic.");
-           val ComponentBehavior behavior = _self.type.behavior
+           val ComponentBehavior behavior = _self.type.behavior  
             if (behavior instanceof GroovyComponentBehavior) {
                 _self.createDefaultBehavior()
             } 

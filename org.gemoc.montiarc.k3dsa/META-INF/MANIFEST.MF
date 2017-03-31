@@ -2,7 +2,7 @@ Bundle-SymbolicName: org.gemoc.montiarc.k3dsa;singleton:=true
 Export-Package: org.gemoc.montiarc.k3dsa.aspects
 Bundle-Name: org.gemoc.montiarc.k3dsa
 Bundle-Version: 1.0.0
-Bundle-ClassPath: .
+Bundle-ClassPath: .,lib/groovy-all-2.4.10.jar
 Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.0.0";visibility:=reexport,
  org.gemoc.montiarc.model;bundle-version="1.0.0",
  org.eclipse.xtend.lib;bundle-version="2.6.0";visibility:=private,
