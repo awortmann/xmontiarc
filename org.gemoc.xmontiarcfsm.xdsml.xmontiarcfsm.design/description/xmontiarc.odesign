@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <description:Group xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:description="http://www.eclipse.org/sirius/description/1.1.0" xmlns:description_1="http://www.eclipse.org/sirius/diagram/description/1.1.0" xmlns:style="http://www.eclipse.org/sirius/diagram/description/style/1.1.0" xmlns:tool="http://www.eclipse.org/sirius/diagram/description/tool/1.1.0" xmlns:tool_1="http://www.eclipse.org/sirius/description/tool/1.1.0" name="xmontiarc" version="11.1.1.201610211630">
   <ownedViewpoints name="components">
-    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Component Diagram" domainClass="xmontiarc.ComponentType" enablePopupBars="true">
-      <metamodel href="../../ur1.diverse.xmontiarc.xdsml.xmontiarc/model/XMontiArc.ecore#/0"/>
-      <metamodel href="../../ur1.diverse.xmontiarc.xdsml.xmontiarc/model/XMontiArc.ecore#/1"/>
+    <ownedRepresentations xsi:type="description_1:DiagramDescription" name="Component Diagram" domainClass="montiarc.ComponentType" enablePopupBars="true">
+      <metamodel href="../../org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/model/XMontiArcFSM.ecore#/0"/>
+      <metamodel href="../../org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm/model/XMontiArcFSM.ecore#/1"/>
       <defaultLayer name="Default">
-        <edgeMappings name="IncomingConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']" targetFinderExpression="service:getIncomingConnectorTargetPortCandidates()" sourceFinderExpression="service:getIncomingConnectorSourcePortCandidates()" domainClass="xmontiarc.IncomingConnector" useDomainElement="true">
+        <edgeMappings name="IncomingConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeIncomingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']" targetFinderExpression="service:getIncomingConnectorTargetPortCandidates()" sourceFinderExpression="service:getIncomingConnectorSourcePortCandidates()" domainClass="montiarc.IncomingConnector" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -13,7 +13,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="OutgoingConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']" targetFinderExpression="service:getOutgoingConnectorTargetPortCandidates()" sourceFinderExpression="service:getOutgoingConnectorSourcePortCandidates()" domainClass="xmontiarc.OutgoingConnector" useDomainElement="true">
+        <edgeMappings name="OutgoingConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@borderedNodeMappings[name='ComponentTypeOutgoingPortNode']" targetFinderExpression="service:getOutgoingConnectorTargetPortCandidates()" sourceFinderExpression="service:getOutgoingConnectorSourcePortCandidates()" domainClass="monitarc.OutgoingConnector" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -21,7 +21,7 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <edgeMappings name="IntermediateConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']" targetFinderExpression="service:getOutgoingConnectorTargetPortCandidates()" sourceFinderExpression="service:getOutgoingConnectorSourcePortCandidates()" domainClass="xmontiarc.IntermediateConnector" useDomainElement="true">
+        <edgeMappings name="IntermediateConnectorEdge" semanticCandidatesExpression="feature:connectors" sourceMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentOutgoingPortNode']" targetMapping="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@containerMappings[name='ComponentTypeContainer']/@subNodeMappings[name='SubcomponentNode']/@borderedNodeMappings[name='SubcomponentIncomingPortNode']" targetFinderExpression="service:getOutgoingConnectorTargetPortCandidates()" sourceFinderExpression="service:getOutgoingConnectorSourcePortCandidates()" domainClass="monitarc.IntermediateConnector" useDomainElement="true">
           <style sizeComputationExpression="2">
             <strokeColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
             <centerLabelStyleDescription>
@@ -29,8 +29,8 @@
             </centerLabelStyleDescription>
           </style>
         </edgeMappings>
-        <containerMappings name="ComponentTypeContainer" semanticCandidatesExpression="var:self" domainClass="xmontiarc.ComponentType">
-          <borderedNodeMappings name="ComponentTypeIncomingPortNode" semanticCandidatesExpression="service:getComponentIncomingPorts()" domainClass="xmontiarc.IncomingPort">
+        <containerMappings name="ComponentTypeContainer" semanticCandidatesExpression="var:self" domainClass="montiarc.ComponentType">
+          <borderedNodeMappings name="ComponentTypeIncomingPortNode" semanticCandidatesExpression="service:getComponentIncomingPorts()" domainClass="montiarc.IncomingPort">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -40,7 +40,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </borderedNodeMappings>
-          <borderedNodeMappings name="ComponentTypeOutgoingPortNode" semanticCandidatesExpression="service:getComponentOutgoingPorts()" domainClass="xmontiarc.OutgoingPort">
+          <borderedNodeMappings name="ComponentTypeOutgoingPortNode" semanticCandidatesExpression="service:getComponentOutgoingPorts()" domainClass="montiarc.OutgoingPort">
             <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="12" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="LEFT" labelPosition="node" resizeKind="NSEW">
               <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
               <labelColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -50,7 +50,7 @@
               <color xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='white']"/>
             </style>
           </borderedNodeMappings>
-          <subNodeMappings name="SubcomponentNode" semanticCandidatesExpression="feature:subcomponents" domainClass="xmontiarc.Subcomponent">
+          <subNodeMappings name="SubcomponentNode" semanticCandidatesExpression="feature:subcomponents" domainClass="montiarc.Subcomponent">
             <borderedNodeMappings name="SubcomponentIncomingPortNode" semanticCandidatesExpression="service:getSubcomponentIncomingPorts()" domainClass="xmontiarc.IncomingPort">
               <style xsi:type="style:SquareDescription" borderSizeComputationExpression="1" labelSize="10" showIcon="false" labelExpression="service:getPortLabel()" labelAlignment="RIGHT" labelPosition="node" resizeKind="NSEW">
                 <borderColor xsi:type="description:SystemColor" href="environment:/viewpoint#//@systemColors/@entries[name='black']"/>
@@ -90,7 +90,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="xmontiarc.Subcomponent" referenceName="subcomponents">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="montiarc.Subcomponent" referenceName="subcomponents">
                   <subModelOperations xsi:type="tool_1:ExternalJavaActionCall" name="CallNewSubcomponentAction" action="//@ownedViewpoints[name='components']/@ownedRepresentations[name='Component%20Diagram']/@defaultLayer/@toolSections.0/@ownedTools[name='NewSubcomponentAction']"/>
                 </subModelOperations>
               </firstModelOperations>
@@ -104,7 +104,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="xmontiarc.IncomingPort" referenceName="incomingPorts">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="montiarc.IncomingPort" referenceName="incomingPorts">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="UnnamedPort"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Number"/>
                 </subModelOperations>
@@ -116,7 +116,7 @@
             <viewVariable name="containerView"/>
             <initialOperation>
               <firstModelOperations xsi:type="tool_1:ChangeContext" browseExpression="var:container">
-                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="xmontiarc.OutgoingPort" referenceName="outgoingPorts">
+                <subModelOperations xsi:type="tool_1:CreateInstance" typeName="montiarc.OutgoingPort" referenceName="outgoingPorts">
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="name" valueExpression="UnnamedPort"/>
                   <subModelOperations xsi:type="tool_1:SetValue" featureName="type" valueExpression="Number"/>
                 </subModelOperations>
@@ -182,6 +182,6 @@
         </toolSections>
       </defaultLayer>
     </ownedRepresentations>
-    <ownedJavaExtensions qualifiedClassName="ur1.diverse.xmontiarc.design.Services"/>
+    <ownedJavaExtensions qualifiedClassName="org.gemoc.xmontiarcfsm.xdsml.xmontiarcfsm.design.Services"/>
   </ownedViewpoints>
 </description:Group>
