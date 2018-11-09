@@ -1,4 +1,9 @@
-<h1>xMontiArc</h1>
+---
+layout: page
+title: xMontiArc
+tagline: Easy websites with GitHub Pages
+description: Minimal tutorial on making a simple website with GitHub Pages
+---
 
-<a href="about.html">About.html</a>
-<a href="pages/about.html">About.md</a>
+[Github Pages](https://pages.github.com) provide a simple way to make a
+website using
